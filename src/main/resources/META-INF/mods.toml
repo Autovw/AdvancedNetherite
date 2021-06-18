@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[34,)"
+license="GPLv3"
+#issueTrackerURL=""
+
+[[mods]]
+modId="advancednetherite"
+version="0.2.0"
+displayName="Advanced Netherite"
+#updateJSONURL="https://raw.githubusercontent.com/Autovw/ModUpdates/master/advancednetherite/update.json"
+#displayURL=""
+logoFile="advancednetherite_banner.png"
+#credits=""
+authors="Autovw"
+description='''
+Advanced Netherite mod.
+
+Work in progress.
+'''
+
+[[dependencies.advancednetherite]]
+modId="forge"
+mandatory=true
+versionRange="[34,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.advancednetherite]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.16.3,1.17]"
+ordering="NONE"
+side="BOTH"
+
+[modproperties.advancednetherite]
+configBackground="minecraft:textures/block/netherite_block.png" #Optional support for Configured mod.
+#As of version 1.2.0 Catalogue also supports images. Use "catalogueImageIcon" instead.
+catalogueItemIcon="advancednetherite:netherite_gold_ingot" #Optional support for Cataloque mod.
