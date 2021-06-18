@@ -1,21 +1,21 @@
 modLoader="javafml"
 loaderVersion="[34,)"
 license="GPLv3"
-#issueTrackerURL=""
+issueTrackerURL="https://github.com/Autovw/AdvancedNetherite/issues"
 
 [[mods]]
 modId="advancednetherite"
-version="0.2.0"
+version="1.0.0"
 displayName="Advanced Netherite"
-#updateJSONURL="https://raw.githubusercontent.com/Autovw/ModUpdates/master/advancednetherite/update.json"
-#displayURL=""
+updateJSONURL="https://raw.githubusercontent.com/Autovw/ModUpdates/master/advancednetherite/update.json"
+displayURL="https://github.com/Autovw/AdvancedNetherite/wiki"
 logoFile="advancednetherite_banner.png"
 #credits=""
 authors="Autovw"
 description='''
 Advanced Netherite mod.
 
-Work in progress.
+A developer friendly, open-source mod that adds in more types of Netherite!
 '''
 
 [[dependencies.advancednetherite]]
