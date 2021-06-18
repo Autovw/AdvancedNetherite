@@ -1,0 +1,58 @@
+{
+  "block.advancednetherite.netherite_iron_block": "Block of Netherite/Iron",
+  "block.advancednetherite.netherite_gold_block": "Block of Netherite/Gold",
+  "block.advancednetherite.netherite_emerald_block": "Block of Netherite/Emerald",
+  "block.advancednetherite.netherite_diamond_block": "Block of Netherite/Diamond",
+
+  "item.advancednetherite.netherite_iron_ingot": "Netherite/Iron Ingot",
+  "item.advancednetherite.netherite_gold_ingot": "Netherite/Gold Ingot",
+  "item.advancednetherite.netherite_emerald_ingot": "Netherite/Emerald Ingot",
+  "item.advancednetherite.netherite_diamond_ingot": "Netherite/Diamond Ingot",
+
+  "item.advancednetherite.netherite_iron_helmet": "Netherite/Iron Helmet",
+  "item.advancednetherite.netherite_gold_helmet": "Netherite/Gold Helmet",
+  "item.advancednetherite.netherite_emerald_helmet": "Netherite/Emerald Helmet",
+  "item.advancednetherite.netherite_diamond_helmet": "Netherite/Diamond Helmet",
+
+  "item.advancednetherite.netherite_iron_chestplate": "Netherite/Iron Chestplate",
+  "item.advancednetherite.netherite_gold_chestplate": "Netherite/Gold Chestplate",
+  "item.advancednetherite.netherite_emerald_chestplate": "Netherite/Emerald Chestplate",
+  "item.advancednetherite.netherite_diamond_chestplate": "Netherite/Diamond Chestplate",
+
+  "item.advancednetherite.netherite_iron_leggings": "Netherite/Iron Leggings",
+  "item.advancednetherite.netherite_gold_leggings": "Netherite/Gold Leggings",
+  "item.advancednetherite.netherite_emerald_leggings": "Netherite/Emerald Leggings",
+  "item.advancednetherite.netherite_diamond_leggings": "Netherite/Diamond Leggings",
+
+  "item.advancednetherite.netherite_iron_boots": "Netherite/Iron Boots",
+  "item.advancednetherite.netherite_gold_boots": "Netherite/Gold Boots",
+  "item.advancednetherite.netherite_emerald_boots": "Netherite/Emerald Boots",
+  "item.advancednetherite.netherite_diamond_boots": "Netherite/Diamond Boots",
+
+  "item.advancednetherite.netherite_iron_axe": "Netherite/Iron Axe",
+  "item.advancednetherite.netherite_gold_axe": "Netherite/Gold Axe",
+  "item.advancednetherite.netherite_emerald_axe": "Netherite/Emerald Axe",
+  "item.advancednetherite.netherite_diamond_axe": "Netherite/Diamond Axe",
+
+  "item.advancednetherite.netherite_iron_hoe": "Netherite/Iron Hoe",
+  "item.advancednetherite.netherite_gold_hoe": "Netherite/Gold Hoe",
+  "item.advancednetherite.netherite_emerald_hoe": "Netherite/Emerald Hoe",
+  "item.advancednetherite.netherite_diamond_hoe": "Netherite/Diamond Hoe",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "Netherite/Iron Pickaxe",
+  "item.advancednetherite.netherite_gold_pickaxe": "Netherite/Gold Pickaxe",
+  "item.advancednetherite.netherite_emerald_pickaxe": "Netherite/Emerald Pickaxe",
+  "item.advancednetherite.netherite_diamond_pickaxe": "Netherite/Diamond Pickaxe",
+
+  "item.advancednetherite.netherite_iron_shovel": "Netherite/Iron Shovel",
+  "item.advancednetherite.netherite_gold_shovel": "Netherite/Gold Shovel",
+  "item.advancednetherite.netherite_emerald_shovel": "Netherite/Emerald Shovel",
+  "item.advancednetherite.netherite_diamond_shovel": "Netherite/Diamond Shovel",
+
+  "item.advancednetherite.netherite_iron_sword": "Netherite/Iron Sword",
+  "item.advancednetherite.netherite_gold_sword": "Netherite/Gold Sword",
+  "item.advancednetherite.netherite_emerald_sword": "Netherite/Emerald Sword",
+  "item.advancednetherite.netherite_diamond_sword": "Netherite/Diamond Sword",
+
+  "itemGroup.advancednetherite_group": "Advanced Netherite"
+}
