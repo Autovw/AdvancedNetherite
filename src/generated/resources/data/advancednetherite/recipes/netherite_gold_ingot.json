@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#N#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "N": {
+      "tag": "advancednetherite:netherites_gold"
+    }
+  },
+  "result": {
+    "item": "advancednetherite:netherite_gold_ingot",
+    "count": 1
+  }
+}

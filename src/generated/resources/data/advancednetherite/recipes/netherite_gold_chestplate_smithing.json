@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "advancednetherite:netherite_chestplates_gold"
+  },
+  "addition": {
+    "item": "advancednetherite:netherite_gold_ingot"
+  },
+  "result": {
+    "item": "advancednetherite:netherite_gold_chestplate"
+  }
+}

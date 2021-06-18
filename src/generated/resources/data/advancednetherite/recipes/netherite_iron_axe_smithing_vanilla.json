@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "advancednetherite:netherite_axes_iron"
+  },
+  "addition": {
+    "item": "advancednetherite:netherite_iron_ingot"
+  },
+  "result": {
+    "item": "advancednetherite:netherite_iron_axe"
+  }
+}

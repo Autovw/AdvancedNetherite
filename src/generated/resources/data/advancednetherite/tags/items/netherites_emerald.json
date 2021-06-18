@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:netherite_ingot",
+    "advancednetherite:netherite_iron_ingot",
+    "advancednetherite:netherite_gold_ingot"
+  ]
+}
