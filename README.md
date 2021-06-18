@@ -8,7 +8,7 @@ A developer friendly, open-source mod that adds in more types of Netherite!
 * 4 new types of Netherite!
 * For all new types of Netherite there are sets of tools, sets of armor and blocks.
 * Support for Datapacks and Add-ons.
-* Install [this datapack](https://github.com/Autovw/AncientDebrisBarterDatapack/releases) for a (rare) Ancient Debris Piglin trade/barter.
+* Install [this datapack](https://github.com/Autovw/AncientDebrisBarterDatapack/wiki) for a (rare) Ancient Debris Piglin trade/barter.
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 💎 Types of Netherite
