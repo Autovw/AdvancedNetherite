@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/Autovw/AdvancedNetherite/issues"
 
 [[mods]]
 modId="advancednetherite"
-version="1.0.0"
+version="1.1.0"
 displayName="Advanced Netherite"
 updateJSONURL="https://raw.githubusercontent.com/Autovw/ModUpdates/master/advancednetherite/update.json"
 displayURL="https://github.com/Autovw/AdvancedNetherite/wiki"
@@ -16,6 +16,7 @@ description='''
 Advanced Netherite mod.
 
 A developer friendly, open-source mod that adds in more types of Netherite!
+Visit the Wiki for more information on everything this mod adds.
 '''
 
 [[dependencies.advancednetherite]]
@@ -33,5 +34,5 @@ side="BOTH"
 
 [modproperties.advancednetherite]
 configBackground="minecraft:textures/block/netherite_block.png" #Optional support for Configured mod.
-#As of version 1.2.0 Catalogue also supports images. Use "catalogueImageIcon" instead.
-catalogueItemIcon="advancednetherite:netherite_gold_ingot" #Optional support for Cataloque mod.
+#Catalogue also supports items. Use "catalogueItemIcon" instead.
+catalogueImageIcon="advancednetherite_logo.png" #Optional support for Cataloque mod.
