@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.1.0-1.16.5'
+version = '1.2.0-1.16.5'
 group = 'com.autovw.advancednetherite' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'advancednetherite'
 
