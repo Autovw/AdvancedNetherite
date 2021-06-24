@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:gold_ingot"
+      "tag": "forge:ingots/gold"
     },
     "N": {
       "tag": "advancednetherite:netherites_gold"
