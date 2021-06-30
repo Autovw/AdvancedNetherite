@@ -10,7 +10,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,8 +28,6 @@ public class AdvancedNetherite {
 
         ModBlocks.BLOCKS.register(bus);
         ModItems.ITEMS.register(bus);
-
-        //Config.loadConfig(Config.config, FMLPaths.CONFIGDIR.get().resolve("advancednetherite-config.toml").toString());
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
