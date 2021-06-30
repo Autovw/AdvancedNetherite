@@ -1,7 +1,9 @@
 package com.autovw.advancednetherite.core;
 
 import com.autovw.advancednetherite.Reference;
-import com.autovw.advancednetherite.content.GoldArmorItem;
+import com.autovw.advancednetherite.content.EnderMaskArmorItem;
+import com.autovw.advancednetherite.content.PiglinPassiveArmorItem;
+import com.autovw.advancednetherite.content.UltimateArmorItem;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
@@ -31,13 +33,13 @@ public class ModItems {
             () -> new ArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlotType.HEAD, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_GOLD_HELMET = ITEMS.register("netherite_gold_helmet",
-            () -> new GoldArmorItem(ModArmorTiers.NETHERITE_GOLD, EquipmentSlotType.HEAD, (new Item.Properties()
+            () -> new PiglinPassiveArmorItem(ModArmorTiers.NETHERITE_GOLD, EquipmentSlotType.HEAD, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_EMERALD_HELMET = ITEMS.register("netherite_emerald_helmet",
-            () -> new ArmorItem(ModArmorTiers.NETHERITE_EMERALD, EquipmentSlotType.HEAD, (new Item.Properties()
+            () -> new EnderMaskArmorItem(ModArmorTiers.NETHERITE_EMERALD, EquipmentSlotType.HEAD, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_DIAMOND_HELMET = ITEMS.register("netherite_diamond_helmet",
-            () -> new ArmorItem(ModArmorTiers.NETHERITE_DIAMOND, EquipmentSlotType.HEAD, (new Item.Properties()
+            () -> new UltimateArmorItem(ModArmorTiers.NETHERITE_DIAMOND, EquipmentSlotType.HEAD, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
 
     // Chestplates
@@ -45,13 +47,13 @@ public class ModItems {
             () -> new ArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlotType.CHEST, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_GOLD_CHESTPLATE = ITEMS.register("netherite_gold_chestplate",
-            () -> new GoldArmorItem(ModArmorTiers.NETHERITE_GOLD, EquipmentSlotType.CHEST, (new Item.Properties()
+            () -> new PiglinPassiveArmorItem(ModArmorTiers.NETHERITE_GOLD, EquipmentSlotType.CHEST, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_EMERALD_CHESTPLATE = ITEMS.register("netherite_emerald_chestplate",
-            () -> new ArmorItem(ModArmorTiers.NETHERITE_EMERALD, EquipmentSlotType.CHEST, (new Item.Properties()
+            () -> new EnderMaskArmorItem(ModArmorTiers.NETHERITE_EMERALD, EquipmentSlotType.CHEST, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_DIAMOND_CHESTPLATE = ITEMS.register("netherite_diamond_chestplate",
-            () -> new ArmorItem(ModArmorTiers.NETHERITE_DIAMOND, EquipmentSlotType.CHEST, (new Item.Properties()
+            () -> new UltimateArmorItem(ModArmorTiers.NETHERITE_DIAMOND, EquipmentSlotType.CHEST, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
 
     // Leggings
@@ -59,13 +61,13 @@ public class ModItems {
             () -> new ArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlotType.LEGS, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_GOLD_LEGGINGS = ITEMS.register("netherite_gold_leggings",
-            () -> new GoldArmorItem(ModArmorTiers.NETHERITE_GOLD, EquipmentSlotType.LEGS, (new Item.Properties()
+            () -> new PiglinPassiveArmorItem(ModArmorTiers.NETHERITE_GOLD, EquipmentSlotType.LEGS, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_EMERALD_LEGGINGS = ITEMS.register("netherite_emerald_leggings",
-            () -> new ArmorItem(ModArmorTiers.NETHERITE_EMERALD, EquipmentSlotType.LEGS, (new Item.Properties()
+            () -> new EnderMaskArmorItem(ModArmorTiers.NETHERITE_EMERALD, EquipmentSlotType.LEGS, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_DIAMOND_LEGGINGS = ITEMS.register("netherite_diamond_leggings",
-            () -> new ArmorItem(ModArmorTiers.NETHERITE_DIAMOND, EquipmentSlotType.LEGS, (new Item.Properties()
+            () -> new UltimateArmorItem(ModArmorTiers.NETHERITE_DIAMOND, EquipmentSlotType.LEGS, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
 
     // Boots
@@ -73,13 +75,13 @@ public class ModItems {
             () -> new ArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlotType.FEET, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_GOLD_BOOTS = ITEMS.register("netherite_gold_boots",
-            () -> new GoldArmorItem(ModArmorTiers.NETHERITE_GOLD, EquipmentSlotType.FEET, (new Item.Properties()
+            () -> new PiglinPassiveArmorItem(ModArmorTiers.NETHERITE_GOLD, EquipmentSlotType.FEET, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_EMERALD_BOOTS = ITEMS.register("netherite_emerald_boots",
-            () -> new ArmorItem(ModArmorTiers.NETHERITE_EMERALD, EquipmentSlotType.FEET, (new Item.Properties()
+            () -> new EnderMaskArmorItem(ModArmorTiers.NETHERITE_EMERALD, EquipmentSlotType.FEET, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
     public static final RegistryObject<Item> NETHERITE_DIAMOND_BOOTS = ITEMS.register("netherite_diamond_boots",
-            () -> new ArmorItem(ModArmorTiers.NETHERITE_DIAMOND, EquipmentSlotType.FEET, (new Item.Properties()
+            () -> new UltimateArmorItem(ModArmorTiers.NETHERITE_DIAMOND, EquipmentSlotType.FEET, (new Item.Properties()
                     .tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant())));
 
     // TOOLS (int = attackDamageIn, float = attackSpeedIn)
