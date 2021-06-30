@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.2.0-1.16.5'
+version = '1.3.0-1.16.5'
 group = 'com.autovw.advancednetherite' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'advancednetherite'
 
@@ -84,6 +84,7 @@ repositories {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.1.32'
     compile fg.deobf('curse.maven:catalogue-459701:3335979')
+    compile fg.deobf('curse.maven:configured-457570:3340535')
 }
 
 jar {
