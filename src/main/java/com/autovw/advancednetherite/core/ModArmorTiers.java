@@ -1,8 +1,6 @@
 package com.autovw.advancednetherite.core;
 
 import com.autovw.advancednetherite.Reference;
-import net.minecraft.entity.IRendersAsItem;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
@@ -17,22 +15,22 @@ import net.minecraftforge.fml.RegistryObject;
  * Author: Autovw
  */
 public enum ModArmorTiers implements IArmorMaterial {
-    NETHERITE_IRON("netherite_iron", 39, new int[] { 3, 6, 8, 3 }, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
-            3.25F, 0.1F, ModItems.NETHERITE_IRON_INGOT),
-    NETHERITE_GOLD("netherite_gold", 41, new int[] { 3, 6, 8, 3 }, 18, SoundEvents.ARMOR_EQUIP_NETHERITE,
+    NETHERITE_IRON("netherite_iron", 39, new int[] { 4, 7, 9, 4 }, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.5F, 0.1F, ModItems.NETHERITE_IRON_INGOT),
+    NETHERITE_GOLD("netherite_gold", 41, new int[] { 4, 7, 9, 4 }, 25, SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.5F, 0.1F, ModItems.NETHERITE_GOLD_INGOT),
-    NETHERITE_EMERALD("netherite_emerald", 43, new int[] { 3, 6, 8, 3 }, 18, SoundEvents.ARMOR_EQUIP_NETHERITE,
-            3.75F, 0.1F, ModItems.NETHERITE_EMERALD_INGOT),
-    NETHERITE_DIAMOND("netherite_diamond", 47, new int[] { 3, 6, 8, 3 }, 20, SoundEvents.ARMOR_EQUIP_NETHERITE,
+    NETHERITE_EMERALD("netherite_emerald", 43, new int[] { 4, 7, 9, 4 }, 18, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.5F, 0.1F, ModItems.NETHERITE_EMERALD_INGOT),
+    NETHERITE_DIAMOND("netherite_diamond", 47, new int[] { 5, 7, 9, 5 }, 12, SoundEvents.ARMOR_EQUIP_NETHERITE,
             4.0F, 0.1F, ModItems.NETHERITE_DIAMOND_INGOT);
 
     private static final int[] HEALTH_PER_SLOT = new int[] { 13, 15, 16, 11 };
-    private String name;
-    private int durability, enchantmentValue;
-    private int[] slotProtections;
-    private SoundEvent sound;
-    private float toughness, knockbackResistance;
-    private RegistryObject<Item> repairIngredient;
+    private final String name;
+    private final int durability, enchantmentValue;
+    private final int[] slotProtections;
+    private final SoundEvent sound;
+    private final float toughness, knockbackResistance;
+    private final RegistryObject<Item> repairIngredient;
 
     private ModArmorTiers(String name, int durability, int[] slotProtections, int enchantmentValue, SoundEvent sound, float toughness,
                           float knockbackResistance, RegistryObject<Item> repairIngredient) {
