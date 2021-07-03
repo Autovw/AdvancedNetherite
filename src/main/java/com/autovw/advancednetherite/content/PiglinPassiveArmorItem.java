@@ -7,6 +7,9 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Author: Autovw
+ */
 public class PiglinPassiveArmorItem extends ArmorItem {
     public PiglinPassiveArmorItem(IArmorMaterial material, EquipmentSlotType slot, Properties builder) {
         super(material, slot, builder);

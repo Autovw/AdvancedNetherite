@@ -8,6 +8,9 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Author: Autovw
+ */
 public class EnderMaskArmorItem extends ArmorItem {
     public EnderMaskArmorItem(IArmorMaterial material, EquipmentSlotType slot, Properties builder) {
         super(material, slot, builder);
