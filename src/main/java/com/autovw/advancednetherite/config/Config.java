@@ -3,7 +3,9 @@ package com.autovw.advancednetherite.config;
 import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
-//@Mod.EventBusSubscriber
+/**
+ * Author: Autovw
+ */
 public class Config {
     public static final ForgeConfigSpec commonConfig;
     public static final Config.Common COMMON;
@@ -32,7 +34,7 @@ public class Config {
         public static ForgeConfigSpec.BooleanValue diamondUltimatePassiveArmor;
 
         public ArmorConfig(ForgeConfigSpec.Builder builder) {
-            builder.comment("Armor config").push("armor_config");
+            builder.comment("Armor Config").push("armor_config");
             {
                 goldPiglinPassiveArmor = builder
                         .comment("If true, Piglins behave neutral towards players wearing Netherite/Gold Armor. True by default.")
