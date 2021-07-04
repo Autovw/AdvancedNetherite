@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#N#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/iron"
+    },
+    "N": {
+      "tag": "advancednetherite:netherites_vanilla"
+    }
+  },
+  "result": {
+    "item": "advancednetherite:netherite_iron_ingot",
+    "count": 1
+  }
+}
