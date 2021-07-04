@@ -19,9 +19,9 @@ public enum ModArmorTiers implements IArmorMaterial {
             3.5F, 0.1F, ModItems.NETHERITE_IRON_INGOT),
     NETHERITE_GOLD("netherite_gold", 41, new int[] { 4, 7, 9, 4 }, 25, SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.5F, 0.1F, ModItems.NETHERITE_GOLD_INGOT),
-    NETHERITE_EMERALD("netherite_emerald", 43, new int[] { 4, 7, 9, 4 }, 18, SoundEvents.ARMOR_EQUIP_NETHERITE,
+    NETHERITE_EMERALD("netherite_emerald", 43, new int[] { 4, 7, 9, 4 }, 20, SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.5F, 0.1F, ModItems.NETHERITE_EMERALD_INGOT),
-    NETHERITE_DIAMOND("netherite_diamond", 47, new int[] { 5, 7, 9, 5 }, 12, SoundEvents.ARMOR_EQUIP_NETHERITE,
+    NETHERITE_DIAMOND("netherite_diamond", 47, new int[] { 5, 7, 9, 5 }, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
             4.0F, 0.1F, ModItems.NETHERITE_DIAMOND_INGOT);
 
     private static final int[] HEALTH_PER_SLOT = new int[] { 13, 15, 16, 11 };
