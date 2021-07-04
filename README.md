@@ -1,17 +1,20 @@
 ![Banner](https://i.postimg.cc/d0MjycfS/background-advancednetherite.png)
 # Advanced Netherite
 
-A developer friendly, open-source mod that adds in more types of Netherite!
+A developer and vanilla friendly, open-source mod that adds in more tiers of Netherite!
+The goal of the mod is to extend the vanilla Minecraft experience by adding more goals to achieve.
+
+For more information visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki)!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ✅ Features
-* 4 new types of Netherite!
-* For all new types of Netherite there are sets of tools, sets of armor and blocks.
-* Support for Datapacks and Add-ons.
-* Install [this datapack](https://github.com/Autovw/AncientDebrisBarterDatapack/wiki) for a (rare) Ancient Debris Piglin trade/barter.
+* 4 new tiers of Netherite!
+* For all new tiers of Netherite there are sets of tools, sets of armor and blocks.
+* Every Netherite tier has its own unique properties.
+* Support for Add-ons and Datapacks.
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
-### 💎 Types of Netherite
+### 💎 Tiers of Netherite
 ![Banner](https://i.postimg.cc/gjBv8P6w/types-of-netherite-banner.png)
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
@@ -24,6 +27,12 @@ Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/
 * Advanced Netherite is Forge only, and I'm not planning on porting it to Fabric.
 * Visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki) for more information on everything this mod adds.
 * Join my new [Discord Server](https://discord.com/invite/KP3BBatuw5) for update notifications, mod support and more!
+
+![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
+### 🧩 Supported Add-ons and Datapacks
+_Click on the images for the download source!_
+[![Ancient Debris Barter](https://i.postimg.cc/9X4B3tRN/1920x319-ancient-debris-barter-datapack-banner.png)](https://github.com/Autovw/AncientDebrisBarterDatapack/wiki)
+[![Easier Advanced Netherite Recipes](https://i.postimg.cc/NfsMmNzj/1920x319-easier-advanced-netherite-recipes-datapack-banner.png)](https://github.com/Autovw/EasierAdvancedNetheriteRecipesDatapack/wiki)
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 #### ⚠️ Disclaimer
