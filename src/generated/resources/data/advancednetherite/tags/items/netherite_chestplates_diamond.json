@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "minecraft:netherite_chestplate",
-    "advancednetherite:netherite_iron_chestplate",
-    "advancednetherite:netherite_gold_chestplate",
-    "advancednetherite:netherite_emerald_chestplate"
-  ]
-}

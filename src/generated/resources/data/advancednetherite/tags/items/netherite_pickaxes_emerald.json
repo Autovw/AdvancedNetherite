@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "minecraft:netherite_pickaxe",
-    "advancednetherite:netherite_iron_pickaxe",
-    "advancednetherite:netherite_gold_pickaxe"
-  ]
-}
