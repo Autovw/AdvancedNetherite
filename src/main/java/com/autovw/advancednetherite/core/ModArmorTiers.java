@@ -15,7 +15,8 @@ import net.minecraftforge.fml.RegistryObject;
  * Author: Autovw
  */
 public enum ModArmorTiers implements IArmorMaterial {
-    NETHERITE_IRON("netherite_iron", 39, new int[] { 4, 7, 9, 4 }, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+    // Armor material is registered here.
+    NETHERITE_IRON("netherite_iron", 39, new int[] { 4, 6, 8, 4 }, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.5F, 0.1F, ModItems.NETHERITE_IRON_INGOT),
     NETHERITE_GOLD("netherite_gold", 41, new int[] { 4, 7, 9, 4 }, 25, SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.5F, 0.1F, ModItems.NETHERITE_GOLD_INGOT),
