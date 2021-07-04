@@ -43,8 +43,8 @@ public class Config {
                         .comment("If true, Endermans behave neutral towards players wearing Netherite/Emerald Armor. True by default.")
                         .define("emeraldEndermanPassiveArmor", true);
                 diamondUltimatePassiveArmor = builder
-                        .comment("If true, Endermans and Piglins behave neutral towards players wearing Netherite/Diamond Armor. False by default.")
-                        .define("diamondUltimatePassiveArmor", false);
+                        .comment("If true, Endermans and Piglins behave neutral towards players wearing Netherite/Diamond Armor. True by default.")
+                        .define("diamondUltimatePassiveArmor", true);
             }
             builder.pop();
         }
