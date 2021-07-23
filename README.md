@@ -6,6 +6,8 @@ The goal of the mod is to extend the vanilla Minecraft experience by adding more
 
 For more information visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki)!
 
+Feel free to join my new [Discord Server](https://discord.com/invite/KP3BBatuw5) for update notifications, mod support and more!
+
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ✅ Features
 * 4 new tiers of Netherite!
@@ -26,7 +28,6 @@ Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/
 * Please report issues on the [official Advanced Netherite GitHub repository](https://github.com/Autovw/AdvancedNetherite/issues)!
 * Advanced Netherite is Forge only, and I'm not planning on porting it to Fabric.
 * Visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki) for more information on everything this mod adds.
-* Join my new [Discord Server](https://discord.com/invite/KP3BBatuw5) for update notifications, mod support and more!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 🧩 Supported Add-ons and Datapacks
