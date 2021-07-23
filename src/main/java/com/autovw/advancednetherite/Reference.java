@@ -1,11 +1,11 @@
 package com.autovw.advancednetherite;
 
-import net.minecraft.item.ItemGroup;
+import net.minecraft.world.item.CreativeModeTab;
 
 /**
  * Author: Autovw
  */
 public class Reference {
     public static final String MOD_ID = "advancednetherite";
-    public static final ItemGroup TAB_ADVANCEDNETHERITE = new AdvancedNetheriteGroup("advancednetherite_group");
+    public static final CreativeModeTab TAB_ADVANCEDNETHERITE = new AdvancedNetheriteGroup("advancednetherite_group");
 }

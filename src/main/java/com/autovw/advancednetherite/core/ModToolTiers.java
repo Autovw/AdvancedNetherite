@@ -1,14 +1,14 @@
 package com.autovw.advancednetherite.core;
 
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.Item;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.fmllegacy.RegistryObject;
 
 /**
  * Author: Autovw
  */
-public enum ModToolTiers implements IItemTier {
+public enum ModToolTiers implements Tier {
     // Tool materials are registered here.
     NETHERITE_IRON(4, 2281, 9.0F, 4.0F, 15, ModItems.NETHERITE_IRON_INGOT),
     NETHERITE_GOLD(4, 2313, 11.0F, 4.0F, 25, ModItems.NETHERITE_GOLD_INGOT),
@@ -29,32 +29,33 @@ public enum ModToolTiers implements IItemTier {
     }
 
     @Override
-    public int getUses() {
+    public int m_6609_() {
         return this.durability;
     }
 
     @Override
-    public float getSpeed() {
+    public float m_6624_() {
         return this.speed;
     }
 
     @Override
-    public float getAttackDamageBonus() {
+    public float m_6631_() {
         return this.attackDamage;
     }
 
     @Override
-    public int getLevel() {
+    public int m_6604_() {
         return this.level;
     }
 
     @Override
-    public int getEnchantmentValue() {
+    public int m_6601_() {
         return this.enchantmentValue;
     }
 
+    // m_43929_ = of
     @Override
-    public Ingredient getRepairIngredient() {
-        return Ingredient.of(this.repairIngredient.get());
+    public Ingredient m_6282_() {
+        return Ingredient.m_43929_(this.repairIngredient.get());
     }
 }

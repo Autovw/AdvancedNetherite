@@ -1,28 +1,29 @@
 package com.autovw.advancednetherite.core;
 
 import com.autovw.advancednetherite.Reference;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.Item;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 
 /**
  * Author: Autovw
  */
-public enum ModArmorTiers implements IArmorMaterial {
+public enum ModArmorTiers implements ArmorMaterial {
     // Armor material is registered here.
-    NETHERITE_IRON("netherite_iron", 39, new int[] { 4, 6, 8, 4 }, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+    // f_11679_ should be the Netherite Armor equip sound.
+    NETHERITE_IRON("netherite_iron", 39, new int[] { 4, 6, 8, 4 }, 15, SoundEvents.f_11679_,
             3.5F, 0.1F, ModItems.NETHERITE_IRON_INGOT),
-    NETHERITE_GOLD("netherite_gold", 41, new int[] { 4, 7, 9, 4 }, 25, SoundEvents.ARMOR_EQUIP_NETHERITE,
+    NETHERITE_GOLD("netherite_gold", 41, new int[] { 4, 7, 9, 4 }, 25, SoundEvents.f_11679_,
             3.5F, 0.1F, ModItems.NETHERITE_GOLD_INGOT),
-    NETHERITE_EMERALD("netherite_emerald", 43, new int[] { 4, 7, 9, 4 }, 20, SoundEvents.ARMOR_EQUIP_NETHERITE,
+    NETHERITE_EMERALD("netherite_emerald", 43, new int[] { 4, 7, 9, 4 }, 20, SoundEvents.f_11679_,
             3.5F, 0.1F, ModItems.NETHERITE_EMERALD_INGOT),
-    NETHERITE_DIAMOND("netherite_diamond", 47, new int[] { 5, 7, 9, 5 }, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+    NETHERITE_DIAMOND("netherite_diamond", 47, new int[] { 5, 7, 9, 5 }, 15, SoundEvents.f_11679_,
             4.0F, 0.1F, ModItems.NETHERITE_DIAMOND_INGOT);
 
     private static final int[] HEALTH_PER_SLOT = new int[] { 13, 15, 16, 11 };
@@ -45,44 +46,46 @@ public enum ModArmorTiers implements IArmorMaterial {
         this.repairIngredient = repairIngredient;
     }
 
+    // m_20749_ = getIndex
     @Override
-    public int getDurabilityForSlot(EquipmentSlotType slot) {
-        return HEALTH_PER_SLOT[slot.getIndex()] * this.durability;
+    public int m_7366_(EquipmentSlot slot) {
+        return HEALTH_PER_SLOT[slot.m_20749_()] * this.durability;
     }
 
     @Override
-    public int getDefenseForSlot(EquipmentSlotType slot) {
-        return this.slotProtections[slot.getIndex()];
+    public int m_7365_(EquipmentSlot slot) {
+        return this.slotProtections[slot.m_20749_()];
     }
 
     @Override
-    public int getEnchantmentValue() {
+    public int m_6646_() {
         return this.enchantmentValue;
     }
 
     @Override
-    public SoundEvent getEquipSound() {
+    public SoundEvent m_7344_() {
         return this.sound;
     }
 
+    // m_43929_ = of
     @Override
-    public Ingredient getRepairIngredient() {
-        return Ingredient.of(this.repairIngredient.get());
+    public Ingredient m_6230_() {
+        return Ingredient.m_43929_(this.repairIngredient.get());
     }
 
     @OnlyIn(Dist.CLIENT)
     @Override
-    public String getName() {
+    public String m_6082_() {
         return Reference.MOD_ID + ":" + this.name;
     }
 
     @Override
-    public float getToughness() {
+    public float m_6651_() {
         return this.toughness;
     }
 
     @Override
-    public float getKnockbackResistance() {
+    public float m_6649_() {
         return this.knockbackResistance;
     }
 }

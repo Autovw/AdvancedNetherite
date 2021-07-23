@@ -4,23 +4,22 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.4.0-1.16.5'
+version = '1.4.0-1.17.1'
 group = 'com.autovw.advancednetherite'
 archivesBaseName = 'advancednetherite'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+java.toolchain.languageVersion = JavaLanguageVersion.of(16)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'official', version: '1.17.1'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -65,15 +64,16 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven {
+    /* maven {
         url = "https://www.cursemaven.com"
     }
+     */
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.1.65'
-    compile fg.deobf('curse.maven:catalogue-459701:3335979')
-    compile fg.deobf('curse.maven:configured-457570:3340535')
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.1'
+    //compile fg.deobf('curse.maven:catalogue-459701:3397798')
+    //compile fg.deobf('curse.maven:configured-457570:3397732')
 }
 
 jar {
@@ -83,8 +83,8 @@ jar {
             "Specification-Vendor": "Autovw",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
+            "Implementation-Version": project.jar.archiveVersion,
+            "Implementation-Vendor" :"Autovw",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

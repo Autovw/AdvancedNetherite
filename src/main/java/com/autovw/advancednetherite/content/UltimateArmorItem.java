@@ -1,19 +1,20 @@
 package com.autovw.advancednetherite.content;
 
 import com.autovw.advancednetherite.config.Config;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.monster.EndermanEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 /**
  * Author: Autovw
  */
 public class UltimateArmorItem extends ArmorItem {
-    public UltimateArmorItem(IArmorMaterial material, EquipmentSlotType slot, Properties builder) {
+    public UltimateArmorItem(ArmorMaterial material, EquipmentSlot slot, Item.Properties builder) {
         super(material, slot, builder);
     }
 
@@ -23,7 +24,7 @@ public class UltimateArmorItem extends ArmorItem {
     }
 
     @Override
-    public boolean isEnderMask(ItemStack stack, PlayerEntity player, EndermanEntity enderman) {
+    public boolean isEnderMask(ItemStack stack, Player player, EnderMan enderman) {
         return Config.ArmorConfig.diamondUltimatePassiveArmor.get();
     }
 }

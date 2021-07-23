@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[34,)"
+loaderVersion="[37,)"
 license="GPLv3"
 issueTrackerURL="https://github.com/Autovw/AdvancedNetherite/issues"
 
@@ -22,13 +22,13 @@ Visit the Wiki for more information on everything this mod adds.
 [[dependencies.advancednetherite]]
 modId="forge"
 mandatory=true
-versionRange="[34,)"
+versionRange="[37,)"
 ordering="NONE"
 side="BOTH"
 [[dependencies.advancednetherite]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.16.3,1.17]"
+versionRange="[1.17.1,1.18]"
 ordering="NONE"
 side="BOTH"
 
