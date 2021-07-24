@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/Autovw/AdvancedNetherite/issues"
 
 [[mods]]
 modId="advancednetherite"
-version="1.4.0"
+version="1.5.0"
 displayName="Advanced Netherite"
 updateJSONURL="https://raw.githubusercontent.com/Autovw/ModUpdates/master/advancednetherite/update.json"
 displayURL="https://github.com/Autovw/AdvancedNetherite/wiki"
@@ -15,8 +15,8 @@ authors="Autovw"
 description='''
 Advanced Netherite mod.
 
-A developer friendly, open-source mod that adds in more types of Netherite!
-Visit the Wiki for more information on everything this mod adds.
+A developer and vanilla friendly, open-source mod that adds in more tiers of Netherite! The goal of the mod is to extend the vanilla Minecraft experience by adding more goals to achieve.
+Visit the GitHub Wiki for more information on everything this mod adds.
 '''
 
 [[dependencies.advancednetherite]]
