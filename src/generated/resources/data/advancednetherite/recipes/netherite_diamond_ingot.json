@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:diamond"
+      "tag": "forge:gems/diamond"
     },
     "N": {
       "tag": "advancednetherite:netherites_emerald"
