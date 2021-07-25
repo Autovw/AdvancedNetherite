@@ -25,7 +25,7 @@ public class PiglinPassiveArmorItem extends ArmorItem {
 
     // Piglin Passive Tooltip
     public static final TranslationTextComponent piglinPassiveTooltip = (TranslationTextComponent) new TranslationTextComponent(
-            Reference.TOOLTIP + Reference.MOD_ID + ".piglinpassive_armor.perk_one").withStyle(TextFormatting.YELLOW);
+            Reference.TOOLTIP + Reference.MOD_ID + ".piglinpassive_armor.perk_one").withStyle(TextFormatting.GOLD);
 
     public PiglinPassiveArmorItem(IArmorMaterial material, EquipmentSlotType slot, Properties builder) {
         super(material, slot, builder);
