@@ -21,7 +21,7 @@ Feel free to join my new [Discord Server](https://discord.com/invite/KP3BBatuw5)
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 🔨 Crafting Recipes
-Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki/Crafting-Recipes) for all the crafting recipes!
+Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki/Crafting-Recipes) for all the crafting recipes or install [JEI](https://www.curseforge.com/minecraft/mc-mods/jei)!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ℹ More Information
