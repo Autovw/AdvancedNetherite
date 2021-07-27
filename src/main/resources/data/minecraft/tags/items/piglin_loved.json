@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "advancednetherite:netherite_gold_block",
+    "advancednetherite:netherite_gold_ingot",
+    "advancednetherite:netherite_gold_helmet",
+    "advancednetherite:netherite_gold_chestplate",
+    "advancednetherite:netherite_gold_leggings",
+    "advancednetherite:netherite_gold_boots",
+    "advancednetherite:netherite_gold_axe",
+    "advancednetherite:netherite_gold_hoe",
+    "advancednetherite:netherite_gold_pickaxe",
+    "advancednetherite:netherite_gold_shovel",
+    "advancednetherite:netherite_gold_sword"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "advancednetherite:netherite_diamond_ingot"
+    }
+  },
+  "result": {
+    "item": "advancednetherite:netherite_diamond_block",
+    "count": 1
+  }
+}

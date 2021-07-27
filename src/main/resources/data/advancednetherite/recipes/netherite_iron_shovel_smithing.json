@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "advancednetherite:netherite_vanilla_shovels"
+  },
+  "addition": {
+    "tag": "advancednetherite:netherites_iron"
+  },
+  "result": {
+    "item": "advancednetherite:netherite_iron_shovel"
+  }
+}
