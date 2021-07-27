@@ -2,15 +2,17 @@ package com.autovw.advancednetherite.content;
 
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.config.Config;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.monster.EndermanEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.*;
-import net.minecraft.world.World;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -23,21 +25,21 @@ import java.util.List;
 public class EnderMaskArmorItem extends ArmorItem {
 
     // Endermask Tooltip
-    public static final TranslationTextComponent endermaskTooltip = (TranslationTextComponent) new
-            TranslationTextComponent(Reference.TOOLTIP + Reference.MOD_ID + ".endermask_armor.perk_one").withStyle(TextFormatting.DARK_GREEN);
+    public static final TranslatableComponent endermaskTooltip = (TranslatableComponent) new
+            TranslatableComponent(Reference.TOOLTIP + Reference.MOD_ID + ".endermask_armor.perk_one").withStyle(ChatFormatting.DARK_GREEN);
 
-    public EnderMaskArmorItem(IArmorMaterial material, EquipmentSlotType slot, Properties builder) {
+    public EnderMaskArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties builder) {
         super(material, slot, builder);
     }
 
     @Override
-    public boolean isEnderMask(ItemStack stack, PlayerEntity player, EndermanEntity enderman) {
+    public boolean isEnderMask(ItemStack stack, Player player, EnderMan enderman) {
         return Config.ArmorConfig.emeraldEndermanPassiveArmor.get();
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         // If Netherite/Emerald armor is Endermask Armor (set to true in the config) the game displays the tooltip client-side.
         if (Config.ArmorConfig.emeraldEndermanPassiveArmor.get()) {
             tooltip.add(endermaskTooltip);

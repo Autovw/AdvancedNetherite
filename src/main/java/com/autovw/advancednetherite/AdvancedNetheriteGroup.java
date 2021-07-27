@@ -1,13 +1,13 @@
 package com.autovw.advancednetherite;
 
 import com.autovw.advancednetherite.core.ModItems;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
 /**
  * Author: Autovw
  */
-public class AdvancedNetheriteGroup extends ItemGroup {
+public class AdvancedNetheriteGroup extends CreativeModeTab {
 
     // Creative inventory tab
     public AdvancedNetheriteGroup(String name) {

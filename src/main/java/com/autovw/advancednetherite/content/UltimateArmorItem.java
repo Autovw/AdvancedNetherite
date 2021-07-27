@@ -1,16 +1,16 @@
 package com.autovw.advancednetherite.content;
 
 import com.autovw.advancednetherite.config.Config;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.monster.EndermanEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.world.World;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -21,7 +21,7 @@ import java.util.List;
  * Author: Autovw
  */
 public class UltimateArmorItem extends ArmorItem {
-    public UltimateArmorItem(IArmorMaterial material, EquipmentSlotType slot, Properties builder) {
+    public UltimateArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties builder) {
         super(material, slot, builder);
     }
 
@@ -31,13 +31,13 @@ public class UltimateArmorItem extends ArmorItem {
     }
 
     @Override
-    public boolean isEnderMask(ItemStack stack, PlayerEntity player, EndermanEntity enderman) {
+    public boolean isEnderMask(ItemStack stack, Player player, EnderMan enderman) {
         return Config.ArmorConfig.diamondUltimatePassiveArmor.get();
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         // If Netherite/Diamond armor is Ultimate Armor (set to true in the config) the game displays the tooltips client-side.
         if (Config.ArmorConfig.diamondUltimatePassiveArmor.get()) {
             tooltip.add(EnderMaskArmorItem.endermaskTooltip);

@@ -2,16 +2,16 @@ package com.autovw.advancednetherite.content;
 
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.config.Config;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.World;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -24,10 +24,10 @@ import java.util.List;
 public class PiglinPassiveArmorItem extends ArmorItem {
 
     // Piglin Passive Tooltip
-    public static final TranslationTextComponent piglinPassiveTooltip = (TranslationTextComponent) new TranslationTextComponent(
-            Reference.TOOLTIP + Reference.MOD_ID + ".piglinpassive_armor.perk_one").withStyle(TextFormatting.GOLD);
+    public static final TranslatableComponent piglinPassiveTooltip = (TranslatableComponent) new TranslatableComponent(
+            Reference.TOOLTIP + Reference.MOD_ID + ".piglinpassive_armor.perk_one").withStyle(ChatFormatting.GOLD);
 
-    public PiglinPassiveArmorItem(IArmorMaterial material, EquipmentSlotType slot, Properties builder) {
+    public PiglinPassiveArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties builder) {
         super(material, slot, builder);
     }
 
@@ -38,7 +38,7 @@ public class PiglinPassiveArmorItem extends ArmorItem {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         // If Netherite/Gold armor is Piglin Passive Armor (set to true in the config) the game displays the tooltip client-side.
         if (Config.ArmorConfig.goldPiglinPassiveArmor.get()) {
             tooltip.add(piglinPassiveTooltip);

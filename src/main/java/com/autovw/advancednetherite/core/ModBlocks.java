@@ -1,15 +1,15 @@
 package com.autovw.advancednetherite.core;
 
 import com.autovw.advancednetherite.Reference;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.common.ToolType;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -23,19 +23,19 @@ public class ModBlocks {
     // BLOCKS
     // Netherite Blocks
     public static final RegistryObject<Block> NETHERITE_IRON_BLOCK = BLOCKS.register("netherite_iron_block",
-            () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).harvestLevel(3)
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).harvestLevel(3)
                     .harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops()
                     .strength(50.0F, 1200.0F).sound(SoundType.NETHERITE_BLOCK)));
     public static final RegistryObject<Block> NETHERITE_GOLD_BLOCK = BLOCKS.register("netherite_gold_block",
-            () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).harvestLevel(3)
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).harvestLevel(3)
                     .harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops()
                     .strength(50.0F, 1200.0F).sound(SoundType.NETHERITE_BLOCK)));
     public static final RegistryObject<Block> NETHERITE_EMERALD_BLOCK = BLOCKS.register("netherite_emerald_block",
-            () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).harvestLevel(3)
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).harvestLevel(3)
                     .harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops()
                     .strength(50.0F, 1200.0F).sound(SoundType.NETHERITE_BLOCK)));
     public static final RegistryObject<Block> NETHERITE_DIAMOND_BLOCK = BLOCKS.register("netherite_diamond_block",
-            () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).harvestLevel(3)
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).harvestLevel(3)
                     .harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops()
                     .strength(50.0F, 1200.0F).sound(SoundType.NETHERITE_BLOCK)));
 

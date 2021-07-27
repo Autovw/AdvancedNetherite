@@ -1,14 +1,14 @@
 package com.autovw.advancednetherite.core;
 
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.Item;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.fmllegacy.RegistryObject;
 
 /**
  * Author: Autovw
  */
-public enum ModToolTiers implements IItemTier {
+public enum ModToolTiers implements Tier {
     // Tool materials are registered here.
     NETHERITE_IRON(4, 2281, 9.0F, 4.0F, 15, ModItems.NETHERITE_IRON_INGOT),
     NETHERITE_GOLD(4, 2313, 11.0F, 4.0F, 25, ModItems.NETHERITE_GOLD_INGOT),
