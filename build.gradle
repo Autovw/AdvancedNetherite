@@ -73,7 +73,6 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.17.1-37.0.15'
     runtimeOnly fg.deobf('curse.maven:catalogue-459701:3399552')
     runtimeOnly fg.deobf('curse.maven:configured-457570:3397732')
-    
 }
 
 jar {
