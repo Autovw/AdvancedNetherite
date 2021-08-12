@@ -70,7 +70,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.32'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.33'
     runtimeOnly fg.deobf('curse.maven:catalogue-459701:3399552')
     runtimeOnly fg.deobf('curse.maven:configured-457570:3416891')
 }
@@ -78,7 +78,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "advancednetherite",
+            "Specification-Title": "Advanced Netherite",
             "Specification-Vendor": "Autovw",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
