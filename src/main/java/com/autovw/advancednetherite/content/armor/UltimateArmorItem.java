@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.content.armor;
 
 import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.content.Tooltips;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermanEntity;
@@ -40,11 +41,11 @@ public class UltimateArmorItem extends ArmorItem {
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
         // If Netherite/Diamond armor is Ultimate Armor (set to true in the config) the game displays the tooltips client-side.
         if (Config.ArmorConfig.diamondUltimatePassiveArmor.get()) {
-            tooltip.add(EnderMaskArmorItem.endermaskTooltip);
-            tooltip.add(PiglinPassiveArmorItem.piglinPassiveTooltip);
+            tooltip.add(Tooltips.endermaskTooltip);
+            tooltip.add(Tooltips.piglinPassiveTooltip);
         } else {
-            tooltip.remove(EnderMaskArmorItem.endermaskTooltip);
-            tooltip.remove(PiglinPassiveArmorItem.piglinPassiveTooltip);
+            tooltip.remove(Tooltips.endermaskTooltip);
+            tooltip.remove(Tooltips.piglinPassiveTooltip);
         }
     }
 }
