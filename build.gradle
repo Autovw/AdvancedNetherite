@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'maven-publish'
 
-version = '1.5.0-1.16.5'
+version = '1.6.0-1.16.5'
 group = 'com.autovw.advancednetherite'
 archivesBaseName = 'advancednetherite'
 
@@ -78,7 +78,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "advancednetherite",
+            "Specification-Title": "Advanced Netherite",
             "Specification-Vendor": "Autovw",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
