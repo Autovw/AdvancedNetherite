@@ -39,13 +39,20 @@ public class UltimateArmorItem extends ArmorItem {
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
-        // If Netherite/Diamond armor is Ultimate Armor (set to true in the config) the game displays the tooltips client-side.
-        if (Config.ArmorConfig.diamondUltimatePassiveArmor.get()) {
-            tooltip.add(Tooltips.endermaskTooltip);
-            tooltip.add(Tooltips.piglinPassiveTooltip);
-        } else {
+        // If showTooltips is set to false in the config it removes the tooltips client-side.
+        if (!Config.Client.showTooltips.get()) {
             tooltip.remove(Tooltips.endermaskTooltip);
             tooltip.remove(Tooltips.piglinPassiveTooltip);
+        // If Netherite/Diamond armor is not Ultimate Armor (set to false in the config) the game removes the tooltips client-side.
+        } else {
+            if (!Config.ArmorConfig.diamondUltimatePassiveArmor.get()) {
+                tooltip.remove(Tooltips.endermaskTooltip);
+                tooltip.remove(Tooltips.piglinPassiveTooltip);
+            // Else: display the tooltips.
+            } else {
+                tooltip.add(Tooltips.endermaskTooltip);
+                tooltip.add(Tooltips.piglinPassiveTooltip);
+            }
         }
     }
 }

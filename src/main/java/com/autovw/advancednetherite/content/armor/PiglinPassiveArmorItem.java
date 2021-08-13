@@ -32,11 +32,17 @@ public class PiglinPassiveArmorItem extends ArmorItem {
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
-        // If Netherite/Gold armor is Piglin Passive Armor (set to true in the config) the game displays the tooltip client-side.
-        if (Config.ArmorConfig.goldPiglinPassiveArmor.get()) {
-            tooltip.add(Tooltips.piglinPassiveTooltip);
-        } else {
+        // If showTooltips is set to false in the config it removes the tooltips client-side.
+        if (!Config.Client.showTooltips.get()) {
             tooltip.remove(Tooltips.piglinPassiveTooltip);
+        } else {
+            // If Netherite/Gold armor is not Piglin Passive Armor (set to false in the config) the game removes the tooltip client-side.
+            if (!Config.ArmorConfig.goldPiglinPassiveArmor.get()) {
+                tooltip.remove(Tooltips.piglinPassiveTooltip);
+            // Else: display the tooltips.
+            } else {
+                tooltip.add(Tooltips.piglinPassiveTooltip);
+            }
         }
     }
 }

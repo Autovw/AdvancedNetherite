@@ -33,11 +33,17 @@ public class EnderMaskArmorItem extends ArmorItem {
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
-        // If Netherite/Emerald armor is Endermask Armor (set to true in the config) the game displays the tooltip client-side.
-        if (Config.ArmorConfig.emeraldEndermanPassiveArmor.get()) {
-            tooltip.add(Tooltips.endermaskTooltip);
-        } else {
+        // If showTooltips is set to false in the config it removes the tooltips client-side.
+        if (!Config.Client.showTooltips.get()) {
             tooltip.remove(Tooltips.endermaskTooltip);
+        } else {
+            // If Netherite/Emerald armor is not Endermask Armor (set to false in the config) the game removes the tooltip client-side.
+            if (!Config.ArmorConfig.emeraldEndermanPassiveArmor.get()) {
+                tooltip.remove(Tooltips.endermaskTooltip);
+                // Else: display the tooltips.
+            } else {
+                tooltip.add(Tooltips.endermaskTooltip);
+            }
         }
     }
 }

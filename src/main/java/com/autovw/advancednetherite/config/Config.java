@@ -7,15 +7,41 @@ import org.apache.commons.lang3.tuple.Pair;
  * Author: Autovw
  */
 public class Config {
+    // Code needed to register the client and common configs
+    public static final ForgeConfigSpec clientSpec;
+    public static final Config.Client CLIENT;
+
     public static final ForgeConfigSpec commonConfig;
     public static final Config.Common COMMON;
 
     static {
+        final Pair<Client, ForgeConfigSpec> clientConfigPair = new ForgeConfigSpec.Builder().configure(Config.Client::new);
+        clientSpec = clientConfigPair.getRight();
+        CLIENT = clientConfigPair.getLeft();
+
         final Pair<Common, ForgeConfigSpec> commonConfigPair = new ForgeConfigSpec.Builder().configure(Common::new);
         commonConfig = commonConfigPair.getRight();
         COMMON = commonConfigPair.getLeft();
     }
 
+    public static void saveClientConfig() {
+        clientSpec.save();
+    }
+
+    // CLIENT config
+    public static class Client {
+        public static ForgeConfigSpec.BooleanValue showTooltips;
+
+        public Client(ForgeConfigSpec.Builder builder) {
+            builder.push("client");
+            {
+                showTooltips = builder.comment("If true, displays mod tooltips with perks. True by default.").define("showTooltips", true);
+            }
+            builder.pop();
+        }
+    }
+
+    // COMMON config
     public static class Common {
         public final ArmorConfig armorConfig;
 
