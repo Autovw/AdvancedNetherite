@@ -21,6 +21,7 @@ public class AdvancedNetherite {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public AdvancedNetherite() {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.clientConfig);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.commonConfig);
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
