@@ -1,9 +1,9 @@
 package com.autovw.advancednetherite.core;
 
 import com.autovw.advancednetherite.Reference;
-import com.autovw.advancednetherite.content.EnderMaskArmorItem;
-import com.autovw.advancednetherite.content.PiglinPassiveArmorItem;
-import com.autovw.advancednetherite.content.UltimateArmorItem;
+import com.autovw.advancednetherite.content.armor.EnderMaskArmorItem;
+import com.autovw.advancednetherite.content.armor.PiglinPassiveArmorItem;
+import com.autovw.advancednetherite.content.armor.UltimateArmorItem;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
