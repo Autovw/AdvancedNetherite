@@ -26,6 +26,7 @@ Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ℹ More Information
 * Please report issues on the [official Advanced Netherite GitHub repository](https://github.com/Autovw/AdvancedNetherite/issues)!
+* May I feature your mod in my modpack? Yes, absolutely!
 * Advanced Netherite is Forge only, and I'm not planning on porting it to Fabric.
 * Visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki) for more information on everything this mod adds.
 
