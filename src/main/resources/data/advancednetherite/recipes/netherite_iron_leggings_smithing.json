@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "tag": "advancednetherite:netherite_vanilla_leggings"
+    "tag": "advancednetherite:leggings/netherite"
   },
   "addition": {
-    "tag": "advancednetherite:netherites_iron"
+    "tag": "advancednetherite:upgrade_to_netherite_iron"
   },
   "result": {
     "item": "advancednetherite:netherite_iron_leggings"
