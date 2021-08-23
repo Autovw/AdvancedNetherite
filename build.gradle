@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'maven-publish'
 
-version = '1.6.0-1.17.1'
+version = '1.7.0-1.17.1'
 group = 'com.autovw.advancednetherite'
 archivesBaseName = 'advancednetherite'
 
