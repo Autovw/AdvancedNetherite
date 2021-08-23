@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "tag": "advancednetherite:netherite_emerald_swords"
+    "tag": "advancednetherite:swords/netherite_emerald"
   },
   "addition": {
     "tag": "advancednetherite:upgrade_to_netherite_diamond"

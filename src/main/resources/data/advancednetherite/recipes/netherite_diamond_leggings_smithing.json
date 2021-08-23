@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "tag": "advancednetherite:netherite_emerald_leggings"
+    "tag": "advancednetherite:leggings/netherite_emerald"
   },
   "addition": {
     "tag": "advancednetherite:upgrade_to_netherite_diamond"

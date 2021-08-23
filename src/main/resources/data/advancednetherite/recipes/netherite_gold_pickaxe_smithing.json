@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "tag": "advancednetherite:netherite_iron_pickaxes"
+    "tag": "advancednetherite:pickaxes/netherite_iron"
   },
   "addition": {
     "tag": "advancednetherite:upgrade_to_netherite_gold"

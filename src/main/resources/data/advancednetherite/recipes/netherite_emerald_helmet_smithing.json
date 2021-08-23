@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "tag": "advancednetherite:netherite_gold_helmets"
+    "tag": "advancednetherite:helmets/netherite_gold"
   },
   "addition": {
     "tag": "advancednetherite:upgrade_to_netherite_emerald"

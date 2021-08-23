@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "tag": "advancednetherite:netherite_gold_chestplates"
+    "tag": "advancednetherite:chestplates/netherite_gold"
   },
   "addition": {
     "tag": "advancednetherite:upgrade_to_netherite_emerald"
