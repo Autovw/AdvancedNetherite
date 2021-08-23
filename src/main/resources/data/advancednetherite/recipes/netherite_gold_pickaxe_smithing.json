@@ -4,7 +4,7 @@
     "tag": "advancednetherite:netherite_iron_pickaxes"
   },
   "addition": {
-    "tag": "advancednetherite:netherites_gold"
+    "tag": "advancednetherite:upgrade_to_netherite_gold"
   },
   "result": {
     "item": "advancednetherite:netherite_gold_pickaxe"
