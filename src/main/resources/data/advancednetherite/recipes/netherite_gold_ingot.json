@@ -1,20 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " # ",
-    "#N#",
-    " # "
-  ],
-  "key": {
-    "#": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "advancednetherite:ingots/netherites_iron"
+    },
+    {
       "tag": "forge:ingots/gold"
     },
-    "N": {
-      "tag": "advancednetherite:ingots/netherites_iron"
+    {
+      "tag": "forge:ingots/gold"
+    },
+    {
+      "tag": "forge:ingots/gold"
+    },
+    {
+      "tag": "forge:ingots/gold"
     }
-  },
+  ],
   "result": {
-    "item": "advancednetherite:netherite_gold_ingot",
-    "count": 1
+    "item": "advancednetherite:netherite_gold_ingot"
   }
 }

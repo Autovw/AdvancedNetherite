@@ -1,20 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " # ",
-    "#N#",
-    " # "
-  ],
-  "key": {
-    "#": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "advancednetherite:ingots/netherites_gold"
+    },
+    {
       "tag": "forge:gems/emerald"
     },
-    "N": {
-      "tag": "advancednetherite:ingots/netherites_gold"
+    {
+      "tag": "forge:gems/emerald"
+    },
+    {
+      "tag": "forge:gems/emerald"
+    },
+    {
+      "tag": "forge:gems/emerald"
     }
-  },
+  ],
   "result": {
-    "item": "advancednetherite:netherite_emerald_ingot",
-    "count": 1
+    "item": "advancednetherite:netherite_emerald_ingot"
   }
 }
