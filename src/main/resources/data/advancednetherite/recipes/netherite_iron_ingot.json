@@ -1,20 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " # ",
-    "#N#",
-    " # "
-  ],
-  "key": {
-    "#": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "advancednetherite:ingots/netherites"
+    },
+    {
       "tag": "forge:ingots/iron"
     },
-    "N": {
-      "tag": "advancednetherite:ingots/netherites"
+    {
+      "tag": "forge:ingots/iron"
+    },
+    {
+      "tag": "forge:ingots/iron"
+    },
+    {
+      "tag": "forge:ingots/iron"
     }
-  },
+  ],
   "result": {
-    "item": "advancednetherite:netherite_iron_ingot",
-    "count": 1
+    "item": "advancednetherite:netherite_iron_ingot"
   }
 }
