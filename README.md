@@ -1,4 +1,4 @@
-![Banner](https://i.postimg.cc/d0MjycfS/background-advancednetherite.png)
+![Banner](https://i.postimg.cc/9QSbwK7q/Advanced-Netherite-Banner.png)
 # Advanced Netherite
 
 A developer and vanilla friendly, open-source mod that adds in more tiers of Netherite!
@@ -6,35 +6,35 @@ The goal of the mod is to extend the vanilla Minecraft experience by adding more
 
 For more information visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki)!
 
-Feel free to join my new [Discord Server](https://discord.com/invite/KP3BBatuw5) for update notifications, mod support and more!
-
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ✅ Features
+
+[![Features](https://i.postimg.cc/zfgjC7C2/Advanced-Netherite-Features.png)](https://github.com/Autovw/AdvancedNetherite/wiki)
+
 * 4 new tiers of Netherite!
 * For all new tiers of Netherite there are sets of tools, sets of armor and blocks.
 * Every Netherite tier has its own unique properties.
-* Support for Add-ons and Datapacks.
+* Support for Add-ons and datapacks.
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 💎 Tiers of Netherite
-![Banner](https://i.postimg.cc/gjBv8P6w/types-of-netherite-banner.png)
+
+![Tiers](https://i.postimg.cc/PrX2gmHN/Advanced-Netherite-Types-Of-Netherite.png)
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
-### 🔨 Crafting Recipes
+### 🔨 Crafting recipes
 Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki/Crafting-Recipes) for all the crafting recipes or install [JEI](https://www.curseforge.com/minecraft/mc-mods/jei)!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
-### ℹ More Information
-* Please report issues on the [official Advanced Netherite GitHub repository](https://github.com/Autovw/AdvancedNetherite/issues)!
+### ℹ More information
+* Please report issues to the [issue tracker on GitHub](https://github.com/Autovw/AdvancedNetherite/issues)!
 * May I feature your mod in my modpack? Yes, absolutely!
 * Advanced Netherite is Forge only, and I'm not planning on porting it to Fabric.
 * Visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki) for more information on everything this mod adds.
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
-### 🧩 Supported Add-ons and Datapacks
-_Click on the images for the download source!_
-[![Ancient Debris Barter](https://i.postimg.cc/9X4B3tRN/1920x319-ancient-debris-barter-datapack-banner.png)](https://github.com/Autovw/AncientDebrisBarterDatapack/wiki)
-[![Easier Advanced Netherite Recipes](https://i.postimg.cc/NfsMmNzj/1920x319-easier-advanced-netherite-recipes-datapack-banner.png)](https://github.com/Autovw/EasierAdvancedNetheriteRecipesDatapack/wiki)
+### ⌨️ Feel free to [join](https://discord.gg/KP3BBatuw5) my Discord server!
+_Join my Discord server if you want to get notified when there's a new update, mod support and more!_
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 #### ⚠️ Disclaimer
