@@ -9,7 +9,7 @@ For more information visit the [Advanced Netherite Wiki](https://github.com/Auto
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ✅ Features
 
-[![Features](https://i.postimg.cc/zfgjC7C2/Advanced-Netherite-Features.png)](https://github.com/Autovw/AdvancedNetherite/wiki)
+[![Features](https://i.postimg.cc/nVGNLfCk/Advanced-Netherite-Features2.png)](https://github.com/Autovw/AdvancedNetherite/wiki)
 
 * 4 new tiers of Netherite!
 * For all new tiers of Netherite there are sets of tools, sets of armor and blocks.
