@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "tag": "advancednetherite:chestplates/netherite_iron"
+    "tag": "advancednetherite:chestplates/upgrade_to_netherite_gold"
   },
   "addition": {
-    "tag": "advancednetherite:upgrade_to_netherite_gold"
+    "tag": "advancednetherite:ingots/upgrade_to_netherite_gold"
   },
   "result": {
     "item": "advancednetherite:netherite_gold_chestplate"
