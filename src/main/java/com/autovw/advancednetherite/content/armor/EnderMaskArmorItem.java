@@ -1,11 +1,8 @@
 package com.autovw.advancednetherite.content.armor;
 
-import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.content.Tooltips;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
