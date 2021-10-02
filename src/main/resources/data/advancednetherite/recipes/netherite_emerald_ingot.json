@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "advancednetherite:ingots/netherites_gold"
+      "tag": "advancednetherite:ingots/upgrade_to_netherite_emerald"
     },
     {
       "tag": "forge:gems/emerald"
