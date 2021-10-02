@@ -28,30 +28,33 @@ public class UltimateArmorItem extends ArmorItem {
 
     @Override
     public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer) {
-        return Config.ArmorConfig.diamondUltimatePassiveArmor.get();
+        return Config.ArmorConfig.diamondPiglinPassiveArmor.get();
     }
 
     @Override
     public boolean isEnderMask(ItemStack stack, Player player, EnderMan enderman) {
-        return Config.ArmorConfig.diamondUltimatePassiveArmor.get();
+        return Config.ArmorConfig.diamondEndermanPassiveArmor.get();
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
+        // The tooltips are added here, they are removed later if a config option is set to false.
+        tooltip.add(Tooltips.endermaskTooltip);
+        tooltip.add(Tooltips.piglinPassiveTooltip);
+
         // If showTooltips is set to false in the config it removes the tooltips client-side.
         if (!Config.Client.showTooltips.get()) {
             tooltip.remove(Tooltips.endermaskTooltip);
             tooltip.remove(Tooltips.piglinPassiveTooltip);
-            // If Netherite/Diamond armor is not Ultimate Armor (set to false in the config) the game removes the tooltips client-side.
         } else {
-            if (!Config.ArmorConfig.diamondUltimatePassiveArmor.get()) {
+            // Remove the enderman passive tooltip if the option is set to false in the config.
+            if (!Config.ArmorConfig.diamondEndermanPassiveArmor.get()) {
                 tooltip.remove(Tooltips.endermaskTooltip);
+            }
+            // Remove the piglin passive tooltip if the option is set to false in the config.
+            if (!Config.ArmorConfig.diamondPiglinPassiveArmor.get()) {
                 tooltip.remove(Tooltips.piglinPassiveTooltip);
-                // Else: display the tooltips.
-            } else {
-                tooltip.add(Tooltips.endermaskTooltip);
-                tooltip.add(Tooltips.piglinPassiveTooltip);
             }
         }
     }
