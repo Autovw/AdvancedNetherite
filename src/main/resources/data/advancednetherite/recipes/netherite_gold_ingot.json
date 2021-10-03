@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "advancednetherite:ingotsupgrade_to_netherite_gold"
+      "tag": "advancednetherite:ingots/upgrade_to_netherite_gold"
     },
     {
       "tag": "forge:ingots/gold"
