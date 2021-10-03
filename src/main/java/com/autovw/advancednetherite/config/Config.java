@@ -63,10 +63,10 @@ public class Config {
         public ArmorConfig(ForgeConfigSpec.Builder builder) {
             builder.comment("Armor Config").push("armor_config");
             {
-                goldPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite/Gold Armor. True by default.").define("goldPiglinPassiveArmor", true);
-                emeraldEndermanPassiveArmor = builder.comment("If true, Endermans behave neutral towards players wearing Netherite/Emerald Armor. True by default.").define("emeraldEndermanPassiveArmor", true);
-                diamondPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite/Diamond Armor. True by default.").define("diamondPiglinPassiveArmor", true);
-                diamondEndermanPassiveArmor = builder.comment("If true, Endermans behave neutral towards players wearing Netherite/Diamond Armor. True by default.").define("diamondEndermanPassiveArmor", true);
+                goldPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Gold Armor. True by default.").define("goldPiglinPassiveArmor", true);
+                emeraldEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Emerald Armor. True by default.").define("emeraldEndermanPassiveArmor", true);
+                diamondPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Diamond Armor. True by default.").define("diamondPiglinPassiveArmor", true);
+                diamondEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Diamond Armor. True by default.").define("diamondEndermanPassiveArmor", true);
             }
             builder.pop();
         }
