@@ -4,7 +4,7 @@
     "tag": "advancednetherite:swords/upgrade_to_netherite_emerald"
   },
   "addition": {
-    "tag": "advancednetherite:ingots/upgrade_to_netherite_emerald"
+    "tag": "advancednetherite:upgrade_to_netherite_emerald"
   },
   "result": {
     "item": "advancednetherite:netherite_emerald_sword"
