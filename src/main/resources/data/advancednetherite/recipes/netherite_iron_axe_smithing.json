@@ -4,7 +4,7 @@
     "tag": "advancednetherite:axes/upgrade_to_netherite_iron"
   },
   "addition": {
-    "tag": "advancednetherite:ingots/upgrade_to_netherite_iron"
+    "tag": "advancednetherite:upgrade_to_netherite_iron"
   },
   "result": {
     "item": "advancednetherite:netherite_iron_axe"

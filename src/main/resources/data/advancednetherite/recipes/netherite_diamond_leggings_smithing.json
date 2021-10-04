@@ -4,7 +4,7 @@
     "tag": "advancednetherite:leggings/upgrade_to_netherite_diamond"
   },
   "addition": {
-    "tag": "advancednetherite:ingots/upgrade_to_netherite_diamond"
+    "tag": "advancednetherite:upgrade_to_netherite_diamond"
   },
   "result": {
     "item": "advancednetherite:netherite_diamond_leggings"
