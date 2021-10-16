@@ -7,6 +7,8 @@ import net.minecraftforge.fmllegacy.RegistryObject;
 
 /**
  * Author: Autovw
+ *
+ * Create your own enum that implements Tier if you are adding new tools!
  */
 public enum ModToolTiers implements Tier {
     // Tool materials are registered here.
@@ -16,15 +18,23 @@ public enum ModToolTiers implements Tier {
     NETHERITE_DIAMOND(4, 3092, 14.0F, 5.0F, 15, ModItems.NETHERITE_DIAMOND_INGOT);
 
     private final float speed, attackDamage;
-    private final int level, durability, enchantmentValue;
+    private final int level, durability, enchantability;
     private final RegistryObject<Item> repairIngredient;
 
-    private ModToolTiers(int level, int durability, float speed, float attackDamage, int enchantmentValue, RegistryObject<Item> repairIngredient) {
+    /**
+     * @param level Level of the tool
+     * @param durability The in-game durability of the tool
+     * @param speed The breaking speed of the tool
+     * @param attackDamage The default attack damage of the tool, this number can be modified later in the item registry class
+     * @param enchantability The higher the number, the more likely better enchantments can be applied when using the enchantment table
+     * @param repairIngredient Item used to repair the tool
+     */
+    private ModToolTiers(int level, int durability, float speed, float attackDamage, int enchantability, RegistryObject<Item> repairIngredient) {
         this.level = level;
         this.durability = durability;
         this.speed = speed;
         this.attackDamage = attackDamage;
-        this.enchantmentValue = enchantmentValue;
+        this.enchantability = enchantability;
         this.repairIngredient = repairIngredient;
     }
 
@@ -50,7 +60,7 @@ public enum ModToolTiers implements Tier {
 
     @Override
     public int getEnchantmentValue() {
-        return this.enchantmentValue;
+        return this.enchantability;
     }
 
     @Override

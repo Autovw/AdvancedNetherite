@@ -7,12 +7,12 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fmllegacy.RegistryObject;
 
 /**
  * Author: Autovw
+ *
+ * Create your own enum that implements ArmorMaterial if you are adding new armor!
  */
 public enum ModArmorTiers implements ArmorMaterial {
     // Armor material is registered here.
@@ -27,18 +27,27 @@ public enum ModArmorTiers implements ArmorMaterial {
 
     private static final int[] HEALTH_PER_SLOT = new int[] { 13, 15, 16, 11 };
     private final String name;
-    private final int durability, enchantmentValue;
+    private final int durability, enchantability;
     private final int[] slotProtections;
     private final SoundEvent sound;
     private final float toughness, knockbackResistance;
     private final RegistryObject<Item> repairIngredient;
 
-    private ModArmorTiers(String name, int durability, int[] slotProtections, int enchantmentValue, SoundEvent sound, float toughness,
-                          float knockbackResistance, RegistryObject<Item> repairIngredient) {
+    /**
+     * @param name The name of the tier. Bear in mind that this name will be used for the armor texture too!
+     * @param durability The durability is used to multiply slotProtections. For example: if the durability is set to 40, and the slotProtection of a chestplate is set to 16, then the in-game durability will be calculated like this: 16 * 40 = 640
+     * @param slotProtections Protection per slot; this will be multiplied by the durability
+     * @param enchantability The higher the number, the more likely better enchantments can be applied when using the enchantment table
+     * @param sound Sound used when equipping armor piece
+     * @param toughness How much toughness the armor gets, in vanilla only used by netherite armor (float)
+     * @param knockbackResistance How much knockback resistance the armor has (float)
+     * @param repairIngredient Item used to repair armor
+     */
+    private ModArmorTiers(String name, int durability, int[] slotProtections, int enchantability, SoundEvent sound, float toughness, float knockbackResistance, RegistryObject<Item> repairIngredient) {
         this.name = name;
         this.durability = durability;
         this.slotProtections = slotProtections;
-        this.enchantmentValue = enchantmentValue;
+        this.enchantability = enchantability;
         this.sound = sound;
         this.toughness = toughness;
         this.knockbackResistance = knockbackResistance;
@@ -57,7 +66,7 @@ public enum ModArmorTiers implements ArmorMaterial {
 
     @Override
     public int getEnchantmentValue() {
-        return this.enchantmentValue;
+        return this.enchantability;
     }
 
     @Override
@@ -70,7 +79,6 @@ public enum ModArmorTiers implements ArmorMaterial {
         return Ingredient.of(this.repairIngredient.get());
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public String getName() {
         return Reference.MOD_ID + ":" + this.name;
