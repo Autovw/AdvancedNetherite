@@ -55,7 +55,9 @@
   "item.advancednetherite.netherite_diamond_sword": "Netherite-Diamond Sword",
 
   "itemGroup.advancednetherite_tab": "Advanced Netherite",
-  
-  "tooltip.advancednetherite.endermask_armor.perk_one": "+ Pacifies Endermen",
-  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Pacifies Piglins"
+
+  "tooltip.advancednetherite.endermask_armor.plus": "\u00A7l+",
+  "tooltip.advancednetherite.piglinpassive_armor.plus": "\u00A7l+",
+  "tooltip.advancednetherite.endermask_armor.perk_one": "Pacifies Endermen",
+  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "Pacifies Piglins"
 }
