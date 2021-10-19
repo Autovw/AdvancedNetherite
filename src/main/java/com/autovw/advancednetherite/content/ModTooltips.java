@@ -5,8 +5,6 @@ import com.autovw.advancednetherite.api.AdvancedNetheriteAPI;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.TranslatableComponent;
 
-import javax.annotation.Nullable;
-
 /**
  * Author: Autovw
  */
