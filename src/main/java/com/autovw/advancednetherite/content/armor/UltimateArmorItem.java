@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.content.armor;
 
 import com.autovw.advancednetherite.config.Config;
-import com.autovw.advancednetherite.content.Tooltips;
+import com.autovw.advancednetherite.content.ModTooltips;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermanEntity;
@@ -42,21 +42,21 @@ public class UltimateArmorItem extends ArmorItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
         // The tooltips are added here, they are removed later if a config option is set to false.
-        tooltip.add(Tooltips.endermaskTooltip);
-        tooltip.add(Tooltips.piglinPassiveTooltip);
+        tooltip.add(ModTooltips.endermaskTooltip);
+        tooltip.add(ModTooltips.piglinPassiveTooltip);
 
         // If showTooltips is set to false in the config it removes the tooltips client-side.
         if (!Config.Client.showTooltips.get()) {
-            tooltip.remove(Tooltips.endermaskTooltip);
-            tooltip.remove(Tooltips.piglinPassiveTooltip);
+            tooltip.remove(ModTooltips.endermaskTooltip);
+            tooltip.remove(ModTooltips.piglinPassiveTooltip);
         } else {
             // Remove the enderman passive tooltip if the option is set to false in the config.
             if (!Config.ArmorConfig.diamondEndermanPassiveArmor.get()) {
-                tooltip.remove(Tooltips.endermaskTooltip);
+                tooltip.remove(ModTooltips.endermaskTooltip);
             }
             // Remove the piglin passive tooltip if the option is set to false in the config.
             if (!Config.ArmorConfig.diamondPiglinPassiveArmor.get()) {
-                tooltip.remove(Tooltips.piglinPassiveTooltip);
+                tooltip.remove(ModTooltips.piglinPassiveTooltip);
             }
         }
     }
