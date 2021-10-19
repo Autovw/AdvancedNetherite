@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.content.armor;
 
 import com.autovw.advancednetherite.config.Config;
-import com.autovw.advancednetherite.content.Tooltips;
+import com.autovw.advancednetherite.content.ModTooltips;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.monster.EnderMan;
@@ -34,15 +34,15 @@ public class EnderMaskArmorItem extends ArmorItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         // The tooltips are added here, they are removed later if a config option is set to false.
-        tooltip.add(Tooltips.endermaskTooltip);
+        tooltip.add(ModTooltips.endermaskTooltip);
 
         // If showTooltips is set to false in the config it removes the tooltips client-side.
         if (!Config.Client.showTooltips.get()) {
-            tooltip.remove(Tooltips.endermaskTooltip);
+            tooltip.remove(ModTooltips.endermaskTooltip);
         } else {
             // If Netherite/Emerald armor is not Endermask Armor (set to false in the config) the game removes the tooltip client-side.
             if (!Config.ArmorConfig.emeraldEndermanPassiveArmor.get()) {
-                tooltip.remove(Tooltips.endermaskTooltip);
+                tooltip.remove(ModTooltips.endermaskTooltip);
             }
         }
     }
