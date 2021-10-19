@@ -81,7 +81,7 @@ public class AdvancedNetheriteAPI {
      * @return The tooltip
      */
     public static TranslatableComponent appendingTooltip(String modId, String tooltipName, ChatFormatting tooltipColor, Component appendingTooltip) {
-        return (TranslatableComponent) new TranslatableComponent("tooltip." + modId + "." + tooltipName).withStyle(tooltipColor).append(appendingTooltip);
+        return (TranslatableComponent) new TranslatableComponent("tooltip." + modId + "." + tooltipName).withStyle(tooltipColor).append(" ").append(appendingTooltip);
     }
 
     /**
@@ -101,7 +101,7 @@ public class AdvancedNetheriteAPI {
      * @return The tooltip
      */
     public static TranslatableComponent appendingTooltip(String modId, String tooltipName, ChatFormatting tooltipColor, ChatFormatting tooltipFormat, Component appendingTooltip) {
-        return (TranslatableComponent) new TranslatableComponent("tooltip." + modId + "." + tooltipName).withStyle(tooltipColor).withStyle(tooltipFormat).append(appendingTooltip);
+        return (TranslatableComponent) new TranslatableComponent("tooltip." + modId + "." + tooltipName).withStyle(tooltipColor).withStyle(tooltipFormat).append(" ").append(appendingTooltip);
     }
 
     /**
@@ -119,6 +119,6 @@ public class AdvancedNetheriteAPI {
      * @return The tooltip
      */
     public static TranslatableComponent basicAppendingTooltip(String modId, String tooltipName, Component appendingTooltip) {
-        return (TranslatableComponent) new TranslatableComponent("tooltip." + modId + "." + tooltipName).append(appendingTooltip);
+        return (TranslatableComponent) new TranslatableComponent("tooltip." + modId + "." + tooltipName).append(" ").append(appendingTooltip);
     }
 }
