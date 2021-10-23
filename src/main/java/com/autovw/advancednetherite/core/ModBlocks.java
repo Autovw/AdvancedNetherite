@@ -30,7 +30,7 @@ public class ModBlocks {
      * @param properties The properties of the blockitem
      * @return The block + properties
      */
-    public static RegistryObject<Block> register(String name, Item.Properties properties) {
+    private static RegistryObject<Block> register(String name, Item.Properties properties) {
         RegistryObject<Block> block = BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
         return block;
