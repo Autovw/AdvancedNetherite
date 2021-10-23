@@ -1,7 +1,6 @@
 package com.autovw.advancednetherite.api;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 
 /**
