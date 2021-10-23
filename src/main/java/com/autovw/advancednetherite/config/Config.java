@@ -35,7 +35,7 @@ public class Config {
         public Client(ForgeConfigSpec.Builder builder) {
             builder.push("client");
             {
-                showTooltips = builder.comment("If true, displays mod tooltips with perks. True by default.").define("showTooltips", true);
+                showTooltips = builder.comment("If true, displays tooltips, added by Advanced Netherite, with perks client-side. True by default.").define("showTooltips", true);
             }
             builder.pop();
         }
@@ -61,7 +61,7 @@ public class Config {
         public static ForgeConfigSpec.BooleanValue diamondEndermanPassiveArmor;
 
         public ArmorConfig(ForgeConfigSpec.Builder builder) {
-            builder.comment("Armor Config").push("armor_config");
+            builder.comment("Configure properties related to armor perks, added by Advanced Netherite, here").push("armor_config");
             {
                 goldPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Gold Armor. True by default.").define("goldPiglinPassiveArmor", true);
                 emeraldEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Emerald Armor. True by default.").define("emeraldEndermanPassiveArmor", true);
