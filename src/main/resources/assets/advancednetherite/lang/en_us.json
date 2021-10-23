@@ -54,7 +54,7 @@
   "item.advancednetherite.netherite_emerald_sword": "Netherite-Emerald Sword",
   "item.advancednetherite.netherite_diamond_sword": "Netherite-Diamond Sword",
 
-  "itemGroup.advancednetherite_tab": "Advanced Netherite",
+  "itemGroup.advancednetherite.tab": "Advanced Netherite",
   
   "tooltip.advancednetherite.endermask_armor.perk_one": "+ Pacifies Endermen",
   "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Pacifies Piglins"
