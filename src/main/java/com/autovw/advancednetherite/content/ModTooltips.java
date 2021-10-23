@@ -12,10 +12,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class ModTooltips {
 
     // Endermask Tooltip
-    public static final TranslationTextComponent endermaskText = AdvancedNetheriteAPI.tooltip(Reference.MOD_ID, "endermask_armor.perk_one", TextFormatting.DARK_GREEN);
-    public static final TranslationTextComponent endermaskTooltip = AdvancedNetheriteAPI.appendingTooltip(Reference.MOD_ID, "endermask_armor.plus", TextFormatting.DARK_GREEN, endermaskText);
+    public static final TranslationTextComponent endermaskTooltip = AdvancedNetheriteAPI.tooltip(Reference.MOD_ID, "endermask_armor.perk_one", TextFormatting.DARK_GREEN);
 
     // Piglin Passive Tooltip
-    public static final TranslationTextComponent piglinPassiveText = AdvancedNetheriteAPI.tooltip(Reference.MOD_ID, "piglinpassive_armor.perk_one", TextFormatting.GOLD);
-    public static final TranslationTextComponent piglinPassiveTooltip = AdvancedNetheriteAPI.appendingTooltip(Reference.MOD_ID, "piglinpassive_armor.plus", TextFormatting.GOLD, piglinPassiveText);
+    public static final TranslationTextComponent piglinPassiveTooltip = AdvancedNetheriteAPI.tooltip(Reference.MOD_ID, "piglinpassive_armor.perk_one", TextFormatting.GOLD);
 }
