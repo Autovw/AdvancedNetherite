@@ -7,5 +7,5 @@ import net.minecraft.world.item.CreativeModeTab;
  */
 public class Reference {
     public static final String MOD_ID = "advancednetherite";
-    public static final CreativeModeTab TAB_ADVANCEDNETHERITE = new AdvancedNetheriteTab("advancednetherite_tab");
+    public static final CreativeModeTab TAB_ADVANCEDNETHERITE = new AdvancedNetheriteTab(MOD_ID + ".tab");
 }
