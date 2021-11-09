@@ -8,7 +8,7 @@ import net.minecraft.network.chat.TranslatableComponent;
  * <br>
  * The API is a work in progress, not final!
  */
-public class AdvancedNetheriteAPI {
+public class Tooltips {
 
     /**
      * Use this method if you want to create a basic translatable tooltip, without any pre-set color/format, for your item.
@@ -16,7 +16,7 @@ public class AdvancedNetheriteAPI {
      * <br>
      * Example tooltip: <br>
      * <code>
-     *     public static final TranslatableComponent example = AdvancedNetheriteAPI.tooltip(Reference.MOD_ID, "example_name");
+     *     public static final TranslatableComponent example = Tooltips.tooltip(Reference.MOD_ID, "example_name");
      * </code>
      *
      * @param modId Enter your modId here
@@ -33,7 +33,7 @@ public class AdvancedNetheriteAPI {
      * <br>
      * Example tooltip: <br>
      * <code>
-     *     public static final TranslatableComponent example = AdvancedNetheriteAPI.tooltip(Reference.MOD_ID, "example_name", ChatFormatting.PINK);
+     *     public static final TranslatableComponent example = Tooltips.tooltip(Reference.MOD_ID, "example_name", ChatFormatting.PINK);
      * </code>
      *
      * @param modId Enter your modId here
@@ -51,7 +51,7 @@ public class AdvancedNetheriteAPI {
      * <br>
      * Example tooltip: <br>
      * <code>
-     *     public static final TranslatableComponent example = AdvancedNetheriteAPI.tooltip(Reference.MOD_ID, "example_name", ChatFormatting.PINK, ChatFormatting.BOLD);
+     *     public static final TranslatableComponent example = Tooltips.tooltip(Reference.MOD_ID, "example_name", ChatFormatting.PINK, ChatFormatting.BOLD);
      * </code>
      *
      * @param modId Enter your modId here

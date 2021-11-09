@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.content;
 
 import com.autovw.advancednetherite.Reference;
-import com.autovw.advancednetherite.api.AdvancedNetheriteAPI;
+import com.autovw.advancednetherite.api.Tooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.TranslatableComponent;
 
@@ -11,8 +11,8 @@ import net.minecraft.network.chat.TranslatableComponent;
 public class ModTooltips {
 
     // Endermask Tooltip
-    public static final TranslatableComponent endermaskTooltip = AdvancedNetheriteAPI.tooltip(Reference.MOD_ID, "endermask_armor.perk_one", ChatFormatting.DARK_GREEN);
+    public static final TranslatableComponent endermaskTooltip = Tooltips.tooltip(Reference.MOD_ID, "endermask_armor.perk_one", ChatFormatting.DARK_GREEN);
 
     // Piglin Passive Tooltip
-    public static final TranslatableComponent piglinPassiveTooltip = AdvancedNetheriteAPI.tooltip(Reference.MOD_ID, "piglinpassive_armor.perk_one", ChatFormatting.GOLD);
+    public static final TranslatableComponent piglinPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "piglinpassive_armor.perk_one", ChatFormatting.GOLD);
 }
