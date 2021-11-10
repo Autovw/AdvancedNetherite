@@ -6,7 +6,7 @@ import net.minecraft.network.chat.TranslatableComponent;
 /**
  * Author: Autovw
  * <br>
- * The API is a work in progress, not final!
+ * Added as of version 1.9.0, the API will be expanded over time.
  */
 public class Tooltips {
 
