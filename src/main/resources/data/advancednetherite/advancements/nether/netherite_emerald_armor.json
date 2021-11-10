@@ -1,0 +1,56 @@
+{
+  "parent": "advancednetherite:nether/netherite_gold_armor",
+  "display": {
+    "icon": {
+      "item": "advancednetherite:netherite_emerald_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.advancednetherite.nether.netherite_emerald_armor.title"
+    },
+    "description": {
+      "translate": "advancements.advancednetherite.nether.netherite_emerald_armor.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "criteria": {
+    "netherite_emerald_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advancednetherite:netherite_emerald_helmet"
+            ]
+          },
+          {
+            "items": [
+              "advancednetherite:netherite_emerald_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "advancednetherite:netherite_emerald_leggings"
+            ]
+          },
+          {
+            "items": [
+              "advancednetherite:netherite_emerald_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "netherite_emerald_armor"
+    ]
+  ]
+}

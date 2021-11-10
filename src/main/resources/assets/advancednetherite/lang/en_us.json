@@ -57,5 +57,14 @@
   "itemGroup.advancednetherite.tab": "Advanced Netherite",
   
   "tooltip.advancednetherite.endermask_armor.perk_one": "+ Pacifies Endermen",
-  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Pacifies Piglins"
+  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Pacifies Piglins",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Why?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Craft a Netherite-Diamond Hoe and visit a psychologist afterwards",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "Ultimate Piglin distraction suit",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "Get a full suit of Netherite-Gold armor",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Endermen?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "Get a full suit of Netherite-Emerald armor",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Cover Me in Netherite-Diamond",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Get a full suit of Netherite-Diamond armor"
 }
