@@ -19,7 +19,7 @@ For more information visit the [Advanced Netherite Wiki](https://github.com/Auto
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 💎 Tiers of Netherite
 
-![Tiers](https://i.postimg.cc/PrX2gmHN/Advanced-Netherite-Types-Of-Netherite.png)
+![Tiers](https://i.postimg.cc/d3SF5SZS/Advanced-Netherite-Types-Of-Netherite-Updated.png)
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 🔨 Crafting recipes
@@ -29,12 +29,12 @@ Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/
 ### ℹ More information
 * Please report issues to the [issue tracker on GitHub](https://github.com/Autovw/AdvancedNetherite/issues)!
 * May I feature your mod in my modpack? Yes, absolutely!
-* Advanced Netherite is Forge only, and I'm not planning on porting it to Fabric.
+* Advanced Netherite is currently only available for **Forge**.
 * Visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki) for more information on everything this mod adds.
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
-### ⌨️ Feel free to [join](https://discord.gg/KP3BBatuw5) my Discord server!
-_Join my Discord server if you want to get notified when there's a new update, mod support and more!_
+### 💬 Join my Discord server!
+_[Join my Discord server](https://discord.gg/KP3BBatuw5) if you want to get notified when there's a new update, mod support and more!_
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 #### ⚠️ Disclaimer
