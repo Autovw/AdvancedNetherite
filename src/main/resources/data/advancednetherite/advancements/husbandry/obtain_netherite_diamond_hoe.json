@@ -25,9 +25,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "advancednetherite:netherite_diamond_hoe"
-            ]
+            "item": "advancednetherite:netherite_diamond_hoe"
           }
         ]
       }

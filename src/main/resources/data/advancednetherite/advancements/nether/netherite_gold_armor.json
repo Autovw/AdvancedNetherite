@@ -25,24 +25,16 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "advancednetherite:netherite_gold_helmet"
-            ]
+            "item": "advancednetherite:netherite_gold_helmet"
           },
           {
-            "items": [
-              "advancednetherite:netherite_gold_chestplate"
-            ]
+            "item": "advancednetherite:netherite_gold_chestplate"
           },
           {
-            "items": [
-              "advancednetherite:netherite_gold_leggings"
-            ]
+            "item": "advancednetherite:netherite_gold_leggings"
           },
           {
-            "items": [
-              "advancednetherite:netherite_gold_boots"
-            ]
+            "item": "advancednetherite:netherite_gold_boots"
           }
         ]
       }
