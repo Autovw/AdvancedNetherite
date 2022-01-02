@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "advancednetherite:blocks/netherite_diamond_block"
-  }
-}

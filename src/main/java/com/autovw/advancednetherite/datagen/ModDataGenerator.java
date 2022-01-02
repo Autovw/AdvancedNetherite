@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.datagen;
 
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.datagen.providers.ModBlockStatesProvider;
 import com.autovw.advancednetherite.datagen.providers.ModLootTableProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -22,6 +23,10 @@ public class ModDataGenerator {
 
         if (event.includeServer()) {
             generator.addProvider(new ModLootTableProvider(generator));
+        }
+
+        if (event.includeClient()) {
+            generator.addProvider(new ModBlockStatesProvider(generator, helper));
         }
     }
 }
