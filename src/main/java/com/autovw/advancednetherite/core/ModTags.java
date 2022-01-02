@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.Block;
 /**
  * Author: Autovw
  */
-@SuppressWarnings("unused")
 public class ModTags {
     // BLOCK TAGS
     public static final Tag.Named<Block> NETHERITE_BLOCKS = BlockTags.bind(Reference.MOD_ID + ":netherite_blocks");
