@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "advancednetherite:items/netherite_emerald_sword"
-  }
-}
