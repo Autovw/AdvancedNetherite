@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#forge:ingots/netherite"
+    "minecraft:netherite_ingot"
   ]
 }

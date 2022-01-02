@@ -1,10 +1,7 @@
 package com.autovw.advancednetherite.datagen;
 
 import com.autovw.advancednetherite.Reference;
-import com.autovw.advancednetherite.datagen.providers.ModBlockStatesProvider;
-import com.autovw.advancednetherite.datagen.providers.ModBlockTagsProvider;
-import com.autovw.advancednetherite.datagen.providers.ModItemModelProvider;
-import com.autovw.advancednetherite.datagen.providers.ModLootTableProvider;
+import com.autovw.advancednetherite.datagen.providers.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,13 +15,16 @@ import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 public class ModDataGenerator {
     private ModDataGenerator() { }
 
+    @SuppressWarnings("unused")
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper helper = event.getExistingFileHelper();
+        ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(generator, helper);
 
         if (event.includeServer()) {
-            generator.addProvider(new ModBlockTagsProvider(generator, helper));
+            generator.addProvider(blockTagsProvider);
+            generator.addProvider(new ModItemTagsProvider(generator, blockTagsProvider, helper));
             generator.addProvider(new ModLootTableProvider(generator));
         }
 
