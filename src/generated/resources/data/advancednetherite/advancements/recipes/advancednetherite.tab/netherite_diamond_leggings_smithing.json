@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "advancednetherite:netherite_diamond_leggings_smithing"
+    ]
+  },
+  "criteria": {
+    "has_NamedTag[advancednetherite:upgrade_to_netherite_diamond]": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "advancednetherite:upgrade_to_netherite_diamond"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "advancednetherite:netherite_diamond_leggings_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_NamedTag[advancednetherite:upgrade_to_netherite_diamond]",
+      "has_the_recipe"
+    ]
+  ]
+}
