@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.core;
 
 import com.autovw.advancednetherite.Reference;
-import net.minecraft.world.item.BlockItem;
+import com.autovw.advancednetherite.common.item.AdvancedBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -32,7 +32,7 @@ public class ModBlocks {
      */
     private static RegistryObject<Block> register(String name, Item.Properties properties) {
         RegistryObject<Block> block = BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
+        ModItems.ITEMS.register(name, () -> new AdvancedBlockItem(block.get(), properties));
         return block;
     }
 }
