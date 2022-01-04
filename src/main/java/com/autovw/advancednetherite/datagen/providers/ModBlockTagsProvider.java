@@ -1,6 +1,5 @@
 package com.autovw.advancednetherite.datagen.providers;
 
-import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModTags;
 import net.minecraft.data.DataGenerator;
@@ -12,8 +11,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
  * Author: Autovw
  */
 public class ModBlockTagsProvider extends BlockTagsProvider {
-    public ModBlockTagsProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Reference.MOD_ID, existingFileHelper);
+    public ModBlockTagsProvider(DataGenerator generator, String modId, ExistingFileHelper existingFileHelper) {
+        super(generator, modId, existingFileHelper);
     }
 
     @Override

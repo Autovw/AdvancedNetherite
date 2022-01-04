@@ -12,8 +12,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
  * Author: Autovw
  */
 public class ModItemModelProvider extends ItemModelProvider {
-    public ModItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Reference.MOD_ID, existingFileHelper);
+    public ModItemModelProvider(DataGenerator generator, String modId, ExistingFileHelper existingFileHelper) {
+        super(generator, modId, existingFileHelper);
     }
 
     @Override

@@ -15,8 +15,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
  * Author: Autovw
  */
 public class ModItemTagsProvider extends ItemTagsProvider {
-    public ModItemTagsProvider(DataGenerator generator, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
-        super(generator, blockTagsProvider, Reference.MOD_ID, existingFileHelper);
+    public ModItemTagsProvider(DataGenerator generator, BlockTagsProvider blockTagsProvider, String modId, ExistingFileHelper existingFileHelper) {
+        super(generator, blockTagsProvider, modId, existingFileHelper);
     }
 
     @Override
