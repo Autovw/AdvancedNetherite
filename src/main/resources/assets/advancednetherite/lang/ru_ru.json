@@ -1,0 +1,70 @@
+{
+  "block.advancednetherite.netherite_iron_block": "Железно-Незеритовый блок",
+  "block.advancednetherite.netherite_gold_block": "Золото-Незеритовый блок",
+  "block.advancednetherite.netherite_emerald_block": "Изумрудно-Незеритовый блок",
+  "block.advancednetherite.netherite_diamond_block": "Алмазно-Незеритовый блок",
+
+  "item.advancednetherite.netherite_iron_ingot": "Железно-Незеритовый слиток",
+  "item.advancednetherite.netherite_gold_ingot": "Золото-Незеритовый слиток",
+  "item.advancednetherite.netherite_emerald_ingot": "Изумрудно-Незеритовый слиток",
+  "item.advancednetherite.netherite_diamond_ingot": "Алмазно-Незеритовый слиток",
+
+  "item.advancednetherite.netherite_iron_helmet": "Железно-Незеритовый шлем",
+  "item.advancednetherite.netherite_gold_helmet": "Золото-Незеритовый шлем",
+  "item.advancednetherite.netherite_emerald_helmet": "Изумрудно-Незеритовый шлем",
+  "item.advancednetherite.netherite_diamond_helmet": "Алмазно-Незеритовый шлем",
+
+  "item.advancednetherite.netherite_iron_chestplate": "Железно-Незеритовый нагрудник",
+  "item.advancednetherite.netherite_gold_chestplate": "Золото-Незеритовый нагрудник",
+  "item.advancednetherite.netherite_emerald_chestplate": "Изумрудно-Незеритовый нагрудник",
+  "item.advancednetherite.netherite_diamond_chestplate": "Алмазно-Незеритовый нагрудник",
+
+  "item.advancednetherite.netherite_iron_leggings": "Железно-Незеритовые поножи",
+  "item.advancednetherite.netherite_gold_leggings": "Золото-Незеритовые поножи",
+  "item.advancednetherite.netherite_emerald_leggings": "Изумрудно-Незеритовые поножи",
+  "item.advancednetherite.netherite_diamond_leggings": "Алмазно-Незеритовые поножи",
+
+  "item.advancednetherite.netherite_iron_boots": "Железно-Незеритовые ботинки",
+  "item.advancednetherite.netherite_gold_boots": "Золото-Незеритовые ботинки",
+  "item.advancednetherite.netherite_emerald_boots": "Изумрудно-Незеритовые ботинки",
+  "item.advancednetherite.netherite_diamond_boots": "Алмазно-Незеритовые ботинки",
+
+  "item.advancednetherite.netherite_iron_axe": "Железно-Незеритовый топор",
+  "item.advancednetherite.netherite_gold_axe": "Золото-Незеритовый топор",
+  "item.advancednetherite.netherite_emerald_axe": "Изумрудно-Незеритовый топор",
+  "item.advancednetherite.netherite_diamond_axe": "Алмазно-Незеритовый топор",
+
+  "item.advancednetherite.netherite_iron_hoe": "Железно-Незеритовая мотыга",
+  "item.advancednetherite.netherite_gold_hoe": "Золото-Незеритовая мотыга",
+  "item.advancednetherite.netherite_emerald_hoe": "Изумрудно-Незеритовая мотыга",
+  "item.advancednetherite.netherite_diamond_hoe": "Алмазно-Незеритовая мотыга",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "Железно-Незеритовая кирка",
+  "item.advancednetherite.netherite_gold_pickaxe": "Золото-Незеритовая кирка",
+  "item.advancednetherite.netherite_emerald_pickaxe": "Изумрудно-Незеритовая кирка",
+  "item.advancednetherite.netherite_diamond_pickaxe": "Алмазно-Незеритовая кирка",
+
+  "item.advancednetherite.netherite_iron_shovel": "Железно-Незеритовая лопата",
+  "item.advancednetherite.netherite_gold_shovel": "Золото-Незеритовая лопата",
+  "item.advancednetherite.netherite_emerald_shovel": "Изумрудно-Незеритовая лопата",
+  "item.advancednetherite.netherite_diamond_shovel": "Алмазно-Незеритовая лопата",
+
+  "item.advancednetherite.netherite_iron_sword": "Железно-Незеритовый меч",
+  "item.advancednetherite.netherite_gold_sword": "Золото-Незеритовый меч",
+  "item.advancednetherite.netherite_emerald_sword": "Изумрудно-Незеритовый меч",
+  "item.advancednetherite.netherite_diamond_sword": "Алмазно-Незеритовый меч",
+
+  "itemGroup.advancednetherite.tab": "Продвинутый Незерит",
+
+  "tooltip.advancednetherite.endermask_armor.perk_one": "+ Усмиряет Эндерменов",
+  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Усмиряет Пиглинов",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Зачем?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Скрафтите Алмазно-Незеритовую мотыгу и посетите психолога после этого",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "Ультимативный костюм для отвлечения пиглинов",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "Получите полный комплект Золото-Незеритовой брони",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Эндермен?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "Получите полный комплект Изумрудно-Незеритовой брони",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Осыпь меня Алмазо-Незеритами",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Получите полный комплект Алмазно-Незеритовой брони"
+}
