@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "advancednetherite:lodestone"
+    ]
+  },
+  "criteria": {
+    "has_chiseled_stone_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:chiseled_stone_bricks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_netherite_ingots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "advancednetherite:netherite_ingots"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "advancednetherite:lodestone"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chiseled_stone_bricks",
+      "has_netherite_ingots",
+      "has_the_recipe"
+    ]
+  ]
+}
