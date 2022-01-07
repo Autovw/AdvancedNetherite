@@ -31,11 +31,13 @@ public class Config {
     // CLIENT config
     public static class Client {
         public static ForgeConfigSpec.BooleanValue showTooltips;
+        public static ForgeConfigSpec.BooleanValue matchingDurabilityBars;
 
         public Client(ForgeConfigSpec.Builder builder) {
             builder.push("client");
             {
                 showTooltips = builder.comment("If true, displays tooltips, added by Advanced Netherite, with perks client-side. True by default.").define("showTooltips", true);
+                matchingDurabilityBars = builder.comment("If true, displays a (color) matching durability bar underneath the item when damaged. False by default.").define("matchingDurabilityBars", false);
             }
             builder.pop();
         }

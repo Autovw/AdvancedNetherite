@@ -24,10 +24,10 @@ public class ModItems {
 
     // ARMOR SETS
     // Netherite/Iron
-    public static final RegistryObject<Item> NETHERITE_IRON_HELMET = register("netherite_iron_helmet", new AdvancedArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlot.HEAD, (new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE))));
-    public static final RegistryObject<Item> NETHERITE_IRON_CHESTPLATE = register("netherite_iron_chestplate", new AdvancedArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlot.CHEST, (new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE))));
-    public static final RegistryObject<Item> NETHERITE_IRON_LEGGINGS = register("netherite_iron_leggings", new AdvancedArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlot.LEGS, (new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE))));
-    public static final RegistryObject<Item> NETHERITE_IRON_BOOTS = register("netherite_iron_boots", new AdvancedArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlot.FEET, (new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE))));
+    public static final RegistryObject<Item> NETHERITE_IRON_HELMET = register("netherite_iron_helmet", new NetheriteIronArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlot.HEAD, (new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE))));
+    public static final RegistryObject<Item> NETHERITE_IRON_CHESTPLATE = register("netherite_iron_chestplate", new NetheriteIronArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlot.CHEST, (new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE))));
+    public static final RegistryObject<Item> NETHERITE_IRON_LEGGINGS = register("netherite_iron_leggings", new NetheriteIronArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlot.LEGS, (new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE))));
+    public static final RegistryObject<Item> NETHERITE_IRON_BOOTS = register("netherite_iron_boots", new NetheriteIronArmorItem(ModArmorTiers.NETHERITE_IRON, EquipmentSlot.FEET, (new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE))));
 
     // Netherite/Gold
     public static final RegistryObject<Item> NETHERITE_GOLD_HELMET = register("netherite_gold_helmet", new NetheriteGoldArmorItem(ModArmorTiers.NETHERITE_GOLD, EquipmentSlot.HEAD, (new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE))));
