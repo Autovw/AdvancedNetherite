@@ -72,11 +72,11 @@ public class ModTags {
     public static final ITag.INamedTag<Item> HOES_UPGRADE_TO_NETHERITE_GOLD = bindModTag("hoes/upgrade_to_netherite_gold");
     public static final ITag.INamedTag<Item> HOES_UPGRADE_TO_NETHERITE_IRON = bindModTag("hoes/upgrade_to_netherite_iron");
 
-    public static final ITag.INamedTag<Item> INGOTS_NETHERITE_DIAMOND = bindModTag("ingots/netherite_diamond");
-    public static final ITag.INamedTag<Item> INGOTS_NETHERITE_EMERALD = bindModTag("ingots/netherite_emerald");
-    public static final ITag.INamedTag<Item> INGOTS_NETHERITE_GOLD = bindModTag("ingots/netherite_gold");
-    public static final ITag.INamedTag<Item> INGOTS_NETHERITE_IRON = bindModTag("ingots/netherite_iron");
-    public static final ITag.INamedTag<Item> INGOTS_NETHERITE = bindModTag("ingots/netherite");
+    public static final ITag.INamedTag<Item> INGOTS_NETHERITES_DIAMOND = bindModTag("ingots/netherite_diamond");
+    public static final ITag.INamedTag<Item> INGOTS_NETHERITES_EMERALD = bindModTag("ingots/netherite_emerald");
+    public static final ITag.INamedTag<Item> INGOTS_NETHERITES_GOLD = bindModTag("ingots/netherite_gold");
+    public static final ITag.INamedTag<Item> INGOTS_NETHERITES_IRON = bindModTag("ingots/netherite_iron");
+    public static final ITag.INamedTag<Item> INGOTS_NETHERITES = bindModTag("ingots/netherite");
     public static final ITag.INamedTag<Item> INGOTS_UPGRADE_TO_NETHERITE_DIAMOND = bindModTag("ingots/upgrade_to_netherite_diamond");
     public static final ITag.INamedTag<Item> INGOTS_UPGRADE_TO_NETHERITE_EMERALD = bindModTag("ingots/upgrade_to_netherite_emerald");
     public static final ITag.INamedTag<Item> INGOTS_UPGRADE_TO_NETHERITE_GOLD = bindModTag("ingots/upgrade_to_netherite_gold");

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "advancednetherite:netherite_iron_ingot"
+    ]
+  },
+  "criteria": {
+    "has_OptionalNamedTag[forge:ingots/iron]": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ingots/iron"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "advancednetherite:netherite_iron_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_OptionalNamedTag[forge:ingots/iron]",
+      "has_the_recipe"
+    ]
+  ]
+}
