@@ -17,10 +17,10 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
 
     // Ingots
-    public static final RegistryObject<Item> NETHERITE_IRON_INGOT = register("netherite_iron_ingot", new Item(new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant()));
-    public static final RegistryObject<Item> NETHERITE_GOLD_INGOT = register("netherite_gold_ingot", new Item(new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant()));
-    public static final RegistryObject<Item> NETHERITE_EMERALD_INGOT = register("netherite_emerald_ingot", new Item(new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant()));
-    public static final RegistryObject<Item> NETHERITE_DIAMOND_INGOT = register("netherite_diamond_ingot", new Item(new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE).fireResistant()));
+    public static final RegistryObject<Item> NETHERITE_IRON_INGOT = register("netherite_iron_ingot", new AdvancedItem(new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE)));
+    public static final RegistryObject<Item> NETHERITE_GOLD_INGOT = register("netherite_gold_ingot", new AdvancedItem(new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE)));
+    public static final RegistryObject<Item> NETHERITE_EMERALD_INGOT = register("netherite_emerald_ingot", new AdvancedItem(new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE)));
+    public static final RegistryObject<Item> NETHERITE_DIAMOND_INGOT = register("netherite_diamond_ingot", new AdvancedItem(new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE)));
 
     // ARMOR SETS
     // Netherite/Iron
