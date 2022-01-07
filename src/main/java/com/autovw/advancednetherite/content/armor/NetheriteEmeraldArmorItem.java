@@ -4,6 +4,8 @@ import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
 import com.autovw.advancednetherite.config.Config;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.TextFormatting;
 
 /**
  * Author: Autovw
@@ -16,5 +18,10 @@ public class NetheriteEmeraldArmorItem extends AdvancedArmorItem {
     @Override
     public boolean pacifiesEndermen() {
         return Config.ArmorConfig.emeraldEndermanPassiveArmor.get();
+    }
+
+    @Override
+    public TextFormatting customDurabilityBarColor(ItemStack stack) {
+        return TextFormatting.DARK_GREEN;
     }
 }

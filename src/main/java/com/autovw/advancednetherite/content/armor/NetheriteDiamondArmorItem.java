@@ -4,6 +4,8 @@ import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
 import com.autovw.advancednetherite.config.Config;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.TextFormatting;
 
 /**
  * Author: Autovw
@@ -21,5 +23,10 @@ public class NetheriteDiamondArmorItem extends AdvancedArmorItem {
     @Override
     public boolean pacifiesPiglins() {
         return Config.ArmorConfig.diamondPiglinPassiveArmor.get();
+    }
+
+    @Override
+    public TextFormatting customDurabilityBarColor(ItemStack stack) {
+        return TextFormatting.AQUA;
     }
 }
