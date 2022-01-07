@@ -15,8 +15,27 @@ import java.util.List;
  * Author: Autovw
  */
 public class AdvancedBlockItem extends BlockItem {
+    private final boolean isFireResistant;
+
     public AdvancedBlockItem(Block block, Properties properties) {
         super(block, properties);
+        this.isFireResistant = true;
+    }
+
+    public AdvancedBlockItem(Block block, Properties properties, boolean isFireResistant) {
+        super(block, properties);
+        this.isFireResistant = isFireResistant;
+    }
+
+    /**
+     * Netherite items do not burn by default,
+     * {@link Override} or use {@link AdvancedBlockItem#AdvancedBlockItem(Block, Properties, boolean)} to disable this feature.
+     *
+     * @return If true, item does not burn when on fire
+     */
+    @Override
+    public boolean isFireResistant() {
+        return this.isFireResistant;
     }
 
     /**
