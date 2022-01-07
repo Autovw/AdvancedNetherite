@@ -7,6 +7,8 @@ import net.minecraft.network.chat.TranslatableComponent;
 
 /**
  * Author: Autovw
+ * <br>
+ * A class that contains tooltips registered by Advanced Netherite.
  */
 public class ModTooltips {
 
