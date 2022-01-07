@@ -7,6 +7,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Author: Autovw
+ * <br>
+ * A class that contains tooltips registered by Advanced Netherite.
  */
 // This is where tooltips are stored
 public class ModTooltips {

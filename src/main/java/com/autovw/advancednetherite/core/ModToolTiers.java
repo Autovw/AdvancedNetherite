@@ -7,8 +7,8 @@ import net.minecraftforge.fml.RegistryObject;
 
 /**
  * Author: Autovw
- *
- * Create your own enum that implements Tier if you are adding new tools!
+ * <br>
+ * Add-on developers: Create your own enum that implements {@link IItemTier} if you are adding new tools!
  */
 public enum ModToolTiers implements IItemTier {
     // Tool materials are registered here.

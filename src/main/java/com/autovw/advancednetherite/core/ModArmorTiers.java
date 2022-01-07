@@ -11,8 +11,8 @@ import net.minecraftforge.fml.RegistryObject;
 
 /**
  * Author: Autovw
- *
- * Create your own enum that implements ArmorMaterial if you are adding new armor!
+ * <br>
+ * Add-on developers: Create your own enum that implements {@link IArmorMaterial} if you are adding new armor!
  */
 public enum ModArmorTiers implements IArmorMaterial {
     // Armor material is registered here.
