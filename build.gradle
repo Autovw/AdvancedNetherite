@@ -63,19 +63,17 @@ minecraft {
 //sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    /*
     maven {
         url = "https://www.cursemaven.com"
     }
-     */
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.22'
 
-    //runtimeOnly fg.deobf('curse.maven:catalogue-459701:3529457')
-    //runtimeOnly fg.deobf('curse.maven:configured-457570:3546348')
-    //runtimeOnly fg.deobf('curse.maven:jei-238222:3530253')
+    runtimeOnly fg.deobf('curse.maven:catalogue-459701:3529457')
+    runtimeOnly fg.deobf('curse.maven:configured-457570:3546348')
+    runtimeOnly fg.deobf('curse.maven:jei-238222:3530253')
 }
 
 jar {
