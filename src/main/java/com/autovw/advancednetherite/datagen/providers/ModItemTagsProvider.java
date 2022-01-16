@@ -168,5 +168,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.NETHERITE_GOLD_PICKAXE.get())
                 .add(ModItems.NETHERITE_GOLD_SHOVEL.get())
                 .add(ModItems.NETHERITE_GOLD_SWORD.get());
+
+        tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
+                .add(ModItems.NETHERITE_IRON_PICKAXE.get())
+                .add(ModItems.NETHERITE_GOLD_PICKAXE.get())
+                .add(ModItems.NETHERITE_EMERALD_PICKAXE.get())
+                .add(ModItems.NETHERITE_DIAMOND_PICKAXE.get());
     }
 }
