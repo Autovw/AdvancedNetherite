@@ -1,0 +1,70 @@
+{
+  "block.advancednetherite.netherite_iron_block": "철 네더라이트 블록",
+  "block.advancednetherite.netherite_gold_block": "금 네더라이트 블록",
+  "block.advancednetherite.netherite_emerald_block": "에메랄드 네더라이트 블록",
+  "block.advancednetherite.netherite_diamond_block": "다이아몬드 네더라이트 블록",
+
+  "item.advancednetherite.netherite_iron_ingot": "철 네더라이트 주괴",
+  "item.advancednetherite.netherite_gold_ingot": "금 네더라이트 주괴",
+  "item.advancednetherite.netherite_emerald_ingot": "에메랄드 네더라이트 주괴",
+  "item.advancednetherite.netherite_diamond_ingot": "다이아몬드 네더라이트 주괴",
+
+  "item.advancednetherite.netherite_iron_helmet": "철 네더라이트 투구",
+  "item.advancednetherite.netherite_gold_helmet": "금 네더라이트 투구",
+  "item.advancednetherite.netherite_emerald_helmet": "에메랄드 네더라이트 투구",
+  "item.advancednetherite.netherite_diamond_helmet": "다이아몬드 네더라이트 투구",
+
+  "item.advancednetherite.netherite_iron_chestplate": "철 네더라이트 흉갑",
+  "item.advancednetherite.netherite_gold_chestplate": "금 네더라이트 흉갑",
+  "item.advancednetherite.netherite_emerald_chestplate": "에메랄드 네더라이트 흉갑",
+  "item.advancednetherite.netherite_diamond_chestplate": "다이아몬드 네더라이트 흉갑",
+
+  "item.advancednetherite.netherite_iron_leggings": "철 네더라이트 레깅스",
+  "item.advancednetherite.netherite_gold_leggings": "금 네더라이트 레깅스",
+  "item.advancednetherite.netherite_emerald_leggings": "에메랄드 네더라이트 레깅스",
+  "item.advancednetherite.netherite_diamond_leggings": "다이아몬드 네더라이트 레깅스",
+
+  "item.advancednetherite.netherite_iron_boots": "철 네더라이트 부츠",
+  "item.advancednetherite.netherite_gold_boots": "금 네더라이트 부츠",
+  "item.advancednetherite.netherite_emerald_boots": "에메랄드 네더라이트 부츠",
+  "item.advancednetherite.netherite_diamond_boots": "다이아몬드 네더라이트 부츠",
+
+  "item.advancednetherite.netherite_iron_axe": "철 네더라이트 도끼",
+  "item.advancednetherite.netherite_gold_axe": "금 네더라이트 도끼",
+  "item.advancednetherite.netherite_emerald_axe": "에메랄드 네더라이트 도끼",
+  "item.advancednetherite.netherite_diamond_axe": "다이아몬드 네더라이트 도끼",
+
+  "item.advancednetherite.netherite_iron_hoe": "철 네더라이트 괭이",
+  "item.advancednetherite.netherite_gold_hoe": "금 네더라이트 괭이",
+  "item.advancednetherite.netherite_emerald_hoe": "에메랄드 네더라이트 괭이",
+  "item.advancednetherite.netherite_diamond_hoe": "다이아몬드 네더라이트 괭이",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "철 네더라이트 곡괭이",
+  "item.advancednetherite.netherite_gold_pickaxe": "금 네더라이트 곡괭이",
+  "item.advancednetherite.netherite_emerald_pickaxe": "에메랄드 네더라이트 곡괭이",
+  "item.advancednetherite.netherite_diamond_pickaxe": "다이아몬드 네더라이트 곡괭이",
+
+  "item.advancednetherite.netherite_iron_shovel": "철 네더라이트 삽",
+  "item.advancednetherite.netherite_gold_shovel": "금 네더라이트 삽",
+  "item.advancednetherite.netherite_emerald_shovel": "에메랄드 네더라이트 삽",
+  "item.advancednetherite.netherite_diamond_shovel": "다이아몬드 네더라이트 삽",
+
+  "item.advancednetherite.netherite_iron_sword": "철 네더라이트 검",
+  "item.advancednetherite.netherite_gold_sword": "금 네더라이트 검",
+  "item.advancednetherite.netherite_emerald_sword": "에메랄드 네더라이트 검",
+  "item.advancednetherite.netherite_diamond_sword": "다이아몬드 네더라이트 검",
+
+  "itemGroup.advancednetherite.tab": "Advanced Netherite",
+
+  "tooltip.advancednetherite.endermask_armor.perk_one": "+ 엔더맨들의 평화",
+  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ 피글린들의 평화",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "왜?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "다이아몬드 네더라이트 괭이 제작 후 심리학자 방문",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "얼티밋 피글린 정신을 산만하게 하는 슈트",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "금 네더라이트 갑옷 한 벌 만들기",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "엔더맨?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "에메랄드 네더라이트 갑옷 한 벌 만들기",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "다이아몬드 네더라이트를 나에게 씌우다",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "다이아몬드 네더라이트 갑옷 한 벌 만들기"
+}
