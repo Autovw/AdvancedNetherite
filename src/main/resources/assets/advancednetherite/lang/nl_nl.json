@@ -1,0 +1,70 @@
+{
+  "block.advancednetherite.netherite_iron_block": "Netheriet-Ijzerblok",
+  "block.advancednetherite.netherite_gold_block": "Netheriet-Goudblok",
+  "block.advancednetherite.netherite_emerald_block": "Netherite-Smaragdblok",
+  "block.advancednetherite.netherite_diamond_block": "Netheriet-Diamantblok",
+
+  "item.advancednetherite.netherite_iron_ingot": "Netheriet-Ijzerstaaf",
+  "item.advancednetherite.netherite_gold_ingot": "Netheriet-Goudstaaf",
+  "item.advancednetherite.netherite_emerald_ingot": "Netheriet-Smaragdstaaf",
+  "item.advancednetherite.netherite_diamond_ingot": "Netheriet-Diamantstaaf",
+
+  "item.advancednetherite.netherite_iron_helmet": "Netheriet-Ijzeren helm",
+  "item.advancednetherite.netherite_gold_helmet": "Netheriet-Gouden helm",
+  "item.advancednetherite.netherite_emerald_helmet": "Netheriet-Smaragden helm",
+  "item.advancednetherite.netherite_diamond_helmet": "Netheriet-Diamanten helm",
+
+  "item.advancednetherite.netherite_iron_chestplate": "Netheriet-Ijzeren borstplaat",
+  "item.advancednetherite.netherite_gold_chestplate": "Netheriet-Gouden borstplaat",
+  "item.advancednetherite.netherite_emerald_chestplate": "Netheriet-Smaragden borstplaat",
+  "item.advancednetherite.netherite_diamond_chestplate": "Netheriet-Diamanten borstplaat",
+
+  "item.advancednetherite.netherite_iron_leggings": "Netheriet-Ijzeren beenstukken",
+  "item.advancednetherite.netherite_gold_leggings": "Netheriet-Gouden beenstukken",
+  "item.advancednetherite.netherite_emerald_leggings": "Netheriet-Smaragden beenstukken",
+  "item.advancednetherite.netherite_diamond_leggings": "Netheriet-Diamanten beenstukken",
+
+  "item.advancednetherite.netherite_iron_boots": "Netheriet-Ijzeren laarzen",
+  "item.advancednetherite.netherite_gold_boots": "Netheriet-Gouden laarzen",
+  "item.advancednetherite.netherite_emerald_boots": "Netheriet-Smaragden laarzen",
+  "item.advancednetherite.netherite_diamond_boots": "Netheriet-Diamanten laarzen",
+
+  "item.advancednetherite.netherite_iron_axe": "Netheriet-Ijzeren bijl",
+  "item.advancednetherite.netherite_gold_axe": "Netheriet-Gouden bijl",
+  "item.advancednetherite.netherite_emerald_axe": "Netheriet-Smaragden bijl",
+  "item.advancednetherite.netherite_diamond_axe": "Netheriet-Diamanten bijl",
+
+  "item.advancednetherite.netherite_iron_hoe": "Netheriet-Ijzeren schoffel",
+  "item.advancednetherite.netherite_gold_hoe": "Netheriet-Gouden schoffel",
+  "item.advancednetherite.netherite_emerald_hoe": "Netheriet-Smaragden schoffel",
+  "item.advancednetherite.netherite_diamond_hoe": "Netheriet-Diamanten schoffel",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "Netheriet-Ijzeren houweel",
+  "item.advancednetherite.netherite_gold_pickaxe": "Netheriet-Gouden houweel",
+  "item.advancednetherite.netherite_emerald_pickaxe": "Netheriet-Smaragden houweel",
+  "item.advancednetherite.netherite_diamond_pickaxe": "Netheriet-Diamanten houweel",
+
+  "item.advancednetherite.netherite_iron_shovel": "Netheriet-Ijzeren schep",
+  "item.advancednetherite.netherite_gold_shovel": "Netheriet-Gouden schep",
+  "item.advancednetherite.netherite_emerald_shovel": "Netheriet-Smaragden schep",
+  "item.advancednetherite.netherite_diamond_shovel": "Netheriet-Diamanten schep",
+
+  "item.advancednetherite.netherite_iron_sword": "Netheriet-Ijzeren zwaard",
+  "item.advancednetherite.netherite_gold_sword": "Netheriet-Gouden zwaard",
+  "item.advancednetherite.netherite_emerald_sword": "Netheriet-Smaragden zwaard",
+  "item.advancednetherite.netherite_diamond_sword": "Netheriet-Diamanten zwaard",
+
+  "itemGroup.advancednetherite.tab": "Geavanceerd Netheriet",
+
+  "tooltip.advancednetherite.endermask_armor.perk_one": "+ Pacificeert endermannen",
+  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Pacificeert piglins",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Waarom?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Maak een Netheriet-Diamanten schoffel en bezoek daarna een psycholoog",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "Ultieme piglin verleidings pak",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "Verkrijg een volledig Netheriet-Gouden harnas",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Endermannen?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "Verkrijg een volledig Netheriet-Smaragden harnas",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Bedek me met Netheriet-Diamant",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Verkrijg een volledig Netheriet-Diamanten harnas"
+}
