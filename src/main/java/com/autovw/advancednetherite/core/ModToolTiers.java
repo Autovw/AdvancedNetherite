@@ -1,9 +1,15 @@
 package com.autovw.advancednetherite.core;
 
+import com.autovw.advancednetherite.Reference;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.TierSortingRegistry;
 import net.minecraftforge.fmllegacy.RegistryObject;
+
+import java.util.List;
 
 /**
  * Author: Autovw
@@ -12,10 +18,10 @@ import net.minecraftforge.fmllegacy.RegistryObject;
  */
 public enum ModToolTiers implements Tier {
     // Tool materials are registered here.
-    NETHERITE_IRON(4, 2281, 9.0F, 4.0F, 15, ModItems.NETHERITE_IRON_INGOT),
-    NETHERITE_GOLD(4, 2313, 11.0F, 4.0F, 25, ModItems.NETHERITE_GOLD_INGOT),
-    NETHERITE_EMERALD(4, 2651, 12.0F, 5.0F, 20, ModItems.NETHERITE_EMERALD_INGOT),
-    NETHERITE_DIAMOND(4, 3092, 14.0F, 5.0F, 15, ModItems.NETHERITE_DIAMOND_INGOT);
+    NETHERITE_IRON(4, 2281, 11.0F, 4.0F, 15, ModItems.NETHERITE_IRON_INGOT),
+    NETHERITE_GOLD(4, 2313, 13.0F, 4.0F, 25, ModItems.NETHERITE_GOLD_INGOT),
+    NETHERITE_EMERALD(4, 2651, 15.0F, 5.0F, 20, ModItems.NETHERITE_EMERALD_INGOT),
+    NETHERITE_DIAMOND(4, 3092, 17.0F, 5.0F, 15, ModItems.NETHERITE_DIAMOND_INGOT);
 
     private final float speed, attackDamage;
     private final int level, durability, enchantability;
@@ -66,5 +72,15 @@ public enum ModToolTiers implements Tier {
     @Override
     public Ingredient getRepairIngredient() {
         return Ingredient.of(this.repairIngredient.get());
+    }
+
+    /**
+     * This method is called inside {@link com.autovw.advancednetherite.AdvancedNetherite#commonSetup(FMLCommonSetupEvent)} in order to register the tool tiers.
+     */
+    public static void onCommonSetup() {
+        TierSortingRegistry.registerTier(NETHERITE_IRON, new ResourceLocation(Reference.MOD_ID, "netherite_iron"), List.of(Tiers.NETHERITE), List.of());
+        TierSortingRegistry.registerTier(NETHERITE_GOLD, new ResourceLocation(Reference.MOD_ID, "netherite_gold"), List.of(NETHERITE_IRON), List.of());
+        TierSortingRegistry.registerTier(NETHERITE_EMERALD, new ResourceLocation(Reference.MOD_ID, "netherite_emerald"), List.of(NETHERITE_GOLD), List.of());
+        TierSortingRegistry.registerTier(NETHERITE_DIAMOND, new ResourceLocation(Reference.MOD_ID, "netherite_diamond"), List.of(NETHERITE_EMERALD), List.of());
     }
 }
