@@ -26,7 +26,7 @@ public class AdvancedNetherite {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.commonConfig);
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        bus.addListener(this::setup);
+        bus.addListener(this::commonSetup);
 
         ModBlocks.BLOCKS.register(bus);
         ModItems.ITEMS.register(bus);
@@ -35,7 +35,7 @@ public class AdvancedNetherite {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         ModToolTiers.onCommonSetup();
     }
 }
