@@ -12,10 +12,10 @@ import net.minecraftforge.fml.RegistryObject;
  */
 public enum ModToolTiers implements IItemTier {
     // Tool materials are registered here.
-    NETHERITE_IRON(4, 2281, 9.0F, 4.0F, 15, ModItems.NETHERITE_IRON_INGOT),
-    NETHERITE_GOLD(4, 2313, 11.0F, 4.0F, 25, ModItems.NETHERITE_GOLD_INGOT),
-    NETHERITE_EMERALD(4, 2651, 12.0F, 5.0F, 20, ModItems.NETHERITE_EMERALD_INGOT),
-    NETHERITE_DIAMOND(4, 3092, 14.0F, 5.0F, 15, ModItems.NETHERITE_DIAMOND_INGOT);
+    NETHERITE_IRON(4, 2281, 11.0F, 4.0F, 15, ModItems.NETHERITE_IRON_INGOT),
+    NETHERITE_GOLD(4, 2313, 13.0F, 4.0F, 25, ModItems.NETHERITE_GOLD_INGOT),
+    NETHERITE_EMERALD(4, 2651, 15.0F, 5.0F, 20, ModItems.NETHERITE_EMERALD_INGOT),
+    NETHERITE_DIAMOND(4, 3092, 17.0F, 5.0F, 15, ModItems.NETHERITE_DIAMOND_INGOT);
 
     private final float speed, attackDamage;
     private final int level, durability, enchantability;
