@@ -1,0 +1,70 @@
+{
+  "block.advancednetherite.netherite_iron_block": "Blokk av Netheritt-Jern",
+  "block.advancednetherite.netherite_gold_block": "Blokk av Netheritt-Gull",
+  "block.advancednetherite.netherite_emerald_block": "Blokk av Netheritt-Smaragd",
+  "block.advancednetherite.netherite_diamond_block": "Blokk av Netheritt-Diamant",
+
+  "item.advancednetherite.netherite_iron_ingot": "Netheritt-Jernbarre",
+  "item.advancednetherite.netherite_gold_ingot": "Netheritt-Gullbarre",
+  "item.advancednetherite.netherite_emerald_ingot": "Netheritt-Smaragdbarre",
+  "item.advancednetherite.netherite_diamond_ingot": "Netheritt-Diamantbarre",
+
+  "item.advancednetherite.netherite_iron_helmet": "Netheritt-Jernhjelm",
+  "item.advancednetherite.netherite_gold_helmet": "Netheritt-Gullhjelm",
+  "item.advancednetherite.netherite_emerald_helmet": "Netheritt-Smaragdhjelm",
+  "item.advancednetherite.netherite_diamond_helmet": "Netheritt-Diamanthjelm",
+
+  "item.advancednetherite.netherite_iron_chestplate": "Netheritt-Jernbrystplate",
+  "item.advancednetherite.netherite_gold_chestplate": "Netheritt-Gullbrystplate",
+  "item.advancednetherite.netherite_emerald_chestplate": "Netheritt-Smaragdbrystplate",
+  "item.advancednetherite.netherite_diamond_chestplate": "Netheritt-Diamantbrystplate",
+
+  "item.advancednetherite.netherite_iron_leggings": "Netheritt-Jernbenplater",
+  "item.advancednetherite.netherite_gold_leggings": "Netheritt-Gullbenplater",
+  "item.advancednetherite.netherite_emerald_leggings": "Netheritt-Smaragdbenplater",
+  "item.advancednetherite.netherite_diamond_leggings": "Netheritt-Diamantbenplater",
+
+  "item.advancednetherite.netherite_iron_boots": "Netheritt-Jernstøvler",
+  "item.advancednetherite.netherite_gold_boots": "Netheritt-Gullstøvler",
+  "item.advancednetherite.netherite_emerald_boots": "Netheritt-Smaragdstøvler",
+  "item.advancednetherite.netherite_diamond_boots": "Netheritt-Diamantstøvler",
+
+  "item.advancednetherite.netherite_iron_axe": "Netheritt-Jernøks",
+  "item.advancednetherite.netherite_gold_axe": "Netheritt-Gulløks",
+  "item.advancednetherite.netherite_emerald_axe": "Netheritt-Smaragdøks",
+  "item.advancednetherite.netherite_diamond_axe": "Netheritt-Diamantøks",
+
+  "item.advancednetherite.netherite_iron_hoe": "Netheritt-Jerngrev",
+  "item.advancednetherite.netherite_gold_hoe": "Netheritt-Gullgrev",
+  "item.advancednetherite.netherite_emerald_hoe": "Netheritt-Smaragdgrev",
+  "item.advancednetherite.netherite_diamond_hoe": "Netheritt-Diamantgrev",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "Netheritt-Jernhakke",
+  "item.advancednetherite.netherite_gold_pickaxe": "Netheritt-Gullhakke",
+  "item.advancednetherite.netherite_emerald_pickaxe": "Netheritt-Smaragdhakke",
+  "item.advancednetherite.netherite_diamond_pickaxe": "Netheritt-Diamanthakke",
+
+  "item.advancednetherite.netherite_iron_shovel": "Netheritt-Jernspade",
+  "item.advancednetherite.netherite_gold_shovel": "Netheritt-Gullspade",
+  "item.advancednetherite.netherite_emerald_shovel": "Netheritt-Smaragdspade",
+  "item.advancednetherite.netherite_diamond_shovel": "Netheritt-Diamantspade",
+
+  "item.advancednetherite.netherite_iron_sword": "Netheritt-Jernsverd",
+  "item.advancednetherite.netherite_gold_sword": "Netheritt-Gullsverd",
+  "item.advancednetherite.netherite_emerald_sword": "Netheritt-Smaragdsverd",
+  "item.advancednetherite.netherite_diamond_sword": "Netheritt-Diamantsverd",
+
+  "itemGroup.advancednetherite.tab": "Advanced Netherite",
+
+  "tooltip.advancednetherite.endermask_armor.perk_one": "+ Pasifiserer Endermenn",
+  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Pasifiserer Pigliner",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Hvorfor?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Lag et Netheritt-Diamantgrev og besøk en psykolog i etterkant",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "Den Ultimate Piglin distraksjonsdrakt",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "Skaff deg et helt sett med Netheritt-Gullrustning",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Endermenn?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "Skaff deg et helt sett med Netheritt-Smaragdrustning",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Dekk meg i Netheritt-Diamant",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Skaff deg et helt sett med Netheritt-Diamantrustning"
+}
