@@ -5,10 +5,12 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Author: Autovw
@@ -54,5 +56,24 @@ public class AdvancedItem extends Item {
         if (Config.Client.showTooltips.get()) {
             addTooltips(stack, tooltip, flag);
         }
+    }
+
+    /**
+     * {@link Override} this method if you want to give your item a custom durability bar color.
+     * Feature is disabled by default, can be enabled in Advanced Netherite's Client config.
+     *
+     * @param stack The item stack
+     * @return The custom durability bar color
+     */
+    public TextFormatting customDurabilityBarColor(ItemStack stack) {
+        return null;
+    }
+
+    /**
+     * Don't override this method, use {@link AdvancedItem#customDurabilityBarColor(ItemStack)} to change the custom durability bar color.
+     */
+    @Override
+    public int getRGBDurabilityForDisplay(ItemStack stack) {
+        return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getRGBDurabilityForDisplay(stack);
     }
 }
