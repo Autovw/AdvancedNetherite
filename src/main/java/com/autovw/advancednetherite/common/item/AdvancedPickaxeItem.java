@@ -86,10 +86,6 @@ public class AdvancedPickaxeItem extends PickaxeItem {
             }
         }
 
-        if (customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get()) {
-            return Objects.requireNonNull(customDurabilityBarColor(stack).getColor());
-        }
-
-        return super.getRGBDurabilityForDisplay(stack);
+        return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getRGBDurabilityForDisplay(stack);
     }
 }
