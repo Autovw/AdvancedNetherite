@@ -15,7 +15,7 @@ public class Config {
     public static final Config.Common COMMON;
 
     static {
-        final Pair<Client, ForgeConfigSpec> clientConfigPair = new ForgeConfigSpec.Builder().configure(Config.Client::new);
+        final Pair<Client, ForgeConfigSpec> clientConfigPair = new ForgeConfigSpec.Builder().configure(Client::new);
         clientConfig = clientConfigPair.getRight();
         CLIENT = clientConfigPair.getLeft();
 
@@ -32,12 +32,14 @@ public class Config {
     public static class Client {
         public static ForgeConfigSpec.BooleanValue showTooltips;
         public static ForgeConfigSpec.BooleanValue matchingDurabilityBars;
+        public static ForgeConfigSpec.BooleanValue enableSearchBarInCreativeTab;
 
         public Client(ForgeConfigSpec.Builder builder) {
             builder.push("client");
             {
                 showTooltips = builder.comment("If true, displays tooltips, added by Advanced Netherite, with perks client-side. True by default.").define("showTooltips", true);
                 matchingDurabilityBars = builder.comment("If true, displays a (color) matching durability bar underneath the item when damaged. False by default.").define("matchingDurabilityBars", false);
+                enableSearchBarInCreativeTab = builder.comment("If true, enables a search bar in the Advanced Netherite creative tab. False by default.").define("enableSearchBarInCreativeTab", false);
             }
             builder.pop();
         }
