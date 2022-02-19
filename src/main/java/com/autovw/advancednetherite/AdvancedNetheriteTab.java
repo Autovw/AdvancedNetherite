@@ -7,6 +7,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
+import java.util.Objects;
+
 /**
  * Author: Autovw
  */
@@ -22,9 +24,25 @@ public class AdvancedNetheriteTab extends CreativeModeTab {
         return ModItems.NETHERITE_GOLD_INGOT.get().getDefaultInstance();
     }
 
+    /**
+     * The creative tab is sorted to display items from Advanced Netherite first.
+     * Items from other mods will be added AFTER the items from Advanced Netherite.
+     *
+     * @param items List of items that are added to the creative tab
+     */
     @Override
     public void fillItemList(NonNullList<ItemStack> items) {
         super.fillItemList(items);
+        items.sort((s1, s2) -> {
+            String item1 = Objects.requireNonNull(s1.getItem().getRegistryName()).getNamespace();
+            String item2 = Objects.requireNonNull(s2.getItem().getRegistryName()).getNamespace();
+
+            if (item1.equals(Reference.MOD_ID) == item2.equals(Reference.MOD_ID)) {
+                return 0;
+            }
+
+            return item1.equals(Reference.MOD_ID) ? -1 : 1;
+        });
     }
 
     /**
