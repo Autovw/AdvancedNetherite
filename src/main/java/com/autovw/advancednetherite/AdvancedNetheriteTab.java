@@ -27,6 +27,7 @@ public class AdvancedNetheriteTab extends ItemGroup {
     /**
      * The creative tab is sorted to display items from Advanced Netherite first.
      * Items from other mods will be added AFTER the items from Advanced Netherite.
+     * @since 1.10.1
      *
      * @param items List of items that are added to the creative tab
      */
@@ -48,6 +49,7 @@ public class AdvancedNetheriteTab extends ItemGroup {
     /**
      * Client-side feature which enables a search bar inside the Advanced Netherite creative tab.
      * This is turned off by default.
+     * @since 1.10.1
      */
     @Override
     public boolean hasSearchBar() {

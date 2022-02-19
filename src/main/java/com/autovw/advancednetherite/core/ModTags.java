@@ -9,8 +9,8 @@ import net.minecraft.tags.ItemTags;
 
 /**
  * Author: Autovw
+ * @since 1.9.0
  */
-@SuppressWarnings("unused")
 public class ModTags {
     // BLOCK TAGS
     public static final ITag.INamedTag<Block> NETHERITE_BLOCKS = BlockTags.bind(Reference.MOD_ID + ":netherite_blocks");
