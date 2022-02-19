@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 
 /**
  * Author: Autovw
+ * @since 1.9.0
  */
 public class ModTags {
     // BLOCK TAGS

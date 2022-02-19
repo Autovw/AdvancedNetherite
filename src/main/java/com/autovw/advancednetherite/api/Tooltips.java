@@ -18,6 +18,7 @@ public class Tooltips {
      * <code>
      *     public static final TranslatableComponent example = Tooltips.tooltip(Reference.MOD_ID, "example_name");
      * </code>
+     * @since 1.9.0
      *
      * @param modId Enter your modId here
      * @param tooltipName The name of the tooltip
@@ -35,6 +36,7 @@ public class Tooltips {
      * <code>
      *     public static final TranslatableComponent example = Tooltips.tooltip(Reference.MOD_ID, "example_name", ChatFormatting.PINK);
      * </code>
+     * @since 1.9.0
      *
      * @param modId Enter your modId here
      * @param tooltipName The name of the tooltip
@@ -53,6 +55,7 @@ public class Tooltips {
      * <code>
      *     public static final TranslatableComponent example = Tooltips.tooltip(Reference.MOD_ID, "example_name", ChatFormatting.PINK, ChatFormatting.BOLD);
      * </code>
+     * @since 1.9.0
      *
      * @param modId Enter your modId here
      * @param tooltipName The name of the tooltip
