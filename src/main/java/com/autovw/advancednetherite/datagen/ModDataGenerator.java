@@ -15,6 +15,11 @@ import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 public class ModDataGenerator {
     private ModDataGenerator() { }
 
+    /**
+     * A data generator which will generate json files such as item models, blockstates, recipes etc.
+     *
+     * @param event Event fired by Forge, which will start the data generator
+     */
     @SuppressWarnings("unused")
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
