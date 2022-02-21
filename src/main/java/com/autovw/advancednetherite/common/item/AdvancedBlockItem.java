@@ -46,7 +46,10 @@ public class AdvancedBlockItem extends BlockItem {
      * @param tooltip Collection of tooltips
      * @param flag Tooltip flag. Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled.
      */
-    public void addTooltips(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag) {}
+    public void addTooltips(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag) {
+    }
+
+    /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
     /**
      * Don't override this method, use: {@link AdvancedBlockItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.
