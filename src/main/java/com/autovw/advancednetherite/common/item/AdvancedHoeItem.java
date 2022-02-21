@@ -62,6 +62,7 @@ public class AdvancedHoeItem extends HoeItem {
      * @param stack The item stack
      * @return The custom durability bar color
      */
+    @Nullable
     public ChatFormatting customDurabilityBarColor(ItemStack stack) {
         return null;
     }
