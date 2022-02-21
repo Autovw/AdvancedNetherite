@@ -46,16 +46,7 @@ public class AdvancedItem extends Item {
      * @param tooltip Collection of tooltips
      * @param flag Tooltip flag. Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled.
      */
-    public void addTooltips(ItemStack stack, List<ITextComponent> tooltip, ITooltipFlag flag) {}
-
-    /**
-     * Don't override this method, use: {@link AdvancedItem#addTooltips(ItemStack, List, ITooltipFlag)} if you want to add your own custom tooltips.
-     */
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
-        if (Config.Client.showTooltips.get()) {
-            addTooltips(stack, tooltip, flag);
-        }
+    public void addTooltips(ItemStack stack, List<ITextComponent> tooltip, ITooltipFlag flag) {
     }
 
     /**
@@ -68,6 +59,18 @@ public class AdvancedItem extends Item {
     @Nullable
     public TextFormatting customDurabilityBarColor(ItemStack stack) {
         return null;
+    }
+
+    /* ================ INTERNAL, use alternatives linked in javadoc ================ */
+
+    /**
+     * Don't override this method, use: {@link AdvancedItem#addTooltips(ItemStack, List, ITooltipFlag)} if you want to add your own custom tooltips.
+     */
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
+        if (Config.Client.showTooltips.get()) {
+            addTooltips(stack, tooltip, flag);
+        }
     }
 
     /**

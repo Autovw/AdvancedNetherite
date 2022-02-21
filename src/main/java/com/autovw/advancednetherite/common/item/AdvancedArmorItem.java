@@ -54,21 +54,36 @@ public class AdvancedArmorItem extends ArmorItem {
     }
 
     /**
-     * Don't override this method, use: {@link AdvancedArmorItem#pacifiesPiglins()}
-     */
-    @Override
-    public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer) {
-        return pacifiesPiglins();
-    }
-
-    /**
      * {@link Override} this method if you want to add your own custom tooltips.
      *
      * @param stack The item stack
      * @param tooltip Collection of tooltips
      * @param flag Tooltip flag. Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled.
      */
-    public void addTooltips(ItemStack stack, List<ITextComponent> tooltip, ITooltipFlag flag) {}
+    public void addTooltips(ItemStack stack, List<ITextComponent> tooltip, ITooltipFlag flag) {
+    }
+
+    /**
+     * {@link Override} this method if you want to give your item a custom durability bar color.
+     * Feature is disabled by default, can be enabled in Advanced Netherite's Client config.
+     *
+     * @param stack The item stack
+     * @return The custom durability bar color
+     */
+    @Nullable
+    public TextFormatting customDurabilityBarColor(ItemStack stack) {
+        return null;
+    }
+
+    /* ================ INTERNAL, use alternatives linked in javadoc ================ */
+
+    /**
+     * Don't override this method, use: {@link AdvancedArmorItem#pacifiesPiglins()}
+     */
+    @Override
+    public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer) {
+        return pacifiesPiglins();
+    }
 
     /**
      * Don't override this method, use: {@link AdvancedArmorItem#addTooltips(ItemStack, List, ITooltipFlag)} if you want to add your own custom tooltips.
@@ -94,18 +109,6 @@ public class AdvancedArmorItem extends ArmorItem {
         if (Config.Client.showTooltips.get()) {
             addTooltips(stack, tooltip, flag);
         }
-    }
-
-    /**
-     * {@link Override} this method if you want to give your item a custom durability bar color.
-     * Feature is disabled by default, can be enabled in Advanced Netherite's Client config.
-     *
-     * @param stack The item stack
-     * @return The custom durability bar color
-     */
-    @Nullable
-    public TextFormatting customDurabilityBarColor(ItemStack stack) {
-        return null;
     }
 
     /**
