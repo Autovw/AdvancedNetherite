@@ -6,8 +6,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.EnderMan;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
@@ -53,14 +51,6 @@ public class AdvancedArmorItem extends ArmorItem {
     @Override
     public boolean isFireResistant() {
         return true;
-    }
-
-    /**
-     * Don't override this method, use: {@link AdvancedArmorItem#pacifiesEndermen()}
-     */
-    @Override
-    public boolean isEnderMask(ItemStack stack, Player player, EnderMan enderman) {
-        return pacifiesEndermen();
     }
 
     /**
