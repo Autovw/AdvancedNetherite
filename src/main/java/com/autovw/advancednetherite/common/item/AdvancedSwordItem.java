@@ -62,6 +62,7 @@ public class AdvancedSwordItem extends SwordItem {
      * @param stack The item stack
      * @return The custom durability bar color
      */
+    @Nullable
     public TextFormatting customDurabilityBarColor(ItemStack stack) {
         return null;
     }
