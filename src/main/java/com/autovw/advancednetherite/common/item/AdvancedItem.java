@@ -65,6 +65,7 @@ public class AdvancedItem extends Item {
      * @param stack The item stack
      * @return The custom durability bar color
      */
+    @Nullable
     public ChatFormatting customDurabilityBarColor(ItemStack stack) {
         return null;
     }
