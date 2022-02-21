@@ -43,16 +43,7 @@ public class AdvancedSwordItem extends SwordItem {
      * @param tooltip Collection of tooltips
      * @param flag Tooltip flag. Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled.
      */
-    public void addTooltips(ItemStack stack, List<Component> tooltip, TooltipFlag flag) {}
-
-    /**
-     * Don't override this method, use {@link AdvancedSwordItem#addTooltips(ItemStack, List, TooltipFlag)} if you want to add your own custom tooltips.
-     */
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        if (Config.Client.showTooltips.get()) {
-            addTooltips(stack, tooltip, flag);
-        }
+    public void addTooltips(ItemStack stack, List<Component> tooltip, TooltipFlag flag) {
     }
 
     /**
@@ -65,6 +56,18 @@ public class AdvancedSwordItem extends SwordItem {
     @Nullable
     public ChatFormatting customDurabilityBarColor(ItemStack stack) {
         return null;
+    }
+
+    /* ================ INTERNAL, use alternatives linked in javadoc ================ */
+
+    /**
+     * Don't override this method, use {@link AdvancedSwordItem#addTooltips(ItemStack, List, TooltipFlag)} if you want to add your own custom tooltips.
+     */
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
+        if (Config.Client.showTooltips.get()) {
+            addTooltips(stack, tooltip, flag);
+        }
     }
 
     /**

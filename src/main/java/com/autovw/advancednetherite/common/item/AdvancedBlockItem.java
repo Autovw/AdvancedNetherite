@@ -48,6 +48,8 @@ public class AdvancedBlockItem extends BlockItem {
      */
     public void addTooltips(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag) {}
 
+    /* ================ INTERNAL, use alternatives linked in javadoc ================ */
+
     /**
      * Don't override this method, use: {@link AdvancedBlockItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.
      */
