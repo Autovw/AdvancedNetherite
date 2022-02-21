@@ -4,8 +4,6 @@ import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.content.ModTooltips;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.monster.EndermanEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
@@ -53,14 +51,6 @@ public class AdvancedArmorItem extends ArmorItem {
     @Override
     public boolean isFireResistant() {
         return true;
-    }
-
-    /**
-     * Don't override this method, use: {@link AdvancedArmorItem#pacifiesEndermen()}
-     */
-    @Override
-    public boolean isEnderMask(ItemStack stack, PlayerEntity player, EndermanEntity enderman) {
-        return pacifiesEndermen();
     }
 
     /**
