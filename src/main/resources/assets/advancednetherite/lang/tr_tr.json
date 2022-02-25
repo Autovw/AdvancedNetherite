@@ -1,0 +1,70 @@
+{
+  "block.advancednetherite.netherite_iron_block": "Netherite-Demir Bloğu",
+  "block.advancednetherite.netherite_gold_block": "Netherite-Altın Bloğu",
+  "block.advancednetherite.netherite_emerald_block": "Netherite-Zümrüt Bloğu",
+  "block.advancednetherite.netherite_diamond_block": "Netherite-Diamond Bloğu",
+
+  "item.advancednetherite.netherite_iron_ingot": "Netherite-Demir Külçesi",
+  "item.advancednetherite.netherite_gold_ingot": "Netherite-Altın Külçesi",
+  "item.advancednetherite.netherite_emerald_ingot": "Netherite-Zümrüt Külçesi",
+  "item.advancednetherite.netherite_diamond_ingot": "Netherite-Elmas Külçesi",
+
+  "item.advancednetherite.netherite_iron_helmet": "Netherite-Demir Kask",
+  "item.advancednetherite.netherite_gold_helmet": "Netherite-Altın Kask",
+  "item.advancednetherite.netherite_emerald_helmet": "Netherite-Zümrüt Kask",
+  "item.advancednetherite.netherite_diamond_helmet": "Netherite-Elmas Kask",
+
+  "item.advancednetherite.netherite_iron_chestplate": "Netherite-Demir Göğüslük",
+  "item.advancednetherite.netherite_gold_chestplate": "Netherite-Altın Göğüslük",
+  "item.advancednetherite.netherite_emerald_chestplate": "Netherite-Zümrüt Göğüslük",
+  "item.advancednetherite.netherite_diamond_chestplate": "Netherite-Elmas Göğüslük",
+
+  "item.advancednetherite.netherite_iron_leggings": "Netherite-Demir Pantolon",
+  "item.advancednetherite.netherite_gold_leggings": "Netherite-Altın Pantolon",
+  "item.advancednetherite.netherite_emerald_leggings": "Netherite-Zümrüt Pantolon",
+  "item.advancednetherite.netherite_diamond_leggings": "Netherite-Elmas Pantolon",
+
+  "item.advancednetherite.netherite_iron_boots": "Netherite-Demir Bot",
+  "item.advancednetherite.netherite_gold_boots": "Netherite-Altın Bot",
+  "item.advancednetherite.netherite_emerald_boots": "Netherite-Zümrüt Bot",
+  "item.advancednetherite.netherite_diamond_boots": "Netherite-Elmas Bot",
+
+  "item.advancednetherite.netherite_iron_axe": "Netherite-Demir Balta",
+  "item.advancednetherite.netherite_gold_axe": "Netherite-Altın Balta",
+  "item.advancednetherite.netherite_emerald_axe": "Netherite-Zümrüt Balta",
+  "item.advancednetherite.netherite_diamond_axe": "Netherite-Elmas Balta",
+
+  "item.advancednetherite.netherite_iron_hoe": "Netherite-Demir Çapa",
+  "item.advancednetherite.netherite_gold_hoe": "Netherite-Altın Çapa",
+  "item.advancednetherite.netherite_emerald_hoe": "Netherite-Zümrüt Çapa",
+  "item.advancednetherite.netherite_diamond_hoe": "Netherite-Elmas Çapa",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "Netherite-Demir Kazma",
+  "item.advancednetherite.netherite_gold_pickaxe": "Netherite-Altın Kazma",
+  "item.advancednetherite.netherite_emerald_pickaxe": "Netherite-Zümrüt Kazma",
+  "item.advancednetherite.netherite_diamond_pickaxe": "Netherite-Elmas Kazma",
+
+  "item.advancednetherite.netherite_iron_shovel": "Netherite-Demir Kürek",
+  "item.advancednetherite.netherite_gold_shovel": "Netherite-Altın Kürek",
+  "item.advancednetherite.netherite_emerald_shovel": "Netherite-Zümrüt Kürek",
+  "item.advancednetherite.netherite_diamond_shovel": "Netherite-Elmas Kürek",
+
+  "item.advancednetherite.netherite_iron_sword": "Netherite-Demir Kılıç",
+  "item.advancednetherite.netherite_gold_sword": "Netherite-Altın Kılıç",
+  "item.advancednetherite.netherite_emerald_sword": "Netherite-Zümrüt Kılıç",
+  "item.advancednetherite.netherite_diamond_sword": "Netherite-Elmas Kılıç",
+
+  "itemGroup.advancednetherite.tab": "Gelişmiş Netherite",
+
+  "tooltip.advancednetherite.endermask_armor.perk_one": "+ Endermanleri sakinleştirir",
+  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Piglinleri sakinleştirir",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Niye ya?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Netherite-Elmas çapa yapın ve hayatınızı bir gözden geçirin.",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "Üstün Piglin dikkat dağıtma kıyafeti",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "Tam bir Netherite-Altın zırhı Kuşan",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Enderman?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "Tam bir Netherite-Zümrüt zırhı Kuşan",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Netherite-Diamondla sar beni",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Tam bir Netherite-Elmas zırhı Kuşan"
+}
