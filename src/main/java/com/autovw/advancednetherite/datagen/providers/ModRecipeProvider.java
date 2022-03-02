@@ -4,10 +4,12 @@ import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.ModTags;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -105,7 +107,7 @@ public class ModRecipeProvider extends RecipeProvider {
      * @param upgradeIngredient Ingot
      * @param result Result item
      */
-    public static void baseSmithingRecipe(Consumer<FinishedRecipe> consumer, Tag<Item> ingredient, Tag<Item> upgradeIngredient, Item result) {
+    public static void baseSmithingRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result) {
         UpgradeRecipeBuilder.smithing(Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), result)
                 .unlocks("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
                 .save(consumer, new ResourceLocation(result.getRegistryName().getNamespace(), result.toString() + "_smithing"));
@@ -119,7 +121,7 @@ public class ModRecipeProvider extends RecipeProvider {
      * @param upgradeIngredient Additional ingredients
      * @param result Upgraded ingot
      */
-    public static void baseIngotRecipe(Consumer<FinishedRecipe> consumer, Tag<Item> ingotIngredient, Tag<Item> upgradeIngredient, Item result) {
+    public static void baseIngotRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingotIngredient, TagKey<Item> upgradeIngredient, Item result) {
         ShapelessRecipeBuilder.shapeless(result)
                 .requires(ingotIngredient)
                 .requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient)
@@ -163,5 +165,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_chiseled_stone_bricks", has(Items.CHISELED_STONE_BRICKS))
                 .unlockedBy("has_netherite_ingots", has(ModTags.NETHERITE_INGOTS))
                 .save(consumer, new ResourceLocation(Reference.MOD_ID, Items.LODESTONE.toString()));
+    }
+
+    // Someone at Mojang decided it would be funny the make this method private in 1.18.2, even though it is widely used by data generators
+    protected static InventoryChangeTrigger.TriggerInstance has(TagKey<Item> tag) {
+        return inventoryTrigger(ItemPredicate.Builder.item().of(tag).build());
     }
 }
