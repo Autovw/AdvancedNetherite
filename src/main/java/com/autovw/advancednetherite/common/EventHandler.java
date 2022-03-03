@@ -1,17 +1,25 @@
 package com.autovw.advancednetherite.common;
 
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
+import com.autovw.advancednetherite.network.PacketHandler;
+import com.autovw.advancednetherite.network.message.PacifyEnderManPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.sound.PlaySoundEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.network.PacketDistributor;
+
+import java.util.Objects;
 
 /**
  * Author: Autovw
@@ -37,17 +45,14 @@ public class EventHandler {
                     enderMan.setTarget(null);
                     // The stare sound will be muted by another event
                     cancelStareSoundEvent = true;
+                    // Sends packet to the client in order to mute the enderman stare
+                    PacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() ->
+                            Objects.requireNonNull(target.getServer()).getPlayerList().getPlayer(target.getUUID())),
+                            new PacifyEnderManPacket(cancelStareSoundEvent));
+                } else {
+                    cancelStareSoundEvent = false;
                 }
             }
-        }
-    }
-
-    @SuppressWarnings("unused")
-    @SubscribeEvent
-    public static void onPlaySoundEvent(final PlaySoundEvent event) {
-        // This will cancel the stare sound produced by endermens if their target is null
-        if (cancelStareSoundEvent && event.getSound().getLocation().equals(SoundEvents.ENDERMAN_STARE.getLocation())) {
-            event.setSound(null);
         }
     }
 }
