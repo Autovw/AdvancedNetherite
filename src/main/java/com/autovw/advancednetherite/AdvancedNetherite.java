@@ -3,6 +3,7 @@ package com.autovw.advancednetherite;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
+import com.autovw.advancednetherite.network.PacketHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -35,5 +36,6 @@ public class AdvancedNetherite {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        PacketHandler.init();
     }
 }
