@@ -48,7 +48,7 @@ public class ModAdvancementProvider extends AdvancementProvider {
         Advancement.Builder.advancement()
                 .parent(netheriteEmeraldArmor)
                 .display(ModItems.NETHERITE_DIAMOND_CHESTPLATE.get(), new TranslationTextComponent("advancements.advancednetherite.nether.netherite_diamond_armor.title"), new TranslationTextComponent("advancements.advancednetherite.nether.netherite_diamond_armor.description"), null, FrameType.CHALLENGE, true, true, false)
-                .rewards(AdvancementRewards.Builder.experience(100))
+                .rewards(AdvancementRewards.Builder.experience(200))
                 .addCriterion("netherite_diamond_armor", InventoryChangeTrigger.Instance.hasItems(ModItems.NETHERITE_DIAMOND_HELMET.get(), ModItems.NETHERITE_DIAMOND_CHESTPLATE.get(), ModItems.NETHERITE_DIAMOND_LEGGINGS.get(), ModItems.NETHERITE_DIAMOND_BOOTS.get()))
                 .save(consumer, new ResourceLocation(Reference.MOD_ID, "nether/netherite_diamond_armor"), fileHelper);
     }
