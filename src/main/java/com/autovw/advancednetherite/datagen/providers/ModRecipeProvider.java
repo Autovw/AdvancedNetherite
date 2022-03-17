@@ -166,9 +166,4 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_netherite_ingots", has(ModTags.NETHERITE_INGOTS))
                 .save(consumer, new ResourceLocation(Reference.MOD_ID, Items.LODESTONE.toString()));
     }
-
-    // Someone at Mojang decided it would be funny the make this method private in 1.18.2, even though it is widely used by data generators
-    protected static InventoryChangeTrigger.TriggerInstance has(TagKey<Item> tag) {
-        return inventoryTrigger(ItemPredicate.Builder.item().of(tag).build());
-    }
 }
