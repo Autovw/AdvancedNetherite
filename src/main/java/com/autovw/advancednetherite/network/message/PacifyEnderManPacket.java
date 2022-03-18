@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.network.message;
 
-import com.autovw.advancednetherite.client.ClientEventHandler;
+import com.autovw.advancednetherite.client.ClientHandler;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
@@ -28,9 +28,9 @@ public class PacifyEnderManPacket {
     }
 
     public boolean handle(Supplier<NetworkEvent.Context> context) {
-        var success = new AtomicBoolean(false);
+        AtomicBoolean success = new AtomicBoolean(false);
         context.get().enqueueWork(() -> {
-            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> success.set(ClientEventHandler.updateSoundEvent(this.pacifyEnderMan)));
+            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> success.set(ClientHandler.updateSoundEvent(this.pacifyEnderMan)));
         });
         context.get().setPacketHandled(true);
         return success.get();

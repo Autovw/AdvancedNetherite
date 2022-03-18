@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.Mod;
  * Author: Autovw
  */
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-public class ClientEventHandler {
+public class ClientHandler {
     private static boolean cancelStareSoundEvent;
 
     public static boolean updateSoundEvent(boolean update) {
