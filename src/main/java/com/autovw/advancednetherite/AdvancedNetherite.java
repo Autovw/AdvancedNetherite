@@ -4,7 +4,6 @@ import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.ModToolTiers;
-import com.autovw.advancednetherite.network.PacketHandler;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -38,6 +37,5 @@ public class AdvancedNetherite {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         ModToolTiers.onCommonSetup();
-        PacketHandler.init();
     }
 }
