@@ -69,11 +69,11 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.0.19'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.0.43'
 
-    runtimeOnly fg.deobf('curse.maven:catalogue-459701:3559402')
-    runtimeOnly fg.deobf('curse.maven:configured-457570:3640884')
-    runtimeOnly fg.deobf('curse.maven:jei-238222:3696757')
+    runtimeOnly fg.deobf('curse.maven:catalogue-459701:3721991')
+    runtimeOnly fg.deobf('curse.maven:configured-457570:3721946')
+    runtimeOnly fg.deobf('curse.maven:jei-238222:3735570')
 }
 
 jar {
