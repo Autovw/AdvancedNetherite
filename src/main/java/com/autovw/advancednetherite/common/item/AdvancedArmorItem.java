@@ -43,6 +43,15 @@ public class AdvancedArmorItem extends ArmorItem {
     }
 
     /**
+     * {@link Override} this method if you want phantoms to behave neutral towards te player when the armor.
+     *
+     * @return If true, pacifies phantoms. Alo applies the tooltip.
+     */
+    public boolean pacifiesPhantoms() {
+        return false;
+    }
+
+    /**
      * Netherite items do not burn by default.
      * {@link Override} if you want to disable this feature.
      *
