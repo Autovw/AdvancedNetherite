@@ -16,8 +16,18 @@ public class NetheriteGoldArmorItem extends AdvancedArmorItem {
     }
 
     @Override
+    public boolean pacifiesEndermen() {
+        return Config.ArmorConfig.goldEndermanPassiveArmor.get();
+    }
+
+    @Override
     public boolean pacifiesPiglins() {
         return Config.ArmorConfig.goldPiglinPassiveArmor.get();
+    }
+
+    @Override
+    public boolean pacifiesPhantoms() {
+        return Config.ArmorConfig.goldPhantomPassiveArmor.get();
     }
 
     @Override

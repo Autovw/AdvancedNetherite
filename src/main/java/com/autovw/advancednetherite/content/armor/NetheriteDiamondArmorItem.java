@@ -26,6 +26,11 @@ public class NetheriteDiamondArmorItem extends AdvancedArmorItem {
     }
 
     @Override
+    public boolean pacifiesPhantoms() {
+        return Config.ArmorConfig.diamondPhantomPassiveArmor.get();
+    }
+
+    @Override
     public ChatFormatting customDurabilityBarColor(ItemStack stack) {
         return ChatFormatting.AQUA;
     }
