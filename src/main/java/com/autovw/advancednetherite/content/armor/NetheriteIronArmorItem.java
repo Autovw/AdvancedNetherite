@@ -16,6 +16,16 @@ public class NetheriteIronArmorItem extends AdvancedArmorItem {
     }
 
     @Override
+    public boolean pacifiesEndermen() {
+        return Config.ArmorConfig.ironEndermanPassiveArmor.get();
+    }
+
+    @Override
+    public boolean pacifiesPiglins() {
+        return Config.ArmorConfig.ironPiglinPassiveArmor.get();
+    }
+
+    @Override
     public boolean pacifiesPhantoms() {
         return Config.ArmorConfig.ironPhantomPassiveArmor.get();
     }

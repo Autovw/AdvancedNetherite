@@ -21,6 +21,16 @@ public class NetheriteEmeraldArmorItem extends AdvancedArmorItem {
     }
 
     @Override
+    public boolean pacifiesPiglins() {
+        return Config.ArmorConfig.emeraldPiglinPassiveArmor.get();
+    }
+
+    @Override
+    public boolean pacifiesPhantoms() {
+        return Config.ArmorConfig.emeraldPhantomPassiveArmor.get();
+    }
+
+    @Override
     public TextFormatting customDurabilityBarColor(ItemStack stack) {
         return TextFormatting.DARK_GREEN;
     }
