@@ -1,0 +1,70 @@
+{
+  "block.advancednetherite.netherite_iron_block": "Bloque de Hierro-Netherite",
+  "block.advancednetherite.netherite_gold_block": "Bloque de Oro-Netherite",
+  "block.advancednetherite.netherite_emerald_block": "Bloque de Esmeralda-Netherite",
+  "block.advancednetherite.netherite_diamond_block": "Bloque de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_ingot": "Lingote de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_ingot": "Lingote de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_ingot": "Lingote de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_ingot": "Lingote de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_helmet": "Casco de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_helmet": "Casco de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_helmet": "Casco de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_helmet": "Casco de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_chestplate": "Pechera de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_chestplate": "Pechera de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_chestplate": "Pechera de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_chestplate": "Pechera de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_leggings": "Pantalones de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_leggings": "Pantalones de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_leggings": "Pantalones de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_leggings": "Pantalones de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_boots": "Botas de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_boots": "Botas de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_boots": "Botas de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_boots": "Botas de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_axe": "Hacha de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_axe": "Hacha de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_axe": "Hacha de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_axe": "Hacha de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_hoe": "Hoz de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_hoe": "Hoz de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_hoe": "Hoz de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_hoe": "Hoz de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "Pico de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_pickaxe": "Pico de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_pickaxe": "Pico de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_pickaxe": "Pico de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_shovel": "Pala de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_shovel": "Pala de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_shovel": "Pala de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_shovel": "Pala de Diamante-Netherite",
+
+  "item.advancednetherite.netherite_iron_sword": "Espada de Hierro-Netherite",
+  "item.advancednetherite.netherite_gold_sword": "Espada de Oro-Netherite",
+  "item.advancednetherite.netherite_emerald_sword": "Espada de Esmeralda-Netherite",
+  "item.advancednetherite.netherite_diamond_sword": "Espada de Diamante-Netherite",
+
+  "itemGroup.advancednetherite.tab": "Netherite Avanzada",
+
+  "tooltip.advancednetherite.endermask_armor.perk_one": "+ Endermans Pacificos",
+  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Piglins Pacificos",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Por que?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Craftea una hoz de Diamante-Netherite y luego visita un psicologo",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "Traje de distracción ultra para Piglins",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "Consigue una armadura completa de Oro-Netherite",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Enderman?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "Consigue una armadura completa de Esmeralda-Netherite",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Cubreme de Diamante-Netherite",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Consigue una armadura completa de Diamante-Netherite"
+}
