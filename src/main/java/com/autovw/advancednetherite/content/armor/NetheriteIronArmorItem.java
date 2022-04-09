@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.content.armor;
 
 import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
+import com.autovw.advancednetherite.config.Config;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
@@ -12,6 +13,11 @@ import net.minecraft.util.text.TextFormatting;
 public class NetheriteIronArmorItem extends AdvancedArmorItem {
     public NetheriteIronArmorItem(IArmorMaterial material, EquipmentSlotType equipmentSlot, Properties properties) {
         super(material, equipmentSlot, properties);
+    }
+
+    @Override
+    public boolean pacifiesPhantoms() {
+        return Config.ArmorConfig.ironPhantomPassiveArmor.get();
     }
 
     @Override

@@ -59,6 +59,7 @@ public class Config {
     }
 
     public static class ArmorConfig {
+        public static ForgeConfigSpec.BooleanValue ironPhantomPassiveArmor;
         public static ForgeConfigSpec.BooleanValue goldPiglinPassiveArmor;
         public static ForgeConfigSpec.BooleanValue emeraldEndermanPassiveArmor;
         public static ForgeConfigSpec.BooleanValue diamondPiglinPassiveArmor;
@@ -67,6 +68,7 @@ public class Config {
         public ArmorConfig(ForgeConfigSpec.Builder builder) {
             builder.comment("Configure properties related to armor perks, added by Advanced Netherite, here").push("armor_config");
             {
+                ironPhantomPassiveArmor = builder.comment("If true, Phantoms behave neutral towards players wearing Netherite-Iron Armor. True by default.").define("ironPhantomPassiveArmor", true);
                 goldPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Gold Armor. True by default.").define("goldPiglinPassiveArmor", true);
                 emeraldEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Emerald Armor. True by default.").define("emeraldEndermanPassiveArmor", true);
                 diamondPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Diamond Armor. True by default.").define("diamondPiglinPassiveArmor", true);

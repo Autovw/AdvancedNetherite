@@ -7,6 +7,7 @@ import com.autovw.advancednetherite.network.message.PacifyEnderManPacket;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermanEntity;
+import net.minecraft.entity.monster.PhantomEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
@@ -46,6 +47,17 @@ public class EventHandler {
                             new PacifyEnderManPacket(cancelStareSoundEvent));
                 } else {
                     cancelStareSoundEvent = false;
+                }
+            }
+        }
+
+        // Check if attacker is a Phantom
+        if (attacker instanceof PhantomEntity && target != null) {
+            PhantomEntity phantom = (PhantomEntity) attacker;
+            for (ItemStack stack : target.getArmorSlots()) {
+                Item item = stack.getItem();
+                if (item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms()) {
+                    phantom.setTarget(null); // Set attacker target to null
                 }
             }
         }
