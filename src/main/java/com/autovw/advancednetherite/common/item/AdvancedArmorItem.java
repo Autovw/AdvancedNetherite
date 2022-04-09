@@ -101,16 +101,21 @@ public class AdvancedArmorItem extends ArmorItem {
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(ModTooltips.endermaskTooltip);
         tooltip.add(ModTooltips.piglinPassiveTooltip);
+        tooltip.add(ModTooltips.phantomPassiveTooltip);
 
         if (!Config.Client.showTooltips.get()) {
             tooltip.remove(ModTooltips.endermaskTooltip);
             tooltip.remove(ModTooltips.piglinPassiveTooltip);
+            tooltip.remove(ModTooltips.phantomPassiveTooltip);
         } else {
             if (!pacifiesEndermen()) {
                 tooltip.remove(ModTooltips.endermaskTooltip);
             }
             if (!pacifiesPiglins()) {
                 tooltip.remove(ModTooltips.piglinPassiveTooltip);
+            }
+            if (!pacifiesPhantoms()) {
+                tooltip.remove(ModTooltips.phantomPassiveTooltip);
             }
         }
 

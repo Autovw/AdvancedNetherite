@@ -17,4 +17,7 @@ public class ModTooltips {
 
     // Piglin Passive Tooltip
     public static final TranslatableComponent piglinPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "piglinpassive_armor.perk_one", ChatFormatting.GOLD);
+
+    // Phantom Passive Tooltip
+    public static final TranslatableComponent phantomPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "phantompassive_armor.perk_one", ChatFormatting.GRAY);
 }
