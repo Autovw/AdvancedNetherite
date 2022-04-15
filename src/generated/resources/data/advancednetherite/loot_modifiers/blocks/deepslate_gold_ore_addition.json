@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "items": [
+          "advancednetherite:netherite_gold_pickaxe"
+        ]
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:deepslate_gold_ore"
+    }
+  ],
+  "bonus_drop_item": "minecraft:raw_gold",
+  "bonus_drop_chance": 0.3,
+  "type": "advancednetherite:blocks/deepslate_gold_ore_addition"
+}

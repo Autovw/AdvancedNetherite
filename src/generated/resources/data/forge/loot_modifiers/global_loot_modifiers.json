@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "entries": [
+    "advancednetherite:blocks/gold_ore_addition",
+    "advancednetherite:blocks/iron_ore_addition",
+    "advancednetherite:blocks/diamond_ore_addition",
+    "advancednetherite:blocks/emerald_ore_addition",
+    "advancednetherite:blocks/nether_gold_ore_addition",
+    "advancednetherite:blocks/deepslate_gold_ore_addition",
+    "advancednetherite:blocks/deepslate_emerald_ore_addition",
+    "advancednetherite:blocks/deepslate_iron_ore_addition",
+    "advancednetherite:blocks/deepslate_diamond_ore_addition"
+  ]
+}

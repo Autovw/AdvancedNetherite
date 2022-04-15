@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "items": [
+          "advancednetherite:netherite_emerald_pickaxe"
+        ]
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:emerald_ore"
+    }
+  ],
+  "bonus_drop_item": "minecraft:emerald",
+  "bonus_drop_chance": 0.4,
+  "type": "advancednetherite:blocks/emerald_ore_addition"
+}
