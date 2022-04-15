@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "item": "advancednetherite:netherite_diamond_pickaxe"
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:diamond_ore"
+    }
+  ],
+  "bonus_drop_item": "minecraft:diamond",
+  "bonus_drop_chance": 0.25,
+  "type": "advancednetherite:blocks/diamond_ore_addition"
+}

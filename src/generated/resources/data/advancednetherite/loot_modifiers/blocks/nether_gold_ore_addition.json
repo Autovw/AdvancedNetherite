@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "item": "advancednetherite:netherite_gold_pickaxe"
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:nether_gold_ore"
+    }
+  ],
+  "bonus_drop_item": "minecraft:gold_nugget",
+  "bonus_drop_chance": 0.6,
+  "type": "advancednetherite:blocks/nether_gold_ore_addition"
+}

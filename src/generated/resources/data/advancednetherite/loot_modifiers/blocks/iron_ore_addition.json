@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "item": "advancednetherite:netherite_iron_pickaxe"
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:iron_ore"
+    }
+  ],
+  "bonus_drop_item": "minecraft:iron_nugget",
+  "bonus_drop_chance": 0.2,
+  "type": "advancednetherite:blocks/iron_ore_addition"
+}

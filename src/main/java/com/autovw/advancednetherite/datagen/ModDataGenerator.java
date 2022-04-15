@@ -32,6 +32,7 @@ public class ModDataGenerator {
             generator.addProvider(new ModItemTagsProvider(generator, blockTagsProvider, Reference.MOD_ID, helper));
             generator.addProvider(new ModRecipeProvider(generator));
             generator.addProvider(new ModLootTableProvider(generator));
+            generator.addProvider(new ModLootModifierProvider(generator, Reference.MOD_ID));
         }
 
         if (event.includeClient()) {
