@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.common.loot;
 
+import com.autovw.advancednetherite.config.Config;
 import com.google.gson.JsonObject;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -39,7 +40,7 @@ public class OreDropsLootModifier extends LootModifier {
     @Override
     protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
         ItemStack tool = context.getParamOrNull(LootContextParams.TOOL);
-        if (tool != null) {
+        if (tool != null && Config.AdditionalDropsConfig.enableAdditionalOreDrops.get()) {
             if (EnchantmentHelper.getEnchantments(tool).containsKey(Enchantments.SILK_TOUCH)) {
                 return generatedLoot; // return early if tool is enchanted with silk touch
             }

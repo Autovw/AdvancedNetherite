@@ -69,7 +69,7 @@ public class AdvancedPickaxeItem extends PickaxeItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
-            if (stack.getItem().getRegistryName().getNamespace().equals(Reference.MOD_ID)) {
+            if (stack.getItem().getRegistryName().getNamespace().equals(Reference.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalOreDrops.get()) {
                 if (Screen.hasShiftDown()) {
                     if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.ironDropTooltip);
                     if (tier == ModToolTiers.NETHERITE_GOLD) tooltip.add(ModTooltips.goldDropTooltip);
