@@ -30,6 +30,13 @@ For more information visit the [Advanced Netherite Wiki](https://github.com/Auto
 Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki/Crafting-Recipes) for all the crafting recipes or install [JEI](https://www.curseforge.com/minecraft/mc-mods/jei)!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
+### 🔖 Links to popular version
+* [Minecraft 1.18.2](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A9008)
+* [Minecraft 1.18.1](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A8857)
+* [Minecraft 1.17.1](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A8516)
+* [Minecraft 1.16.5](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A8203)
+
+![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ℹ More information
 * Please report issues to the [issue tracker on GitHub](https://github.com/Autovw/AdvancedNetherite/issues)!
 * May I feature your mod in my modpack? Yes, absolutely!
