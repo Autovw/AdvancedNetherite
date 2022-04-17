@@ -48,11 +48,13 @@ public class Config {
     // COMMON config
     public static class Common {
         public final ArmorConfig armorConfig;
+        public final AdditionalDropsConfig additionalDropsConfig;
 
         public Common(ForgeConfigSpec.Builder builder) {
             builder.push("common");
             {
                 this.armorConfig = new ArmorConfig(builder);
+                this.additionalDropsConfig = new AdditionalDropsConfig(builder);
             }
             builder.pop();
         }
@@ -109,6 +111,18 @@ public class Config {
                 diamondPhantomPassiveArmor = builder.comment("If true, Phantoms behave neutral towards players wearing Netherite-Diamond armor. False by default.").define("diamondPhantomPassiveArmor", false);
                 diamondPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Diamond armor. True by default.").define("diamondPiglinPassiveArmor", true);
                 diamondEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Diamond armor. True by default.").define("diamondEndermanPassiveArmor", true);
+            }
+            builder.pop();
+        }
+    }
+
+    public static class AdditionalDropsConfig {
+        public static ForgeConfigSpec.BooleanValue enableAdditionalOreDrops;
+
+        public AdditionalDropsConfig(ForgeConfigSpec.Builder builder) {
+            builder.comment("Configure properties related to additional drop perks here. Drop chances can be modified using a datapack.").push("additional_drops");
+            {
+                enableAdditionalOreDrops = builder.comment("If true, enables additional ore drops for pickaxes. Pickaxes with Silk Touch remain unaffected. True by default.").define("enableAdditionalOreDrops", true);
             }
             builder.pop();
         }
