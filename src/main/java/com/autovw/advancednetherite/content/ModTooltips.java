@@ -13,6 +13,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 // This is where tooltips are stored
 public class ModTooltips {
 
+    /* Armor related tooltips */
     // Endermask Tooltip
     public static final TranslationTextComponent endermaskTooltip = Tooltips.tooltip(Reference.MOD_ID, "endermask_armor.perk_one", TextFormatting.DARK_GREEN);
 
@@ -21,4 +22,16 @@ public class ModTooltips {
 
     // Phantom Passive Tooltip
     public static final TranslationTextComponent phantomPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "phantompassive_armor.perk_one", TextFormatting.GRAY);
+
+    /* Tool related tooltips */
+    public static final TranslationTextComponent diamondDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_diamond_drop", TextFormatting.AQUA);
+
+    public static final TranslationTextComponent emeraldDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_emerald_drop", TextFormatting.DARK_GREEN);
+
+    public static final TranslationTextComponent goldDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_gold_drop", TextFormatting.GOLD);
+
+    public static final TranslationTextComponent ironDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_iron_drop", TextFormatting.GRAY);
+
+    /* Misc */
+    public static final TranslationTextComponent shiftKeyTooltip = new TranslationTextComponent("tooltip." + Reference.MOD_ID + ".misc.press_shift_key", new TranslationTextComponent("tooltip." + Reference.MOD_ID + ".misc.shift").withStyle(TextFormatting.YELLOW));
 }
