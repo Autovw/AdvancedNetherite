@@ -39,10 +39,18 @@ public class AdvancedShovelItem extends ShovelItem {
     /**
      * {@link Override} this method if you want to add your own custom tooltips.
      *
-     * @param stack The item stack
-     * @param tooltip Collection of tooltips
-     * @param flag Tooltip flag. Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled.
+     * @param stack     The item stack
+     * @param level     The world/level
+     * @param tooltips  List of tooltips
+     * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
+    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag) {
+    }
+
+    /**
+     * Use {@link AdvancedShovelItem#addTooltips(ItemStack, Level, List, TooltipFlag)} instead
+     */
+    @Deprecated(forRemoval = true, since = "1.11.0") // TODO remove in MC 1.19
     public void addTooltips(ItemStack stack, List<Component> tooltip, TooltipFlag flag) {
     }
 
@@ -66,7 +74,8 @@ public class AdvancedShovelItem extends ShovelItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
-            addTooltips(stack, tooltip, flag);
+            addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
+            addTooltips(stack, tooltip, flag); // TODO remove in MC 1.19
         }
     }
 
