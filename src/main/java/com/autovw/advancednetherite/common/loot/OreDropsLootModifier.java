@@ -20,6 +20,10 @@ import java.util.List;
 
 /**
  * Author: Autovw
+ * <br/>
+ * A loot modifier for adding additional drops to blocks.
+ * See {@link com.autovw.advancednetherite.datagen.providers.ModLootModifierProvider} for example implementation.
+ * @apiNote This loot modifier can be disabled by {@link com.autovw.advancednetherite.config.Config.AdditionalDropsConfig#enableAdditionalOreDrops}
  */
 public class OreDropsLootModifier extends LootModifier {
     private final Item bonusDropItem;
@@ -29,6 +33,8 @@ public class OreDropsLootModifier extends LootModifier {
      * Constructs a LootModifier.
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
+     * @param bonusDropItem additional drop item
+     * @param bonusDropChance chance of the additional item being dropped
      */
     public OreDropsLootModifier(LootItemCondition[] conditionsIn, Item bonusDropItem, float bonusDropChance) {
         super(conditionsIn);
