@@ -12,6 +12,7 @@ import net.minecraft.network.chat.TranslatableComponent;
  */
 public class ModTooltips {
 
+    /* Armor related tooltips */
     // Endermask Tooltip
     public static final TranslatableComponent endermaskTooltip = Tooltips.tooltip(Reference.MOD_ID, "endermask_armor.perk_one", ChatFormatting.DARK_GREEN);
 
@@ -20,4 +21,16 @@ public class ModTooltips {
 
     // Phantom Passive Tooltip
     public static final TranslatableComponent phantomPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "phantompassive_armor.perk_one", ChatFormatting.GRAY);
+
+    /* Tool related tooltips */
+    public static final TranslatableComponent diamondDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_diamond_drop", ChatFormatting.AQUA);
+
+    public static final TranslatableComponent emeraldDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_emerald_drop", ChatFormatting.DARK_GREEN);
+
+    public static final TranslatableComponent goldDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_gold_drop", ChatFormatting.GOLD);
+
+    public static final TranslatableComponent ironDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_iron_drop", ChatFormatting.GRAY);
+
+    /* Misc */
+    public static final TranslatableComponent shiftKeyTooltip = new TranslatableComponent("tooltip." + Reference.MOD_ID + ".misc.press_shift_key", new TranslatableComponent("tooltip." + Reference.MOD_ID + ".misc.shift").withStyle(ChatFormatting.YELLOW));
 }

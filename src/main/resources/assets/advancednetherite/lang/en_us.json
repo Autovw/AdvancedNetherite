@@ -60,6 +60,14 @@
   "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Pacifies Piglins",
   "tooltip.advancednetherite.phantompassive_armor.perk_one": "+ Pacifies Phantoms",
 
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Chance of dropping additional Diamond while mining Diamond ores",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Chance of dropping additional Emerald while mining Emerald ores",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance of dropping additional Raw Gold while mining Gold ores",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance of dropping additional Raw Iron while mining Iron ores",
+
+  "tooltip.advancednetherite.misc.press_shift_key": "Press %s to view all perks",
+  "tooltip.advancednetherite.misc.shift": "[SHIFT]",
+
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Why?",
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Craft a Netherite-Diamond Hoe and visit a psychologist afterwards",
   "advancements.advancednetherite.nether.netherite_gold_armor.title": "Ultimate Piglin distraction suit",

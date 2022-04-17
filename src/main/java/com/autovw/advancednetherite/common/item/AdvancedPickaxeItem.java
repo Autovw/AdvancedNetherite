@@ -1,8 +1,11 @@
 package com.autovw.advancednetherite.common.item;
 
+import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.content.ModTooltips;
 import com.autovw.advancednetherite.core.ModToolTiers;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
@@ -66,7 +69,18 @@ public class AdvancedPickaxeItem extends PickaxeItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
-            addTooltips(stack, tooltip, flag);
+            if (stack.getItem().getRegistryName().getNamespace().equals(Reference.MOD_ID)) {
+                if (Screen.hasShiftDown()) {
+                    if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.ironDropTooltip);
+                    if (tier == ModToolTiers.NETHERITE_GOLD) tooltip.add(ModTooltips.goldDropTooltip);
+                    if (tier == ModToolTiers.NETHERITE_EMERALD) tooltip.add(ModTooltips.emeraldDropTooltip);
+                    if (tier == ModToolTiers.NETHERITE_DIAMOND) tooltip.add(ModTooltips.diamondDropTooltip);
+                } else {
+                    tooltip.add(ModTooltips.shiftKeyTooltip);
+                }
+            }
+
+            addTooltips(stack, tooltip, flag); // Add tooltips from add-ons
         }
     }
 
