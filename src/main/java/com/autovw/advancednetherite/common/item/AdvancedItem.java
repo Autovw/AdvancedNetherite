@@ -42,10 +42,18 @@ public class AdvancedItem extends Item {
     /**
      * {@link Override} this method if you want to add your own custom tooltips.
      *
-     * @param stack The item stack
-     * @param tooltip Collection of tooltips
-     * @param flag Tooltip flag. Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled.
+     * @param stack     The item stack
+     * @param world     The world/level
+     * @param tooltips  List of tooltips
+     * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
+    public void addTooltips(ItemStack stack, World world, List<ITextComponent> tooltips, ITooltipFlag flag) {
+    }
+
+    /**
+     * Use {@link AdvancedItem#addTooltips(ItemStack, World, List, ITooltipFlag)} instead
+     */
+    @Deprecated
     public void addTooltips(ItemStack stack, List<ITextComponent> tooltip, ITooltipFlag flag) {
     }
 
@@ -69,6 +77,7 @@ public class AdvancedItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
+            addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
             addTooltips(stack, tooltip, flag);
         }
     }
