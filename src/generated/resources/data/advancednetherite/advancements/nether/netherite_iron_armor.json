@@ -1,15 +1,15 @@
 {
-  "parent": "advancednetherite:nether/netherite_iron_armor",
+  "parent": "minecraft:nether/netherite_armor",
   "display": {
     "icon": {
-      "item": "advancednetherite:netherite_gold_chestplate",
+      "item": "advancednetherite:netherite_iron_chestplate",
       "nbt": "{Damage:0}"
     },
     "title": {
-      "translate": "advancements.advancednetherite.nether.netherite_gold_armor.title"
+      "translate": "advancements.advancednetherite.nether.netherite_iron_armor.title"
     },
     "description": {
-      "translate": "advancements.advancednetherite.nether.netherite_gold_armor.description"
+      "translate": "advancements.advancednetherite.nether.netherite_iron_armor.description"
     },
     "frame": "challenge",
     "show_toast": true,
@@ -20,28 +20,28 @@
     "experience": 100
   },
   "criteria": {
-    "netherite_gold_armor": {
+    "netherite_iron_armor": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "advancednetherite:netherite_gold_helmet"
+              "advancednetherite:netherite_iron_helmet"
             ]
           },
           {
             "items": [
-              "advancednetherite:netherite_gold_chestplate"
+              "advancednetherite:netherite_iron_chestplate"
             ]
           },
           {
             "items": [
-              "advancednetherite:netherite_gold_leggings"
+              "advancednetherite:netherite_iron_leggings"
             ]
           },
           {
             "items": [
-              "advancednetherite:netherite_gold_boots"
+              "advancednetherite:netherite_iron_boots"
             ]
           }
         ]
@@ -50,7 +50,7 @@
   },
   "requirements": [
     [
-      "netherite_gold_armor"
+      "netherite_iron_armor"
     ]
   ]
 }

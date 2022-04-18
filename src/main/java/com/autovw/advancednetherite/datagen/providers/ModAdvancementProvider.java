@@ -31,8 +31,15 @@ public class ModAdvancementProvider extends AdvancementProvider {
                 .addCriterion("netherite_diamond_hoe", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_DIAMOND_HOE.get()))
                 .save(consumer, new ResourceLocation(Reference.MOD_ID, "husbandry/obtain_netherite_diamond_hoe"), fileHelper);
 
-        Advancement netheriteGoldArmor = Advancement.Builder.advancement()
+        Advancement netheriteIronArmor = Advancement.Builder.advancement()
                 .parent(new ResourceLocation("minecraft", "nether/netherite_armor"))
+                .display(ModItems.NETHERITE_IRON_CHESTPLATE.get(), new TranslatableComponent("advancements.advancednetherite.nether.netherite_iron_armor.title"), new TranslatableComponent("advancements.advancednetherite.nether.netherite_iron_armor.description"), null, FrameType.CHALLENGE, true, true, false)
+                .rewards(AdvancementRewards.Builder.experience(100))
+                .addCriterion("netherite_iron_armor", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_IRON_HELMET.get(), ModItems.NETHERITE_IRON_CHESTPLATE.get(), ModItems.NETHERITE_IRON_LEGGINGS.get(), ModItems.NETHERITE_IRON_BOOTS.get()))
+                .save(consumer, new ResourceLocation(Reference.MOD_ID, "nether/netherite_iron_armor"), fileHelper);
+
+        Advancement netheriteGoldArmor = Advancement.Builder.advancement()
+                .parent(netheriteIronArmor)
                 .display(ModItems.NETHERITE_GOLD_CHESTPLATE.get(), new TranslatableComponent("advancements.advancednetherite.nether.netherite_gold_armor.title"), new TranslatableComponent("advancements.advancednetherite.nether.netherite_gold_armor.description"), null, FrameType.CHALLENGE, true, true, false)
                 .rewards(AdvancementRewards.Builder.experience(100))
                 .addCriterion("netherite_gold_armor", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_GOLD_HELMET.get(), ModItems.NETHERITE_GOLD_CHESTPLATE.get(), ModItems.NETHERITE_GOLD_LEGGINGS.get(), ModItems.NETHERITE_GOLD_BOOTS.get()))
