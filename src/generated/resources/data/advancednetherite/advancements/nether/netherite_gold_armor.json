@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:nether/netherite_armor",
+  "parent": "advancednetherite:nether/netherite_iron_armor",
   "display": {
     "icon": {
       "item": "advancednetherite:netherite_gold_chestplate",
