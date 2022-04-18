@@ -50,7 +50,7 @@ public class AdvancedNetherite {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         // register optional support for Detail Armor Bar if the mod is present
-        if (ModList.get().isLoaded("detailab")) {
+        if (ModList.get().isLoaded("detailab") && !Config.Client.forceDisableDetailArmorBarSupport.get()) {
             DetailArmorBarSupport.register();
         }
     }
