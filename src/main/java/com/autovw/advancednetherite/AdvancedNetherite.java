@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite;
 
+import com.autovw.advancednetherite.client.DetailArmorBarSupport;
 import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.ModBlocks;
@@ -11,9 +12,11 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -31,6 +34,7 @@ public class AdvancedNetherite {
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::commonSetup);
+        bus.addListener(this::clientSetup);
         bus.addGenericListener(GlobalLootModifierSerializer.class, this::onModifierSerializerRegistryEvent);
 
         ModBlocks.BLOCKS.register(bus);
@@ -42,6 +46,13 @@ public class AdvancedNetherite {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         ModToolTiers.onCommonSetup();
+    }
+
+    private void clientSetup(final FMLClientSetupEvent event) {
+        // register optional support for Detail Armor Bar if the mod is present
+        if (ModList.get().isLoaded("detailab")) {
+            DetailArmorBarSupport.register();
+        }
     }
 
     private void onModifierSerializerRegistryEvent(final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
