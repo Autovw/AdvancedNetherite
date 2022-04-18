@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "has_NamedTag[advancednetherite:upgrade_to_netherite_diamond]": {
+    "has_TagKey[minecraft:item / advancednetherite:upgrade_to_netherite_diamond]": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_NamedTag[advancednetherite:upgrade_to_netherite_diamond]",
+      "has_TagKey[minecraft:item / advancednetherite:upgrade_to_netherite_diamond]",
       "has_the_recipe"
     ]
   ]

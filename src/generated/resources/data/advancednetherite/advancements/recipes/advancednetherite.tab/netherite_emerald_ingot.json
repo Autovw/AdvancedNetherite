@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "has_OptionalNamedTag[forge:gems/emerald]": {
+    "has_TagKey[minecraft:item / forge:gems/emerald]": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_OptionalNamedTag[forge:gems/emerald]",
+      "has_TagKey[minecraft:item / forge:gems/emerald]",
       "has_the_recipe"
     ]
   ]

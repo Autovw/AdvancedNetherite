@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "has_OptionalNamedTag[forge:ingots/gold]": {
+    "has_TagKey[minecraft:item / forge:ingots/gold]": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_OptionalNamedTag[forge:ingots/gold]",
+      "has_TagKey[minecraft:item / forge:ingots/gold]",
       "has_the_recipe"
     ]
   ]
