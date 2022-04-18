@@ -74,6 +74,7 @@ dependencies {
     runtimeOnly fg.deobf('curse.maven:catalogue-459701:3529457')
     runtimeOnly fg.deobf('curse.maven:configured-457570:3546348')
     runtimeOnly fg.deobf('curse.maven:jei-238222:3681294')
+    implementation fg.deobf('curse.maven:detailarmorbar-520755:3470828')
 }
 
 jar {
