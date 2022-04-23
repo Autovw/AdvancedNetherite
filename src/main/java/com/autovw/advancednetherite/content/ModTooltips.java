@@ -23,13 +23,17 @@ public class ModTooltips {
     public static final TranslatableComponent phantomPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "phantompassive_armor.perk_one", ChatFormatting.GRAY);
 
     /* Tool related tooltips */
+    // Pickaxes
     public static final TranslatableComponent diamondDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_diamond_drop", ChatFormatting.AQUA);
-
     public static final TranslatableComponent emeraldDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_emerald_drop", ChatFormatting.DARK_GREEN);
-
     public static final TranslatableComponent goldDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_gold_drop", ChatFormatting.GOLD);
-
     public static final TranslatableComponent ironDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_iron_drop", ChatFormatting.GRAY);
+
+    // Swords
+    public static final TranslatableComponent endermanMobDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "sword.additional_enderman_mob_drop", ChatFormatting.DARK_GREEN);
+    public static final TranslatableComponent piglinMobDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "sword.additional_piglin_mob_drop", ChatFormatting.GOLD);
+    public static final TranslatableComponent zombifiedPiglinMobDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "sword.additional_zombified_piglin_mob_drop", ChatFormatting.GOLD);
+    public static final TranslatableComponent phantomMobDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "sword.additional_phantom_mob_drop", ChatFormatting.GRAY);
 
     /* Misc */
     public static final TranslatableComponent shiftKeyTooltip = new TranslatableComponent("tooltip." + Reference.MOD_ID + ".misc.press_shift_key", new TranslatableComponent("tooltip." + Reference.MOD_ID + ".misc.shift").withStyle(ChatFormatting.YELLOW));
