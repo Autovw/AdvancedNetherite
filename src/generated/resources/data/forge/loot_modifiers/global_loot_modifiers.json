@@ -1,10 +1,14 @@
 {
   "replace": false,
   "entries": [
+    "advancednetherite:entities/phantom_addition",
     "advancednetherite:blocks/gold_ore_addition",
     "advancednetherite:blocks/iron_ore_addition",
+    "advancednetherite:entities/piglin_addition",
     "advancednetherite:blocks/diamond_ore_addition",
     "advancednetherite:blocks/emerald_ore_addition",
-    "advancednetherite:blocks/nether_gold_ore_addition"
+    "advancednetherite:blocks/nether_gold_ore_addition",
+    "advancednetherite:entities/zombified_piglin_addition",
+    "advancednetherite:entities/enderman_addition"
   ]
 }
