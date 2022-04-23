@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite;
 
 import com.autovw.advancednetherite.client.DetailArmorBarSupport;
+import com.autovw.advancednetherite.common.loot.MobDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.ModBlocks;
@@ -65,7 +66,12 @@ public class AdvancedNetherite {
                 new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/deepslate_emerald_ore_addition")),
                 new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/deepslate_gold_ore_addition")),
                 new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/deepslate_iron_ore_addition")),
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/nether_gold_ore_addition"))
+                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/nether_gold_ore_addition")),
+
+                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/phantom_addition")),
+                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/piglin_addition")),
+                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/zombified_piglin_addition")),
+                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/enderman_addition"))
         );
     }
 }

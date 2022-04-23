@@ -1,0 +1,15 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:killed_by_player"
+    }
+  ],
+  "weapons": [
+    "advancednetherite:netherite_iron_sword"
+  ],
+  "bonus_drop_item": "minecraft:phantom_membrane",
+  "bonus_drop_chance": 0.5,
+  "min_drop_amount": 0,
+  "max_drop_amount": 2,
+  "type": "advancednetherite:entities/phantom_addition"
+}

@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:killed_by_player"
+    }
+  ],
+  "weapons": [
+    "advancednetherite:netherite_gold_sword",
+    "advancednetherite:netherite_diamond_sword"
+  ],
+  "bonus_drop_item": "minecraft:gold_ingot",
+  "bonus_drop_chance": 0.15,
+  "min_drop_amount": 1,
+  "max_drop_amount": 1,
+  "type": "advancednetherite:entities/piglin_addition"
+}
