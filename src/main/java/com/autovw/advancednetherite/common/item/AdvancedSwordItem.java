@@ -1,7 +1,10 @@
 package com.autovw.advancednetherite.common.item;
 
+import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.content.ModTooltips;
 import com.autovw.advancednetherite.core.ModToolTiers;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
@@ -74,6 +77,21 @@ public class AdvancedSwordItem extends SwordItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
+            if (stack.getItem().getRegistryName().getNamespace().equals(Reference.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalMobDrops.get()) {
+                if (Screen.hasShiftDown()) {
+                    if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.phantomMobDropTooltip);
+                    if (tier == ModToolTiers.NETHERITE_GOLD || tier == ModToolTiers.NETHERITE_DIAMOND) {
+                        tooltip.add(ModTooltips.zombifiedPiglinMobDropTooltip);
+                        tooltip.add(ModTooltips.piglinMobDropTooltip);
+                    }
+                    if (tier == ModToolTiers.NETHERITE_EMERALD || tier == ModToolTiers.NETHERITE_DIAMOND) {
+                        tooltip.add(ModTooltips.endermanMobDropTooltip);
+                    }
+                } else {
+                    tooltip.add(ModTooltips.shiftKeyTooltip);
+                }
+            }
+
             addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
             addTooltips(stack, tooltip, flag);
         }
