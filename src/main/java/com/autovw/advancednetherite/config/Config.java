@@ -124,11 +124,13 @@ public class Config {
 
     public static class AdditionalDropsConfig {
         public static ForgeConfigSpec.BooleanValue enableAdditionalOreDrops;
+        public static ForgeConfigSpec.BooleanValue enableAdditionalMobDrops;
 
         public AdditionalDropsConfig(ForgeConfigSpec.Builder builder) {
             builder.comment("Configure properties related to additional drop perks here. Drop chances can be modified using a datapack.").push("additional_drops");
             {
                 enableAdditionalOreDrops = builder.comment("If true, enables additional ore drops for pickaxes. Pickaxes with Silk Touch remain unaffected. True by default.").define("enableAdditionalOreDrops", true);
+                enableAdditionalMobDrops = builder.comment("If true, enables additional ore drops for swords. True by default.").define("enableAdditionalMobDrops", true);
             }
             builder.pop();
         }

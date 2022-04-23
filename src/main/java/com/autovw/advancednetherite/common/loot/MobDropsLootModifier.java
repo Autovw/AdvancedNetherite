@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.common.loot;
 
+import com.autovw.advancednetherite.config.Config;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -26,6 +27,7 @@ import java.util.Random;
  * <br/>
  * A loot modifier for adding additional crops to entities.
  * See {@link com.autovw.advancednetherite.datagen.providers.ModLootModifierProvider} for example implementation.
+ * @apiNote This loot modifier can be disabled by {@link com.autovw.advancednetherite.config.Config.AdditionalDropsConfig#enableAdditionalMobDrops}
  */
 public class MobDropsLootModifier extends LootModifier {
     private final List<Item> weapons;
@@ -51,7 +53,7 @@ public class MobDropsLootModifier extends LootModifier {
     @Override
     protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
         Entity killer = context.getParamOrNull(LootContextParams.KILLER_ENTITY);
-        if (killer instanceof Player player) {
+        if (killer instanceof Player player && Config.AdditionalDropsConfig.enableAdditionalMobDrops.get()) {
             ItemStack useItem = player.getMainHandItem(); // used to check if the player uses the correct weapon
             for (Item weapon : weapons) {
                 if (useItem.is(weapon) && bonusDropChance > 0.0 && bonusDropItem != null) {
