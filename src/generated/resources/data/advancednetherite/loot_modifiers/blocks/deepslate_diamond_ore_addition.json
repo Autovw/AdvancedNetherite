@@ -13,7 +13,11 @@
       "block": "minecraft:deepslate_diamond_ore"
     }
   ],
-  "bonus_drop_item": "minecraft:diamond",
-  "bonus_drop_chance": 0.25,
+  "bonus_drop": {
+    "item": "minecraft:diamond",
+    "chance": 0.25,
+    "min": 1,
+    "max": 1
+  },
   "type": "advancednetherite:blocks/deepslate_diamond_ore_addition"
 }
