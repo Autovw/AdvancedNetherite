@@ -7,9 +7,7 @@ import com.autovw.advancednetherite.core.ModItems;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -20,7 +18,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerC
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
