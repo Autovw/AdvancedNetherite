@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.common.item;
 
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.ModToolTiers;
 import net.minecraft.ChatFormatting;
@@ -71,6 +72,7 @@ public class AdvancedShovelItem extends ShovelItem {
     /**
      * Don't override this method, use {@link AdvancedShovelItem#addTooltips(ItemStack, List, TooltipFlag)} if you want to add your own custom tooltips.
      */
+    @Internal
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
@@ -82,6 +84,7 @@ public class AdvancedShovelItem extends ShovelItem {
     /**
      * Don't override this method, use {@link AdvancedShovelItem#customDurabilityBarColor(ItemStack)} to change the custom durability bar color.
      */
+    @Internal
     @Override
     public int getBarColor(ItemStack stack) {
         if (Config.Client.matchingDurabilityBars.get()) {

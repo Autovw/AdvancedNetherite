@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.datagen;
 
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.datagen.providers.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -11,6 +12,7 @@ import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 /**
  * Author: Autovw
  */
+@Internal
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModDataGenerator {
     private ModDataGenerator() { }

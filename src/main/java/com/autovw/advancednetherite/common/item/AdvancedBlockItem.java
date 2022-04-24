@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.common.item;
 
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.Config;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
@@ -53,6 +54,7 @@ public class AdvancedBlockItem extends BlockItem {
     /**
      * Don't override this method, use: {@link AdvancedBlockItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.
      */
+    @Internal
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
