@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#advancednetherite:tiers/tools/netherite_diamond",
+    "#advancednetherite:tiers/tools/netherite_emerald",
+    "#advancednetherite:tiers/tools/netherite_gold",
+    "#advancednetherite:tiers/tools/netherite_iron"
+  ]
+}

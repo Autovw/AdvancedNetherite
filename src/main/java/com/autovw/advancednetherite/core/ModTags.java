@@ -124,6 +124,20 @@ public class ModTags {
     public static final ITag.INamedTag<Item> SWORDS_UPGRADE_TO_NETHERITE_GOLD = bindModTag("swords/upgrade_to_netherite_gold");
     public static final ITag.INamedTag<Item> SWORDS_UPGRADE_TO_NETHERITE_IRON = bindModTag("swords/upgrade_to_netherite_iron");
 
+    // "tiers" tags
+    public static final ITag.INamedTag<Item> TIERS_ARMOR = bindModTag("tiers/armor");
+    public static final ITag.INamedTag<Item> TIERS_TOOLS = bindModTag("tiers/tools");
+
+    public static final ITag.INamedTag<Item> TIERS_ARMOR_NETHERITE_DIAMOND = bindModTag("tiers/armor/netherite_diamond");
+    public static final ITag.INamedTag<Item> TIERS_ARMOR_NETHERITE_EMERALD = bindModTag("tiers/armor/netherite_emerald");
+    public static final ITag.INamedTag<Item> TIERS_ARMOR_NETHERITE_GOLD = bindModTag("tiers/armor/netherite_gold");
+    public static final ITag.INamedTag<Item> TIERS_ARMOR_NETHERITE_IRON = bindModTag("tiers/armor/netherite_iron");
+
+    public static final ITag.INamedTag<Item> TIERS_TOOLS_NETHERITE_DIAMOND = bindModTag("tiers/tools/netherite_diamond");
+    public static final ITag.INamedTag<Item> TIERS_TOOLS_NETHERITE_EMERALD = bindModTag("tiers/tools/netherite_emerald");
+    public static final ITag.INamedTag<Item> TIERS_TOOLS_NETHERITE_GOLD = bindModTag("tiers/tools/netherite_gold");
+    public static final ITag.INamedTag<Item> TIERS_TOOLS_NETHERITE_IRON = bindModTag("tiers/tools/netherite_iron");
+
     // Helper method to register item tags from Advanced Netherite
     private static ITag.INamedTag<Item> bindModTag(String location) {
         return ItemTags.bind(Reference.MOD_ID + ":" + location);
