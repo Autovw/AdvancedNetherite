@@ -158,6 +158,64 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.SWORDS_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.SWORDS_NETHERITE_IRON);
         tag(ModTags.SWORDS_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.SWORDS_NETHERITE);
 
+        // Tiers
+        tag(ModTags.TIERS_ARMOR)
+                .addTag(ModTags.TIERS_ARMOR_NETHERITE_DIAMOND)
+                .addTag(ModTags.TIERS_ARMOR_NETHERITE_EMERALD)
+                .addTag(ModTags.TIERS_ARMOR_NETHERITE_GOLD)
+                .addTag(ModTags.TIERS_ARMOR_NETHERITE_IRON);
+        tag(ModTags.TIERS_TOOLS)
+                .addTag(ModTags.TIERS_TOOLS_NETHERITE_DIAMOND)
+                .addTag(ModTags.TIERS_TOOLS_NETHERITE_EMERALD)
+                .addTag(ModTags.TIERS_TOOLS_NETHERITE_GOLD)
+                .addTag(ModTags.TIERS_TOOLS_NETHERITE_IRON);
+
+        tag(ModTags.TIERS_ARMOR_NETHERITE_DIAMOND)
+                .add(ModItems.NETHERITE_DIAMOND_HELMET.get())
+                .add(ModItems.NETHERITE_DIAMOND_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_DIAMOND_LEGGINGS.get())
+                .add(ModItems.NETHERITE_DIAMOND_BOOTS.get());
+        tag(ModTags.TIERS_ARMOR_NETHERITE_EMERALD)
+                .add(ModItems.NETHERITE_EMERALD_HELMET.get())
+                .add(ModItems.NETHERITE_EMERALD_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_EMERALD_LEGGINGS.get())
+                .add(ModItems.NETHERITE_EMERALD_BOOTS.get());
+        tag(ModTags.TIERS_ARMOR_NETHERITE_GOLD)
+                .add(ModItems.NETHERITE_GOLD_HELMET.get())
+                .add(ModItems.NETHERITE_GOLD_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_GOLD_LEGGINGS.get())
+                .add(ModItems.NETHERITE_GOLD_BOOTS.get());
+        tag(ModTags.TIERS_ARMOR_NETHERITE_IRON)
+                .add(ModItems.NETHERITE_IRON_HELMET.get())
+                .add(ModItems.NETHERITE_IRON_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_IRON_LEGGINGS.get())
+                .add(ModItems.NETHERITE_IRON_BOOTS.get());
+
+        tag(ModTags.TIERS_TOOLS_NETHERITE_DIAMOND)
+                .add(ModItems.NETHERITE_DIAMOND_AXE.get())
+                .add(ModItems.NETHERITE_DIAMOND_HOE.get())
+                .add(ModItems.NETHERITE_DIAMOND_PICKAXE.get())
+                .add(ModItems.NETHERITE_DIAMOND_SHOVEL.get())
+                .add(ModItems.NETHERITE_DIAMOND_SWORD.get());
+        tag(ModTags.TIERS_TOOLS_NETHERITE_EMERALD)
+                .add(ModItems.NETHERITE_EMERALD_AXE.get())
+                .add(ModItems.NETHERITE_EMERALD_HOE.get())
+                .add(ModItems.NETHERITE_EMERALD_PICKAXE.get())
+                .add(ModItems.NETHERITE_EMERALD_SHOVEL.get())
+                .add(ModItems.NETHERITE_EMERALD_SWORD.get());
+        tag(ModTags.TIERS_TOOLS_NETHERITE_GOLD)
+                .add(ModItems.NETHERITE_GOLD_AXE.get())
+                .add(ModItems.NETHERITE_GOLD_HOE.get())
+                .add(ModItems.NETHERITE_GOLD_PICKAXE.get())
+                .add(ModItems.NETHERITE_GOLD_SHOVEL.get())
+                .add(ModItems.NETHERITE_GOLD_SWORD.get());
+        tag(ModTags.TIERS_TOOLS_NETHERITE_IRON)
+                .add(ModItems.NETHERITE_IRON_AXE.get())
+                .add(ModItems.NETHERITE_IRON_HOE.get())
+                .add(ModItems.NETHERITE_IRON_PICKAXE.get())
+                .add(ModItems.NETHERITE_IRON_SHOVEL.get())
+                .add(ModItems.NETHERITE_IRON_SWORD.get());
+
         /* Vanilla tags */
         tag(ItemTags.BEACON_PAYMENT_ITEMS).addTag(ModTags.NETHERITE_INGOTS);
 
