@@ -16,6 +16,7 @@ import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Author: Autovw
@@ -27,6 +28,7 @@ import java.util.List;
 public class OreDropsLootModifier extends LootModifier {
     private final Item bonusDropItem;
     private final float bonusDropChance;
+    private final int minDropAmount, maxDropAmount;
 
     /**
      * Constructs a LootModifier.
@@ -34,11 +36,15 @@ public class OreDropsLootModifier extends LootModifier {
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
      * @param bonusDropItem additional drop item
      * @param bonusDropChance chance of the additional item being dropped
+     * @param minDropAmount the minimum amount of items to be dropped
+     * @param maxDropAmount the maximum amount of items to be dropped
      */
-    public OreDropsLootModifier(ILootCondition[] conditionsIn, Item bonusDropItem, float bonusDropChance) {
+    public OreDropsLootModifier(ILootCondition[] conditionsIn, Item bonusDropItem, float bonusDropChance, int minDropAmount, int maxDropAmount) {
         super(conditionsIn);
         this.bonusDropItem = bonusDropItem;
         this.bonusDropChance = bonusDropChance;
+        this.minDropAmount = minDropAmount;
+        this.maxDropAmount = maxDropAmount;
     }
 
     @Override
@@ -49,8 +55,9 @@ public class OreDropsLootModifier extends LootModifier {
                 return generatedLoot; // return early if tool is enchanted with silk touch
             }
             if (bonusDropChance > 0.0 && bonusDropItem != null) {
-                if (context.getRandom().nextFloat() <= bonusDropChance) { // apply the chance
-                    generatedLoot.add(new ItemStack(bonusDropItem, 1));
+                Random random = context.getRandom();
+                if (maxDropAmount >= minDropAmount && random.nextFloat() <= bonusDropChance) { // apply the chance
+                    generatedLoot.add(new ItemStack(bonusDropItem, random.ints(minDropAmount, maxDropAmount + 1).iterator().nextInt()));
                 }
             }
         }
@@ -61,16 +68,23 @@ public class OreDropsLootModifier extends LootModifier {
 
         @Override
         public OreDropsLootModifier read(ResourceLocation location, JsonObject object, ILootCondition[] ailootcondition) {
-            Item bonusDropItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(JSONUtils.getAsString(object, "bonus_drop_item")));
-            float bonusDropChance = JSONUtils.getAsFloat(object, "bonus_drop_chance");
-            return new OreDropsLootModifier(ailootcondition, bonusDropItem, bonusDropChance);
+            JsonObject bonusDropObject = JSONUtils.getAsJsonObject(object, "bonus_drop");
+            Item bonusDropItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(JSONUtils.getAsString(bonusDropObject, "bonus_drop_item")));
+            float bonusDropChance = JSONUtils.getAsFloat(bonusDropObject, "bonus_drop_chance");
+            int minDropAmount = JSONUtils.getAsInt(bonusDropObject, "min");
+            int maxDropAmount = JSONUtils.getAsInt(bonusDropObject, "max");
+            return new OreDropsLootModifier(ailootcondition, bonusDropItem, bonusDropChance, minDropAmount, maxDropAmount);
         }
 
         @Override
         public JsonObject write(OreDropsLootModifier instance) {
             JsonObject object = makeConditions(instance.conditions);
-            object.addProperty("bonus_drop_item", ForgeRegistries.ITEMS.getKey(instance.bonusDropItem).toString());
-            object.addProperty("bonus_drop_chance", instance.bonusDropChance);
+            JsonObject bonusDropObject = new JsonObject();
+            object.add("bonus_drop", bonusDropObject);
+            bonusDropObject.addProperty("item", ForgeRegistries.ITEMS.getKey(instance.bonusDropItem).toString());
+            bonusDropObject.addProperty("chance", instance.bonusDropChance);
+            bonusDropObject.addProperty("min", instance.minDropAmount);
+            bonusDropObject.addProperty("max", instance.maxDropAmount);
             return object;
         }
     }

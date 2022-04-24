@@ -11,7 +11,11 @@
       "block": "minecraft:nether_gold_ore"
     }
   ],
-  "bonus_drop_item": "minecraft:gold_nugget",
-  "bonus_drop_chance": 0.6,
+  "bonus_drop": {
+    "item": "minecraft:gold_nugget",
+    "chance": 0.6,
+    "min": 1,
+    "max": 3
+  },
   "type": "advancednetherite:blocks/nether_gold_ore_addition"
 }

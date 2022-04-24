@@ -11,7 +11,11 @@
       "block": "minecraft:iron_ore"
     }
   ],
-  "bonus_drop_item": "minecraft:iron_nugget",
-  "bonus_drop_chance": 0.2,
+  "bonus_drop": {
+    "item": "minecraft:iron_nugget",
+    "chance": 0.2,
+    "min": 1,
+    "max": 4
+  },
   "type": "advancednetherite:blocks/iron_ore_addition"
 }
