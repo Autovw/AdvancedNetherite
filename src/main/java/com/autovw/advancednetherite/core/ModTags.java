@@ -16,6 +16,8 @@ public class ModTags {
     public static final ITag.INamedTag<Block> NETHERITE_BLOCKS = BlockTags.bind(Reference.MOD_ID + ":netherite_blocks");
 
     // ITEM TAGS
+    public static final ITag.INamedTag<Item> NETHERITE_BLOCKITEMS = bindModTag("netherite_blocks");
+
     public static final ITag.INamedTag<Item> NETHERITE_INGOTS = bindModTag("netherite_ingots");
     public static final ITag.INamedTag<Item> UPGRADE_TO_NETHERITE_DIAMOND = bindModTag("upgrade_to_netherite_diamond");
     public static final ITag.INamedTag<Item> UPGRADE_TO_NETHERITE_EMERALD = bindModTag("upgrade_to_netherite_emerald");
