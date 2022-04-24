@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.common.item;
 
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.Config;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.ITooltipFlag;
@@ -54,6 +55,7 @@ public class AdvancedBlockItem extends BlockItem {
     /**
      * Don't override this method, use: {@link AdvancedBlockItem#addTooltips(ItemStack, World, List, ITooltipFlag)} if you want to add your own custom tooltips.
      */
+    @Internal
     @Override
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {

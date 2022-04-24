@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.common;
 
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
 import com.autovw.advancednetherite.network.PacketHandler;
 import com.autovw.advancednetherite.network.message.PacifyEnderManPacket;
@@ -20,6 +21,7 @@ import java.util.Objects;
 /**
  * Author: Autovw
  */
+@Internal
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class EventHandler {
     private static boolean cancelStareSoundEvent;

@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.network.message;
 
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.client.ClientEventHandler;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -12,6 +13,7 @@ import java.util.function.Supplier;
 /**
  * Author: Autovw
  */
+@Internal
 public class PacifyEnderManPacket {
     public final boolean pacifyEnderMan;
 

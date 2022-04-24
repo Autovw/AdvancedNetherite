@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.client;
 
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.api.annotation.Internal;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.sound.PlaySoundEvent;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 /**
  * Author: Autovw
  */
+@Internal
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ClientEventHandler {
     private static boolean cancelStareSoundEvent;

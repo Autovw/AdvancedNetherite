@@ -2,6 +2,7 @@ package com.autovw.advancednetherite.client;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.core.ModItems;
 import com.redlimerl.detailab.api.DetailArmorBarAPI;
 import com.redlimerl.detailab.api.render.ArmorBarRenderManager;
@@ -15,6 +16,7 @@ import net.minecraft.util.ResourceLocation;
  * <br/>
  * Support class for Detail Armor Bar mod
  */
+@Internal
 public class DetailArmorBarSupport {
     protected static final ResourceLocation ARMOR_BAR_TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/armor_bar/armor_bar.png");
 

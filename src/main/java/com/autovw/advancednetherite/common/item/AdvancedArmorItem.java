@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.common.item;
 
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.content.ModTooltips;
 import net.minecraft.client.util.ITooltipFlag;
@@ -97,6 +98,7 @@ public class AdvancedArmorItem extends ArmorItem {
     /**
      * Don't override this method, use: {@link AdvancedArmorItem#pacifiesPiglins()}
      */
+    @Internal
     @Override
     public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer) {
         return pacifiesPiglins();
@@ -105,6 +107,7 @@ public class AdvancedArmorItem extends ArmorItem {
     /**
      * Don't override this method, use: {@link AdvancedArmorItem#addTooltips(ItemStack, List, ITooltipFlag)} if you want to add your own custom tooltips.
      */
+    @Internal
     @Override
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
         tooltip.add(ModTooltips.endermaskTooltip);
@@ -137,6 +140,7 @@ public class AdvancedArmorItem extends ArmorItem {
     /**
      * Don't override this method, use {@link AdvancedArmorItem#customDurabilityBarColor(ItemStack)} to change the custom durability bar color.
      */
+    @Internal
     @Override
     public int getRGBDurabilityForDisplay(ItemStack stack) {
         return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getRGBDurabilityForDisplay(stack);

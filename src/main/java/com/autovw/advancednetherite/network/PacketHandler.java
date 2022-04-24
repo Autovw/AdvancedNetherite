@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.network;
 
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.network.message.PacifyEnderManPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.NetworkDirection;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.network.simple.SimpleChannel;
 /**
  * Author: Autovw
  */
+@Internal
 public class PacketHandler {
     private PacketHandler() {
     }

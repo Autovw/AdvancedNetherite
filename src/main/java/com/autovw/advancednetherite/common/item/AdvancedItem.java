@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.common.item;
 
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.Config;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
@@ -74,6 +75,7 @@ public class AdvancedItem extends Item {
     /**
      * Don't override this method, use: {@link AdvancedItem#addTooltips(ItemStack, List, ITooltipFlag)} if you want to add your own custom tooltips.
      */
+    @Internal
     @Override
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
@@ -85,6 +87,7 @@ public class AdvancedItem extends Item {
     /**
      * Don't override this method, use {@link AdvancedItem#customDurabilityBarColor(ItemStack)} to change the custom durability bar color.
      */
+    @Internal
     @Override
     public int getRGBDurabilityForDisplay(ItemStack stack) {
         return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getRGBDurabilityForDisplay(stack);
