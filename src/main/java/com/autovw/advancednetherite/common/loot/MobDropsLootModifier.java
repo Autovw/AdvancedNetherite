@@ -39,6 +39,11 @@ public class MobDropsLootModifier extends LootModifier {
      * Constructs a LootModifier.
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
+     * @param weapons the weapons this modifier works for
+     * @param bonusDropItem the bonus item which should be dropped
+     * @param bonusDropChance the chance of the bonus item dropping
+     * @param minDropAmount the minimum amount of items to be dropped
+     * @param maxDropAmount the maximum amount of items to be dropped
      */
     public MobDropsLootModifier(LootItemCondition[] conditionsIn, List<Item> weapons, Item bonusDropItem, float bonusDropChance, int minDropAmount, int maxDropAmount) {
         super(conditionsIn);
@@ -72,16 +77,17 @@ public class MobDropsLootModifier extends LootModifier {
         @Override
         public MobDropsLootModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
             List<Item> weapons = new ArrayList<>();
-            JsonArray weaponArray = GsonHelper.getAsJsonArray(object, "weapons");
+            JsonObject bonusDropObject = GsonHelper.getAsJsonObject(object, "bonus_drop");
+            JsonArray weaponArray = GsonHelper.getAsJsonArray(bonusDropObject, "weapons");
 
             for (JsonElement weapon : weaponArray) {
                 weapons.add(ForgeRegistries.ITEMS.getValue(new ResourceLocation(weapon.getAsString())));
             }
 
-            Item bonusDropItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(GsonHelper.getAsString(object, "bonus_drop_item")));
-            float bonusDropChance = GsonHelper.getAsFloat(object, "bonus_drop_chance");
-            int minDropAmount = GsonHelper.getAsInt(object, "min_drop_amount");
-            int maxDropAmount = GsonHelper.getAsInt(object, "max_drop_amount");
+            Item bonusDropItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(GsonHelper.getAsString(bonusDropObject, "item")));
+            float bonusDropChance = GsonHelper.getAsFloat(bonusDropObject, "chance");
+            int minDropAmount = GsonHelper.getAsInt(bonusDropObject, "min");
+            int maxDropAmount = GsonHelper.getAsInt(bonusDropObject, "max");
 
             return new MobDropsLootModifier(ailootcondition, weapons, bonusDropItem, bonusDropChance, minDropAmount, maxDropAmount);
         }
@@ -89,15 +95,20 @@ public class MobDropsLootModifier extends LootModifier {
         @Override
         public JsonObject write(MobDropsLootModifier instance) {
             JsonObject object = makeConditions(instance.conditions);
+            JsonObject bonusDropObject = new JsonObject();
+
             JsonArray weaponArray = new JsonArray(); // create array for allowed weapons
             for (Item weapon : instance.weapons) {
                 weaponArray.add(ForgeRegistries.ITEMS.getKey(weapon).toString());
             }
-            object.add("weapons", weaponArray); // add json array containing allowed weapons
-            object.addProperty("bonus_drop_item", ForgeRegistries.ITEMS.getKey(instance.bonusDropItem).toString());
-            object.addProperty("bonus_drop_chance", instance.bonusDropChance);
-            object.addProperty("min_drop_amount", instance.minDropAmount);
-            object.addProperty("max_drop_amount", instance.maxDropAmount);
+
+            object.add("bonus_drop", bonusDropObject);
+
+            bonusDropObject.add("weapons", weaponArray); // add json array containing allowed weapons
+            bonusDropObject.addProperty("item", ForgeRegistries.ITEMS.getKey(instance.bonusDropItem).toString());
+            bonusDropObject.addProperty("chance", instance.bonusDropChance);
+            bonusDropObject.addProperty("min", instance.minDropAmount);
+            bonusDropObject.addProperty("max", instance.maxDropAmount);
             return object;
         }
     }
