@@ -21,6 +21,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags() {
         /* Mod Tags */
+        tag(ModTags.NETHERITE_BLOCKITEMS)
+                .add(ModBlocks.NETHERITE_IRON_BLOCK.get().asItem())
+                .add(ModBlocks.NETHERITE_GOLD_BLOCK.get().asItem())
+                .add(ModBlocks.NETHERITE_EMERALD_BLOCK.get().asItem())
+                .add(ModBlocks.NETHERITE_DIAMOND_BLOCK.get().asItem());
+
         tag(ModTags.NETHERITE_INGOTS)
                 .add(ModItems.NETHERITE_IRON_INGOT.get())
                 .add(ModItems.NETHERITE_GOLD_INGOT.get())

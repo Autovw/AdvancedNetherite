@@ -17,6 +17,8 @@ public class ModTags {
     public static final TagKey<Block> NETHERITE_BLOCKS = BlockTags.create(new ResourceLocation(Reference.MOD_ID, "netherite_blocks"));
 
     // ITEM TAGS
+    public static final TagKey<Item> NETHERITE_BLOCKITEMS = bindModTag("netherite_blocks");
+
     public static final TagKey<Item> NETHERITE_INGOTS = bindModTag("netherite_ingots");
     public static final TagKey<Item> UPGRADE_TO_NETHERITE_DIAMOND = bindModTag("upgrade_to_netherite_diamond");
     public static final TagKey<Item> UPGRADE_TO_NETHERITE_EMERALD = bindModTag("upgrade_to_netherite_emerald");
