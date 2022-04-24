@@ -69,8 +69,8 @@ public class OreDropsLootModifier extends LootModifier {
         @Override
         public OreDropsLootModifier read(ResourceLocation location, JsonObject object, ILootCondition[] ailootcondition) {
             JsonObject bonusDropObject = JSONUtils.getAsJsonObject(object, "bonus_drop");
-            Item bonusDropItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(JSONUtils.getAsString(bonusDropObject, "bonus_drop_item")));
-            float bonusDropChance = JSONUtils.getAsFloat(bonusDropObject, "bonus_drop_chance");
+            Item bonusDropItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(JSONUtils.getAsString(bonusDropObject, "item")));
+            float bonusDropChance = JSONUtils.getAsFloat(bonusDropObject, "chance");
             int minDropAmount = JSONUtils.getAsInt(bonusDropObject, "min");
             int maxDropAmount = JSONUtils.getAsInt(bonusDropObject, "max");
             return new OreDropsLootModifier(ailootcondition, bonusDropItem, bonusDropChance, minDropAmount, maxDropAmount);
