@@ -56,11 +56,27 @@
 
   "itemGroup.advancednetherite.tab": "Netherite Avanzada",
 
-  "tooltip.advancednetherite.endermask_armor.perk_one": "+ Endermans Pacificos",
-  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Piglins Pacificos",
+  "tooltip.advancednetherite.armor.enderman_passive": "+ Endermans Pacificos",
+  "tooltip.advancednetherite.armor.piglin_passive": "+ Piglins Pacificos",
+  "tooltip.advancednetherite.armor.phantom_passive": "+ Pacifies Phantoms",
+
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Chance of dropping additional Diamond while mining Diamond ores",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Chance of dropping additional Emerald while mining Emerald ores",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance of dropping additional Raw Gold while mining Gold ores",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance of dropping additional Raw Iron while mining Iron ores",
+
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Chance of dropping additional Ender Pearl on killing Enderman",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Chance of dropping additional Gold Ingot on killing Piglin",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ Chance of dropping additional Gold Nugget(s) on killing Zombified Piglin",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ Chance of dropping additional Phantom Membrane(s) on killing Phantom",
+
+  "tooltip.advancednetherite.misc.press_shift_key": "Press %s to view all perks",
+  "tooltip.advancednetherite.misc.shift": "[SHIFT]",
 
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Por que?",
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Craftea una hoz de Diamante-Netherite y luego visita un psicologo",
+  "advancements.advancednetherite.nether.netherite_iron_armor.title": "No More Phantoms",
+  "advancements.advancednetherite.nether.netherite_iron_armor.description": "Get a full suit of Netherite-Iron armor",
   "advancements.advancednetherite.nether.netherite_gold_armor.title": "Traje de distracción ultra para Piglins",
   "advancements.advancednetherite.nether.netherite_gold_armor.description": "Consigue una armadura completa de Oro-Netherite",
   "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Enderman?",

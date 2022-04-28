@@ -56,11 +56,27 @@
 
   "itemGroup.advancednetherite.tab": "Продвинутый Незерит",
 
-  "tooltip.advancednetherite.endermask_armor.perk_one": "+ Усмиряет Эндерменов",
-  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Усмиряет Пиглинов",
+  "tooltip.advancednetherite.armor.enderman_passive": "+ Усмиряет Эндерменов",
+  "tooltip.advancednetherite.armor.piglin_passive": "+ Усмиряет Пиглинов",
+  "tooltip.advancednetherite.armor.phantom_passive": "+ Pacifies Phantoms",
+
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Chance of dropping additional Diamond while mining Diamond ores",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Chance of dropping additional Emerald while mining Emerald ores",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance of dropping additional Raw Gold while mining Gold ores",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance of dropping additional Raw Iron while mining Iron ores",
+
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Chance of dropping additional Ender Pearl on killing Enderman",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Chance of dropping additional Gold Ingot on killing Piglin",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ Chance of dropping additional Gold Nugget(s) on killing Zombified Piglin",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ Chance of dropping additional Phantom Membrane(s) on killing Phantom",
+
+  "tooltip.advancednetherite.misc.press_shift_key": "Press %s to view all perks",
+  "tooltip.advancednetherite.misc.shift": "[SHIFT]",
 
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Зачем?",
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Скрафтите Алмазно-Незеритовую мотыгу и посетите психолога после этого",
+  "advancements.advancednetherite.nether.netherite_iron_armor.title": "No More Phantoms",
+  "advancements.advancednetherite.nether.netherite_iron_armor.description": "Get a full suit of Netherite-Iron armor",
   "advancements.advancednetherite.nether.netherite_gold_armor.title": "Ультимативный костюм для отвлечения пиглинов",
   "advancements.advancednetherite.nether.netherite_gold_armor.description": "Получите полный комплект Золото-Незеритовой брони",
   "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Эндермен?",

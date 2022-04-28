@@ -56,11 +56,27 @@
 
   "itemGroup.advancednetherite.tab": "Advanced Netherite",
 
-  "tooltip.advancednetherite.endermask_armor.perk_one": "+ 엔더맨들의 평화",
-  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ 피글린들의 평화",
+  "tooltip.advancednetherite.armor.enderman_passive": "+ 엔더맨들의 평화",
+  "tooltip.advancednetherite.armor.piglin_passive": "+ 피글린들의 평화",
+  "tooltip.advancednetherite.armor.phantom_passive": "+ Pacifies Phantoms",
+
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Chance of dropping additional Diamond while mining Diamond ores",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Chance of dropping additional Emerald while mining Emerald ores",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance of dropping additional Raw Gold while mining Gold ores",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance of dropping additional Raw Iron while mining Iron ores",
+
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Chance of dropping additional Ender Pearl on killing Enderman",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Chance of dropping additional Gold Ingot on killing Piglin",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ Chance of dropping additional Gold Nugget(s) on killing Zombified Piglin",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ Chance of dropping additional Phantom Membrane(s) on killing Phantom",
+
+  "tooltip.advancednetherite.misc.press_shift_key": "Press %s to view all perks",
+  "tooltip.advancednetherite.misc.shift": "[SHIFT]",
 
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "왜?",
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "다이아몬드 네더라이트 괭이 제작 후 심리학자 방문",
+  "advancements.advancednetherite.nether.netherite_iron_armor.title": "No More Phantoms",
+  "advancements.advancednetherite.nether.netherite_iron_armor.description": "Get a full suit of Netherite-Iron armor",
   "advancements.advancednetherite.nether.netherite_gold_armor.title": "얼티밋 피글린 정신을 산만하게 하는 슈트",
   "advancements.advancednetherite.nether.netherite_gold_armor.description": "금 네더라이트 갑옷 한 벌 만들기",
   "advancements.advancednetherite.nether.netherite_emerald_armor.title": "엔더맨?",
