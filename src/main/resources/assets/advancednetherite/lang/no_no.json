@@ -56,11 +56,27 @@
 
   "itemGroup.advancednetherite.tab": "Advanced Netherite",
 
-  "tooltip.advancednetherite.endermask_armor.perk_one": "+ Pasifiserer Endermenn",
-  "tooltip.advancednetherite.piglinpassive_armor.perk_one": "+ Pasifiserer Pigliner",
+  "tooltip.advancednetherite.armor.enderman_passive": "+ Pasifiserer Endermenn",
+  "tooltip.advancednetherite.armor.piglin_passive": "+ Pasifiserer Pigliner",
+  "tooltip.advancednetherite.armor.phantom_passive": "+ Pacifies Phantoms",
+
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Chance of dropping additional Diamond while mining Diamond ores",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Chance of dropping additional Emerald while mining Emerald ores",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance of dropping additional Golden Nugget(s) while mining Gold ores",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance of dropping additional Iron Nugget(s) while mining Iron ores",
+
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Chance of dropping additional Ender Pearl on killing Enderman",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Chance of dropping additional Gold Ingot on killing Piglin",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ Chance of dropping additional Gold Nugget(s) on killing Zombified Piglin",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ Chance of dropping additional Phantom Membrane(s) on killing Phantom",
+
+  "tooltip.advancednetherite.misc.press_shift_key": "Press %s to view all perks",
+  "tooltip.advancednetherite.misc.shift": "[SHIFT]",
 
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Hvorfor?",
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Lag et Netheritt-Diamantgrev og besøk en psykolog i etterkant",
+  "advancements.advancednetherite.nether.netherite_iron_armor.title": "No More Phantoms",
+  "advancements.advancednetherite.nether.netherite_iron_armor.description": "Get a full suit of Netherite-Iron armor",
   "advancements.advancednetherite.nether.netherite_gold_armor.title": "Den Ultimate Piglin distraksjonsdrakt",
   "advancements.advancednetherite.nether.netherite_gold_armor.description": "Skaff deg et helt sett med Netheritt-Gullrustning",
   "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Endermenn?",
