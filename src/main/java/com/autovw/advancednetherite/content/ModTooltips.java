@@ -15,13 +15,13 @@ public class ModTooltips {
 
     /* Armor related tooltips */
     // Endermask Tooltip
-    public static final TranslationTextComponent endermaskTooltip = Tooltips.tooltip(Reference.MOD_ID, "endermask_armor.perk_one", TextFormatting.DARK_GREEN);
+    public static final TranslationTextComponent endermaskTooltip = Tooltips.tooltip(Reference.MOD_ID, "armor.enderman_passive", TextFormatting.DARK_GREEN);
 
     // Piglin Passive Tooltip
-    public static final TranslationTextComponent piglinPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "piglinpassive_armor.perk_one", TextFormatting.GOLD);
+    public static final TranslationTextComponent piglinPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "armor.piglin_passive", TextFormatting.GOLD);
 
     // Phantom Passive Tooltip
-    public static final TranslationTextComponent phantomPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "phantompassive_armor.perk_one", TextFormatting.GRAY);
+    public static final TranslationTextComponent phantomPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "armor.phantom_passive", TextFormatting.GRAY);
 
     /* Tool related tooltips */
     // Pickaxes
