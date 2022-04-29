@@ -64,6 +64,6 @@ public class ModLootModifierProvider extends GlobalLootModifierProvider {
         String name = "entities/" + lootTarget.getRegistryName().getPath() + "_addition";
         add(name, new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(modId, name)), new MobDropsLootModifier(new LootItemCondition[] {
                 LootItemKilledByPlayerCondition.killedByPlayer().build()
-        }, List.of(weapons), bonusAddition, additionChance, minAddition, maxAddition));
+        }, lootTarget, List.of(weapons), bonusAddition, additionChance, minAddition, maxAddition));
     }
 }
