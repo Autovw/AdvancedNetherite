@@ -1,11 +1,11 @@
-![Banner](https://i.postimg.cc/9QSbwK7q/Advanced-Netherite-Banner.png)
+![Banner](https://i.postimg.cc/bv5LdRY8/Advanced-Netherite-Banner-V11.png)
 # Advanced Netherite
 
 This is the **Forge** version, click [here](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite-fabric) for the Fabric version!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 📖 About
-**Advanced Netherite** is a vanilla and add-on friendly, open-source mod that adds in more tiers of Netherite!
+**Advanced Netherite** is a configurable, vanilla friendly, open-source mod that adds in more tiers of Netherite!
 The goal of the mod is to extend the vanilla Minecraft experience by adding more goals to achieve.
 
 For more information visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki)!
@@ -13,12 +13,15 @@ For more information visit the [Advanced Netherite Wiki](https://github.com/Auto
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ✅ Features
 
-[![Features](https://i.postimg.cc/nVGNLfCk/Advanced-Netherite-Features2.png)](https://github.com/Autovw/AdvancedNetherite/wiki)
+[![Features](https://i.postimg.cc/MTd6yX4W/Advanced-Netherite-Features-V11.png)](https://github.com/Autovw/AdvancedNetherite/wiki)
 
-* 4 new tiers of Netherite!
-* For all new tiers of Netherite there are sets of tools, sets of armor and blocks.
-* Every Netherite tier has its own unique properties.
-* Support for add-ons and datapacks.
+* 4 **new** tiers of Netherite!
+* For each new tier of Netherite there are sets of tools, sets of armor and blocks
+* Each Netherite tier has its own unique properties
+  * Special armor perks
+  * Additional drops for tools (v1.11.x and above)
+* Optional support for [Detail Armor Bar](https://www.curseforge.com/minecraft/mc-mods/detail-armor-bar-forge) mod!
+* Support for add-ons and datapacks
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 💎 Tiers of Netherite
@@ -26,8 +29,13 @@ For more information visit the [Advanced Netherite Wiki](https://github.com/Auto
 ![Tiers](https://i.postimg.cc/d3SF5SZS/Advanced-Netherite-Types-Of-Netherite-Updated.png)
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
+### 🛡️ Armor perks
+![ArmorPerks](https://i.postimg.cc/Kjyw7MVw/1280x720-Advanced-Netherite-Armor-Perks-V11.png) \
+*Install [Configured](https://www.curseforge.com/minecraft/mc-mods/configured) mod for in-game config menu!*
+
+![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 🔨 Crafting recipes
-Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki/Crafting-Recipes) for all the crafting recipes or install [JEI](https://www.curseforge.com/minecraft/mc-mods/jei)!
+The recipes for the mod can be found on the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki/Crafting-Recipes), or simply by installing [Just Enough Items (JEI)](https://www.curseforge.com/minecraft/mc-mods/jei)!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 🔖 Links to popular version
@@ -39,10 +47,10 @@ Check the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ℹ More information
 * Please report issues to the [issue tracker on GitHub](https://github.com/Autovw/AdvancedNetherite/issues)!
-* May I feature your mod in my modpack? Yes, absolutely!
+* May I feature your mod in my CurseForge modpack? Yes, absolutely!
 * Advanced Netherite is also available for [Fabric](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite-fabric).
 * Click [here](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/screenshots) for more images!
-* Visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki) for more information on everything this mod adds.
+* Visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki) for more information on everything this mod adds and does.
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 💬 Join my Discord server!
@@ -50,5 +58,7 @@ _[Join my Discord server](https://discord.gg/KP3BBatuw5) if you want to get noti
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 #### ⚠️ Disclaimer
-This mod should only be downloaded from [this CurseForge page](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite) and my [GitHub](https://github.com/Autovw/AdvancedNetherite/releases).
-Do not reupload or download the mod from any other download sources as they might be malicious.
+This mod is only distributed through [this](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite) CurseForge page and the [official GitHub repository](https://github.com/Autovw/AdvancedNetherite/releases).
+Please do not redistribute this mod *or* download this mod from any other download source.
+
+For more detail on mod reposts, and how to stay protected against them, visit: [stopmodreposts.org](https://stopmodreposts.org).
