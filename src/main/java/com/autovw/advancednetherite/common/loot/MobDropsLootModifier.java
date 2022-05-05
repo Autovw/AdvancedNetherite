@@ -64,8 +64,7 @@ public class MobDropsLootModifier extends LootModifier {
         Entity killer = context.getParamOrNull(LootContextParams.KILLER_ENTITY); // the entity killer
         Entity victim = context.getParamOrNull(LootContextParams.THIS_ENTITY); // killed entity
         if (killer instanceof Player player && entity != null && Config.AdditionalDropsConfig.enableAdditionalMobDrops.get()) {
-            Entity killedEntity = entity.tryCast(victim); // check if the killed entity is in fact the entity specified in the loot modifier
-            if (killedEntity != null) {
+            if (victim != null && entity.equals(victim.getType())) { // check if the killed entity is in fact the entity specified in the loot modifier
                 ItemStack useItem = player.getMainHandItem(); // used to check if the player uses the correct weapon
                 for (Item weapon : weapons) {
                     if (useItem.is(weapon) && bonusDropChance > 0.0 && bonusDropItem != null) {
