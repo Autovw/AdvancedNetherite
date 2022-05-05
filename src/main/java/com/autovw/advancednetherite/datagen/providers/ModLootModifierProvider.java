@@ -34,13 +34,13 @@ public class ModLootModifierProvider extends GlobalLootModifierProvider {
         addOreDrop(Reference.MOD_ID, Blocks.DIAMOND_ORE, ModItems.NETHERITE_DIAMOND_PICKAXE.get(), Items.DIAMOND, 0.25f, 1, 1);
         addOreDrop(Reference.MOD_ID, Blocks.EMERALD_ORE, ModItems.NETHERITE_EMERALD_PICKAXE.get(), Items.EMERALD, 0.4f, 1, 1);
         addOreDrop(Reference.MOD_ID, Blocks.GOLD_ORE, ModItems.NETHERITE_GOLD_PICKAXE.get(), Items.RAW_GOLD, 0.3f, 1, 1);
-        addOreDrop(Reference.MOD_ID, Blocks.IRON_ORE, ModItems.NETHERITE_IRON_PICKAXE.get(), Items.RAW_IRON, 0.2f, 1, 1);
+        addOreDrop(Reference.MOD_ID, Blocks.IRON_ORE, ModItems.NETHERITE_IRON_PICKAXE.get(), Items.RAW_IRON, 0.2f, 1, 2);
 
         // deepslate ores
         addOreDrop(Reference.MOD_ID, Blocks.DEEPSLATE_DIAMOND_ORE, ModItems.NETHERITE_DIAMOND_PICKAXE.get(), Items.DIAMOND, 0.25f, 1, 1);
         addOreDrop(Reference.MOD_ID, Blocks.DEEPSLATE_EMERALD_ORE, ModItems.NETHERITE_EMERALD_PICKAXE.get(), Items.EMERALD, 0.4f, 1, 1);
         addOreDrop(Reference.MOD_ID, Blocks.DEEPSLATE_GOLD_ORE, ModItems.NETHERITE_GOLD_PICKAXE.get(), Items.RAW_GOLD, 0.3f, 1, 1);
-        addOreDrop(Reference.MOD_ID, Blocks.DEEPSLATE_IRON_ORE, ModItems.NETHERITE_IRON_PICKAXE.get(), Items.RAW_IRON, 0.2f, 1, 1);
+        addOreDrop(Reference.MOD_ID, Blocks.DEEPSLATE_IRON_ORE, ModItems.NETHERITE_IRON_PICKAXE.get(), Items.RAW_IRON, 0.2f, 1, 2);
 
         // nether ores
         addOreDrop(Reference.MOD_ID, Blocks.NETHER_GOLD_ORE, ModItems.NETHERITE_GOLD_PICKAXE.get(), Items.GOLD_NUGGET, 0.6f, 1, 3);

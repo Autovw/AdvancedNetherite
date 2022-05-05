@@ -17,7 +17,7 @@
     "item": "minecraft:raw_iron",
     "chance": 0.2,
     "min": 1,
-    "max": 1
+    "max": 2
   },
   "type": "advancednetherite:blocks/deepslate_iron_ore_addition"
 }
