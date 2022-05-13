@@ -110,28 +110,12 @@ public class AdvancedArmorItem extends ArmorItem {
     @Internal
     @Override
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
-        tooltip.add(ModTooltips.endermaskTooltip);
-        tooltip.add(ModTooltips.piglinPassiveTooltip);
-        tooltip.add(ModTooltips.phantomPassiveTooltip);
-
-        if (!Config.Client.showTooltips.get()) {
-            tooltip.remove(ModTooltips.endermaskTooltip);
-            tooltip.remove(ModTooltips.piglinPassiveTooltip);
-            tooltip.remove(ModTooltips.phantomPassiveTooltip);
-        } else {
-            if (!pacifiesEndermen()) {
-                tooltip.remove(ModTooltips.endermaskTooltip);
-            }
-            if (!pacifiesPiglins()) {
-                tooltip.remove(ModTooltips.piglinPassiveTooltip);
-            }
-            if (!pacifiesPhantoms()) {
-                tooltip.remove(ModTooltips.phantomPassiveTooltip);
-            }
-        }
-
-        // Adds all the tooltips from add-ons
         if (Config.Client.showTooltips.get()) {
+            if (pacifiesEndermen()) tooltip.add(ModTooltips.ENDERMAN_PASSIVE_TOOLTIP);
+            if (pacifiesPiglins()) tooltip.add(ModTooltips.PIGLIN_PASSIVE_TOOLTIP);
+            if (pacifiesPhantoms()) tooltip.add(ModTooltips.PHANTOM_PASSIVE_TOOLTIP);
+
+            // Adds all the tooltips from add-ons
             addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
             addTooltips(stack, tooltip, flag);
         }
