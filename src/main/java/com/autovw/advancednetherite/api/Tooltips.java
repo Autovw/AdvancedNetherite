@@ -7,7 +7,9 @@ import net.minecraft.network.chat.TranslatableComponent;
  * Author: Autovw
  * <br>
  * Added as of version 1.9.0, the API will be expanded over time.
+ * This API has been replaced by {@link TooltipBuilder} and will be removed in MC 1.19
  */
+@Deprecated(since = "1.12.0", forRemoval = true)
 public class Tooltips {
 
     /**
@@ -24,6 +26,7 @@ public class Tooltips {
      * @param tooltipName The name of the tooltip
      * @return The tooltip
      */
+    @Deprecated
     public static TranslatableComponent tooltip(String modId, String tooltipName) {
         return new TranslatableComponent("tooltip." + modId + "." + tooltipName);
     }
@@ -43,6 +46,7 @@ public class Tooltips {
      * @param tooltipColor The color of the tooltip
      * @return The tooltip
      */
+    @Deprecated
     public static TranslatableComponent tooltip(String modId, String tooltipName, ChatFormatting tooltipColor) {
         return (TranslatableComponent) new TranslatableComponent("tooltip." + modId + "." + tooltipName).withStyle(tooltipColor);
     }
@@ -63,6 +67,7 @@ public class Tooltips {
      * @param tooltipFormat The format of the tooltip, e.g. BOLD or STRIKETHROUGH
      * @return The tooltip
      */
+    @Deprecated
     public static TranslatableComponent tooltip(String modId, String tooltipName, ChatFormatting tooltipColor, ChatFormatting tooltipFormat) {
         return (TranslatableComponent) new TranslatableComponent("tooltip." + modId + "." + tooltipName).withStyle(tooltipColor).withStyle(tooltipFormat);
     }
