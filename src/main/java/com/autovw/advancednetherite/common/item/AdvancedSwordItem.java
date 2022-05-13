@@ -90,7 +90,7 @@ public class AdvancedSwordItem extends SwordItem {
                         tooltip.add(ModTooltips.endermanMobDropTooltip);
                     }
                 } else {
-                    tooltip.add(ModTooltips.shiftKeyTooltip);
+                    tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
                 }
             }
 

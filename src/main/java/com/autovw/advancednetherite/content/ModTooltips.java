@@ -1,7 +1,10 @@
 package com.autovw.advancednetherite.content;
 
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.api.TooltipBuilder;
 import com.autovw.advancednetherite.api.Tooltips;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -14,14 +17,26 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class ModTooltips {
 
     /* Armor related tooltips */
-    // Endermask Tooltip
+    /**
+     * @deprecated use {@link #ENDERMAN_PASSIVE_TOOLTIP} instead
+     */
+    @Deprecated
     public static final TranslationTextComponent endermaskTooltip = Tooltips.tooltip(Reference.MOD_ID, "armor.enderman_passive", TextFormatting.DARK_GREEN);
+    public static final IFormattableTextComponent ENDERMAN_PASSIVE_TOOLTIP = TooltipBuilder.create(new ResourceLocation(Reference.MOD_ID, "armor.enderman_passive")).withStyle(TextFormatting.DARK_GREEN);
 
-    // Piglin Passive Tooltip
+    /**
+     * @deprecated use {@link #PIGLIN_PASSIVE_TOOLTIP} instead
+     */
+    @Deprecated
     public static final TranslationTextComponent piglinPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "armor.piglin_passive", TextFormatting.GOLD);
+    public static final IFormattableTextComponent PIGLIN_PASSIVE_TOOLTIP = TooltipBuilder.create(new ResourceLocation(Reference.MOD_ID, "armor.piglin_passive")).withStyle(TextFormatting.GOLD);
 
-    // Phantom Passive Tooltip
+    /**
+     * @deprecated use {@link #PHANTOM_PASSIVE_TOOLTIP} instead
+     */
+    @Deprecated
     public static final TranslationTextComponent phantomPassiveTooltip = Tooltips.tooltip(Reference.MOD_ID, "armor.phantom_passive", TextFormatting.GRAY);
+    public static final IFormattableTextComponent PHANTOM_PASSIVE_TOOLTIP = TooltipBuilder.create(new ResourceLocation(Reference.MOD_ID, "armor.phantom_passive")).withStyle(TextFormatting.GRAY);
 
     /* Tool related tooltips */
     // Pickaxes
@@ -37,5 +52,10 @@ public class ModTooltips {
     public static final TranslationTextComponent phantomMobDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "sword.additional_phantom_mob_drop", TextFormatting.GRAY);
 
     /* Misc */
+    /**
+     * @deprecated use {@link #SHIFT_KEY_TOOLTIP} instead
+     */
+    @Deprecated
     public static final TranslationTextComponent shiftKeyTooltip = new TranslationTextComponent("tooltip." + Reference.MOD_ID + ".misc.press_shift_key", new TranslationTextComponent("tooltip." + Reference.MOD_ID + ".misc.shift").withStyle(TextFormatting.YELLOW));
+    public static final IFormattableTextComponent SHIFT_KEY_TOOLTIP = TooltipBuilder.create(new ResourceLocation(Reference.MOD_ID, "misc.press_shift_key"), TooltipBuilder.create(new ResourceLocation(Reference.MOD_ID, "misc.shift")).withStyle(TextFormatting.YELLOW));
 }

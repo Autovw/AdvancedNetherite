@@ -86,7 +86,7 @@ public class AdvancedPickaxeItem extends PickaxeItem {
                     if (tier == ModToolTiers.NETHERITE_EMERALD) tooltip.add(ModTooltips.emeraldDropTooltip);
                     if (tier == ModToolTiers.NETHERITE_DIAMOND) tooltip.add(ModTooltips.diamondDropTooltip);
                 } else {
-                    tooltip.add(ModTooltips.shiftKeyTooltip);
+                    tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
                 }
             }
 
