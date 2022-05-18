@@ -17,8 +17,7 @@ public class ClientEventHandler {
     private static boolean cancelStareSoundEvent;
 
     public static boolean updateSoundEvent(boolean update) {
-        if (update) return cancelStareSoundEvent = true;
-        return false;
+        return update && (cancelStareSoundEvent = true);
     }
 
     @SuppressWarnings("unused")

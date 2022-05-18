@@ -2,6 +2,7 @@ package com.autovw.advancednetherite.common;
 
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.api.impl.IAdvancedItem;
 import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
 import com.autovw.advancednetherite.network.PacketHandler;
 import com.autovw.advancednetherite.network.message.PacifyEnderManPacket;
@@ -38,7 +39,7 @@ public class EventHandler {
         if (attacker instanceof EndermanEntity && target != null) {
             for (ItemStack stack : target.getArmorSlots()) {
                 Item item = stack.getItem();
-                if (item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen()) {
+                if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen()) || (item instanceof IAdvancedItem && ((IAdvancedItem) item).pacifyEndermen(stack))) {
                     // Sets the attacker target to null
                     ((EndermanEntity) attacker).setTarget(null);
                     // The stare sound will be muted by another event
@@ -58,7 +59,12 @@ public class EventHandler {
             PhantomEntity phantom = (PhantomEntity) attacker;
             for (ItemStack stack : target.getArmorSlots()) {
                 Item item = stack.getItem();
+                // quick hook for AdvancedArmorItem
                 if (item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms()) {
+                    phantom.setTarget(null);// Set attacker target to null
+                }
+                // hook for IAdvancedItem
+                if (item instanceof IAdvancedItem && ((IAdvancedItem) item).pacifyPhantoms(stack) && !(item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms())) {
                     phantom.setTarget(null); // Set attacker target to null
                 }
             }
