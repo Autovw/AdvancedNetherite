@@ -2,8 +2,8 @@
 name: Crash report
 about: Does your game or server crash or receive an error caused by this mod? Please
   create a crash report!
-title: "[Crash Report]"
-labels: crash
+title: ''
+labels: crash, pending
 assignees: ''
 
 ---
@@ -29,9 +29,9 @@ Please provide a crash log (debug.log or latest.log)! Crashlogs can be found ins
 
 **Technical Information (please complete the following information):**
  ! Do not say 'latest', provide the actual version.
- - Minecraft-version: [e.g. 1.16.5]
- - Forge-version: [e.g. 36.2.0]
- - Mod-version: [e.g. 1.8.0]
+ - Minecraft-version: [e.g. 1.18.2]
+ - Forge-version: [e.g. 40.1.0]
+ - Mod-version: [e.g. 1.11.0]
 
 **Additional context**
 Add any other context about the problem here.

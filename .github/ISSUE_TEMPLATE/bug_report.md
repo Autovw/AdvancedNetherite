@@ -1,8 +1,8 @@
 ---
 name: Bug report
 about: Is something not working correctly? Please create a bug report!
-title: "[Bug Report]"
-labels: bug
+title: ''
+labels: bug, pending
 assignees: ''
 
 ---
@@ -24,10 +24,10 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Technical Information (please complete the following information):**
- ! Do not say 'latest', provide the actual version.
- - Minecraft-version: [e.g. 1.16.5]
- - Forge-version: [e.g. 36.2.0]
- - Mod-version: [e.g. 1.4.0]
+ ! Please provide the actual version, not just 'latest'.
+ - Minecraft-version: [e.g. 1.18.2]
+ - Forge-version: [e.g. 40.1.0]
+ - Mod-version: [e.g. 1.11.0]
 
 **Additional context**
 Add any other context about the problem here.
