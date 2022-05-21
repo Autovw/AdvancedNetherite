@@ -38,10 +38,22 @@ public class Config {
         public Client(ForgeConfigSpec.Builder builder) {
             builder.push("client");
             {
-                showTooltips = builder.comment("If true, displays tooltips, added by Advanced Netherite, with perks client-side. True by default.").define("showTooltips", true);
-                matchingDurabilityBars = builder.comment("If true, displays a (color) matching durability bar underneath the item when damaged. False by default.").define("matchingDurabilityBars", false);
-                enableSearchBarInCreativeTab = builder.comment("If true, enables a search bar in the Advanced Netherite creative tab. False by default.").define("enableSearchBarInCreativeTab", false);
-                forceDisableDetailArmorBarSupport = builder.comment("If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted. False by default.").define("forceDisableDetailArmorBarSuport", false);
+                showTooltips = builder
+                        .comment("If true, displays tooltips, added by Advanced Netherite, with perks client-side. True by default.")
+                        .translation("config.advancednetherite.client.show_tooltips")
+                        .define("showTooltips", true);
+                matchingDurabilityBars = builder
+                        .comment("If true, displays a (color) matching durability bar underneath the item when damaged. False by default.")
+                        .translation("config.advancednetherite.client.matching_durability_bars")
+                        .define("matchingDurabilityBars", false);
+                enableSearchBarInCreativeTab = builder
+                        .comment("If true, enables a search bar in the Advanced Netherite creative tab. False by default.")
+                        .translation("config.advancednetherite.client.enable_search_bar")
+                        .define("enableSearchBarInCreativeTab", false);
+                forceDisableDetailArmorBarSupport = builder
+                        .comment("If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted. False by default.")
+                        .translation("config.advancednetherite.client.force_disable_dab_support")
+                        .define("forceDisableDetailArmorBarSuport", false);
             }
             builder.pop();
         }

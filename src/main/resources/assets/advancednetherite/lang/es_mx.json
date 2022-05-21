@@ -82,5 +82,10 @@
   "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Enderman?",
   "advancements.advancednetherite.nether.netherite_emerald_armor.description": "Consigue una armadura completa de Esmeralda-Netherite",
   "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Cubreme de Diamante-Netherite",
-  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Consigue una armadura completa de Diamante-Netherite"
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Consigue una armadura completa de Diamante-Netherite",
+
+  "config.advancednetherite.client.show_tooltips": "If true, displays tooltips, added by Advanced Netherite, with perks client-side. True by default.",
+  "config.advancednetherite.client.matching_durability_bars": "If true, displays a (color) matching durability bar underneath the item when damaged. False by default.",
+  "config.advancednetherite.client.enable_search_bar": "If true, enables a search bar in the Advanced Netherite creative tab. False by default.",
+  "config.advancednetherite.client.force_disable_dab_support": "If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted. False by default."
 }
