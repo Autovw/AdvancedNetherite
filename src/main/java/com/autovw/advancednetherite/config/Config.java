@@ -53,7 +53,7 @@ public class Config {
                 forceDisableDetailArmorBarSupport = builder
                         .comment("If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted. False by default.")
                         .translation("config.advancednetherite.client.force_disable_dab_support")
-                        .define("forceDisableDetailArmorBarSuport", false);
+                        .define("forceDisableDetailArmorBarSupport", false);
             }
             builder.pop();
         }
