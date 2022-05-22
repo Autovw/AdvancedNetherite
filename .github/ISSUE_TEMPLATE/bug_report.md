@@ -10,6 +10,8 @@ assignees: ''
 **Describe the bug**
 A clear and concise description of what the bug is.
 
+NOTE: **This is the issue tracker for the Forge version of Advanced Netherite, use [this](https://github.com/Autovw/AdvancedNetheriteFabric/issues) one if you are using Fabric!!!**
+
 **To Reproduce**
 Steps to reproduce the behavior:
 1. Go to '...'
