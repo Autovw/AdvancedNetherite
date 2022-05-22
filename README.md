@@ -43,5 +43,7 @@ _[Join my Discord server](https://discord.gg/KP3BBatuw5) if you want to get noti
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 #### ⚠️ Disclaimer
-This mod should only be downloaded from [this CurseForge page](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite) and my [GitHub](https://github.com/Autovw/AdvancedNetherite/releases).
-Do not reupload or download the mod from any other download sources as they might be malicious.
+This mod is only distributed through [CurseForge](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite), [Modrinth](https://modrinth.com/mod/advanced-netherite) and the [official GitHub repository](https://github.com/Autovw/AdvancedNetherite/releases).
+Please do not redistribute this mod *or* download this mod from any other download source.
+
+For more detail on mod reposts, and how to stay protected against them, visit: [stopmodreposts.org](https://stopmodreposts.org).
