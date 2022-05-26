@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.common.loot;
 
+import com.autovw.advancednetherite.config.Config;
 import com.google.gson.JsonObject;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -24,6 +25,7 @@ import java.util.Random;
  * <br/>
  * A loot modifier for adding additional drops to crop blocks.
  * See {@link com.autovw.advancednetherite.datagen.providers.ModLootModifierProvider} for example implementation.
+ * @apiNote This loot modifier can be disabled by {@link com.autovw.advancednetherite.config.Config.AdditionalDropsConfig#enableAdditionalCropDrops}
  */
 public class CropDropsLootModifier extends LootModifier {
     private final Item bonusDropItem;
@@ -52,7 +54,7 @@ public class CropDropsLootModifier extends LootModifier {
     protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
         ItemStack tool = context.getParamOrNull(LootContextParams.TOOL);
         BlockState blockState = context.getParamOrNull(LootContextParams.BLOCK_STATE);
-        if (tool != null && blockState != null) {
+        if (tool != null && blockState != null && Config.AdditionalDropsConfig.enableAdditionalCropDrops.get()) {
             if (bonusDropChance > 0.0 && bonusDropItem != null) {
                 Block block = blockState.getBlock();
                 if (block instanceof CropBlock cropBlock && cropBlock.isMaxAge(blockState)) {
