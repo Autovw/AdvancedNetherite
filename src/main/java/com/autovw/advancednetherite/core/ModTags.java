@@ -138,6 +138,9 @@ public class ModTags {
     public static final ITag.INamedTag<Item> TIERS_TOOLS_NETHERITE_GOLD = bindModTag("tiers/tools/netherite_gold");
     public static final ITag.INamedTag<Item> TIERS_TOOLS_NETHERITE_IRON = bindModTag("tiers/tools/netherite_iron");
 
+    // tag for "additional crop drops" loot modifier, tag does not exist in newer version
+    public static final ITag.INamedTag<Item> NETHERITE_HOE_ITEMS = bindModTag("netherite_hoe_items");
+
     // Helper method to register item tags from Advanced Netherite
     private static ITag.INamedTag<Item> bindModTag(String location) {
         return ItemTags.bind(Reference.MOD_ID + ":" + location);

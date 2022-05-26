@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "tag": "advancednetherite:netherite_hoe_items"
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:carrots"
+    }
+  ],
+  "bonus_drop": {
+    "item": "minecraft:carrot",
+    "chance": 0.3,
+    "min": 0,
+    "max": 2
+  },
+  "type": "advancednetherite:blocks/carrots_addition"
+}

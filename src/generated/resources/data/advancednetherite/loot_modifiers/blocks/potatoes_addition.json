@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "tag": "advancednetherite:netherite_hoe_items"
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:potatoes"
+    }
+  ],
+  "bonus_drop": {
+    "item": "minecraft:potato",
+    "chance": 0.3,
+    "min": 0,
+    "max": 1
+  },
+  "type": "advancednetherite:blocks/potatoes_addition"
+}

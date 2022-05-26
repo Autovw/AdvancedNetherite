@@ -216,6 +216,13 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.NETHERITE_IRON_SHOVEL.get())
                 .add(ModItems.NETHERITE_IRON_SWORD.get());
 
+        // tag for "additional crop drops" loot modifier, tag does not exist in newer version
+        tag(ModTags.NETHERITE_HOE_ITEMS)
+                .add(ModItems.NETHERITE_DIAMOND_HOE.get())
+                .add(ModItems.NETHERITE_EMERALD_HOE.get())
+                .add(ModItems.NETHERITE_GOLD_HOE.get())
+                .add(ModItems.NETHERITE_IRON_HOE.get());
+
         /* Vanilla tags */
         tag(ItemTags.BEACON_PAYMENT_ITEMS).addTag(ModTags.NETHERITE_INGOTS);
 

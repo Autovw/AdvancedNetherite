@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "tag": "advancednetherite:netherite_hoe_items"
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:beetroots"
+    }
+  ],
+  "bonus_drop": {
+    "item": "minecraft:beetroot",
+    "chance": 0.2,
+    "min": 1,
+    "max": 2
+  },
+  "type": "advancednetherite:blocks/beetroots_addition"
+}
