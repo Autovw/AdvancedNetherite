@@ -2,6 +2,7 @@ package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.content.ModTooltips;
 import com.autovw.advancednetherite.core.ModToolTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -76,6 +77,8 @@ public class AdvancedHoeItem extends HoeItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
+            tooltip.add(ModTooltips.ADDITIONAL_CROP_DROPS_TOOLTIP);
+
             addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
             addTooltips(stack, tooltip, flag); // TODO remove in MC 1.19
         }
