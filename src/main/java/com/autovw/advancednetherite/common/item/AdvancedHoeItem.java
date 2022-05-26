@@ -1,9 +1,11 @@
 package com.autovw.advancednetherite.common.item;
 
+import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.content.ModTooltips;
 import com.autovw.advancednetherite.core.ModToolTiers;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.IItemTier;
@@ -77,7 +79,13 @@ public class AdvancedHoeItem extends HoeItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
-            tooltip.add(ModTooltips.ADDITIONAL_CROP_DROPS_TOOLTIP);
+            if (stack.getItem().getRegistryName().getNamespace().equals(Reference.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalCropDrops.get()) {
+                if (Screen.hasShiftDown()) {
+                    tooltip.add(ModTooltips.ADDITIONAL_CROP_DROPS_TOOLTIP);
+                } else {
+                    tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
+                }
+            }
 
             addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
             addTooltips(stack, tooltip, flag);
