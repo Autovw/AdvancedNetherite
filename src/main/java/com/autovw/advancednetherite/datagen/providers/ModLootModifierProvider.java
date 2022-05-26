@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.common.loot.CropDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.MobDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
 import com.autovw.advancednetherite.core.ModItems;
@@ -10,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
@@ -24,6 +26,8 @@ import java.util.List;
  * Author: Autovw
  */
 public class ModLootModifierProvider extends GlobalLootModifierProvider {
+    private final List<Item> HOE_ITEMS = List.of(ModItems.NETHERITE_IRON_HOE.get(), ModItems.NETHERITE_GOLD_HOE.get(), ModItems.NETHERITE_EMERALD_HOE.get(), ModItems.NETHERITE_DIAMOND_HOE.get());
+
     public ModLootModifierProvider(DataGenerator gen, String modId) {
         super(gen, modId);
     }
@@ -50,6 +54,12 @@ public class ModLootModifierProvider extends GlobalLootModifierProvider {
         addMobDrop(Reference.MOD_ID, EntityType.ZOMBIFIED_PIGLIN, Items.GOLD_NUGGET, 0.5f, 0, 3, ModItems.NETHERITE_GOLD_SWORD.get(), ModItems.NETHERITE_DIAMOND_SWORD.get());
         addMobDrop(Reference.MOD_ID, EntityType.PIGLIN, Items.GOLD_INGOT, 0.15f, 1, 1, ModItems.NETHERITE_GOLD_SWORD.get(), ModItems.NETHERITE_DIAMOND_SWORD.get());
         addMobDrop(Reference.MOD_ID, EntityType.ENDERMAN, Items.ENDER_PEARL, 0.3f, 0, 1, ModItems.NETHERITE_EMERALD_SWORD.get(), ModItems.NETHERITE_DIAMOND_SWORD.get());
+
+        // crops
+        addCropDrop(Reference.MOD_ID, Blocks.WHEAT, HOE_ITEMS, Items.WHEAT, 0.4f, 0, 2);
+        addCropDrop(Reference.MOD_ID, Blocks.CARROTS, HOE_ITEMS, Items.CARROT, 0.3f, 0, 2);
+        addCropDrop(Reference.MOD_ID, Blocks.POTATOES, HOE_ITEMS, Items.POTATO, 0.3f, 0, 1);
+        addCropDrop(Reference.MOD_ID, Blocks.BEETROOTS, HOE_ITEMS, Items.BEETROOT, 0.2f, 1, 2);
     }
 
     protected void addOreDrop(String modId, Block lootTarget, Item pickaxe, Item bonusAddition, float additionChance, int minAddition, int maxAddition) {
@@ -65,5 +75,13 @@ public class ModLootModifierProvider extends GlobalLootModifierProvider {
         add(name, new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(modId, name)), new MobDropsLootModifier(new LootItemCondition[] {
                 LootItemKilledByPlayerCondition.killedByPlayer().build()
         }, lootTarget, List.of(weapons), bonusAddition, additionChance, minAddition, maxAddition));
+    }
+
+    protected void addCropDrop(String modId, Block lootTarget, List<Item> tools, Item bonusAddition, float additionChance, int minAddition, int maxAddition) {
+        String name = "blocks/" + lootTarget.getRegistryName().getPath() + "_addition";
+        add(name, new CropDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(modId, name)), new CropDropsLootModifier(new LootItemCondition[] {
+                MatchTool.toolMatches(ItemPredicate.Builder.item().of(tools.toArray(Item[]::new))).build(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(lootTarget).build()
+        }, bonusAddition, additionChance, minAddition, maxAddition));
     }
 }

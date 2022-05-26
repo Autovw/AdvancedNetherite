@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite;
 
 import com.autovw.advancednetherite.client.DetailArmorBarSupport;
+import com.autovw.advancednetherite.common.loot.CropDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.MobDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
 import com.autovw.advancednetherite.config.Config;
@@ -71,7 +72,12 @@ public class AdvancedNetherite {
                 new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/phantom_addition")),
                 new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/piglin_addition")),
                 new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/zombified_piglin_addition")),
-                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/enderman_addition"))
+                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/enderman_addition")),
+
+                new CropDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/wheat_addition")),
+                new CropDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/carrots_addition")),
+                new CropDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/potatoes_addition")),
+                new CropDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/beetroots_addition"))
         );
     }
 }

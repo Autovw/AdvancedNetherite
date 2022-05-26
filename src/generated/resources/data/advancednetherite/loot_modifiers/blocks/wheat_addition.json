@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "items": [
+          "advancednetherite:netherite_iron_hoe",
+          "advancednetherite:netherite_gold_hoe",
+          "advancednetherite:netherite_emerald_hoe",
+          "advancednetherite:netherite_diamond_hoe"
+        ]
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:wheat"
+    }
+  ],
+  "bonus_drop": {
+    "item": "minecraft:wheat",
+    "chance": 0.4,
+    "min": 0,
+    "max": 2
+  },
+  "type": "advancednetherite:blocks/wheat_addition"
+}

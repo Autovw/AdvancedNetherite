@@ -1,7 +1,9 @@
 {
   "replace": false,
   "entries": [
+    "advancednetherite:blocks/carrots_addition",
     "advancednetherite:blocks/gold_ore_addition",
+    "advancednetherite:blocks/beetroots_addition",
     "advancednetherite:entities/piglin_addition",
     "advancednetherite:blocks/diamond_ore_addition",
     "advancednetherite:blocks/emerald_ore_addition",
@@ -10,7 +12,9 @@
     "advancednetherite:entities/zombified_piglin_addition",
     "advancednetherite:entities/enderman_addition",
     "advancednetherite:blocks/deepslate_iron_ore_addition",
+    "advancednetherite:blocks/potatoes_addition",
     "advancednetherite:entities/phantom_addition",
+    "advancednetherite:blocks/wheat_addition",
     "advancednetherite:blocks/iron_ore_addition",
     "advancednetherite:blocks/deepslate_emerald_ore_addition",
     "advancednetherite:blocks/deepslate_diamond_ore_addition"
