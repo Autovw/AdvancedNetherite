@@ -39,6 +39,9 @@ public class ModTooltips {
     public static final IFormattableTextComponent PHANTOM_PASSIVE_TOOLTIP = TooltipBuilder.create(new ResourceLocation(Reference.MOD_ID, "armor.phantom_passive")).withStyle(TextFormatting.GRAY);
 
     /* Tool related tooltips */
+    // Hoes
+    public static final IFormattableTextComponent ADDITIONAL_CROP_DROPS_TOOLTIP = TooltipBuilder.create(new ResourceLocation(Reference.MOD_ID, "hoe.additional_crop_drops"));
+
     // Pickaxes
     public static final TranslationTextComponent diamondDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_diamond_drop", TextFormatting.AQUA);
     public static final TranslationTextComponent emeraldDropTooltip = Tooltips.tooltip(Reference.MOD_ID, "pickaxe.additional_emerald_drop", TextFormatting.DARK_GREEN);
