@@ -2,7 +2,7 @@ package com.autovw.advancednetherite.common;
 
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.api.annotation.Internal;
-import com.autovw.advancednetherite.api.impl.IAdvancedItem;
+import com.autovw.advancednetherite.api.impl.IAdvancedHooks;
 import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -36,7 +36,7 @@ public class EventHandler {
                 event.setCanceled(true); // Cancels the enderman anger if conditions are met
             }
             // hook for IAdvancedItem
-            if (item instanceof IAdvancedItem && ((IAdvancedItem) item).pacifyEndermen(stack) && !(item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen())) {
+            if (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack) && !(item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen())) {
                 event.setCanceled(true); // Cancels the enderman anger if conditions are met
             }
         }
@@ -56,7 +56,7 @@ public class EventHandler {
                     phantom.setTarget(null);// Set attacker target to null
                 }
                 // hook for IAdvancedItem
-                if (item instanceof IAdvancedItem && ((IAdvancedItem) item).pacifyPhantoms(stack) && !(item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms())) {
+                if (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPhantoms(stack) && !(item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms())) {
                     phantom.setTarget(null); // Set attacker target to null
                 }
             }
