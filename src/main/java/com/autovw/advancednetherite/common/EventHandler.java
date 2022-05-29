@@ -31,12 +31,7 @@ public class EventHandler {
 
         for (ItemStack stack : player.getArmorSlots()) {
             Item item = stack.getItem();
-            // quick hook for AdvancedArmorItem
-            if (item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen()) {
-                event.setCanceled(true); // Cancels the enderman anger if conditions are met
-            }
-            // hook for IAdvancedItem
-            if (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack) && !(item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen())) {
+            if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack))) {
                 event.setCanceled(true); // Cancels the enderman anger if conditions are met
             }
         }
@@ -51,13 +46,8 @@ public class EventHandler {
         if (attacker instanceof Phantom phantom && target != null) {
             for (ItemStack stack : target.getArmorSlots()) {
                 Item item = stack.getItem();
-                // quick hook for AdvancedArmorItem
-                if (item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms()) {
+                if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPhantoms(stack))) {
                     phantom.setTarget(null);// Set attacker target to null
-                }
-                // hook for IAdvancedItem
-                if (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPhantoms(stack) && !(item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms())) {
-                    phantom.setTarget(null); // Set attacker target to null
                 }
             }
         }
