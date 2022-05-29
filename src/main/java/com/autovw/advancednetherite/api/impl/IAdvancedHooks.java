@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
  * Keep in mind that using this interface means having to create your own custom implementation, and features such as item tooltips are not automatically included.
  * @since 1.12.0
  */
-public interface IAdvancedItem {
+public interface IAdvancedHooks {
     /**
      * Used to check if endermen should behave passive to a player wearing this item, unless provoked.
      * @param stack the item worn by the player
