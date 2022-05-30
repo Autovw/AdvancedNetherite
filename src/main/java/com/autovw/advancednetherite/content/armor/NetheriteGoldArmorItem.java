@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.content.armor;
 
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
 import com.autovw.advancednetherite.config.Config;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -10,6 +11,7 @@ import net.minecraft.util.text.TextFormatting;
 /**
  * Author: Autovw
  */
+@Internal
 public class NetheriteGoldArmorItem extends AdvancedArmorItem {
     public NetheriteGoldArmorItem(IArmorMaterial material, EquipmentSlotType equipmentSlot, Properties properties) {
         super(material, equipmentSlot, properties);
