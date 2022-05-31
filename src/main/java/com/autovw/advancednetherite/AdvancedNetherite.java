@@ -1,10 +1,10 @@
 package com.autovw.advancednetherite;
 
 import com.autovw.advancednetherite.client.DetailArmorBarSupport;
+import com.autovw.advancednetherite.client.screen.ConfigScreen;
 import com.autovw.advancednetherite.common.loot.CropDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.MobDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
-import com.autovw.advancednetherite.client.screen.ConfigScreen;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
@@ -18,7 +18,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ExtensionPoint;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.client.ConfigGuiHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -47,7 +46,7 @@ public class AdvancedNetherite {
         ModItems.ITEMS.register(bus);
 
         // Only registers the config screen if configured is not present
-        if (/*!*/ModList.get().isLoaded("configured")) {
+        if (!ModList.get().isLoaded("configured")) {
             ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.CONFIGGUIFACTORY, () -> (minecraft, parent) -> new ConfigScreen(new StringTextComponent("Advanced Netherite"), parent));
         }
 

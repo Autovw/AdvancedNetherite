@@ -1,8 +1,6 @@
 package com.autovw.advancednetherite.client.screen;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.platform.GlStateManager;
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.screen.Screen;
@@ -46,7 +44,16 @@ public class ConfigScreen extends Screen {
             if (getInstructionsUrl() != null) {
                 this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, getInstructionsUrl())));
             }
-        }));
+        }){
+            @Override
+            public void renderButton(MatrixStack stack, int mouseX, int mouseY, float ticks) {
+                super.renderButton(stack, mouseX, mouseY, ticks);
+
+                if (getInstructionsUrl() == null) {
+                    this.active = false;
+                }
+            }
+        });
 
         // Back button
         addButton(new Button(width / 2 - 75, height - 29, 150, 20, DialogTexts.GUI_BACK, button -> {
@@ -97,7 +104,6 @@ public class ConfigScreen extends Screen {
 
     /**
      * The URL behind the instructions button. Return null to disable this button.
-     * Unlike on the 1.18.X version, this will not turn the button gray.
      * @return Instructions url
      */
     @Nullable
