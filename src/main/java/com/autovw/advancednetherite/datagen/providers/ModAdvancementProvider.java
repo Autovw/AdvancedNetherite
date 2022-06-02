@@ -58,5 +58,12 @@ public class ModAdvancementProvider extends AdvancementProvider {
                 .rewards(AdvancementRewards.Builder.experience(200))
                 .addCriterion("netherite_diamond_armor", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_DIAMOND_HELMET.get(), ModItems.NETHERITE_DIAMOND_CHESTPLATE.get(), ModItems.NETHERITE_DIAMOND_LEGGINGS.get(), ModItems.NETHERITE_DIAMOND_BOOTS.get()))
                 .save(consumer, new ResourceLocation(Reference.MOD_ID, "nether/netherite_diamond_armor"), fileHelper);
+
+        Advancement.Builder.advancement()
+                .parent(new ResourceLocation("nether/obtain_ancient_debris"))
+                .display(ModItems.NETHERITE_IRON_INGOT.get(), new TranslatableComponent("advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title"), new TranslatableComponent("advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description"), null, FrameType.TASK, true, true, false)
+                .rewards(AdvancementRewards.Builder.experience(20))
+                .addCriterion("netherite_iron_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_IRON_INGOT.get()))
+                .save(consumer, new ResourceLocation(Reference.MOD_ID, "nether/obtain_netherite_iron_ingot"), fileHelper);
     }
 }

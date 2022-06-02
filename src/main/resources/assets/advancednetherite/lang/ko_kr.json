@@ -85,6 +85,8 @@
   "advancements.advancednetherite.nether.netherite_emerald_armor.description": "에메랄드 네더라이트 갑옷 한 벌 만들기",
   "advancements.advancednetherite.nether.netherite_diamond_armor.title": "다이아몬드 네더라이트를 나에게 씌우다",
   "advancements.advancednetherite.nether.netherite_diamond_armor.description": "다이아몬드 네더라이트 갑옷 한 벌 만들기",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "Upgrades!",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "Obtain a Netherite-Iron Ingot",
 
   "config.advancednetherite.client.show_tooltips": "If true, displays tooltips, added by Advanced Netherite, with perks client-side.",
   "config.advancednetherite.client.matching_durability_bars": "If true, displays a (color) matching durability bar underneath the item when damaged.",
