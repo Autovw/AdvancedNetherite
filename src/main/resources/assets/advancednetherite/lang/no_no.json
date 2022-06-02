@@ -55,15 +55,17 @@
   "item.advancednetherite.netherite_diamond_sword": "Netheritt-Diamantsverd",
 
   "itemGroup.advancednetherite.tab": "Advanced Netherite",
-
+  
   "tooltip.advancednetherite.armor.enderman_passive": "+ Pasifiserer Endermenn",
   "tooltip.advancednetherite.armor.piglin_passive": "+ Pasifiserer Pigliner",
   "tooltip.advancednetherite.armor.phantom_passive": "+ Pacifies Phantoms",
 
+  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ Chance of dropping additional crop drops while harvesting grown crops",
+
   "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Chance of dropping additional Diamond while mining Diamond ores",
   "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Chance of dropping additional Emerald while mining Emerald ores",
-  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance of dropping additional Golden Nugget(s) while mining Gold ores",
-  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance of dropping additional Iron Nugget(s) while mining Iron ores",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance of dropping additional Raw Gold while mining Gold ores",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance of dropping additional Raw Iron while mining Iron ores",
 
   "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Chance of dropping additional Ender Pearl on killing Enderman",
   "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Chance of dropping additional Gold Ingot on killing Piglin",
@@ -84,8 +86,13 @@
   "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Dekk meg i Netheritt-Diamant",
   "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Skaff deg et helt sett med Netheritt-Diamantrustning",
 
-  "config.advancednetherite.client.show_tooltips": "If true, displays tooltips, added by Advanced Netherite, with perks client-side. True by default.",
-  "config.advancednetherite.client.matching_durability_bars": "If true, displays a (color) matching durability bar underneath the item when damaged. False by default.",
-  "config.advancednetherite.client.enable_search_bar": "If true, enables a search bar in the Advanced Netherite creative tab. False by default.",
-  "config.advancednetherite.client.force_disable_dab_support": "If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted. False by default."
+  "config.advancednetherite.client.show_tooltips": "If true, displays tooltips, added by Advanced Netherite, with perks client-side.",
+  "config.advancednetherite.client.matching_durability_bars": "If true, displays a (color) matching durability bar underneath the item when damaged.",
+  "config.advancednetherite.client.enable_search_bar": "If true, enables a search bar in the Advanced Netherite creative tab.",
+  "config.advancednetherite.client.force_disable_dab_support": "If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted.",
+
+  "config.advancednetherite.screen.description.top": "Install %s mod to edit the config added by %s from within the game.",
+  "config.advancednetherite.screen.description.bottom": "View the wiki page for instructions.",
+  "config.advancednetherite.screen.button.install_configured": "Install %s",
+  "config.advancednetherite.screen.button.instructions": "Instructions"
 }

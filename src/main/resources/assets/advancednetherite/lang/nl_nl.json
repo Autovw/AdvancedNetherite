@@ -60,6 +60,8 @@
   "tooltip.advancednetherite.armor.piglin_passive": "+ Neutraliseert piglins",
   "tooltip.advancednetherite.armor.phantom_passive": "+ Neutraliseert fantomen",
 
+  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ Chance of dropping additional crop drops while harvesting grown crops",
+
   "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Kans op een extra Diamant bij het mijnen van diamanterts",
   "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Kans op een extra Smaragd bij het mijnen van smaragderts",
   "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Kans op extra Goudklompjes bij het mijnen van gouderts",
@@ -84,8 +86,13 @@
   "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Bedek me met Netheriet-Diamant",
   "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Verkrijg een volledig Netheriet-Diamanten harnas",
 
-  "config.advancednetherite.client.show_tooltips": "If true, displays tooltips, added by Advanced Netherite, with perks client-side. True by default.",
-  "config.advancednetherite.client.matching_durability_bars": "If true, displays a (color) matching durability bar underneath the item when damaged. False by default.",
-  "config.advancednetherite.client.enable_search_bar": "If true, enables a search bar in the Advanced Netherite creative tab. False by default.",
-  "config.advancednetherite.client.force_disable_dab_support": "If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted. False by default."
+  "config.advancednetherite.client.show_tooltips": "If true, displays tooltips, added by Advanced Netherite, with perks client-side.",
+  "config.advancednetherite.client.matching_durability_bars": "If true, displays a (color) matching durability bar underneath the item when damaged.",
+  "config.advancednetherite.client.enable_search_bar": "If true, enables a search bar in the Advanced Netherite creative tab.",
+  "config.advancednetherite.client.force_disable_dab_support": "If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted.",
+
+  "config.advancednetherite.screen.description.top": "Install %s mod to edit the config added by %s from within the game.",
+  "config.advancednetherite.screen.description.bottom": "View the wiki page for instructions.",
+  "config.advancednetherite.screen.button.install_configured": "Install %s",
+  "config.advancednetherite.screen.button.instructions": "Instructions"
 }
