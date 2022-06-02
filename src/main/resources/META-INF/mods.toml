@@ -26,7 +26,7 @@ side="BOTH"
 [[dependencies.advancednetherite]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.16.5,1.17]"
+versionRange="[1.16.5,1.17)"
 ordering="NONE"
 side="BOTH"
 [[dependencies.advancednetherite]]
