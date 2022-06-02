@@ -89,6 +89,10 @@ jar {
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
+    // exclude datagen cache from the jar file
+    build {
+        exclude '**/.cache/**'
+    }
 }
 
 jar.finalizedBy('reobfJar') 
