@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 
-version = '1.11.0-1.16.5'
+version = '1.12.0-1.16.5'
 group = 'com.autovw.advancednetherite'
 archivesBaseName = 'advancednetherite'
 
