@@ -1,23 +1,19 @@
 package com.autovw.advancednetherite;
 
-import com.autovw.advancednetherite.client.DetailArmorBarSupport;
+import com.autovw.advancednetherite.client.ClientHandler;
 import com.autovw.advancednetherite.common.loot.CropDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.MobDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
-import com.autovw.advancednetherite.client.screen.ConfigScreen;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.ModToolTiers;
 import com.mojang.logging.LogUtils;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.ConfigGuiHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -54,15 +50,7 @@ public class AdvancedNetherite {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        // Only registers the config screen if configured is not present
-        if (!ModList.get().isLoaded("configured")) {
-            ModLoadingContext.get().registerExtensionPoint(ConfigGuiHandler.ConfigGuiFactory.class, () -> new ConfigGuiHandler.ConfigGuiFactory(((minecraft, parent) -> new ConfigScreen(new TextComponent("Advanced Netherite"), parent))));
-        }
-
-        // register optional support for Detail Armor Bar if the mod is present
-        if (ModList.get().isLoaded("detailab") && !Config.Client.forceDisableDetailArmorBarSupport.get()) {
-            DetailArmorBarSupport.register();
-        }
+        ClientHandler.onClientSetup();
     }
 
     private void onModifierSerializerRegistryEvent(final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
