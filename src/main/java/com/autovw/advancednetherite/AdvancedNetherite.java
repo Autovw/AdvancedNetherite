@@ -45,11 +45,6 @@ public class AdvancedNetherite {
         ModBlocks.BLOCKS.register(bus);
         ModItems.ITEMS.register(bus);
 
-        // Only registers the config screen if configured is not present
-        if (!ModList.get().isLoaded("configured")) {
-            ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.CONFIGGUIFACTORY, () -> (minecraft, parent) -> new ConfigScreen(new StringTextComponent("Advanced Netherite"), parent));
-        }
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -59,6 +54,11 @@ public class AdvancedNetherite {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
+        // Only registers the config screen if configured is not present
+        if (!ModList.get().isLoaded("configured")) {
+            ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.CONFIGGUIFACTORY, () -> (minecraft, parent) -> new ConfigScreen(new StringTextComponent("Advanced Netherite"), parent));
+        }
+
         // register optional support for Detail Armor Bar if the mod is present
         if (ModList.get().isLoaded("detailab") && !Config.Client.forceDisableDetailArmorBarSupport.get()) {
             DetailArmorBarSupport.register();
