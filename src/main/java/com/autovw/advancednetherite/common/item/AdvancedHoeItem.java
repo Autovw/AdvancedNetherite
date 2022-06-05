@@ -52,13 +52,6 @@ public class AdvancedHoeItem extends HoeItem {
     }
 
     /**
-     * Use {@link AdvancedHoeItem#addTooltips(ItemStack, Level, List, TooltipFlag)} instead
-     */
-    @Deprecated(forRemoval = true, since = "1.11.0") // TODO remove in MC 1.19
-    public void addTooltips(ItemStack stack, List<Component> tooltip, TooltipFlag flag) {
-    }
-
-    /**
      * {@link Override} this method if you want to give your item a custom durability bar color.
      * Feature is disabled by default, can be enabled in Advanced Netherite's Client config.
      *
@@ -73,7 +66,7 @@ public class AdvancedHoeItem extends HoeItem {
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
     /**
-     * Don't override this method, use {@link AdvancedHoeItem#addTooltips(ItemStack, List, TooltipFlag)} if you want to add your own custom tooltips.
+     * Don't override this method, use {@link AdvancedHoeItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.
      */
     @Internal
     @Override
@@ -88,7 +81,6 @@ public class AdvancedHoeItem extends HoeItem {
             }
 
             addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
-            addTooltips(stack, tooltip, flag); // TODO remove in MC 1.19
         }
     }
 
