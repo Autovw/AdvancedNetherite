@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite;
 
 import com.autovw.advancednetherite.config.Config;
-import com.autovw.advancednetherite.core.ModItems;
+import com.autovw.advancednetherite.core.registry.ModItems;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;

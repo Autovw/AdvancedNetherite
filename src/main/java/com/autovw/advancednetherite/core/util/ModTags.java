@@ -1,4 +1,4 @@
-package com.autovw.advancednetherite.core;
+package com.autovw.advancednetherite.core.util;
 
 import com.autovw.advancednetherite.Reference;
 import net.minecraft.resources.ResourceLocation;

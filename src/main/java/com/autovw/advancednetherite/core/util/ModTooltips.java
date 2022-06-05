@@ -1,4 +1,4 @@
-package com.autovw.advancednetherite.content;
+package com.autovw.advancednetherite.core.util;
 
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.api.TooltipBuilder;

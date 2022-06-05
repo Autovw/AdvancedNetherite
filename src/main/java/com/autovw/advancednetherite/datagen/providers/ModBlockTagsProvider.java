@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.datagen.providers;
 
-import com.autovw.advancednetherite.core.ModBlocks;
-import com.autovw.advancednetherite.core.ModTags;
+import com.autovw.advancednetherite.core.registry.ModBlocks;
+import com.autovw.advancednetherite.core.util.ModTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;

@@ -3,7 +3,7 @@ package com.autovw.advancednetherite.client;
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.api.annotation.Internal;
-import com.autovw.advancednetherite.core.ModItems;
+import com.autovw.advancednetherite.core.registry.ModItems;
 import com.redlimerl.detailab.api.DetailArmorBarAPI;
 import com.redlimerl.detailab.api.render.ArmorBarRenderManager;
 import com.redlimerl.detailab.api.render.TextureOffset;

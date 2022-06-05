@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.datagen.providers;
 
-import com.autovw.advancednetherite.core.ModBlocks;
+import com.autovw.advancednetherite.core.registry.ModBlocks;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.data.DataGenerator;

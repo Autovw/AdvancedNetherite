@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.Reference;
-import com.autovw.advancednetherite.core.ModItems;
+import com.autovw.advancednetherite.core.registry.ModItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.FrameType;

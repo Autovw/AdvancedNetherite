@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.Reference;
-import com.autovw.advancednetherite.core.ModItems;
+import com.autovw.advancednetherite.core.registry.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
