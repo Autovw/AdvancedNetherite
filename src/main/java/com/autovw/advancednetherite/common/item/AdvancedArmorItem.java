@@ -2,6 +2,7 @@ package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.core.util.ModArmorTiers;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -21,8 +22,11 @@ import java.util.Objects;
  * Author: Autovw
  */
 public class AdvancedArmorItem extends ArmorItem {
+    private final ArmorMaterial material;
+
     public AdvancedArmorItem(ArmorMaterial material, EquipmentSlot equipmentSlot, Properties properties) {
         super(material, equipmentSlot, properties);
+        this.material = material;
     }
 
     /**
@@ -31,7 +35,7 @@ public class AdvancedArmorItem extends ArmorItem {
      * @return If true, pacifies endermen. Also applies the tooltip.
      */
     public boolean pacifiesEndermen() {
-        return false;
+        return material == ModArmorTiers.NETHERITE_EMERALD || material == ModArmorTiers.NETHERITE_DIAMOND;
     }
 
     /**
@@ -40,7 +44,7 @@ public class AdvancedArmorItem extends ArmorItem {
      * @return If true, pacifies piglins. Also applies the tooltip.
      */
     public boolean pacifiesPiglins() {
-        return false;
+        return material == ModArmorTiers.NETHERITE_GOLD || material == ModArmorTiers.NETHERITE_DIAMOND;
     }
 
     /**
@@ -49,7 +53,7 @@ public class AdvancedArmorItem extends ArmorItem {
      * @return If true, pacifies phantoms. Alo applies the tooltip.
      */
     public boolean pacifiesPhantoms() {
-        return false;
+        return material == ModArmorTiers.NETHERITE_IRON;
     }
 
     /**
