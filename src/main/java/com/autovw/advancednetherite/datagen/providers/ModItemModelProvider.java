@@ -88,7 +88,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     // For internal use only, use above method instead
     private void itemModel(Item item) {
-        itemModel(item, new ResourceLocation(Reference.MOD_ID, "items/" + item.toString()));
+        itemModel(item, new ResourceLocation(Reference.MOD_ID, "item/" + item.toString()));
     }
 
     /**
@@ -103,6 +103,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     // For internal use only, use above method instead
     private void toolModel(Item item) {
-        toolModel(item, new ResourceLocation(Reference.MOD_ID, "items/" + item.toString()));
+        toolModel(item, new ResourceLocation(Reference.MOD_ID, "item/" + item.toString()));
     }
 }

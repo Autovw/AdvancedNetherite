@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "advancednetherite:items/netherite_emerald_chestplate"
+    "layer0": "advancednetherite:item/netherite_emerald_chestplate"
   }
 }

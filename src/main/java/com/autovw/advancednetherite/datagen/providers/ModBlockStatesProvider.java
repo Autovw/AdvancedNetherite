@@ -38,6 +38,6 @@ public class ModBlockStatesProvider extends BlockStateProvider {
 
     // Internal use only, use above method instead
     private void netheriteBlock(Block block) {
-        netheriteBlock(block, new ResourceLocation(Reference.MOD_ID, "blocks/" + block.getRegistryName().getPath()));
+        netheriteBlock(block, new ResourceLocation(Reference.MOD_ID, "block/" + block.getRegistryName().getPath()));
     }
 }
