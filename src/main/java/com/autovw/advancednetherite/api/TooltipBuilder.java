@@ -12,7 +12,7 @@ import org.slf4j.Logger;
  * Author: Autovw
  * <br/>
  * A flexible builder for translatable tooltips.
- * Replacement of {@link Tooltips} allowing for more control over the created tooltip.
+ * Replacement of the Tooltips API, which was removed in MC 1.19, allowing for more control over the created tooltip.
  *
  * @since 1.12.0
  */

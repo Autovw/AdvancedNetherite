@@ -81,10 +81,10 @@ public class AdvancedPickaxeItem extends PickaxeItem {
         if (Config.Client.showTooltips.get()) {
             if (stack.getItem().getRegistryName().getNamespace().equals(Reference.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalOreDrops.get()) {
                 if (Screen.hasShiftDown()) {
-                    if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.ironDropTooltip);
-                    if (tier == ModToolTiers.NETHERITE_GOLD) tooltip.add(ModTooltips.goldDropTooltip);
-                    if (tier == ModToolTiers.NETHERITE_EMERALD) tooltip.add(ModTooltips.emeraldDropTooltip);
-                    if (tier == ModToolTiers.NETHERITE_DIAMOND) tooltip.add(ModTooltips.diamondDropTooltip);
+                    if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.IRON_ORE_DROP_TOOLTIP);
+                    if (tier == ModToolTiers.NETHERITE_GOLD) tooltip.add(ModTooltips.GOLD_ORE_DROP_TOOLTIP);
+                    if (tier == ModToolTiers.NETHERITE_EMERALD) tooltip.add(ModTooltips.EMERALD_ORE_DROP_TOOLTIP);
+                    if (tier == ModToolTiers.NETHERITE_DIAMOND) tooltip.add(ModTooltips.DIAMOND_ORE_DROP_TOOLTIP);
                 } else {
                     tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
                 }
