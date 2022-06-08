@@ -76,11 +76,14 @@ public class AdvancedSwordItem extends SwordItem {
             if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(Reference.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalMobDrops.get()) {
                 if (Screen.hasShiftDown()) {
                     if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
-                    if (tier == ModToolTiers.NETHERITE_GOLD || tier == ModToolTiers.NETHERITE_DIAMOND) {
+                    if (tier == ModToolTiers.NETHERITE_GOLD) {
+                        tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
                     }
-                    if (tier == ModToolTiers.NETHERITE_EMERALD || tier == ModToolTiers.NETHERITE_DIAMOND) {
+                    if (tier == ModToolTiers.NETHERITE_EMERALD) tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
+                    if (tier == ModToolTiers.NETHERITE_DIAMOND) {
+                        tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
+                        tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
                     }
                 } else {
