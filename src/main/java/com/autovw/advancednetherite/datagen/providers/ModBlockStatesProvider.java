@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 /**
  * Author: Autovw
@@ -32,12 +33,12 @@ public class ModBlockStatesProvider extends BlockStateProvider {
      * @param texture The location of the block texture
      */
     public void netheriteBlock(Block block, ResourceLocation texture) {
-        getVariantBuilder(block).partialState().setModels(new ConfiguredModel(models().cubeAll(block.getRegistryName().getPath(), texture)));
-        itemModels().withExistingParent(block.getRegistryName().getPath(), new ResourceLocation(block.getRegistryName().getNamespace(), "block/" + block.getRegistryName().getPath()));
+        getVariantBuilder(block).partialState().setModels(new ConfiguredModel(models().cubeAll(ForgeRegistries.BLOCKS.getKey(block).getPath(), texture)));
+        itemModels().withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(ForgeRegistries.BLOCKS.getKey(block).getNamespace(), "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
     }
 
     // Internal use only, use above method instead
     private void netheriteBlock(Block block) {
-        netheriteBlock(block, new ResourceLocation(Reference.MOD_ID, "block/" + block.getRegistryName().getPath()));
+        netheriteBlock(block, new ResourceLocation(Reference.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
     }
 }

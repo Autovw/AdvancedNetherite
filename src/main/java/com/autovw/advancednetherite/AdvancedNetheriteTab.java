@@ -6,6 +6,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Objects;
 
@@ -35,8 +36,8 @@ public class AdvancedNetheriteTab extends CreativeModeTab {
     public void fillItemList(NonNullList<ItemStack> items) {
         super.fillItemList(items);
         items.sort((s1, s2) -> {
-            String item1 = Objects.requireNonNull(s1.getItem().getRegistryName()).getNamespace();
-            String item2 = Objects.requireNonNull(s2.getItem().getRegistryName()).getNamespace();
+            String item1 = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(s1.getItem())).getNamespace();
+            String item2 = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(s2.getItem())).getNamespace();
 
             if (item1.equals(Reference.MOD_ID) == item2.equals(Reference.MOD_ID)) {
                 return 0;

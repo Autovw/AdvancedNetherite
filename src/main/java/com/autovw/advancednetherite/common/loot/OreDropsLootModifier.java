@@ -2,8 +2,10 @@ package com.autovw.advancednetherite.common.loot;
 
 import com.autovw.advancednetherite.config.Config;
 import com.google.gson.JsonObject;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -15,9 +17,6 @@ import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
-import java.util.Random;
 
 /**
  * Author: Autovw
@@ -50,16 +49,16 @@ public class OreDropsLootModifier extends LootModifier {
 
     @NotNull
     @Override
-    protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         ItemStack tool = context.getParamOrNull(LootContextParams.TOOL);
         if (tool != null && Config.AdditionalDropsConfig.enableAdditionalOreDrops.get()) {
             if (EnchantmentHelper.getEnchantments(tool).containsKey(Enchantments.SILK_TOUCH)) {
                 return generatedLoot; // return early if tool is enchanted with silk touch
             }
             if (bonusDropChance > 0.0 && bonusDropItem != null) {
-                Random random = context.getRandom();
+                RandomSource random = context.getRandom();
                 if (maxDropAmount >= minDropAmount && random.nextFloat() <= bonusDropChance) { // apply the chance
-                    generatedLoot.add(new ItemStack(bonusDropItem, random.ints(minDropAmount, maxDropAmount + 1).iterator().nextInt()));
+                    generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount + 1)));
                 }
             }
         }

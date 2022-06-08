@@ -2,8 +2,10 @@ package com.autovw.advancednetherite.common.loot;
 
 import com.autovw.advancednetherite.config.Config;
 import com.google.gson.JsonObject;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -16,9 +18,6 @@ import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
-import java.util.Random;
 
 /**
  * Author: Autovw
@@ -51,16 +50,16 @@ public class CropDropsLootModifier extends LootModifier {
 
     @NotNull
     @Override
-    protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         ItemStack tool = context.getParamOrNull(LootContextParams.TOOL);
         BlockState blockState = context.getParamOrNull(LootContextParams.BLOCK_STATE);
         if (tool != null && blockState != null && Config.AdditionalDropsConfig.enableAdditionalCropDrops.get()) {
             if (bonusDropChance > 0.0 && bonusDropItem != null) {
                 Block block = blockState.getBlock();
                 if (block instanceof CropBlock cropBlock && cropBlock.isMaxAge(blockState)) {
-                    Random random = context.getRandom();
+                    RandomSource random = context.getRandom();
                     if (maxDropAmount >= minDropAmount && random.nextFloat() <= bonusDropChance) {
-                        generatedLoot.add(new ItemStack(bonusDropItem, random.ints(minDropAmount, maxDropAmount + 1).iterator().nextInt()));
+                        generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount + 1)));
                     }
                 }
             }

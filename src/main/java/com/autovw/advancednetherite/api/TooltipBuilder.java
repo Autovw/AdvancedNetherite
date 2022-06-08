@@ -2,8 +2,8 @@ package com.autovw.advancednetherite.api;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.mojang.logging.LogUtils;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
@@ -58,9 +58,9 @@ public class TooltipBuilder {
         String content = "tooltip." + key.getNamespace() + "." + path;
         if (!path.equals("")) {
             if (args != null) {
-                return new TranslatableComponent(content, args);
+                return Component.translatable(content, args);
             } else {
-                return new TranslatableComponent(content);
+                return Component.translatable(content);
             }
         } else {
             LOGGER.error("Cannot build tooltip with empty name");

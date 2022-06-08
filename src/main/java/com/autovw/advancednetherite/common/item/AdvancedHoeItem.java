@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -72,7 +73,7 @@ public class AdvancedHoeItem extends HoeItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
-            if (stack.getItem().getRegistryName().getNamespace().equals(Reference.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalCropDrops.get()) {
+            if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(Reference.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalCropDrops.get()) {
                 if (Screen.hasShiftDown()) {
                     tooltip.add(ModTooltips.ADDITIONAL_CROP_DROPS_TOOLTIP);
                 } else {

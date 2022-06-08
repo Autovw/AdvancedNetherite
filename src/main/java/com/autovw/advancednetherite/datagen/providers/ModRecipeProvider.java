@@ -14,6 +14,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Consumer;
 
@@ -108,7 +109,7 @@ public class ModRecipeProvider extends RecipeProvider {
     public static void baseSmithingRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result) {
         UpgradeRecipeBuilder.smithing(Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), result)
                 .unlocks("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
-                .save(consumer, new ResourceLocation(result.getRegistryName().getNamespace(), result.toString() + "_smithing"));
+                .save(consumer, new ResourceLocation(ForgeRegistries.ITEMS.getKey(result).getNamespace(), result.toString() + "_smithing"));
     }
 
     /**
@@ -124,7 +125,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(ingotIngredient)
                 .requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient)
                 .unlockedBy("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
-                .save(consumer, new ResourceLocation(result.getRegistryName().getNamespace(), result.toString()));
+                .save(consumer, new ResourceLocation(ForgeRegistries.ITEMS.getKey(result).getNamespace(), result.toString()));
     }
 
     /**
@@ -149,7 +150,7 @@ public class ModRecipeProvider extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(ingredient, 9)
                 .requires(result)
                 .unlockedBy("has_" + result.toString(), has(result))
-                .save(consumer, new ResourceLocation(result.getRegistryName().getNamespace(), ingredient.toString() + "_from_block"));
+                .save(consumer, new ResourceLocation(ForgeRegistries.BLOCKS.getKey(result).getNamespace(), ingredient.toString() + "_from_block"));
     }
 
     // Other ingots are automatically included if they are added to the NETHERITE_INGOTS tag.

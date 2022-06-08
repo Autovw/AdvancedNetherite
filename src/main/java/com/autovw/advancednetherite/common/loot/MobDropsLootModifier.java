@@ -4,8 +4,10 @@ import com.autovw.advancednetherite.config.Config;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
@@ -21,7 +23,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Author: Autovw
@@ -60,7 +61,7 @@ public class MobDropsLootModifier extends LootModifier {
 
     @NotNull
     @Override
-    protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         Entity killer = context.getParamOrNull(LootContextParams.KILLER_ENTITY); // the entity killer
         Entity victim = context.getParamOrNull(LootContextParams.THIS_ENTITY); // killed entity
         if (killer instanceof Player player && entity != null && Config.AdditionalDropsConfig.enableAdditionalMobDrops.get()) {
@@ -68,9 +69,9 @@ public class MobDropsLootModifier extends LootModifier {
                 ItemStack useItem = player.getMainHandItem(); // used to check if the player uses the correct weapon
                 for (Item weapon : weapons) {
                     if (useItem.is(weapon) && bonusDropChance > 0.0 && bonusDropItem != null) {
-                        Random random = context.getRandom(); // random generator
+                        RandomSource random = context.getRandom(); // random generator
                         if (maxDropAmount >= minDropAmount && random.nextFloat() <= bonusDropChance) { // apply chance
-                            generatedLoot.add(new ItemStack(bonusDropItem, random.ints(minDropAmount, maxDropAmount + 1).iterator().nextInt()));
+                            generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount + 1)));
                         }
                     }
                 }

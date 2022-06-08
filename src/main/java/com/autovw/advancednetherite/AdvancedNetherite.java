@@ -1,18 +1,13 @@
 package com.autovw.advancednetherite;
 
 import com.autovw.advancednetherite.client.ClientHandler;
-import com.autovw.advancednetherite.common.loot.CropDropsLootModifier;
-import com.autovw.advancednetherite.common.loot.MobDropsLootModifier;
-import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.registry.ModBlocks;
 import com.autovw.advancednetherite.core.registry.ModItems;
+import com.autovw.advancednetherite.core.registry.ModLootModifiers;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
 import com.mojang.logging.LogUtils;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -36,10 +31,10 @@ public class AdvancedNetherite {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
-        bus.addGenericListener(GlobalLootModifierSerializer.class, this::onModifierSerializerRegistryEvent);
 
         ModBlocks.BLOCKS.register(bus);
         ModItems.ITEMS.register(bus);
+        ModLootModifiers.LOOT_MODIFIERS.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -51,29 +46,5 @@ public class AdvancedNetherite {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         ClientHandler.onClientSetup();
-    }
-
-    private void onModifierSerializerRegistryEvent(final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
-        event.getRegistry().registerAll(
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/diamond_ore_addition")),
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/emerald_ore_addition")),
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/gold_ore_addition")),
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/iron_ore_addition")),
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/deepslate_diamond_ore_addition")),
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/deepslate_emerald_ore_addition")),
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/deepslate_gold_ore_addition")),
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/deepslate_iron_ore_addition")),
-                new OreDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/nether_gold_ore_addition")),
-
-                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/phantom_addition")),
-                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/piglin_addition")),
-                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/zombified_piglin_addition")),
-                new MobDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "entities/enderman_addition")),
-
-                new CropDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/wheat_addition")),
-                new CropDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/carrots_addition")),
-                new CropDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/potatoes_addition")),
-                new CropDropsLootModifier.Serializer().setRegistryName(new ResourceLocation(Reference.MOD_ID, "blocks/beetroots_addition"))
-        );
     }
 }

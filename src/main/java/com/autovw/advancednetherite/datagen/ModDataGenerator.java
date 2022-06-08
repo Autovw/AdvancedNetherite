@@ -15,7 +15,8 @@ import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 @Internal
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModDataGenerator {
-    private ModDataGenerator() { }
+    private ModDataGenerator() {
+    }
 
     /**
      * A data generator which will generate json files such as item models, blockstates, recipes etc.
@@ -29,18 +30,16 @@ public class ModDataGenerator {
         ExistingFileHelper helper = event.getExistingFileHelper();
         ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(generator, Reference.MOD_ID, helper);
 
-        if (event.includeServer()) {
-            generator.addProvider(blockTagsProvider);
-            generator.addProvider(new ModItemTagsProvider(generator, blockTagsProvider, Reference.MOD_ID, helper));
-            generator.addProvider(new ModRecipeProvider(generator));
-            generator.addProvider(new ModLootTableProvider(generator));
-            generator.addProvider(new ModAdvancementProvider(generator, helper));
-            generator.addProvider(new ModLootModifierProvider(generator, Reference.MOD_ID));
-        }
+        // server
+        generator.addProvider(event.includeServer(), blockTagsProvider);
+        generator.addProvider(event.includeServer(), new ModItemTagsProvider(generator, blockTagsProvider, Reference.MOD_ID, helper));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
+        generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
+        generator.addProvider(event.includeServer(), new ModAdvancementProvider(generator, helper));
+        generator.addProvider(event.includeServer(), new ModLootModifierProvider(generator, Reference.MOD_ID));
 
-        if (event.includeClient()) {
-            generator.addProvider(new ModBlockStatesProvider(generator, Reference.MOD_ID, helper));
-            generator.addProvider(new ModItemModelProvider(generator, Reference.MOD_ID, helper));
-        }
+        // client
+        generator.addProvider(event.includeClient(), new ModBlockStatesProvider(generator, Reference.MOD_ID, helper));
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(generator, Reference.MOD_ID, helper));
     }
 }

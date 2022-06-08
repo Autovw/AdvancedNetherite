@@ -19,14 +19,14 @@ import java.util.List;
 public class ConfigScreen extends Screen {
     private final Component modTitle;
     private final Screen parent;
-    private final MutableComponent configured = new TextComponent("Configured").withStyle(ChatFormatting.YELLOW);
+    private final MutableComponent configured = Component.translatable("Configured").withStyle(ChatFormatting.YELLOW);
 
     /**
      * @param title Title of the mod adding the screen
      * @param parent Parent screen
      */
     public ConfigScreen(Component title, Screen parent) {
-        super(new TranslatableComponent("fml.menu.mods.config").append(" / ").append(title));
+        super(Component.translatable("fml.menu.mods.config").append(" / ").append(title));
         this.modTitle = title;
         this.parent = parent;
     }
@@ -34,12 +34,12 @@ public class ConfigScreen extends Screen {
     @Override
     protected void init() {
         // Configured button
-        addRenderableWidget(new Button(width / 2 - 155, height / 2 + 12, 150, 20, new TranslatableComponent("config.advancednetherite.screen.button.install_configured", this.configured), button -> {
+        addRenderableWidget(new Button(width / 2 - 155, height / 2 + 12, 150, 20, Component.translatable("config.advancednetherite.screen.button.install_configured", this.configured), button -> {
             this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.curseforge.com/minecraft/mc-mods/configured")));
         }));
 
         // Instructions button
-        addRenderableWidget(new Button(width / 2 + 5, height / 2 + 12, 150, 20, new TranslatableComponent("config.advancednetherite.screen.button.instructions"), button -> {
+        addRenderableWidget(new Button(width / 2 + 5, height / 2 + 12, 150, 20, Component.translatable("config.advancednetherite.screen.button.instructions"), button -> {
             if (getInstructionsUrl() != null) {
                 this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, getInstructionsUrl())));
             }
@@ -87,7 +87,7 @@ public class ConfigScreen extends Screen {
      * @return Top description component
      */
     public Component getDescriptionTop() {
-        return new TranslatableComponent("config.advancednetherite.screen.description.top", this.configured, this.modTitle);
+        return Component.translatable("config.advancednetherite.screen.description.top", this.configured, this.modTitle);
     }
 
     /**
@@ -95,7 +95,7 @@ public class ConfigScreen extends Screen {
      * @return Bottom description component
      */
     public Component getDescriptionBottom() {
-        return new TranslatableComponent("config.advancednetherite.screen.description.bottom");
+        return Component.translatable("config.advancednetherite.screen.description.bottom");
     }
 
     /**
