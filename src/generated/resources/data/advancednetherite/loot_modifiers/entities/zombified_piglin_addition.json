@@ -1,19 +1,19 @@
 {
+  "type": "advancednetherite:entities/zombified_piglin_addition",
+  "bonus_drop": {
+    "chance": 0.5,
+    "item": "minecraft:gold_nugget",
+    "max": 3,
+    "min": 0,
+    "weapons": [
+      "advancednetherite:netherite_gold_sword",
+      "advancednetherite:netherite_diamond_sword"
+    ]
+  },
   "conditions": [
     {
       "condition": "minecraft:killed_by_player"
     }
   ],
-  "entity": "minecraft:zombified_piglin",
-  "bonus_drop": {
-    "weapons": [
-      "advancednetherite:netherite_gold_sword",
-      "advancednetherite:netherite_diamond_sword"
-    ],
-    "item": "minecraft:gold_nugget",
-    "chance": 0.5,
-    "min": 0,
-    "max": 3
-  },
-  "type": "advancednetherite:entities/zombified_piglin_addition"
+  "entity": "minecraft:zombified_piglin"
 }

@@ -1,4 +1,11 @@
 {
+  "type": "advancednetherite:blocks/beetroots_addition",
+  "bonus_drop": {
+    "chance": 0.2,
+    "item": "minecraft:beetroot",
+    "max": 2,
+    "min": 1
+  },
   "conditions": [
     {
       "condition": "minecraft:match_tool",
@@ -12,15 +19,8 @@
       }
     },
     {
-      "condition": "minecraft:block_state_property",
-      "block": "minecraft:beetroots"
+      "block": "minecraft:beetroots",
+      "condition": "minecraft:block_state_property"
     }
-  ],
-  "bonus_drop": {
-    "item": "minecraft:beetroot",
-    "chance": 0.2,
-    "min": 1,
-    "max": 2
-  },
-  "type": "advancednetherite:blocks/beetroots_addition"
+  ]
 }

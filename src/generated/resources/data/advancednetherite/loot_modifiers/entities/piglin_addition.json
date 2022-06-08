@@ -1,19 +1,19 @@
 {
+  "type": "advancednetherite:entities/piglin_addition",
+  "bonus_drop": {
+    "chance": 0.15,
+    "item": "minecraft:gold_ingot",
+    "max": 1,
+    "min": 1,
+    "weapons": [
+      "advancednetherite:netherite_gold_sword",
+      "advancednetherite:netherite_diamond_sword"
+    ]
+  },
   "conditions": [
     {
       "condition": "minecraft:killed_by_player"
     }
   ],
-  "entity": "minecraft:piglin",
-  "bonus_drop": {
-    "weapons": [
-      "advancednetherite:netherite_gold_sword",
-      "advancednetherite:netherite_diamond_sword"
-    ],
-    "item": "minecraft:gold_ingot",
-    "chance": 0.15,
-    "min": 1,
-    "max": 1
-  },
-  "type": "advancednetherite:entities/piglin_addition"
+  "entity": "minecraft:piglin"
 }

@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
-  "base": {
-    "tag": "advancednetherite:swords/upgrade_to_netherite_iron"
-  },
   "addition": {
     "tag": "advancednetherite:upgrade_to_netherite_iron"
+  },
+  "base": {
+    "tag": "advancednetherite:swords/upgrade_to_netherite_iron"
   },
   "result": {
     "item": "advancednetherite:netherite_iron_sword"

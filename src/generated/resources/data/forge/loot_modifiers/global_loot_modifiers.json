@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "entries": [
     "advancednetherite:blocks/carrots_addition",
     "advancednetherite:blocks/gold_ore_addition",
@@ -18,5 +17,6 @@
     "advancednetherite:blocks/iron_ore_addition",
     "advancednetherite:blocks/deepslate_emerald_ore_addition",
     "advancednetherite:blocks/deepslate_diamond_ore_addition"
-  ]
+  ],
+  "replace": false
 }

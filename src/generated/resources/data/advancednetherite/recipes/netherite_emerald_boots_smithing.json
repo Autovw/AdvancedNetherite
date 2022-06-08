@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
-  "base": {
-    "tag": "advancednetherite:boots/upgrade_to_netherite_emerald"
-  },
   "addition": {
     "tag": "advancednetherite:upgrade_to_netherite_emerald"
+  },
+  "base": {
+    "tag": "advancednetherite:boots/upgrade_to_netherite_emerald"
   },
   "result": {
     "item": "advancednetherite:netherite_emerald_boots"

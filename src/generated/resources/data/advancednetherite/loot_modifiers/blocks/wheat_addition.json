@@ -1,4 +1,11 @@
 {
+  "type": "advancednetherite:blocks/wheat_addition",
+  "bonus_drop": {
+    "chance": 0.4,
+    "item": "minecraft:wheat",
+    "max": 2,
+    "min": 0
+  },
   "conditions": [
     {
       "condition": "minecraft:match_tool",
@@ -12,15 +19,8 @@
       }
     },
     {
-      "condition": "minecraft:block_state_property",
-      "block": "minecraft:wheat"
+      "block": "minecraft:wheat",
+      "condition": "minecraft:block_state_property"
     }
-  ],
-  "bonus_drop": {
-    "item": "minecraft:wheat",
-    "chance": 0.4,
-    "min": 0,
-    "max": 2
-  },
-  "type": "advancednetherite:blocks/wheat_addition"
+  ]
 }

@@ -1,4 +1,11 @@
 {
+  "type": "advancednetherite:blocks/deepslate_emerald_ore_addition",
+  "bonus_drop": {
+    "chance": 0.4,
+    "item": "minecraft:emerald",
+    "max": 1,
+    "min": 1
+  },
   "conditions": [
     {
       "condition": "minecraft:match_tool",
@@ -9,15 +16,8 @@
       }
     },
     {
-      "condition": "minecraft:block_state_property",
-      "block": "minecraft:deepslate_emerald_ore"
+      "block": "minecraft:deepslate_emerald_ore",
+      "condition": "minecraft:block_state_property"
     }
-  ],
-  "bonus_drop": {
-    "item": "minecraft:emerald",
-    "chance": 0.4,
-    "min": 1,
-    "max": 1
-  },
-  "type": "advancednetherite:blocks/deepslate_emerald_ore_addition"
+  ]
 }

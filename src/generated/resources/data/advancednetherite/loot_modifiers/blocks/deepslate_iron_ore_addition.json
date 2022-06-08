@@ -1,4 +1,11 @@
 {
+  "type": "advancednetherite:blocks/deepslate_iron_ore_addition",
+  "bonus_drop": {
+    "chance": 0.2,
+    "item": "minecraft:raw_iron",
+    "max": 2,
+    "min": 1
+  },
   "conditions": [
     {
       "condition": "minecraft:match_tool",
@@ -9,15 +16,8 @@
       }
     },
     {
-      "condition": "minecraft:block_state_property",
-      "block": "minecraft:deepslate_iron_ore"
+      "block": "minecraft:deepslate_iron_ore",
+      "condition": "minecraft:block_state_property"
     }
-  ],
-  "bonus_drop": {
-    "item": "minecraft:raw_iron",
-    "chance": 0.2,
-    "min": 1,
-    "max": 2
-  },
-  "type": "advancednetherite:blocks/deepslate_iron_ore_addition"
+  ]
 }
