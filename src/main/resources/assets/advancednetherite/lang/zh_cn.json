@@ -60,7 +60,7 @@
   "tooltip.advancednetherite.armor.piglin_passive": "+ 震慑猪灵",
   "tooltip.advancednetherite.armor.phantom_passive": "+ 震慑幻翼",
 
-  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ Chance of dropping additional crop drops while harvesting grown crops",
+  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ 收获成熟作物时获得额外产物的概率",
 
   "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ 挖掘钻石矿石时掉落额外钻石的概率",
   "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ 挖掘绿宝石矿石时掉落额外绿宝石的概率",
@@ -85,16 +85,16 @@
   "advancements.advancednetherite.nether.netherite_emerald_armor.description": "获得全套绿宝石·下界合金盔甲",
   "advancements.advancednetherite.nether.netherite_diamond_armor.title": "用钻石·下界合金包裹我",
   "advancements.advancednetherite.nether.netherite_diamond_armor.description": "获得全套钻石·下界合金盔甲",
-  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "Upgrades!",
-  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "Obtain a Netherite-Iron Ingot",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "全新升级！",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "获得一个铁·下界合金锭",
 
-  "config.advancednetherite.client.show_tooltips": "If true, displays tooltips, added by Advanced Netherite, with perks client-side.",
-  "config.advancednetherite.client.matching_durability_bars": "If true, displays a (color) matching durability bar underneath the item when damaged.",
-  "config.advancednetherite.client.enable_search_bar": "If true, enables a search bar in the Advanced Netherite creative tab.",
-  "config.advancednetherite.client.force_disable_dab_support": "If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted.",
+  "config.advancednetherite.client.show_tooltips": "设置为ture时，客户端方可显示由高级下界合金添加的加成工具条。",
+  "config.advancednetherite.client.matching_durability_bars": "设置为ture时，当物品有损伤时，在物品下方显示符合目前耐久度的耐久条。",
+  "config.advancednetherite.client.enable_search_bar": "设置为ture时，在高级下界合金的创造模式物品栏显示一个搜索栏。",
+  "config.advancednetherite.client.force_disable_dab_support": "设置为ture时，强行禁用对细节盔甲的支持，需要重启游戏。",
 
-  "config.advancednetherite.screen.description.top": "Install %s mod to edit the config added by %s from within the game.",
-  "config.advancednetherite.screen.description.bottom": "View the wiki page for instructions.",
-  "config.advancednetherite.screen.button.install_configured": "Install %s",
-  "config.advancednetherite.screen.button.instructions": "Instructions"
+  "config.advancednetherite.screen.description.top": "安装 %s 模组以在游戏中设置由 %s 添加的选项。",
+  "config.advancednetherite.screen.description.bottom": "访问wiki页以获取模组说明",
+  "config.advancednetherite.screen.button.install_configured": "安装 %s",
+  "config.advancednetherite.screen.button.instructions": "模组说明"
 }
