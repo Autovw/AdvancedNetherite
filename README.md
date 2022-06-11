@@ -39,6 +39,7 @@ The recipes for the mod can be found on the [Advanced Netherite Wiki](https://gi
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### 🔖 Links to popular version
+* [Minecraft 1.19](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-game-version=2020709689%3A9186)
 * [Minecraft 1.18.2](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A9008)
 * [Minecraft 1.18.1](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A8857)
 * [Minecraft 1.17.1](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A8516)
