@@ -58,7 +58,7 @@ public class OreDropsLootModifier extends LootModifier {
             if (bonusDropChance > 0.0 && bonusDropItem != null) {
                 RandomSource random = context.getRandom();
                 if (maxDropAmount >= minDropAmount && random.nextFloat() <= bonusDropChance) { // apply the chance
-                    generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount + 1)));
+                    generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount)));
                 }
             }
         }

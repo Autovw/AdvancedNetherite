@@ -59,7 +59,7 @@ public class CropDropsLootModifier extends LootModifier {
                 if (block instanceof CropBlock cropBlock && cropBlock.isMaxAge(blockState)) {
                     RandomSource random = context.getRandom();
                     if (maxDropAmount >= minDropAmount && random.nextFloat() <= bonusDropChance) {
-                        generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount + 1)));
+                        generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount)));
                     }
                 }
             }

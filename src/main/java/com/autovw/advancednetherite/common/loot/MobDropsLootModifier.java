@@ -71,7 +71,7 @@ public class MobDropsLootModifier extends LootModifier {
                     if (useItem.is(weapon) && bonusDropChance > 0.0 && bonusDropItem != null) {
                         RandomSource random = context.getRandom(); // random generator
                         if (maxDropAmount >= minDropAmount && random.nextFloat() <= bonusDropChance) { // apply chance
-                            generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount + 1)));
+                            generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount)));
                         }
                     }
                 }
