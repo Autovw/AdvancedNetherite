@@ -35,7 +35,16 @@ public class AdvancedArmorItem extends ArmorItem {
      * @return If true, pacifies endermen. Also applies the tooltip.
      */
     public boolean pacifiesEndermen() {
-        return material == ModArmorTiers.NETHERITE_EMERALD || material == ModArmorTiers.NETHERITE_DIAMOND;
+        if (this.material == ModArmorTiers.NETHERITE_IRON)
+            return Config.ArmorConfig.ironEndermanPassiveArmor.get();
+        if (this.material == ModArmorTiers.NETHERITE_GOLD)
+            return Config.ArmorConfig.goldEndermanPassiveArmor.get();
+        if (this.material == ModArmorTiers.NETHERITE_EMERALD)
+            return Config.ArmorConfig.emeraldEndermanPassiveArmor.get();
+        if (this.material == ModArmorTiers.NETHERITE_DIAMOND)
+            return Config.ArmorConfig.diamondEndermanPassiveArmor.get();
+
+        return false;
     }
 
     /**
@@ -44,7 +53,16 @@ public class AdvancedArmorItem extends ArmorItem {
      * @return If true, pacifies piglins. Also applies the tooltip.
      */
     public boolean pacifiesPiglins() {
-        return material == ModArmorTiers.NETHERITE_GOLD || material == ModArmorTiers.NETHERITE_DIAMOND;
+        if (this.material == ModArmorTiers.NETHERITE_IRON)
+            return Config.ArmorConfig.ironPiglinPassiveArmor.get();
+        if (this.material == ModArmorTiers.NETHERITE_GOLD)
+            return Config.ArmorConfig.goldPiglinPassiveArmor.get();
+        if (this.material == ModArmorTiers.NETHERITE_EMERALD)
+            return Config.ArmorConfig.emeraldPiglinPassiveArmor.get();
+        if (this.material == ModArmorTiers.NETHERITE_DIAMOND)
+            return Config.ArmorConfig.diamondPiglinPassiveArmor.get();
+
+        return false;
     }
 
     /**
@@ -53,7 +71,16 @@ public class AdvancedArmorItem extends ArmorItem {
      * @return If true, pacifies phantoms. Alo applies the tooltip.
      */
     public boolean pacifiesPhantoms() {
-        return material == ModArmorTiers.NETHERITE_IRON;
+        if (this.material == ModArmorTiers.NETHERITE_IRON)
+            return Config.ArmorConfig.ironPhantomPassiveArmor.get();
+        if (this.material == ModArmorTiers.NETHERITE_GOLD)
+            return Config.ArmorConfig.goldPhantomPassiveArmor.get();
+        if (this.material == ModArmorTiers.NETHERITE_EMERALD)
+            return Config.ArmorConfig.emeraldPhantomPassiveArmor.get();
+        if (this.material == ModArmorTiers.NETHERITE_DIAMOND)
+            return Config.ArmorConfig.diamondPhantomPassiveArmor.get();
+
+        return false;
     }
 
     /**
