@@ -1,11 +1,5 @@
 {
-  "type": "advancednetherite:blocks/wheat_addition",
-  "bonus_drop": {
-    "chance": 0.4,
-    "item": "minecraft:wheat",
-    "max": 2,
-    "min": 0
-  },
+  "type": "advancednetherite:crop_drops_loot_modifier",
   "conditions": [
     {
       "condition": "minecraft:match_tool",
@@ -17,10 +11,6 @@
           "advancednetherite:netherite_diamond_hoe"
         ]
       }
-    },
-    {
-      "block": "minecraft:wheat",
-      "condition": "minecraft:block_state_property"
     }
   ]
 }

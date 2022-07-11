@@ -1,29 +1,24 @@
 package com.autovw.advancednetherite.common.loot;
 
 import com.autovw.advancednetherite.config.Config;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.autovw.advancednetherite.core.registry.ModItems;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
+// TODO rework loot modifiers
 /**
  * Author: Autovw
  * <br/>
@@ -32,31 +27,16 @@ import java.util.List;
  * @apiNote This loot modifier can be disabled by {@link com.autovw.advancednetherite.config.Config.AdditionalDropsConfig#enableAdditionalMobDrops}
  */
 public class MobDropsLootModifier extends LootModifier {
-    private final EntityType<?> entity;
-    private final List<Item> weapons;
-    private final Item bonusDropItem;
-    private final float bonusDropChance;
-    private final int minDropAmount, maxDropAmount;
+    public static final Codec<MobDropsLootModifier> CODEC = RecordCodecBuilder.create(instance -> codecStart(instance)
+            .apply(instance, MobDropsLootModifier::new));
 
     /**
      * Constructs a LootModifier.
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
-     * @param entity the entity killed
-     * @param weapons the weapons this modifier works for
-     * @param bonusDropItem the bonus item which should be dropped
-     * @param bonusDropChance the chance of the bonus item dropping
-     * @param minDropAmount the minimum amount of items to be dropped
-     * @param maxDropAmount the maximum amount of items to be dropped
      */
-    public MobDropsLootModifier(LootItemCondition[] conditionsIn, EntityType<?> entity, List<Item> weapons, Item bonusDropItem, float bonusDropChance, int minDropAmount, int maxDropAmount) {
+    public MobDropsLootModifier(LootItemCondition[] conditionsIn) {
         super(conditionsIn);
-        this.entity = entity;
-        this.weapons = weapons;
-        this.bonusDropItem = bonusDropItem;
-        this.bonusDropChance = bonusDropChance;
-        this.minDropAmount = minDropAmount;
-        this.maxDropAmount = maxDropAmount;
     }
 
     @NotNull
@@ -64,64 +44,29 @@ public class MobDropsLootModifier extends LootModifier {
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         Entity killer = context.getParamOrNull(LootContextParams.KILLER_ENTITY); // the entity killer
         Entity victim = context.getParamOrNull(LootContextParams.THIS_ENTITY); // killed entity
-        if (killer instanceof Player player && entity != null && Config.AdditionalDropsConfig.enableAdditionalMobDrops.get()) {
-            if (victim != null && entity.equals(victim.getType())) { // check if the killed entity is in fact the entity specified in the loot modifier
-                ItemStack useItem = player.getMainHandItem(); // used to check if the player uses the correct weapon
-                for (Item weapon : weapons) {
-                    if (useItem.is(weapon) && bonusDropChance > 0.0 && bonusDropItem != null) {
-                        RandomSource random = context.getRandom(); // random generator
-                        if (maxDropAmount >= minDropAmount && random.nextFloat() <= bonusDropChance) { // apply chance
-                            generatedLoot.add(new ItemStack(bonusDropItem, random.nextIntBetweenInclusive(minDropAmount, maxDropAmount)));
-                        }
-                    }
-                }
+
+        if (killer instanceof Player player && victim != null && Config.AdditionalDropsConfig.enableAdditionalMobDrops.get()) {
+            ItemStack useItem = player.getMainHandItem(); // used to check if the player uses the correct weapon
+            RandomSource random = context.getRandom(); // random generator
+
+            if (useItem.is(ModItems.NETHERITE_IRON_SWORD.get()) && victim.getType() == EntityType.PHANTOM && random.nextFloat() <= 0.5f) {
+                generatedLoot.add(new ItemStack(Items.PHANTOM_MEMBRANE, random.nextIntBetweenInclusive(0, 2)));
+            }
+            if ((useItem.is(ModItems.NETHERITE_GOLD_SWORD.get()) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD.get())) && victim.getType() == EntityType.ZOMBIFIED_PIGLIN && random.nextFloat() <= 0.5f) {
+                generatedLoot.add(new ItemStack(Items.GOLD_NUGGET, random.nextIntBetweenInclusive(0, 3)));
+            }
+            if ((useItem.is(ModItems.NETHERITE_GOLD_SWORD.get()) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD.get())) && victim.getType() == EntityType.PIGLIN && random.nextFloat() <= 0.15f) {
+                generatedLoot.add(new ItemStack(Items.GOLD_INGOT, random.nextIntBetweenInclusive(1, 1)));
+            }
+            if ((useItem.is(ModItems.NETHERITE_EMERALD_SWORD.get()) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD.get())) && victim.getType() == EntityType.ENDERMAN && random.nextFloat() <= 0.3f) {
+                generatedLoot.add(new ItemStack(Items.ENDER_PEARL, random.nextIntBetweenInclusive(0, 1)));
             }
         }
         return generatedLoot;
     }
 
-    public static class Serializer extends GlobalLootModifierSerializer<MobDropsLootModifier> {
-
-        @Override
-        public MobDropsLootModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
-            EntityType<?> entity = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(GsonHelper.getAsString(object, "entity")));
-
-            List<Item> weapons = new ArrayList<>();
-            JsonObject bonusDropObject = GsonHelper.getAsJsonObject(object, "bonus_drop");
-            JsonArray weaponArray = GsonHelper.getAsJsonArray(bonusDropObject, "weapons");
-
-            for (JsonElement weapon : weaponArray) {
-                weapons.add(ForgeRegistries.ITEMS.getValue(new ResourceLocation(weapon.getAsString())));
-            }
-
-            Item bonusDropItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(GsonHelper.getAsString(bonusDropObject, "item")));
-            float bonusDropChance = GsonHelper.getAsFloat(bonusDropObject, "chance");
-            int minDropAmount = GsonHelper.getAsInt(bonusDropObject, "min");
-            int maxDropAmount = GsonHelper.getAsInt(bonusDropObject, "max");
-
-            return new MobDropsLootModifier(ailootcondition, entity, weapons, bonusDropItem, bonusDropChance, minDropAmount, maxDropAmount);
-        }
-
-        @Override
-        public JsonObject write(MobDropsLootModifier instance) {
-            JsonObject object = makeConditions(instance.conditions);
-            JsonObject bonusDropObject = new JsonObject();
-
-            object.addProperty("entity", ForgeRegistries.ENTITIES.getKey(instance.entity).toString());
-
-            JsonArray weaponArray = new JsonArray(); // create array for allowed weapons
-            for (Item weapon : instance.weapons) {
-                weaponArray.add(ForgeRegistries.ITEMS.getKey(weapon).toString());
-            }
-
-            object.add("bonus_drop", bonusDropObject);
-
-            bonusDropObject.add("weapons", weaponArray); // add json array containing allowed weapons
-            bonusDropObject.addProperty("item", ForgeRegistries.ITEMS.getKey(instance.bonusDropItem).toString());
-            bonusDropObject.addProperty("chance", instance.bonusDropChance);
-            bonusDropObject.addProperty("min", instance.minDropAmount);
-            bonusDropObject.addProperty("max", instance.maxDropAmount);
-            return object;
-        }
+    @Override
+    public Codec<? extends IGlobalLootModifier> codec() {
+        return CODEC;
     }
 }
