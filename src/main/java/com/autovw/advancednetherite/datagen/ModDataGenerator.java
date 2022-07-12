@@ -5,9 +5,9 @@ import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.datagen.providers.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 /**
  * Author: Autovw

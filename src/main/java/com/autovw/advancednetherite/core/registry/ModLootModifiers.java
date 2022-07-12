@@ -15,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
  * Author: Autovw
  */
 public class ModLootModifiers {
-    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIERS = DeferredRegister.create(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, Reference.MOD_ID);
+    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIERS = DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Reference.MOD_ID);
 
     public static final RegistryObject<Codec<OreDropsLootModifier>> ORE_DROPS_LOOT_MODIFIER = LOOT_MODIFIERS.register("ore_drops_loot_modifier", () -> OreDropsLootModifier.CODEC);
 
