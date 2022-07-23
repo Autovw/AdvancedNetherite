@@ -32,7 +32,7 @@ side="BOTH"
 [[dependencies.advancednetherite]]
 modId="detailab"
 mandatory=false
-versionRange="[2.6.3,)"
+versionRange="[2.6.4,)"
 ordering="NONE"
 side="CLIENT"
 
