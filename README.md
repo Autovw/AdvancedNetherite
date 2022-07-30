@@ -38,7 +38,8 @@ For more information visit the [Advanced Netherite Wiki](https://github.com/Auto
 The recipes for the mod can be found on the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki/Crafting-Recipes), or simply by installing [Just Enough Items (JEI)](https://www.curseforge.com/minecraft/mc-mods/jei)!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
-### 🔖 Links to popular version
+### 🔖 Links to popular versions
+* [Minecraft 1.19.1](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A9259)
 * [Minecraft 1.19](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-game-version=2020709689%3A9186)
 * [Minecraft 1.18.2](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A9008)
 * [Minecraft 1.18.1](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A8857)
