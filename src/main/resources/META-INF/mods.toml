@@ -10,7 +10,7 @@ displayName="Advanced Netherite"
 updateJSONURL="https://raw.githubusercontent.com/Autovw/ModUpdates/master/advancednetherite/update.json"
 displayURL="https://github.com/Autovw/AdvancedNetherite/wiki"
 logoFile="advancednetherite_banner.png"
-#credits=""
+credits="LizterZapZap for creating the new logo"
 authors="Autovw"
 description='''
 A vanilla and add-on friendly, open-source mod that adds in more tiers of Netherite! The goal of the mod is to extend the vanilla Minecraft experience by adding more goals to achieve.
