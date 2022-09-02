@@ -8,6 +8,7 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 /**
@@ -237,5 +238,53 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.NETHERITE_GOLD_PICKAXE.get())
                 .add(ModItems.NETHERITE_EMERALD_PICKAXE.get())
                 .add(ModItems.NETHERITE_DIAMOND_PICKAXE.get());
+
+        /* Forge tags */
+        tag(Tags.Items.ARMORS_HELMETS)
+                .add(ModItems.NETHERITE_DIAMOND_HELMET.get())
+                .add(ModItems.NETHERITE_EMERALD_HELMET.get())
+                .add(ModItems.NETHERITE_GOLD_HELMET.get())
+                .add(ModItems.NETHERITE_IRON_HELMET.get());
+        tag(Tags.Items.ARMORS_CHESTPLATES)
+                .add(ModItems.NETHERITE_DIAMOND_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_EMERALD_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_GOLD_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_IRON_CHESTPLATE.get());
+        tag(Tags.Items.ARMORS_LEGGINGS)
+                .add(ModItems.NETHERITE_DIAMOND_LEGGINGS.get())
+                .add(ModItems.NETHERITE_EMERALD_LEGGINGS.get())
+                .add(ModItems.NETHERITE_GOLD_LEGGINGS.get())
+                .add(ModItems.NETHERITE_IRON_LEGGINGS.get());
+        tag(Tags.Items.ARMORS_BOOTS)
+                .add(ModItems.NETHERITE_DIAMOND_BOOTS.get())
+                .add(ModItems.NETHERITE_EMERALD_BOOTS.get())
+                .add(ModItems.NETHERITE_GOLD_BOOTS.get())
+                .add(ModItems.NETHERITE_IRON_BOOTS.get());
+
+        tag(Tags.Items.TOOLS_AXES)
+                .add(ModItems.NETHERITE_DIAMOND_AXE.get())
+                .add(ModItems.NETHERITE_EMERALD_AXE.get())
+                .add(ModItems.NETHERITE_GOLD_AXE.get())
+                .add(ModItems.NETHERITE_IRON_AXE.get());
+        tag(Tags.Items.TOOLS_HOES)
+                .add(ModItems.NETHERITE_DIAMOND_HOE.get())
+                .add(ModItems.NETHERITE_EMERALD_HOE.get())
+                .add(ModItems.NETHERITE_GOLD_HOE.get())
+                .add(ModItems.NETHERITE_IRON_HOE.get());
+        tag(Tags.Items.TOOLS_PICKAXES)
+                .add(ModItems.NETHERITE_DIAMOND_PICKAXE.get())
+                .add(ModItems.NETHERITE_EMERALD_PICKAXE.get())
+                .add(ModItems.NETHERITE_GOLD_PICKAXE.get())
+                .add(ModItems.NETHERITE_IRON_PICKAXE.get());
+        tag(Tags.Items.TOOLS_SHOVELS)
+                .add(ModItems.NETHERITE_DIAMOND_SHOVEL.get())
+                .add(ModItems.NETHERITE_EMERALD_SHOVEL.get())
+                .add(ModItems.NETHERITE_GOLD_SHOVEL.get())
+                .add(ModItems.NETHERITE_IRON_SHOVEL.get());
+        tag(Tags.Items.TOOLS_SWORDS)
+                .add(ModItems.NETHERITE_DIAMOND_SWORD.get())
+                .add(ModItems.NETHERITE_EMERALD_SWORD.get())
+                .add(ModItems.NETHERITE_GOLD_SWORD.get())
+                .add(ModItems.NETHERITE_IRON_SWORD.get());
     }
 }
