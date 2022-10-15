@@ -1,4 +1,4 @@
-![Banner](https://i.postimg.cc/bv5LdRY8/Advanced-Netherite-Banner-V11.png)
+![Banner](https://i.postimg.cc/4dzJ9yxX/Advanced-Netherite-Banner-V13.png)
 # Advanced Netherite
 
 This is the **Forge** version, click [here](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite-fabric) for the Fabric version!
@@ -9,6 +9,8 @@ This is the **Forge** version, click [here](https://www.curseforge.com/minecraft
 The goal of the mod is to extend the vanilla Minecraft experience by adding more goals to achieve.
 
 For more information visit the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki)!
+
+Thanks [LizterZapZap](https://twitter.com/LizterZapZap) for creating the new "Advanced Netherite" logo!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
 ### ✅ Features
@@ -38,7 +40,8 @@ For more information visit the [Advanced Netherite Wiki](https://github.com/Auto
 The recipes for the mod can be found on the [Advanced Netherite Wiki](https://github.com/Autovw/AdvancedNetherite/wiki/Crafting-Recipes), or simply by installing [Just Enough Items (JEI)](https://www.curseforge.com/minecraft/mc-mods/jei)!
 
 ![Break](https://i.postimg.cc/FKmD9Nbm/advancednetheritebreak.png)
-### 🔖 Links to popular version
+### 🔖 Links to popular versions
+* [Minecraft 1.19.2](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A9366)
 * [Minecraft 1.19](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-game-version=2020709689%3A9186)
 * [Minecraft 1.18.2](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A9008)
 * [Minecraft 1.18.1](https://www.curseforge.com/minecraft/mc-mods/advanced-netherite/files/all?filter-status=1&filter-game-version=2020709689%3A8857)
