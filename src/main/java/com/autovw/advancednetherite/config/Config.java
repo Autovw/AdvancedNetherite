@@ -146,7 +146,7 @@ public class Config {
         public static ForgeConfigSpec.BooleanValue enableAdditionalMobDrops;
 
         public AdditionalDropsConfig(ForgeConfigSpec.Builder builder) {
-            builder.comment("Configure properties related to additional drop perks here. Drop chances can be modified using a datapack.").push("additional_drops");
+            builder.comment("Configure properties related to additional drop perks here. Drop chances can be modified in the SERVER config.").push("additional_drops");
             {
                 enableAdditionalCropDrops = builder.comment("If true, enables additional crop drops for hoes. True by default.").define("enableAdditionalCropDrops", true);
                 enableAdditionalOreDrops = builder.comment("If true, enables additional ore drops for pickaxes. Pickaxes with Silk Touch remain unaffected. True by default.").define("enableAdditionalOreDrops", true);
@@ -159,11 +159,13 @@ public class Config {
     // SERVER config
     public static class Server {
         public final ToolProperties toolProperties;
+        public final AdditionalDropProperties additionalDropProperties;
 
         public Server(ForgeConfigSpec.Builder builder) {
             builder.push("server");
             {
                 this.toolProperties = new ToolProperties(builder);
+                this.additionalDropProperties = new AdditionalDropProperties(builder);
             }
             builder.pop();
         }
@@ -184,6 +186,58 @@ public class Config {
                     goldBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Gold tools").defineInRange("goldBreakingSpeedMultiplier", 20, 1, 64);
                     emeraldBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Emerald tools").defineInRange("emeraldBreakingSpeedMultiplier", 29, 1, 64);
                     diamondBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Diamond tools").defineInRange("diamondBreakingSpeedMultiplier", 39, 1, 64);
+                }
+                builder.pop();
+            }
+            builder.pop();
+        }
+    }
+
+    public static class AdditionalDropProperties {
+        public static ForgeConfigSpec.DoubleValue additionalWheatDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalCarrotsDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalPotatoesDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalBeetrootsDropChance;
+
+        public static ForgeConfigSpec.DoubleValue additionalPhantomDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalZombifiedPiglinDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalPiglinDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalEndermanDropChance;
+
+        public static ForgeConfigSpec.DoubleValue additionalRawIronDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalRawGoldDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalEmeraldDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalDiamondDropChance;
+        public static ForgeConfigSpec.DoubleValue additionalGoldNuggetDropChance;
+
+        public AdditionalDropProperties(ForgeConfigSpec.Builder builder) {
+            builder.comment("Configure properties related to additional drops here.").push("additional_drop_properties");
+            {
+                builder.comment("Configure properties related to crop drop chances here.").push("crop_drop_chances");
+                {
+                    additionalWheatDropChance = builder.comment("Chance of dropping additional wheat. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalWheatDropChance", 0.3, 0, 1);
+                    additionalCarrotsDropChance = builder.comment("Chance of dropping additional carrots. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalCarrotsDropChance", 0.3, 0, 1);
+                    additionalPotatoesDropChance = builder.comment("Chance of dropping additional potatoes. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalPotatoesDropChance", 0.3, 0, 1);
+                    additionalBeetrootsDropChance = builder.comment("Chance of dropping additional beetroots. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalBeetrootsDropChance", 0.2, 0, 1);
+                }
+                builder.pop();
+
+                builder.comment("Configure properties related to mob drop chances here.").push("mob_drop_chances");
+                {
+                    additionalPhantomDropChance = builder.comment("Chance of dropping additional phantom membrane. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalPhantomDropChance", 0.5, 0, 1);
+                    additionalZombifiedPiglinDropChance = builder.comment("Chance of dropping additional golden nuggets. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalZombifiedPiglinDropChance", 0.5, 0, 1);
+                    additionalPiglinDropChance = builder.comment("Chance of dropping additional golden ingots. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalPiglinDropChance", 0.15, 0, 1);
+                    additionalEndermanDropChance = builder.comment("Chance of dropping additional ender pearls. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalEndermanDropChance", 0.3, 0, 1);
+                }
+                builder.pop();
+
+                builder.comment("Configure properties related to ore drop chances here.").push("ore_drop_chances");
+                {
+                    additionalRawIronDropChance = builder.comment("Chance of dropping additional raw iron. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalRawIronDropChance", 0.2, 0, 1);
+                    additionalRawGoldDropChance = builder.comment("Chance of dropping additional raw gold. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalRawGoldChance", 0.3, 0, 1);
+                    additionalEmeraldDropChance = builder.comment("Chance of dropping additional emerald. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalEmeraldDropChance", 0.4, 0, 1);
+                    additionalDiamondDropChance = builder.comment("Chance of dropping additional diamond. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalDiamondDropChance", 0.25, 0, 1);
+                    additionalGoldNuggetDropChance = builder.comment("Chance of dropping additional golden nugget. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalGoldNuggetDropChance", 0.6, 0, 1);
                 }
                 builder.pop();
             }

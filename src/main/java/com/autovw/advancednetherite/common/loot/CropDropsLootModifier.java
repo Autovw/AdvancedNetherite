@@ -19,11 +19,10 @@ import org.jetbrains.annotations.NotNull;
 
 // TODO rework loot modifiers
 /**
- * Author: Autovw
- * <br/>
  * A loot modifier for adding additional drops to crop blocks.
  * See {@link com.autovw.advancednetherite.datagen.providers.ModLootModifierProvider} for example implementation.
  * @apiNote This loot modifier can be disabled by {@link com.autovw.advancednetherite.config.Config.AdditionalDropsConfig#enableAdditionalCropDrops}
+ * @author Autovw
  */
 public class CropDropsLootModifier extends LootModifier {
     public static final Codec<CropDropsLootModifier> CODEC = RecordCodecBuilder.create(instance -> codecStart(instance)
@@ -49,16 +48,16 @@ public class CropDropsLootModifier extends LootModifier {
             if (block instanceof CropBlock cropBlock && cropBlock.isMaxAge(blockState)) {
                 RandomSource random = context.getRandom();
 
-                if (cropBlock == Blocks.WHEAT && random.nextFloat() <= 0.3f) {
+                if (cropBlock == Blocks.WHEAT && random.nextFloat() <= Config.AdditionalDropProperties.additionalWheatDropChance.get()) {
                     generatedLoot.add(new ItemStack(Items.WHEAT, random.nextIntBetweenInclusive(0, 2)));
                 }
-                if (cropBlock == Blocks.CARROTS && random.nextFloat() <= 0.3f) {
+                if (cropBlock == Blocks.CARROTS && random.nextFloat() <= Config.AdditionalDropProperties.additionalCarrotsDropChance.get()) {
                     generatedLoot.add(new ItemStack(Items.CARROT, random.nextIntBetweenInclusive(0, 2)));
                 }
-                if (cropBlock == Blocks.POTATOES && random.nextFloat() <= 0.3f) {
+                if (cropBlock == Blocks.POTATOES && random.nextFloat() <= Config.AdditionalDropProperties.additionalPotatoesDropChance.get()) {
                     generatedLoot.add(new ItemStack(Items.POTATO, random.nextIntBetweenInclusive(0, 1)));
                 }
-                if (cropBlock == Blocks.BEETROOTS && random.nextFloat() <= 0.2f) {
+                if (cropBlock == Blocks.BEETROOTS && random.nextFloat() <= Config.AdditionalDropProperties.additionalBeetrootsDropChance.get()) {
                     generatedLoot.add(new ItemStack(Items.BEETROOT, random.nextIntBetweenInclusive(1, 2)));
                 }
             }

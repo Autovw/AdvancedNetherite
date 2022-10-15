@@ -23,11 +23,10 @@ import org.jetbrains.annotations.NotNull;
 
 // TODO rework loot modifiers
 /**
- * Author: Autovw
- * <br/>
  * A loot modifier for adding additional drops to blocks.
  * See {@link com.autovw.advancednetherite.datagen.providers.ModLootModifierProvider} for example implementation.
  * @apiNote This loot modifier can be disabled by {@link com.autovw.advancednetherite.config.Config.AdditionalDropsConfig#enableAdditionalOreDrops}
+ * @author Autovw
  */
 public class OreDropsLootModifier extends LootModifier {
     public static final Codec<OreDropsLootModifier> CODEC = RecordCodecBuilder.create(instance -> codecStart(instance)
@@ -57,20 +56,20 @@ public class OreDropsLootModifier extends LootModifier {
                 return generatedLoot; // return early if tool is enchanted with silk touch
             }
 
-            if ((block == Blocks.IRON_ORE || block == Blocks.DEEPSLATE_IRON_ORE) && toolItem == ModItems.NETHERITE_IRON_PICKAXE.get() && random.nextFloat() <= 0.2f) {
+            if ((block == Blocks.IRON_ORE || block == Blocks.DEEPSLATE_IRON_ORE) && toolItem == ModItems.NETHERITE_IRON_PICKAXE.get() && random.nextFloat() <= Config.AdditionalDropProperties.additionalRawIronDropChance.get()) {
                 generatedLoot.add(new ItemStack(Items.RAW_IRON, random.nextIntBetweenInclusive(1, 2)));
             }
-            if ((block == Blocks.GOLD_ORE || block == Blocks.DEEPSLATE_GOLD_ORE) && toolItem == ModItems.NETHERITE_GOLD_PICKAXE.get() && random.nextFloat() <= 0.3f) {
+            if ((block == Blocks.GOLD_ORE || block == Blocks.DEEPSLATE_GOLD_ORE) && toolItem == ModItems.NETHERITE_GOLD_PICKAXE.get() && random.nextFloat() <= Config.AdditionalDropProperties.additionalRawGoldDropChance.get()) {
                 generatedLoot.add(new ItemStack(Items.RAW_GOLD, random.nextIntBetweenInclusive(1, 1)));
             }
-            if ((block == Blocks.EMERALD_ORE || block == Blocks.DEEPSLATE_EMERALD_ORE) && toolItem == ModItems.NETHERITE_EMERALD_PICKAXE.get() && random.nextFloat() <= 0.4f) {
+            if ((block == Blocks.EMERALD_ORE || block == Blocks.DEEPSLATE_EMERALD_ORE) && toolItem == ModItems.NETHERITE_EMERALD_PICKAXE.get() && random.nextFloat() <= Config.AdditionalDropProperties.additionalEmeraldDropChance.get()) {
                 generatedLoot.add(new ItemStack(Items.EMERALD, random.nextIntBetweenInclusive(1, 1)));
             }
-            if ((block == Blocks.DIAMOND_ORE || block == Blocks.DEEPSLATE_DIAMOND_ORE) && toolItem == ModItems.NETHERITE_DIAMOND_PICKAXE.get() && random.nextFloat() <= 0.25f) {
+            if ((block == Blocks.DIAMOND_ORE || block == Blocks.DEEPSLATE_DIAMOND_ORE) && toolItem == ModItems.NETHERITE_DIAMOND_PICKAXE.get() && random.nextFloat() <= Config.AdditionalDropProperties.additionalDiamondDropChance.get()) {
                 generatedLoot.add(new ItemStack(Items.DIAMOND, random.nextIntBetweenInclusive(1, 1)));
             }
 
-            if (block == Blocks.NETHER_GOLD_ORE && toolItem == ModItems.NETHERITE_GOLD_PICKAXE.get() && random.nextFloat() <= 0.6f) {
+            if (block == Blocks.NETHER_GOLD_ORE && toolItem == ModItems.NETHERITE_GOLD_PICKAXE.get() && random.nextFloat() <= Config.AdditionalDropProperties.additionalGoldNuggetDropChance.get()) {
                 generatedLoot.add(new ItemStack(Items.GOLD_NUGGET, random.nextIntBetweenInclusive(1, 3)));
             }
         }

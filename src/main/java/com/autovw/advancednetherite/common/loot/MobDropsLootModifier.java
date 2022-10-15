@@ -20,11 +20,10 @@ import org.jetbrains.annotations.NotNull;
 
 // TODO rework loot modifiers
 /**
- * Author: Autovw
- * <br/>
  * A loot modifier for adding additional crops to entities.
  * See {@link com.autovw.advancednetherite.datagen.providers.ModLootModifierProvider} for example implementation.
  * @apiNote This loot modifier can be disabled by {@link com.autovw.advancednetherite.config.Config.AdditionalDropsConfig#enableAdditionalMobDrops}
+ * @author Autovw
  */
 public class MobDropsLootModifier extends LootModifier {
     public static final Codec<MobDropsLootModifier> CODEC = RecordCodecBuilder.create(instance -> codecStart(instance)
@@ -49,16 +48,16 @@ public class MobDropsLootModifier extends LootModifier {
             ItemStack useItem = player.getMainHandItem(); // used to check if the player uses the correct weapon
             RandomSource random = context.getRandom(); // random generator
 
-            if (useItem.is(ModItems.NETHERITE_IRON_SWORD.get()) && victim.getType() == EntityType.PHANTOM && random.nextFloat() <= 0.5f) {
+            if (useItem.is(ModItems.NETHERITE_IRON_SWORD.get()) && victim.getType() == EntityType.PHANTOM && random.nextFloat() <= Config.AdditionalDropProperties.additionalPhantomDropChance.get()) {
                 generatedLoot.add(new ItemStack(Items.PHANTOM_MEMBRANE, random.nextIntBetweenInclusive(0, 2)));
             }
-            if ((useItem.is(ModItems.NETHERITE_GOLD_SWORD.get()) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD.get())) && victim.getType() == EntityType.ZOMBIFIED_PIGLIN && random.nextFloat() <= 0.5f) {
+            if ((useItem.is(ModItems.NETHERITE_GOLD_SWORD.get()) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD.get())) && victim.getType() == EntityType.ZOMBIFIED_PIGLIN && random.nextFloat() <= Config.AdditionalDropProperties.additionalZombifiedPiglinDropChance.get()) {
                 generatedLoot.add(new ItemStack(Items.GOLD_NUGGET, random.nextIntBetweenInclusive(0, 3)));
             }
-            if ((useItem.is(ModItems.NETHERITE_GOLD_SWORD.get()) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD.get())) && victim.getType() == EntityType.PIGLIN && random.nextFloat() <= 0.15f) {
+            if ((useItem.is(ModItems.NETHERITE_GOLD_SWORD.get()) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD.get())) && victim.getType() == EntityType.PIGLIN && random.nextFloat() <= Config.AdditionalDropProperties.additionalPiglinDropChance.get()) {
                 generatedLoot.add(new ItemStack(Items.GOLD_INGOT, random.nextIntBetweenInclusive(1, 1)));
             }
-            if ((useItem.is(ModItems.NETHERITE_EMERALD_SWORD.get()) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD.get())) && victim.getType() == EntityType.ENDERMAN && random.nextFloat() <= 0.3f) {
+            if ((useItem.is(ModItems.NETHERITE_EMERALD_SWORD.get()) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD.get())) && victim.getType() == EntityType.ENDERMAN && random.nextFloat() <= Config.AdditionalDropProperties.additionalEndermanDropChance.get()) {
                 generatedLoot.add(new ItemStack(Items.ENDER_PEARL, random.nextIntBetweenInclusive(0, 1)));
             }
         }
