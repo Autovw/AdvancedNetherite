@@ -158,24 +158,24 @@ public class Config {
 
     // SERVER config
     public static class Server {
-        public final ToolConfig toolConfig;
+        public final ToolProperties toolProperties;
 
         public Server(ForgeConfigSpec.Builder builder) {
             builder.push("server");
             {
-                this.toolConfig = new ToolConfig(builder);
+                this.toolProperties = new ToolProperties(builder);
             }
             builder.pop();
         }
     }
 
-    public static class ToolConfig {
+    public static class ToolProperties {
         public static ForgeConfigSpec.IntValue ironBreakingSpeedMultiplier;
         public static ForgeConfigSpec.IntValue goldBreakingSpeedMultiplier;
         public static ForgeConfigSpec.IntValue emeraldBreakingSpeedMultiplier;
         public static ForgeConfigSpec.IntValue diamondBreakingSpeedMultiplier;
 
-        public ToolConfig(ForgeConfigSpec.Builder builder) {
+        public ToolProperties(ForgeConfigSpec.Builder builder) {
             builder.comment("Configure properties related to tools here.").push("tool_properties");
             {
                 builder.comment("Configure tool properties related to block breaking speed here.").push("breaking_speed_multipliers");
