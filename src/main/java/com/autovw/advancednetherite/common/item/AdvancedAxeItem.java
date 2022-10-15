@@ -111,13 +111,13 @@ public class AdvancedAxeItem extends AxeItem {
         float speed = super.getDestroySpeed(stack, state);
 
         if (tier == ModToolTiers.NETHERITE_IRON)
-            speed *= Config.ToolConfig.ironBreakingSpeedMultiplier.get();
+            speed *= Config.ToolProperties.ironBreakingSpeedMultiplier.get();
         if (tier == ModToolTiers.NETHERITE_GOLD)
-            speed *= Config.ToolConfig.goldBreakingSpeedMultiplier.get();
+            speed *= Config.ToolProperties.goldBreakingSpeedMultiplier.get();
         if (tier == ModToolTiers.NETHERITE_EMERALD)
-            speed *= Config.ToolConfig.emeraldBreakingSpeedMultiplier.get();
+            speed *= Config.ToolProperties.emeraldBreakingSpeedMultiplier.get();
         if (tier == ModToolTiers.NETHERITE_DIAMOND)
-            speed *= Config.ToolConfig.diamondBreakingSpeedMultiplier.get();
+            speed *= Config.ToolProperties.diamondBreakingSpeedMultiplier.get();
 
         return speed;
     }
