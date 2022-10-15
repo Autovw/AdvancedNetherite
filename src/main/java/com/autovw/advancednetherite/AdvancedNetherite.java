@@ -47,11 +47,11 @@ public class AdvancedNetherite {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        ModToolTiers.onCommonSetup();
+        event.enqueueWork(ModToolTiers::onCommonSetup);
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        ClientHandler.onClientSetup();
+        event.enqueueWork(ClientHandler::onClientSetup);
     }
 
     private void onModifierSerializerRegistryEvent(final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
