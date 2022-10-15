@@ -13,6 +13,7 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
 public class AdvancedSwordItem extends SwordItem {
     private final Tier tier;
@@ -117,5 +118,21 @@ public class AdvancedSwordItem extends SwordItem {
         }
 
         return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getBarColor(stack);
+    }
+
+    @Override
+    public float getDestroySpeed(ItemStack stack, BlockState state) {
+        float speed = super.getDestroySpeed(stack, state);
+
+        if (tier == ModToolTiers.NETHERITE_IRON)
+            speed *= Config.ToolConfig.ironBreakingSpeedMultiplier.get();
+        if (tier == ModToolTiers.NETHERITE_GOLD)
+            speed *= Config.ToolConfig.goldBreakingSpeedMultiplier.get();
+        if (tier == ModToolTiers.NETHERITE_EMERALD)
+            speed *= Config.ToolConfig.emeraldBreakingSpeedMultiplier.get();
+        if (tier == ModToolTiers.NETHERITE_DIAMOND)
+            speed *= Config.ToolConfig.diamondBreakingSpeedMultiplier.get();
+
+        return speed;
     }
 }
