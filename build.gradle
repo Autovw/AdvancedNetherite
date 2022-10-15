@@ -69,11 +69,11 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.80'
 
     runtimeOnly fg.deobf('curse.maven:catalogue-459701:3721991')
-    runtimeOnly fg.deobf('curse.maven:configured-457570:3721946')
-    runtimeOnly fg.deobf('curse.maven:jei-238222:3735570')
+    runtimeOnly fg.deobf('curse.maven:configured-457570:4010624')
+    runtimeOnly fg.deobf('curse.maven:jei-238222:3969092')
     implementation fg.deobf('curse.maven:detailarmorbar-520755:3723059')
 }
 
