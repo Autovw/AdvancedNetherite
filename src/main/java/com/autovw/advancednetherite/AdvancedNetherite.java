@@ -23,7 +23,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
 @Mod(Reference.MOD_ID)
 public class AdvancedNetherite {
@@ -32,6 +32,7 @@ public class AdvancedNetherite {
     public AdvancedNetherite() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.clientConfig);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.commonConfig);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.serverConfig);
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::commonSetup);

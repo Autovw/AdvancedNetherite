@@ -4,15 +4,17 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
 public class Config {
-    // Code needed to register the client and common configs
     public static final ForgeConfigSpec clientConfig;
     public static final Config.Client CLIENT;
 
     public static final ForgeConfigSpec commonConfig;
     public static final Config.Common COMMON;
+
+    public static final ForgeConfigSpec serverConfig;
+    public static final Config.Server SERVER;
 
     static {
         final Pair<Client, ForgeConfigSpec> clientConfigPair = new ForgeConfigSpec.Builder().configure(Client::new);
@@ -22,6 +24,10 @@ public class Config {
         final Pair<Common, ForgeConfigSpec> commonConfigPair = new ForgeConfigSpec.Builder().configure(Common::new);
         commonConfig = commonConfigPair.getRight();
         COMMON = commonConfigPair.getLeft();
+
+        final Pair<Server, ForgeConfigSpec> serverConfigPair = new ForgeConfigSpec.Builder().configure(Server::new);
+        serverConfig = serverConfigPair.getRight();
+        SERVER = serverConfigPair.getLeft();
     }
 
     public static void saveClientConfig() {
@@ -145,6 +151,41 @@ public class Config {
                 enableAdditionalCropDrops = builder.comment("If true, enables additional crop drops for hoes. True by default.").define("enableAdditionalCropDrops", true);
                 enableAdditionalOreDrops = builder.comment("If true, enables additional ore drops for pickaxes. Pickaxes with Silk Touch remain unaffected. True by default.").define("enableAdditionalOreDrops", true);
                 enableAdditionalMobDrops = builder.comment("If true, enables additional ore drops for swords. True by default.").define("enableAdditionalMobDrops", true);
+            }
+            builder.pop();
+        }
+    }
+
+    // SERVER config
+    public static class Server {
+        public final ToolConfig toolConfig;
+
+        public Server(ForgeConfigSpec.Builder builder) {
+            builder.push("server");
+            {
+                this.toolConfig = new ToolConfig(builder);
+            }
+            builder.pop();
+        }
+    }
+
+    public static class ToolConfig {
+        public static ForgeConfigSpec.IntValue ironBreakingSpeedMultiplier;
+        public static ForgeConfigSpec.IntValue goldBreakingSpeedMultiplier;
+        public static ForgeConfigSpec.IntValue emeraldBreakingSpeedMultiplier;
+        public static ForgeConfigSpec.IntValue diamondBreakingSpeedMultiplier;
+
+        public ToolConfig(ForgeConfigSpec.Builder builder) {
+            builder.comment("Configure properties related to tools here.").push("tool_properties");
+            {
+                builder.comment("Configure tool properties related to block breaking speed here.").push("breaking_speed_multipliers");
+                {
+                    ironBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Iron tools").defineInRange("ironBreakingSpeedMultiplier", 11, 1, 64);
+                    goldBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Gold tools").defineInRange("goldBreakingSpeedMultiplier", 13, 1, 64);
+                    emeraldBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Emerald tools").defineInRange("emeraldBreakingSpeedMultiplier", 15, 1, 64);
+                    diamondBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Diamond tools").defineInRange("diamondBreakingSpeedMultiplier", 17, 1, 64);
+                }
+                builder.pop();
             }
             builder.pop();
         }
