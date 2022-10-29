@@ -119,20 +119,4 @@ public class AdvancedSwordItem extends SwordItem {
 
         return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getBarColor(stack);
     }
-
-    @Override
-    public float getDestroySpeed(ItemStack stack, BlockState state) {
-        float speed = super.getDestroySpeed(stack, state);
-
-        if (tier == ModToolTiers.NETHERITE_IRON)
-            speed *= Config.ToolProperties.ironBreakingSpeedMultiplier.get();
-        if (tier == ModToolTiers.NETHERITE_GOLD)
-            speed *= Config.ToolProperties.goldBreakingSpeedMultiplier.get();
-        if (tier == ModToolTiers.NETHERITE_EMERALD)
-            speed *= Config.ToolProperties.emeraldBreakingSpeedMultiplier.get();
-        if (tier == ModToolTiers.NETHERITE_DIAMOND)
-            speed *= Config.ToolProperties.diamondBreakingSpeedMultiplier.get();
-
-        return speed;
-    }
 }
