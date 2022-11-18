@@ -48,13 +48,20 @@ public class EventHandler {
     @SubscribeEvent
     public static void onLivingChangeTargetEvent(final LivingChangeTargetEvent event) {
         LivingEntity target = event.getOriginalTarget(); // Gets the target (player)
-        Entity attacker = event.getEntity(); // Gets the attacker
+        LivingEntity attacker = event.getEntity(); // Gets the attacker
 
-        if (attacker instanceof Phantom phantom && target != null) {
+        if (target == null)
+            return;
+
+        // return early if the attacker was angered by the target (player)
+        if (attacker.getLastHurtByMob() == target)
+            return;
+
+        if (attacker instanceof Phantom phantom) {
             for (ItemStack stack : target.getArmorSlots()) {
                 Item item = stack.getItem();
                 if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPhantoms(stack))) {
-                    event.setNewTarget(null);// Set target to null to allow the attacker to pick a new target
+                    event.setNewTarget(null); // Set target to null to allow the attacker to pick a new target
                 }
             }
         }
