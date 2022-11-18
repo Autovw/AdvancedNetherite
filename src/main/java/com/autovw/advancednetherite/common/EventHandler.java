@@ -36,6 +36,10 @@ public class EventHandler {
         Player player = event.getPlayer(); // Gets the player (target)
         EnderMan enderMan = event.getEntity(); // Gets the enderman
 
+        // return early if player is in creative mode
+        if (player.isCreative())
+            return;
+
         for (ItemStack stack : player.getArmorSlots()) {
             Item item = stack.getItem();
             if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack))) {
