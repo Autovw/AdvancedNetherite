@@ -1,48 +1,50 @@
 package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.core.registry.ModBlocks;
-import com.google.common.collect.ImmutableList;
-import com.mojang.datafixers.util.Pair;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.data.loot.packs.VanillaLootTableProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
 import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
  * Author: Autovw
  */
 public class ModLootTableProvider extends LootTableProvider {
-    public ModLootTableProvider(DataGenerator generator) {
-        super(generator);
+    //private final List<LootTableProvider.SubProviderEntry> tables = ImmutableList.of(Pair.of(ModBlockProvider::new, LootContextParamSets.BLOCK));
+
+    public ModLootTableProvider(PackOutput packOutput) {
+        super(packOutput, Set.of(), VanillaLootTableProvider.create(packOutput).getTables());
     }
 
-    private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> tables = ImmutableList.of(Pair.of(ModBlockProvider::new, LootContextParamSets.BLOCK));
-
+    /*
     @Override
-    public List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
+    public List<LootTableProvider.SubProviderEntry> getTables() {
         return this.tables;
     }
+     */
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext context) {}
+    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext context) {
+    }
 
-    private static class ModBlockProvider extends BlockLoot {
+    private static class ModBlockProvider extends BlockLootSubProvider {
+        protected ModBlockProvider(Set<Item> items, FeatureFlagSet flagSet) {
+            super(items, flagSet);
+        }
 
         @Override
-        protected void addTables() {
+        protected void generate() {
             this.dropSelf(ModBlocks.NETHERITE_IRON_BLOCK.get());
             this.dropSelf(ModBlocks.NETHERITE_GOLD_BLOCK.get());
             this.dropSelf(ModBlocks.NETHERITE_EMERALD_BLOCK.get());

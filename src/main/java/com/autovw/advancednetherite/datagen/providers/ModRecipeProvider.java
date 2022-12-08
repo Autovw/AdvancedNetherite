@@ -4,7 +4,7 @@ import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.core.registry.ModBlocks;
 import com.autovw.advancednetherite.core.registry.ModItems;
 import com.autovw.advancednetherite.core.util.ModTags;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -22,12 +22,12 @@ import java.util.function.Consumer;
  * Author: Autovw
  */
 public class ModRecipeProvider extends RecipeProvider {
-    public ModRecipeProvider(DataGenerator generator) {
-        super(generator);
+    public ModRecipeProvider(PackOutput packOutput) {
+        super(packOutput);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         /* Blocks */
         baseBlockRecipe(consumer, ModItems.NETHERITE_IRON_INGOT.get(), ModBlocks.NETHERITE_IRON_BLOCK.get());
         baseBlockRecipe(consumer, ModItems.NETHERITE_GOLD_INGOT.get(), ModBlocks.NETHERITE_GOLD_BLOCK.get());
@@ -107,7 +107,7 @@ public class ModRecipeProvider extends RecipeProvider {
      * @param result Result item
      */
     public static void baseSmithingRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result) {
-        UpgradeRecipeBuilder.smithing(Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), result)
+        UpgradeRecipeBuilder.smithing(Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
                 .unlocks("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
                 .save(consumer, new ResourceLocation(ForgeRegistries.ITEMS.getKey(result).getNamespace(), result.toString() + "_smithing"));
     }
@@ -121,7 +121,7 @@ public class ModRecipeProvider extends RecipeProvider {
      * @param result Upgraded ingot
      */
     public static void baseIngotRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingotIngredient, TagKey<Item> upgradeIngredient, Item result) {
-        ShapelessRecipeBuilder.shapeless(result)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result)
                 .requires(ingotIngredient)
                 .requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient)
                 .unlockedBy("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
@@ -138,7 +138,7 @@ public class ModRecipeProvider extends RecipeProvider {
      */
     public static void baseBlockRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, Block result) {
         // Items to Block
-        ShapedRecipeBuilder.shaped(result)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .define('#', ingredient)
                 .pattern("###")
                 .pattern("###")
@@ -147,7 +147,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(consumer);
 
         // Block to Items
-        ShapelessRecipeBuilder.shapeless(ingredient, 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingredient, 9)
                 .requires(result)
                 .unlockedBy("has_" + result.toString(), has(result))
                 .save(consumer, new ResourceLocation(ForgeRegistries.BLOCKS.getKey(result).getNamespace(), ingredient.toString() + "_from_block"));
@@ -155,7 +155,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
     // Other ingots are automatically included if they are added to the NETHERITE_INGOTS tag.
     private static void lodestoneRecipe(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(Items.LODESTONE)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.LODESTONE)
                 .define('S', Items.CHISELED_STONE_BRICKS)
                 .define('#', ModTags.NETHERITE_INGOTS)
                 .pattern("SSS")

@@ -4,9 +4,11 @@ import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.core.registry.ModItems;
+/*
 import com.redlimerl.detailab.api.DetailArmorBarAPI;
 import com.redlimerl.detailab.api.render.ArmorBarRenderManager;
 import com.redlimerl.detailab.api.render.TextureOffset;
+ */
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
@@ -20,7 +22,9 @@ import net.minecraft.world.item.ItemStack;
 public class DetailArmorBarSupport {
     protected static final ResourceLocation ARMOR_BAR_TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/armor_bar/armor_bar.png");
 
+    // TODO re-implement Detail Armor Bar support
     public static void register() {
+        /*
         AdvancedNetherite.LOGGER.debug("Support for 'Detail Armor Bar' will be registered");
 
         TextureOffset full = new TextureOffset(9, 0);
@@ -46,5 +50,6 @@ public class DetailArmorBarSupport {
         DetailArmorBarAPI.customArmorBarBuilder().armor(netheriteDiamondSet)
                 .render((ItemStack stack) -> new ArmorBarRenderManager(ARMOR_BAR_TEXTURE, 72, 9, new TextureOffset(63, 9), new TextureOffset(54, 9), full, half))
                 .register();
+         */
     }
 }

@@ -3,11 +3,15 @@ package com.autovw.advancednetherite.datagen;
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.datagen.providers.*;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Author: Autovw
@@ -25,17 +29,20 @@ public class ModDataGenerator {
      */
     @SuppressWarnings("unused")
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
+    public static void onGatherData(final GatherDataEvent event) {
+        // TODO get data generator working again
         DataGenerator generator = event.getGenerator();
+        PackOutput packOutput = generator.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
-        ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(generator, Reference.MOD_ID, helper);
+        ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, lookupProvider, Reference.MOD_ID, helper);
 
         // server
         generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new ModItemTagsProvider(generator, blockTagsProvider, Reference.MOD_ID, helper));
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
-        generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
-        generator.addProvider(event.includeServer(), new ModAdvancementProvider(generator, helper));
+        generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider, Reference.MOD_ID, helper));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+        //generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput)); // TODO fix loot table provider
+        generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, helper));
         generator.addProvider(event.includeServer(), new ModLootModifierProvider(generator, Reference.MOD_ID));
 
         // client

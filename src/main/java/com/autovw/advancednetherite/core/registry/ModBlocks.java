@@ -17,10 +17,10 @@ public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 
-    public static final RegistryObject<Block> NETHERITE_IRON_BLOCK = register("netherite_iron_block", new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE));
-    public static final RegistryObject<Block> NETHERITE_GOLD_BLOCK = register("netherite_gold_block", new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE));
-    public static final RegistryObject<Block> NETHERITE_EMERALD_BLOCK = register("netherite_emerald_block", new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE));
-    public static final RegistryObject<Block> NETHERITE_DIAMOND_BLOCK = register("netherite_diamond_block", new Item.Properties().tab(Reference.TAB_ADVANCEDNETHERITE));
+    public static final RegistryObject<Block> NETHERITE_IRON_BLOCK = register("netherite_iron_block", new Item.Properties());
+    public static final RegistryObject<Block> NETHERITE_GOLD_BLOCK = register("netherite_gold_block", new Item.Properties());
+    public static final RegistryObject<Block> NETHERITE_EMERALD_BLOCK = register("netherite_emerald_block", new Item.Properties());
+    public static final RegistryObject<Block> NETHERITE_DIAMOND_BLOCK = register("netherite_diamond_block", new Item.Properties());
 
     /**
      * This method is used to automatically register blocks and blockitems.

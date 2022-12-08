@@ -34,11 +34,18 @@ public class ConfigScreen extends Screen {
     @Override
     protected void init() {
         // Configured button
-        addRenderableWidget(new Button(width / 2 - 155, height / 2 + 12, 150, 20, Component.translatable("config.advancednetherite.screen.button.install_configured", this.configured), button -> {
+        addRenderableWidget(Button.builder(Component.translatable("config.advancednetherite.screen.button.install_configured", this.configured), onPress -> {
             this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.curseforge.com/minecraft/mc-mods/configured")));
-        }));
+        }).pos(width / 2 - 155, height / 2 + 12).size(150, 20).build());
 
+        // TODO fix "isActive" behaviour
         // Instructions button
+        addRenderableWidget(Button.builder(Component.translatable("config.advancednetherite.screen.button.instructions"), onPress -> {
+            if (getInstructionsUrl() != null) {
+                this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, getInstructionsUrl())));
+            }
+        }).pos(width / 2 + 5, height / 2 + 12).size(150, 20).build());
+        /*
         addRenderableWidget(new Button(width / 2 + 5, height / 2 + 12, 150, 20, Component.translatable("config.advancednetherite.screen.button.instructions"), button -> {
             if (getInstructionsUrl() != null) {
                 this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, getInstructionsUrl())));
@@ -50,11 +57,12 @@ public class ConfigScreen extends Screen {
                 return getInstructionsUrl() == null ? this.active = false : this.active;
             }
         });
+         */
 
         // Back button
-        addRenderableWidget(new Button(width / 2 - 75, height - 29, 150, 20, CommonComponents.GUI_BACK, button -> {
+        addRenderableWidget(Button.builder(CommonComponents.GUI_BACK, onPress -> {
             this.minecraft.setScreen(this.parent);
-        }));
+        }).pos(width / 2 - 75, height - 29).size(150, 20).build());
     }
 
     @Override
