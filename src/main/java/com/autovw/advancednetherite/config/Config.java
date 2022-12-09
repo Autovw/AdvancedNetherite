@@ -30,6 +30,7 @@ public class Config {
         SERVER = serverConfigPair.getLeft();
     }
 
+    @Deprecated(since = "1.19.3", forRemoval = true)
     public static void saveClientConfig() {
         clientConfig.save();
     }
