@@ -38,7 +38,6 @@ public class Config {
     public static class Client {
         public static ForgeConfigSpec.BooleanValue showTooltips;
         public static ForgeConfigSpec.BooleanValue matchingDurabilityBars;
-        public static ForgeConfigSpec.BooleanValue enableSearchBarInCreativeTab;
         public static ForgeConfigSpec.BooleanValue forceDisableDetailArmorBarSupport;
 
         public Client(ForgeConfigSpec.Builder builder) {
@@ -52,10 +51,6 @@ public class Config {
                         .comment("If true, displays a (color) matching durability bar underneath the item when damaged. False by default.")
                         .translation("config.advancednetherite.client.matching_durability_bars")
                         .define("matchingDurabilityBars", false);
-                enableSearchBarInCreativeTab = builder
-                        .comment("If true, enables a search bar in the Advanced Netherite creative tab. False by default.")
-                        .translation("config.advancednetherite.client.enable_search_bar")
-                        .define("enableSearchBarInCreativeTab", false);
                 forceDisableDetailArmorBarSupport = builder
                         .comment("If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted. False by default.")
                         .translation("config.advancednetherite.client.force_disable_dab_support")
