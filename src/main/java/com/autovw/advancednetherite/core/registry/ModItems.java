@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.core.registry;
 
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.item.*;
 import com.autovw.advancednetherite.core.util.ModArmorTiers;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
@@ -11,9 +12,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
-public class ModItems {
+@Internal
+public final class ModItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
 

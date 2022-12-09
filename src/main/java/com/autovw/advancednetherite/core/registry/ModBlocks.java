@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.core.registry;
 
 import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.item.AdvancedBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -11,9 +12,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
-public class ModBlocks {
+@Internal
+public final class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 
