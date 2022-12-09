@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.datagen.providers;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.registry.ModBlocks;
 import com.autovw.advancednetherite.core.registry.ModItems;
 import com.autovw.advancednetherite.core.util.ModTags;
@@ -163,6 +163,6 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("SSS")
                 .unlockedBy("has_chiseled_stone_bricks", has(Items.CHISELED_STONE_BRICKS))
                 .unlockedBy("has_netherite_ingots", has(ModTags.NETHERITE_INGOTS))
-                .save(consumer, new ResourceLocation(Reference.MOD_ID, Items.LODESTONE.toString()));
+                .save(consumer, new ResourceLocation(AdvancedNetherite.MOD_ID, Items.LODESTONE.toString()));
     }
 }

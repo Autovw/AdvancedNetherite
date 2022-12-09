@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.core.registry;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.item.*;
 import com.autovw.advancednetherite.core.util.ModArmorTiers;
@@ -17,7 +17,7 @@ import net.minecraftforge.registries.RegistryObject;
 @Internal
 public final class ModItems {
 
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AdvancedNetherite.MOD_ID);
 
     // Ingots
     public static final RegistryObject<Item> NETHERITE_IRON_INGOT = ITEMS.register("netherite_iron_ingot", () -> new AdvancedItem(new Item.Properties()));

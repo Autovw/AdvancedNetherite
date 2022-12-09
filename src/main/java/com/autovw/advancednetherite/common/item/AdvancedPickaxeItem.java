@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.common.item;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.util.ModTooltips;
@@ -13,7 +13,6 @@ import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
@@ -74,7 +73,7 @@ public class AdvancedPickaxeItem extends PickaxeItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         if (Config.Client.showTooltips.get()) {
-            if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(Reference.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalOreDrops.get()) {
+            if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalOreDrops.get()) {
                 if (Screen.hasShiftDown()) {
                     if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.IRON_ORE_DROP_TOOLTIP);
                     if (tier == ModToolTiers.NETHERITE_GOLD) tooltip.add(ModTooltips.GOLD_ORE_DROP_TOOLTIP);

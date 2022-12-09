@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.datagen;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.datagen.providers.*;
 import net.minecraft.core.HolderLookup;
@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
  * Author: Autovw
  */
 @Internal
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModDataGenerator {
     private ModDataGenerator() {
     }
@@ -35,18 +35,18 @@ public class ModDataGenerator {
         PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
-        ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, lookupProvider, Reference.MOD_ID, helper);
+        ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID, helper);
 
         // server
         generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider, Reference.MOD_ID, helper));
+        generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider, AdvancedNetherite.MOD_ID, helper));
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         //generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput)); // TODO fix loot table provider
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, helper));
-        generator.addProvider(event.includeServer(), new ModLootModifierProvider(generator, Reference.MOD_ID));
+        generator.addProvider(event.includeServer(), new ModLootModifierProvider(generator, AdvancedNetherite.MOD_ID));
 
         // client
-        generator.addProvider(event.includeClient(), new ModBlockStatesProvider(generator, Reference.MOD_ID, helper));
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(generator, Reference.MOD_ID, helper));
+        generator.addProvider(event.includeClient(), new ModBlockStatesProvider(generator, AdvancedNetherite.MOD_ID, helper));
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(generator, AdvancedNetherite.MOD_ID, helper));
     }
 }

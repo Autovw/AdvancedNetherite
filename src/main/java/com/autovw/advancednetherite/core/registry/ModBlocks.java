@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.core.registry;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.item.AdvancedBlockItem;
 import net.minecraft.world.item.Item;
@@ -17,7 +17,7 @@ import net.minecraftforge.registries.RegistryObject;
 @Internal
 public final class ModBlocks {
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AdvancedNetherite.MOD_ID);
 
     public static final RegistryObject<Block> NETHERITE_IRON_BLOCK = register("netherite_iron_block", new Item.Properties());
     public static final RegistryObject<Block> NETHERITE_GOLD_BLOCK = register("netherite_gold_block", new Item.Properties());

@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.datagen.providers;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.registry.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -88,7 +88,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     // For internal use only, use above method instead
     private void itemModel(Item item) {
-        itemModel(item, new ResourceLocation(Reference.MOD_ID, "item/" + item.toString()));
+        itemModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + item.toString()));
     }
 
     /**
@@ -103,6 +103,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     // For internal use only, use above method instead
     private void toolModel(Item item) {
-        toolModel(item, new ResourceLocation(Reference.MOD_ID, "item/" + item.toString()));
+        toolModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + item.toString()));
     }
 }

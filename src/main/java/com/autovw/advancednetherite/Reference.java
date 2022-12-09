@@ -6,5 +6,5 @@ package com.autovw.advancednetherite;
  * A reference class containing variables which are commonly used.
  */
 public class Reference {
-    public static final String MOD_ID = "advancednetherite";
+    public static final String MOD_ID = AdvancedNetherite.MOD_ID;
 }

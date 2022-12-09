@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.core.util;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.registry.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -80,9 +80,9 @@ public enum ModToolTiers implements Tier {
      * This method is called inside {@link com.autovw.advancednetherite.AdvancedNetherite#commonSetup(FMLCommonSetupEvent)} in order to register the tool tiers.
      */
     public static void onCommonSetup() {
-        TierSortingRegistry.registerTier(NETHERITE_IRON, new ResourceLocation(Reference.MOD_ID, "netherite_iron"), List.of(Tiers.NETHERITE), List.of());
-        TierSortingRegistry.registerTier(NETHERITE_GOLD, new ResourceLocation(Reference.MOD_ID, "netherite_gold"), List.of(NETHERITE_IRON), List.of());
-        TierSortingRegistry.registerTier(NETHERITE_EMERALD, new ResourceLocation(Reference.MOD_ID, "netherite_emerald"), List.of(NETHERITE_GOLD), List.of());
-        TierSortingRegistry.registerTier(NETHERITE_DIAMOND, new ResourceLocation(Reference.MOD_ID, "netherite_diamond"), List.of(NETHERITE_EMERALD), List.of());
+        TierSortingRegistry.registerTier(NETHERITE_IRON, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_iron"), List.of(Tiers.NETHERITE), List.of());
+        TierSortingRegistry.registerTier(NETHERITE_GOLD, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_gold"), List.of(NETHERITE_IRON), List.of());
+        TierSortingRegistry.registerTier(NETHERITE_EMERALD, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_emerald"), List.of(NETHERITE_GOLD), List.of());
+        TierSortingRegistry.registerTier(NETHERITE_DIAMOND, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_diamond"), List.of(NETHERITE_EMERALD), List.of());
     }
 }

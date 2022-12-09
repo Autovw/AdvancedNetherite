@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.core.util;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.Block;
  */
 public class ModTags {
     // BLOCK TAGS
-    public static final TagKey<Block> NETHERITE_BLOCKS = BlockTags.create(new ResourceLocation(Reference.MOD_ID, "netherite_blocks"));
+    public static final TagKey<Block> NETHERITE_BLOCKS = BlockTags.create(new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_blocks"));
 
     // ITEM TAGS
     public static final TagKey<Item> NETHERITE_BLOCKITEMS = bindModTag("netherite_blocks");
@@ -141,6 +141,6 @@ public class ModTags {
 
     // Helper method to register item tags from Advanced Netherite
     private static TagKey<Item> bindModTag(String tagName) {
-        return ItemTags.create(new ResourceLocation(Reference.MOD_ID, tagName));
+        return ItemTags.create(new ResourceLocation(AdvancedNetherite.MOD_ID, tagName));
     }
 }

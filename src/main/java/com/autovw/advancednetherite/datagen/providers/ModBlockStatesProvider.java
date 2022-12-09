@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.datagen.providers;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.registry.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -39,6 +39,6 @@ public class ModBlockStatesProvider extends BlockStateProvider {
 
     // Internal use only, use above method instead
     private void netheriteBlock(Block block) {
-        netheriteBlock(block, new ResourceLocation(Reference.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
+        netheriteBlock(block, new ResourceLocation(AdvancedNetherite.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
     }
 }

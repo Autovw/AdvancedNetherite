@@ -13,12 +13,12 @@ import net.minecraftforge.registries.RegistryObject;
  * @author Autovw
  */
 @Internal
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AdvancedNetheriteTab {
     private AdvancedNetheriteTab() {
     }
 
-    private static final String TAB_KEY = Reference.MOD_ID + ".tab";
+    private static final String TAB_KEY = AdvancedNetherite.MOD_ID + ".tab";
     private static final ResourceLocation TAB_ID = new ResourceLocation(TAB_KEY);
 
     @SubscribeEvent

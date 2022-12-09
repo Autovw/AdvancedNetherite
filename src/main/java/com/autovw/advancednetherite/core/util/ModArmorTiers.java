@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.core.util;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.registry.ModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -82,7 +82,7 @@ public enum ModArmorTiers implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return Reference.MOD_ID + ":" + this.name;
+        return AdvancedNetherite.MOD_ID + ":" + this.name;
     }
 
     @Override

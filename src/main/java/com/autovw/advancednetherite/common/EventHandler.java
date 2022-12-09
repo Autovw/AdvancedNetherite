@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.common;
 
-import com.autovw.advancednetherite.Reference;
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.api.impl.IAdvancedHooks;
 import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
@@ -26,7 +26,7 @@ import net.minecraftforge.fml.common.Mod;
  * @author Autovw
  */
 @Internal
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class EventHandler {
 
     @SuppressWarnings("unused")

@@ -20,9 +20,10 @@ import org.slf4j.Logger;
 /**
  * @author Autovw
  */
-@Mod(Reference.MOD_ID)
+@Mod(AdvancedNetherite.MOD_ID)
 public class AdvancedNetherite {
     public static final Logger LOGGER = LogUtils.getLogger();
+    public static final String MOD_ID = "advancednetherite";
 
     public AdvancedNetherite() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.clientConfig);
