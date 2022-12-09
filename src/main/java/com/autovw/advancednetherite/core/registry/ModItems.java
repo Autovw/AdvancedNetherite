@@ -14,9 +14,8 @@ import net.minecraftforge.registries.RegistryObject;
 /**
  * @author Autovw
  */
-@Internal
 public final class ModItems {
-
+    @Internal
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AdvancedNetherite.MOD_ID);
 
     // Ingots

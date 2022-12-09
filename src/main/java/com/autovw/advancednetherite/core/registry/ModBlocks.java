@@ -14,9 +14,8 @@ import net.minecraftforge.registries.RegistryObject;
 /**
  * @author Autovw
  */
-@Internal
 public final class ModBlocks {
-
+    @Internal
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AdvancedNetherite.MOD_ID);
 
     public static final RegistryObject<Block> NETHERITE_IRON_BLOCK = register("netherite_iron_block", new Item.Properties());
