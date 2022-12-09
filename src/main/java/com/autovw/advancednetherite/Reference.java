@@ -9,6 +9,6 @@ public class Reference {
     /**
      * Use {@link AdvancedNetherite#MOD_ID} instead
      */
-    @Deprecated(since = "1.19.3", forRemoval = true)
+    @Deprecated(since = "MC-1.19.3", forRemoval = true)
     public static final String MOD_ID = AdvancedNetherite.MOD_ID;
 }
