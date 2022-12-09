@@ -13,8 +13,7 @@ import java.util.List;
 
 /**
  * A config screen class which is displayed when Configured mod is not present
- * <br/>
- * Author: Autovw
+ * @author Autovw
  */
 public class ConfigScreen extends Screen {
     private final Component modTitle;
@@ -38,26 +37,17 @@ public class ConfigScreen extends Screen {
             this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.curseforge.com/minecraft/mc-mods/configured")));
         }).pos(width / 2 - 155, height / 2 + 12).size(150, 20).build());
 
-        // TODO fix "isActive" behaviour
         // Instructions button
-        addRenderableWidget(Button.builder(Component.translatable("config.advancednetherite.screen.button.instructions"), onPress -> {
+        Button instructionsButton = Button.builder(Component.translatable("config.advancednetherite.screen.button.instructions"), onPress -> {
             if (getInstructionsUrl() != null) {
                 this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, getInstructionsUrl())));
             }
-        }).pos(width / 2 + 5, height / 2 + 12).size(150, 20).build());
-        /*
-        addRenderableWidget(new Button(width / 2 + 5, height / 2 + 12, 150, 20, Component.translatable("config.advancednetherite.screen.button.instructions"), button -> {
-            if (getInstructionsUrl() != null) {
-                this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, getInstructionsUrl())));
-            }
-        }) {
-            // Makes instructions button gray and non-clickable if getInstructionsUrl is null
-            @Override
-            public boolean isActive() {
-                return getInstructionsUrl() == null ? this.active = false : this.active;
-            }
-        });
-         */
+        }).pos(width / 2 + 5, height / 2 + 12).size(150, 20).build();
+
+        if (getInstructionsUrl() == null)
+            instructionsButton.active = false;
+
+        addRenderableWidget(instructionsButton);
 
         // Back button
         addRenderableWidget(Button.builder(CommonComponents.GUI_BACK, onPress -> {
