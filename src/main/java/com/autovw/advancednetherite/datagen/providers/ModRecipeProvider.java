@@ -19,7 +19,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.function.Consumer;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
 public class ModRecipeProvider extends RecipeProvider {
     public ModRecipeProvider(PackOutput packOutput) {
@@ -138,7 +138,7 @@ public class ModRecipeProvider extends RecipeProvider {
      */
     public static void baseBlockRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, Block result) {
         // Items to Block
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result)
                 .define('#', ingredient)
                 .pattern("###")
                 .pattern("###")
