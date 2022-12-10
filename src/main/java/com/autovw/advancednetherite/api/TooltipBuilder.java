@@ -5,16 +5,16 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 
 /**
- * Author: Autovw
- * <br/>
  * A flexible builder for translatable tooltips.
  * Replacement of the Tooltips API, which was removed in MC 1.19, allowing for more control over the created tooltip.
  *
  * @since 1.12.0
+ * @author Autovw
  */
 public class TooltipBuilder {
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -54,17 +54,19 @@ public class TooltipBuilder {
      */
     @Internal
     private static MutableComponent build(ResourceLocation key, @Nullable Object... args) {
-        String path = key.getPath();
-        String content = "tooltip." + key.getNamespace() + "." + path;
-        if (!path.equals("")) {
+        String content = "tooltip." + key.getNamespace() + "." + key.getPath();
+        if (!content.endsWith(".")) {
             if (args != null) {
                 return Component.translatable(content, args);
             } else {
                 return Component.translatable(content);
             }
         } else {
-            LOGGER.error("Cannot build tooltip with empty name");
-            throw new IllegalStateException("Tried to build tooltip with incomplete name!");
+            LOGGER.error("Cannot build tooltip ending with a dot (" + content + ")");
+            if (!FMLEnvironment.production) {
+                throw new IllegalStateException("Tried to build tooltip with incomplete name!");
+            }
+            return Component.empty();
         }
     }
 }
