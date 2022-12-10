@@ -6,41 +6,40 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.loot.packs.VanillaLootTableProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.flag.FeatureFlagSet;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
 public class ModLootTableProvider extends LootTableProvider {
-    //private final List<LootTableProvider.SubProviderEntry> tables = ImmutableList.of(Pair.of(ModBlockProvider::new, LootContextParamSets.BLOCK));
+    private final List<SubProviderEntry> tables = List.of(new LootTableProvider.SubProviderEntry(ModBlockLootSubProvider::new, LootContextParamSets.BLOCK));
 
     public ModLootTableProvider(PackOutput packOutput) {
         super(packOutput, Set.of(), VanillaLootTableProvider.create(packOutput).getTables());
     }
 
-    /*
     @Override
-    public List<LootTableProvider.SubProviderEntry> getTables() {
+    public List<SubProviderEntry> getTables() {
         return this.tables;
     }
-     */
 
     @Override
     protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext context) {
     }
 
-    private static class ModBlockProvider extends BlockLootSubProvider {
-        protected ModBlockProvider(Set<Item> items, FeatureFlagSet flagSet) {
-            super(items, flagSet);
+    private static class ModBlockLootSubProvider extends BlockLootSubProvider {
+        protected ModBlockLootSubProvider() {
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags());
         }
 
         @Override

@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
 @Internal
 @Mod.EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -30,7 +30,6 @@ public class ModDataGenerator {
     @SuppressWarnings("unused")
     @SubscribeEvent
     public static void onGatherData(final GatherDataEvent event) {
-        // TODO get data generator working again
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
@@ -41,7 +40,7 @@ public class ModDataGenerator {
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider, AdvancedNetherite.MOD_ID, helper));
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
-        //generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput)); // TODO fix loot table provider
+        generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, helper));
         generator.addProvider(event.includeServer(), new ModLootModifierProvider(generator, AdvancedNetherite.MOD_ID));
 
