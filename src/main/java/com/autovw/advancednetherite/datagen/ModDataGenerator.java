@@ -42,10 +42,10 @@ public class ModDataGenerator {
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, helper));
-        generator.addProvider(event.includeServer(), new ModLootModifierProvider(generator, AdvancedNetherite.MOD_ID));
+        generator.addProvider(event.includeServer(), new ModLootModifierProvider(packOutput, AdvancedNetherite.MOD_ID));
 
         // client
-        generator.addProvider(event.includeClient(), new ModBlockStatesProvider(generator, AdvancedNetherite.MOD_ID, helper));
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(generator, AdvancedNetherite.MOD_ID, helper));
+        generator.addProvider(event.includeClient(), new ModBlockStatesProvider(packOutput, AdvancedNetherite.MOD_ID, helper));
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, AdvancedNetherite.MOD_ID, helper));
     }
 }

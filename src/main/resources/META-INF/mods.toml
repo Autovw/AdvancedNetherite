@@ -20,7 +20,7 @@ Visit the GitHub Wiki for more information on everything this mod adds.
 [[dependencies.advancednetherite]]
 modId="forge"
 mandatory=true
-versionRange="[44.0.4,)"
+versionRange="[44.0.36,)"
 ordering="NONE"
 side="BOTH"
 [[dependencies.advancednetherite]]

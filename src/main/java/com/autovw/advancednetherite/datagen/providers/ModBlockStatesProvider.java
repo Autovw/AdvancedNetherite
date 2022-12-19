@@ -2,7 +2,7 @@ package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.registry.ModBlocks;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -11,11 +11,11 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
 public class ModBlockStatesProvider extends BlockStateProvider {
-    public ModBlockStatesProvider(DataGenerator generator, String modId, ExistingFileHelper exFileHelper) {
-        super(generator, modId, exFileHelper);
+    public ModBlockStatesProvider(PackOutput packOutput, String modId, ExistingFileHelper exFileHelper) {
+        super(packOutput, modId, exFileHelper);
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.autovw.advancednetherite.common.loot.MobDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
 import com.autovw.advancednetherite.core.registry.ModItems;
 import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
@@ -16,13 +16,13 @@ import java.util.List;
 
 // TODO rework loot modifiers
 /**
- * Author: Autovw
+ * @author Autovw
  */
 public class ModLootModifierProvider extends GlobalLootModifierProvider {
     private final List<Item> HOE_ITEMS = List.of(ModItems.NETHERITE_IRON_HOE.get(), ModItems.NETHERITE_GOLD_HOE.get(), ModItems.NETHERITE_EMERALD_HOE.get(), ModItems.NETHERITE_DIAMOND_HOE.get());
 
-    public ModLootModifierProvider(DataGenerator gen, String modId) {
-        super(gen, modId);
+    public ModLootModifierProvider(PackOutput packOutput, String modId) {
+        super(packOutput, modId);
     }
 
     @Override

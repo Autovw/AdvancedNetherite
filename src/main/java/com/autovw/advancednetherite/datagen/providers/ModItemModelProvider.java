@@ -2,18 +2,18 @@ package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.registry.ModItems;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
 public class ModItemModelProvider extends ItemModelProvider {
-    public ModItemModelProvider(DataGenerator generator, String modId, ExistingFileHelper existingFileHelper) {
-        super(generator, modId, existingFileHelper);
+    public ModItemModelProvider(PackOutput packOutput, String modId, ExistingFileHelper existingFileHelper) {
+        super(packOutput, modId, existingFileHelper);
     }
 
     @Override
