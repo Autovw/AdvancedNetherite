@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
@@ -96,5 +97,11 @@ public class AdvancedShovelItem extends ShovelItem {
         }
 
         return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getBarColor(stack);
+    }
+
+    @Override
+    public float getDestroySpeed(ItemStack stack, BlockState state) {
+        float originalSpeed = super.getDestroySpeed(stack, state);
+        return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
     }
 }

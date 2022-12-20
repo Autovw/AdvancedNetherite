@@ -2,6 +2,7 @@ package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
@@ -107,5 +109,11 @@ public class AdvancedHoeItem extends HoeItem {
         }
 
         return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getBarColor(stack);
+    }
+
+    @Override
+    public float getDestroySpeed(ItemStack stack, BlockState state) {
+        float originalSpeed = super.getDestroySpeed(stack, state);
+        return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
     }
 }
