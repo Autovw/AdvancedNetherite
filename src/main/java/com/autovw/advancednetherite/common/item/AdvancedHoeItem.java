@@ -2,6 +2,7 @@ package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.Reference;
 import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
@@ -108,5 +109,11 @@ public class AdvancedHoeItem extends HoeItem {
         }
 
         return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getBarColor(stack);
+    }
+
+    @Override
+    public float getDestroySpeed(ItemStack stack, BlockState state) {
+        float originalSpeed = super.getDestroySpeed(stack, state);
+        return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
     }
 }
