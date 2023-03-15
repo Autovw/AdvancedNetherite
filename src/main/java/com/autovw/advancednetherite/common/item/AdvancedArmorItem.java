@@ -7,7 +7,6 @@ import com.autovw.advancednetherite.core.util.ModArmorTiers;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -20,13 +19,13 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
 public class AdvancedArmorItem extends ArmorItem {
     private final ArmorMaterial material;
 
-    public AdvancedArmorItem(ArmorMaterial material, EquipmentSlot equipmentSlot, Properties properties) {
-        super(material, equipmentSlot, properties);
+    public AdvancedArmorItem(ArmorMaterial material, ArmorItem.Type armorType, Properties properties) {
+        super(material, armorType, properties);
         this.material = material;
     }
 

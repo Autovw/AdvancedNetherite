@@ -26,7 +26,7 @@ public class AdvancedNetheriteTab {
         event.registerCreativeModeTab(TAB_ID, builder -> {
             builder.title(Component.translatable("itemGroup." + TAB_KEY))
                     .icon(() -> ModItems.NETHERITE_GOLD_INGOT.get().getDefaultInstance())
-                    .displayItems((flagSet, entries, flag) -> {
+                    .displayItems((displayParameters, entries) -> {
                         ModItems.ITEMS.getEntries().stream().map(RegistryObject::get).forEach(entries::accept);
                     });
         });

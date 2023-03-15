@@ -107,7 +107,8 @@ public class ModRecipeProvider extends RecipeProvider {
      * @param result Result item
      */
     public static void baseSmithingRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result) {
-        UpgradeRecipeBuilder.smithing(Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
+        // TODO update to new system from 1.19.4, added for 1.20
+        LegacyUpgradeRecipeBuilder.smithing(Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
                 .unlocks("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
                 .save(consumer, new ResourceLocation(ForgeRegistries.ITEMS.getKey(result).getNamespace(), result.toString() + "_smithing"));
     }

@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 
-version = '1.14.7-1.19.3'
+version = '1.14.7-1.19.4'
 group = 'com.autovw.advancednetherite'
 archivesBaseName = 'advancednetherite'
 
@@ -18,7 +18,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
-    mappings channel: 'official', version: '1.19.3'
+    mappings channel: 'official', version: '1.19.4'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -69,10 +69,10 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.3-44.0.36'
+    minecraft 'net.minecraftforge:forge:1.19.4-45.0.1'
 
-    runtimeOnly fg.deobf('curse.maven:catalogue-459701:4171025')
-    runtimeOnly fg.deobf('curse.maven:configured-457570:4166861')
+    //runtimeOnly fg.deobf('curse.maven:catalogue-459701:4171025')
+    //runtimeOnly fg.deobf('curse.maven:configured-457570:4166861')
     //runtimeOnly fg.deobf('curse.maven:jei-238222:3969039')
     //implementation fg.deobf('curse.maven:detailarmorbar-520755:3920487')
 }

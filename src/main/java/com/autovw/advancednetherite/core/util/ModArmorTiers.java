@@ -4,16 +4,15 @@ import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.registry.ModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.RegistryObject;
 
 /**
- * Author: Autovw
- * <br>
  * Add-on developers: Create your own enum that implements {@link ArmorMaterial} if you are adding new armor!
+ * @author Autovw
  */
 public enum ModArmorTiers implements ArmorMaterial {
     // Armor material is registered here.
@@ -56,13 +55,13 @@ public enum ModArmorTiers implements ArmorMaterial {
     }
 
     @Override
-    public int getDurabilityForSlot(EquipmentSlot slot) {
-        return HEALTH_PER_SLOT[slot.getIndex()] * this.durability;
+    public int getDurabilityForType(ArmorItem.Type type) {
+        return HEALTH_PER_SLOT[type.getSlot().getIndex()] * this.durability;
     }
 
     @Override
-    public int getDefenseForSlot(EquipmentSlot slot) {
-        return this.slotProtections[slot.getIndex()];
+    public int getDefenseForType(ArmorItem.Type type) {
+        return this.slotProtections[type.getSlot().getIndex()];
     }
 
     @Override

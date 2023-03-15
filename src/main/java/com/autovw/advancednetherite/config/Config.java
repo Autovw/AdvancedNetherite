@@ -30,11 +30,6 @@ public class Config {
         SERVER = serverConfigPair.getLeft();
     }
 
-    @Deprecated(since = "MC-1.19.3", forRemoval = true)
-    public static void saveClientConfig() {
-        clientConfig.save();
-    }
-
     // CLIENT config
     public static class Client {
         public static ForgeConfigSpec.BooleanValue showTooltips;
