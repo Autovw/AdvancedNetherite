@@ -103,22 +103,13 @@ public class AdvancedPickaxeItem extends PickaxeItem {
     @Internal
     @Override
     public int getBarColor(ItemStack stack) {
-        if (Config.Client.matchingDurabilityBars.get()) {
-            if (tier == ModToolTiers.NETHERITE_IRON) {
-                return Objects.requireNonNull(ChatFormatting.GRAY.getColor());
-            }
-            if (tier == ModToolTiers.NETHERITE_GOLD) {
-                return Objects.requireNonNull(ChatFormatting.GOLD.getColor());
-            }
-            if (tier == ModToolTiers.NETHERITE_EMERALD) {
-                return Objects.requireNonNull(ChatFormatting.DARK_GREEN.getColor());
-            }
-            if (tier == ModToolTiers.NETHERITE_DIAMOND) {
-                return Objects.requireNonNull(ChatFormatting.AQUA.getColor());
-            }
+        int originalColor = super.getBarColor(stack);
+
+        if (customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get()) {
+            return Objects.requireNonNull(customDurabilityBarColor(stack).getColor());
         }
 
-        return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getBarColor(stack);
+        return AdvancedUtil.getDurabilityBarColor(originalColor, stack);
     }
 
     @Override

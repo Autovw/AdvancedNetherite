@@ -2,6 +2,7 @@ package com.autovw.advancednetherite.common;
 
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.ModToolTiers;
+import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
@@ -11,6 +12,33 @@ import net.minecraft.world.level.block.state.BlockState;
  * @author Autovw
  */
 public class AdvancedUtil {
+    /**
+     * Helper method for getting the appropriate durability bar color on tools
+     * @param originalColor The original durability bar color
+     * @param stack Tool stack
+     * @return The appropriate bar color, based on tier and config settings
+     */
+    public static int getDurabilityBarColor(int originalColor, ItemStack stack) {
+        int newColor = originalColor;
+
+        if (Config.Client.matchingDurabilityBars.get()) {
+            if (stack.getItem() instanceof DiggerItem item) {
+                Tier tier = item.getTier();
+
+                if (tier == ModToolTiers.NETHERITE_IRON)
+                    newColor = ChatFormatting.GRAY.getColor();
+                if (tier == ModToolTiers.NETHERITE_GOLD)
+                    newColor = ChatFormatting.GOLD.getColor();
+                if (tier == ModToolTiers.NETHERITE_EMERALD)
+                    newColor = ChatFormatting.DARK_GREEN.getColor();
+                if (tier == ModToolTiers.NETHERITE_DIAMOND)
+                    newColor = ChatFormatting.AQUA.getColor();
+            }
+        }
+
+        return newColor;
+    }
+
     /**
      * Helper method for applying the appropriate block destroy speed to tools
      * @param originalSpeed The original destroy speed
