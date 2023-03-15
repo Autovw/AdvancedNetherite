@@ -1,11 +1,10 @@
 package com.autovw.advancednetherite.common;
 
 import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.core.ModArmorTiers;
 import com.autovw.advancednetherite.core.ModToolTiers;
 import net.minecraft.ChatFormatting;
-import net.minecraft.world.item.DiggerItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
@@ -22,6 +21,7 @@ public class AdvancedUtil {
         int newColor = originalColor;
 
         if (Config.Client.matchingDurabilityBars.get()) {
+            // Tools
             if (stack.getItem() instanceof DiggerItem item) {
                 Tier tier = item.getTier();
 
@@ -32,6 +32,20 @@ public class AdvancedUtil {
                 if (tier == ModToolTiers.NETHERITE_EMERALD)
                     newColor = ChatFormatting.DARK_GREEN.getColor();
                 if (tier == ModToolTiers.NETHERITE_DIAMOND)
+                    newColor = ChatFormatting.AQUA.getColor();
+            }
+
+            // Armor
+            if (stack.getItem() instanceof ArmorItem item) {
+                ArmorMaterial material = item.getMaterial();
+
+                if (material == ModArmorTiers.NETHERITE_IRON)
+                    newColor = ChatFormatting.GRAY.getColor();
+                if (material == ModArmorTiers.NETHERITE_GOLD)
+                    newColor = ChatFormatting.GOLD.getColor();
+                if (material == ModArmorTiers.NETHERITE_EMERALD)
+                    newColor = ChatFormatting.DARK_GREEN.getColor();
+                if (material == ModArmorTiers.NETHERITE_DIAMOND)
                     newColor = ChatFormatting.AQUA.getColor();
             }
         }
