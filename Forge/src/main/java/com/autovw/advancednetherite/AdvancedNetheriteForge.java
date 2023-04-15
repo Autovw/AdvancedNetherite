@@ -27,7 +27,7 @@ public class AdvancedNetheriteForge
 
     public AdvancedNetheriteForge()
     {
-        AdvancedNetherite.init();
+        AdvancedNetherite.init(ForgePlatformHelper.getInstance());
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.clientConfig);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.commonConfig);
