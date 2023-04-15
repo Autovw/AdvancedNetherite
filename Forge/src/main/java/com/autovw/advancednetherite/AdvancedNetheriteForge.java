@@ -21,11 +21,14 @@ import org.slf4j.Logger;
  * @author Autovw
  */
 @Mod(AdvancedNetherite.MOD_ID)
-public class AdvancedNetherite {
+public class AdvancedNetheriteForge
+{
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static final String MOD_ID = "advancednetherite";
 
-    public AdvancedNetherite() {
+    public AdvancedNetheriteForge()
+    {
+        AdvancedNetherite.init();
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.clientConfig);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.commonConfig);
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.serverConfig);
@@ -42,11 +45,13 @@ public class AdvancedNetherite {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
         event.enqueueWork(ModToolTiers::onCommonSetup);
     }
 
-    private void clientSetup(final FMLClientSetupEvent event) {
+    private void clientSetup(final FMLClientSetupEvent event)
+    {
         event.enqueueWork(ClientHandler::onClientSetup);
     }
 }

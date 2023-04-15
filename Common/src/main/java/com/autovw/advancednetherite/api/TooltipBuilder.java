@@ -5,7 +5,6 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 
@@ -16,10 +15,12 @@ import org.slf4j.Logger;
  * @since 1.12.0
  * @author Autovw
  */
-public class TooltipBuilder {
+public class TooltipBuilder
+{
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    private TooltipBuilder() {
+    private TooltipBuilder()
+    {
     }
 
     /**
@@ -32,7 +33,8 @@ public class TooltipBuilder {
      * @param key name of the tooltip
      * @return a MutableComponent
      */
-    public static MutableComponent create(ResourceLocation key) {
+    public static MutableComponent create(ResourceLocation key)
+    {
         return build(key, (Object) null);
     }
 
@@ -45,7 +47,8 @@ public class TooltipBuilder {
      * @param args sub-elements
      * @return a MutableComponent
      */
-    public static MutableComponent create(ResourceLocation key, Object... args) {
+    public static MutableComponent create(ResourceLocation key, Object... args)
+    {
         return build(key, args);
     }
 
@@ -53,19 +56,28 @@ public class TooltipBuilder {
      * Builder used for internal purposes only.
      */
     @Internal
-    private static MutableComponent build(ResourceLocation key, @Nullable Object... args) {
+    private static MutableComponent build(ResourceLocation key, @Nullable Object... args)
+    {
         String content = "tooltip." + key.getNamespace() + "." + key.getPath();
-        if (!content.endsWith(".")) {
-            if (args != null) {
+        if (!content.endsWith("."))
+        {
+            if (args != null)
+            {
                 return Component.translatable(content, args);
-            } else {
+            }
+            else
+            {
                 return Component.translatable(content);
             }
-        } else {
+        }
+        else
+        {
             LOGGER.error("Cannot build tooltip ending with a dot (" + content + ")");
+            /*
             if (!FMLEnvironment.production) {
                 throw new IllegalStateException("Tried to build tooltip with incomplete name!");
             }
+             */
             return Component.empty();
         }
     }

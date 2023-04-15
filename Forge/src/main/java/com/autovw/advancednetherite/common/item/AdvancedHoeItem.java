@@ -5,7 +5,6 @@ import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.core.util.ModTooltips;
-import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
