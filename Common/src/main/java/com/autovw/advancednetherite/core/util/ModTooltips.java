@@ -7,12 +7,11 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 
 /**
- * Author: Autovw
- * <br>
  * A class that contains tooltips registered by Advanced Netherite.
+ * @author Autovw
  */
-public class ModTooltips {
-
+public final class ModTooltips
+{
     /* Armor related tooltips */
     public static final MutableComponent ENDERMAN_PASSIVE_TOOLTIP = TooltipBuilder.create(new ResourceLocation(AdvancedNetherite.MOD_ID, "armor.enderman_passive")).withStyle(ChatFormatting.DARK_GREEN);
     public static final MutableComponent PIGLIN_PASSIVE_TOOLTIP = TooltipBuilder.create(new ResourceLocation(AdvancedNetherite.MOD_ID, "armor.piglin_passive")).withStyle(ChatFormatting.GOLD);
