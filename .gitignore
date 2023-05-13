@@ -25,7 +25,7 @@ libs
 
 classes
 
-src/generated/resources/.cache
+.cache/
 
 # Files from Forge MDK
 forge*changelog.txt
