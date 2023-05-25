@@ -3,7 +3,7 @@ package com.autovw.advancednetherite.common.item;
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.AdvancedUtil;
-import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
@@ -24,10 +24,12 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedSwordItem extends SwordItem {
+public class AdvancedSwordItem extends SwordItem
+{
     private final Tier tier;
 
-    public AdvancedSwordItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
+    public AdvancedSwordItem(Tier tier, int attackDamage, float attackSpeed, Properties properties)
+    {
         super(tier, attackDamage, attackSpeed, properties);
         this.tier = tier;
     }
@@ -39,7 +41,8 @@ public class AdvancedSwordItem extends SwordItem {
      * @return If true, item does not burn when on fire
      */
     @Override
-    public boolean isFireResistant() {
+    public boolean isFireResistant()
+    {
         return true;
     }
 
@@ -51,7 +54,8 @@ public class AdvancedSwordItem extends SwordItem {
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag) {
+    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag)
+    {
     }
 
     /**
@@ -62,7 +66,8 @@ public class AdvancedSwordItem extends SwordItem {
      * @return The custom durability bar color
      */
     @Nullable
-    public ChatFormatting customDurabilityBarColor(ItemStack stack) {
+    public ChatFormatting customDurabilityBarColor(ItemStack stack)
+    {
         return null;
     }
 
@@ -73,22 +78,36 @@ public class AdvancedSwordItem extends SwordItem {
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        if (Config.Client.showTooltips.get()) {
-            if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalMobDrops.get()) {
-                if (Screen.hasShiftDown()) {
-                    if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
-                    if (tier == ModToolTiers.NETHERITE_GOLD) {
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag)
+    {
+        if (ConfigHelper.get().getClient().showTooltips())
+        {
+            if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalMobDrops())
+            {
+                if (Screen.hasShiftDown())
+                {
+                    if (tier == ModToolTiers.NETHERITE_IRON)
+                    {
+                        tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
+                    }
+                    if (tier == ModToolTiers.NETHERITE_GOLD)
+                    {
                         tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
                     }
-                    if (tier == ModToolTiers.NETHERITE_EMERALD) tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
-                    if (tier == ModToolTiers.NETHERITE_DIAMOND) {
+                    if (tier == ModToolTiers.NETHERITE_EMERALD)
+                    {
+                        tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
+                    }
+                    if (tier == ModToolTiers.NETHERITE_DIAMOND)
+                    {
                         tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
                     }
-                } else {
+                }
+                else
+                {
                     tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
                 }
             }
@@ -102,10 +121,12 @@ public class AdvancedSwordItem extends SwordItem {
      */
     @Internal
     @Override
-    public int getBarColor(ItemStack stack) {
+    public int getBarColor(ItemStack stack)
+    {
         int originalColor = super.getBarColor(stack);
 
-        if (customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get()) {
+        if (customDurabilityBarColor(stack) != null && ConfigHelper.get().getClient().matchingDurabilityBars())
+        {
             return Objects.requireNonNull(customDurabilityBarColor(stack).getColor());
         }
 
@@ -113,7 +134,8 @@ public class AdvancedSwordItem extends SwordItem {
     }
 
     @Override
-    public float getDestroySpeed(ItemStack stack, BlockState state) {
+    public float getDestroySpeed(ItemStack stack, BlockState state)
+    {
         float originalSpeed = super.getDestroySpeed(stack, state);
         return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
     }

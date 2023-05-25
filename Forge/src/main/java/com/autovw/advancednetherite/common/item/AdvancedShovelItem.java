@@ -2,8 +2,7 @@ package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.AdvancedUtil;
-import com.autovw.advancednetherite.config.Config;
-import com.autovw.advancednetherite.core.util.ModToolTiers;
+import com.autovw.advancednetherite.config.ConfigHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -20,10 +19,12 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedShovelItem extends ShovelItem {
+public class AdvancedShovelItem extends ShovelItem
+{
     private final Tier tier;
 
-    public AdvancedShovelItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
+    public AdvancedShovelItem(Tier tier, float attackDamage, float attackSpeed, Properties properties)
+    {
         super(tier, attackDamage, attackSpeed, properties);
         this.tier = tier;
     }
@@ -35,7 +36,8 @@ public class AdvancedShovelItem extends ShovelItem {
      * @return If true, item does not burn when on fire
      */
     @Override
-    public boolean isFireResistant() {
+    public boolean isFireResistant()
+    {
         return true;
     }
 
@@ -47,7 +49,8 @@ public class AdvancedShovelItem extends ShovelItem {
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag) {
+    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag)
+    {
     }
 
     /**
@@ -58,7 +61,8 @@ public class AdvancedShovelItem extends ShovelItem {
      * @return The custom durability bar color
      */
     @Nullable
-    public ChatFormatting customDurabilityBarColor(ItemStack stack) {
+    public ChatFormatting customDurabilityBarColor(ItemStack stack)
+    {
         return null;
     }
 
@@ -69,8 +73,10 @@ public class AdvancedShovelItem extends ShovelItem {
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        if (Config.Client.showTooltips.get()) {
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag)
+    {
+        if (ConfigHelper.get().getClient().showTooltips())
+        {
             addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
         }
     }
@@ -80,10 +86,12 @@ public class AdvancedShovelItem extends ShovelItem {
      */
     @Internal
     @Override
-    public int getBarColor(ItemStack stack) {
+    public int getBarColor(ItemStack stack)
+    {
         int originalColor = super.getBarColor(stack);
 
-        if (customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get()) {
+        if (customDurabilityBarColor(stack) != null && ConfigHelper.get().getClient().matchingDurabilityBars())
+        {
             return Objects.requireNonNull(customDurabilityBarColor(stack).getColor());
         }
 
@@ -91,7 +99,8 @@ public class AdvancedShovelItem extends ShovelItem {
     }
 
     @Override
-    public float getDestroySpeed(ItemStack stack, BlockState state) {
+    public float getDestroySpeed(ItemStack stack, BlockState state)
+    {
         float originalSpeed = super.getDestroySpeed(stack, state);
         return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
     }

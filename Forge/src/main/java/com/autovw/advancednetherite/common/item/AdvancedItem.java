@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
-import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.config.ConfigHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
@@ -14,17 +14,20 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
-public class AdvancedItem extends Item {
+public class AdvancedItem extends Item
+{
     private final boolean isFireResistant;
 
-    public AdvancedItem(Properties properties) {
+    public AdvancedItem(Properties properties)
+    {
         super(properties);
         this.isFireResistant  = true;
     }
 
-    public AdvancedItem(Properties properties, boolean isFireResistant) {
+    public AdvancedItem(Properties properties, boolean isFireResistant)
+    {
         super(properties);
         this.isFireResistant = isFireResistant;
     }
@@ -36,7 +39,8 @@ public class AdvancedItem extends Item {
      * @return If true, item does not burn when on fire
      */
     @Override
-    public boolean isFireResistant() {
+    public boolean isFireResistant()
+    {
         return this.isFireResistant;
     }
 
@@ -48,7 +52,8 @@ public class AdvancedItem extends Item {
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag) {
+    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag)
+    {
     }
 
     /**
@@ -59,7 +64,8 @@ public class AdvancedItem extends Item {
      * @return The custom durability bar color
      */
     @Nullable
-    public ChatFormatting customDurabilityBarColor(ItemStack stack) {
+    public ChatFormatting customDurabilityBarColor(ItemStack stack)
+    {
         return null;
     }
 
@@ -70,8 +76,10 @@ public class AdvancedItem extends Item {
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        if (Config.Client.showTooltips.get()) {
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag)
+    {
+        if (ConfigHelper.get().getClient().showTooltips())
+        {
             addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
         }
     }
@@ -81,7 +89,8 @@ public class AdvancedItem extends Item {
      */
     @Internal
     @Override
-    public int getBarColor(ItemStack stack) {
-        return customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getBarColor(stack);
+    public int getBarColor(ItemStack stack)
+    {
+        return customDurabilityBarColor(stack) != null && ConfigHelper.get().getClient().matchingDurabilityBars() ? Objects.requireNonNull(customDurabilityBarColor(stack).getColor()) : super.getBarColor(stack);
     }
 }

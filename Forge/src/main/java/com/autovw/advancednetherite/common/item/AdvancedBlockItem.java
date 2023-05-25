@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
-import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.config.ConfigHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -13,17 +13,20 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 /**
- * Author: Autovw
+ * @author Autovw
  */
-public class AdvancedBlockItem extends BlockItem {
+public class AdvancedBlockItem extends BlockItem
+{
     private final boolean isFireResistant;
 
-    public AdvancedBlockItem(Block block, Properties properties) {
+    public AdvancedBlockItem(Block block, Properties properties)
+    {
         super(block, properties);
         this.isFireResistant = true;
     }
 
-    public AdvancedBlockItem(Block block, Properties properties, boolean isFireResistant) {
+    public AdvancedBlockItem(Block block, Properties properties, boolean isFireResistant)
+    {
         super(block, properties);
         this.isFireResistant = isFireResistant;
     }
@@ -35,7 +38,8 @@ public class AdvancedBlockItem extends BlockItem {
      * @return If true, item does not burn when on fire
      */
     @Override
-    public boolean isFireResistant() {
+    public boolean isFireResistant()
+    {
         return this.isFireResistant;
     }
 
@@ -47,7 +51,9 @@ public class AdvancedBlockItem extends BlockItem {
      * @param tooltip Collection of tooltips
      * @param flag Tooltip flag. Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled.
      */
-    public void addTooltips(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag) {}
+    public void addTooltips(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag)
+    {
+    }
 
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
@@ -56,8 +62,10 @@ public class AdvancedBlockItem extends BlockItem {
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        if (Config.Client.showTooltips.get()) {
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag)
+    {
+        if (ConfigHelper.get().getClient().showTooltips())
+        {
             addTooltips(stack, world, tooltip, flag);
         }
     }

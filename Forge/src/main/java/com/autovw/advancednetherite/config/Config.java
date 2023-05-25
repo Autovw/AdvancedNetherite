@@ -1,12 +1,19 @@
 package com.autovw.advancednetherite.config;
 
+import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.config.common.IAdditionalDropsConfig;
+import com.autovw.advancednetherite.config.common.IArmorConfig;
+import com.autovw.advancednetherite.config.server.IAdditionalDropPropertiesConfig;
+import com.autovw.advancednetherite.config.server.IToolPropertiesConfig;
 import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * @author Autovw
  */
-public class Config {
+@Internal
+public class Config
+{
     public static final ForgeConfigSpec clientConfig;
     public static final Config.Client CLIENT;
 
@@ -16,7 +23,8 @@ public class Config {
     public static final ForgeConfigSpec serverConfig;
     public static final Config.Server SERVER;
 
-    static {
+    static
+    {
         final Pair<Client, ForgeConfigSpec> clientConfigPair = new ForgeConfigSpec.Builder().configure(Client::new);
         clientConfig = clientConfigPair.getRight();
         CLIENT = clientConfigPair.getLeft();
@@ -31,12 +39,14 @@ public class Config {
     }
 
     // CLIENT config
-    public static class Client {
+    public static class Client implements IClientConfig
+    {
         public static ForgeConfigSpec.BooleanValue showTooltips;
         public static ForgeConfigSpec.BooleanValue matchingDurabilityBars;
         public static ForgeConfigSpec.BooleanValue forceDisableDetailArmorBarSupport;
 
-        public Client(ForgeConfigSpec.Builder builder) {
+        public Client(ForgeConfigSpec.Builder builder)
+        {
             builder.push("client");
             {
                 showTooltips = builder
@@ -54,14 +64,34 @@ public class Config {
             }
             builder.pop();
         }
+
+        @Override
+        public boolean showTooltips()
+        {
+            return Client.showTooltips.get();
+        }
+
+        @Override
+        public boolean matchingDurabilityBars()
+        {
+            return Client.matchingDurabilityBars.get();
+        }
+
+        @Override
+        public boolean forceDisableDetailArmorBarSupport()
+        {
+            return Client.forceDisableDetailArmorBarSupport.get();
+        }
     }
 
     // COMMON config
-    public static class Common {
+    public static class Common implements ICommonConfig
+    {
         public final ArmorConfig armorConfig;
         public final AdditionalDropsConfig additionalDropsConfig;
 
-        public Common(ForgeConfigSpec.Builder builder) {
+        public Common(ForgeConfigSpec.Builder builder)
+        {
             builder.push("common");
             {
                 this.armorConfig = new ArmorConfig(builder);
@@ -69,9 +99,22 @@ public class Config {
             }
             builder.pop();
         }
+
+        @Override
+        public IArmorConfig getArmor()
+        {
+            return this.armorConfig;
+        }
+
+        @Override
+        public IAdditionalDropsConfig getAdditionalDrops()
+        {
+            return this.additionalDropsConfig;
+        }
     }
 
-    public static class ArmorConfig {
+    public static class ArmorConfig implements IArmorConfig
+    {
         public static ForgeConfigSpec.BooleanValue ironPhantomPassiveArmor;
         public static ForgeConfigSpec.BooleanValue ironPiglinPassiveArmor;
         public static ForgeConfigSpec.BooleanValue ironEndermanPassiveArmor;
@@ -88,7 +131,8 @@ public class Config {
         public static ForgeConfigSpec.BooleanValue diamondPiglinPassiveArmor;
         public static ForgeConfigSpec.BooleanValue diamondEndermanPassiveArmor;
 
-        public ArmorConfig(ForgeConfigSpec.Builder builder) {
+        public ArmorConfig(ForgeConfigSpec.Builder builder)
+        {
             builder.comment("Configure properties related to armor perks here").push("armor_perks");
             {
                 // Netherite-Iron Armor
@@ -129,9 +173,82 @@ public class Config {
             }
             builder.pop();
         }
+
+        @Override
+        public boolean isIronPhantomPassiveArmor()
+        {
+            return ArmorConfig.ironPhantomPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isIronPiglinPassiveArmor()
+        {
+            return ArmorConfig.ironPiglinPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isIronEndermanPassiveArmor()
+        {
+            return ArmorConfig.ironEndermanPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isGoldPhantomPassiveArmor()
+        {
+            return ArmorConfig.goldPhantomPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isGoldPiglinPassiveArmor()
+        {
+            return ArmorConfig.goldPiglinPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isGoldEndermanPassiveArmor()
+        {
+            return ArmorConfig.goldEndermanPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isEmeraldPhantomPassiveArmor()
+        {
+            return ArmorConfig.emeraldPhantomPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isEmeraldPiglinPassiveArmor()
+        {
+            return ArmorConfig.emeraldPiglinPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isEmeraldEndermanPassiveArmor()
+        {
+            return ArmorConfig.emeraldEndermanPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isDiamondPhantomPassiveArmor()
+        {
+            return ArmorConfig.diamondPhantomPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isDiamondPiglinPassiveArmor()
+        {
+            return ArmorConfig.diamondPiglinPassiveArmor.get();
+        }
+
+        @Override
+        public boolean isDiamondEndermanPassiveArmor()
+        {
+            return ArmorConfig.diamondEndermanPassiveArmor.get();
+        }
     }
 
-    public static class AdditionalDropsConfig {
+    public static class AdditionalDropsConfig implements IAdditionalDropsConfig
+    {
         public static ForgeConfigSpec.BooleanValue enableAdditionalCropDrops;
         public static ForgeConfigSpec.BooleanValue enableAdditionalOreDrops;
         public static ForgeConfigSpec.BooleanValue enableAdditionalMobDrops;
@@ -145,14 +262,34 @@ public class Config {
             }
             builder.pop();
         }
+
+        @Override
+        public boolean enableAdditionalCropDrops()
+        {
+            return AdditionalDropsConfig.enableAdditionalCropDrops.get();
+        }
+
+        @Override
+        public boolean enableAdditionalOreDrops()
+        {
+            return AdditionalDropsConfig.enableAdditionalOreDrops.get();
+        }
+
+        @Override
+        public boolean enableAdditionalMobDrops()
+        {
+            return AdditionalDropsConfig.enableAdditionalMobDrops.get();
+        }
     }
 
     // SERVER config
-    public static class Server {
+    public static class Server implements IServerConfig
+    {
         public final ToolProperties toolProperties;
         public final AdditionalDropProperties additionalDropProperties;
 
-        public Server(ForgeConfigSpec.Builder builder) {
+        public Server(ForgeConfigSpec.Builder builder)
+        {
             builder.push("server");
             {
                 this.toolProperties = new ToolProperties(builder);
@@ -160,15 +297,29 @@ public class Config {
             }
             builder.pop();
         }
+
+        @Override
+        public IAdditionalDropPropertiesConfig getAdditionalDropProperties()
+        {
+            return this.additionalDropProperties;
+        }
+
+        @Override
+        public IToolPropertiesConfig getToolProperties()
+        {
+            return this.toolProperties;
+        }
     }
 
-    public static class ToolProperties {
+    public static class ToolProperties implements IToolPropertiesConfig
+    {
         public static ForgeConfigSpec.IntValue ironBreakingSpeedMultiplier;
         public static ForgeConfigSpec.IntValue goldBreakingSpeedMultiplier;
         public static ForgeConfigSpec.IntValue emeraldBreakingSpeedMultiplier;
         public static ForgeConfigSpec.IntValue diamondBreakingSpeedMultiplier;
 
-        public ToolProperties(ForgeConfigSpec.Builder builder) {
+        public ToolProperties(ForgeConfigSpec.Builder builder)
+        {
             builder.comment("Configure properties related to tools here.").push("tool_properties");
             {
                 builder.comment("Configure tool properties related to block breaking speed here.").push("breaking_speed_multipliers");
@@ -182,9 +333,34 @@ public class Config {
             }
             builder.pop();
         }
+
+        @Override
+        public int getIronBreakingSpeedMultiplier()
+        {
+            return ToolProperties.ironBreakingSpeedMultiplier.get();
+        }
+
+        @Override
+        public int getGoldBreakingSpeedMultiplier()
+        {
+            return ToolProperties.goldBreakingSpeedMultiplier.get();
+        }
+
+        @Override
+        public int getEmeraldBreakingSpeedMultiplier()
+        {
+            return ToolProperties.emeraldBreakingSpeedMultiplier.get();
+        }
+
+        @Override
+        public int getDiamondBreakingSpeedMultiplier()
+        {
+            return ToolProperties.diamondBreakingSpeedMultiplier.get();
+        }
     }
 
-    public static class AdditionalDropProperties {
+    public static class AdditionalDropProperties implements IAdditionalDropPropertiesConfig
+    {
         public static ForgeConfigSpec.DoubleValue additionalWheatDropChance;
         public static ForgeConfigSpec.DoubleValue additionalCarrotsDropChance;
         public static ForgeConfigSpec.DoubleValue additionalPotatoesDropChance;
@@ -201,7 +377,8 @@ public class Config {
         public static ForgeConfigSpec.DoubleValue additionalDiamondDropChance;
         public static ForgeConfigSpec.DoubleValue additionalGoldNuggetDropChance;
 
-        public AdditionalDropProperties(ForgeConfigSpec.Builder builder) {
+        public AdditionalDropProperties(ForgeConfigSpec.Builder builder)
+        {
             builder.comment("Configure properties related to additional drops here.").push("additional_drop_properties");
             {
                 builder.comment("Configure properties related to crop drop chances here.").push("crop_drop_chances");
@@ -233,6 +410,84 @@ public class Config {
                 builder.pop();
             }
             builder.pop();
+        }
+
+        @Override
+        public double getAdditionalWheatDropChance()
+        {
+            return AdditionalDropProperties.additionalWheatDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalCarrotsDropChance()
+        {
+            return AdditionalDropProperties.additionalCarrotsDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalPotatoesDropChance()
+        {
+            return AdditionalDropProperties.additionalPotatoesDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalBeetrootsDropChance()
+        {
+            return AdditionalDropProperties.additionalBeetrootsDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalPhantomDropChance()
+        {
+            return AdditionalDropProperties.additionalPhantomDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalZombifiedPiglinDropChance()
+        {
+            return AdditionalDropProperties.additionalZombifiedPiglinDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalPiglinDropChance()
+        {
+            return AdditionalDropProperties.additionalPiglinDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalEndermanDropChance()
+        {
+            return AdditionalDropProperties.additionalEndermanDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalRawIronDropChance()
+        {
+            return AdditionalDropProperties.additionalRawIronDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalRawGoldDropChance()
+        {
+            return AdditionalDropProperties.additionalRawGoldDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalEmeraldDropChance()
+        {
+            return AdditionalDropProperties.additionalEmeraldDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalDiamondDropChance()
+        {
+            return AdditionalDropProperties.additionalDiamondDropChance.get();
+        }
+
+        @Override
+        public double getAdditionalGoldNuggetDropChance()
+        {
+            return AdditionalDropProperties.additionalGoldNuggetDropChance.get();
         }
     }
 }

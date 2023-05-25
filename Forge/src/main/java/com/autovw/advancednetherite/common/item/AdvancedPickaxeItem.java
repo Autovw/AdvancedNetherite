@@ -3,7 +3,7 @@ package com.autovw.advancednetherite.common.item;
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.AdvancedUtil;
-import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
@@ -24,10 +24,12 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedPickaxeItem extends PickaxeItem {
+public class AdvancedPickaxeItem extends PickaxeItem
+{
     private final Tier tier;
 
-    public AdvancedPickaxeItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
+    public AdvancedPickaxeItem(Tier tier, int attackDamage, float attackSpeed, Properties properties)
+    {
         super(tier, attackDamage, attackSpeed, properties);
         this.tier = tier;
     }
@@ -39,7 +41,8 @@ public class AdvancedPickaxeItem extends PickaxeItem {
      * @return If true, item does not burn when on fire
      */
     @Override
-    public boolean isFireResistant() {
+    public boolean isFireResistant()
+    {
         return true;
     }
 
@@ -51,7 +54,8 @@ public class AdvancedPickaxeItem extends PickaxeItem {
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag) {
+    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag)
+    {
     }
 
     /**
@@ -62,7 +66,8 @@ public class AdvancedPickaxeItem extends PickaxeItem {
      * @return The custom durability bar color
      */
     @Nullable
-    public ChatFormatting customDurabilityBarColor(ItemStack stack) {
+    public ChatFormatting customDurabilityBarColor(ItemStack stack)
+    {
         return null;
     }
 
@@ -73,15 +78,21 @@ public class AdvancedPickaxeItem extends PickaxeItem {
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        if (Config.Client.showTooltips.get()) {
-            if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && Config.AdditionalDropsConfig.enableAdditionalOreDrops.get()) {
-                if (Screen.hasShiftDown()) {
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag)
+    {
+        if (ConfigHelper.get().getClient().showTooltips())
+        {
+            if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalOreDrops())
+            {
+                if (Screen.hasShiftDown())
+                {
                     if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.IRON_ORE_DROP_TOOLTIP);
                     if (tier == ModToolTiers.NETHERITE_GOLD) tooltip.add(ModTooltips.GOLD_ORE_DROP_TOOLTIP);
                     if (tier == ModToolTiers.NETHERITE_EMERALD) tooltip.add(ModTooltips.EMERALD_ORE_DROP_TOOLTIP);
                     if (tier == ModToolTiers.NETHERITE_DIAMOND) tooltip.add(ModTooltips.DIAMOND_ORE_DROP_TOOLTIP);
-                } else {
+                }
+                else
+                {
                     tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
                 }
             }
@@ -95,10 +106,12 @@ public class AdvancedPickaxeItem extends PickaxeItem {
      */
     @Internal
     @Override
-    public int getBarColor(ItemStack stack) {
+    public int getBarColor(ItemStack stack)
+    {
         int originalColor = super.getBarColor(stack);
 
-        if (customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get()) {
+        if (customDurabilityBarColor(stack) != null && ConfigHelper.get().getClient().matchingDurabilityBars())
+        {
             return Objects.requireNonNull(customDurabilityBarColor(stack).getColor());
         }
 
@@ -106,7 +119,8 @@ public class AdvancedPickaxeItem extends PickaxeItem {
     }
 
     @Override
-    public float getDestroySpeed(ItemStack stack, BlockState state) {
+    public float getDestroySpeed(ItemStack stack, BlockState state)
+    {
         float originalSpeed = super.getDestroySpeed(stack, state);
         return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
     }

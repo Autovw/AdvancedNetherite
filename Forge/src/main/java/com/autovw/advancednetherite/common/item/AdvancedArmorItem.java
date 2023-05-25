@@ -2,7 +2,7 @@ package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.AdvancedUtil;
-import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModArmorTiers;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
@@ -21,10 +21,12 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedArmorItem extends ArmorItem {
+public class AdvancedArmorItem extends ArmorItem
+{
     private final ArmorMaterial material;
 
-    public AdvancedArmorItem(ArmorMaterial material, ArmorItem.Type armorType, Properties properties) {
+    public AdvancedArmorItem(ArmorMaterial material, ArmorItem.Type armorType, Properties properties)
+    {
         super(material, armorType, properties);
         this.material = material;
     }
@@ -34,15 +36,16 @@ public class AdvancedArmorItem extends ArmorItem {
      *
      * @return If true, pacifies endermen. Also applies the tooltip.
      */
-    public boolean pacifiesEndermen() {
+    public boolean pacifiesEndermen()
+    {
         if (this.material == ModArmorTiers.NETHERITE_IRON)
-            return Config.ArmorConfig.ironEndermanPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isIronEndermanPassiveArmor();
         if (this.material == ModArmorTiers.NETHERITE_GOLD)
-            return Config.ArmorConfig.goldEndermanPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isGoldEndermanPassiveArmor();
         if (this.material == ModArmorTiers.NETHERITE_EMERALD)
-            return Config.ArmorConfig.emeraldEndermanPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isEmeraldEndermanPassiveArmor();
         if (this.material == ModArmorTiers.NETHERITE_DIAMOND)
-            return Config.ArmorConfig.diamondEndermanPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isDiamondEndermanPassiveArmor();
 
         return false;
     }
@@ -52,15 +55,16 @@ public class AdvancedArmorItem extends ArmorItem {
      *
      * @return If true, pacifies piglins. Also applies the tooltip.
      */
-    public boolean pacifiesPiglins() {
+    public boolean pacifiesPiglins()
+    {
         if (this.material == ModArmorTiers.NETHERITE_IRON)
-            return Config.ArmorConfig.ironPiglinPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isIronPiglinPassiveArmor();
         if (this.material == ModArmorTiers.NETHERITE_GOLD)
-            return Config.ArmorConfig.goldPiglinPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isGoldPiglinPassiveArmor();
         if (this.material == ModArmorTiers.NETHERITE_EMERALD)
-            return Config.ArmorConfig.emeraldPiglinPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isEmeraldPiglinPassiveArmor();
         if (this.material == ModArmorTiers.NETHERITE_DIAMOND)
-            return Config.ArmorConfig.diamondPiglinPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isDiamondPiglinPassiveArmor();
 
         return false;
     }
@@ -70,15 +74,16 @@ public class AdvancedArmorItem extends ArmorItem {
      *
      * @return If true, pacifies phantoms. Alo applies the tooltip.
      */
-    public boolean pacifiesPhantoms() {
+    public boolean pacifiesPhantoms()
+    {
         if (this.material == ModArmorTiers.NETHERITE_IRON)
-            return Config.ArmorConfig.ironPhantomPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isIronPhantomPassiveArmor();
         if (this.material == ModArmorTiers.NETHERITE_GOLD)
-            return Config.ArmorConfig.goldPhantomPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isGoldPhantomPassiveArmor();
         if (this.material == ModArmorTiers.NETHERITE_EMERALD)
-            return Config.ArmorConfig.emeraldPhantomPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isEmeraldPhantomPassiveArmor();
         if (this.material == ModArmorTiers.NETHERITE_DIAMOND)
-            return Config.ArmorConfig.diamondPhantomPassiveArmor.get();
+            return ConfigHelper.get().getCommon().getArmor().isDiamondPhantomPassiveArmor();
 
         return false;
     }
@@ -90,7 +95,8 @@ public class AdvancedArmorItem extends ArmorItem {
      * @return If true, item does not burn when on fire
      */
     @Override
-    public boolean isFireResistant() {
+    public boolean isFireResistant()
+    {
         return true;
     }
 
@@ -102,7 +108,8 @@ public class AdvancedArmorItem extends ArmorItem {
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag) {
+    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag)
+    {
     }
 
     /**
@@ -113,7 +120,8 @@ public class AdvancedArmorItem extends ArmorItem {
      * @return The custom durability bar color
      */
     @Nullable
-    public ChatFormatting customDurabilityBarColor(ItemStack stack) {
+    public ChatFormatting customDurabilityBarColor(ItemStack stack)
+    {
         return null;
     }
 
@@ -124,7 +132,8 @@ public class AdvancedArmorItem extends ArmorItem {
      */
     @Internal
     @Override
-    public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer) {
+    public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer)
+    {
         return pacifiesPiglins();
     }
 
@@ -133,8 +142,10 @@ public class AdvancedArmorItem extends ArmorItem {
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        if (Config.Client.showTooltips.get()) {
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag)
+    {
+        if (ConfigHelper.get().getClient().showTooltips())
+        {
             if (pacifiesEndermen()) tooltip.add(ModTooltips.ENDERMAN_PASSIVE_TOOLTIP);
             if (pacifiesPiglins()) tooltip.add(ModTooltips.PIGLIN_PASSIVE_TOOLTIP);
             if (pacifiesPhantoms()) tooltip.add(ModTooltips.PHANTOM_PASSIVE_TOOLTIP);
@@ -149,10 +160,12 @@ public class AdvancedArmorItem extends ArmorItem {
      */
     @Internal
     @Override
-    public int getBarColor(ItemStack stack) {
+    public int getBarColor(ItemStack stack)
+    {
         int originalColor = super.getBarColor(stack);
 
-        if (customDurabilityBarColor(stack) != null && Config.Client.matchingDurabilityBars.get()) {
+        if (customDurabilityBarColor(stack) != null && ConfigHelper.get().getClient().matchingDurabilityBars())
+        {
             return Objects.requireNonNull(customDurabilityBarColor(stack).getColor());
         }
 

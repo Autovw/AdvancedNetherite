@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.common;
 
-import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModArmorTiers;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
@@ -10,19 +10,23 @@ import net.minecraft.world.level.block.state.BlockState;
 /**
  * @author Autovw
  */
-public class AdvancedUtil {
+public class AdvancedUtil
+{
     /**
      * Helper method for getting the appropriate durability bar color on tools
      * @param originalColor The original durability bar color
      * @param stack Tool stack
      * @return The appropriate bar color, based on tier and config settings
      */
-    public static int getDurabilityBarColor(int originalColor, ItemStack stack) {
+    public static int getDurabilityBarColor(int originalColor, ItemStack stack)
+    {
         int newColor = originalColor;
 
-        if (Config.Client.matchingDurabilityBars.get()) {
+        if (ConfigHelper.get().getClient().matchingDurabilityBars())
+        {
             // Tools
-            if (stack.getItem() instanceof DiggerItem item) {
+            if (stack.getItem() instanceof DiggerItem item)
+            {
                 Tier tier = item.getTier();
 
                 if (tier == ModToolTiers.NETHERITE_IRON)
@@ -36,7 +40,8 @@ public class AdvancedUtil {
             }
 
             // Armor
-            if (stack.getItem() instanceof ArmorItem item) {
+            if (stack.getItem() instanceof ArmorItem item)
+            {
                 ArmorMaterial material = item.getMaterial();
 
                 if (material == ModArmorTiers.NETHERITE_IRON)
@@ -60,21 +65,24 @@ public class AdvancedUtil {
      * @param state State of block being broken
      * @return New destroy speed
      */
-    public static float getDestroySpeed(float originalSpeed, ItemStack stack, BlockState state) {
+    public static float getDestroySpeed(float originalSpeed, ItemStack stack, BlockState state)
+    {
         float newSpeed = originalSpeed;
 
-        if (stack.getItem() instanceof DiggerItem diggerItem) {
+        if (stack.getItem() instanceof DiggerItem diggerItem)
+        {
             Tier tier = diggerItem.getTier();
 
-            if (diggerItem.isCorrectToolForDrops(stack, state)) {
+            if (diggerItem.isCorrectToolForDrops(stack, state))
+            {
                 if (tier == ModToolTiers.NETHERITE_IRON)
-                    newSpeed *= Config.ToolProperties.ironBreakingSpeedMultiplier.get();
+                    newSpeed *= ConfigHelper.get().getServer().getToolProperties().getIronBreakingSpeedMultiplier();
                 if (tier == ModToolTiers.NETHERITE_GOLD)
-                    newSpeed *= Config.ToolProperties.goldBreakingSpeedMultiplier.get();
+                    newSpeed *= ConfigHelper.get().getServer().getToolProperties().getGoldBreakingSpeedMultiplier();
                 if (tier == ModToolTiers.NETHERITE_EMERALD)
-                    newSpeed *= Config.ToolProperties.emeraldBreakingSpeedMultiplier.get();
+                    newSpeed *= ConfigHelper.get().getServer().getToolProperties().getEmeraldBreakingSpeedMultiplier();
                 if (tier == ModToolTiers.NETHERITE_DIAMOND)
-                    newSpeed *= Config.ToolProperties.diamondBreakingSpeedMultiplier.get();
+                    newSpeed *= ConfigHelper.get().getServer().getToolProperties().getDiamondBreakingSpeedMultiplier();
             }
         }
 

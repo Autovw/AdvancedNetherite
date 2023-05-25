@@ -2,6 +2,7 @@ package com.autovw.advancednetherite;
 
 import com.autovw.advancednetherite.client.ClientHandler;
 import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.registry.ModBlocks;
 import com.autovw.advancednetherite.core.registry.ModItems;
 import com.autovw.advancednetherite.core.registry.ModLootModifiers;
@@ -48,6 +49,9 @@ public class AdvancedNetheriteForge
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         event.enqueueWork(ModToolTiers::onCommonSetup);
+        ConfigHelper.registerClientConfig(() -> Config.CLIENT);
+        ConfigHelper.registerCommonConfig(() -> Config.COMMON);
+        ConfigHelper.registerServerConfig(() -> Config.SERVER);
     }
 
     private void clientSetup(final FMLClientSetupEvent event)
