@@ -7,7 +7,6 @@ import com.autovw.advancednetherite.core.util.ModArmorTiers;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
@@ -126,18 +125,6 @@ public class AdvancedArmorItem extends ArmorItem
     }
 
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
-
-    /**
-     * Don't override this method, use: {@link AdvancedArmorItem#pacifiesPiglins()}
-     */
-    /* TODO figure out what to do with this
-    @Internal
-    @Override
-    public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer)
-    {
-        return pacifiesPiglins();
-    }
-     */
 
     /**
      * Don't override this method, use: {@link AdvancedArmorItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.

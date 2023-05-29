@@ -7,6 +7,7 @@ import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Phantom;
+import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -20,11 +21,12 @@ import net.minecraftforge.fml.common.Mod;
  */
 @Internal
 @Mod.EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class EventHandler {
-
+public class EventHandler
+{
     @SuppressWarnings("unused")
     @SubscribeEvent
-    public static void onEnderManAngerEvent(final EnderManAngerEvent event) {
+    public static void onEnderManAngerEvent(final EnderManAngerEvent event)
+    {
         Player player = event.getPlayer(); // Gets the player (target)
         EnderMan enderMan = event.getEntity(); // Gets the enderman
 
@@ -32,9 +34,11 @@ public class EventHandler {
         if (player.isCreative())
             return;
 
-        for (ItemStack stack : player.getArmorSlots()) {
+        for (ItemStack stack : player.getArmorSlots())
+        {
             Item item = stack.getItem();
-            if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack))) {
+            if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack)))
+            {
                 event.setCanceled(true); // Cancels the enderman anger if conditions are met
             }
         }
@@ -42,7 +46,8 @@ public class EventHandler {
 
     @SuppressWarnings("unused")
     @SubscribeEvent
-    public static void onLivingChangeTargetEvent(final LivingChangeTargetEvent event) {
+    public static void onLivingChangeTargetEvent(final LivingChangeTargetEvent event)
+    {
         LivingEntity target = event.getOriginalTarget(); // Gets the target (player)
         LivingEntity attacker = event.getEntity(); // Gets the attacker
 
@@ -53,11 +58,26 @@ public class EventHandler {
         if (attacker.getLastHurtByMob() == target)
             return;
 
-        if (attacker instanceof Phantom phantom) {
-            for (ItemStack stack : target.getArmorSlots()) {
+        if (attacker instanceof Phantom phantom)
+        {
+            for (ItemStack stack : target.getArmorSlots())
+            {
                 Item item = stack.getItem();
-                if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPhantoms(stack))) {
+                if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPhantoms(stack)))
+                {
                     event.setNewTarget(null); // Set target to null to allow the attacker to pick a new target
+                }
+            }
+        }
+
+        if (attacker instanceof Piglin piglin)
+        {
+            for (ItemStack stack : target.getArmorSlots())
+            {
+                Item item = stack.getItem();
+                if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPiglins()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPiglins(stack)))
+                {
+                    event.setCanceled(true); // TODO figure out how to reliably use event
                 }
             }
         }

@@ -23,6 +23,17 @@ public interface IAdvancedHooks
     }
 
     /**
+     * Used to check if piglins should behave passive towards a player wearing the provided stack, unless provoked.
+     * @param stack the stack worn by the player
+     * @return If true, piglins will behave passive towards players wearing the stack
+     * @since 2.0.0
+     */
+    default boolean pacifyPiglins(ItemStack stack)
+    {
+        return false;
+    }
+
+    /**
      * Used to check if phantoms should behave passive towards a player wearing this item, unless provoked.
      * @param stack the item worn by the player
      * @return If true, phantoms will behave passive towards a player wearing this item
