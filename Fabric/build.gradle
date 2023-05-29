@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'fabric-loom' version '1.1-SNAPSHOT'
+}
+
+group = "com.autovw.advancednetherite"
+version = "${mod_version}-${minecraft_version}"
+archivesBaseName = "advancednetherite-fabric"
+
+sourceSets.main.resources { srcDir 'src/generated/resources' } // src directory for data generator output
+
+loom.runs {
+    client {
+        client()
+        setConfigName("Fabric Client")
+        runDir "run"
+    }
+    server {
+        server()
+        setConfigName("Fabric Server")
+        runDir "run"
+    }
+    datagen {
+        server()
+        vmArg "-Dfabric-api.datagen"
+        vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}"
+        vmArg "-Dfabric-api.datagen.strict-validation"
+        runDir "build/datagen"
+    }
+}
+assemble.dependsOn runDatagen
+
+repositories {
+    maven {
+        url = "https://www.cursemaven.com"
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+    modImplementation "curse.maven:detailab-506898:${detailab_fabric_version}"
+    implementation project(":Common")
+}
+
+processResources {
+    from project(":Common").sourceSets.main.resources
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile) {
+    source(project(":Common").sourceSets.main.allSource)
+}
+

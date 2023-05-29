@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "advancednetherite",
+  "version": "${version}",
+
+  "name": "Advanced Netherite",
+  "description": "A vanilla friendly and open-source mod that adds in more tiers of Netherite! The goal of the mod is to extend the vanilla Minecraft experience by adding more goals to achieve.",
+  "authors": [
+    "Autovw"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/advanced-netherite-fabric",
+    "issues": "https://github.com/Autovw/AdvancedNetherite/issues",
+    "sources": "https://github.com/Autovw/AdvancedNetherite"
+  },
+
+  "license": "GNU General Public License v3.0",
+  "icon": "advancednetherite_logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.autovw.advancednetherite.AdvancedNetheriteFabric"
+    ],
+    "client": [
+      "com.autovw.advancednetherite.client.ClientHandler"
+    ],
+    "fabric-datagen": [
+      "com.autovw.advancednetherite.datagen.ModDataGenerator"
+    ]
+  },
+  "mixins": [
+    "advancednetherite.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.14",
+    "fabric-api": "*",
+    "minecraft": "1.19.4",
+    "java": ">=17"
+  },
+  "suggests": {
+    "detailab": "=>2.6.3"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/KP3BBatuw5",
+        "modmenu.wiki": "https://github.com/Autovw/AdvancedNetherite/wiki",
+        "modmenu.twitter": "https://twitter.com/AutovwDev"
+      }
+    }
+  }
+}

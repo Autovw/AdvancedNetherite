@@ -6,6 +6,10 @@ pluginManagement {
             url = 'https://maven.minecraftforge.net/'
         }
         maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        maven {
             name = 'Sponge Snapshots'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
@@ -13,5 +17,5 @@ pluginManagement {
 }
 
 rootProject.name = 'AdvancedNetherite'
-include("Common", "Forge")
+include("Common", "Forge", "Fabric")
 
