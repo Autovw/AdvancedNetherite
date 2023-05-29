@@ -25,6 +25,8 @@ public class AdvancedNetheriteFabric implements ModInitializer
         ModBlockRegistry.registerBlocks();
         ModItemRegistry.registerItems();
 
+        AdvancedNetheriteTab.registerTab();
+
         ConfigHelper.registerClientConfig(() -> TempConfig.CLIENT);
         ConfigHelper.registerCommonConfig(() -> TempConfig.COMMON);
         ConfigHelper.registerServerConfig(() -> TempConfig.SERVER);
