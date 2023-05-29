@@ -9,7 +9,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 /**
@@ -62,7 +61,7 @@ public class AdvancedBlockItem extends BlockItem
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag)
+    public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag)
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {

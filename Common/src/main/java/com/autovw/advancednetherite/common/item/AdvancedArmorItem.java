@@ -13,7 +13,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
@@ -118,7 +117,6 @@ public class AdvancedArmorItem extends ArmorItem
      * @param stack The item stack
      * @return The custom durability bar color
      */
-    @Nullable
     public ChatFormatting customDurabilityBarColor(ItemStack stack)
     {
         return null;
@@ -131,7 +129,7 @@ public class AdvancedArmorItem extends ArmorItem
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag)
+    public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag)
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
