@@ -3,7 +3,6 @@ package com.autovw.advancednetherite.common.item;
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.AdvancedUtil;
-import com.autovw.advancednetherite.config.Config;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
@@ -15,7 +14,6 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -82,7 +80,8 @@ public class AdvancedHoeItem extends HoeItem
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
-            if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops()) {
+            if (AdvancedNetherite.getRegistryHelper().getItemById(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops())
+            {
                 if (Screen.hasShiftDown())
                 {
                     tooltip.add(ModTooltips.ADDITIONAL_CROP_DROPS_TOOLTIP);

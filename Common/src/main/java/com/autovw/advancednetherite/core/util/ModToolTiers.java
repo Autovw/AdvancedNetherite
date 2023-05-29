@@ -1,17 +1,9 @@
 package com.autovw.advancednetherite.core.util;
 
-import com.autovw.advancednetherite.AdvancedNetherite;
-import com.autovw.advancednetherite.core.registry.ModItems;
-import net.minecraft.resources.ResourceLocation;
+import com.autovw.advancednetherite.core.ModItems;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.TierSortingRegistry;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.registries.RegistryObject;
-
-import java.util.List;
 
 /**
  * Add-on developers: Create your own enum that implements {@link Tier} if you are adding new tools!
@@ -26,7 +18,7 @@ public enum ModToolTiers implements Tier {
 
     private final float attackDamage;
     private final int level, durability, enchantability;
-    private final RegistryObject<Item> repairIngredient;
+    private final Item repairIngredient;
 
     /**
      * @param level Level of the tool
@@ -35,7 +27,8 @@ public enum ModToolTiers implements Tier {
      * @param enchantability The higher the number, the more likely better enchantments can be applied when using the enchantment table
      * @param repairIngredient Item used to repair the tool
      */
-    private ModToolTiers(int level, int durability, float attackDamage, int enchantability, RegistryObject<Item> repairIngredient) {
+    private ModToolTiers(int level, int durability, float attackDamage, int enchantability, Item repairIngredient)
+    {
         this.level = level;
         this.durability = durability;
         this.attackDamage = attackDamage;
@@ -44,7 +37,8 @@ public enum ModToolTiers implements Tier {
     }
 
     @Override
-    public int getUses() {
+    public int getUses()
+    {
         return this.durability;
     }
 
@@ -52,37 +46,32 @@ public enum ModToolTiers implements Tier {
      * Breaking speed is multiplied by config values later on
      */
     @Override
-    public float getSpeed() {
+    public float getSpeed()
+    {
         return 1.0F;
     }
 
     @Override
-    public float getAttackDamageBonus() {
+    public float getAttackDamageBonus()
+    {
         return this.attackDamage;
     }
 
     @Override
-    public int getLevel() {
+    public int getLevel()
+    {
         return this.level;
     }
 
     @Override
-    public int getEnchantmentValue() {
+    public int getEnchantmentValue()
+    {
         return this.enchantability;
     }
 
     @Override
-    public Ingredient getRepairIngredient() {
-        return Ingredient.of(this.repairIngredient.get());
-    }
-
-    /**
-     * This method is called inside {@link com.autovw.advancednetherite.AdvancedNetherite#commonSetup(FMLCommonSetupEvent)} in order to register the tool tiers.
-     */
-    public static void onCommonSetup() {
-        TierSortingRegistry.registerTier(NETHERITE_IRON, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_iron"), List.of(Tiers.NETHERITE), List.of());
-        TierSortingRegistry.registerTier(NETHERITE_GOLD, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_gold"), List.of(NETHERITE_IRON), List.of());
-        TierSortingRegistry.registerTier(NETHERITE_EMERALD, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_emerald"), List.of(NETHERITE_GOLD), List.of());
-        TierSortingRegistry.registerTier(NETHERITE_DIAMOND, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_diamond"), List.of(NETHERITE_EMERALD), List.of());
+    public Ingredient getRepairIngredient()
+    {
+        return Ingredient.of(this.repairIngredient);
     }
 }

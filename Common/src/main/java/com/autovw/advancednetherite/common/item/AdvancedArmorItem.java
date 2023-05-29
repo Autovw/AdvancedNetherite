@@ -130,12 +130,14 @@ public class AdvancedArmorItem extends ArmorItem
     /**
      * Don't override this method, use: {@link AdvancedArmorItem#pacifiesPiglins()}
      */
+    /* TODO figure out what to do with this
     @Internal
     @Override
     public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer)
     {
         return pacifiesPiglins();
     }
+     */
 
     /**
      * Don't override this method, use: {@link AdvancedArmorItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.

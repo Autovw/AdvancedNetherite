@@ -10,12 +10,11 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -24,11 +23,11 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedSwordItem extends SwordItem
+public class AdvancedPickaxeItem extends PickaxeItem
 {
     private final Tier tier;
 
-    public AdvancedSwordItem(Tier tier, int attackDamage, float attackSpeed, Properties properties)
+    public AdvancedPickaxeItem(Tier tier, int attackDamage, float attackSpeed, Properties properties)
     {
         super(tier, attackDamage, attackSpeed, properties);
         this.tier = tier;
@@ -74,7 +73,7 @@ public class AdvancedSwordItem extends SwordItem
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
     /**
-     * Don't override this method, use {@link AdvancedSwordItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.
+     * Don't override this method, use {@link AdvancedPickaxeItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.
      */
     @Internal
     @Override
@@ -82,29 +81,14 @@ public class AdvancedSwordItem extends SwordItem
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
-            if (ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalMobDrops())
+            if (AdvancedNetherite.getRegistryHelper().getItemById(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalOreDrops())
             {
                 if (Screen.hasShiftDown())
                 {
-                    if (tier == ModToolTiers.NETHERITE_IRON)
-                    {
-                        tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
-                    }
-                    if (tier == ModToolTiers.NETHERITE_GOLD)
-                    {
-                        tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
-                    }
-                    if (tier == ModToolTiers.NETHERITE_EMERALD)
-                    {
-                        tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
-                    }
-                    if (tier == ModToolTiers.NETHERITE_DIAMOND)
-                    {
-                        tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
-                    }
+                    if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.IRON_ORE_DROP_TOOLTIP);
+                    if (tier == ModToolTiers.NETHERITE_GOLD) tooltip.add(ModTooltips.GOLD_ORE_DROP_TOOLTIP);
+                    if (tier == ModToolTiers.NETHERITE_EMERALD) tooltip.add(ModTooltips.EMERALD_ORE_DROP_TOOLTIP);
+                    if (tier == ModToolTiers.NETHERITE_DIAMOND) tooltip.add(ModTooltips.DIAMOND_ORE_DROP_TOOLTIP);
                 }
                 else
                 {
@@ -117,7 +101,7 @@ public class AdvancedSwordItem extends SwordItem
     }
 
     /**
-     * Don't override this method, use {@link AdvancedSwordItem#customDurabilityBarColor(ItemStack)} to change the custom durability bar color.
+     * Don't override this method, use {@link AdvancedPickaxeItem#customDurabilityBarColor(ItemStack)} to change the custom durability bar color.
      */
     @Internal
     @Override

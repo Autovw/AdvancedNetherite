@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite;
 
+import com.autovw.advancednetherite.helper.IPlatformHelper;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
 

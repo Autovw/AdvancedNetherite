@@ -1,6 +1,7 @@
-package com.autovw.advancednetherite;
+package com.autovw.advancednetherite.helper;
 
 /**
+ * @since 2.0.0
  * @author Autovw
  */
 public interface IPlatformHelper

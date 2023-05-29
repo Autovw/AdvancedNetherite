@@ -73,7 +73,7 @@ public class AdvancedUtil
         {
             Tier tier = diggerItem.getTier();
 
-            if (diggerItem.isCorrectToolForDrops(stack, state))
+            if (diggerItem.isCorrectToolForDrops(state))
             {
                 if (tier == ModToolTiers.NETHERITE_IRON)
                     newSpeed *= ConfigHelper.get().getServer().getToolProperties().getIronBreakingSpeedMultiplier();
