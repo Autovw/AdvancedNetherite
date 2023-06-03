@@ -103,7 +103,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
     public void baseSmithingRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result)
     {
         LegacyUpgradeRecipeBuilder.smithing(Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
-                .unlocks("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
+                .unlocks("has_ingredients", has(upgradeIngredient))
                 .save(consumer, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getItemById(result).getNamespace(), result.toString() + "_smithing"));
     }
 

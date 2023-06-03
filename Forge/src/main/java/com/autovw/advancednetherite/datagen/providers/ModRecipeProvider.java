@@ -109,11 +109,19 @@ public class ModRecipeProvider extends RecipeProvider
      * @param upgradeIngredient Ingot
      * @param result Result item
      */
-    public static void baseSmithingRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result) {
-        // TODO update to new system from 1.19.4, added for 1.20
+    public static void baseSmithingRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result)
+    {
+        ResourceLocation resultId = AdvancedNetherite.getRegistryHelper().getItemById(result);
+
         LegacyUpgradeRecipeBuilder.smithing(Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
-                .unlocks("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
-                .save(consumer, new ResourceLocation(ForgeRegistries.ITEMS.getKey(result).getNamespace(), result.toString() + "_smithing"));
+                .unlocks("has_ingredients", has(upgradeIngredient))
+                .save(consumer, new ResourceLocation(resultId.getNamespace(), resultId.getPath() + "_smithing"));
+
+        /*
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
+                .unlocks("has_ingredients", has(upgradeIngredient))
+                .save(consumer, new ResourceLocation(resultId.getNamespace(), resultId.getPath() + "_smithing"));
+         */
     }
 
     /**
@@ -124,7 +132,8 @@ public class ModRecipeProvider extends RecipeProvider
      * @param upgradeIngredient Additional ingredients
      * @param result Upgraded ingot
      */
-    public static void baseIngotRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingotIngredient, TagKey<Item> upgradeIngredient, Item result) {
+    public static void baseIngotRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingotIngredient, TagKey<Item> upgradeIngredient, Item result)
+    {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result)
                 .requires(ingotIngredient)
                 .requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient)
@@ -140,7 +149,8 @@ public class ModRecipeProvider extends RecipeProvider
      * @param ingredient Ingot
      * @param result Block
      */
-    public static void baseBlockRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, Block result) {
+    public static void baseBlockRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, Block result)
+    {
         // Items to Block
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result)
                 .define('#', ingredient)
@@ -158,7 +168,8 @@ public class ModRecipeProvider extends RecipeProvider
     }
 
     // Other ingots are automatically included if they are added to the NETHERITE_INGOTS tag.
-    private static void lodestoneRecipe(Consumer<FinishedRecipe> consumer) {
+    private static void lodestoneRecipe(Consumer<FinishedRecipe> consumer)
+    {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.LODESTONE)
                 .define('S', Items.CHISELED_STONE_BRICKS)
                 .define('#', ModTags.NETHERITE_INGOTS)

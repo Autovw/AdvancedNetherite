@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_TagKey[minecraft:item / advancednetherite:upgrade_to_netherite_iron]": {
+    "has_ingredients": {
       "conditions": {
         "items": [
           {
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_TagKey[minecraft:item / advancednetherite:upgrade_to_netherite_iron]",
+      "has_ingredients",
       "has_the_recipe"
     ]
   ],
