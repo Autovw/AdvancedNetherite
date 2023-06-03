@@ -161,11 +161,12 @@ public class TempConfig
     public static class Server implements IServerConfig
     {
         private final ToolProperties toolProperties = new ToolProperties();
+        private final AdditionalDropProperties additionalDropProperties = new AdditionalDropProperties();
 
         @Override
         public IAdditionalDropPropertiesConfig getAdditionalDropProperties()
         {
-            return null;
+            return this.additionalDropProperties;
         }
 
         @Override
@@ -198,6 +199,87 @@ public class TempConfig
             public int getDiamondBreakingSpeedMultiplier()
             {
                 return 39;
+            }
+        }
+
+        public static class AdditionalDropProperties implements IAdditionalDropPropertiesConfig
+        {
+            @Override
+            public double getAdditionalWheatDropChance()
+            {
+                return 0.3;
+            }
+
+            @Override
+            public double getAdditionalCarrotsDropChance()
+            {
+                return 0.3;
+            }
+
+            @Override
+            public double getAdditionalPotatoesDropChance()
+            {
+                return 0.3;
+            }
+
+            @Override
+            public double getAdditionalBeetrootsDropChance()
+            {
+                return 0.2;
+            }
+
+            @Override
+            public double getAdditionalPhantomDropChance()
+            {
+                return 0.5;
+            }
+
+            @Override
+            public double getAdditionalZombifiedPiglinDropChance()
+            {
+                return 0.5;
+            }
+
+            @Override
+            public double getAdditionalPiglinDropChance()
+            {
+                return 0.15;
+            }
+
+            @Override
+            public double getAdditionalEndermanDropChance()
+            {
+                return 0.3;
+            }
+
+            @Override
+            public double getAdditionalRawIronDropChance()
+            {
+                return 0.2;
+            }
+
+            @Override
+            public double getAdditionalRawGoldDropChance()
+            {
+                return 0.3;
+            }
+
+            @Override
+            public double getAdditionalEmeraldDropChance()
+            {
+                return 0.4;
+            }
+
+            @Override
+            public double getAdditionalDiamondDropChance()
+            {
+                return 0.25;
+            }
+
+            @Override
+            public double getAdditionalGoldNuggetDropChance()
+            {
+                return 0.6;
             }
         }
     }
