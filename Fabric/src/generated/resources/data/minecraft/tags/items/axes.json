@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "advancednetherite:netherite_iron_axe",
+    "advancednetherite:netherite_gold_axe",
+    "advancednetherite:netherite_emerald_axe",
+    "advancednetherite:netherite_diamond_axe"
+  ]
+}
