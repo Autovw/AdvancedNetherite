@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#advancednetherite:tiers/armor/netherite_iron",
+    "#advancednetherite:tiers/armor/netherite_gold",
+    "#advancednetherite:tiers/armor/netherite_emerald",
+    "#advancednetherite:tiers/armor/netherite_diamond"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "block.advancednetherite.netherite_iron_block": "铁·下界合金块",
+  "block.advancednetherite.netherite_gold_block": "金·下界合金块",
+  "block.advancednetherite.netherite_emerald_block": "绿宝石·下界合金块",
+  "block.advancednetherite.netherite_diamond_block": "钻石·下界合金块",
+
+  "item.advancednetherite.netherite_iron_ingot": "铁·下界合金锭",
+  "item.advancednetherite.netherite_gold_ingot": "金·下界合金锭",
+  "item.advancednetherite.netherite_emerald_ingot": "绿宝石·下界合金锭",
+  "item.advancednetherite.netherite_diamond_ingot": "钻石·下界合金锭",
+
+  "item.advancednetherite.netherite_iron_helmet": "铁·下界合金头盔",
+  "item.advancednetherite.netherite_gold_helmet": "金·下界合金头盔",
+  "item.advancednetherite.netherite_emerald_helmet": "绿宝石·下界合金头盔",
+  "item.advancednetherite.netherite_diamond_helmet": "钻石·下界合金头盔",
+
+  "item.advancednetherite.netherite_iron_chestplate": "铁·下界合金胸甲",
+  "item.advancednetherite.netherite_gold_chestplate": "金·下界合金胸甲",
+  "item.advancednetherite.netherite_emerald_chestplate": "绿宝石·下界合金胸甲",
+  "item.advancednetherite.netherite_diamond_chestplate": "钻石·下界合金胸甲",
+
+  "item.advancednetherite.netherite_iron_leggings": "铁·下界合金护腿",
+  "item.advancednetherite.netherite_gold_leggings": "金·下界合金护腿",
+  "item.advancednetherite.netherite_emerald_leggings": "绿宝石·下界合金护腿",
+  "item.advancednetherite.netherite_diamond_leggings": "钻石·下界合金护腿",
+
+  "item.advancednetherite.netherite_iron_boots": "铁·下界合金靴子",
+  "item.advancednetherite.netherite_gold_boots": "金·下界合金靴子",
+  "item.advancednetherite.netherite_emerald_boots": "绿宝石·下界合金靴子",
+  "item.advancednetherite.netherite_diamond_boots": "钻石·下界合金靴子",
+
+  "item.advancednetherite.netherite_iron_axe": "铁·下界合金斧",
+  "item.advancednetherite.netherite_gold_axe": "金·下界合金斧",
+  "item.advancednetherite.netherite_emerald_axe": "绿宝石·下界合金斧",
+  "item.advancednetherite.netherite_diamond_axe": "钻石·下界合金斧",
+
+  "item.advancednetherite.netherite_iron_hoe": "铁·下界合金锄",
+  "item.advancednetherite.netherite_gold_hoe": "金·下界合金锄",
+  "item.advancednetherite.netherite_emerald_hoe": "绿宝石·下界合金锄",
+  "item.advancednetherite.netherite_diamond_hoe": "钻石·下界合金锄",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "铁·下界合金镐",
+  "item.advancednetherite.netherite_gold_pickaxe": "金·下界合金镐",
+  "item.advancednetherite.netherite_emerald_pickaxe": "绿宝石·下界合金镐",
+  "item.advancednetherite.netherite_diamond_pickaxe": "钻石·下界合金镐",
+
+  "item.advancednetherite.netherite_iron_shovel": "铁·下界合金锹",
+  "item.advancednetherite.netherite_gold_shovel": "金·下界合金锹",
+  "item.advancednetherite.netherite_emerald_shovel": "绿宝石·下界合金锹",
+  "item.advancednetherite.netherite_diamond_shovel": "钻石·下界合金锹",
+
+  "item.advancednetherite.netherite_iron_sword": "铁·下界合金剑",
+  "item.advancednetherite.netherite_gold_sword": "金·下界合金剑",
+  "item.advancednetherite.netherite_emerald_sword": "绿宝石·下界合金剑",
+  "item.advancednetherite.netherite_diamond_sword": "钻石·下界合金剑",
+
+  "itemGroup.advancednetherite.tab": "高级下界合金",
+  
+  "tooltip.advancednetherite.armor.enderman_passive": "+ 震慑末影人",
+  "tooltip.advancednetherite.armor.piglin_passive": "+ 震慑猪灵",
+  "tooltip.advancednetherite.armor.phantom_passive": "+ 震慑幻翼",
+
+  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ 收获成熟作物时获得额外产物的概率",
+
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ 挖掘钻石矿石时掉落额外钻石的概率",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ 挖掘绿宝石矿石时掉落额外绿宝石的概率",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ 挖掘金矿石时掉落额外粗金的概率",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ 挖掘铁矿石时掉落额外粗铁的概率",
+
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ 击杀末影人时掉落额外末影珍珠的概率",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ 击杀猪灵时掉落额外金锭的概率",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ 击杀僵尸猪灵时掉落额外金粒的概率",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ 击杀幻翼时掉落额外幻翼膜的概率",
+
+  "tooltip.advancednetherite.misc.press_shift_key": "按下 %s 查看所有加成",
+  "tooltip.advancednetherite.misc.shift": "[SHIFT]",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "why?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "合成一个钻石·下界合金锄，然后去见见心理医生",
+  "advancements.advancednetherite.nether.netherite_iron_armor.title": "已经没有幻翼了",
+  "advancements.advancednetherite.nether.netherite_iron_armor.description": "获得全套铁·下界合金盔甲",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "究级猪灵威慑套装",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "获得全套金·下界合金盔甲",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "末影人？那是什么？",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "获得全套绿宝石·下界合金盔甲",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "用钻石·下界合金包裹我",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "获得全套钻石·下界合金盔甲",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "全新升级！",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "获得一个铁·下界合金锭",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title": "A very expensive block",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description": "Obtain a Netherite-Diamond Block",
+
+  "config.advancednetherite.client.show_tooltips": "设置为ture时，客户端方可显示由高级下界合金添加的加成工具条。",
+  "config.advancednetherite.client.matching_durability_bars": "设置为ture时，当物品有损伤时，在物品下方显示符合目前耐久度的耐久条。",
+  "config.advancednetherite.client.enable_search_bar": "设置为ture时，在高级下界合金的创造模式物品栏显示一个搜索栏。",
+  "config.advancednetherite.client.force_disable_dab_support": "设置为ture时，强行禁用对细节盔甲的支持，需要重启游戏。",
+
+  "config.advancednetherite.screen.description.top": "安装 %s 模组以在游戏中设置由 %s 添加的选项。",
+  "config.advancednetherite.screen.description.bottom": "访问wiki页以获取模组说明",
+  "config.advancednetherite.screen.button.install_configured": "安装 %s",
+  "config.advancednetherite.screen.button.instructions": "模组说明"
+}

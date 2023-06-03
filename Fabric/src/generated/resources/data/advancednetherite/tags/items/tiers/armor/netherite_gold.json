@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "advancednetherite:netherite_gold_helmet",
+    "advancednetherite:netherite_gold_chestplate",
+    "advancednetherite:netherite_gold_leggings",
+    "advancednetherite:netherite_gold_boots"
+  ]
+}

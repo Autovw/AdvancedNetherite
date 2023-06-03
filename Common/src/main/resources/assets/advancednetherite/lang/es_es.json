@@ -1,0 +1,102 @@
+{
+  "block.advancednetherite.netherite_iron_block": "Bloque de Hierro y Netherita",
+  "block.advancednetherite.netherite_gold_block": "Bloque de Oro y Netherita",
+  "block.advancednetherite.netherite_emerald_block": "Bloque de Esmeralda y Netherita",
+  "block.advancednetherite.netherite_diamond_block": "Bloque de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_ingot": "Lingote de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_ingot": "Lingote de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_ingot": "Lingote de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_ingot": "Lingote de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_helmet": "Casco de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_helmet": "Casco de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_helmet": "Casco de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_helmet": "Casco de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_chestplate": "Pechera de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_chestplate": "Pechera de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_chestplate": "Pechera de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_chestplate": "Pechera de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_leggings": "Pantalones de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_leggings": "Pantalones de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_leggings": "Pantalones de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_leggings": "Pantalones de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_boots": "Botas de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_boots": "Botas de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_boots": "Botas de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_boots": "Botas de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_axe": "Hacha de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_axe": "Hacha de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_axe": "Hacha de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_axe": "Hacha de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_hoe": "Hoz de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_hoe": "Hoz de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_hoe": "Hoz de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_hoe": "Hoz de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "Pico de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_pickaxe": "Pico de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_pickaxe": "Pico de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_pickaxe": "Pico de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_shovel": "Pala de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_shovel": "Pala de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_shovel": "Pala de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_shovel": "Pala de Diamante y Netherita",
+
+  "item.advancednetherite.netherite_iron_sword": "Espada de Hierro y Netherita",
+  "item.advancednetherite.netherite_gold_sword": "Espada de Oro y Netherita",
+  "item.advancednetherite.netherite_emerald_sword": "Espada de Esmeralda y Netherita",
+  "item.advancednetherite.netherite_diamond_sword": "Espada de Diamante y Netherita",
+
+  "itemGroup.advancednetherite.tab": "Netherita Avanzada",
+
+  "tooltip.advancednetherite.armor.enderman_passive": "+ Endermans Pacificos",
+  "tooltip.advancednetherite.armor.piglin_passive": "+ Piglins Pacificos",
+  "tooltip.advancednetherite.armor.phantom_passive": "+ Pacifies Phantoms",
+
+  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ Probabilidad de Soltar más Semillas al Cultivar",
+
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Probabilidad de sacar Diamantes adicionales mientras se minan",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Probabilidad de sacar Esmeraldas adicionales mientras se minan",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Probabilidad de sacar Oro en bruto adicionales mientras se minan",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Probabilidad de sacar Hierro en bruto adicionales mientras se minan",
+
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Posibilidad de soltar Ender Pearl adicional al matar un Enderman",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Posibilidad de soltar lingotes de Oro adicionales al matar un Piglin",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ Probabilidad de soltar pepitas de oro adicionales al matar un Piglin Zombificado",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ Probabilidad de soltar Membrana(s) Phantom adicional(es) al matar a Phantom",
+
+  "tooltip.advancednetherite.misc.press_shift_key": "Presiona %s para ver todas las ventajas",
+  "tooltip.advancednetherite.misc.shift": "[SHIFT]",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Por qué?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Craftea una hoz de Diamante y Netherita y luego visita un psicólogo",
+  "advancements.advancednetherite.nether.netherite_iron_armor.title": "No mas Phantoms",
+  "advancements.advancednetherite.nether.netherite_iron_armor.description": "Consigue una armadura completa de Hierro y Netherita",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "Traje de distracción ultra para Piglins",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "Consigue una armadura completa de Oro y Netherita",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Enderman?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "Consigue una armadura completa de Esmeralda y Netherita",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Cubreme de Diamante y Netherita",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Consigue una armadura completa de Diamante y Netherita",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "Mejoras!",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "Obtén un lingote de Hierro y Netherita",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title": "A very expensive block",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description": "Obtain a Netherite-Diamond Block",
+
+  "config.advancednetherite.client.show_tooltips": "Si es verdadero, muestra información sobre herramientas, agregada por Advanced Netherite, con ventajas del lado del cliente.",
+  "config.advancednetherite.client.matching_durability_bars": "Si es verdadero, muestra una barra de durabilidad a juego (color) debajo del artículo cuando está dañado.",
+  "config.advancednetherite.client.enable_search_bar": "Si es verdadero, habilita una barra de búsqueda en la pestaña de creativo para Netherita Avanzada..",
+  "config.advancednetherite.client.force_disable_dab_support": "Si es verdadero, deshabilita por la fuerza el soporte para el mod Detail Armor Bar. Requiere que el juego sea reiniciado.",
+
+  "config.advancednetherite.screen.description.top": "Instale el mod %s para editar la configuración agregada por %s desde dentro del juego.",
+  "config.advancednetherite.screen.description.bottom": "Ver la página wiki para obtener instrucciones.",
+  "config.advancednetherite.screen.button.install_configured": "Instalar %s",
+  "config.advancednetherite.screen.button.instructions": "instrucciones"
+}

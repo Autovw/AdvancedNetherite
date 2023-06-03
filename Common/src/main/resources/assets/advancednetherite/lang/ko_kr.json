@@ -1,0 +1,102 @@
+{
+  "block.advancednetherite.netherite_iron_block": "철 네더라이트 블록",
+  "block.advancednetherite.netherite_gold_block": "금 네더라이트 블록",
+  "block.advancednetherite.netherite_emerald_block": "에메랄드 네더라이트 블록",
+  "block.advancednetherite.netherite_diamond_block": "다이아몬드 네더라이트 블록",
+
+  "item.advancednetherite.netherite_iron_ingot": "철 네더라이트 주괴",
+  "item.advancednetherite.netherite_gold_ingot": "금 네더라이트 주괴",
+  "item.advancednetherite.netherite_emerald_ingot": "에메랄드 네더라이트 주괴",
+  "item.advancednetherite.netherite_diamond_ingot": "다이아몬드 네더라이트 주괴",
+
+  "item.advancednetherite.netherite_iron_helmet": "철 네더라이트 투구",
+  "item.advancednetherite.netherite_gold_helmet": "금 네더라이트 투구",
+  "item.advancednetherite.netherite_emerald_helmet": "에메랄드 네더라이트 투구",
+  "item.advancednetherite.netherite_diamond_helmet": "다이아몬드 네더라이트 투구",
+
+  "item.advancednetherite.netherite_iron_chestplate": "철 네더라이트 흉갑",
+  "item.advancednetherite.netherite_gold_chestplate": "금 네더라이트 흉갑",
+  "item.advancednetherite.netherite_emerald_chestplate": "에메랄드 네더라이트 흉갑",
+  "item.advancednetherite.netherite_diamond_chestplate": "다이아몬드 네더라이트 흉갑",
+
+  "item.advancednetherite.netherite_iron_leggings": "철 네더라이트 레깅스",
+  "item.advancednetherite.netherite_gold_leggings": "금 네더라이트 레깅스",
+  "item.advancednetherite.netherite_emerald_leggings": "에메랄드 네더라이트 레깅스",
+  "item.advancednetherite.netherite_diamond_leggings": "다이아몬드 네더라이트 레깅스",
+
+  "item.advancednetherite.netherite_iron_boots": "철 네더라이트 부츠",
+  "item.advancednetherite.netherite_gold_boots": "금 네더라이트 부츠",
+  "item.advancednetherite.netherite_emerald_boots": "에메랄드 네더라이트 부츠",
+  "item.advancednetherite.netherite_diamond_boots": "다이아몬드 네더라이트 부츠",
+
+  "item.advancednetherite.netherite_iron_axe": "철 네더라이트 도끼",
+  "item.advancednetherite.netherite_gold_axe": "금 네더라이트 도끼",
+  "item.advancednetherite.netherite_emerald_axe": "에메랄드 네더라이트 도끼",
+  "item.advancednetherite.netherite_diamond_axe": "다이아몬드 네더라이트 도끼",
+
+  "item.advancednetherite.netherite_iron_hoe": "철 네더라이트 괭이",
+  "item.advancednetherite.netherite_gold_hoe": "금 네더라이트 괭이",
+  "item.advancednetherite.netherite_emerald_hoe": "에메랄드 네더라이트 괭이",
+  "item.advancednetherite.netherite_diamond_hoe": "다이아몬드 네더라이트 괭이",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "철 네더라이트 곡괭이",
+  "item.advancednetherite.netherite_gold_pickaxe": "금 네더라이트 곡괭이",
+  "item.advancednetherite.netherite_emerald_pickaxe": "에메랄드 네더라이트 곡괭이",
+  "item.advancednetherite.netherite_diamond_pickaxe": "다이아몬드 네더라이트 곡괭이",
+
+  "item.advancednetherite.netherite_iron_shovel": "철 네더라이트 삽",
+  "item.advancednetherite.netherite_gold_shovel": "금 네더라이트 삽",
+  "item.advancednetherite.netherite_emerald_shovel": "에메랄드 네더라이트 삽",
+  "item.advancednetherite.netherite_diamond_shovel": "다이아몬드 네더라이트 삽",
+
+  "item.advancednetherite.netherite_iron_sword": "철 네더라이트 검",
+  "item.advancednetherite.netherite_gold_sword": "금 네더라이트 검",
+  "item.advancednetherite.netherite_emerald_sword": "에메랄드 네더라이트 검",
+  "item.advancednetherite.netherite_diamond_sword": "다이아몬드 네더라이트 검",
+
+  "itemGroup.advancednetherite.tab": "Advanced Netherite",
+
+  "tooltip.advancednetherite.armor.enderman_passive": "+ 엔더맨과의 평화",
+  "tooltip.advancednetherite.armor.piglin_passive": "+ 피글린과의 평화",
+  "tooltip.advancednetherite.armor.phantom_passive": "+ 팬텀과의 평화",
+
+  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ 재배 중인 작물을 수확할 때 작물 추가 드롭 확률",
+
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ 다이아몬드 광석을 채굴할 때 다이아몬드 추가 드롭 확률",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ 에메랄드 광석을 채굴할 때 에메랄드 추가 드롭 확률",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ 금 광석을 채굴할 때 금 추 드롭 확률",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ 철 광석을 채굴할 때 철 추가 드롭 확률",
+
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ 엔더맨을 죽였을 때 엔더 진주 추가 드롭 확률",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ 피글린을 죽였을 때 금 주괴 추가 드롭 확률",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ 좀비화 피글린을 죽였을 때 금 조각 추가 드롭 확률",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ 팬텀을 죽였을 때 팬텀 막 추가 드롭 확률",
+
+  "tooltip.advancednetherite.misc.press_shift_key": "모든 특전을 보려면 %s를 누르세요.",
+  "tooltip.advancednetherite.misc.shift": "[SHIFT]",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "왜?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "다이아몬드 네더라이트 괭이 제작 후 심리학자 방문",
+  "advancements.advancednetherite.nether.netherite_iron_armor.title": "더 이상 팬텀은 없다",
+  "advancements.advancednetherite.nether.netherite_iron_armor.description": "철 네더라이트 방어구 세트를 획득하세요.",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "얼티밋 피글린 정신을 산만하게 하는 슈트",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "금 네더라이트 방어구 세트를 획득하세요.",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "엔더맨?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "에메랄드 네더라이트 방어구 세트를 획득하세요.",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "다이아몬드 네더라이트를 나에게 씌우다",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "다이아몬드 네더라이트 방어구 세트를 획득하세요.",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "Upgrades!",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "Obtain a Netherite-Iron Ingot",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title": "A very expensive block",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description": "Obtain a Netherite-Diamond Block",
+
+  "config.advancednetherite.client.show_tooltips": "If true, displays tooltips, added by Advanced Netherite, with perks client-side.",
+  "config.advancednetherite.client.matching_durability_bars": "If true, displays a (color) matching durability bar underneath the item when damaged.",
+  "config.advancednetherite.client.enable_search_bar": "If true, enables a search bar in the Advanced Netherite creative tab.",
+  "config.advancednetherite.client.force_disable_dab_support": "If true, forcefully disables support for Detail Armor Bar mod. Requires the game to be restarted.",
+
+  "config.advancednetherite.screen.description.top": "Install %s mod to edit the config added by %s from within the game.",
+  "config.advancednetherite.screen.description.bottom": "View the wiki page for instructions.",
+  "config.advancednetherite.screen.button.install_configured": "Install %s",
+  "config.advancednetherite.screen.button.instructions": "Instructions"
+}

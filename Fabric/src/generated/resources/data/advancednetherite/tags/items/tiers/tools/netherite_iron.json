@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "advancednetherite:netherite_iron_axe",
+    "advancednetherite:netherite_iron_hoe",
+    "advancednetherite:netherite_iron_pickaxe",
+    "advancednetherite:netherite_iron_shovel",
+    "advancednetherite:netherite_iron_sword"
+  ]
+}
