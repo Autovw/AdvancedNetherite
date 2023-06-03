@@ -6,6 +6,7 @@ import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModArmorTiers;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -133,9 +134,20 @@ public class AdvancedArmorItem extends ArmorItem
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
-            if (pacifiesEndermen()) tooltip.add(ModTooltips.ENDERMAN_PASSIVE_TOOLTIP);
-            if (pacifiesPiglins()) tooltip.add(ModTooltips.PIGLIN_PASSIVE_TOOLTIP);
-            if (pacifiesPhantoms()) tooltip.add(ModTooltips.PHANTOM_PASSIVE_TOOLTIP);
+            if (Screen.hasShiftDown())
+            {
+                if (pacifiesEndermen())
+                    tooltip.add(ModTooltips.ENDERMAN_PASSIVE_TOOLTIP);
+                if (pacifiesPiglins())
+                    tooltip.add(ModTooltips.PIGLIN_PASSIVE_TOOLTIP);
+                if (pacifiesPhantoms())
+                    tooltip.add(ModTooltips.PHANTOM_PASSIVE_TOOLTIP);
+            }
+            else
+            {
+                if (pacifiesEndermen() || pacifiesPiglins() || pacifiesPhantoms())
+                    tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
+            }
 
             // Adds all the tooltips from add-ons
             addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
