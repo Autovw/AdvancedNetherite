@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.api;
 
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.chat.Component;
@@ -73,11 +74,10 @@ public class TooltipBuilder
         else
         {
             LOGGER.error("Cannot build tooltip ending with a dot (" + content + ")");
-            /*
-            if (!FMLEnvironment.production) {
+            if (!AdvancedNetherite.getPlatformHelper().isProduction())
+            {
                 throw new IllegalStateException("Tried to build tooltip with incomplete name!");
             }
-             */
             return Component.empty();
         }
     }
