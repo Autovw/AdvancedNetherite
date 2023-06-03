@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "tag": "advancednetherite:upgrade_to_netherite_gold"
+  },
+  "base": {
+    "tag": "advancednetherite:boots/upgrade_to_netherite_gold"
+  },
+  "result": {
+    "item": "advancednetherite:netherite_gold_boots"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "tag": "advancednetherite:upgrade_to_netherite_diamond"
+  },
+  "base": {
+    "tag": "advancednetherite:shovels/upgrade_to_netherite_diamond"
+  },
+  "result": {
+    "item": "advancednetherite:netherite_diamond_shovel"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "tag": "advancednetherite:upgrade_to_netherite_emerald"
+  },
+  "base": {
+    "tag": "advancednetherite:pickaxes/upgrade_to_netherite_emerald"
+  },
+  "result": {
+    "item": "advancednetherite:netherite_emerald_pickaxe"
+  }
+}
