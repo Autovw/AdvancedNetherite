@@ -8,6 +8,9 @@
   "authors": [
     "Autovw"
   ],
+  "contributors": [
+    "LizterZapZap for new textures!"
+  ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/advanced-netherite-fabric",
     "issues": "https://github.com/Autovw/AdvancedNetherite/issues",
@@ -43,6 +46,9 @@
     "detailab": "=>2.6.3"
   },
   "custom": {
+    "catalogue": {
+      "banner": "advancednetherite_banner.png"
+    },
     "modmenu": {
       "links": {
         "modmenu.discord": "https://discord.gg/KP3BBatuw5",
