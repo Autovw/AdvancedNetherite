@@ -1,0 +1,40 @@
+{
+  "parent": "advancednetherite:nether/obtain_netherite_iron_ingot",
+  "criteria": {
+    "netherite_diamond_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advancednetherite:netherite_diamond_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "advancednetherite:netherite_diamond_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title"
+    }
+  },
+  "requirements": [
+    [
+      "netherite_diamond_block"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

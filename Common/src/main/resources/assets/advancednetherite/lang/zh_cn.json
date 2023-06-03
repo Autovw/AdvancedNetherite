@@ -87,6 +87,8 @@
   "advancements.advancednetherite.nether.netherite_diamond_armor.description": "获得全套钻石·下界合金盔甲",
   "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "全新升级！",
   "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "获得一个铁·下界合金锭",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title": "A very expensive block",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description": "Obtain a Netherite-Diamond Block",
 
   "config.advancednetherite.client.show_tooltips": "设置为ture时，客户端方可显示由高级下界合金添加的加成工具条。",
   "config.advancednetherite.client.matching_durability_bars": "设置为ture时，当物品有损伤时，在物品下方显示符合目前耐久度的耐久条。",

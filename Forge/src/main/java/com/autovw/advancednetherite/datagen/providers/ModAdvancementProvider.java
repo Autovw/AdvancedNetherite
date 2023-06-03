@@ -67,12 +67,19 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider
                     .addCriterion("netherite_diamond_armor", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_DIAMOND_HELMET, ModItems.NETHERITE_DIAMOND_CHESTPLATE, ModItems.NETHERITE_DIAMOND_LEGGINGS, ModItems.NETHERITE_DIAMOND_BOOTS))
                     .save(consumer, new ResourceLocation(AdvancedNetherite.MOD_ID, "nether/netherite_diamond_armor"), fileHelper);
 
-            Advancement.Builder.advancement()
+            Advancement netheriteIronIngot = Advancement.Builder.advancement()
                     .parent(new ResourceLocation("nether/obtain_ancient_debris"))
                     .display(ModItems.NETHERITE_IRON_INGOT, Component.translatable("advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title"), Component.translatable("advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description"), null, FrameType.TASK, true, true, false)
                     .rewards(AdvancementRewards.Builder.experience(20))
                     .addCriterion("netherite_iron_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_IRON_INGOT))
                     .save(consumer, new ResourceLocation(AdvancedNetherite.MOD_ID, "nether/obtain_netherite_iron_ingot"), fileHelper);
+
+            Advancement.Builder.advancement()
+                    .parent(netheriteIronIngot)
+                    .display(ModItems.NETHERITE_DIAMOND_BLOCK, Component.translatable("advancements.advancednetherite.nether.obtain_netherite_diamond_block.title"), Component.translatable("advancements.advancednetherite.nether.obtain_netherite_diamond_block.description"), null, FrameType.TASK, true, true, false)
+                    .rewards(AdvancementRewards.Builder.experience(20))
+                    .addCriterion("netherite_diamond_block", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_DIAMOND_BLOCK))
+                    .save(consumer, new ResourceLocation(AdvancedNetherite.MOD_ID, "nether/obtain_netherite_diamond_block"), fileHelper);
         }
     }
 }

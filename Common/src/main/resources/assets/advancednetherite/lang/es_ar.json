@@ -87,6 +87,8 @@
   "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Consigue una armadura completa de Diamante y Netherita",
   "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "Mejoras!",
   "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "Obtén un lingote de Hierro y Netherita",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title": "A very expensive block",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description": "Obtain a Netherite-Diamond Block",
 
   "config.advancednetherite.client.show_tooltips": "Si es verdadero, muestra información sobre herramientas, agregada por Advanced Netherite, con ventajas del lado del cliente.",
   "config.advancednetherite.client.matching_durability_bars": "Si es verdadero, muestra una barra de durabilidad a juego (color) debajo del artículo cuando está dañado.",

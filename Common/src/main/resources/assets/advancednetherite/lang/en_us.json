@@ -87,6 +87,8 @@
   "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Get a full suit of Netherite-Diamond armor",
   "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "Upgrades!",
   "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "Obtain a Netherite-Iron Ingot",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title": "A very expensive block",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description": "Obtain a Netherite-Diamond Block",
 
   "config.advancednetherite.client.show_tooltips": "If true, displays tooltips, added by Advanced Netherite, with perks client-side.",
   "config.advancednetherite.client.matching_durability_bars": "If true, displays a (color) matching durability bar underneath the item when damaged.",
