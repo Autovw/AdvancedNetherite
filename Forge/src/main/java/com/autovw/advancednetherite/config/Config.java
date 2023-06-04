@@ -165,7 +165,7 @@ public class Config
                 // Netherite-Diamond Armor
                 builder.comment("Configure properties related to Netherite-Diamond armor here").push("netherite_diamond_armor");
                 {
-                    diamondPhantomPassiveArmor = builder.comment("If true, Phantoms behave neutral towards players wearing Netherite-Diamond armor. False by default.").define("diamondPhantomPassiveArmor", false);
+                    diamondPhantomPassiveArmor = builder.comment("If true, Phantoms behave neutral towards players wearing Netherite-Diamond armor. True by default.").define("diamondPhantomPassiveArmor", true);
                     diamondPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Diamond armor. True by default.").define("diamondPiglinPassiveArmor", true);
                     diamondEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Diamond armor. True by default.").define("diamondEndermanPassiveArmor", true);
                 }

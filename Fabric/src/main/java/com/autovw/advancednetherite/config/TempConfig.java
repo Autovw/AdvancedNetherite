@@ -120,7 +120,7 @@ public class TempConfig
             @Override
             public boolean isDiamondPhantomPassiveArmor()
             {
-                return false;
+                return true;
             }
 
             @Override
