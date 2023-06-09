@@ -11,8 +11,6 @@ assignees: ''
 **Describe the crash / error**
 A clear and concise description of what the crash / error is.
 
-NOTE: **This is the issue tracker for the Forge version of Advanced Netherite, use [this](https://github.com/Autovw/AdvancedNetheriteFabric/issues) one if you are using Fabric!!!**
-
 **To Reproduce**
 Steps to reproduce the behavior:
 1. Go to '...'
@@ -31,9 +29,9 @@ Please provide a crash log (debug.log or latest.log)! Crashlogs can be found ins
 
 **Technical Information (please complete the following information):**
  ! Do not say 'latest', provide the actual version.
- - Minecraft-version: [e.g. 1.18.2]
- - Forge-version: [e.g. 40.1.0]
- - Mod-version: [e.g. 1.11.0]
+- Minecraft-version: [e.g. 1.19.4]
+- ModLoader-version: [e.g. Forge 45.1.0 **or** Fabric loader 0.14.21 and Fabric API 0.83.0]
+- Mod-version: [e.g. 2.0.0]
 
 **Additional context**
 Add any other context about the problem here.
