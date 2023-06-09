@@ -15,23 +15,26 @@ import java.util.List;
  * A config screen class which is displayed when Configured mod is not present
  * @author Autovw
  */
-public class ConfigScreen extends Screen {
+public class ConfigScreen extends Screen
+{
     private final Component modTitle;
     private final Screen parent;
-    private final MutableComponent configured = Component.translatable("Configured").withStyle(ChatFormatting.YELLOW);
+    private final MutableComponent configured = Component.literal("Configured").withStyle(ChatFormatting.YELLOW);
 
     /**
      * @param title Title of the mod adding the screen
      * @param parent Parent screen
      */
-    public ConfigScreen(Component title, Screen parent) {
+    public ConfigScreen(Component title, Screen parent)
+    {
         super(Component.translatable("fml.menu.mods.config").append(" / ").append(title));
         this.modTitle = title;
         this.parent = parent;
     }
 
     @Override
-    protected void init() {
+    protected void init()
+    {
         // Configured button
         addRenderableWidget(Button.builder(Component.translatable("config.advancednetherite.screen.button.install_configured", this.configured), onPress -> {
             this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.curseforge.com/minecraft/mc-mods/configured")));
@@ -39,7 +42,8 @@ public class ConfigScreen extends Screen {
 
         // Instructions button
         Button instructionsButton = Button.builder(Component.translatable("config.advancednetherite.screen.button.instructions"), onPress -> {
-            if (getInstructionsUrl() != null) {
+            if (getInstructionsUrl() != null)
+            {
                 this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, getInstructionsUrl())));
             }
         }).pos(width / 2 + 5, height / 2 + 12).size(150, 20).build();
@@ -56,7 +60,8 @@ public class ConfigScreen extends Screen {
     }
 
     @Override
-    public void render(PoseStack stack, int mouseX, int mouseY, float ticks) {
+    public void render(PoseStack stack, int mouseX, int mouseY, float ticks)
+    {
         this.renderBackground(stack);
         drawCenteredString(stack, this.font, this.title, this.width / 2, 7, 0xFFFFFF);
         drawCenteredSplitString(stack, this.font, this.font.split(getDescriptionTop(), this.width), this.width / 2, 55, 0xFFFFFF);
@@ -73,8 +78,10 @@ public class ConfigScreen extends Screen {
      * @param y Y-axis the text will appear on
      * @param color Color of the text
      */
-    public static void drawCenteredSplitString(PoseStack poseStack, Font font, List<FormattedCharSequence> charSequenceList, int x, int y, int color) {
-        for (FormattedCharSequence sequence : charSequenceList) {
+    public static void drawCenteredSplitString(PoseStack poseStack, Font font, List<FormattedCharSequence> charSequenceList, int x, int y, int color)
+    {
+        for (FormattedCharSequence sequence : charSequenceList)
+        {
             drawCenteredString(poseStack, font, sequence, x, y, color);
             y += font.lineHeight;
         }
@@ -84,7 +91,8 @@ public class ConfigScreen extends Screen {
      * The top description component. {@link Override} to change.
      * @return Top description component
      */
-    public Component getDescriptionTop() {
+    public Component getDescriptionTop()
+    {
         return Component.translatable("config.advancednetherite.screen.description.top", this.configured, this.modTitle);
     }
 
@@ -92,7 +100,8 @@ public class ConfigScreen extends Screen {
      * The bottom description component. {@link Override} to change.
      * @return Bottom description component
      */
-    public Component getDescriptionBottom() {
+    public Component getDescriptionBottom()
+    {
         return Component.translatable("config.advancednetherite.screen.description.bottom");
     }
 
@@ -101,7 +110,8 @@ public class ConfigScreen extends Screen {
      * @return Instructions url
      */
     @Nullable
-    public String getInstructionsUrl() {
+    public String getInstructionsUrl()
+    {
         return "https://github.com/Autovw/AdvancedNetherite/wiki/Configuration";
     }
 }
