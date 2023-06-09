@@ -15,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
  */
 @Internal
 @Mod.EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class AdvancedNetheriteTab
+public final class AdvancedNetheriteTab
 {
     private AdvancedNetheriteTab()
     {
