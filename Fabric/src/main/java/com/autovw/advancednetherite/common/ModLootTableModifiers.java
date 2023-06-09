@@ -3,8 +3,7 @@ package com.autovw.advancednetherite.common;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.ModItems;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
-import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.advancements.critereon.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -14,13 +13,19 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Autovw
@@ -147,10 +152,13 @@ public final class ModLootTableModifiers
             .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());
     }
 
-    private static LootPool.Builder mobDropPool(float dropChance, Item dropItem, int minDrop, int maxDrop, ItemLike... tools)
+    private static LootPool.Builder mobDropPool(float dropChance, Item dropItem, int minDrop, int maxDrop, Item... tools)
     {
+        Set<Item> toolSet = new HashSet<>(Arrays.asList(tools));
+        ItemPredicate mainHandItemPredicate = new ItemPredicate(null, toolSet, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, EnchantmentPredicate.NONE, EnchantmentPredicate.NONE, null, NbtPredicate.ANY);
+        EntityEquipmentPredicate equipmentPredicate = new EntityEquipmentPredicate(ItemPredicate.ANY, ItemPredicate.ANY, ItemPredicate.ANY, ItemPredicate.ANY, mainHandItemPredicate, ItemPredicate.ANY);
         return LootPool.lootPool()
-                .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(tools)))
+                .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER, EntityPredicate.Builder.entity().equipment(equipmentPredicate)))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))
                 .add(LootItem.lootTableItem(dropItem))
                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());
