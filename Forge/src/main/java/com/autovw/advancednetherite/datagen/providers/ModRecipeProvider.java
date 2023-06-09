@@ -113,15 +113,9 @@ public class ModRecipeProvider extends RecipeProvider
     {
         ResourceLocation resultId = AdvancedNetherite.getRegistryHelper().getItemById(result);
 
-        LegacyUpgradeRecipeBuilder.smithing(Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
-                .unlocks("has_ingredients", has(upgradeIngredient))
-                .save(consumer, new ResourceLocation(resultId.getNamespace(), resultId.getPath() + "_smithing"));
-
-        /*
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
                 .unlocks("has_ingredients", has(upgradeIngredient))
                 .save(consumer, new ResourceLocation(resultId.getNamespace(), resultId.getPath() + "_smithing"));
-         */
     }
 
     /**

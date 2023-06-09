@@ -48,6 +48,7 @@ public class AdvancedNetheriteForge
         ModBlockRegistry.BLOCKS.register(bus);
         ModItemRegistry.ITEMS.register(bus);
         ModLootModifiers.LOOT_MODIFIERS.register(bus);
+        AdvancedNetheriteTab.TABS.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

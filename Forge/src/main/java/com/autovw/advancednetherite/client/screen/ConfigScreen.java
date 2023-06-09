@@ -1,8 +1,8 @@
 package com.autovw.advancednetherite.client.screen;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.*;
@@ -60,29 +60,29 @@ public class ConfigScreen extends Screen
     }
 
     @Override
-    public void render(PoseStack stack, int mouseX, int mouseY, float ticks)
+    public void render(GuiGraphics graphics, int mouseX, int mouseY, float ticks)
     {
-        this.renderBackground(stack);
-        drawCenteredString(stack, this.font, this.title, this.width / 2, 7, 0xFFFFFF);
-        drawCenteredSplitString(stack, this.font, this.font.split(getDescriptionTop(), this.width), this.width / 2, 55, 0xFFFFFF);
-        drawCenteredSplitString(stack, this.font, this.font.split(getDescriptionBottom(), this.width), this.width / 2, 90, 0xFFFFFF);
-        super.render(stack, mouseX, mouseY, ticks);
+        this.renderBackground(graphics);
+        graphics.drawCenteredString(this.font, this.title, this.width / 2, 7, 0xFFFFFF);
+        drawCenteredSplitString(graphics, this.font, this.font.split(getDescriptionTop(), this.width), this.width / 2, 55, 0xFFFFFF);
+        drawCenteredSplitString(graphics, this.font, this.font.split(getDescriptionBottom(), this.width), this.width / 2, 90, 0xFFFFFF);
+        super.render(graphics, mouseX, mouseY, ticks);
     }
 
     /**
      * Allows for drawing text using {@link Font#split(FormattedText, int)} as an alternative to <code>drawCenteredString</code> without having to worry about text not appearing on screen.
-     * @param poseStack Pose stack
+     * @param graphics Graphics utility
      * @param font Font used
      * @param charSequenceList The list provided by {@link Font#split(FormattedText, int)}
      * @param x X-axis the text will appear on
      * @param y Y-axis the text will appear on
      * @param color Color of the text
      */
-    public static void drawCenteredSplitString(PoseStack poseStack, Font font, List<FormattedCharSequence> charSequenceList, int x, int y, int color)
+    public static void drawCenteredSplitString(GuiGraphics graphics, Font font, List<FormattedCharSequence> charSequenceList, int x, int y, int color)
     {
         for (FormattedCharSequence sequence : charSequenceList)
         {
-            drawCenteredString(poseStack, font, sequence, x, y, color);
+            graphics.drawCenteredString(font, sequence, x, y, color);
             y += font.lineHeight;
         }
     }

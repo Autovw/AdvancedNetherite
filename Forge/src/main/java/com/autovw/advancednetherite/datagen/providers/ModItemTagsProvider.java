@@ -269,27 +269,27 @@ public class ModItemTagsProvider extends ItemTagsProvider
                 .add(ModItems.NETHERITE_GOLD_BOOTS)
                 .add(ModItems.NETHERITE_IRON_BOOTS);
 
-        tag(Tags.Items.TOOLS_AXES)
+        tag(ItemTags.AXES)
                 .add(ModItems.NETHERITE_DIAMOND_AXE)
                 .add(ModItems.NETHERITE_EMERALD_AXE)
                 .add(ModItems.NETHERITE_GOLD_AXE)
                 .add(ModItems.NETHERITE_IRON_AXE);
-        tag(Tags.Items.TOOLS_HOES)
+        tag(ItemTags.HOES)
                 .add(ModItems.NETHERITE_DIAMOND_HOE)
                 .add(ModItems.NETHERITE_EMERALD_HOE)
                 .add(ModItems.NETHERITE_GOLD_HOE)
                 .add(ModItems.NETHERITE_IRON_HOE);
-        tag(Tags.Items.TOOLS_PICKAXES)
+        tag(ItemTags.PICKAXES)
                 .add(ModItems.NETHERITE_DIAMOND_PICKAXE)
                 .add(ModItems.NETHERITE_EMERALD_PICKAXE)
                 .add(ModItems.NETHERITE_GOLD_PICKAXE)
                 .add(ModItems.NETHERITE_IRON_PICKAXE);
-        tag(Tags.Items.TOOLS_SHOVELS)
+        tag(ItemTags.SHOVELS)
                 .add(ModItems.NETHERITE_DIAMOND_SHOVEL)
                 .add(ModItems.NETHERITE_EMERALD_SHOVEL)
                 .add(ModItems.NETHERITE_GOLD_SHOVEL)
                 .add(ModItems.NETHERITE_IRON_SHOVEL);
-        tag(Tags.Items.TOOLS_SWORDS)
+        tag(ItemTags.SWORDS)
                 .add(ModItems.NETHERITE_DIAMOND_SWORD)
                 .add(ModItems.NETHERITE_EMERALD_SWORD)
                 .add(ModItems.NETHERITE_GOLD_SWORD)

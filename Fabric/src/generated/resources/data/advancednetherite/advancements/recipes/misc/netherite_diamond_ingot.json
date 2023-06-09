@@ -30,5 +30,6 @@
     "recipes": [
       "advancednetherite:netherite_diamond_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

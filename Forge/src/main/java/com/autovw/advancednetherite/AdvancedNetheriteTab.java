@@ -3,11 +3,13 @@ package com.autovw.advancednetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.registry.ModItemRegistry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 /**
@@ -21,20 +23,18 @@ public final class AdvancedNetheriteTab
     {
     }
 
-    private static final String TAB_KEY = AdvancedNetherite.MOD_ID + ".tab";
-    private static final ResourceLocation TAB_ID = new ResourceLocation(TAB_KEY);
+    static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AdvancedNetherite.MOD_ID);
+    static final RegistryObject<CreativeModeTab> TAB = TABS.register("tab", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup." + AdvancedNetherite.MOD_ID + ".tab"))
+            .icon(ModItems.NETHERITE_GOLD_HELMET::getDefaultInstance)
+            .build());
 
     @SubscribeEvent
-    public static void onRegisterCreativeModeTabEvent(final CreativeModeTabEvent.Register event)
+    public static void onRegisterCreativeModeTabEvent(final BuildCreativeModeTabContentsEvent event)
     {
-        event.registerCreativeModeTab(TAB_ID, (builder) ->
-        {
-            builder.title(Component.translatable("itemGroup." + TAB_KEY))
-                    .icon(ModItems.NETHERITE_GOLD_INGOT::getDefaultInstance)
-                    .displayItems((displayParameters, entries) ->
-                    {
-                        ModItemRegistry.ITEMS.getEntries().stream().map(RegistryObject::get).forEach(entries::accept);
-                    });
-        });
+        if (event.getTab() != AdvancedNetheriteTab.TAB.get())
+            return;
+
+        ModItemRegistry.ITEMS.getEntries().stream().map(RegistryObject::get).forEach(event::accept);
     }
 }

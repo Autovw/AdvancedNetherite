@@ -3,9 +3,11 @@ package com.autovw.advancednetherite.client;
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.core.ModItems;
+/*
 import com.redlimerl.detailab.api.DetailArmorBarAPI;
 import com.redlimerl.detailab.api.render.ArmorBarRenderManager;
 import com.redlimerl.detailab.api.render.TextureOffset;
+ */
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
@@ -21,6 +23,7 @@ public class DetailArmorBarSupport
     @Internal
     public static void register()
     {
+        /*
         TextureOffset full = new TextureOffset(9, 0);
         TextureOffset half = new TextureOffset(0, 0);
 
@@ -44,5 +47,6 @@ public class DetailArmorBarSupport
         DetailArmorBarAPI.customArmorBarBuilder().armor(netheriteDiamondSet)
                 .render((ItemStack stack) -> new ArmorBarRenderManager(ARMOR_BAR_TEXTURE, 72, 9, new TextureOffset(63, 9), new TextureOffset(54, 9), full, half))
                 .register();
+         */
     }
 }

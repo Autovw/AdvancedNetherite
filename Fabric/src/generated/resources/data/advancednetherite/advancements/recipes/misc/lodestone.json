@@ -41,5 +41,6 @@
     "recipes": [
       "advancednetherite:lodestone"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
