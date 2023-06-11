@@ -1,6 +1,6 @@
 package com.autovw.advancednetherite.common.loot;
 
-import com.autovw.advancednetherite.config.Config;
+import com.autovw.advancednetherite.config.ConfigHelper;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -24,40 +24,48 @@ import org.jetbrains.annotations.NotNull;
  * @apiNote This loot modifier can be disabled by {@link com.autovw.advancednetherite.config.Config.AdditionalDropsConfig#enableAdditionalCropDrops}
  * @author Autovw
  */
-public class CropDropsLootModifier extends LootModifier {
-    public static final Codec<CropDropsLootModifier> CODEC = RecordCodecBuilder.create(instance -> codecStart(instance)
-            .apply(instance, CropDropsLootModifier::new));
+public class CropDropsLootModifier extends LootModifier
+{
+    public static final Codec<CropDropsLootModifier> CODEC = RecordCodecBuilder.create(instance -> codecStart(instance).apply(instance, CropDropsLootModifier::new));
 
     /**
      * Constructs a LootModifier.
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
      */
-    public CropDropsLootModifier(LootItemCondition[] conditionsIn) {
+    public CropDropsLootModifier(LootItemCondition[] conditionsIn)
+    {
         super(conditionsIn);
     }
 
     @NotNull
     @Override
-    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
+    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
+    {
         ItemStack tool = context.getParamOrNull(LootContextParams.TOOL);
         BlockState blockState = context.getParamOrNull(LootContextParams.BLOCK_STATE);
 
-        if (tool != null && blockState != null && Config.AdditionalDropsConfig.enableAdditionalCropDrops.get()) {
+        if (tool != null && blockState != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops())
+        {
             Block block = blockState.getBlock();
-            if (block instanceof CropBlock cropBlock && cropBlock.isMaxAge(blockState)) {
+            if (block instanceof CropBlock cropBlock && cropBlock.isMaxAge(blockState))
+            {
                 RandomSource random = context.getRandom();
 
-                if (cropBlock == Blocks.WHEAT && random.nextFloat() <= Config.AdditionalDropProperties.additionalWheatDropChance.get()) {
+                if (cropBlock == Blocks.WHEAT && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalWheatDropChance())
+                {
                     generatedLoot.add(new ItemStack(Items.WHEAT, random.nextIntBetweenInclusive(0, 2)));
                 }
-                if (cropBlock == Blocks.CARROTS && random.nextFloat() <= Config.AdditionalDropProperties.additionalCarrotsDropChance.get()) {
+                if (cropBlock == Blocks.CARROTS && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalCarrotsDropChance())
+                {
                     generatedLoot.add(new ItemStack(Items.CARROT, random.nextIntBetweenInclusive(0, 2)));
                 }
-                if (cropBlock == Blocks.POTATOES && random.nextFloat() <= Config.AdditionalDropProperties.additionalPotatoesDropChance.get()) {
+                if (cropBlock == Blocks.POTATOES && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPotatoesDropChance())
+                {
                     generatedLoot.add(new ItemStack(Items.POTATO, random.nextIntBetweenInclusive(0, 1)));
                 }
-                if (cropBlock == Blocks.BEETROOTS && random.nextFloat() <= Config.AdditionalDropProperties.additionalBeetrootsDropChance.get()) {
+                if (cropBlock == Blocks.BEETROOTS && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalBeetrootsDropChance())
+                {
                     generatedLoot.add(new ItemStack(Items.BEETROOT, random.nextIntBetweenInclusive(1, 2)));
                 }
             }
@@ -66,7 +74,8 @@ public class CropDropsLootModifier extends LootModifier {
     }
 
     @Override
-    public Codec<CropDropsLootModifier> codec() {
+    public Codec<CropDropsLootModifier> codec()
+    {
         return CODEC;
     }
 }
