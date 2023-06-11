@@ -23,7 +23,7 @@ public class PiglinAiMixin
         for (ItemStack stack : entity.getArmorSlots())
         {
             Item item = stack.getItem();
-            if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPiglins()) || ((IAdvancedHooks) item).pacifyPiglins(stack))
+            if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPiglins()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPiglins(stack)))
             {
                 cir.setReturnValue(true);
             }
