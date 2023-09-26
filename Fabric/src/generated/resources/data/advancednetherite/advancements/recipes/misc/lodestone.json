@@ -32,9 +32,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_chiseled_stone_bricks",
-      "has_netherite_ingots",
-      "has_the_recipe"
+      "has_netherite_ingots"
     ]
   ],
   "rewards": {

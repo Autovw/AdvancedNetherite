@@ -69,7 +69,7 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     compileOnly project(path: ':Common')
 
-    runtimeOnly fg.deobf("curse.maven:catalogue-459701:${catalogue_forge_version}")
+    //runtimeOnly fg.deobf("curse.maven:catalogue-459701:${catalogue_forge_version}")
     //runtimeOnly fg.deobf("curse.maven:configured-457570:${configured_forge_version}")
     runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_forge_version}")
     //implementation fg.deobf("curse.maven:detailarmorbar-520755:${detailab_forge_version}")

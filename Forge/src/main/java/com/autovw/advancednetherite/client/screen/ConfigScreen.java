@@ -62,7 +62,7 @@ public class ConfigScreen extends Screen
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float ticks)
     {
-        this.renderBackground(graphics);
+        this.renderBackground(graphics, mouseX, mouseY, ticks);
         graphics.drawCenteredString(this.font, this.title, this.width / 2, 7, 0xFFFFFF);
         drawCenteredSplitString(graphics, this.font, this.font.split(getDescriptionTop(), this.width), this.width / 2, 55, 0xFFFFFF);
         drawCenteredSplitString(graphics, this.font, this.font.split(getDescriptionBottom(), this.width), this.width / 2, 90, 0xFFFFFF);

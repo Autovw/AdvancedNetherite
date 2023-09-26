@@ -15,8 +15,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 
-import java.util.function.Consumer;
-
 /**
  * @author Autovw
  */
@@ -28,95 +26,95 @@ public class ModRecipeProvider extends FabricRecipeProvider
     }
 
     @Override
-    public void buildRecipes(Consumer<FinishedRecipe> consumer)
+    public void buildRecipes(RecipeOutput output)
     {
         /* Blocks */
-        baseBlockRecipe(consumer, ModItems.NETHERITE_IRON_INGOT, ModBlocks.NETHERITE_IRON_BLOCK);
-        baseBlockRecipe(consumer, ModItems.NETHERITE_GOLD_INGOT, ModBlocks.NETHERITE_GOLD_BLOCK);
-        baseBlockRecipe(consumer, ModItems.NETHERITE_EMERALD_INGOT, ModBlocks.NETHERITE_EMERALD_BLOCK);
-        baseBlockRecipe(consumer, ModItems.NETHERITE_DIAMOND_INGOT, ModBlocks.NETHERITE_DIAMOND_BLOCK);
+        baseBlockRecipe(output, ModItems.NETHERITE_IRON_INGOT, ModBlocks.NETHERITE_IRON_BLOCK);
+        baseBlockRecipe(output, ModItems.NETHERITE_GOLD_INGOT, ModBlocks.NETHERITE_GOLD_BLOCK);
+        baseBlockRecipe(output, ModItems.NETHERITE_EMERALD_INGOT, ModBlocks.NETHERITE_EMERALD_BLOCK);
+        baseBlockRecipe(output, ModItems.NETHERITE_DIAMOND_INGOT, ModBlocks.NETHERITE_DIAMOND_BLOCK);
 
         /* Ingots */
-        baseIngotRecipe(consumer, ModTags.INGOTS_UPGRADE_TO_NETHERITE_IRON, Items.IRON_INGOT, ModItems.NETHERITE_IRON_INGOT);
-        baseIngotRecipe(consumer, ModTags.INGOTS_UPGRADE_TO_NETHERITE_GOLD, Items.GOLD_INGOT, ModItems.NETHERITE_GOLD_INGOT);
-        baseIngotRecipe(consumer, ModTags.INGOTS_UPGRADE_TO_NETHERITE_EMERALD, Items.EMERALD, ModItems.NETHERITE_EMERALD_INGOT);
-        baseIngotRecipe(consumer, ModTags.INGOTS_UPGRADE_TO_NETHERITE_DIAMOND, Items.DIAMOND, ModItems.NETHERITE_DIAMOND_INGOT);
+        baseIngotRecipe(output, ModTags.INGOTS_UPGRADE_TO_NETHERITE_IRON, Items.IRON_INGOT, ModItems.NETHERITE_IRON_INGOT);
+        baseIngotRecipe(output, ModTags.INGOTS_UPGRADE_TO_NETHERITE_GOLD, Items.GOLD_INGOT, ModItems.NETHERITE_GOLD_INGOT);
+        baseIngotRecipe(output, ModTags.INGOTS_UPGRADE_TO_NETHERITE_EMERALD, Items.EMERALD, ModItems.NETHERITE_EMERALD_INGOT);
+        baseIngotRecipe(output, ModTags.INGOTS_UPGRADE_TO_NETHERITE_DIAMOND, Items.DIAMOND, ModItems.NETHERITE_DIAMOND_INGOT);
 
         /* Axes */
-        baseSmithingRecipe(consumer, ModTags.AXES_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_AXE);
-        baseSmithingRecipe(consumer, ModTags.AXES_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_AXE);
-        baseSmithingRecipe(consumer, ModTags.AXES_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_AXE);
-        baseSmithingRecipe(consumer, ModTags.AXES_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_AXE);
+        baseSmithingRecipe(output, ModTags.AXES_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_AXE);
+        baseSmithingRecipe(output, ModTags.AXES_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_AXE);
+        baseSmithingRecipe(output, ModTags.AXES_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_AXE);
+        baseSmithingRecipe(output, ModTags.AXES_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_AXE);
 
         /* Boots */
-        baseSmithingRecipe(consumer, ModTags.BOOTS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_BOOTS);
-        baseSmithingRecipe(consumer, ModTags.BOOTS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_BOOTS);
-        baseSmithingRecipe(consumer, ModTags.BOOTS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_BOOTS);
-        baseSmithingRecipe(consumer, ModTags.BOOTS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_BOOTS);
+        baseSmithingRecipe(output, ModTags.BOOTS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_BOOTS);
+        baseSmithingRecipe(output, ModTags.BOOTS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_BOOTS);
+        baseSmithingRecipe(output, ModTags.BOOTS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_BOOTS);
+        baseSmithingRecipe(output, ModTags.BOOTS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_BOOTS);
 
         /* Chestplates */
-        baseSmithingRecipe(consumer, ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_CHESTPLATE);
-        baseSmithingRecipe(consumer, ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_CHESTPLATE);
-        baseSmithingRecipe(consumer, ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_CHESTPLATE);
-        baseSmithingRecipe(consumer, ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_CHESTPLATE);
+        baseSmithingRecipe(output, ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_CHESTPLATE);
+        baseSmithingRecipe(output, ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_CHESTPLATE);
+        baseSmithingRecipe(output, ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_CHESTPLATE);
+        baseSmithingRecipe(output, ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_CHESTPLATE);
 
         /* Helmets */
-        baseSmithingRecipe(consumer, ModTags.HELMETS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_HELMET);
-        baseSmithingRecipe(consumer, ModTags.HELMETS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_HELMET);
-        baseSmithingRecipe(consumer, ModTags.HELMETS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_HELMET);
-        baseSmithingRecipe(consumer, ModTags.HELMETS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_HELMET);
+        baseSmithingRecipe(output, ModTags.HELMETS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_HELMET);
+        baseSmithingRecipe(output, ModTags.HELMETS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_HELMET);
+        baseSmithingRecipe(output, ModTags.HELMETS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_HELMET);
+        baseSmithingRecipe(output, ModTags.HELMETS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_HELMET);
 
         /* Hoes */
-        baseSmithingRecipe(consumer, ModTags.HOES_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_HOE);
-        baseSmithingRecipe(consumer, ModTags.HOES_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_HOE);
-        baseSmithingRecipe(consumer, ModTags.HOES_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_HOE);
-        baseSmithingRecipe(consumer, ModTags.HOES_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_HOE);
+        baseSmithingRecipe(output, ModTags.HOES_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_HOE);
+        baseSmithingRecipe(output, ModTags.HOES_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_HOE);
+        baseSmithingRecipe(output, ModTags.HOES_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_HOE);
+        baseSmithingRecipe(output, ModTags.HOES_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_HOE);
 
         /* Leggings */
-        baseSmithingRecipe(consumer, ModTags.LEGGINGS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_LEGGINGS);
-        baseSmithingRecipe(consumer, ModTags.LEGGINGS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_LEGGINGS);
-        baseSmithingRecipe(consumer, ModTags.LEGGINGS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_LEGGINGS);
-        baseSmithingRecipe(consumer, ModTags.LEGGINGS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_LEGGINGS);
+        baseSmithingRecipe(output, ModTags.LEGGINGS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_LEGGINGS);
+        baseSmithingRecipe(output, ModTags.LEGGINGS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_LEGGINGS);
+        baseSmithingRecipe(output, ModTags.LEGGINGS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_LEGGINGS);
+        baseSmithingRecipe(output, ModTags.LEGGINGS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_LEGGINGS);
 
         /* Pickaxes */
-        baseSmithingRecipe(consumer, ModTags.PICKAXES_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_PICKAXE);
-        baseSmithingRecipe(consumer, ModTags.PICKAXES_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_PICKAXE);
-        baseSmithingRecipe(consumer, ModTags.PICKAXES_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_PICKAXE);
-        baseSmithingRecipe(consumer, ModTags.PICKAXES_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_PICKAXE);
+        baseSmithingRecipe(output, ModTags.PICKAXES_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_PICKAXE);
+        baseSmithingRecipe(output, ModTags.PICKAXES_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_PICKAXE);
+        baseSmithingRecipe(output, ModTags.PICKAXES_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_PICKAXE);
+        baseSmithingRecipe(output, ModTags.PICKAXES_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_PICKAXE);
 
         /* Shovels */
-        baseSmithingRecipe(consumer, ModTags.SHOVELS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_SHOVEL);
-        baseSmithingRecipe(consumer, ModTags.SHOVELS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_SHOVEL);
-        baseSmithingRecipe(consumer, ModTags.SHOVELS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_SHOVEL);
-        baseSmithingRecipe(consumer, ModTags.SHOVELS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_SHOVEL);
+        baseSmithingRecipe(output, ModTags.SHOVELS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_SHOVEL);
+        baseSmithingRecipe(output, ModTags.SHOVELS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_SHOVEL);
+        baseSmithingRecipe(output, ModTags.SHOVELS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_SHOVEL);
+        baseSmithingRecipe(output, ModTags.SHOVELS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_SHOVEL);
 
         /* Swords */
-        baseSmithingRecipe(consumer, ModTags.SWORDS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_SWORD);
-        baseSmithingRecipe(consumer, ModTags.SWORDS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_SWORD);
-        baseSmithingRecipe(consumer, ModTags.SWORDS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_SWORD);
-        baseSmithingRecipe(consumer, ModTags.SWORDS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_SWORD);
+        baseSmithingRecipe(output, ModTags.SWORDS_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_SWORD);
+        baseSmithingRecipe(output, ModTags.SWORDS_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_SWORD);
+        baseSmithingRecipe(output, ModTags.SWORDS_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_SWORD);
+        baseSmithingRecipe(output, ModTags.SWORDS_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_SWORD);
 
         /* Misc */
-        lodestoneRecipe(consumer);
+        lodestoneRecipe(output);
     }
 
-    public void baseSmithingRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result)
+    public void baseSmithingRecipe(RecipeOutput output, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result)
     {
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
                 .unlocks("has_ingredients", has(upgradeIngredient))
-                .save(consumer, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getItemById(result).getNamespace(), result.toString() + "_smithing"));
+                .save(output, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getItemById(result).getNamespace(), result.toString() + "_smithing"));
     }
 
-    public void baseIngotRecipe(Consumer<FinishedRecipe> consumer, TagKey<Item> ingotIngredient, Item upgradeIngredient, Item result)
+    public void baseIngotRecipe(RecipeOutput output, TagKey<Item> ingotIngredient, Item upgradeIngredient, Item result)
     {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result)
                 .requires(ingotIngredient)
                 .requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient)
                 .unlockedBy("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
-                .save(consumer, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getItemById(result).getNamespace(), result.toString()));
+                .save(output, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getItemById(result).getNamespace(), result.toString()));
     }
 
-    public void baseBlockRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, Block result)
+    public void baseBlockRecipe(RecipeOutput output, ItemLike ingredient, Block result)
     {
         // Items to Block
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result)
@@ -125,16 +123,16 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .pattern("###")
                 .pattern("###")
                 .unlockedBy("has_" + ingredient.toString(), has(ingredient))
-                .save(consumer);
+                .save(output);
 
         // Block to Items
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingredient, 9)
                 .requires(result)
                 .unlockedBy("has_" + result.toString(), has(result))
-                .save(consumer, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getBlockById(result).getNamespace(), ingredient.toString() + "_from_block"));
+                .save(output, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getBlockById(result).getNamespace(), ingredient.toString() + "_from_block"));
     }
 
-    private void lodestoneRecipe(Consumer<FinishedRecipe> consumer)
+    private void lodestoneRecipe(RecipeOutput output)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.LODESTONE)
                 .define('S', Items.CHISELED_STONE_BRICKS)
@@ -144,6 +142,6 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .pattern("SSS")
                 .unlockedBy("has_chiseled_stone_bricks", has(Items.CHISELED_STONE_BRICKS))
                 .unlockedBy("has_netherite_ingots", has(ModTags.NETHERITE_INGOTS))
-                .save(consumer, new ResourceLocation(AdvancedNetherite.MOD_ID, Items.LODESTONE.toString()));
+                .save(output, new ResourceLocation(AdvancedNetherite.MOD_ID, Items.LODESTONE.toString()));
     }
 }

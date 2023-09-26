@@ -3,7 +3,10 @@ package com.autovw.advancednetherite.common;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.ModItems;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
-import net.minecraft.advancements.critereon.*;
+import net.minecraft.advancements.critereon.EntityEquipmentPredicate;
+import net.minecraft.advancements.critereon.EntityPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -23,9 +26,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCon
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Optional;
 
 /**
  * @author Autovw
@@ -154,9 +155,8 @@ public final class ModLootTableModifiers
 
     private static LootPool.Builder mobDropPool(float dropChance, Item dropItem, int minDrop, int maxDrop, Item... tools)
     {
-        Set<Item> toolSet = new HashSet<>(Arrays.asList(tools));
-        ItemPredicate mainHandItemPredicate = new ItemPredicate(null, toolSet, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, EnchantmentPredicate.NONE, EnchantmentPredicate.NONE, null, NbtPredicate.ANY);
-        EntityEquipmentPredicate equipmentPredicate = new EntityEquipmentPredicate(ItemPredicate.ANY, ItemPredicate.ANY, ItemPredicate.ANY, ItemPredicate.ANY, mainHandItemPredicate, ItemPredicate.ANY);
+        ItemPredicate mainHandItemPredicate = ItemPredicate.Builder.item().of(tools).build();
+        EntityEquipmentPredicate equipmentPredicate = new EntityEquipmentPredicate(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.of(mainHandItemPredicate), Optional.empty());
         return LootPool.lootPool()
                 .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER, EntityPredicate.Builder.entity().equipment(equipmentPredicate)))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))
