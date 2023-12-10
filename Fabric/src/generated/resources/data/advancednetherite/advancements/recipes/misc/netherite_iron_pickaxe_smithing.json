@@ -28,6 +28,5 @@
     "recipes": [
       "advancednetherite:netherite_iron_pickaxe_smithing"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

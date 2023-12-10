@@ -30,6 +30,5 @@
     "recipes": [
       "advancednetherite:netherite_emerald_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

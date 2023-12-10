@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
  */
 public final class ModBlocks
 {
-    public static final Block NETHERITE_IRON_BLOCK = new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK));
-    public static final Block NETHERITE_GOLD_BLOCK = new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK));
-    public static final Block NETHERITE_EMERALD_BLOCK = new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK));
-    public static final Block NETHERITE_DIAMOND_BLOCK = new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK));
+    public static final Block NETHERITE_IRON_BLOCK = new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK));
+    public static final Block NETHERITE_GOLD_BLOCK = new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK));
+    public static final Block NETHERITE_EMERALD_BLOCK = new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK));
+    public static final Block NETHERITE_DIAMOND_BLOCK = new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK));
 }
