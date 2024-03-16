@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:nether/obtain_ancient_debris",
+  "criteria": {
+    "netherite_iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advancednetherite:netherite_iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description"
+    },
+    "icon": {
+      "item": "advancednetherite:netherite_iron_ingot"
+    },
+    "title": {
+      "translate": "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title"
+    }
+  },
+  "requirements": [
+    [
+      "netherite_iron_ingot"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  },
+  "sends_telemetry_event": true
+}

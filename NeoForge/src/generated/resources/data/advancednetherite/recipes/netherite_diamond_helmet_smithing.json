@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "advancednetherite:upgrade_to_netherite_diamond"
+  },
+  "base": {
+    "tag": "advancednetherite:helmets/upgrade_to_netherite_diamond"
+  },
+  "result": {
+    "item": "advancednetherite:netherite_diamond_helmet"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "advancednetherite:upgrade_to_netherite_iron"
+  },
+  "base": {
+    "tag": "advancednetherite:axes/upgrade_to_netherite_iron"
+  },
+  "result": {
+    "item": "advancednetherite:netherite_iron_axe"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

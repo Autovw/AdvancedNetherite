@@ -1,0 +1,8 @@
+{
+  "type": "advancednetherite:mob_drops_loot_modifier",
+  "conditions": [
+    {
+      "condition": "minecraft:killed_by_player"
+    }
+  ]
+}
