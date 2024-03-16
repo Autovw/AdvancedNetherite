@@ -15,16 +15,12 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "advancednetherite:netherite_iron_ingot"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title"
     }

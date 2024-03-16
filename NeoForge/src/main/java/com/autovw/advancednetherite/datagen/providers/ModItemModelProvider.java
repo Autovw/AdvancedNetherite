@@ -94,7 +94,8 @@ public class ModItemModelProvider extends ItemModelProvider
     @Internal
     private void itemModel(Item item)
     {
-        itemModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + item.toString()));
+        ResourceLocation id = AdvancedNetherite.getRegistryHelper().getItemById(item);
+        itemModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + id.getPath()));
     }
 
     /**
@@ -111,6 +112,7 @@ public class ModItemModelProvider extends ItemModelProvider
     @Internal
     private void toolModel(Item item)
     {
-        toolModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + item.toString()));
+        ResourceLocation id = AdvancedNetherite.getRegistryHelper().getItemById(item);
+        toolModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + id.getPath()));
     }
 }

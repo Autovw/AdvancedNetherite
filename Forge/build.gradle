@@ -20,6 +20,7 @@ minecraft {
             ideaModule "${rootProject.name}.${project.name}.main"
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.disableRefMap', 'true'
             mods {
                 advancednetherite {
                     source sourceSets.main
@@ -33,6 +34,7 @@ minecraft {
             ideaModule "${rootProject.name}.${project.name}.main"
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.disableRefMap', 'true'
             mods {
                 advancednetherite {
                     source sourceSets.main
@@ -46,6 +48,7 @@ minecraft {
             ideaModule "${rootProject.name}.${project.name}.main"
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.disableRefMap', 'true'
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
             mods {
                 advancednetherite {
@@ -84,5 +87,11 @@ processResources {
 }
 
 jar.finalizedBy('reobfJar')
+
+sourceSets.each {
+    def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+    it.output.resourcesDir = dir
+    it.java.destinationDirectory = dir
+}
 
 

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_netherite_gold_ingot",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_netherite_gold_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
       "advancednetherite:netherite_gold_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

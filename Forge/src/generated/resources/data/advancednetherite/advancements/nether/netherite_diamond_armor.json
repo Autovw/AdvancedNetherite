@@ -30,17 +30,14 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancements.advancednetherite.nether.netherite_diamond_armor.description"
     },
     "frame": "challenge",
-    "hidden": false,
     "icon": {
       "item": "advancednetherite:netherite_diamond_chestplate",
       "nbt": "{Damage:0}"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.advancednetherite.nether.netherite_diamond_armor.title"
     }

@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_ingredients",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ingredients"
     ]
   ],
   "rewards": {
     "recipes": [
       "advancednetherite:netherite_diamond_leggings_smithing"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "advancednetherite:block/netherite_iron_block"
+  }
+}

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_netherite_diamond_ingot",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_netherite_diamond_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
       "advancednetherite:netherite_diamond_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

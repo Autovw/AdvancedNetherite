@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_TagKey[minecraft:item / forge:gems/emerald]",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_TagKey[minecraft:item / forge:gems/emerald]"
     ]
   ],
   "rewards": {
     "recipes": [
       "advancednetherite:netherite_emerald_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

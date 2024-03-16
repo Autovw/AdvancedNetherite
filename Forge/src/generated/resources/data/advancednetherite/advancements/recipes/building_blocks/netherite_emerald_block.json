@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_netherite_emerald_ingot",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_netherite_emerald_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
       "advancednetherite:netherite_emerald_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

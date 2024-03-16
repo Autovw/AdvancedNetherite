@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_ingredients",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ingredients"
     ]
   ],
   "rewards": {
     "recipes": [
       "advancednetherite:netherite_gold_axe_smithing"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

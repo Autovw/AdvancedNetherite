@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_netherite_iron_ingot",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_netherite_iron_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
       "advancednetherite:netherite_iron_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

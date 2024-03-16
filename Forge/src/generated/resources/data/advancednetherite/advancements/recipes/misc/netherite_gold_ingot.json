@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_TagKey[minecraft:item / forge:ingots/gold]",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_TagKey[minecraft:item / forge:ingots/gold]"
     ]
   ],
   "rewards": {
     "recipes": [
       "advancednetherite:netherite_gold_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -15,17 +15,14 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description"
     },
     "frame": "challenge",
-    "hidden": false,
     "icon": {
       "item": "advancednetherite:netherite_diamond_hoe",
       "nbt": "{Damage:0}"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title"
     }

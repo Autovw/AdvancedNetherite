@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_TagKey[minecraft:item / forge:ingots/iron]",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_TagKey[minecraft:item / forge:ingots/iron]"
     ]
   ],
   "rewards": {
     "recipes": [
       "advancednetherite:netherite_iron_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
