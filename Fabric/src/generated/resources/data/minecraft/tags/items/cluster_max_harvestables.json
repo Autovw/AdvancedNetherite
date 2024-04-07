@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "advancednetherite:netherite_iron_pickaxe",
+    "advancednetherite:netherite_gold_pickaxe",
+    "advancednetherite:netherite_emerald_pickaxe",
+    "advancednetherite:netherite_diamond_pickaxe"
+  ]
+}

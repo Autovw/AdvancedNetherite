@@ -250,6 +250,11 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_GOLD_PICKAXE)
                 .add(ModItems.NETHERITE_GOLD_SHOVEL)
                 .add(ModItems.NETHERITE_GOLD_SWORD);
+        getOrCreateTagBuilder(ItemTags.CLUSTER_MAX_HARVESTABLES)
+                .add(ModItems.NETHERITE_IRON_PICKAXE)
+                .add(ModItems.NETHERITE_GOLD_PICKAXE)
+                .add(ModItems.NETHERITE_EMERALD_PICKAXE)
+                .add(ModItems.NETHERITE_DIAMOND_PICKAXE);
 
 
         // Tooltip Rareness item tags
