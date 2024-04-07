@@ -9,6 +9,7 @@ import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
 import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ArmorItem;
 
 /**
  * @author Autovw
@@ -42,25 +43,25 @@ public class ModBlockStatesProvider extends FabricModelProvider
         generator.generateFlatItem(ModItems.NETHERITE_EMERALD_INGOT, ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(ModItems.NETHERITE_DIAMOND_INGOT, ModelTemplates.FLAT_ITEM);
 
-        generator.generateFlatItem(ModItems.NETHERITE_IRON_HELMET, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_IRON_CHESTPLATE, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_IRON_LEGGINGS, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_IRON_BOOTS, ModelTemplates.FLAT_ITEM);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_IRON_HELMET);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_IRON_CHESTPLATE);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_IRON_LEGGINGS);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_IRON_BOOTS);
 
-        generator.generateFlatItem(ModItems.NETHERITE_GOLD_HELMET, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_GOLD_CHESTPLATE, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_GOLD_LEGGINGS, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_GOLD_BOOTS, ModelTemplates.FLAT_ITEM);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_GOLD_HELMET);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_GOLD_CHESTPLATE);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_GOLD_LEGGINGS);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_GOLD_BOOTS);
 
-        generator.generateFlatItem(ModItems.NETHERITE_EMERALD_HELMET, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_EMERALD_CHESTPLATE, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_EMERALD_LEGGINGS, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_EMERALD_BOOTS, ModelTemplates.FLAT_ITEM);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_EMERALD_HELMET);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_EMERALD_CHESTPLATE);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_EMERALD_LEGGINGS);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_EMERALD_BOOTS);
 
-        generator.generateFlatItem(ModItems.NETHERITE_DIAMOND_HELMET, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_DIAMOND_CHESTPLATE, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_DIAMOND_LEGGINGS, ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(ModItems.NETHERITE_DIAMOND_BOOTS, ModelTemplates.FLAT_ITEM);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_DIAMOND_HELMET);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_DIAMOND_CHESTPLATE);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_DIAMOND_LEGGINGS);
+        generator.generateArmorTrims((ArmorItem) ModItems.NETHERITE_DIAMOND_BOOTS);
 
         generator.generateFlatItem(ModItems.NETHERITE_IRON_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(ModItems.NETHERITE_IRON_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
