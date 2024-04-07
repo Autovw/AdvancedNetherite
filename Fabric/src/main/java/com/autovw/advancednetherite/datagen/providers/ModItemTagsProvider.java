@@ -255,6 +255,23 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_GOLD_PICKAXE)
                 .add(ModItems.NETHERITE_EMERALD_PICKAXE)
                 .add(ModItems.NETHERITE_DIAMOND_PICKAXE);
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.NETHERITE_DIAMOND_HELMET)
+                .add(ModItems.NETHERITE_DIAMOND_CHESTPLATE)
+                .add(ModItems.NETHERITE_DIAMOND_LEGGINGS)
+                .add(ModItems.NETHERITE_DIAMOND_BOOTS)
+                .add(ModItems.NETHERITE_EMERALD_HELMET)
+                .add(ModItems.NETHERITE_EMERALD_CHESTPLATE)
+                .add(ModItems.NETHERITE_EMERALD_LEGGINGS)
+                .add(ModItems.NETHERITE_EMERALD_BOOTS)
+                .add(ModItems.NETHERITE_GOLD_HELMET)
+                .add(ModItems.NETHERITE_GOLD_CHESTPLATE)
+                .add(ModItems.NETHERITE_GOLD_LEGGINGS)
+                .add(ModItems.NETHERITE_GOLD_BOOTS)
+                .add(ModItems.NETHERITE_IRON_HELMET)
+                .add(ModItems.NETHERITE_IRON_CHESTPLATE)
+                .add(ModItems.NETHERITE_IRON_LEGGINGS)
+                .add(ModItems.NETHERITE_IRON_BOOTS);
 
 
         // Tooltip Rareness item tags
