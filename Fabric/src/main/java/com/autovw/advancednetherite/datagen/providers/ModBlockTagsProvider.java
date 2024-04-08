@@ -1,6 +1,7 @@
 package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.core.ModBlocks;
+import com.autovw.advancednetherite.core.util.FabricModTags;
 import com.autovw.advancednetherite.core.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -38,6 +39,11 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(BlockTags.GUARDED_BY_PIGLINS)
                 .add(ModBlocks.NETHERITE_GOLD_BLOCK);
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+                .addTag(ModTags.NETHERITE_BLOCKS);
+
+
+        // Common block tags
+        getOrCreateTagBuilder(FabricModTags.COMMON_NETHERITE_BLOCKS)
                 .addTag(ModTags.NETHERITE_BLOCKS);
     }
 }

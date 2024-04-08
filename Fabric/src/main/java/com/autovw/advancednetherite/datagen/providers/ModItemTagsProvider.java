@@ -274,6 +274,31 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_IRON_BOOTS);
 
 
+        // Common item tags
+        getOrCreateTagBuilder(FabricModTags.COMMON_HELMETS)
+                .add(ModItems.NETHERITE_IRON_HELMET)
+                .add(ModItems.NETHERITE_GOLD_HELMET)
+                .add(ModItems.NETHERITE_EMERALD_HELMET)
+                .add(ModItems.NETHERITE_DIAMOND_HELMET);
+        getOrCreateTagBuilder(FabricModTags.COMMON_CHESTPLATES)
+                .add(ModItems.NETHERITE_IRON_CHESTPLATE)
+                .add(ModItems.NETHERITE_GOLD_CHESTPLATE)
+                .add(ModItems.NETHERITE_EMERALD_CHESTPLATE)
+                .add(ModItems.NETHERITE_DIAMOND_CHESTPLATE);
+        getOrCreateTagBuilder(FabricModTags.COMMON_LEGGINGS)
+                .add(ModItems.NETHERITE_IRON_LEGGINGS)
+                .add(ModItems.NETHERITE_GOLD_LEGGINGS)
+                .add(ModItems.NETHERITE_EMERALD_LEGGINGS)
+                .add(ModItems.NETHERITE_DIAMOND_LEGGINGS);
+        getOrCreateTagBuilder(FabricModTags.COMMON_BOOTS)
+                .add(ModItems.NETHERITE_IRON_BOOTS)
+                .add(ModItems.NETHERITE_GOLD_BOOTS)
+                .add(ModItems.NETHERITE_EMERALD_BOOTS)
+                .add(ModItems.NETHERITE_DIAMOND_BOOTS);
+        getOrCreateTagBuilder(FabricModTags.COMMON_NETHERITE_INGOTS)
+                .addTag(ModTags.NETHERITE_INGOTS);
+
+
         // Tooltip Rareness item tags
         getOrCreateTagBuilder(FabricModTags.TOOLTIP_RARENESS_EPIC_ITEM)
                 .addTag(ModTags.NETHERITE_BLOCKITEMS)
