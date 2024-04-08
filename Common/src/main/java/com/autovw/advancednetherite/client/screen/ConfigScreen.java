@@ -8,7 +8,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.*;
 import net.minecraft.util.FormattedCharSequence;
 
-import javax.annotation.Nullable;
+//import javax.annotation.Nullable;
 import java.util.List;
 
 /**
@@ -109,7 +109,7 @@ public class ConfigScreen extends Screen
      * The URL behind the instructions button. Return null to disable this button.
      * @return Instructions url
      */
-    @Nullable
+    //@Nullable
     public String getInstructionsUrl()
     {
         return "https://github.com/Autovw/AdvancedNetherite/wiki/Configuration";
