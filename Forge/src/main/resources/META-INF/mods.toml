@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/Autovw/AdvancedNetherite/issues"
 
 [[mods]]
 modId="advancednetherite"
-version="2.0.3"
+version="2.1.0"
 displayName="Advanced Netherite"
 updateJSONURL="https://raw.githubusercontent.com/Autovw/ModUpdates/master/advancednetherite/update.json"
 displayURL="https://github.com/Autovw/AdvancedNetherite/wiki"
