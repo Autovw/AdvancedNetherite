@@ -6,19 +6,20 @@
       "tag": "advancednetherite:ingots/upgrade_to_netherite_emerald"
     },
     {
-      "tag": "forge:gems/emerald"
+      "tag": "c:gems/emerald"
     },
     {
-      "tag": "forge:gems/emerald"
+      "tag": "c:gems/emerald"
     },
     {
-      "tag": "forge:gems/emerald"
+      "tag": "c:gems/emerald"
     },
     {
-      "tag": "forge:gems/emerald"
+      "tag": "c:gems/emerald"
     }
   ],
   "result": {
-    "item": "advancednetherite:netherite_emerald_ingot"
+    "count": 1,
+    "id": "advancednetherite:netherite_emerald_ingot"
   }
 }

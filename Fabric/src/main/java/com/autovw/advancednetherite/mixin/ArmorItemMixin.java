@@ -25,9 +25,10 @@ import java.util.UUID;
  * Mixin for adding knockback resistance to armor
  * @author Autovw
  */
-@Mixin(ArmorItem.class)
+//@Mixin(ArmorItem.class)
 public abstract class ArmorItemMixin implements Equipable
 {
+    /*
     @Shadow
     @Final
     private static EnumMap<ArmorItem.Type, UUID> ARMOR_MODIFIER_UUID_PER_TYPE;
@@ -58,4 +59,5 @@ public abstract class ArmorItemMixin implements Equipable
             this.defaultModifiers = builder.build();
         }
     }
+     */
 }

@@ -7,7 +7,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 
 import java.util.List;
 import java.util.Objects;
@@ -17,41 +16,26 @@ import java.util.Objects;
  */
 public class AdvancedItem extends Item
 {
-    private final boolean isFireResistant;
-
     public AdvancedItem(Properties properties)
     {
         super(properties);
-        this.isFireResistant  = true;
     }
 
-    public AdvancedItem(Properties properties, boolean isFireResistant)
+    @Internal
+    public AdvancedItem()
     {
-        super(properties);
-        this.isFireResistant = isFireResistant;
-    }
-
-    /**
-     * Netherite items do not burn by default,
-     * {@link Override} or use {@link AdvancedItem#AdvancedItem(Properties, boolean)} to disable this feature.
-     *
-     * @return If true, item does not burn when on fire
-     */
-    @Override
-    public boolean isFireResistant()
-    {
-        return this.isFireResistant;
+        this(new Properties().fireResistant());
     }
 
     /**
      * {@link Override} this method if you want to add your own custom tooltips.
      *
      * @param stack     The item stack
-     * @param level     The world/level
+     * @param context   The tooltip context
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag)
+    public void addTooltips(ItemStack stack, TooltipContext context, List<Component> tooltips, TooltipFlag flag)
     {
     }
 
@@ -70,15 +54,15 @@ public class AdvancedItem extends Item
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
     /**
-     * Don't override this method, use: {@link AdvancedItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.
+     * Don't override this method, use: {@link AdvancedItem#addTooltips(ItemStack, TooltipContext, List, TooltipFlag)} if you want to add your own custom tooltips.
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag)
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag)
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
-            addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
+            addTooltips(stack, context, tooltip, flag); // Add tooltips from add-ons
         }
     }
 

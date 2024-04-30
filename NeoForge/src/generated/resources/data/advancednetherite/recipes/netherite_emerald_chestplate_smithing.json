@@ -7,7 +7,8 @@
     "tag": "advancednetherite:chestplates/upgrade_to_netherite_emerald"
   },
   "result": {
-    "item": "advancednetherite:netherite_emerald_chestplate"
+    "count": 1,
+    "id": "advancednetherite:netherite_emerald_chestplate"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

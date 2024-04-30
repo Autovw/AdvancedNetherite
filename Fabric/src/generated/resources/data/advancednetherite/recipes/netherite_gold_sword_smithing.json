@@ -7,7 +7,8 @@
     "tag": "advancednetherite:swords/upgrade_to_netherite_gold"
   },
   "result": {
-    "item": "advancednetherite:netherite_gold_sword"
+    "count": 1,
+    "id": "advancednetherite:netherite_gold_sword"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

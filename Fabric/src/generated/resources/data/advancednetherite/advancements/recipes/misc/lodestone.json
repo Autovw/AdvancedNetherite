@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:chiseled_stone_bricks"
-            ]
+            "items": "minecraft:chiseled_stone_bricks"
           }
         ]
       },
@@ -17,7 +15,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "advancednetherite:netherite_ingots"
+            "items": "#advancednetherite:netherite_ingots"
           }
         ]
       },

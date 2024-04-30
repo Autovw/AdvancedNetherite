@@ -1,56 +1,46 @@
 {
   "parent": "advancednetherite:nether/netherite_iron_armor",
+  "criteria": {
+    "netherite_gold_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "advancednetherite:netherite_gold_helmet"
+          },
+          {
+            "items": "advancednetherite:netherite_gold_chestplate"
+          },
+          {
+            "items": "advancednetherite:netherite_gold_leggings"
+          },
+          {
+            "items": "advancednetherite:netherite_gold_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
   "display": {
-    "icon": {
-      "item": "advancednetherite:netherite_gold_chestplate",
-      "nbt": "{Damage:0}"
-    },
-    "title": {
-      "translate": "advancements.advancednetherite.nether.netherite_gold_armor.title"
-    },
     "description": {
       "translate": "advancements.advancednetherite.nether.netherite_gold_armor.description"
     },
     "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "rewards": {
-    "experience": 100
-  },
-  "criteria": {
-    "netherite_gold_armor": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "advancednetherite:netherite_gold_helmet"
-            ]
-          },
-          {
-            "items": [
-              "advancednetherite:netherite_gold_chestplate"
-            ]
-          },
-          {
-            "items": [
-              "advancednetherite:netherite_gold_leggings"
-            ]
-          },
-          {
-            "items": [
-              "advancednetherite:netherite_gold_boots"
-            ]
-          }
-        ]
-      }
+    "icon": {
+      "count": 1,
+      "id": "advancednetherite:netherite_gold_chestplate"
+    },
+    "title": {
+      "translate": "advancements.advancednetherite.nether.netherite_gold_armor.title"
     }
   },
   "requirements": [
     [
       "netherite_gold_armor"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
 }

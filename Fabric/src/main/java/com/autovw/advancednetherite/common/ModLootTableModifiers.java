@@ -21,6 +21,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -49,8 +50,9 @@ public final class ModLootTableModifiers
 
     public static void modifyTables()
     {
-        LootTableEvents.MODIFY.register(((resourceManager, lootManager, id, tableBuilder, source) ->
+        LootTableEvents.MODIFY.register(((key, tableBuilder, source) ->
         {
+            ResourceLocation id = key.location();
             // ADDITIONAL CROP DROPS START //
             if (source.isBuiltin() && id.equals(WHEAT))
             {
@@ -151,7 +153,7 @@ public final class ModLootTableModifiers
     private static LootPool.Builder mobDropPool(float dropChance, Item dropItem, int minDrop, int maxDrop, Item... tools)
     {
         ItemPredicate mainHandItemPredicate = ItemPredicate.Builder.item().of(tools).build();
-        EntityEquipmentPredicate equipmentPredicate = new EntityEquipmentPredicate(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.of(mainHandItemPredicate), Optional.empty());
+        EntityEquipmentPredicate equipmentPredicate = new EntityEquipmentPredicate(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.of(mainHandItemPredicate), Optional.empty());
         return LootPool.lootPool()
                 .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER, EntityPredicate.Builder.entity().equipment(equipmentPredicate)))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))
@@ -164,8 +166,12 @@ public final class ModLootTableModifiers
         return LootPool.lootPool()
                 .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(tools)))
                 .when(InvertedLootItemCondition.invert(
-                        MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.ANY)))
-                ))
+                        MatchTool.toolMatches(
+                                ItemPredicate.Builder.item()
+                                        .withSubPredicate(ItemSubPredicates.ENCHANTMENTS, ItemEnchantmentsPredicate.enchantments(
+                                                List.of(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1)))
+                                        ))
+                )))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))
                 .add(LootItem.lootTableItem(dropItem))
                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());

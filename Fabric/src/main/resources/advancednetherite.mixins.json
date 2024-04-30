@@ -2,9 +2,8 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.autovw.advancednetherite.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ArmorItemMixin",
     "EnderManMixin",
     "PhantomMixin",
     "PiglinAiMixin"

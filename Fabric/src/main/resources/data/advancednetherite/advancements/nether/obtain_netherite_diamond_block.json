@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "advancednetherite:netherite_diamond_block"
-            ]
+            "items": "advancednetherite:netherite_diamond_block"
           }
         ]
       },
@@ -15,16 +13,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
-      "item": "advancednetherite:netherite_diamond_block"
+      "count": 1,
+      "id": "advancednetherite:netherite_diamond_block"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title"
     }
@@ -36,5 +31,6 @@
   ],
   "rewards": {
     "experience": 20
-  }
+  },
+  "sends_telemetry_event": true
 }

@@ -30,6 +30,19 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.NETHERITE_EMERALD_BLOCK)
                 .add(ModBlocks.NETHERITE_DIAMOND_BLOCK);
 
+        getOrCreateTagBuilder(ModTags.INCORRECT_FOR_NETHERITE_IRON_TOOL)
+                //.addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+        ;
+        getOrCreateTagBuilder(ModTags.INCORRECT_FOR_NETHERITE_GOLD_TOOL)
+                //.addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+        ;
+        getOrCreateTagBuilder(ModTags.INCORRECT_FOR_NETHERITE_EMERALD_TOOL)
+                //.addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+        ;
+        getOrCreateTagBuilder(ModTags.INCORRECT_FOR_NETHERITE_DIAMOND_TOOL)
+                //.addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+        ;
+
 
         // Vanilla block tags
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)

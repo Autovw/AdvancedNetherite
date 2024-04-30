@@ -16,6 +16,11 @@ public final class ModTags
     // BLOCK TAGS
     public static final TagKey<Block> NETHERITE_BLOCKS = modBlockTag("netherite_blocks");
 
+    public static final TagKey<Block> INCORRECT_FOR_NETHERITE_IRON_TOOL = modBlockTag("incorrect_for_netherite_iron_tool");
+    public static final TagKey<Block> INCORRECT_FOR_NETHERITE_GOLD_TOOL = modBlockTag("incorrect_for_netherite_gold_tool");
+    public static final TagKey<Block> INCORRECT_FOR_NETHERITE_EMERALD_TOOL = modBlockTag("incorrect_for_netherite_emerald_tool");
+    public static final TagKey<Block> INCORRECT_FOR_NETHERITE_DIAMOND_TOOL = modBlockTag("incorrect_for_netherite_diamond_tool");
+
     // ITEM TAGS
     public static final TagKey<Item> NETHERITE_BLOCKITEMS = modItemTag("netherite_blocks");
 

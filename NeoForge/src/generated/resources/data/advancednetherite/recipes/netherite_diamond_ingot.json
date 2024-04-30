@@ -6,19 +6,20 @@
       "tag": "advancednetherite:ingots/upgrade_to_netherite_diamond"
     },
     {
-      "tag": "forge:gems/diamond"
+      "tag": "c:gems/diamond"
     },
     {
-      "tag": "forge:gems/diamond"
+      "tag": "c:gems/diamond"
     },
     {
-      "tag": "forge:gems/diamond"
+      "tag": "c:gems/diamond"
     },
     {
-      "tag": "forge:gems/diamond"
+      "tag": "c:gems/diamond"
     }
   ],
   "result": {
-    "item": "advancednetherite:netherite_diamond_ingot"
+    "count": 1,
+    "id": "advancednetherite:netherite_diamond_ingot"
   }
 }

@@ -33,6 +33,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider
                         ModBlocks.NETHERITE_DIAMOND_BLOCK
                 );
 
+        tag(ModTags.INCORRECT_FOR_NETHERITE_IRON_TOOL).addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL);
+        tag(ModTags.INCORRECT_FOR_NETHERITE_GOLD_TOOL).addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL);
+        tag(ModTags.INCORRECT_FOR_NETHERITE_EMERALD_TOOL).addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL);
+        tag(ModTags.INCORRECT_FOR_NETHERITE_DIAMOND_TOOL).addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL);
+
         /* Vanilla Tags */
         tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(ModTags.NETHERITE_BLOCKS);
 

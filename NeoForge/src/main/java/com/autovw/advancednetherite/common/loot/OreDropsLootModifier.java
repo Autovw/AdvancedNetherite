@@ -2,14 +2,13 @@ package com.autovw.advancednetherite.common.loot;
 
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.ModItems;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -17,7 +16,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
@@ -30,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class OreDropsLootModifier extends LootModifier
 {
-    public static final Codec<OreDropsLootModifier> CODEC = RecordCodecBuilder.create(instance -> codecStart(instance).apply(instance, OreDropsLootModifier::new));
+    public static final MapCodec<OreDropsLootModifier> CODEC = RecordCodecBuilder.mapCodec(instance -> codecStart(instance).apply(instance, OreDropsLootModifier::new));
 
     /**
      * Constructs a LootModifier.
@@ -55,7 +53,7 @@ public class OreDropsLootModifier extends LootModifier
             Item toolItem = tool.getItem();
             RandomSource random = context.getRandom();
 
-            if (EnchantmentHelper.getEnchantments(tool).containsKey(Enchantments.SILK_TOUCH))
+            if (tool.getEnchantmentLevel(Enchantments.SILK_TOUCH) > 0)
             {
                 return generatedLoot; // return early if tool is enchanted with silk touch
             }
@@ -86,7 +84,7 @@ public class OreDropsLootModifier extends LootModifier
     }
 
     @Override
-    public Codec<? extends IGlobalLootModifier> codec()
+    public MapCodec<OreDropsLootModifier> codec()
     {
         return CODEC;
     }

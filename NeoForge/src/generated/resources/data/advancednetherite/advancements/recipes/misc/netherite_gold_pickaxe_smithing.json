@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "advancednetherite:upgrade_to_netherite_gold"
+            "items": "#advancednetherite:upgrade_to_netherite_gold"
           }
         ]
       },

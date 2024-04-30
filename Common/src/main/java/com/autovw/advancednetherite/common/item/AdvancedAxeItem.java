@@ -9,7 +9,6 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
@@ -22,33 +21,27 @@ public class AdvancedAxeItem extends AxeItem
 {
     private final Tier tier;
 
-    public AdvancedAxeItem(Tier tier, float attackDamage, float attackSpeed, Properties properties)
+    public AdvancedAxeItem(Tier tier, Properties properties)
     {
-        super(tier, attackDamage, attackSpeed, properties);
+        super(tier, properties);
         this.tier = tier;
     }
 
-    /**
-     * Netherite items do not burn by default.
-     * {@link Override} if you want to disable this feature.
-     *
-     * @return If true, item does not burn when on fire
-     */
-    @Override
-    public boolean isFireResistant()
+    @Internal
+    public AdvancedAxeItem(Tier tier, float attackDamage, float attackSpeed)
     {
-        return true;
+        this(tier, new Properties().attributes(createAttributes(tier, attackDamage, attackSpeed)).fireResistant());
     }
 
     /**
      * {@link Override} this method if you want to add your own custom tooltips.
      *
      * @param stack     The item stack
-     * @param level     The world/level
+     * @param context   The tooltip context
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flag)
+    public void addTooltips(ItemStack stack, TooltipContext context, List<Component> tooltips, TooltipFlag flag)
     {
     }
 
@@ -67,15 +60,15 @@ public class AdvancedAxeItem extends AxeItem
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
     /**
-     * Don't override this method, use {@link AdvancedAxeItem#addTooltips(ItemStack, Level, List, TooltipFlag)} if you want to add your own custom tooltips.
+     * Don't override this method, use {@link AdvancedAxeItem#addTooltips(ItemStack, TooltipContext, List, TooltipFlag)} if you want to add your own custom tooltips.
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag)
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag)
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
-            addTooltips(stack, world, tooltip, flag); // Add tooltips from add-ons
+            addTooltips(stack, context, tooltip, flag); // Add tooltips from add-ons
         }
     }
 

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "advancednetherite:netherite_diamond_ingot"
-            ]
+            "items": "advancednetherite:netherite_diamond_ingot"
           }
         ]
       },

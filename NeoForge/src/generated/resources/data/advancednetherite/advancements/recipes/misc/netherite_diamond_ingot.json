@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_TagKey[minecraft:item / forge:gems/diamond]": {
+    "has_TagKey[minecraft:item / c:gems/diamond]": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:gems/diamond"
+            "items": "#c:gems/diamond"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_TagKey[minecraft:item / forge:gems/diamond]"
+      "has_TagKey[minecraft:item / c:gems/diamond]"
     ]
   ],
   "rewards": {

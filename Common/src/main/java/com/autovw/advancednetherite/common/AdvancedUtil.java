@@ -1,9 +1,10 @@
 package com.autovw.advancednetherite.common;
 
 import com.autovw.advancednetherite.config.ConfigHelper;
-import com.autovw.advancednetherite.core.util.ModArmorTiers;
+import com.autovw.advancednetherite.core.util.ModArmorMaterials;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -12,6 +13,24 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public class AdvancedUtil
 {
+    /**
+     * Helper method for getting the durability multiplier of an armor material
+     * @param material The material to get the multiplier for
+     * @return Durability multiplier for the appropriate armor material
+     */
+    public static int getArmorDurabilityMultiplier(Holder<ArmorMaterial> material)
+    {
+        if (material == ModArmorMaterials.NETHERITE_IRON)
+            return 39;
+        if (material == ModArmorMaterials.NETHERITE_GOLD)
+            return 41;
+        if (material == ModArmorMaterials.NETHERITE_EMERALD)
+            return 43;
+        if (material == ModArmorMaterials.NETHERITE_DIAMOND)
+            return 47;
+        return 0;
+    }
+
     /**
      * Helper method for getting the appropriate durability bar color on tools
      * @param originalColor The original durability bar color
@@ -42,15 +61,15 @@ public class AdvancedUtil
             // Armor
             if (stack.getItem() instanceof ArmorItem item)
             {
-                ArmorMaterial material = item.getMaterial();
+                Holder<ArmorMaterial> material = item.getMaterial();
 
-                if (material == ModArmorTiers.NETHERITE_IRON)
+                if (material == ModArmorMaterials.NETHERITE_IRON)
                     newColor = ChatFormatting.GRAY.getColor();
-                if (material == ModArmorTiers.NETHERITE_GOLD)
+                if (material == ModArmorMaterials.NETHERITE_GOLD)
                     newColor = ChatFormatting.GOLD.getColor();
-                if (material == ModArmorTiers.NETHERITE_EMERALD)
+                if (material == ModArmorMaterials.NETHERITE_EMERALD)
                     newColor = ChatFormatting.DARK_GREEN.getColor();
-                if (material == ModArmorTiers.NETHERITE_DIAMOND)
+                if (material == ModArmorMaterials.NETHERITE_DIAMOND)
                     newColor = ChatFormatting.AQUA.getColor();
             }
         }
@@ -73,7 +92,7 @@ public class AdvancedUtil
         {
             Tier tier = diggerItem.getTier();
 
-            if (diggerItem.isCorrectToolForDrops(state))
+            if (diggerItem.isCorrectToolForDrops(stack, state))
             {
                 if (tier == ModToolTiers.NETHERITE_IRON)
                     newSpeed *= ConfigHelper.get().getServer().getToolProperties().getIronBreakingSpeedMultiplier();

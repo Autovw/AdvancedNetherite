@@ -2,7 +2,7 @@ package com.autovw.advancednetherite.common.loot;
 
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.ModItems;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.util.RandomSource;
@@ -14,7 +14,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class MobDropsLootModifier extends LootModifier
 {
-    public static final Codec<MobDropsLootModifier> CODEC = RecordCodecBuilder.create(instance -> codecStart(instance).apply(instance, MobDropsLootModifier::new));
+    public static final MapCodec<MobDropsLootModifier> CODEC = RecordCodecBuilder.mapCodec(instance -> codecStart(instance).apply(instance, MobDropsLootModifier::new));
 
     /**
      * Constructs a LootModifier.
@@ -72,7 +71,7 @@ public class MobDropsLootModifier extends LootModifier
     }
 
     @Override
-    public Codec<? extends IGlobalLootModifier> codec()
+    public MapCodec<MobDropsLootModifier> codec()
     {
         return CODEC;
     }

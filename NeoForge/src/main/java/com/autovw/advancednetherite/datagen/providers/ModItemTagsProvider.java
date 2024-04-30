@@ -265,6 +265,7 @@ public class ModItemTagsProvider extends ItemTagsProvider
                 .add(ModItems.NETHERITE_IRON_BOOTS);
 
         /* Forge tags */
+        /*
         tag(Tags.Items.ARMORS_HELMETS)
                 .add(ModItems.NETHERITE_DIAMOND_HELMET)
                 .add(ModItems.NETHERITE_EMERALD_HELMET)
@@ -285,6 +286,7 @@ public class ModItemTagsProvider extends ItemTagsProvider
                 .add(ModItems.NETHERITE_EMERALD_BOOTS)
                 .add(ModItems.NETHERITE_GOLD_BOOTS)
                 .add(ModItems.NETHERITE_IRON_BOOTS);
+         */
 
         tag(ItemTags.AXES)
                 .add(ModItems.NETHERITE_DIAMOND_AXE)

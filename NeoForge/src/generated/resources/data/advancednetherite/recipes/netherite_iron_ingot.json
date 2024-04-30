@@ -6,19 +6,20 @@
       "tag": "advancednetherite:ingots/upgrade_to_netherite_iron"
     },
     {
-      "tag": "forge:ingots/iron"
+      "tag": "c:ingots/iron"
     },
     {
-      "tag": "forge:ingots/iron"
+      "tag": "c:ingots/iron"
     },
     {
-      "tag": "forge:ingots/iron"
+      "tag": "c:ingots/iron"
     },
     {
-      "tag": "forge:ingots/iron"
+      "tag": "c:ingots/iron"
     }
   ],
   "result": {
-    "item": "advancednetherite:netherite_iron_ingot"
+    "count": 1,
+    "id": "advancednetherite:netherite_iron_ingot"
   }
 }

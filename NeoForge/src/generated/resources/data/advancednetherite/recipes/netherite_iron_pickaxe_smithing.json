@@ -7,7 +7,8 @@
     "tag": "advancednetherite:pickaxes/upgrade_to_netherite_iron"
   },
   "result": {
-    "item": "advancednetherite:netherite_iron_pickaxe"
+    "count": 1,
+    "id": "advancednetherite:netherite_iron_pickaxe"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

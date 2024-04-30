@@ -7,7 +7,8 @@
     "tag": "advancednetherite:shovels/upgrade_to_netherite_iron"
   },
   "result": {
-    "item": "advancednetherite:netherite_iron_shovel"
+    "count": 1,
+    "id": "advancednetherite:netherite_iron_shovel"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

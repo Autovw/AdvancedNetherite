@@ -1,7 +1,7 @@
 plugins {
     id 'idea'
     id 'java-library'
-    id 'net.neoforged.gradle.userdev' version '7.0.97'
+    id 'net.neoforged.gradle.userdev' version '7.0.108'
 }
 
 group = 'com.autovw.advancednetherite'
@@ -68,7 +68,7 @@ dependencies {
     implementation "net.neoforged:neoforge:${neoforge_version}"
     compileOnly project(path: ':Common')
     runtimeOnly "curse.maven:configured-457570:${configured_neoforge_version}"
-    runtimeOnly "curse.maven:jei-238222:${jei_neoforge_version}"
+    //runtimeOnly "curse.maven:jei-238222:${jei_neoforge_version}"
 }
 
 // NeoGradle compiles the game, but we don't want to add our common code to the game's code
