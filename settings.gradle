@@ -6,20 +6,6 @@ pluginManagement {
             name = 'Forge'
             url = 'https://maven.minecraftforge.net/'
         }
-        /*
-        exclusiveContent {
-            forRepository {
-                maven {
-                    name = 'Forge'
-                    url = 'https://maven.minecraftforge.net/'
-                }
-            }
-            filter {
-                includeGroup("net.fabricmc")
-                includeGroup("fabric-loom")
-            }
-        }
-         */
         maven {
             name = 'NeoForge'
             url = 'https://maven.neoforged.net/releases'
