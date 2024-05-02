@@ -23,7 +23,7 @@ public class AdvancedNetherite
     @Internal
     public static void init(IPlatformHelper platformHelper)
     {
-        LOGGER.info("Hello world!");
+        LOGGER.info("Initializing platform helper for Advanced Netherite!");
         AdvancedNetherite.platformHelper = platformHelper;
     }
 
