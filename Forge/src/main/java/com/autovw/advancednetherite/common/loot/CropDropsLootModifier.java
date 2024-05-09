@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.common.loot;
 
 import com.autovw.advancednetherite.config.ConfigHelper;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.util.RandomSource;
@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class CropDropsLootModifier extends LootModifier
 {
-    public static final Codec<CropDropsLootModifier> CODEC = RecordCodecBuilder.create(instance -> codecStart(instance).apply(instance, CropDropsLootModifier::new));
+    public static final MapCodec<CropDropsLootModifier> CODEC = RecordCodecBuilder.mapCodec(instance -> codecStart(instance).apply(instance, CropDropsLootModifier::new));
 
     /**
      * Constructs a LootModifier.
@@ -74,7 +74,7 @@ public class CropDropsLootModifier extends LootModifier
     }
 
     @Override
-    public Codec<CropDropsLootModifier> codec()
+    public MapCodec<CropDropsLootModifier> codec()
     {
         return CODEC;
     }

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "advancednetherite:netherite_diamond_hoe"
-            ]
+            "items": "advancednetherite:netherite_diamond_hoe"
           }
         ]
       },
@@ -20,8 +18,8 @@
     },
     "frame": "challenge",
     "icon": {
-      "item": "advancednetherite:netherite_diamond_hoe",
-      "nbt": "{Damage:0}"
+      "count": 1,
+      "id": "advancednetherite:netherite_diamond_hoe"
     },
     "title": {
       "translate": "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title"

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "advancednetherite:netherite_iron_ingot"
-            ]
+            "items": "advancednetherite:netherite_iron_ingot"
           }
         ]
       },
@@ -19,7 +17,8 @@
       "translate": "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description"
     },
     "icon": {
-      "item": "advancednetherite:netherite_iron_ingot"
+      "count": 1,
+      "id": "advancednetherite:netherite_iron_ingot"
     },
     "title": {
       "translate": "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title"

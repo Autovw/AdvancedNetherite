@@ -6,13 +6,9 @@ import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.registry.ModBlockRegistry;
 import com.autovw.advancednetherite.core.registry.ModItemRegistry;
 import com.autovw.advancednetherite.core.registry.ModLootModifiers;
-import com.autovw.advancednetherite.core.util.ModToolTiers;
 import com.autovw.advancednetherite.registry.ForgeRegistryHelper;
 import com.mojang.logging.LogUtils;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Tiers;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.TierSortingRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -21,8 +17,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-
-import java.util.List;
 
 /**
  * @author Autovw
@@ -56,7 +50,6 @@ public class AdvancedNetheriteForge
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        event.enqueueWork(this::tierSortingRegistry);
         ConfigHelper.registerClientConfig(() -> Config.CLIENT);
         ConfigHelper.registerCommonConfig(() -> Config.COMMON);
         ConfigHelper.registerServerConfig(() -> Config.SERVER);
@@ -65,13 +58,5 @@ public class AdvancedNetheriteForge
     private void clientSetup(final FMLClientSetupEvent event)
     {
         event.enqueueWork(ClientHandler::onClientSetup);
-    }
-
-    private void tierSortingRegistry()
-    {
-        TierSortingRegistry.registerTier(ModToolTiers.NETHERITE_IRON, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_iron"), List.of(Tiers.NETHERITE), List.of());
-        TierSortingRegistry.registerTier(ModToolTiers.NETHERITE_GOLD, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_gold"), List.of(ModToolTiers.NETHERITE_IRON), List.of());
-        TierSortingRegistry.registerTier(ModToolTiers.NETHERITE_EMERALD, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_emerald"), List.of(ModToolTiers.NETHERITE_GOLD), List.of());
-        TierSortingRegistry.registerTier(ModToolTiers.NETHERITE_DIAMOND, new ResourceLocation(AdvancedNetherite.MOD_ID, "netherite_diamond"), List.of(ModToolTiers.NETHERITE_EMERALD), List.of());
     }
 }

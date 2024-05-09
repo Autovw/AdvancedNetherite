@@ -28,7 +28,7 @@ plugins {
 
 rootProject.name = 'AdvancedNetherite'
 include("Common")
-//include("Forge")
+include("Forge")
 include("NeoForge")
 include("Fabric")
 

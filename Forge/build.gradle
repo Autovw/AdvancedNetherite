@@ -14,6 +14,8 @@ minecraft {
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
+    reobf = false
+
     copyIdeResources = true
 
     runs {
@@ -78,6 +80,9 @@ dependencies {
     //runtimeOnly fg.deobf("curse.maven:configured-457570:${configured_forge_version}")
     //runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_forge_version}")
     //implementation fg.deobf("curse.maven:detailarmorbar-520755:${detailab_forge_version}")
+
+    // Hack fix for now, force jopt-simple to be exactly 5.0.4 because Mojang ships that version, but some transtive dependencies request 6.0+
+    implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
 }
 
 tasks.withType(JavaCompile) {
@@ -88,12 +93,8 @@ processResources {
     from project(":Common").sourceSets.main.resources
 }
 
-jar.finalizedBy('reobfJar')
-
 sourceSets.each {
     def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
 }
-
-

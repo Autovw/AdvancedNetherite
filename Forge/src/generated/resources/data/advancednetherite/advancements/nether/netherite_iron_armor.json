@@ -5,24 +5,16 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "advancednetherite:netherite_iron_helmet"
-            ]
+            "items": "advancednetherite:netherite_iron_helmet"
           },
           {
-            "items": [
-              "advancednetherite:netherite_iron_chestplate"
-            ]
+            "items": "advancednetherite:netherite_iron_chestplate"
           },
           {
-            "items": [
-              "advancednetherite:netherite_iron_leggings"
-            ]
+            "items": "advancednetherite:netherite_iron_leggings"
           },
           {
-            "items": [
-              "advancednetherite:netherite_iron_boots"
-            ]
+            "items": "advancednetherite:netherite_iron_boots"
           }
         ]
       },
@@ -35,8 +27,8 @@
     },
     "frame": "challenge",
     "icon": {
-      "item": "advancednetherite:netherite_iron_chestplate",
-      "nbt": "{Damage:0}"
+      "count": 1,
+      "id": "advancednetherite:netherite_iron_chestplate"
     },
     "title": {
       "translate": "advancements.advancednetherite.nether.netherite_iron_armor.title"

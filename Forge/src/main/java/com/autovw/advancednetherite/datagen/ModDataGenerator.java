@@ -18,8 +18,10 @@ import java.util.concurrent.CompletableFuture;
  */
 @Internal
 @Mod.EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ModDataGenerator {
-    private ModDataGenerator() {
+public class ModDataGenerator
+{
+    private ModDataGenerator()
+    {
     }
 
     /**
@@ -29,7 +31,8 @@ public class ModDataGenerator {
      */
     @SuppressWarnings("unused")
     @SubscribeEvent
-    public static void onGatherData(final GatherDataEvent event) {
+    public static void onGatherData(final GatherDataEvent event)
+    {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
@@ -39,10 +42,10 @@ public class ModDataGenerator {
         // server
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), AdvancedNetherite.MOD_ID, helper));
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
-        generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, helper));
-        generator.addProvider(event.includeServer(), new ModLootModifierProvider(packOutput, AdvancedNetherite.MOD_ID));
+        generator.addProvider(event.includeServer(), new ModLootModifierProvider(packOutput, AdvancedNetherite.MOD_ID, lookupProvider));
 
         // client
         generator.addProvider(event.includeClient(), new ModBlockStatesProvider(packOutput, AdvancedNetherite.MOD_ID, helper));

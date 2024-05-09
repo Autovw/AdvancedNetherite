@@ -1,11 +1,13 @@
 package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.core.registry.ModBlockRegistry;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Registry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.loot.packs.VanillaLootTableProvider;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -14,8 +16,8 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
@@ -25,9 +27,9 @@ public class ModLootTableProvider extends LootTableProvider
 {
     private final List<SubProviderEntry> tables = List.of(new LootTableProvider.SubProviderEntry(ModBlockLootSubProvider::new, LootContextParamSets.BLOCK));
 
-    public ModLootTableProvider(PackOutput packOutput)
+    public ModLootTableProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries)
     {
-        super(packOutput, Set.of(), VanillaLootTableProvider.create(packOutput).getTables());
+        super(output, Set.of(), VanillaLootTableProvider.create(output, registries).getTables(), registries);
     }
 
     @Override
@@ -37,7 +39,7 @@ public class ModLootTableProvider extends LootTableProvider
     }
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext context)
+    protected void validate(Registry<LootTable> registry, ValidationContext context, ProblemReporter report)
     {
     }
 

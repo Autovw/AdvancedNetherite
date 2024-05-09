@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "advancednetherite:netherite_diamond_block"
-            ]
+            "items": "advancednetherite:netherite_diamond_block"
           }
         ]
       },
@@ -19,7 +17,8 @@
       "translate": "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description"
     },
     "icon": {
-      "item": "advancednetherite:netherite_diamond_block"
+      "count": 1,
+      "id": "advancednetherite:netherite_diamond_block"
     },
     "title": {
       "translate": "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title"
