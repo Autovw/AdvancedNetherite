@@ -33,7 +33,7 @@ public class AdvancedArmorItem extends ArmorItem
     @Internal
     public AdvancedArmorItem(Holder<ArmorMaterial> material, ArmorItem.Type armorType)
     {
-        this(material, armorType, new Properties().durability(AdvancedUtil.getArmorDurabilityMultiplier(material)).fireResistant());
+        this(material, armorType, new Properties().durability(armorType.getDurability(AdvancedUtil.getArmorDurabilityMultiplier(material))).fireResistant());
     }
 
     /**
