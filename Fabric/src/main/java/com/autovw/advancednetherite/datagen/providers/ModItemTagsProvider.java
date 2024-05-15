@@ -207,34 +207,6 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .addTag(ModTags.TIERS_ARMOR_NETHERITE_DIAMOND);
 
 
-        // Fabric item tags
-        getOrCreateTagBuilder(ItemTags.AXES)
-                .add(ModItems.NETHERITE_IRON_AXE)
-                .add(ModItems.NETHERITE_GOLD_AXE)
-                .add(ModItems.NETHERITE_EMERALD_AXE)
-                .add(ModItems.NETHERITE_DIAMOND_AXE);
-        getOrCreateTagBuilder(ItemTags.HOES)
-                .add(ModItems.NETHERITE_IRON_HOE)
-                .add(ModItems.NETHERITE_GOLD_HOE)
-                .add(ModItems.NETHERITE_EMERALD_HOE)
-                .add(ModItems.NETHERITE_DIAMOND_HOE);
-        getOrCreateTagBuilder(ItemTags.PICKAXES)
-                .add(ModItems.NETHERITE_IRON_PICKAXE)
-                .add(ModItems.NETHERITE_GOLD_PICKAXE)
-                .add(ModItems.NETHERITE_EMERALD_PICKAXE)
-                .add(ModItems.NETHERITE_DIAMOND_PICKAXE);
-        getOrCreateTagBuilder(ItemTags.SHOVELS)
-                .add(ModItems.NETHERITE_IRON_SHOVEL)
-                .add(ModItems.NETHERITE_GOLD_SHOVEL)
-                .add(ModItems.NETHERITE_EMERALD_SHOVEL)
-                .add(ModItems.NETHERITE_DIAMOND_SHOVEL);
-        getOrCreateTagBuilder(ItemTags.SWORDS)
-                .add(ModItems.NETHERITE_IRON_SWORD)
-                .add(ModItems.NETHERITE_GOLD_SWORD)
-                .add(ModItems.NETHERITE_EMERALD_SWORD)
-                .add(ModItems.NETHERITE_DIAMOND_SWORD);
-
-
         // Vanilla item tags
         getOrCreateTagBuilder(ItemTags.BEACON_PAYMENT_ITEMS)
                 .addTag(ModTags.NETHERITE_INGOTS);
@@ -273,28 +245,55 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_IRON_LEGGINGS)
                 .add(ModItems.NETHERITE_IRON_BOOTS);
 
-
-        // Common item tags
-        getOrCreateTagBuilder(FabricModTags.COMMON_HELMETS)
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
                 .add(ModItems.NETHERITE_IRON_HELMET)
                 .add(ModItems.NETHERITE_GOLD_HELMET)
                 .add(ModItems.NETHERITE_EMERALD_HELMET)
                 .add(ModItems.NETHERITE_DIAMOND_HELMET);
-        getOrCreateTagBuilder(FabricModTags.COMMON_CHESTPLATES)
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
                 .add(ModItems.NETHERITE_IRON_CHESTPLATE)
                 .add(ModItems.NETHERITE_GOLD_CHESTPLATE)
                 .add(ModItems.NETHERITE_EMERALD_CHESTPLATE)
                 .add(ModItems.NETHERITE_DIAMOND_CHESTPLATE);
-        getOrCreateTagBuilder(FabricModTags.COMMON_LEGGINGS)
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
                 .add(ModItems.NETHERITE_IRON_LEGGINGS)
                 .add(ModItems.NETHERITE_GOLD_LEGGINGS)
                 .add(ModItems.NETHERITE_EMERALD_LEGGINGS)
                 .add(ModItems.NETHERITE_DIAMOND_LEGGINGS);
-        getOrCreateTagBuilder(FabricModTags.COMMON_BOOTS)
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
                 .add(ModItems.NETHERITE_IRON_BOOTS)
                 .add(ModItems.NETHERITE_GOLD_BOOTS)
                 .add(ModItems.NETHERITE_EMERALD_BOOTS)
                 .add(ModItems.NETHERITE_DIAMOND_BOOTS);
+
+        getOrCreateTagBuilder(ItemTags.AXES)
+                .add(ModItems.NETHERITE_IRON_AXE)
+                .add(ModItems.NETHERITE_GOLD_AXE)
+                .add(ModItems.NETHERITE_EMERALD_AXE)
+                .add(ModItems.NETHERITE_DIAMOND_AXE);
+        getOrCreateTagBuilder(ItemTags.HOES)
+                .add(ModItems.NETHERITE_IRON_HOE)
+                .add(ModItems.NETHERITE_GOLD_HOE)
+                .add(ModItems.NETHERITE_EMERALD_HOE)
+                .add(ModItems.NETHERITE_DIAMOND_HOE);
+        getOrCreateTagBuilder(ItemTags.PICKAXES)
+                .add(ModItems.NETHERITE_IRON_PICKAXE)
+                .add(ModItems.NETHERITE_GOLD_PICKAXE)
+                .add(ModItems.NETHERITE_EMERALD_PICKAXE)
+                .add(ModItems.NETHERITE_DIAMOND_PICKAXE);
+        getOrCreateTagBuilder(ItemTags.SHOVELS)
+                .add(ModItems.NETHERITE_IRON_SHOVEL)
+                .add(ModItems.NETHERITE_GOLD_SHOVEL)
+                .add(ModItems.NETHERITE_EMERALD_SHOVEL)
+                .add(ModItems.NETHERITE_DIAMOND_SHOVEL);
+        getOrCreateTagBuilder(ItemTags.SWORDS)
+                .add(ModItems.NETHERITE_IRON_SWORD)
+                .add(ModItems.NETHERITE_GOLD_SWORD)
+                .add(ModItems.NETHERITE_EMERALD_SWORD)
+                .add(ModItems.NETHERITE_DIAMOND_SWORD);
+
+
+        // Common item tags
         getOrCreateTagBuilder(FabricModTags.COMMON_NETHERITE_INGOTS)
                 .addTag(ModTags.NETHERITE_INGOTS);
 

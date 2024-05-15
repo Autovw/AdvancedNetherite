@@ -264,29 +264,26 @@ public class ModItemTagsProvider extends ItemTagsProvider
                 .add(ModItems.NETHERITE_IRON_LEGGINGS)
                 .add(ModItems.NETHERITE_IRON_BOOTS);
 
-        /* Forge tags */
-        /*
-        tag(Tags.Items.ARMORS_HELMETS)
+        tag(ItemTags.HEAD_ARMOR)
                 .add(ModItems.NETHERITE_DIAMOND_HELMET)
                 .add(ModItems.NETHERITE_EMERALD_HELMET)
                 .add(ModItems.NETHERITE_GOLD_HELMET)
                 .add(ModItems.NETHERITE_IRON_HELMET);
-        tag(Tags.Items.ARMORS_CHESTPLATES)
+        tag(ItemTags.CHEST_ARMOR)
                 .add(ModItems.NETHERITE_DIAMOND_CHESTPLATE)
                 .add(ModItems.NETHERITE_EMERALD_CHESTPLATE)
                 .add(ModItems.NETHERITE_GOLD_CHESTPLATE)
                 .add(ModItems.NETHERITE_IRON_CHESTPLATE);
-        tag(Tags.Items.ARMORS_LEGGINGS)
+        tag(ItemTags.LEG_ARMOR)
                 .add(ModItems.NETHERITE_DIAMOND_LEGGINGS)
                 .add(ModItems.NETHERITE_EMERALD_LEGGINGS)
                 .add(ModItems.NETHERITE_GOLD_LEGGINGS)
                 .add(ModItems.NETHERITE_IRON_LEGGINGS);
-        tag(Tags.Items.ARMORS_BOOTS)
+        tag(ItemTags.FOOT_ARMOR)
                 .add(ModItems.NETHERITE_DIAMOND_BOOTS)
                 .add(ModItems.NETHERITE_EMERALD_BOOTS)
                 .add(ModItems.NETHERITE_GOLD_BOOTS)
                 .add(ModItems.NETHERITE_IRON_BOOTS);
-         */
 
         tag(ItemTags.AXES)
                 .add(ModItems.NETHERITE_DIAMOND_AXE)
