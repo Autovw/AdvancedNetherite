@@ -1,0 +1,102 @@
+{
+  "block.advancednetherite.netherite_iron_block": "Blocco di ferro in netherite",
+  "block.advancednetherite.netherite_gold_block": "Blocco d'oro in netherite",
+  "block.advancednetherite.netherite_emerald_block": "Blocco di smerlado in netherite",
+  "block.advancednetherite.netherite_diamond_block": "Blocco di diamante in netherite",
+
+  "item.advancednetherite.netherite_iron_ingot": "Lingotto di ferro in netherite",
+  "item.advancednetherite.netherite_gold_ingot": "Lingotto d'oro in netherite",
+  "item.advancednetherite.netherite_emerald_ingot": "Lingotto di smeraldo in netherite",
+  "item.advancednetherite.netherite_diamond_ingot": "Lingotto di diamante in netherite",
+
+  "item.advancednetherite.netherite_iron_helmet": "Elmo di ferro in netherite",
+  "item.advancednetherite.netherite_gold_helmet": "Elmo d'oro in netherite",
+  "item.advancednetherite.netherite_emerald_helmet": "Elmo di smeraldo in netherite",
+  "item.advancednetherite.netherite_diamond_helmet": "Elmo di diamante in netherite",
+
+  "item.advancednetherite.netherite_iron_chestplate": "Corazza di ferro in netherite",
+  "item.advancednetherite.netherite_gold_chestplate": "Corazza d'oro in netherite",
+  "item.advancednetherite.netherite_emerald_chestplate": "Corazza di smeraldo in netherite",
+  "item.advancednetherite.netherite_diamond_chestplate": "Corazza di diamante in netherite",
+
+  "item.advancednetherite.netherite_iron_leggings": "Gambiere di ferro in netherite",
+  "item.advancednetherite.netherite_gold_leggings": "Gambiere d'oro in netherite",
+  "item.advancednetherite.netherite_emerald_leggings": "Gambiere di smeraldo in netherite",
+  "item.advancednetherite.netherite_diamond_leggings": "Gambiere di diamante in netherite",
+
+  "item.advancednetherite.netherite_iron_boots": "Stivali di ferro in netherite",
+  "item.advancednetherite.netherite_gold_boots": "Stivali d'oro in netherite",
+  "item.advancednetherite.netherite_emerald_boots": "Stivali di smerlado in netherite",
+  "item.advancednetherite.netherite_diamond_boots": "Stivali di diamante in netherite",
+
+  "item.advancednetherite.netherite_iron_axe": "Ascia di ferro in netherite",
+  "item.advancednetherite.netherite_gold_axe": "Ascia d'oro in netherite",
+  "item.advancednetherite.netherite_emerald_axe": "Ascia di smeraldo in netherite",
+  "item.advancednetherite.netherite_diamond_axe": "Ascia di diamante in netherite",
+
+  "item.advancednetherite.netherite_iron_hoe": "Zappa di ferro in netherite",
+  "item.advancednetherite.netherite_gold_hoe": "Zappa d'oro in netherite",
+  "item.advancednetherite.netherite_emerald_hoe": "Zappa di smeraldo in netherite",
+  "item.advancednetherite.netherite_diamond_hoe": "Zappa di diamante in entherite",
+
+  "item.advancednetherite.netherite_iron_pickaxe": "Piccone di ferro in netherite",
+  "item.advancednetherite.netherite_gold_pickaxe": "Piccone d'oro in nehterite",
+  "item.advancednetherite.netherite_emerald_pickaxe": "Piccone di smeraldo in netherite",
+  "item.advancednetherite.netherite_diamond_pickaxe": "Piccole di diamante in netherite",
+
+  "item.advancednetherite.netherite_iron_shovel": "Pala di ferro in netherite",
+  "item.advancednetherite.netherite_gold_shovel": "Pala d'oro in netherite",
+  "item.advancednetherite.netherite_emerald_shovel": "Pala di smeraldo in netherite",
+  "item.advancednetherite.netherite_diamond_shovel": "Pala di diamante in netherite",
+
+  "item.advancednetherite.netherite_iron_sword": "Spada di ferro in netherite",
+  "item.advancednetherite.netherite_gold_sword": "Spada d'oro in netherite",
+  "item.advancednetherite.netherite_emerald_sword": "Spada di smeraldo in netherite",
+  "item.advancednetherite.netherite_diamond_sword": "Spada di diamante in netherite",
+
+  "itemGroup.advancednetherite.tab": "Advanced Netherite",
+  
+  "tooltip.advancednetherite.armor.enderman_passive": "+ Rende pacifici gli endermen",
+  "tooltip.advancednetherite.armor.piglin_passive": "+ Rende pacifici i piglin",
+  "tooltip.advancednetherite.armor.phantom_passive": "+ Rende pacifici i phantom",
+
+  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ Aumenta la possibilità di ricevere ulteriori colture durante la raccolta.",
+
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Aumenta la possibilità di ottenere diamanti aggiuntivi durante l'estrazione di minerali di diamante",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Aumenta la possibilità di ottenere smeraldi aggiuntivi durante l'estrazione di minerali di smeraldi",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Aumenta la possibilità di ottenere oro aggiuntivo durante l'estrazione di minerali d'oro",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Aumenta la possibilità di ottenere ferro aggiuntivo durante l'estrazione di minerali di ferro",
+
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Aumenta la possibilità di far cadere una perla di ender aggiuntiva quando si sconfigge un enderman",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Aumenta la possibilità di ottenere un lingotti d'oro aggiuntivi quando si sconfigge un piglin",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ Aumenta la possibilità di ottenere pepite d'oro aggiuntive quando si sconfigge un piglin zombificato",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ Aumenta la possibilità di ottenere membrane di phantom aggiuntive quando si sconfigge un phantom",
+
+  "tooltip.advancednetherite.misc.press_shift_key": "Premi %s per visualizzare gli effetti",
+  "tooltip.advancednetherite.misc.shift": "[SHIFT]",
+
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Perché lo hai fatto?",
+  "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Realizza una zappa di diamante in netherite e vai da uno psicologo.",
+  "advancements.advancednetherite.nether.netherite_iron_armor.title": "Scaccia phantom",
+  "advancements.advancednetherite.nether.netherite_iron_armor.description": "Realizza un'armatura completa di ferro in netherite",
+  "advancements.advancednetherite.nether.netherite_gold_armor.title": "Piglin distratto",
+  "advancements.advancednetherite.nether.netherite_gold_armor.description": "Realizza un'armatura completa d'oro in netherite",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.title": "Radioattivo?",
+  "advancements.advancednetherite.nether.netherite_emerald_armor.description": "Realizza un'armatura completa di smeraldo in netherite",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.title": "Coperto di ricchezza",
+  "advancements.advancednetherite.nether.netherite_diamond_armor.description": "Realizza un'armatura completa di diamante in netherite",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.title": "Aggiornamento!",
+  "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "Otteni un lingotto di ferro in netherite",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title": "Un blocco costoso!",
+  "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description": "Otteni un blocco di diamante in netherite",
+
+  "config.advancednetherite.client.show_tooltips": "Se impostato su true, visualizza i tooltip, aggiunti da Advanced Netherite, con i perk lato client.",
+  "config.advancednetherite.client.matching_durability_bars": "Se impostato su true, visualizza una barra di durata (colorata) corrispondente sotto l'elemento quando è danneggiato.",
+  "config.advancednetherite.client.enable_search_bar": "Se è impostato su true, attiva una barra di ricerca nella scheda Advanced Netherite in modalità creativa.",
+  "config.advancednetherite.client.force_disable_dab_support": "Se impostato su true, disabilita forzatamente il supporto per la mod dettaglio barra di armatura. Richiede il riavvio del gioco.",
+
+  "config.advancednetherite.screen.description.top": "Installa la mod %s per modificare la configurazione aggiunta da %s dall'interno del gioco.",
+  "config.advancednetherite.screen.description.bottom": "Per le istruzioni, consultare la pagina della wiki.",
+  "config.advancednetherite.screen.button.install_configured": "Installa %s",
+  "config.advancednetherite.screen.button.instructions": "Istruzioni"
+}
