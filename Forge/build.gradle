@@ -14,6 +14,8 @@ minecraft {
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
+    copyIdeResources = true
+
     runs {
         client {
             workingDirectory project.file('run')
@@ -83,6 +85,15 @@ processResources {
     from project(":Common").sourceSets.main.resources
 }
 
-jar.finalizedBy('reobfJar')
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            mod_version: mod_version
+    ]
+    filesMatching(['META-INF/mods.toml']) {
+        expand replaceProperties
+    }
+    inputs.properties replaceProperties
+}
 
+jar.finalizedBy('reobfJar')
 
