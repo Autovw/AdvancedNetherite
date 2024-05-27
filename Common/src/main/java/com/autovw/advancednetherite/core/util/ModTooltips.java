@@ -34,5 +34,6 @@ public final class ModTooltips
     public static final MutableComponent PHANTOM_MOB_DROP_TOOLTIP = TooltipBuilder.create(new ResourceLocation(AdvancedNetherite.MOD_ID, "sword.additional_phantom_mob_drop")).withStyle(ChatFormatting.GRAY);
 
     /* Misc */
-    public static final MutableComponent SHIFT_KEY_TOOLTIP = TooltipBuilder.create(new ResourceLocation(AdvancedNetherite.MOD_ID, "misc.press_shift_key"), TooltipBuilder.create(new ResourceLocation(AdvancedNetherite.MOD_ID, "misc.shift")).withStyle(ChatFormatting.YELLOW));
+    private static final MutableComponent SHIFT_TOOLTIP = TooltipBuilder.create(new ResourceLocation(AdvancedNetherite.MOD_ID, "misc.shift")).withStyle(ChatFormatting.YELLOW);
+    public static final MutableComponent SHIFT_KEY_TOOLTIP = TooltipBuilder.create(new ResourceLocation(AdvancedNetherite.MOD_ID, "misc.press_shift_key"), SHIFT_TOOLTIP);
 }

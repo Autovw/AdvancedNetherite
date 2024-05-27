@@ -62,14 +62,11 @@ public class TooltipBuilder
         String content = "tooltip." + key.getNamespace() + "." + key.getPath();
         if (!content.endsWith("."))
         {
-            if (args != null)
+            if (makeArgs(args))
             {
                 return Component.translatable(content, args);
             }
-            else
-            {
-                return Component.translatable(content);
-            }
+            return Component.translatable(content);
         }
         else
         {
@@ -80,5 +77,21 @@ public class TooltipBuilder
             }
             return Component.empty();
         }
+    }
+
+    @Internal
+    private static boolean makeArgs(Object... args)
+    {
+        // Varargs always contain at least one entry
+        // Therefore, we can't do (args != null) as it will always return true
+        // So we attempt to loop through the varargs to check for the actual values
+        for (Object arg : args)
+        {
+            if (arg != null)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
