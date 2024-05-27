@@ -93,6 +93,16 @@ processResources {
     from project(":Common").sourceSets.main.resources
 }
 
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            mod_version: mod_version
+    ]
+    filesMatching(['META-INF/mods.toml']) {
+        expand replaceProperties
+    }
+    inputs.properties replaceProperties
+}
+
 sourceSets.each {
     def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
     it.output.resourcesDir = dir
