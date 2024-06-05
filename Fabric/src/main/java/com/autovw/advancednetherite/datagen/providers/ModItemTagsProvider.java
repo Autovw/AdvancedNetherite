@@ -293,11 +293,6 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_DIAMOND_SWORD);
 
 
-        // Common item tags
-        getOrCreateTagBuilder(FabricModTags.COMMON_NETHERITE_INGOTS)
-                .addTag(ModTags.NETHERITE_INGOTS);
-
-
         // Tooltip Rareness item tags
         getOrCreateTagBuilder(FabricModTags.TOOLTIP_RARENESS_EPIC_ITEM)
                 .addTag(ModTags.NETHERITE_BLOCKITEMS)
