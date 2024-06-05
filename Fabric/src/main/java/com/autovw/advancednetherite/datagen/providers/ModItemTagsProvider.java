@@ -295,8 +295,6 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_GOLD_BOOTS)
                 .add(ModItems.NETHERITE_EMERALD_BOOTS)
                 .add(ModItems.NETHERITE_DIAMOND_BOOTS);
-        getOrCreateTagBuilder(FabricModTags.COMMON_NETHERITE_INGOTS)
-                .addTag(ModTags.NETHERITE_INGOTS);
 
 
         // Tooltip Rareness item tags
