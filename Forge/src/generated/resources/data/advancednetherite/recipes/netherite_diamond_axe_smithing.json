@@ -7,7 +7,8 @@
     "tag": "advancednetherite:axes/upgrade_to_netherite_diamond"
   },
   "result": {
-    "item": "advancednetherite:netherite_diamond_axe"
+    "count": 1,
+    "id": "advancednetherite:netherite_diamond_axe"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

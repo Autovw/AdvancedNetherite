@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "advancednetherite:netherite_iron_block"
-            ]
+            "items": "advancednetherite:netherite_iron_block"
           }
         ]
       },

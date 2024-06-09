@@ -7,7 +7,8 @@
     "tag": "advancednetherite:boots/upgrade_to_netherite_emerald"
   },
   "result": {
-    "item": "advancednetherite:netherite_emerald_boots"
+    "count": 1,
+    "id": "advancednetherite:netherite_emerald_boots"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

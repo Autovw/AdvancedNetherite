@@ -7,7 +7,8 @@
     "tag": "advancednetherite:pickaxes/upgrade_to_netherite_emerald"
   },
   "result": {
-    "item": "advancednetherite:netherite_emerald_pickaxe"
+    "count": 1,
+    "id": "advancednetherite:netherite_emerald_pickaxe"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"
