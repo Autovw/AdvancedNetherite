@@ -28,7 +28,7 @@ minecraft {
             mods {
                 advancednetherite {
                     source sourceSets.main
-                    source project(":Common").sourceSets.main
+                    //source project(":Common").sourceSets.main
                 }
             }
         }
@@ -42,7 +42,7 @@ minecraft {
             mods {
                 advancednetherite {
                     source sourceSets.main
-                    source project(":Common").sourceSets.main
+                    //source project(":Common").sourceSets.main
                 }
             }
         }
@@ -57,7 +57,7 @@ minecraft {
             mods {
                 advancednetherite {
                     source sourceSets.main
-                    source project(":Common").sourceSets.main
+                    //source project(":Common").sourceSets.main
                 }
             }
         }
