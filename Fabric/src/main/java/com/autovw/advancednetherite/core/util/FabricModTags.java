@@ -13,9 +13,9 @@ import net.minecraft.world.level.block.Block;
 public final class FabricModTags
 {
     // "config" tags
-    public static final TagKey<Item> CONFIG_PACIFY_PHANTOMS = ModTags.itemTag(new ResourceLocation(AdvancedNetherite.MOD_ID, "config/pacify_phantoms"));
-    public static final TagKey<Item> CONFIG_PACIFY_PIGLINS = ModTags.itemTag(new ResourceLocation(AdvancedNetherite.MOD_ID, "config/pacify_piglins"));
-    public static final TagKey<Item> CONFIG_PACIFY_ENDERMEN = ModTags.itemTag(new ResourceLocation(AdvancedNetherite.MOD_ID, "config/pacify_endermen"));
+    public static final TagKey<Item> CONFIG_PACIFY_PHANTOMS = ModTags.itemTag(ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "config/pacify_phantoms"));
+    public static final TagKey<Item> CONFIG_PACIFY_PIGLINS = ModTags.itemTag(ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "config/pacify_piglins"));
+    public static final TagKey<Item> CONFIG_PACIFY_ENDERMEN = ModTags.itemTag(ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "config/pacify_endermen"));
 
     // "c" (common) tags
     public static final TagKey<Item> COMMON_HELMETS = commonItemTag("helmets");
@@ -26,16 +26,16 @@ public final class FabricModTags
     public static final TagKey<Block> COMMON_NETHERITE_BLOCKS = commonBlockTag("netherite_blocks");
 
     // "tooltiprareness" tags
-    public static final TagKey<Item> TOOLTIP_RARENESS_EPIC_ITEM = ModTags.itemTag(new ResourceLocation("tooltiprareness", "epic_item"));
-    public static final TagKey<Item> TOOLTIP_RARENESS_LEGENDARY_ITEM = ModTags.itemTag(new ResourceLocation("tooltiprareness", "legendary_item"));
+    public static final TagKey<Item> TOOLTIP_RARENESS_EPIC_ITEM = ModTags.itemTag(ResourceLocation.fromNamespaceAndPath("tooltiprareness", "epic_item"));
+    public static final TagKey<Item> TOOLTIP_RARENESS_LEGENDARY_ITEM = ModTags.itemTag(ResourceLocation.fromNamespaceAndPath("tooltiprareness", "legendary_item"));
 
     private static TagKey<Item> commonItemTag(String key)
     {
-        return ModTags.itemTag(new ResourceLocation("c", key));
+        return ModTags.itemTag(ResourceLocation.fromNamespaceAndPath("c", key));
     }
 
     private static TagKey<Block> commonBlockTag(String key)
     {
-        return ModTags.blockTag(new ResourceLocation("c", key));
+        return ModTags.blockTag(ResourceLocation.fromNamespaceAndPath("c", key));
     }
 }

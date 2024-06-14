@@ -36,12 +36,12 @@ public class ModBlockStatesProvider extends BlockStateProvider
     public void netheriteBlock(Block block, ResourceLocation texture)
     {
         getVariantBuilder(block).partialState().setModels(new ConfiguredModel(models().cubeAll(AdvancedNetherite.getRegistryHelper().getBlockById(block).getPath(), texture)));
-        itemModels().withExistingParent(AdvancedNetherite.getRegistryHelper().getBlockById(block).getPath(), new ResourceLocation(AdvancedNetherite.getRegistryHelper().getBlockById(block).getNamespace(), "block/" + AdvancedNetherite.getRegistryHelper().getBlockById(block).getPath()));
+        itemModels().withExistingParent(AdvancedNetherite.getRegistryHelper().getBlockById(block).getPath(), ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.getRegistryHelper().getBlockById(block).getNamespace(), "block/" + AdvancedNetherite.getRegistryHelper().getBlockById(block).getPath()));
     }
 
     @Internal
     private void netheriteBlock(Block block)
     {
-        netheriteBlock(block, new ResourceLocation(AdvancedNetherite.MOD_ID, "block/" + AdvancedNetherite.getRegistryHelper().getBlockById(block).getPath()));
+        netheriteBlock(block, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/" + AdvancedNetherite.getRegistryHelper().getBlockById(block).getPath()));
     }
 }

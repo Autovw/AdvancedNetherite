@@ -42,10 +42,10 @@ public class MobDropsLootModifier extends LootModifier
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {
-        Entity killer = context.getParamOrNull(LootContextParams.KILLER_ENTITY); // the entity killer
+        Entity attacker = context.getParamOrNull(LootContextParams.ATTACKING_ENTITY); // the entity killer
         Entity victim = context.getParamOrNull(LootContextParams.THIS_ENTITY); // killed entity
 
-        if (killer instanceof Player player && victim != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalMobDrops())
+        if (attacker instanceof Player player && victim != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalMobDrops())
         {
             ItemStack useItem = player.getMainHandItem(); // used to check if the player uses the correct weapon
             RandomSource random = context.getRandom(); // random generator

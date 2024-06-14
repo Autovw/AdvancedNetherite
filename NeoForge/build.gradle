@@ -68,8 +68,8 @@ dependencies {
     implementation "net.neoforged:neoforge:${neoforge_version}"
     compileOnly project(path: ':Common')
 
-    runtimeOnly "curse.maven:catalogue-459701:${catalogue_neoforge_version}"
-    runtimeOnly "curse.maven:configured-457570:${configured_neoforge_version}"
+    //runtimeOnly "curse.maven:catalogue-459701:${catalogue_neoforge_version}"
+    //runtimeOnly "curse.maven:configured-457570:${configured_neoforge_version}"
     //runtimeOnly "curse.maven:jei-238222:${jei_neoforge_version}"
 }
 

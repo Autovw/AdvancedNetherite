@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
 
 /**
@@ -144,6 +145,9 @@ public final class ModTags
     public static final TagKey<Item> TIERS_TOOLS_NETHERITE_GOLD = modItemTag("tiers/tools/netherite_gold");
     public static final TagKey<Item> TIERS_TOOLS_NETHERITE_IRON = modItemTag("tiers/tools/netherite_iron");
 
+    // ENCHANTMENT TAGS
+    public static final TagKey<Enchantment> PREVENTS_ADDITIONAL_ORE_DROPS = modEnchantmentTag("prevents_additional_ore_drops");
+
     /**
      * @param tagLoc Resource location of the tag
      * @return Block tag
@@ -162,13 +166,27 @@ public final class ModTags
         return TagKey.create(Registries.ITEM, tagLoc);
     }
 
+    /**
+     * @param tagLoc Resource location of the tag
+     * @return Enchantment tag
+     */
+    public static TagKey<Enchantment> enchantmentTag(ResourceLocation tagLoc)
+    {
+        return TagKey.create(Registries.ENCHANTMENT, tagLoc);
+    }
+
     private static TagKey<Block> modBlockTag(String tagName)
     {
-        return ModTags.blockTag(new ResourceLocation(AdvancedNetherite.MOD_ID, tagName));
+        return ModTags.blockTag(ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, tagName));
     }
 
     private static TagKey<Item> modItemTag(String tagName)
     {
-        return ModTags.itemTag(new ResourceLocation(AdvancedNetherite.MOD_ID, tagName));
+        return ModTags.itemTag(ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, tagName));
+    }
+
+    private static TagKey<Enchantment> modEnchantmentTag(String tagName)
+    {
+        return ModTags.enchantmentTag(ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, tagName));
     }
 }

@@ -9,7 +9,7 @@ import com.autovw.advancednetherite.core.registry.ModLootModifiers;
 import com.autovw.advancednetherite.registry.NeoForgeRegistryHelper;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -24,14 +24,14 @@ public class AdvancedNetheriteNeoForge
 {
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public AdvancedNetheriteNeoForge(IEventBus bus)
+    public AdvancedNetheriteNeoForge(IEventBus bus, ModContainer container)
     {
         AdvancedNetherite.init(new NeoForgePlatformHelper());
         AdvancedNetherite.setRegistryHelper(new NeoForgeRegistryHelper());
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.CLIENT_SPEC);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_SPEC);
+        container.registerConfig(ModConfig.Type.CLIENT, Config.CLIENT_SPEC);
+        container.registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
+        container.registerConfig(ModConfig.Type.SERVER, Config.SERVER_SPEC);
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);

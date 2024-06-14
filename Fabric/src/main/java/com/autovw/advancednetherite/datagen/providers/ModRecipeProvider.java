@@ -103,9 +103,10 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
     public void baseSmithingRecipe(RecipeOutput output, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result)
     {
+        ResourceLocation resultId = AdvancedNetherite.getRegistryHelper().getItemById(result);
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
                 .unlocks("has_ingredients", has(upgradeIngredient))
-                .save(output, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getItemById(result).getNamespace(), result.toString() + "_smithing"));
+                .save(output, ResourceLocation.fromNamespaceAndPath(resultId.getNamespace(), resultId.getPath() + "_smithing"));
     }
 
     public void baseIngotRecipe(RecipeOutput output, TagKey<Item> ingotIngredient, Item upgradeIngredient, Item result)
@@ -114,25 +115,28 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .requires(ingotIngredient)
                 .requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient).requires(upgradeIngredient)
                 .unlockedBy("has_" + upgradeIngredient.toString(), has(upgradeIngredient))
-                .save(output, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getItemById(result).getNamespace(), result.toString()));
+                .save(output, ResourceLocation.parse(result.toString()));
     }
 
     public void baseBlockRecipe(RecipeOutput output, ItemLike ingredient, Block result)
     {
+        ResourceLocation resultId = AdvancedNetherite.getRegistryHelper().getBlockById(result);
+        ResourceLocation ingredientId = AdvancedNetherite.getRegistryHelper().getItemById((Item) ingredient);
+
         // Items to Block
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result)
                 .define('#', ingredient)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
-                .unlockedBy("has_" + ingredient.toString(), has(ingredient))
+                .unlockedBy("has_" + ingredientId.getPath(), has(ingredient))
                 .save(output);
 
         // Block to Items
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingredient, 9)
                 .requires(result)
-                .unlockedBy("has_" + result.toString(), has(result))
-                .save(output, new ResourceLocation(AdvancedNetherite.getRegistryHelper().getBlockById(result).getNamespace(), ingredient.toString() + "_from_block"));
+                .unlockedBy("has_" + resultId.getPath(), has(result))
+                .save(output, ResourceLocation.fromNamespaceAndPath(resultId.getNamespace(), ingredientId.getPath() + "_from_block"));
     }
 
     private void lodestoneRecipe(RecipeOutput output)
@@ -145,6 +149,6 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .pattern("SSS")
                 .unlockedBy("has_chiseled_stone_bricks", has(Items.CHISELED_STONE_BRICKS))
                 .unlockedBy("has_netherite_ingots", has(ModTags.NETHERITE_INGOTS))
-                .save(output, new ResourceLocation(AdvancedNetherite.MOD_ID, Items.LODESTONE.toString()));
+                .save(output, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, AdvancedNetherite.getRegistryHelper().getItemById(Items.LODESTONE).getPath()));
     }
 }

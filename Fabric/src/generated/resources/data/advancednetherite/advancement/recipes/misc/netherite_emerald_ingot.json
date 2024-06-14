@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_Block{advancednetherite:netherite_emerald_block}": {
+    "has_minecraft:emerald": {
       "conditions": {
         "items": [
           {
-            "items": "advancednetherite:netherite_emerald_block"
+            "items": "minecraft:emerald"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "advancednetherite:netherite_emerald_ingot_from_block"
+        "recipe": "advancednetherite:netherite_emerald_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_Block{advancednetherite:netherite_emerald_block}"
+      "has_minecraft:emerald"
     ]
   ],
   "rewards": {
     "recipes": [
-      "advancednetherite:netherite_emerald_ingot_from_block"
+      "advancednetherite:netherite_emerald_ingot"
     ]
   }
 }

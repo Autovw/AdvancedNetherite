@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_netherite_diamond_ingot": {
+    "has_netherite_diamond_block": {
       "conditions": {
         "items": [
           {
-            "items": "advancednetherite:netherite_diamond_ingot"
+            "items": "advancednetherite:netherite_diamond_block"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "advancednetherite:netherite_diamond_block"
+        "recipe": "advancednetherite:netherite_diamond_ingot_from_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_netherite_diamond_ingot"
+      "has_netherite_diamond_block"
     ]
   ],
   "rewards": {
     "recipes": [
-      "advancednetherite:netherite_diamond_block"
+      "advancednetherite:netherite_diamond_ingot_from_block"
     ]
   }
 }

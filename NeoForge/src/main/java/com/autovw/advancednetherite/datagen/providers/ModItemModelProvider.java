@@ -118,7 +118,7 @@ public class ModItemModelProvider extends ItemModelProvider
     private void itemModel(Item item)
     {
         ResourceLocation id = AdvancedNetherite.getRegistryHelper().getItemById(item);
-        itemModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + id.getPath()));
+        itemModel(item, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "item/" + id.getPath()));
     }
 
     /**
@@ -136,7 +136,7 @@ public class ModItemModelProvider extends ItemModelProvider
     private void toolModel(Item item)
     {
         ResourceLocation id = AdvancedNetherite.getRegistryHelper().getItemById(item);
-        toolModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + id.getPath()));
+        toolModel(item, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "item/" + id.getPath()));
     }
 
     public void armorModel(Item item)
@@ -156,9 +156,9 @@ public class ModItemModelProvider extends ItemModelProvider
                 default -> "";
             };
 
-            ResourceLocation armorTexture = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
+            ResourceLocation armorTexture = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath());
             ResourceLocation trimTexture = mcLoc("trims/items/" + armorType + "_trim_" + trimMaterial.location().getPath());
-            ResourceLocation currentTrimTexture = new ResourceLocation(id.getNamespace(), "item/" + id.getPath() + "_" + trimMaterial.location().getPath() + "_trim");
+            ResourceLocation currentTrimTexture = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath() + "_" + trimMaterial.location().getPath() + "_trim");
 
             // Make sure the ExistingFileHelper does not throw an IllegalArgumentException
             this.existingFileHelper.trackGenerated(trimTexture, PackType.CLIENT_RESOURCES, ".png", "textures");
@@ -183,6 +183,6 @@ public class ModItemModelProvider extends ItemModelProvider
                 .override()
                 .model(new ModelFile.UncheckedModelFile(currentTrimTexture))
                 .predicate(mcLoc("trim_type"), trimValue).end()
-                .texture("layer0", new ResourceLocation(id.getNamespace(), "item/" + id.getPath()));
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath()));
     }
 }

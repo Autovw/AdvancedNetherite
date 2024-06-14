@@ -22,7 +22,7 @@ public final class AdvancedNetheriteTab
     @Internal
     public static void registerTab()
     {
-        ResourceKey<CreativeModeTab> tab = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(AdvancedNetherite.MOD_ID, "tab"));
+        ResourceKey<CreativeModeTab> tab = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "tab"));
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, tab, FabricItemGroup.builder()
                 .icon(ModItems.NETHERITE_GOLD_INGOT::getDefaultInstance)
                 .title(Component.translatable("itemGroup." + AdvancedNetherite.MOD_ID + ".tab"))

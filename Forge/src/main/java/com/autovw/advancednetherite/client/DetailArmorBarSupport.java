@@ -15,7 +15,7 @@ import net.minecraft.resources.ResourceLocation;
  */
 @Internal
 public class DetailArmorBarSupport {
-    protected static final ResourceLocation ARMOR_BAR_TEXTURE = new ResourceLocation(AdvancedNetherite.MOD_ID, "textures/armor_bar/armor_bar.png");
+    protected static final ResourceLocation ARMOR_BAR_TEXTURE = ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "textures/armor_bar/armor_bar.png");
 
     // TODO re-implement Detail Armor Bar support
     public static void register() {

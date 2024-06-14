@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_Block{advancednetherite:netherite_iron_block}": {
+    "has_netherite_iron_block": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_Block{advancednetherite:netherite_iron_block}"
+      "has_netherite_iron_block"
     ]
   ],
   "rewards": {

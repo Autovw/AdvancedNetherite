@@ -4,9 +4,13 @@ import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.ModItems;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.advancements.critereon.*;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.registries.VanillaRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -30,23 +34,23 @@ import java.util.Optional;
 public final class ModLootTableModifiers
 {
     private static final Item[] HOE_ITEMS = { ModItems.NETHERITE_IRON_HOE, ModItems.NETHERITE_GOLD_HOE, ModItems.NETHERITE_EMERALD_HOE, ModItems.NETHERITE_DIAMOND_HOE };
-    private static final ResourceLocation WHEAT = new ResourceLocation("blocks/wheat");
-    private static final ResourceLocation CARROTS = new ResourceLocation("blocks/carrots");
-    private static final ResourceLocation POTATOES = new ResourceLocation("blocks/potatoes");
-    private static final ResourceLocation BEETROOTS = new ResourceLocation("blocks/beetroots");
-    private static final ResourceLocation PHANTOM = new ResourceLocation("entities/phantom");
-    private static final ResourceLocation ZOMBIFIED_PIGLIN = new ResourceLocation("entities/zombified_piglin");
-    private static final ResourceLocation PIGLIN = new ResourceLocation("entities/piglin");
-    private static final ResourceLocation ENDERMAN = new ResourceLocation("entities/enderman");
-    private static final ResourceLocation IRON_ORE = new ResourceLocation("blocks/iron_ore");
-    private static final ResourceLocation DEEPSLATE_IRON_ORE = new ResourceLocation("blocks/deepslate_iron_ore");
-    private static final ResourceLocation GOLD_ORE = new ResourceLocation("blocks/gold_ore");
-    private static final ResourceLocation DEEPSLATE_GOLD_ORE = new ResourceLocation("blocks/deepslate_gold_ore");
-    private static final ResourceLocation EMERALD_ORE = new ResourceLocation("blocks/emerald_ore");
-    private static final ResourceLocation DEEPSLATE_EMERALD_ORE = new ResourceLocation("blocks/deepslate_emerald_ore");
-    private static final ResourceLocation DIAMOND_ORE = new ResourceLocation("blocks/diamond_ore");
-    private static final ResourceLocation DEEPSLATE_DIAMOND_ORE = new ResourceLocation("blocks/deepslate_diamond_ore");
-    private static final ResourceLocation NETHER_GOLD_ORE = new ResourceLocation("blocks/netherite_gold_ore");
+    private static final ResourceLocation WHEAT = ResourceLocation.withDefaultNamespace("blocks/wheat");
+    private static final ResourceLocation CARROTS = ResourceLocation.withDefaultNamespace("blocks/carrots");
+    private static final ResourceLocation POTATOES = ResourceLocation.withDefaultNamespace("blocks/potatoes");
+    private static final ResourceLocation BEETROOTS = ResourceLocation.withDefaultNamespace("blocks/beetroots");
+    private static final ResourceLocation PHANTOM = ResourceLocation.withDefaultNamespace("entities/phantom");
+    private static final ResourceLocation ZOMBIFIED_PIGLIN = ResourceLocation.withDefaultNamespace("entities/zombified_piglin");
+    private static final ResourceLocation PIGLIN = ResourceLocation.withDefaultNamespace("entities/piglin");
+    private static final ResourceLocation ENDERMAN = ResourceLocation.withDefaultNamespace("entities/enderman");
+    private static final ResourceLocation IRON_ORE = ResourceLocation.withDefaultNamespace("blocks/iron_ore");
+    private static final ResourceLocation DEEPSLATE_IRON_ORE = ResourceLocation.withDefaultNamespace("blocks/deepslate_iron_ore");
+    private static final ResourceLocation GOLD_ORE = ResourceLocation.withDefaultNamespace("blocks/gold_ore");
+    private static final ResourceLocation DEEPSLATE_GOLD_ORE = ResourceLocation.withDefaultNamespace("blocks/deepslate_gold_ore");
+    private static final ResourceLocation EMERALD_ORE = ResourceLocation.withDefaultNamespace("blocks/emerald_ore");
+    private static final ResourceLocation DEEPSLATE_EMERALD_ORE = ResourceLocation.withDefaultNamespace("blocks/deepslate_emerald_ore");
+    private static final ResourceLocation DIAMOND_ORE = ResourceLocation.withDefaultNamespace("blocks/diamond_ore");
+    private static final ResourceLocation DEEPSLATE_DIAMOND_ORE = ResourceLocation.withDefaultNamespace("blocks/deepslate_diamond_ore");
+    private static final ResourceLocation NETHER_GOLD_ORE = ResourceLocation.withDefaultNamespace("blocks/netherite_gold_ore");
 
     public static void modifyTables()
     {
@@ -155,7 +159,7 @@ public final class ModLootTableModifiers
         ItemPredicate mainHandItemPredicate = ItemPredicate.Builder.item().of(tools).build();
         EntityEquipmentPredicate equipmentPredicate = new EntityEquipmentPredicate(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.of(mainHandItemPredicate), Optional.empty());
         return LootPool.lootPool()
-                .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER, EntityPredicate.Builder.entity().equipment(equipmentPredicate)))
+                .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.entity().equipment(equipmentPredicate)))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))
                 .add(LootItem.lootTableItem(dropItem))
                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());
@@ -163,13 +167,15 @@ public final class ModLootTableModifiers
 
     private static LootPool.Builder oreDropPool(float dropChance, Item dropItem, int minDrop, int maxDrop, ItemLike... tools)
     {
+        HolderLookup.RegistryLookup<Enchantment> registries = VanillaRegistries.createLookup().lookupOrThrow(Registries.ENCHANTMENT);
         return LootPool.lootPool()
                 .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(tools)))
                 .when(InvertedLootItemCondition.invert(
                         MatchTool.toolMatches(
                                 ItemPredicate.Builder.item()
                                         .withSubPredicate(ItemSubPredicates.ENCHANTMENTS, ItemEnchantmentsPredicate.enchantments(
-                                                List.of(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1)))
+                                                List.of(new EnchantmentPredicate(registries.getOrThrow(Enchantments.SILK_TOUCH), MinMaxBounds.Ints.atLeast(1)))
+                                                //List.of(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1)))
                                         ))
                 )))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))

@@ -75,7 +75,7 @@ public final class ModArmorMaterials
      */
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtections, int enchantability, float toughness, float knockbackResistance, Item ingredientItem)
     {
-        ResourceLocation loc = new ResourceLocation(AdvancedNetherite.MOD_ID, name);
+        ResourceLocation loc = ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, name);
         Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_NETHERITE;
         Supplier<Ingredient> ingredient = () -> Ingredient.of(ingredientItem);
         List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(loc));

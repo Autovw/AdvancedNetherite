@@ -29,10 +29,10 @@ public class ModBlockStatesProvider extends FabricModelProvider
         generator.createTrivialCube(ModBlocks.NETHERITE_EMERALD_BLOCK);
         generator.createTrivialCube(ModBlocks.NETHERITE_DIAMOND_BLOCK);
 
-        generator.delegateItemModel(ModBlocks.NETHERITE_IRON_BLOCK, new ResourceLocation(AdvancedNetherite.MOD_ID, "block/netherite_iron_block"));
-        generator.delegateItemModel(ModBlocks.NETHERITE_GOLD_BLOCK, new ResourceLocation(AdvancedNetherite.MOD_ID, "block/netherite_gold_block"));
-        generator.delegateItemModel(ModBlocks.NETHERITE_EMERALD_BLOCK, new ResourceLocation(AdvancedNetherite.MOD_ID, "block/netherite_emerald_block"));
-        generator.delegateItemModel(ModBlocks.NETHERITE_DIAMOND_BLOCK, new ResourceLocation(AdvancedNetherite.MOD_ID, "block/netherite_diamond_block"));
+        generator.delegateItemModel(ModBlocks.NETHERITE_IRON_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_iron_block"));
+        generator.delegateItemModel(ModBlocks.NETHERITE_GOLD_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_gold_block"));
+        generator.delegateItemModel(ModBlocks.NETHERITE_EMERALD_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_emerald_block"));
+        generator.delegateItemModel(ModBlocks.NETHERITE_DIAMOND_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_diamond_block"));
     }
 
     @Override

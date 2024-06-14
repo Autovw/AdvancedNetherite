@@ -30,7 +30,7 @@ public class ModLootModifierProvider extends GlobalLootModifierProvider
     }
 
     @Override
-    protected void start()
+    protected void start(HolderLookup.Provider provider)
     {
         // ores
         add("ore_drops_loot_modifier", new OreDropsLootModifier(new LootItemCondition[] {}));

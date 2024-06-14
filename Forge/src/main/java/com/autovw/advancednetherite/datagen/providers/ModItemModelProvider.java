@@ -117,7 +117,8 @@ public class ModItemModelProvider extends ItemModelProvider
     @Internal
     private void itemModel(Item item)
     {
-        itemModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + item.toString()));
+        ResourceLocation itemLoc = AdvancedNetherite.getRegistryHelper().getItemById(item);
+        itemModel(item, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "item/" + itemLoc.getPath()));
     }
 
     /**
@@ -134,7 +135,8 @@ public class ModItemModelProvider extends ItemModelProvider
     @Internal
     private void toolModel(Item item)
     {
-        toolModel(item, new ResourceLocation(AdvancedNetherite.MOD_ID, "item/" + item.toString()));
+        ResourceLocation toolLoc = AdvancedNetherite.getRegistryHelper().getItemById(item);
+        toolModel(item, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "item/" + toolLoc.getPath()));
     }
 
     public void armorModel(Item item)
@@ -154,9 +156,9 @@ public class ModItemModelProvider extends ItemModelProvider
                 default -> "";
             };
 
-            ResourceLocation armorTexture = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
+            ResourceLocation armorTexture = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath());
             ResourceLocation trimTexture = mcLoc("trims/items/" + armorType + "_trim_" + trimMaterial.location().getPath());
-            ResourceLocation currentTrimTexture = new ResourceLocation(id.getNamespace(), "item/" + id.getPath() + "_" + trimMaterial.location().getPath() + "_trim");
+            ResourceLocation currentTrimTexture = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath() + "_" + trimMaterial.location().getPath() + "_trim");
 
             // Make sure the ExistingFileHelper does not throw an IllegalArgumentException
             this.existingFileHelper.trackGenerated(trimTexture, PackType.CLIENT_RESOURCES, ".png", "textures");
@@ -181,6 +183,6 @@ public class ModItemModelProvider extends ItemModelProvider
                 .override()
                 .model(new ModelFile.UncheckedModelFile(currentTrimTexture))
                 .predicate(mcLoc("trim_type"), trimValue).end()
-                .texture("layer0", new ResourceLocation(id.getNamespace(), "item/" + id.getPath()));
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath()));
     }
 }

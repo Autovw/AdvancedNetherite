@@ -45,9 +45,9 @@ public class ModLootTableProvider extends LootTableProvider
 
     private static class ModBlockLootSubProvider extends BlockLootSubProvider
     {
-        protected ModBlockLootSubProvider()
+        protected ModBlockLootSubProvider(HolderLookup.Provider provider)
         {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), provider);
         }
 
         @Override

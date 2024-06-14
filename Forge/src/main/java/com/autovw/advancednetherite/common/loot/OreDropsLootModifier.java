@@ -2,6 +2,7 @@ package com.autovw.advancednetherite.common.loot;
 
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.ModItems;
+import com.autovw.advancednetherite.core.util.ModTags;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -9,7 +10,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,7 +54,7 @@ public class OreDropsLootModifier extends LootModifier
             Item toolItem = tool.getItem();
             RandomSource random = context.getRandom();
 
-            if (tool.getEnchantmentLevel(Enchantments.SILK_TOUCH) > 0)
+            if (EnchantmentHelper.hasTag(tool, ModTags.PREVENTS_ADDITIONAL_ORE_DROPS))
             {
                 return generatedLoot; // return early if tool is enchanted with silk touch
             }

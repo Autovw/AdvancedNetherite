@@ -114,7 +114,7 @@ public class ModRecipeProvider extends RecipeProvider
         ResourceLocation resultId = AdvancedNetherite.getRegistryHelper().getItemById(result);
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ingredient), Ingredient.of(upgradeIngredient), RecipeCategory.MISC, result)
                 .unlocks("has_ingredients", has(upgradeIngredient))
-                .save(output, new ResourceLocation(resultId.getNamespace(), resultId.getPath() + "_smithing"));
+                .save(output, ResourceLocation.fromNamespaceAndPath(resultId.getNamespace(), resultId.getPath() + "_smithing"));
     }
 
     /**
@@ -158,7 +158,7 @@ public class ModRecipeProvider extends RecipeProvider
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingredient, 9)
                 .requires(result)
                 .unlockedBy("has_" + result.toString(), has(result))
-                .save(output, new ResourceLocation(ingredient.toString() + "_from_block"));
+                .save(output, ResourceLocation.parse(ingredient.toString() + "_from_block"));
     }
 
     // Other ingots are automatically included if they are added to the NETHERITE_INGOTS tag.
@@ -173,6 +173,6 @@ public class ModRecipeProvider extends RecipeProvider
                 .pattern("SSS")
                 .unlockedBy("has_chiseled_stone_bricks", has(Items.CHISELED_STONE_BRICKS))
                 .unlockedBy("has_netherite_ingots", has(ModTags.NETHERITE_INGOTS))
-                .save(output, new ResourceLocation(AdvancedNetherite.MOD_ID, lodestoneId.getPath()));
+                .save(output, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, lodestoneId.getPath()));
     }
 }
