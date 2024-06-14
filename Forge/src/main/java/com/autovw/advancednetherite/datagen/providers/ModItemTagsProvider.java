@@ -10,7 +10,6 @@ import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,16 +47,16 @@ public class ModItemTagsProvider extends ItemTagsProvider
         tag(ModTags.UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.INGOTS_NETHERITES_IRON);
 
         // Axes
-        tag(ModTags.AXES_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_AXE);
-        tag(ModTags.AXES_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_AXE);
-        tag(ModTags.AXES_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_AXE);
-        tag(ModTags.AXES_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_AXE);
-        tag(ModTags.AXES_NETHERITE).add(Items.NETHERITE_AXE);
+        tag(ModTags.AXE_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_AXE);
+        tag(ModTags.AXE_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_AXE);
+        tag(ModTags.AXE_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_AXE);
+        tag(ModTags.AXE_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_AXE);
+        tag(ModTags.AXE_NETHERITE).add(Items.NETHERITE_AXE);
 
-        tag(ModTags.AXES_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.AXES_NETHERITE_EMERALD);
-        tag(ModTags.AXES_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.AXES_NETHERITE_GOLD);
-        tag(ModTags.AXES_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.AXES_NETHERITE_IRON);
-        tag(ModTags.AXES_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.AXES_NETHERITE);
+        tag(ModTags.AXE_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.AXE_NETHERITE_EMERALD);
+        tag(ModTags.AXE_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.AXE_NETHERITE_GOLD);
+        tag(ModTags.AXE_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.AXE_NETHERITE_IRON);
+        tag(ModTags.AXE_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.AXE_NETHERITE);
 
         // Boots
         tag(ModTags.BOOTS_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_BOOTS);
@@ -72,40 +71,40 @@ public class ModItemTagsProvider extends ItemTagsProvider
         tag(ModTags.BOOTS_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.BOOTS_NETHERITE);
 
         // Chestplates
-        tag(ModTags.CHESTPLATES_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_CHESTPLATE);
-        tag(ModTags.CHESTPLATES_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_CHESTPLATE);
-        tag(ModTags.CHESTPLATES_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_CHESTPLATE);
-        tag(ModTags.CHESTPLATES_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_CHESTPLATE);
-        tag(ModTags.CHESTPLATES_NETHERITE).add(Items.NETHERITE_CHESTPLATE);
+        tag(ModTags.CHESTPLATE_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_CHESTPLATE);
+        tag(ModTags.CHESTPLATE_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_CHESTPLATE);
+        tag(ModTags.CHESTPLATE_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_CHESTPLATE);
+        tag(ModTags.CHESTPLATE_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_CHESTPLATE);
+        tag(ModTags.CHESTPLATE_NETHERITE).add(Items.NETHERITE_CHESTPLATE);
 
-        tag(ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.CHESTPLATES_NETHERITE_EMERALD);
-        tag(ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.CHESTPLATES_NETHERITE_GOLD);
-        tag(ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.CHESTPLATES_NETHERITE_IRON);
-        tag(ModTags.CHESTPLATES_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.CHESTPLATES_NETHERITE);
+        tag(ModTags.CHESTPLATE_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.CHESTPLATE_NETHERITE_EMERALD);
+        tag(ModTags.CHESTPLATE_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.CHESTPLATE_NETHERITE_GOLD);
+        tag(ModTags.CHESTPLATE_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.CHESTPLATE_NETHERITE_IRON);
+        tag(ModTags.CHESTPLATE_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.CHESTPLATE_NETHERITE);
 
         // Helmets
-        tag(ModTags.HELMETS_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_HELMET);
-        tag(ModTags.HELMETS_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_HELMET);
-        tag(ModTags.HELMETS_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_HELMET);
-        tag(ModTags.HELMETS_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_HELMET);
-        tag(ModTags.HELMETS_NETHERITE).add(Items.NETHERITE_HELMET);
+        tag(ModTags.HELMET_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_HELMET);
+        tag(ModTags.HELMET_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_HELMET);
+        tag(ModTags.HELMET_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_HELMET);
+        tag(ModTags.HELMET_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_HELMET);
+        tag(ModTags.HELMET_NETHERITE).add(Items.NETHERITE_HELMET);
 
-        tag(ModTags.HELMETS_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.HELMETS_NETHERITE_EMERALD);
-        tag(ModTags.HELMETS_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.HELMETS_NETHERITE_GOLD);
-        tag(ModTags.HELMETS_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.HELMETS_NETHERITE_IRON);
-        tag(ModTags.HELMETS_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.HELMETS_NETHERITE);
+        tag(ModTags.HELMET_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.HELMET_NETHERITE_EMERALD);
+        tag(ModTags.HELMET_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.HELMET_NETHERITE_GOLD);
+        tag(ModTags.HELMET_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.HELMET_NETHERITE_IRON);
+        tag(ModTags.HELMET_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.HELMET_NETHERITE);
 
         // Hoes
-        tag(ModTags.HOES_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_HOE);
-        tag(ModTags.HOES_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_HOE);
-        tag(ModTags.HOES_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_HOE);
-        tag(ModTags.HOES_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_HOE);
-        tag(ModTags.HOES_NETHERITE).add(Items.NETHERITE_HOE);
+        tag(ModTags.HOE_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_HOE);
+        tag(ModTags.HOE_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_HOE);
+        tag(ModTags.HOE_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_HOE);
+        tag(ModTags.HOE_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_HOE);
+        tag(ModTags.HOE_NETHERITE).add(Items.NETHERITE_HOE);
 
-        tag(ModTags.HOES_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.HOES_NETHERITE_EMERALD);
-        tag(ModTags.HOES_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.HOES_NETHERITE_GOLD);
-        tag(ModTags.HOES_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.HOES_NETHERITE_IRON);
-        tag(ModTags.HOES_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.HOES_NETHERITE);
+        tag(ModTags.HOE_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.HOE_NETHERITE_EMERALD);
+        tag(ModTags.HOE_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.HOE_NETHERITE_GOLD);
+        tag(ModTags.HOE_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.HOE_NETHERITE_IRON);
+        tag(ModTags.HOE_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.HOE_NETHERITE);
 
         // Ingots
         tag(ModTags.INGOTS_NETHERITES_DIAMOND).add(ModItems.NETHERITE_DIAMOND_INGOT);
@@ -132,93 +131,93 @@ public class ModItemTagsProvider extends ItemTagsProvider
         tag(ModTags.LEGGINGS_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.LEGGINGS_NETHERITE);
 
         // Pickaxes
-        tag(ModTags.PICKAXES_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_PICKAXE);
-        tag(ModTags.PICKAXES_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_PICKAXE);
-        tag(ModTags.PICKAXES_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_PICKAXE);
-        tag(ModTags.PICKAXES_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_PICKAXE);
-        tag(ModTags.PICKAXES_NETHERITE).add(Items.NETHERITE_PICKAXE);
+        tag(ModTags.PICKAXE_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_PICKAXE);
+        tag(ModTags.PICKAXE_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_PICKAXE);
+        tag(ModTags.PICKAXE_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_PICKAXE);
+        tag(ModTags.PICKAXE_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_PICKAXE);
+        tag(ModTags.PICKAXE_NETHERITE).add(Items.NETHERITE_PICKAXE);
 
-        tag(ModTags.PICKAXES_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.PICKAXES_NETHERITE_EMERALD);
-        tag(ModTags.PICKAXES_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.PICKAXES_NETHERITE_GOLD);
-        tag(ModTags.PICKAXES_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.PICKAXES_NETHERITE_IRON);
-        tag(ModTags.PICKAXES_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.PICKAXES_NETHERITE);
+        tag(ModTags.PICKAXE_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.PICKAXE_NETHERITE_EMERALD);
+        tag(ModTags.PICKAXE_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.PICKAXE_NETHERITE_GOLD);
+        tag(ModTags.PICKAXE_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.PICKAXE_NETHERITE_IRON);
+        tag(ModTags.PICKAXE_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.PICKAXE_NETHERITE);
 
         // Shovels
-        tag(ModTags.SHOVELS_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_SHOVEL);
-        tag(ModTags.SHOVELS_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_SHOVEL);
-        tag(ModTags.SHOVELS_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_SHOVEL);
-        tag(ModTags.SHOVELS_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_SHOVEL);
-        tag(ModTags.SHOVELS_NETHERITE).add(Items.NETHERITE_SHOVEL);
+        tag(ModTags.SHOVEL_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_SHOVEL);
+        tag(ModTags.SHOVEL_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_SHOVEL);
+        tag(ModTags.SHOVEL_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_SHOVEL);
+        tag(ModTags.SHOVEL_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_SHOVEL);
+        tag(ModTags.SHOVEL_NETHERITE).add(Items.NETHERITE_SHOVEL);
 
-        tag(ModTags.SHOVELS_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.SHOVELS_NETHERITE_EMERALD);
-        tag(ModTags.SHOVELS_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.SHOVELS_NETHERITE_GOLD);
-        tag(ModTags.SHOVELS_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.SHOVELS_NETHERITE_IRON);
-        tag(ModTags.SHOVELS_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.SHOVELS_NETHERITE);
+        tag(ModTags.SHOVEL_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.SHOVEL_NETHERITE_EMERALD);
+        tag(ModTags.SHOVEL_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.SHOVEL_NETHERITE_GOLD);
+        tag(ModTags.SHOVEL_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.SHOVEL_NETHERITE_IRON);
+        tag(ModTags.SHOVEL_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.SHOVEL_NETHERITE);
 
         // Swords
-        tag(ModTags.SWORDS_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_SWORD);
-        tag(ModTags.SWORDS_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_SWORD);
-        tag(ModTags.SWORDS_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_SWORD);
-        tag(ModTags.SWORDS_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_SWORD);
-        tag(ModTags.SWORDS_NETHERITE).add(Items.NETHERITE_SWORD);
+        tag(ModTags.SWORD_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_SWORD);
+        tag(ModTags.SWORD_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_SWORD);
+        tag(ModTags.SWORD_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_SWORD);
+        tag(ModTags.SWORD_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_SWORD);
+        tag(ModTags.SWORD_NETHERITE).add(Items.NETHERITE_SWORD);
 
-        tag(ModTags.SWORDS_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.SWORDS_NETHERITE_EMERALD);
-        tag(ModTags.SWORDS_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.SWORDS_NETHERITE_GOLD);
-        tag(ModTags.SWORDS_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.SWORDS_NETHERITE_IRON);
-        tag(ModTags.SWORDS_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.SWORDS_NETHERITE);
+        tag(ModTags.SWORD_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.SWORD_NETHERITE_EMERALD);
+        tag(ModTags.SWORD_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.SWORD_NETHERITE_GOLD);
+        tag(ModTags.SWORD_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.SWORD_NETHERITE_IRON);
+        tag(ModTags.SWORD_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.SWORD_NETHERITE);
 
         // Tiers
-        tag(ModTags.TIERS_ARMOR)
-                .addTag(ModTags.TIERS_ARMOR_NETHERITE_DIAMOND)
-                .addTag(ModTags.TIERS_ARMOR_NETHERITE_EMERALD)
-                .addTag(ModTags.TIERS_ARMOR_NETHERITE_GOLD)
-                .addTag(ModTags.TIERS_ARMOR_NETHERITE_IRON);
-        tag(ModTags.TIERS_TOOLS)
-                .addTag(ModTags.TIERS_TOOLS_NETHERITE_DIAMOND)
-                .addTag(ModTags.TIERS_TOOLS_NETHERITE_EMERALD)
-                .addTag(ModTags.TIERS_TOOLS_NETHERITE_GOLD)
-                .addTag(ModTags.TIERS_TOOLS_NETHERITE_IRON);
+        tag(ModTags.TIER_ARMOR)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_EMERALD)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_GOLD)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_IRON);
+        tag(ModTags.TIER_TOOLS)
+                .addTag(ModTags.TIER_TOOL_NETHERITE_DIAMOND)
+                .addTag(ModTags.TIER_TOOL_NETHERITE_EMERALD)
+                .addTag(ModTags.TIER_TOOL_NETHERITE_GOLD)
+                .addTag(ModTags.TIER_TOOL_NETHERITE_IRON);
 
-        tag(ModTags.TIERS_ARMOR_NETHERITE_DIAMOND)
+        tag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND)
                 .add(ModItems.NETHERITE_DIAMOND_HELMET)
                 .add(ModItems.NETHERITE_DIAMOND_CHESTPLATE)
                 .add(ModItems.NETHERITE_DIAMOND_LEGGINGS)
                 .add(ModItems.NETHERITE_DIAMOND_BOOTS);
-        tag(ModTags.TIERS_ARMOR_NETHERITE_EMERALD)
+        tag(ModTags.TIER_ARMOR_NETHERITE_EMERALD)
                 .add(ModItems.NETHERITE_EMERALD_HELMET)
                 .add(ModItems.NETHERITE_EMERALD_CHESTPLATE)
                 .add(ModItems.NETHERITE_EMERALD_LEGGINGS)
                 .add(ModItems.NETHERITE_EMERALD_BOOTS);
-        tag(ModTags.TIERS_ARMOR_NETHERITE_GOLD)
+        tag(ModTags.TIER_ARMOR_NETHERITE_GOLD)
                 .add(ModItems.NETHERITE_GOLD_HELMET)
                 .add(ModItems.NETHERITE_GOLD_CHESTPLATE)
                 .add(ModItems.NETHERITE_GOLD_LEGGINGS)
                 .add(ModItems.NETHERITE_GOLD_BOOTS);
-        tag(ModTags.TIERS_ARMOR_NETHERITE_IRON)
+        tag(ModTags.TIER_ARMOR_NETHERITE_IRON)
                 .add(ModItems.NETHERITE_IRON_HELMET)
                 .add(ModItems.NETHERITE_IRON_CHESTPLATE)
                 .add(ModItems.NETHERITE_IRON_LEGGINGS)
                 .add(ModItems.NETHERITE_IRON_BOOTS);
 
-        tag(ModTags.TIERS_TOOLS_NETHERITE_DIAMOND)
+        tag(ModTags.TIER_TOOL_NETHERITE_DIAMOND)
                 .add(ModItems.NETHERITE_DIAMOND_AXE)
                 .add(ModItems.NETHERITE_DIAMOND_HOE)
                 .add(ModItems.NETHERITE_DIAMOND_PICKAXE)
                 .add(ModItems.NETHERITE_DIAMOND_SHOVEL)
                 .add(ModItems.NETHERITE_DIAMOND_SWORD);
-        tag(ModTags.TIERS_TOOLS_NETHERITE_EMERALD)
+        tag(ModTags.TIER_TOOL_NETHERITE_EMERALD)
                 .add(ModItems.NETHERITE_EMERALD_AXE)
                 .add(ModItems.NETHERITE_EMERALD_HOE)
                 .add(ModItems.NETHERITE_EMERALD_PICKAXE)
                 .add(ModItems.NETHERITE_EMERALD_SHOVEL)
                 .add(ModItems.NETHERITE_EMERALD_SWORD);
-        tag(ModTags.TIERS_TOOLS_NETHERITE_GOLD)
+        tag(ModTags.TIER_TOOL_NETHERITE_GOLD)
                 .add(ModItems.NETHERITE_GOLD_AXE)
                 .add(ModItems.NETHERITE_GOLD_HOE)
                 .add(ModItems.NETHERITE_GOLD_PICKAXE)
                 .add(ModItems.NETHERITE_GOLD_SHOVEL)
                 .add(ModItems.NETHERITE_GOLD_SWORD);
-        tag(ModTags.TIERS_TOOLS_NETHERITE_IRON)
+        tag(ModTags.TIER_TOOL_NETHERITE_IRON)
                 .add(ModItems.NETHERITE_IRON_AXE)
                 .add(ModItems.NETHERITE_IRON_HOE)
                 .add(ModItems.NETHERITE_IRON_PICKAXE)

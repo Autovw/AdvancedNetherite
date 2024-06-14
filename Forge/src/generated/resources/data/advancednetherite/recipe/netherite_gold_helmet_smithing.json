@@ -4,7 +4,7 @@
     "tag": "advancednetherite:upgrade_to_netherite_gold"
   },
   "base": {
-    "tag": "advancednetherite:helmets/upgrade_to_netherite_gold"
+    "tag": "advancednetherite:helmet/upgrade_to_netherite_gold"
   },
   "result": {
     "count": 1,

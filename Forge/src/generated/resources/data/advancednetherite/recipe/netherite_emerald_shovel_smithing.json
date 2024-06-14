@@ -4,7 +4,7 @@
     "tag": "advancednetherite:upgrade_to_netherite_emerald"
   },
   "base": {
-    "tag": "advancednetherite:shovels/upgrade_to_netherite_emerald"
+    "tag": "advancednetherite:shovel/upgrade_to_netherite_emerald"
   },
   "result": {
     "count": 1,

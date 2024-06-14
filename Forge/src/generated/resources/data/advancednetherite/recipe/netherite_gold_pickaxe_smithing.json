@@ -4,7 +4,7 @@
     "tag": "advancednetherite:upgrade_to_netherite_gold"
   },
   "base": {
-    "tag": "advancednetherite:pickaxes/upgrade_to_netherite_gold"
+    "tag": "advancednetherite:pickaxe/upgrade_to_netherite_gold"
   },
   "result": {
     "count": 1,

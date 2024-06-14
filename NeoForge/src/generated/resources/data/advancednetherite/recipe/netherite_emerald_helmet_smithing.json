@@ -4,7 +4,7 @@
     "tag": "advancednetherite:upgrade_to_netherite_emerald"
   },
   "base": {
-    "tag": "advancednetherite:helmets/upgrade_to_netherite_emerald"
+    "tag": "advancednetherite:helmet/upgrade_to_netherite_emerald"
   },
   "result": {
     "count": 1,

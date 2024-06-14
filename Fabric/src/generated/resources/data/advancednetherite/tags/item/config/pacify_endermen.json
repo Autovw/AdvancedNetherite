@@ -1,6 +1,6 @@
 {
   "values": [
-    "#advancednetherite:tiers/armor/netherite_emerald",
-    "#advancednetherite:tiers/armor/netherite_diamond"
+    "#advancednetherite:tier/armor/netherite_emerald",
+    "#advancednetherite:tier/armor/netherite_diamond"
   ]
 }

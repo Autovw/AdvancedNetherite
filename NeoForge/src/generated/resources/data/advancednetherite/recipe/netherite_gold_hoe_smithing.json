@@ -4,7 +4,7 @@
     "tag": "advancednetherite:upgrade_to_netherite_gold"
   },
   "base": {
-    "tag": "advancednetherite:hoes/upgrade_to_netherite_gold"
+    "tag": "advancednetherite:hoe/upgrade_to_netherite_gold"
   },
   "result": {
     "count": 1,

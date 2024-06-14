@@ -4,7 +4,7 @@
     "tag": "advancednetherite:upgrade_to_netherite_gold"
   },
   "base": {
-    "tag": "advancednetherite:swords/upgrade_to_netherite_gold"
+    "tag": "advancednetherite:sword/upgrade_to_netherite_gold"
   },
   "result": {
     "count": 1,

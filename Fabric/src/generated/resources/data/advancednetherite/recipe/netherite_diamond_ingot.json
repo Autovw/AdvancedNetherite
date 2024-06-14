@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "advancednetherite:ingots/upgrade_to_netherite_diamond"
+      "tag": "advancednetherite:ingot/upgrade_to_netherite_diamond"
     },
     {
       "item": "minecraft:diamond"

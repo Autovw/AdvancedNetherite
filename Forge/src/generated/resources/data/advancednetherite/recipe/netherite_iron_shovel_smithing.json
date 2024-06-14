@@ -4,7 +4,7 @@
     "tag": "advancednetherite:upgrade_to_netherite_iron"
   },
   "base": {
-    "tag": "advancednetherite:shovels/upgrade_to_netherite_iron"
+    "tag": "advancednetherite:shovel/upgrade_to_netherite_iron"
   },
   "result": {
     "count": 1,

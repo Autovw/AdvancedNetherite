@@ -4,7 +4,7 @@
     "tag": "advancednetherite:upgrade_to_netherite_iron"
   },
   "base": {
-    "tag": "advancednetherite:helmets/upgrade_to_netherite_iron"
+    "tag": "advancednetherite:helmet/upgrade_to_netherite_iron"
   },
   "result": {
     "count": 1,

@@ -4,7 +4,7 @@
     "tag": "advancednetherite:upgrade_to_netherite_diamond"
   },
   "base": {
-    "tag": "advancednetherite:shovels/upgrade_to_netherite_diamond"
+    "tag": "advancednetherite:shovel/upgrade_to_netherite_diamond"
   },
   "result": {
     "count": 1,

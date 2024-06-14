@@ -31,15 +31,15 @@ public final class ModTags
     public static final TagKey<Item> UPGRADE_TO_NETHERITE_GOLD = modItemTag("upgrade_to_netherite_gold");
     public static final TagKey<Item> UPGRADE_TO_NETHERITE_IRON = modItemTag("upgrade_to_netherite_iron");
 
-    public static final TagKey<Item> AXES_NETHERITE_DIAMOND = modItemTag("axes/netherite_diamond");
-    public static final TagKey<Item> AXES_NETHERITE_EMERALD = modItemTag("axes/netherite_emerald");
-    public static final TagKey<Item> AXES_NETHERITE_GOLD = modItemTag("axes/netherite_gold");
-    public static final TagKey<Item> AXES_NETHERITE_IRON = modItemTag("axes/netherite_iron");
-    public static final TagKey<Item> AXES_NETHERITE = modItemTag("axes/netherite");
-    public static final TagKey<Item> AXES_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("axes/upgrade_to_netherite_diamond");
-    public static final TagKey<Item> AXES_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("axes/upgrade_to_netherite_emerald");
-    public static final TagKey<Item> AXES_UPGRADE_TO_NETHERITE_GOLD = modItemTag("axes/upgrade_to_netherite_gold");
-    public static final TagKey<Item> AXES_UPGRADE_TO_NETHERITE_IRON = modItemTag("axes/upgrade_to_netherite_iron");
+    public static final TagKey<Item> AXE_NETHERITE_DIAMOND = modItemTag("axe/netherite_diamond");
+    public static final TagKey<Item> AXE_NETHERITE_EMERALD = modItemTag("axe/netherite_emerald");
+    public static final TagKey<Item> AXE_NETHERITE_GOLD = modItemTag("axe/netherite_gold");
+    public static final TagKey<Item> AXE_NETHERITE_IRON = modItemTag("axe/netherite_iron");
+    public static final TagKey<Item> AXE_NETHERITE = modItemTag("axe/netherite");
+    public static final TagKey<Item> AXE_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("axe/upgrade_to_netherite_diamond");
+    public static final TagKey<Item> AXE_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("axe/upgrade_to_netherite_emerald");
+    public static final TagKey<Item> AXE_UPGRADE_TO_NETHERITE_GOLD = modItemTag("axe/upgrade_to_netherite_gold");
+    public static final TagKey<Item> AXE_UPGRADE_TO_NETHERITE_IRON = modItemTag("axe/upgrade_to_netherite_iron");
 
     public static final TagKey<Item> BOOTS_NETHERITE_DIAMOND = modItemTag("boots/netherite_diamond");
     public static final TagKey<Item> BOOTS_NETHERITE_EMERALD = modItemTag("boots/netherite_emerald");
@@ -51,45 +51,45 @@ public final class ModTags
     public static final TagKey<Item> BOOTS_UPGRADE_TO_NETHERITE_GOLD = modItemTag("boots/upgrade_to_netherite_gold");
     public static final TagKey<Item> BOOTS_UPGRADE_TO_NETHERITE_IRON = modItemTag("boots/upgrade_to_netherite_iron");
 
-    public static final TagKey<Item> CHESTPLATES_NETHERITE_DIAMOND = modItemTag("chestplates/netherite_diamond");
-    public static final TagKey<Item> CHESTPLATES_NETHERITE_EMERALD = modItemTag("chestplates/netherite_emerald");
-    public static final TagKey<Item> CHESTPLATES_NETHERITE_GOLD = modItemTag("chestplates/netherite_gold");
-    public static final TagKey<Item> CHESTPLATES_NETHERITE_IRON = modItemTag("chestplates/netherite_iron");
-    public static final TagKey<Item> CHESTPLATES_NETHERITE = modItemTag("chestplates/netherite");
-    public static final TagKey<Item> CHESTPLATES_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("chestplates/upgrade_to_netherite_diamond");
-    public static final TagKey<Item> CHESTPLATES_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("chestplates/upgrade_to_netherite_emerald");
-    public static final TagKey<Item> CHESTPLATES_UPGRADE_TO_NETHERITE_GOLD = modItemTag("chestplates/upgrade_to_netherite_gold");
-    public static final TagKey<Item> CHESTPLATES_UPGRADE_TO_NETHERITE_IRON = modItemTag("chestplates/upgrade_to_netherite_iron");
+    public static final TagKey<Item> CHESTPLATE_NETHERITE_DIAMOND = modItemTag("chestplate/netherite_diamond");
+    public static final TagKey<Item> CHESTPLATE_NETHERITE_EMERALD = modItemTag("chestplate/netherite_emerald");
+    public static final TagKey<Item> CHESTPLATE_NETHERITE_GOLD = modItemTag("chestplate/netherite_gold");
+    public static final TagKey<Item> CHESTPLATE_NETHERITE_IRON = modItemTag("chestplate/netherite_iron");
+    public static final TagKey<Item> CHESTPLATE_NETHERITE = modItemTag("chestplate/netherite");
+    public static final TagKey<Item> CHESTPLATE_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("chestplate/upgrade_to_netherite_diamond");
+    public static final TagKey<Item> CHESTPLATE_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("chestplate/upgrade_to_netherite_emerald");
+    public static final TagKey<Item> CHESTPLATE_UPGRADE_TO_NETHERITE_GOLD = modItemTag("chestplate/upgrade_to_netherite_gold");
+    public static final TagKey<Item> CHESTPLATE_UPGRADE_TO_NETHERITE_IRON = modItemTag("chestplate/upgrade_to_netherite_iron");
 
-    public static final TagKey<Item> HELMETS_NETHERITE_DIAMOND = modItemTag("helmets/netherite_diamond");
-    public static final TagKey<Item> HELMETS_NETHERITE_EMERALD = modItemTag("helmets/netherite_emerald");
-    public static final TagKey<Item> HELMETS_NETHERITE_GOLD = modItemTag("helmets/netherite_gold");
-    public static final TagKey<Item> HELMETS_NETHERITE_IRON = modItemTag("helmets/netherite_iron");
-    public static final TagKey<Item> HELMETS_NETHERITE = modItemTag("helmets/netherite");
-    public static final TagKey<Item> HELMETS_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("helmets/upgrade_to_netherite_diamond");
-    public static final TagKey<Item> HELMETS_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("helmets/upgrade_to_netherite_emerald");
-    public static final TagKey<Item> HELMETS_UPGRADE_TO_NETHERITE_GOLD = modItemTag("helmets/upgrade_to_netherite_gold");
-    public static final TagKey<Item> HELMETS_UPGRADE_TO_NETHERITE_IRON = modItemTag("helmets/upgrade_to_netherite_iron");
+    public static final TagKey<Item> HELMET_NETHERITE_DIAMOND = modItemTag("helmet/netherite_diamond");
+    public static final TagKey<Item> HELMET_NETHERITE_EMERALD = modItemTag("helmet/netherite_emerald");
+    public static final TagKey<Item> HELMET_NETHERITE_GOLD = modItemTag("helmet/netherite_gold");
+    public static final TagKey<Item> HELMET_NETHERITE_IRON = modItemTag("helmet/netherite_iron");
+    public static final TagKey<Item> HELMET_NETHERITE = modItemTag("helmet/netherite");
+    public static final TagKey<Item> HELMET_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("helmet/upgrade_to_netherite_diamond");
+    public static final TagKey<Item> HELMET_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("helmet/upgrade_to_netherite_emerald");
+    public static final TagKey<Item> HELMET_UPGRADE_TO_NETHERITE_GOLD = modItemTag("helmet/upgrade_to_netherite_gold");
+    public static final TagKey<Item> HELMET_UPGRADE_TO_NETHERITE_IRON = modItemTag("helmet/upgrade_to_netherite_iron");
 
-    public static final TagKey<Item> HOES_NETHERITE_DIAMOND = modItemTag("hoes/netherite_diamond");
-    public static final TagKey<Item> HOES_NETHERITE_EMERALD = modItemTag("hoes/netherite_emerald");
-    public static final TagKey<Item> HOES_NETHERITE_GOLD = modItemTag("hoes/netherite_gold");
-    public static final TagKey<Item> HOES_NETHERITE_IRON = modItemTag("hoes/netherite_iron");
-    public static final TagKey<Item> HOES_NETHERITE = modItemTag("hoes/netherite");
-    public static final TagKey<Item> HOES_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("hoes/upgrade_to_netherite_diamond");
-    public static final TagKey<Item> HOES_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("hoes/upgrade_to_netherite_emerald");
-    public static final TagKey<Item> HOES_UPGRADE_TO_NETHERITE_GOLD = modItemTag("hoes/upgrade_to_netherite_gold");
-    public static final TagKey<Item> HOES_UPGRADE_TO_NETHERITE_IRON = modItemTag("hoes/upgrade_to_netherite_iron");
+    public static final TagKey<Item> HOE_NETHERITE_DIAMOND = modItemTag("hoe/netherite_diamond");
+    public static final TagKey<Item> HOE_NETHERITE_EMERALD = modItemTag("hoe/netherite_emerald");
+    public static final TagKey<Item> HOE_NETHERITE_GOLD = modItemTag("hoe/netherite_gold");
+    public static final TagKey<Item> HOE_NETHERITE_IRON = modItemTag("hoe/netherite_iron");
+    public static final TagKey<Item> HOE_NETHERITE = modItemTag("hoe/netherite");
+    public static final TagKey<Item> HOE_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("hoe/upgrade_to_netherite_diamond");
+    public static final TagKey<Item> HOE_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("hoe/upgrade_to_netherite_emerald");
+    public static final TagKey<Item> HOE_UPGRADE_TO_NETHERITE_GOLD = modItemTag("hoe/upgrade_to_netherite_gold");
+    public static final TagKey<Item> HOE_UPGRADE_TO_NETHERITE_IRON = modItemTag("hoe/upgrade_to_netherite_iron");
 
-    public static final TagKey<Item> INGOTS_NETHERITES_DIAMOND = modItemTag("ingots/netherites_diamond");
-    public static final TagKey<Item> INGOTS_NETHERITES_EMERALD = modItemTag("ingots/netherites_emerald");
-    public static final TagKey<Item> INGOTS_NETHERITES_GOLD = modItemTag("ingots/netherites_gold");
-    public static final TagKey<Item> INGOTS_NETHERITES_IRON = modItemTag("ingots/netherites_iron");
-    public static final TagKey<Item> INGOTS_NETHERITES = modItemTag("ingots/netherites");
-    public static final TagKey<Item> INGOTS_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("ingots/upgrade_to_netherite_diamond");
-    public static final TagKey<Item> INGOTS_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("ingots/upgrade_to_netherite_emerald");
-    public static final TagKey<Item> INGOTS_UPGRADE_TO_NETHERITE_GOLD = modItemTag("ingots/upgrade_to_netherite_gold");
-    public static final TagKey<Item> INGOTS_UPGRADE_TO_NETHERITE_IRON = modItemTag("ingots/upgrade_to_netherite_iron");
+    public static final TagKey<Item> INGOTS_NETHERITES_DIAMOND = modItemTag("ingot/netherites_diamond");
+    public static final TagKey<Item> INGOTS_NETHERITES_EMERALD = modItemTag("ingot/netherites_emerald");
+    public static final TagKey<Item> INGOTS_NETHERITES_GOLD = modItemTag("ingot/netherites_gold");
+    public static final TagKey<Item> INGOTS_NETHERITES_IRON = modItemTag("ingot/netherites_iron");
+    public static final TagKey<Item> INGOTS_NETHERITES = modItemTag("ingot/netherites");
+    public static final TagKey<Item> INGOTS_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("ingot/upgrade_to_netherite_diamond");
+    public static final TagKey<Item> INGOTS_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("ingot/upgrade_to_netherite_emerald");
+    public static final TagKey<Item> INGOTS_UPGRADE_TO_NETHERITE_GOLD = modItemTag("ingot/upgrade_to_netherite_gold");
+    public static final TagKey<Item> INGOTS_UPGRADE_TO_NETHERITE_IRON = modItemTag("ingot/upgrade_to_netherite_iron");
 
     public static final TagKey<Item> LEGGINGS_NETHERITE_DIAMOND = modItemTag("leggings/netherite_diamond");
     public static final TagKey<Item> LEGGINGS_NETHERITE_EMERALD = modItemTag("leggings/netherite_emerald");
@@ -101,49 +101,49 @@ public final class ModTags
     public static final TagKey<Item> LEGGINGS_UPGRADE_TO_NETHERITE_GOLD = modItemTag("leggings/upgrade_to_netherite_gold");
     public static final TagKey<Item> LEGGINGS_UPGRADE_TO_NETHERITE_IRON = modItemTag("leggings/upgrade_to_netherite_iron");
 
-    public static final TagKey<Item> PICKAXES_NETHERITE_DIAMOND = modItemTag("pickaxes/netherite_diamond");
-    public static final TagKey<Item> PICKAXES_NETHERITE_EMERALD = modItemTag("pickaxes/netherite_emerald");
-    public static final TagKey<Item> PICKAXES_NETHERITE_GOLD = modItemTag("pickaxes/netherite_gold");
-    public static final TagKey<Item> PICKAXES_NETHERITE_IRON = modItemTag("pickaxes/netherite_iron");
-    public static final TagKey<Item> PICKAXES_NETHERITE = modItemTag("pickaxes/netherite");
-    public static final TagKey<Item> PICKAXES_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("pickaxes/upgrade_to_netherite_diamond");
-    public static final TagKey<Item> PICKAXES_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("pickaxes/upgrade_to_netherite_emerald");
-    public static final TagKey<Item> PICKAXES_UPGRADE_TO_NETHERITE_GOLD = modItemTag("pickaxes/upgrade_to_netherite_gold");
-    public static final TagKey<Item> PICKAXES_UPGRADE_TO_NETHERITE_IRON = modItemTag("pickaxes/upgrade_to_netherite_iron");
+    public static final TagKey<Item> PICKAXE_NETHERITE_DIAMOND = modItemTag("pickaxe/netherite_diamond");
+    public static final TagKey<Item> PICKAXE_NETHERITE_EMERALD = modItemTag("pickaxe/netherite_emerald");
+    public static final TagKey<Item> PICKAXE_NETHERITE_GOLD = modItemTag("pickaxe/netherite_gold");
+    public static final TagKey<Item> PICKAXE_NETHERITE_IRON = modItemTag("pickaxe/netherite_iron");
+    public static final TagKey<Item> PICKAXE_NETHERITE = modItemTag("pickaxe/netherite");
+    public static final TagKey<Item> PICKAXE_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("pickaxe/upgrade_to_netherite_diamond");
+    public static final TagKey<Item> PICKAXE_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("pickaxe/upgrade_to_netherite_emerald");
+    public static final TagKey<Item> PICKAXE_UPGRADE_TO_NETHERITE_GOLD = modItemTag("pickaxe/upgrade_to_netherite_gold");
+    public static final TagKey<Item> PICKAXE_UPGRADE_TO_NETHERITE_IRON = modItemTag("pickaxe/upgrade_to_netherite_iron");
 
-    public static final TagKey<Item> SHOVELS_NETHERITE_DIAMOND = modItemTag("shovels/netherite_diamond");
-    public static final TagKey<Item> SHOVELS_NETHERITE_EMERALD = modItemTag("shovels/netherite_emerald");
-    public static final TagKey<Item> SHOVELS_NETHERITE_GOLD = modItemTag("shovels/netherite_gold");
-    public static final TagKey<Item> SHOVELS_NETHERITE_IRON = modItemTag("shovels/netherite_iron");
-    public static final TagKey<Item> SHOVELS_NETHERITE = modItemTag("shovels/netherite");
-    public static final TagKey<Item> SHOVELS_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("shovels/upgrade_to_netherite_diamond");
-    public static final TagKey<Item> SHOVELS_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("shovels/upgrade_to_netherite_emerald");
-    public static final TagKey<Item> SHOVELS_UPGRADE_TO_NETHERITE_GOLD = modItemTag("shovels/upgrade_to_netherite_gold");
-    public static final TagKey<Item> SHOVELS_UPGRADE_TO_NETHERITE_IRON = modItemTag("shovels/upgrade_to_netherite_iron");
+    public static final TagKey<Item> SHOVEL_NETHERITE_DIAMOND = modItemTag("shovel/netherite_diamond");
+    public static final TagKey<Item> SHOVEL_NETHERITE_EMERALD = modItemTag("shovel/netherite_emerald");
+    public static final TagKey<Item> SHOVEL_NETHERITE_GOLD = modItemTag("shovel/netherite_gold");
+    public static final TagKey<Item> SHOVEL_NETHERITE_IRON = modItemTag("shovel/netherite_iron");
+    public static final TagKey<Item> SHOVEL_NETHERITE = modItemTag("shovel/netherite");
+    public static final TagKey<Item> SHOVEL_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("shovel/upgrade_to_netherite_diamond");
+    public static final TagKey<Item> SHOVEL_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("shovel/upgrade_to_netherite_emerald");
+    public static final TagKey<Item> SHOVEL_UPGRADE_TO_NETHERITE_GOLD = modItemTag("shovel/upgrade_to_netherite_gold");
+    public static final TagKey<Item> SHOVEL_UPGRADE_TO_NETHERITE_IRON = modItemTag("shovel/upgrade_to_netherite_iron");
 
-    public static final TagKey<Item> SWORDS_NETHERITE_DIAMOND = modItemTag("swords/netherite_diamond");
-    public static final TagKey<Item> SWORDS_NETHERITE_EMERALD = modItemTag("swords/netherite_emerald");
-    public static final TagKey<Item> SWORDS_NETHERITE_GOLD = modItemTag("swords/netherite_gold");
-    public static final TagKey<Item> SWORDS_NETHERITE_IRON = modItemTag("swords/netherite_iron");
-    public static final TagKey<Item> SWORDS_NETHERITE = modItemTag("swords/netherite");
-    public static final TagKey<Item> SWORDS_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("swords/upgrade_to_netherite_diamond");
-    public static final TagKey<Item> SWORDS_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("swords/upgrade_to_netherite_emerald");
-    public static final TagKey<Item> SWORDS_UPGRADE_TO_NETHERITE_GOLD = modItemTag("swords/upgrade_to_netherite_gold");
-    public static final TagKey<Item> SWORDS_UPGRADE_TO_NETHERITE_IRON = modItemTag("swords/upgrade_to_netherite_iron");
+    public static final TagKey<Item> SWORD_NETHERITE_DIAMOND = modItemTag("sword/netherite_diamond");
+    public static final TagKey<Item> SWORD_NETHERITE_EMERALD = modItemTag("sword/netherite_emerald");
+    public static final TagKey<Item> SWORD_NETHERITE_GOLD = modItemTag("sword/netherite_gold");
+    public static final TagKey<Item> SWORD_NETHERITE_IRON = modItemTag("sword/netherite_iron");
+    public static final TagKey<Item> SWORD_NETHERITE = modItemTag("sword/netherite");
+    public static final TagKey<Item> SWORD_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("sword/upgrade_to_netherite_diamond");
+    public static final TagKey<Item> SWORD_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("sword/upgrade_to_netherite_emerald");
+    public static final TagKey<Item> SWORD_UPGRADE_TO_NETHERITE_GOLD = modItemTag("sword/upgrade_to_netherite_gold");
+    public static final TagKey<Item> SWORD_UPGRADE_TO_NETHERITE_IRON = modItemTag("sword/upgrade_to_netherite_iron");
 
     // "tiers" tags
-    public static final TagKey<Item> TIERS_ARMOR = modItemTag("tiers/armor");
-    public static final TagKey<Item> TIERS_TOOLS = modItemTag("tiers/tools");
+    public static final TagKey<Item> TIER_ARMOR = modItemTag("tier/armor");
+    public static final TagKey<Item> TIER_TOOLS = modItemTag("tier/tools");
 
-    public static final TagKey<Item> TIERS_ARMOR_NETHERITE_DIAMOND = modItemTag("tiers/armor/netherite_diamond");
-    public static final TagKey<Item> TIERS_ARMOR_NETHERITE_EMERALD = modItemTag("tiers/armor/netherite_emerald");
-    public static final TagKey<Item> TIERS_ARMOR_NETHERITE_GOLD = modItemTag("tiers/armor/netherite_gold");
-    public static final TagKey<Item> TIERS_ARMOR_NETHERITE_IRON = modItemTag("tiers/armor/netherite_iron");
+    public static final TagKey<Item> TIER_ARMOR_NETHERITE_DIAMOND = modItemTag("tier/armor/netherite_diamond");
+    public static final TagKey<Item> TIER_ARMOR_NETHERITE_EMERALD = modItemTag("tier/armor/netherite_emerald");
+    public static final TagKey<Item> TIER_ARMOR_NETHERITE_GOLD = modItemTag("tier/armor/netherite_gold");
+    public static final TagKey<Item> TIER_ARMOR_NETHERITE_IRON = modItemTag("tier/armor/netherite_iron");
 
-    public static final TagKey<Item> TIERS_TOOLS_NETHERITE_DIAMOND = modItemTag("tiers/tools/netherite_diamond");
-    public static final TagKey<Item> TIERS_TOOLS_NETHERITE_EMERALD = modItemTag("tiers/tools/netherite_emerald");
-    public static final TagKey<Item> TIERS_TOOLS_NETHERITE_GOLD = modItemTag("tiers/tools/netherite_gold");
-    public static final TagKey<Item> TIERS_TOOLS_NETHERITE_IRON = modItemTag("tiers/tools/netherite_iron");
+    public static final TagKey<Item> TIER_TOOL_NETHERITE_DIAMOND = modItemTag("tier/tool/netherite_diamond");
+    public static final TagKey<Item> TIER_TOOL_NETHERITE_EMERALD = modItemTag("tier/tool/netherite_emerald");
+    public static final TagKey<Item> TIER_TOOL_NETHERITE_GOLD = modItemTag("tier/tool/netherite_gold");
+    public static final TagKey<Item> TIER_TOOL_NETHERITE_IRON = modItemTag("tier/tool/netherite_iron");
 
     // ENCHANTMENT TAGS
     public static final TagKey<Enchantment> PREVENTS_ADDITIONAL_ORE_DROPS = modEnchantmentTag("prevents_additional_ore_drops");
