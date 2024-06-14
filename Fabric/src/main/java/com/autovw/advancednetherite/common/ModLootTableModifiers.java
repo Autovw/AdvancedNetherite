@@ -110,6 +110,7 @@ public final class ModLootTableModifiers
             // ADDITIONAL MOB DROPS END //
 
             // ADDITIONAL ORE DROPS START //
+            /*
             if (source.isBuiltin() && (id.equals(IRON_ORE) || id.equals(DEEPSLATE_IRON_ORE)))
             {
                 LootPool.Builder pool = oreDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalRawIronDropChance(), Items.RAW_IRON, 1, 2, ModItems.NETHERITE_IRON_PICKAXE);
@@ -139,6 +140,7 @@ public final class ModLootTableModifiers
                 LootPool.Builder pool = oreDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalGoldNuggetDropChance(), Items.GOLD_NUGGET, 1, 3, ModItems.NETHERITE_GOLD_PICKAXE);
                 tableBuilder.withPool(pool);
             }
+             */
             // ADDITIONAL ORE DROPS END //
         }));
     }
@@ -167,14 +169,15 @@ public final class ModLootTableModifiers
 
     private static LootPool.Builder oreDropPool(float dropChance, Item dropItem, int minDrop, int maxDrop, ItemLike... tools)
     {
-        HolderLookup.RegistryLookup<Enchantment> registries = VanillaRegistries.createLookup().lookupOrThrow(Registries.ENCHANTMENT);
+        //HolderLookup.RegistryLookup<Enchantment> registries = VanillaRegistries.createLookup().lookupOrThrow(Registries.ENCHANTMENT);
         return LootPool.lootPool()
                 .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(tools)))
                 .when(InvertedLootItemCondition.invert(
                         MatchTool.toolMatches(
                                 ItemPredicate.Builder.item()
                                         .withSubPredicate(ItemSubPredicates.ENCHANTMENTS, ItemEnchantmentsPredicate.enchantments(
-                                                List.of(new EnchantmentPredicate(registries.getOrThrow(Enchantments.SILK_TOUCH), MinMaxBounds.Ints.atLeast(1)))
+                                                List.of()
+                                                //List.of(new EnchantmentPredicate(registries.getOrThrow(Enchantments.SILK_TOUCH), MinMaxBounds.Ints.atLeast(1)))
                                                 //List.of(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1)))
                                         ))
                 )))
