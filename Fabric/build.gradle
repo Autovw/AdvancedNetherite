@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'idea'
-    id 'fabric-loom' version '1.6-SNAPSHOT'
+    id 'fabric-loom' version '1.7-SNAPSHOT'
 }
 
 group = "com.autovw.advancednetherite"
@@ -44,8 +44,8 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
     modImplementation "curse.maven:detailab-506898:${detailab_fabric_version}"
     //modRuntimeOnly "curse.maven:catalogue-667377:${catalogue_fabric_version}"
-    //modRuntimeOnly "curse.maven:configured-457570:${configured_fabric_version}"
-    //modRuntimeOnly "curse.maven:jei-238222:${jei_fabric_version}"
+    modRuntimeOnly "curse.maven:configured-457570:${configured_fabric_version}"
+    modRuntimeOnly "curse.maven:jei-238222:${jei_fabric_version}"
     implementation project(":Common")
 }
 
