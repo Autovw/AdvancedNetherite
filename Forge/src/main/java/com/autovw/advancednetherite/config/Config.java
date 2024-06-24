@@ -258,7 +258,7 @@ public class Config
             {
                 enableAdditionalCropDrops = builder.comment("If true, enables additional crop drops for hoes. True by default.").define("enableAdditionalCropDrops", true);
                 enableAdditionalOreDrops = builder.comment("If true, enables additional ore drops for pickaxes. Pickaxes with Silk Touch remain unaffected. True by default.").define("enableAdditionalOreDrops", true);
-                enableAdditionalMobDrops = builder.comment("If true, enables additional ore drops for swords. True by default.").define("enableAdditionalMobDrops", true);
+                enableAdditionalMobDrops = builder.comment("If true, enables additional mob drops for swords. True by default.").define("enableAdditionalMobDrops", true);
             }
             builder.pop();
         }
