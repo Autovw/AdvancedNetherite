@@ -60,17 +60,17 @@
   "tooltip.advancednetherite.armor.piglin_passive": "+ Piglins pacifique",
   "tooltip.advancednetherite.armor.phantom_passive": "+ Phantom pacifique",
 
-  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ Chance de récolter des récoltes supplémentaires lors de la récolte de cultures mûres",
+  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ Chance d'obtenir des récoltes supplémentaires lors de la récolte de cultures",
 
-  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Chance de trouver un Diamant supplémentaire lors du minage d'un minerais de diamant",
-  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Chance de trouver une Émeraude supplémentaire lors du minage d'un minerais d'émeraude",
-  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance de trouver de l'Or Brut supplémentaire lors du minage d'un minerais d'or",
-  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance de trouver du Fer Brut supplémentaire lors du minage d'un minerais de fer",
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Chance d'obtenir un Diamant supplémentaire lors du minage d'un minerais de diamant",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Chance d'obtenir une Émeraude supplémentaire lors du minage d'un minerais d'émeraude",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance d'obtenir de l'Or Brut supplémentaire lors du minage d'un minerais d'or",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance d'obtenir du Fer Brut supplémentaire lors du minage d'un minerais de fer",
 
-  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Chance de trouver une Perle de l'Ender supplémentaire en tuant un Enderman",
-  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Chance de trouver un Lingot d'or supplémentaire en tuant un Piglin",
-  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ Chance de trouver des Pépites d'or supplémentaires en tuant un Piglin zombifié",
-  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ Chance de trouver des Membranes de Phantom supplémentaires en tuant un Phantom",
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Chance d'obtenir une Perle de l'Ender supplémentaire en tuant un Enderman",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Chance d'obtenir un Lingot d'or supplémentaire en tuant un Piglin",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ Chance d'obtenir des Pépites d'or supplémentaires en tuant un Piglin zombifié",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ Chance d'obtenir des Membranes de Phantom supplémentaires en tuant un Phantom",
 
   "tooltip.advancednetherite.misc.press_shift_key": "Appuyez sur %s pour voir tous les avantages",
   "tooltip.advancednetherite.misc.shift": "[MAJ. Gauche]",
