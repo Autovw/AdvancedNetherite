@@ -92,7 +92,7 @@
 
   "config.advancednetherite.client.show_tooltips": "Если активно, отображает подсказки, добавленные этим модом, на стороне клиента.",
   "config.advancednetherite.client.matching_durability_bars": "Если активно, отображает полосу прочности под предметом.",
-  "config.advancednetherite.client.enable_search_bar": "Если активно, включает строку поиска в творческой вкладке Advenced Netherite.",
+  "config.advancednetherite.client.enable_search_bar": "Если активно, включает строку поиска в творческой вкладке Advanced Netherite.",
   "config.advancednetherite.client.force_disable_dab_support": "Если активно, принудительно отключает поддержку мода Detail Armor Bar. Требуется перезапуск игры.",
 
   "config.advancednetherite.screen.description.top": "Установите мод %s для редактирования конфигурации, добавленной %s из игры.",
