@@ -23,7 +23,7 @@ Visit the GitHub Wiki for more information on everything this mod adds.
     # 'required' requires the mod to exist, 'optional' does not
     # 'incompatible' will prevent the game from loading when the mod exists, and 'discouraged' will show a warning
     type="required"
-    versionRange="[21.0,)"
+    versionRange="[21.0.74,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.advancednetherite]]

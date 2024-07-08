@@ -48,7 +48,7 @@ public class EventHandler
     @SubscribeEvent
     public static void onLivingChangeTargetEvent(final LivingChangeTargetEvent event)
     {
-        LivingEntity target = event.getOriginalTarget(); // Gets the target (player)
+        LivingEntity target = event.getOriginalAboutToBeSetTarget(); // Gets the target (player)
         LivingEntity attacker = event.getEntity(); // Gets the attacker
 
         if (target == null)
@@ -65,7 +65,7 @@ public class EventHandler
                 Item item = stack.getItem();
                 if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPhantoms(stack)))
                 {
-                    event.setNewTarget(null); // Set target to null to allow the attacker to pick a new target
+                    event.setNewAboutToBeSetTarget(null); // Set target to null to allow the attacker to pick a new target
                 }
             }
         }
