@@ -26,15 +26,18 @@ public abstract class EnderManMixin extends Monster implements NeutralMob
         super(entityType, level);
     }
 
-    @Inject(method = "isLookingAtMe", at = @At("HEAD"), cancellable = true)
-    private void advancednetherite_isLookingAtMe(Player player, CallbackInfoReturnable<Boolean> cir)
+    @Inject(method = "isBeingStaredBy", at = @At("RETURN"), cancellable = true)
+    private void advancednetherite_isBeingStaredBy(Player player, CallbackInfoReturnable<Boolean> cir)
     {
-        for (ItemStack stack : player.getArmorSlots())
+        if (cir.getReturnValue())
         {
-            Item item = stack.getItem();
-            if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack)))
+            for (ItemStack stack : player.getArmorSlots())
             {
-                cir.setReturnValue(false);
+                Item item = stack.getItem();
+                if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen()) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack)))
+                {
+                    cir.setReturnValue(false);
+                }
             }
         }
     }

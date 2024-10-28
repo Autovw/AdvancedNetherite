@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.loot.LootModifier;
@@ -43,10 +44,10 @@ public class OreDropsLootModifier extends LootModifier
 
     @NotNull
     @Override
-    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
+    protected ObjectArrayList<ItemStack> doApply(LootTable lootTable, ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {
-        ItemStack tool = context.getParamOrNull(LootContextParams.TOOL);
-        BlockState blockState = context.getParamOrNull(LootContextParams.BLOCK_STATE);
+        ItemStack tool = context.getOptionalParameter(LootContextParams.TOOL);
+        BlockState blockState = context.getOptionalParameter(LootContextParams.BLOCK_STATE);
 
         if (tool != null && blockState != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalOreDrops())
         {

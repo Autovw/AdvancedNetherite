@@ -9,8 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.armortrim.TrimMaterial;
-import net.minecraft.world.item.armortrim.TrimMaterials;
+import net.minecraft.world.item.equipment.trim.TrimMaterial;
+import net.minecraft.world.item.equipment.trim.TrimMaterials;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -147,7 +147,7 @@ public class ModItemModelProvider extends ItemModelProvider
         TRIM_MATERIALS.forEach((trimMaterial, trimValue) ->
         {
             ResourceLocation id = AdvancedNetherite.getRegistryHelper().getItemById(armorItem);
-            String armorType = switch (armorItem.getEquipmentSlot())
+            String armorType = switch (armorItem.getEquipmentSlot(armorItem.getDefaultInstance()))
             {
                 case HEAD -> "helmet";
                 case CHEST -> "chestplate";

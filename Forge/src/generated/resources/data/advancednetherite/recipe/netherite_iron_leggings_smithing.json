@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "tag": "advancednetherite:upgrade_to_netherite_iron"
-  },
-  "base": {
-    "tag": "advancednetherite:leggings/upgrade_to_netherite_iron"
-  },
+  "addition": "#advancednetherite:upgrade_to_netherite_iron",
+  "base": "#advancednetherite:leggings/upgrade_to_netherite_iron",
   "result": {
     "count": 1,
     "id": "advancednetherite:netherite_iron_leggings"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+  "template": "minecraft:netherite_upgrade_smithing_template"
 }

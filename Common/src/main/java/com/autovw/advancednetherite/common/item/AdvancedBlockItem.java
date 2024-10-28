@@ -17,13 +17,7 @@ public class AdvancedBlockItem extends BlockItem
 {
     public AdvancedBlockItem(Block block, Properties properties)
     {
-        super(block, properties);
-    }
-
-    @Internal
-    public AdvancedBlockItem(Block block)
-    {
-        super(block, new Properties().fireResistant());
+        super(block, properties.fireResistant());
     }
 
     /**

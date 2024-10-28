@@ -223,6 +223,25 @@ public class ModItemTagsProvider extends ItemTagsProvider
                 .add(ModItems.NETHERITE_IRON_SHOVEL)
                 .add(ModItems.NETHERITE_IRON_SWORD);
 
+        // Repair tags
+        tag(ModTags.REPAIRS_NETHERITE_IRON_ARMOR)
+                .add(ModItems.NETHERITE_IRON_INGOT);
+        tag(ModTags.REPAIRS_NETHERITE_GOLD_ARMOR)
+                .add(ModItems.NETHERITE_GOLD_INGOT);
+        tag(ModTags.REPAIRS_NETHERITE_EMERALD_ARMOR)
+                .add(ModItems.NETHERITE_EMERALD_INGOT);
+        tag(ModTags.REPAIRS_NETHERITE_DIAMOND_ARMOR)
+                .add(ModItems.NETHERITE_DIAMOND_INGOT);
+
+        tag(ModTags.REPAIRS_NETHERITE_IRON_TOOLS)
+                .add(ModItems.NETHERITE_IRON_INGOT);
+        tag(ModTags.REPAIRS_NETHERITE_GOLD_TOOLS)
+                .add(ModItems.NETHERITE_GOLD_INGOT);
+        tag(ModTags.REPAIRS_NETHERITE_EMERALD_TOOLS)
+                .add(ModItems.NETHERITE_EMERALD_INGOT);
+        tag(ModTags.REPAIRS_NETHERITE_DIAMOND_TOOLS)
+                .add(ModItems.NETHERITE_DIAMOND_INGOT);
+
         /* Vanilla tags */
         tag(ItemTags.BEACON_PAYMENT_ITEMS).addTag(ModTags.NETHERITE_INGOTS);
 

@@ -43,7 +43,7 @@ public class ModDataGenerator
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), AdvancedNetherite.MOD_ID, helper));
         generator.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider));
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider.Runner(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, helper));
         generator.addProvider(event.includeServer(), new ModLootModifierProvider(packOutput, AdvancedNetherite.MOD_ID, lookupProvider));

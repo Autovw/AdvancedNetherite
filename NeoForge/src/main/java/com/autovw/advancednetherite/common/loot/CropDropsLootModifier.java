@@ -42,8 +42,8 @@ public class CropDropsLootModifier extends LootModifier
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {
-        ItemStack tool = context.getParamOrNull(LootContextParams.TOOL);
-        BlockState blockState = context.getParamOrNull(LootContextParams.BLOCK_STATE);
+        ItemStack tool = context.getOptionalParameter(LootContextParams.TOOL);
+        BlockState blockState = context.getOptionalParameter(LootContextParams.BLOCK_STATE);
 
         if (tool != null && blockState != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops())
         {

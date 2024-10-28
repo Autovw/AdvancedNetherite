@@ -196,6 +196,25 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_DIAMOND_SHOVEL)
                 .add(ModItems.NETHERITE_DIAMOND_SWORD);
 
+        // Repair tags
+        getOrCreateTagBuilder(ModTags.REPAIRS_NETHERITE_IRON_ARMOR)
+                .add(ModItems.NETHERITE_IRON_INGOT);
+        getOrCreateTagBuilder(ModTags.REPAIRS_NETHERITE_GOLD_ARMOR)
+                .add(ModItems.NETHERITE_GOLD_INGOT);
+        getOrCreateTagBuilder(ModTags.REPAIRS_NETHERITE_EMERALD_ARMOR)
+                .add(ModItems.NETHERITE_EMERALD_INGOT);
+        getOrCreateTagBuilder(ModTags.REPAIRS_NETHERITE_DIAMOND_ARMOR)
+                .add(ModItems.NETHERITE_DIAMOND_INGOT);
+
+        getOrCreateTagBuilder(ModTags.REPAIRS_NETHERITE_IRON_TOOLS)
+                .add(ModItems.NETHERITE_IRON_INGOT);
+        getOrCreateTagBuilder(ModTags.REPAIRS_NETHERITE_GOLD_TOOLS)
+                .add(ModItems.NETHERITE_GOLD_INGOT);
+        getOrCreateTagBuilder(ModTags.REPAIRS_NETHERITE_EMERALD_TOOLS)
+                .add(ModItems.NETHERITE_EMERALD_INGOT);
+        getOrCreateTagBuilder(ModTags.REPAIRS_NETHERITE_DIAMOND_TOOLS)
+                .add(ModItems.NETHERITE_DIAMOND_INGOT);
+
         // config
         getOrCreateTagBuilder(FabricModTags.CONFIG_PACIFY_PHANTOMS)
                 .addTag(ModTags.TIER_ARMOR_NETHERITE_IRON);

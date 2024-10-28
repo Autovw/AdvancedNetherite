@@ -2,6 +2,7 @@ package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.api.impl.IToolMaterial;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModTooltips;
@@ -10,7 +11,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -20,19 +21,14 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedHoeItem extends HoeItem
+public class AdvancedHoeItem extends HoeItem implements IToolMaterial
 {
-    private final Tier tier;
+    private final ToolMaterial material;
 
-    public AdvancedHoeItem(Tier tier, Properties properties) {
-        super(tier, properties);
-        this.tier = tier;
-    }
-
-    @Internal
-    public AdvancedHoeItem(Tier tier, int attackDamage, float attackSpeed)
+    public AdvancedHoeItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties)
     {
-        this(tier, new Properties().attributes(createAttributes(tier, attackDamage, attackSpeed)).fireResistant());
+        super(material, attackDamage, attackSpeed, properties.fireResistant());
+        this.material = material;
     }
 
     /**
@@ -108,5 +104,11 @@ public class AdvancedHoeItem extends HoeItem
     {
         float originalSpeed = super.getDestroySpeed(stack, state);
         return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
+    }
+
+    @Override
+    public ToolMaterial getMaterial()
+    {
+        return this.material;
     }
 }

@@ -42,8 +42,8 @@ public class MobDropsLootModifier extends LootModifier
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {
-        Entity attacker = context.getParamOrNull(LootContextParams.ATTACKING_ENTITY); // the entity killer
-        Entity victim = context.getParamOrNull(LootContextParams.THIS_ENTITY); // killed entity
+        Entity attacker = context.getOptionalParameter(LootContextParams.ATTACKING_ENTITY); // the entity killer
+        Entity victim = context.getOptionalParameter(LootContextParams.THIS_ENTITY); // killed entity
 
         if (attacker instanceof Player player && victim != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalMobDrops())
         {

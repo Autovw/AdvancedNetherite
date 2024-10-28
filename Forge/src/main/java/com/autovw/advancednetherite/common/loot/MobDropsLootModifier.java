@@ -12,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.loot.LootModifier;
@@ -40,10 +41,10 @@ public class MobDropsLootModifier extends LootModifier
 
     @NotNull
     @Override
-    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
+    protected ObjectArrayList<ItemStack> doApply(LootTable lootTable, ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {
-        Entity attacker = context.getParamOrNull(LootContextParams.ATTACKING_ENTITY); // the entity killer
-        Entity victim = context.getParamOrNull(LootContextParams.THIS_ENTITY); // killed entity
+        Entity attacker = context.getOptionalParameter(LootContextParams.ATTACKING_ENTITY); // the entity killer
+        Entity victim = context.getOptionalParameter(LootContextParams.THIS_ENTITY); // killed entity
 
         if (attacker instanceof Player player && victim != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalMobDrops())
         {

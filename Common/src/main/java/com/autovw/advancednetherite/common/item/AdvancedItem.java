@@ -18,13 +18,7 @@ public class AdvancedItem extends Item
 {
     public AdvancedItem(Properties properties)
     {
-        super(properties);
-    }
-
-    @Internal
-    public AdvancedItem()
-    {
-        this(new Properties().fireResistant());
+        super(properties.fireResistant());
     }
 
     /**

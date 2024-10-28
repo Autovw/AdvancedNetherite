@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_TagKey[minecraft:item / forge:ingots/gold]": {
+    "has_TagKey[minecraft:item / c:ingots/gold]": {
       "conditions": {
         "items": [
           {
-            "items": "#forge:ingots/gold"
+            "items": "#c:ingots/gold"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_TagKey[minecraft:item / forge:ingots/gold]"
+      "has_TagKey[minecraft:item / c:ingots/gold]"
     ]
   ],
   "rewards": {

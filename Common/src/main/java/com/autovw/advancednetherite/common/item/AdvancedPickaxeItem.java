@@ -2,16 +2,17 @@ package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.api.impl.IToolMaterial;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
+import com.autovw.advancednetherite.core.util.ModToolMaterials;
 import com.autovw.advancednetherite.core.util.ModTooltips;
-import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -21,19 +22,14 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedPickaxeItem extends PickaxeItem
+public class AdvancedPickaxeItem extends PickaxeItem implements IToolMaterial
 {
-    private final Tier tier;
+    private final ToolMaterial material;
 
-    public AdvancedPickaxeItem(Tier tier, Properties properties) {
-        super(tier, properties);
-        this.tier = tier;
-    }
-
-    @Internal
-    public AdvancedPickaxeItem(Tier tier, int attackDamage, float attackSpeed)
+    public AdvancedPickaxeItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties)
     {
-        this(tier, new Properties().attributes(createAttributes(tier, attackDamage, attackSpeed)).fireResistant());
+        super(material, attackDamage, attackSpeed, properties.fireResistant());
+        this.material = material;
     }
 
     /**
@@ -75,10 +71,10 @@ public class AdvancedPickaxeItem extends PickaxeItem
             {
                 if (Screen.hasShiftDown())
                 {
-                    if (tier == ModToolTiers.NETHERITE_IRON) tooltip.add(ModTooltips.IRON_ORE_DROP_TOOLTIP);
-                    if (tier == ModToolTiers.NETHERITE_GOLD) tooltip.add(ModTooltips.GOLD_ORE_DROP_TOOLTIP);
-                    if (tier == ModToolTiers.NETHERITE_EMERALD) tooltip.add(ModTooltips.EMERALD_ORE_DROP_TOOLTIP);
-                    if (tier == ModToolTiers.NETHERITE_DIAMOND) tooltip.add(ModTooltips.DIAMOND_ORE_DROP_TOOLTIP);
+                    if (isMaterial(ModToolMaterials.NETHERITE_IRON)) tooltip.add(ModTooltips.IRON_ORE_DROP_TOOLTIP);
+                    if (isMaterial(ModToolMaterials.NETHERITE_GOLD)) tooltip.add(ModTooltips.GOLD_ORE_DROP_TOOLTIP);
+                    if (isMaterial(ModToolMaterials.NETHERITE_EMERALD)) tooltip.add(ModTooltips.EMERALD_ORE_DROP_TOOLTIP);
+                    if (isMaterial(ModToolMaterials.NETHERITE_DIAMOND)) tooltip.add(ModTooltips.DIAMOND_ORE_DROP_TOOLTIP);
                 }
                 else
                 {
@@ -112,5 +108,11 @@ public class AdvancedPickaxeItem extends PickaxeItem
     {
         float originalSpeed = super.getDestroySpeed(stack, state);
         return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
+    }
+
+    @Override
+    public ToolMaterial getMaterial()
+    {
+        return this.material;
     }
 }

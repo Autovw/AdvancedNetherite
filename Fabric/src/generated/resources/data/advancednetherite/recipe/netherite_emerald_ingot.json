@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "advancednetherite:ingot/upgrade_to_netherite_emerald"
-    },
-    {
-      "item": "minecraft:emerald"
-    },
-    {
-      "item": "minecraft:emerald"
-    },
-    {
-      "item": "minecraft:emerald"
-    },
-    {
-      "item": "minecraft:emerald"
-    }
+    "#advancednetherite:ingot/upgrade_to_netherite_emerald",
+    "minecraft:emerald",
+    "minecraft:emerald",
+    "minecraft:emerald",
+    "minecraft:emerald"
   ],
   "result": {
     "count": 1,

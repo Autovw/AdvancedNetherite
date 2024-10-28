@@ -145,6 +145,17 @@ public final class ModTags
     public static final TagKey<Item> TIER_TOOL_NETHERITE_GOLD = modItemTag("tier/tool/netherite_gold");
     public static final TagKey<Item> TIER_TOOL_NETHERITE_IRON = modItemTag("tier/tool/netherite_iron");
 
+    // REPAIR TAGS
+    public static final TagKey<Item> REPAIRS_NETHERITE_IRON_ARMOR = modItemTag("repairs_netherite_iron_armor");
+    public static final TagKey<Item> REPAIRS_NETHERITE_GOLD_ARMOR = modItemTag("repairs_netherite_gold_armor");
+    public static final TagKey<Item> REPAIRS_NETHERITE_EMERALD_ARMOR = modItemTag("repairs_netherite_emerald_armor");
+    public static final TagKey<Item> REPAIRS_NETHERITE_DIAMOND_ARMOR = modItemTag("repairs_netherite_diamond_armor");
+
+    public static final TagKey<Item> REPAIRS_NETHERITE_IRON_TOOLS = modItemTag("repairs_netherite_iron_tools");
+    public static final TagKey<Item> REPAIRS_NETHERITE_GOLD_TOOLS = modItemTag("repairs_netherite_gold_tools");
+    public static final TagKey<Item> REPAIRS_NETHERITE_EMERALD_TOOLS = modItemTag("repairs_netherite_emerald_tools");
+    public static final TagKey<Item> REPAIRS_NETHERITE_DIAMOND_TOOLS = modItemTag("repairs_netherite_diamond_tools");
+
     // ENCHANTMENT TAGS
     public static final TagKey<Enchantment> PREVENTS_ADDITIONAL_ORE_DROPS = modEnchantmentTag("prevents_additional_ore_drops");
 

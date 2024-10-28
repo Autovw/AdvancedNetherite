@@ -10,7 +10,6 @@ import com.autovw.advancednetherite.registry.ForgeRegistryHelper;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -26,16 +25,16 @@ public class AdvancedNetheriteForge
 {
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public AdvancedNetheriteForge()
+    public AdvancedNetheriteForge(FMLJavaModLoadingContext context)
     {
         AdvancedNetherite.init(ForgePlatformHelper.getInstance());
         AdvancedNetherite.setRegistryHelper(new ForgeRegistryHelper());
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.clientConfig);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.commonConfig);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.serverConfig);
+        context.registerConfig(ModConfig.Type.CLIENT, Config.clientConfig);
+        context.registerConfig(ModConfig.Type.COMMON, Config.commonConfig);
+        context.registerConfig(ModConfig.Type.SERVER, Config.serverConfig);
 
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus bus = context.getModEventBus();
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
 

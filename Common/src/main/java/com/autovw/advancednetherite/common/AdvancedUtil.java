@@ -1,11 +1,13 @@
 package com.autovw.advancednetherite.common;
 
+import com.autovw.advancednetherite.api.impl.IArmorMaterial;
+import com.autovw.advancednetherite.api.impl.IToolMaterial;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModArmorMaterials;
-import com.autovw.advancednetherite.core.util.ModToolTiers;
+import com.autovw.advancednetherite.core.util.ModToolMaterials;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Holder;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
@@ -18,7 +20,7 @@ public class AdvancedUtil
      * @param material The material to get the multiplier for
      * @return Durability multiplier for the appropriate armor material
      */
-    public static int getArmorDurabilityMultiplier(Holder<ArmorMaterial> material)
+    public static int getArmorDurabilityMultiplier(ArmorMaterial material)
     {
         if (material == ModArmorMaterials.NETHERITE_IRON)
             return 39;
@@ -44,32 +46,28 @@ public class AdvancedUtil
         if (ConfigHelper.get().getClient().matchingDurabilityBars())
         {
             // Tools
-            if (stack.getItem() instanceof DiggerItem item)
+            if (stack.getItem() instanceof DiggerItem && stack.getItem() instanceof IToolMaterial material)
             {
-                Tier tier = item.getTier();
-
-                if (tier == ModToolTiers.NETHERITE_IRON)
+                if (material.isMaterial(ModToolMaterials.NETHERITE_IRON))
                     newColor = ChatFormatting.GRAY.getColor();
-                if (tier == ModToolTiers.NETHERITE_GOLD)
+                if (material.isMaterial(ModToolMaterials.NETHERITE_GOLD))
                     newColor = ChatFormatting.GOLD.getColor();
-                if (tier == ModToolTiers.NETHERITE_EMERALD)
+                if (material.isMaterial(ModToolMaterials.NETHERITE_EMERALD))
                     newColor = ChatFormatting.DARK_GREEN.getColor();
-                if (tier == ModToolTiers.NETHERITE_DIAMOND)
+                if (material.isMaterial(ModToolMaterials.NETHERITE_DIAMOND))
                     newColor = ChatFormatting.AQUA.getColor();
             }
 
             // Armor
-            if (stack.getItem() instanceof ArmorItem item)
+            if (stack.getItem() instanceof ArmorItem && stack.getItem() instanceof IArmorMaterial material)
             {
-                Holder<ArmorMaterial> material = item.getMaterial();
-
-                if (material == ModArmorMaterials.NETHERITE_IRON)
+                if (material.isMaterial(ModArmorMaterials.NETHERITE_IRON))
                     newColor = ChatFormatting.GRAY.getColor();
-                if (material == ModArmorMaterials.NETHERITE_GOLD)
+                if (material.isMaterial(ModArmorMaterials.NETHERITE_GOLD))
                     newColor = ChatFormatting.GOLD.getColor();
-                if (material == ModArmorMaterials.NETHERITE_EMERALD)
+                if (material.isMaterial(ModArmorMaterials.NETHERITE_EMERALD))
                     newColor = ChatFormatting.DARK_GREEN.getColor();
-                if (material == ModArmorMaterials.NETHERITE_DIAMOND)
+                if (material.isMaterial(ModArmorMaterials.NETHERITE_DIAMOND))
                     newColor = ChatFormatting.AQUA.getColor();
             }
         }
@@ -88,19 +86,17 @@ public class AdvancedUtil
     {
         float newSpeed = originalSpeed;
 
-        if (stack.getItem() instanceof DiggerItem diggerItem)
+        if (stack.getItem() instanceof DiggerItem diggerItem && stack.getItem() instanceof IToolMaterial material)
         {
-            Tier tier = diggerItem.getTier();
-
             if (diggerItem.isCorrectToolForDrops(stack, state))
             {
-                if (tier == ModToolTiers.NETHERITE_IRON)
+                if (material.isMaterial(ModToolMaterials.NETHERITE_IRON))
                     newSpeed *= ConfigHelper.get().getServer().getToolProperties().getIronBreakingSpeedMultiplier();
-                if (tier == ModToolTiers.NETHERITE_GOLD)
+                if (material.isMaterial(ModToolMaterials.NETHERITE_GOLD))
                     newSpeed *= ConfigHelper.get().getServer().getToolProperties().getGoldBreakingSpeedMultiplier();
-                if (tier == ModToolTiers.NETHERITE_EMERALD)
+                if (material.isMaterial(ModToolMaterials.NETHERITE_EMERALD))
                     newSpeed *= ConfigHelper.get().getServer().getToolProperties().getEmeraldBreakingSpeedMultiplier();
-                if (tier == ModToolTiers.NETHERITE_DIAMOND)
+                if (material.isMaterial(ModToolMaterials.NETHERITE_DIAMOND))
                     newSpeed *= ConfigHelper.get().getServer().getToolProperties().getDiamondBreakingSpeedMultiplier();
             }
         }

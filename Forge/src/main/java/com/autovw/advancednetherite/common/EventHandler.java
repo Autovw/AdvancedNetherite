@@ -6,13 +6,14 @@ import com.autovw.advancednetherite.api.impl.IAdvancedHooks;
 import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.entity.living.EnderManAngerEvent;
 import net.minecraftforge.event.entity.living.LivingChangeTargetEvent;
+import net.minecraftforge.event.entity.living.MonsterDisguiseEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -25,10 +26,13 @@ public class EventHandler
 {
     @SuppressWarnings("unused")
     @SubscribeEvent
-    public static void onEnderManAngerEvent(final EnderManAngerEvent event)
+    public static void onEnderManAngerEvent(final MonsterDisguiseEvent event)
     {
         Player player = event.getPlayer(); // Gets the player (target)
-        EnderMan enderMan = event.getEntity(); // Gets the enderman
+        Monster monster = event.getEntity(); // Gets the enderman
+
+        if (!(monster instanceof EnderMan enderMan))
+            return;
 
         // return early if player is in creative mode
         if (player.isCreative())

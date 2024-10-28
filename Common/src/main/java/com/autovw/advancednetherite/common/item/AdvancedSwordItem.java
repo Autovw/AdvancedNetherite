@@ -2,16 +2,17 @@ package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.api.impl.IToolMaterial;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
+import com.autovw.advancednetherite.core.util.ModToolMaterials;
 import com.autovw.advancednetherite.core.util.ModTooltips;
-import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -21,18 +22,14 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedSwordItem extends SwordItem
+public class AdvancedSwordItem extends SwordItem implements IToolMaterial
 {
-    private final Tier tier;
+    private final ToolMaterial material;
 
-    public AdvancedSwordItem(Tier tier, Properties properties) {
-        super(tier, properties);
-        this.tier = tier;
-    }
-
-    public AdvancedSwordItem(Tier tier, int attackDamage, float attackSpeed)
+    public AdvancedSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties)
     {
-        this(tier, new Properties().attributes(createAttributes(tier, attackDamage, attackSpeed)).fireResistant());
+        super(material, attackDamage, attackSpeed, properties.fireResistant());
+        this.material = material;
     }
 
     /**
@@ -74,20 +71,20 @@ public class AdvancedSwordItem extends SwordItem
             {
                 if (Screen.hasShiftDown())
                 {
-                    if (tier == ModToolTiers.NETHERITE_IRON)
+                    if (isMaterial(ModToolMaterials.NETHERITE_IRON))
                     {
                         tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
                     }
-                    if (tier == ModToolTiers.NETHERITE_GOLD)
+                    if (isMaterial(ModToolMaterials.NETHERITE_GOLD))
                     {
                         tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
                     }
-                    if (tier == ModToolTiers.NETHERITE_EMERALD)
+                    if (isMaterial(ModToolMaterials.NETHERITE_EMERALD))
                     {
                         tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
                     }
-                    if (tier == ModToolTiers.NETHERITE_DIAMOND)
+                    if (isMaterial(ModToolMaterials.NETHERITE_DIAMOND))
                     {
                         tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
@@ -126,5 +123,11 @@ public class AdvancedSwordItem extends SwordItem
     {
         float originalSpeed = super.getDestroySpeed(stack, state);
         return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
+    }
+
+    @Override
+    public ToolMaterial getMaterial()
+    {
+        return this.material;
     }
 }

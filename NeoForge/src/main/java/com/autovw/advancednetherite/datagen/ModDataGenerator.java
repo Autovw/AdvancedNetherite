@@ -6,6 +6,8 @@ import com.autovw.advancednetherite.datagen.providers.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -43,7 +45,7 @@ public class ModDataGenerator
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), AdvancedNetherite.MOD_ID, helper));
         generator.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID, helper));
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider.Runner(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, helper));
         generator.addProvider(event.includeServer(), new ModLootModifierProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID));

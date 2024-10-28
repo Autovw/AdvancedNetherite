@@ -1,14 +1,12 @@
 package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.api.impl.IToolMaterial;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ShovelItem;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
@@ -17,19 +15,14 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedShovelItem extends ShovelItem
+public class AdvancedShovelItem extends ShovelItem implements IToolMaterial
 {
-    private final Tier tier;
+    private final ToolMaterial material;
 
-    public AdvancedShovelItem(Tier tier, Properties properties) {
-        super(tier, properties);
-        this.tier = tier;
-    }
-
-    @Internal
-    public AdvancedShovelItem(Tier tier, float attackDamage, float attackSpeed)
+    public AdvancedShovelItem(ToolMaterial material, float attackDamage, float attackSpeed, Item.Properties properties)
     {
-        this(tier, new Properties().attributes(createAttributes(tier, attackDamage, attackSpeed)).fireResistant());
+        super(material, attackDamage, attackSpeed, properties.fireResistant());
+        this.material = material;
     }
 
     /**
@@ -93,5 +86,11 @@ public class AdvancedShovelItem extends ShovelItem
     {
         float originalSpeed = super.getDestroySpeed(stack, state);
         return AdvancedUtil.getDestroySpeed(originalSpeed, stack, state);
+    }
+
+    @Override
+    public ToolMaterial getMaterial()
+    {
+        return this.material;
     }
 }

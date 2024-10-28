@@ -1,18 +1,19 @@
 package com.autovw.advancednetherite.common.item;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
+import com.autovw.advancednetherite.api.impl.IArmorMaterial;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModArmorMaterials;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
 
 import java.util.List;
 import java.util.Objects;
@@ -20,20 +21,14 @@ import java.util.Objects;
 /**
  * @author Autovw
  */
-public class AdvancedArmorItem extends ArmorItem
+public class AdvancedArmorItem extends ArmorItem implements IArmorMaterial
 {
-    private final Holder<ArmorMaterial> material;
+    private final ArmorMaterial material;
 
-    public AdvancedArmorItem(Holder<ArmorMaterial> material, ArmorItem.Type armorType, Properties properties)
+    public AdvancedArmorItem(ArmorMaterial material, ArmorType armorType, Properties properties)
     {
-        super(material, armorType, properties);
+        super(material, armorType, properties.durability(armorType.getDurability(AdvancedUtil.getArmorDurabilityMultiplier(material))).fireResistant());
         this.material = material;
-    }
-
-    @Internal
-    public AdvancedArmorItem(Holder<ArmorMaterial> material, ArmorItem.Type armorType)
-    {
-        this(material, armorType, new Properties().durability(armorType.getDurability(AdvancedUtil.getArmorDurabilityMultiplier(material))).fireResistant());
     }
 
     /**
@@ -43,13 +38,13 @@ public class AdvancedArmorItem extends ArmorItem
      */
     public boolean pacifiesEndermen()
     {
-        if (this.material == ModArmorMaterials.NETHERITE_IRON)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_IRON))
             return ConfigHelper.get().getCommon().getArmor().isIronEndermanPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_GOLD)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_GOLD))
             return ConfigHelper.get().getCommon().getArmor().isGoldEndermanPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_EMERALD)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_EMERALD))
             return ConfigHelper.get().getCommon().getArmor().isEmeraldEndermanPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_DIAMOND)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_DIAMOND))
             return ConfigHelper.get().getCommon().getArmor().isDiamondEndermanPassiveArmor();
 
         return false;
@@ -62,13 +57,13 @@ public class AdvancedArmorItem extends ArmorItem
      */
     public boolean pacifiesPiglins()
     {
-        if (this.material == ModArmorMaterials.NETHERITE_IRON)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_IRON))
             return ConfigHelper.get().getCommon().getArmor().isIronPiglinPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_GOLD)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_GOLD))
             return ConfigHelper.get().getCommon().getArmor().isGoldPiglinPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_EMERALD)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_EMERALD))
             return ConfigHelper.get().getCommon().getArmor().isEmeraldPiglinPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_DIAMOND)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_DIAMOND))
             return ConfigHelper.get().getCommon().getArmor().isDiamondPiglinPassiveArmor();
 
         return false;
@@ -81,13 +76,13 @@ public class AdvancedArmorItem extends ArmorItem
      */
     public boolean pacifiesPhantoms()
     {
-        if (this.material == ModArmorMaterials.NETHERITE_IRON)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_IRON))
             return ConfigHelper.get().getCommon().getArmor().isIronPhantomPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_GOLD)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_GOLD))
             return ConfigHelper.get().getCommon().getArmor().isGoldPhantomPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_EMERALD)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_EMERALD))
             return ConfigHelper.get().getCommon().getArmor().isEmeraldPhantomPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_DIAMOND)
+        if (this.isMaterial(ModArmorMaterials.NETHERITE_DIAMOND))
             return ConfigHelper.get().getCommon().getArmor().isDiamondPhantomPassiveArmor();
 
         return false;
@@ -163,5 +158,11 @@ public class AdvancedArmorItem extends ArmorItem
         }
 
         return AdvancedUtil.getDurabilityBarColor(originalColor, stack);
+    }
+
+    @Override
+    public ArmorMaterial getMaterial()
+    {
+        return this.material;
     }
 }

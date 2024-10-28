@@ -6,6 +6,7 @@ import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
 import com.autovw.advancednetherite.core.ModItems;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -32,6 +33,8 @@ public class ModLootModifierProvider extends GlobalLootModifierProvider
     @Override
     protected void start()
     {
+        HolderLookup.RegistryLookup<Item> registryLookup = this.registries.lookupOrThrow(Registries.ITEM);
+
         // ores
         add("ore_drops_loot_modifier", new OreDropsLootModifier(new LootItemCondition[] {}));
 
@@ -42,7 +45,7 @@ public class ModLootModifierProvider extends GlobalLootModifierProvider
 
         // crops
         add("crop_drops_loot_modifier", new CropDropsLootModifier(new LootItemCondition[] {
-                MatchTool.toolMatches(ItemPredicate.Builder.item().of(HOE_ITEMS.toArray(Item[]::new))).build()
+                MatchTool.toolMatches(ItemPredicate.Builder.item().of(registryLookup, HOE_ITEMS.toArray(Item[]::new))).build()
         }));
     }
 }

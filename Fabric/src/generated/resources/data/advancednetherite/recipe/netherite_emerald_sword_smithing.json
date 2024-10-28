@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "tag": "advancednetherite:upgrade_to_netherite_emerald"
-  },
-  "base": {
-    "tag": "advancednetherite:sword/upgrade_to_netherite_emerald"
-  },
+  "addition": "#advancednetherite:upgrade_to_netherite_emerald",
+  "base": "#advancednetherite:sword/upgrade_to_netherite_emerald",
   "result": {
     "count": 1,
     "id": "advancednetherite:netherite_emerald_sword"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+  "template": "minecraft:netherite_upgrade_smithing_template"
 }

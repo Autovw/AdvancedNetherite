@@ -1,32 +1,28 @@
 package com.autovw.advancednetherite.core.util;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
-import com.autovw.advancednetherite.core.ModItems;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
 
 import java.util.EnumMap;
-import java.util.List;
-import java.util.function.Supplier;
 
 /**
  * @author Autovw
  */
 public final class ModArmorMaterials
 {
-    public static final Holder<ArmorMaterial> NETHERITE_IRON;
-    public static final Holder<ArmorMaterial> NETHERITE_GOLD;
-    public static final Holder<ArmorMaterial> NETHERITE_EMERALD;
-    public static final Holder<ArmorMaterial> NETHERITE_DIAMOND;
+    // TODO cleanup
+    public static final ArmorMaterial NETHERITE_IRON;
+    public static final ArmorMaterial NETHERITE_GOLD;
+    public static final ArmorMaterial NETHERITE_EMERALD;
+    public static final ArmorMaterial NETHERITE_DIAMOND;
 
     private ModArmorMaterials()
     {
@@ -34,34 +30,34 @@ public final class ModArmorMaterials
 
     static
     {
-        NETHERITE_IRON = register("netherite_iron", Util.make(new EnumMap<>(ArmorItem.Type.class), (attribute) -> {
-            attribute.put(ArmorItem.Type.BOOTS, 4);
-            attribute.put(ArmorItem.Type.LEGGINGS, 6);
-            attribute.put(ArmorItem.Type.CHESTPLATE, 8);
-            attribute.put(ArmorItem.Type.HELMET, 4);
-            attribute.put(ArmorItem.Type.BODY, 11);
-        }), 15, 3.5F, 0.1F, ModItems.NETHERITE_IRON_INGOT);
-        NETHERITE_GOLD = register("netherite_gold", Util.make(new EnumMap<>(ArmorItem.Type.class), (attribute) -> {
-            attribute.put(ArmorItem.Type.BOOTS, 4);
-            attribute.put(ArmorItem.Type.LEGGINGS, 7);
-            attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-            attribute.put(ArmorItem.Type.HELMET, 4);
-            attribute.put(ArmorItem.Type.BODY, 11);
-        }), 25, 3.5F, 0.1F, ModItems.NETHERITE_GOLD_INGOT);
-        NETHERITE_EMERALD = register("netherite_emerald", Util.make(new EnumMap<>(ArmorItem.Type.class), (attribute) -> {
-            attribute.put(ArmorItem.Type.BOOTS, 4);
-            attribute.put(ArmorItem.Type.LEGGINGS, 7);
-            attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-            attribute.put(ArmorItem.Type.HELMET, 4);
-            attribute.put(ArmorItem.Type.BODY, 11);
-        }), 20, 3.5F, 0.1F, ModItems.NETHERITE_EMERALD_INGOT);
-        NETHERITE_DIAMOND = register("netherite_diamond", Util.make(new EnumMap<>(ArmorItem.Type.class), (attribute) -> {
-            attribute.put(ArmorItem.Type.BOOTS, 5);
-            attribute.put(ArmorItem.Type.LEGGINGS, 7);
-            attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-            attribute.put(ArmorItem.Type.HELMET, 5);
-            attribute.put(ArmorItem.Type.BODY, 11);
-        }), 15, 4.0F, 0.1F, ModItems.NETHERITE_DIAMOND_INGOT);
+        NETHERITE_IRON = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
+            attribute.put(ArmorType.BOOTS, 4);
+            attribute.put(ArmorType.LEGGINGS, 6);
+            attribute.put(ArmorType.CHESTPLATE, 8);
+            attribute.put(ArmorType.HELMET, 4);
+            attribute.put(ArmorType.BODY, 11);
+        }), 15, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_IRON_ARMOR, "netherite_iron");
+        NETHERITE_GOLD = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
+            attribute.put(ArmorType.BOOTS, 4);
+            attribute.put(ArmorType.LEGGINGS, 7);
+            attribute.put(ArmorType.CHESTPLATE, 9);
+            attribute.put(ArmorType.HELMET, 4);
+            attribute.put(ArmorType.BODY, 11);
+        }), 25, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_GOLD_ARMOR, "netherite_gold");
+        NETHERITE_EMERALD = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
+            attribute.put(ArmorType.BOOTS, 4);
+            attribute.put(ArmorType.LEGGINGS, 7);
+            attribute.put(ArmorType.CHESTPLATE, 9);
+            attribute.put(ArmorType.HELMET, 4);
+            attribute.put(ArmorType.BODY, 11);
+        }), 20, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_EMERALD_ARMOR, "netherite_emerald");
+        NETHERITE_DIAMOND = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
+            attribute.put(ArmorType.BOOTS, 5);
+            attribute.put(ArmorType.LEGGINGS, 7);
+            attribute.put(ArmorType.CHESTPLATE, 9);
+            attribute.put(ArmorType.HELMET, 5);
+            attribute.put(ArmorType.BODY, 11);
+        }), 15, 4.0F, 0.1F, ModTags.REPAIRS_NETHERITE_DIAMOND_ARMOR, "netherite_diamond");
     }
 
     /**
@@ -73,19 +69,19 @@ public final class ModArmorMaterials
      * @param ingredientItem        Item used in anvil to repair the armor piece
      * @return Registered armor material
      */
-    private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtections, int enchantability, float toughness, float knockbackResistance, Item ingredientItem)
+    private static ArmorMaterial register(int durability, EnumMap<ArmorType, Integer> typeProtections, int enchantability, float toughness, float knockbackResistance, TagKey<Item> repairIngredient, String modelId)
     {
-        ResourceLocation loc = ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, name);
+        ResourceLocation loc = ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, modelId);
         Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_NETHERITE;
-        Supplier<Ingredient> ingredient = () -> Ingredient.of(ingredientItem);
-        List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(loc));
+        //List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(loc));
 
-        EnumMap<ArmorItem.Type, Integer> typeMap = new EnumMap<>(ArmorItem.Type.class);
-        for (ArmorItem.Type type : ArmorItem.Type.values())
+        EnumMap<ArmorType, Integer> typeMap = new EnumMap<>(ArmorType.class);
+        for (ArmorType type : ArmorType.values())
         {
             typeMap.put(type, typeProtections.get(type));
         }
 
-        return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, loc, new ArmorMaterial(typeProtections, enchantability, equipSound, ingredient, layers, toughness, knockbackResistance));
+        //return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, loc, new ArmorMaterial(typeProtections, enchantability, equipSound, ingredient, layers, toughness, knockbackResistance));
+        return new ArmorMaterial(durability, typeProtections, enchantability, equipSound, toughness, knockbackResistance, repairIngredient, loc);
     }
 }
