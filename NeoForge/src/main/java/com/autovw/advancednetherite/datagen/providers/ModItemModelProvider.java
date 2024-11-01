@@ -147,14 +147,15 @@ public class ModItemModelProvider extends ItemModelProvider
         TRIM_MATERIALS.forEach((trimMaterial, trimValue) ->
         {
             ResourceLocation id = AdvancedNetherite.getRegistryHelper().getItemById(armorItem);
-            String armorType = switch (armorItem.getEquipmentSlot(armorItem.getDefaultInstance()))
-            {
-                case HEAD -> "helmet";
-                case CHEST -> "chestplate";
-                case LEGS -> "leggings";
-                case FEET -> "boots";
-                default -> "";
-            };
+            String armorType = "";
+            if (id.getPath().contains("helmet"))
+                armorType = "helmet";
+            else if (id.getPath().contains("chestplate"))
+                armorType = "chestplate";
+            else if (id.getPath().contains("leggings"))
+                armorType = "leggings";
+            else if (id.getPath().contains("boots"))
+                armorType = "boots";
 
             ResourceLocation armorTexture = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath());
             ResourceLocation trimTexture = mcLoc("trims/items/" + armorType + "_trim_" + trimMaterial.location().getPath());

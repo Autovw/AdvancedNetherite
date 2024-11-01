@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "tag": "advancednetherite:upgrade_to_netherite_diamond"
-  },
-  "base": {
-    "tag": "advancednetherite:axe/upgrade_to_netherite_diamond"
-  },
+  "addition": "#advancednetherite:upgrade_to_netherite_diamond",
+  "base": "#advancednetherite:axe/upgrade_to_netherite_diamond",
   "result": {
     "count": 1,
     "id": "advancednetherite:netherite_diamond_axe"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+  "template": "minecraft:netherite_upgrade_smithing_template"
 }

@@ -11,20 +11,23 @@ import java.util.function.BiConsumer;
  */
 public final class ModEquipmentModels
 {
-    public static final EquipmentModel NETHERITE_IRON = humanoidModel(key("netherite_iron"));
-    public static final EquipmentModel NETHERITE_GOLD = humanoidModel(key("netherite_gold"));
-    public static final EquipmentModel NETHERITE_EMERALD = humanoidModel(key("netherite_emerald"));
-    public static final EquipmentModel NETHERITE_DIAMOND = humanoidModel(key("netherite_diamond"));
+    public static final ResourceLocation ID_NETHERITE_IRON = key("netherite_iron");
+    public static final ResourceLocation ID_NETHERITE_GOLD = key("netherite_gold");
+    public static final ResourceLocation ID_NETHERITE_EMERALD = key("netherite_emerald");
+    public static final ResourceLocation ID_NETHERITE_DIAMOND = key("netherite_diamond");
 
-    /*
+    public static final EquipmentModel NETHERITE_IRON = humanoidModel(ID_NETHERITE_IRON);
+    public static final EquipmentModel NETHERITE_GOLD = humanoidModel(ID_NETHERITE_GOLD);
+    public static final EquipmentModel NETHERITE_EMERALD = humanoidModel(ID_NETHERITE_EMERALD);
+    public static final EquipmentModel NETHERITE_DIAMOND = humanoidModel(ID_NETHERITE_DIAMOND);
+
     public static void bootstrap(BiConsumer<ResourceLocation, EquipmentModel> consumer)
     {
-        consumer.accept(NETHERITE_IRON, humanoidModel(NETHERITE_IRON));
-        consumer.accept(NETHERITE_GOLD, humanoidModel(NETHERITE_GOLD));
-        consumer.accept(NETHERITE_EMERALD, humanoidModel(NETHERITE_EMERALD));
-        consumer.accept(NETHERITE_DIAMOND, humanoidModel(NETHERITE_DIAMOND));
+        consumer.accept(ID_NETHERITE_IRON, NETHERITE_IRON);
+        consumer.accept(ID_NETHERITE_GOLD, NETHERITE_GOLD);
+        consumer.accept(ID_NETHERITE_EMERALD, NETHERITE_EMERALD);
+        consumer.accept(ID_NETHERITE_DIAMOND, NETHERITE_DIAMOND);
     }
-     */
 
     private static EquipmentModel humanoidModel(ResourceLocation location)
     {

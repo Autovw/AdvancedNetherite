@@ -3,6 +3,7 @@ package com.autovw.advancednetherite.datagen;
 import com.autovw.advancednetherite.datagen.providers.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.data.DataGenerator;
 
 /**
  * @author Autovw
@@ -21,5 +22,8 @@ public class ModDataGenerator implements DataGeneratorEntrypoint
         pack.addProvider(ModBlockTagsProvider::new);
         pack.addProvider(ModItemTagsProvider::new);
         pack.addProvider(ModEnchantmentTagsProvider::new);
+
+        DataGenerator.PackGenerator secondaryPack = generator.createPack();
+        secondaryPack.addProvider(ModEquipmentModelProvider::new);
     }
 }
