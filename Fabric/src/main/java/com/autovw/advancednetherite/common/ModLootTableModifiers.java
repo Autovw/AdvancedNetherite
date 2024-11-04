@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.registries.VanillaRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -111,37 +110,35 @@ public final class ModLootTableModifiers
             // ADDITIONAL MOB DROPS END //
 
             // ADDITIONAL ORE DROPS START //
-            /*
             if (source.isBuiltin() && (id.equals(IRON_ORE) || id.equals(DEEPSLATE_IRON_ORE)))
             {
-                LootPool.Builder pool = oreDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalRawIronDropChance(), Items.RAW_IRON, 1, 2, ModItems.NETHERITE_IRON_PICKAXE);
+                LootPool.Builder pool = oreDropPool(provider, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalRawIronDropChance(), Items.RAW_IRON, 1, 2, ModItems.NETHERITE_IRON_PICKAXE);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && (id.equals(GOLD_ORE) || id.equals(DEEPSLATE_GOLD_ORE)))
             {
-                LootPool.Builder pool = oreDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalRawGoldDropChance(), Items.RAW_GOLD, 1, 1, ModItems.NETHERITE_GOLD_PICKAXE);
+                LootPool.Builder pool = oreDropPool(provider, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalRawGoldDropChance(), Items.RAW_GOLD, 1, 1, ModItems.NETHERITE_GOLD_PICKAXE);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && (id.equals(EMERALD_ORE) || id.equals(DEEPSLATE_EMERALD_ORE)))
             {
-                LootPool.Builder pool = oreDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEmeraldDropChance(), Items.EMERALD, 1, 1, ModItems.NETHERITE_EMERALD_PICKAXE);
+                LootPool.Builder pool = oreDropPool(provider, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEmeraldDropChance(), Items.EMERALD, 1, 1, ModItems.NETHERITE_EMERALD_PICKAXE);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && (id.equals(DIAMOND_ORE) || id.equals(DEEPSLATE_DIAMOND_ORE)))
             {
-                LootPool.Builder pool = oreDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalDiamondDropChance(), Items.DIAMOND, 1, 1, ModItems.NETHERITE_DIAMOND_PICKAXE);
+                LootPool.Builder pool = oreDropPool(provider, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalDiamondDropChance(), Items.DIAMOND, 1, 1, ModItems.NETHERITE_DIAMOND_PICKAXE);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(NETHER_GOLD_ORE))
             {
-                LootPool.Builder pool = oreDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalGoldNuggetDropChance(), Items.GOLD_NUGGET, 1, 3, ModItems.NETHERITE_GOLD_PICKAXE);
+                LootPool.Builder pool = oreDropPool(provider, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalGoldNuggetDropChance(), Items.GOLD_NUGGET, 1, 3, ModItems.NETHERITE_GOLD_PICKAXE);
                 tableBuilder.withPool(pool);
             }
-             */
             // ADDITIONAL ORE DROPS END //
         }));
     }
@@ -168,18 +165,17 @@ public final class ModLootTableModifiers
                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());
     }
 
-    private static LootPool.Builder oreDropPool(HolderLookup.RegistryLookup<Item> registryLookup, float dropChance, Item dropItem, int minDrop, int maxDrop, ItemLike... tools)
+    private static LootPool.Builder oreDropPool(HolderLookup.Provider registryProvider, float dropChance, Item dropItem, int minDrop, int maxDrop, ItemLike... tools)
     {
-        //HolderLookup.RegistryLookup<Enchantment> registries = VanillaRegistries.createLookup().lookupOrThrow(Registries.ENCHANTMENT);
+        HolderLookup.RegistryLookup<Item> registryLookup = registryProvider.lookupOrThrow(Registries.ITEM);
+        HolderLookup.RegistryLookup<Enchantment> enchantmentLookup = registryProvider.lookupOrThrow(Registries.ENCHANTMENT);
         return LootPool.lootPool()
                 .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(registryLookup, tools)))
                 .when(InvertedLootItemCondition.invert(
                         MatchTool.toolMatches(
                                 ItemPredicate.Builder.item()
                                         .withSubPredicate(ItemSubPredicates.ENCHANTMENTS, ItemEnchantmentsPredicate.enchantments(
-                                                List.of()
-                                                //List.of(new EnchantmentPredicate(registries.getOrThrow(Enchantments.SILK_TOUCH), MinMaxBounds.Ints.atLeast(1)))
-                                                //List.of(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1)))
+                                                List.of(new EnchantmentPredicate(enchantmentLookup.getOrThrow(Enchantments.SILK_TOUCH), MinMaxBounds.Ints.atLeast(1)))
                                         ))
                 )))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))
