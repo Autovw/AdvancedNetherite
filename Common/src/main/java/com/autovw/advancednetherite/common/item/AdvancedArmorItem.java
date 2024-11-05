@@ -4,6 +4,7 @@ import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModArmorMaterials;
+import com.autovw.advancednetherite.core.util.ModTags;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -37,60 +38,45 @@ public class AdvancedArmorItem extends ArmorItem
     }
 
     /**
-     * {@link Override} this method if you want endermen to behave neutral towards the player when wearing the armor.
-     *
-     * @return If true, pacifies endermen. Also applies the tooltip.
+     * Use {@link #pacifiesEndermen(ItemStack)}
      */
+    @Deprecated(forRemoval = true, since = "2.2.0")
     public boolean pacifiesEndermen()
     {
-        if (this.material == ModArmorMaterials.NETHERITE_IRON)
-            return ConfigHelper.get().getCommon().getArmor().isIronEndermanPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_GOLD)
-            return ConfigHelper.get().getCommon().getArmor().isGoldEndermanPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_EMERALD)
-            return ConfigHelper.get().getCommon().getArmor().isEmeraldEndermanPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_DIAMOND)
-            return ConfigHelper.get().getCommon().getArmor().isDiamondEndermanPassiveArmor();
-
         return false;
     }
 
+    public boolean pacifiesEndermen(ItemStack stack)
+    {
+        return stack.is(ModTags.PACIFY_ENDERMEN_ARMOR);
+    }
+
     /**
-     * {@link Override} this method if you want piglins to behave neutral towards the player when wearing the armor.
-     *
-     * @return If true, pacifies piglins. Also applies the tooltip.
+     * Use {@link #pacifiesPiglins(ItemStack)}
      */
+    @Deprecated(forRemoval = true, since = "2.2.0")
     public boolean pacifiesPiglins()
     {
-        if (this.material == ModArmorMaterials.NETHERITE_IRON)
-            return ConfigHelper.get().getCommon().getArmor().isIronPiglinPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_GOLD)
-            return ConfigHelper.get().getCommon().getArmor().isGoldPiglinPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_EMERALD)
-            return ConfigHelper.get().getCommon().getArmor().isEmeraldPiglinPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_DIAMOND)
-            return ConfigHelper.get().getCommon().getArmor().isDiamondPiglinPassiveArmor();
-
         return false;
     }
 
+    public boolean pacifiesPiglins(ItemStack stack)
+    {
+        return stack.is(ModTags.PACIFY_PIGLINS_ARMOR);
+    }
+
     /**
-     * {@link Override} this method if you want phantoms to behave neutral towards te player when the armor.
-     *
-     * @return If true, pacifies phantoms. Alo applies the tooltip.
+     * Use {@link #pacifiesPhantoms(ItemStack)}
      */
+    @Deprecated(forRemoval = true, since = "2.2.0")
     public boolean pacifiesPhantoms()
     {
-        if (this.material == ModArmorMaterials.NETHERITE_IRON)
-            return ConfigHelper.get().getCommon().getArmor().isIronPhantomPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_GOLD)
-            return ConfigHelper.get().getCommon().getArmor().isGoldPhantomPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_EMERALD)
-            return ConfigHelper.get().getCommon().getArmor().isEmeraldPhantomPassiveArmor();
-        if (this.material == ModArmorMaterials.NETHERITE_DIAMOND)
-            return ConfigHelper.get().getCommon().getArmor().isDiamondPhantomPassiveArmor();
-
         return false;
+    }
+
+    public boolean pacifiesPhantoms(ItemStack stack)
+    {
+        return stack.is(ModTags.PACIFY_PHANTOMS_ARMOR);
     }
 
     /**
@@ -130,16 +116,16 @@ public class AdvancedArmorItem extends ArmorItem
         {
             if (Screen.hasShiftDown())
             {
-                if (pacifiesEndermen())
+                if (pacifiesEndermen(stack))
                     tooltip.add(ModTooltips.ENDERMAN_PASSIVE_TOOLTIP);
-                if (pacifiesPiglins())
+                if (pacifiesPiglins(stack))
                     tooltip.add(ModTooltips.PIGLIN_PASSIVE_TOOLTIP);
-                if (pacifiesPhantoms())
+                if (pacifiesPhantoms(stack))
                     tooltip.add(ModTooltips.PHANTOM_PASSIVE_TOOLTIP);
             }
             else
             {
-                if (pacifiesEndermen() || pacifiesPiglins() || pacifiesPhantoms())
+                if (pacifiesEndermen(stack) || pacifiesPiglins(stack) || pacifiesPhantoms(stack))
                     tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
             }
 

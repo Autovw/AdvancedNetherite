@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_TagKey[minecraft:item / forge:ingots/iron]": {
+    "has_TagKey[minecraft:item / c:ingots/iron]": {
       "conditions": {
         "items": [
           {
-            "items": "#forge:ingots/iron"
+            "items": "#c:ingots/iron"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_TagKey[minecraft:item / forge:ingots/iron]"
+      "has_TagKey[minecraft:item / c:ingots/iron]"
     ]
   ],
   "rewards": {

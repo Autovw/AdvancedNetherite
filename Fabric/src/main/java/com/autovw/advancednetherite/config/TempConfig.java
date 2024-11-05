@@ -1,7 +1,6 @@
 package com.autovw.advancednetherite.config;
 
 import com.autovw.advancednetherite.config.common.IAdditionalDropsConfig;
-import com.autovw.advancednetherite.config.common.IArmorConfig;
 import com.autovw.advancednetherite.config.server.IAdditionalDropPropertiesConfig;
 import com.autovw.advancednetherite.config.server.IToolPropertiesConfig;
 
@@ -46,94 +45,12 @@ public class TempConfig
 
     public static class Common implements ICommonConfig
     {
-        private final Armor armor = new Armor();
         private final AdditionalDrops additionalDrops = new AdditionalDrops();
-
-        @Override
-        public IArmorConfig getArmor()
-        {
-            return this.armor;
-        }
 
         @Override
         public IAdditionalDropsConfig getAdditionalDrops()
         {
             return this.additionalDrops;
-        }
-
-        public static class Armor implements IArmorConfig
-        {
-            @Override
-            public boolean isIronPhantomPassiveArmor()
-            {
-                return true;
-            }
-
-            @Override
-            public boolean isIronPiglinPassiveArmor()
-            {
-                return false;
-            }
-
-            @Override
-            public boolean isIronEndermanPassiveArmor()
-            {
-                return false;
-            }
-
-            @Override
-            public boolean isGoldPhantomPassiveArmor()
-            {
-                return false;
-            }
-
-            @Override
-            public boolean isGoldPiglinPassiveArmor()
-            {
-                return true;
-            }
-
-            @Override
-            public boolean isGoldEndermanPassiveArmor()
-            {
-                return false;
-            }
-
-            @Override
-            public boolean isEmeraldPhantomPassiveArmor()
-            {
-                return false;
-            }
-
-            @Override
-            public boolean isEmeraldPiglinPassiveArmor()
-            {
-                return false;
-            }
-
-            @Override
-            public boolean isEmeraldEndermanPassiveArmor()
-            {
-                return true;
-            }
-
-            @Override
-            public boolean isDiamondPhantomPassiveArmor()
-            {
-                return true;
-            }
-
-            @Override
-            public boolean isDiamondPiglinPassiveArmor()
-            {
-                return true;
-            }
-
-            @Override
-            public boolean isDiamondEndermanPassiveArmor()
-            {
-                return true;
-            }
         }
 
         public static class AdditionalDrops implements IAdditionalDropsConfig

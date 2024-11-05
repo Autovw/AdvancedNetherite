@@ -1,10 +1,13 @@
 package com.autovw.advancednetherite.common;
 
+import com.autovw.advancednetherite.api.impl.IAdvancedHooks;
+import com.autovw.advancednetherite.common.item.AdvancedArmorItem;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModArmorMaterials;
 import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -106,5 +109,59 @@ public class AdvancedUtil
         }
 
         return newSpeed;
+    }
+
+    /**
+     * Determines if an enderman should behave passively towards the player, unless aggravated.
+     * @param player Player wearing the armor
+     * @return True if enderman should behave passively
+     */
+    public static boolean isWearingEndermanPassiveArmor(Player player)
+    {
+        for (ItemStack stack : player.getArmorSlots())
+        {
+            Item item = stack.getItem();
+            if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen(stack)) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack)))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Determines if a piglin should behave passively towards the player, unless aggravated.
+     * @param player Player wearing the armor
+     * @return True if piglin should behave passively
+     */
+    public static boolean isWearingPiglinPassiveArmor(Player player)
+    {
+        for (ItemStack stack : player.getArmorSlots())
+        {
+            Item item = stack.getItem();
+            if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPiglins(stack)) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPiglins(stack)))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Determines if a phantom should behave passively towards the player, unless aggravated.
+     * @param player Player wearing the armor
+     * @return True if phantom should behave passively
+     */
+    public static boolean isWearingPhantomPassiveArmor(Player player)
+    {
+        for (ItemStack stack : player.getArmorSlots())
+        {
+            Item item = stack.getItem();
+            if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms(stack)) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPhantoms(stack)))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

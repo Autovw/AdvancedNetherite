@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_TagKey[minecraft:item / forge:gems/emerald]": {
+    "has_TagKey[minecraft:item / c:gems/emerald]": {
       "conditions": {
         "items": [
           {
-            "items": "#forge:gems/emerald"
+            "items": "#c:gems/emerald"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_TagKey[minecraft:item / forge:gems/emerald]"
+      "has_TagKey[minecraft:item / c:gems/emerald]"
     ]
   ],
   "rewards": {

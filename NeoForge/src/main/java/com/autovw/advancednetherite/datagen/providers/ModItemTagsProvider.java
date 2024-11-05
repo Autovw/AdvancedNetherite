@@ -223,6 +223,17 @@ public class ModItemTagsProvider extends ItemTagsProvider
                 .add(ModItems.NETHERITE_IRON_SHOVEL)
                 .add(ModItems.NETHERITE_IRON_SWORD);
 
+        // Pacify armor tags
+        tag(ModTags.PACIFY_PHANTOMS_ARMOR)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_IRON)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
+        tag(ModTags.PACIFY_PIGLINS_ARMOR)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_GOLD)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
+        tag(ModTags.PACIFY_ENDERMEN_ARMOR)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_EMERALD)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
+
         /* Vanilla tags */
         tag(ItemTags.BEACON_PAYMENT_ITEMS).addTag(ModTags.NETHERITE_INGOTS);
 

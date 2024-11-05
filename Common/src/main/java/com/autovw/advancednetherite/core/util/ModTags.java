@@ -145,6 +145,11 @@ public final class ModTags
     public static final TagKey<Item> TIER_TOOL_NETHERITE_GOLD = modItemTag("tier/tool/netherite_gold");
     public static final TagKey<Item> TIER_TOOL_NETHERITE_IRON = modItemTag("tier/tool/netherite_iron");
 
+    // "pacify armor" tags
+    public static final TagKey<Item> PACIFY_PHANTOMS_ARMOR = modItemTag("pacify_phantoms_armor");
+    public static final TagKey<Item> PACIFY_PIGLINS_ARMOR = modItemTag("pacify_piglins_armor");
+    public static final TagKey<Item> PACIFY_ENDERMEN_ARMOR = modItemTag("pacify_endermen_armor");
+
     // ENCHANTMENT TAGS
     public static final TagKey<Enchantment> PREVENTS_ADDITIONAL_ORE_DROPS = modEnchantmentTag("prevents_additional_ore_drops");
 
