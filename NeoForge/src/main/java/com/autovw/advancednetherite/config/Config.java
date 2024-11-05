@@ -33,7 +33,7 @@ public class Config
 
         public Client(ModConfigSpec.Builder builder)
         {
-            builder.push("client");
+            builder.translation("config.advancednetherite.client").push("client");
             {
                 showTooltips = builder
                         .comment("If true, displays tooltips, added by Advanced Netherite, with perks client-side. True by default.")
@@ -77,7 +77,7 @@ public class Config
 
         public Common(ModConfigSpec.Builder builder)
         {
-            builder.push("common");
+            builder.translation("config.advancednetherite.common").push("common");
             {
                 this.additionalDropsConfig = new AdditionalDropsConfig(builder);
             }
@@ -98,11 +98,23 @@ public class Config
         public static ModConfigSpec.BooleanValue enableAdditionalMobDrops;
 
         public AdditionalDropsConfig(ModConfigSpec.Builder builder) {
-            builder.comment("Configure properties related to additional drop perks here. Drop chances can be modified in the SERVER config.").push("additional_drops");
+            builder
+                    .comment("Configure properties related to additional drop perks here. Drop chances can be modified in the SERVER config.")
+                    .translation("config.advancednetherite.common.additional_drops")
+                    .push("additional_drops");
             {
-                enableAdditionalCropDrops = builder.comment("If true, enables additional crop drops for hoes. True by default.").define("enableAdditionalCropDrops", true);
-                enableAdditionalOreDrops = builder.comment("If true, enables additional ore drops for pickaxes. Pickaxes with Silk Touch remain unaffected. True by default.").define("enableAdditionalOreDrops", true);
-                enableAdditionalMobDrops = builder.comment("If true, enables additional mob drops for swords. True by default.").define("enableAdditionalMobDrops", true);
+                enableAdditionalCropDrops = builder
+                        .comment("If true, enables additional crop drops for hoes. True by default.")
+                        .translation("config.advancednetherite.common.additional_drops.enable_additional_crop_drops")
+                        .define("enableAdditionalCropDrops", true);
+                enableAdditionalOreDrops = builder
+                        .comment("If true, enables additional ore drops for pickaxes. Pickaxes with Silk Touch remain unaffected. True by default.")
+                        .translation("config.advancednetherite.common.additional_drops.enable_additional_ore_drops")
+                        .define("enableAdditionalOreDrops", true);
+                enableAdditionalMobDrops = builder
+                        .comment("If true, enables additional mob drops for swords. True by default.")
+                        .translation("config.advancednetherite.common.additional_drops.enable_additional_mob_drops")
+                        .define("enableAdditionalMobDrops", true);
             }
             builder.pop();
         }
@@ -134,7 +146,7 @@ public class Config
 
         public Server(ModConfigSpec.Builder builder)
         {
-            builder.push("server");
+            builder.translation("config.advancednetherite.server").push("server");
             {
                 this.toolProperties = new ToolProperties(builder);
                 this.additionalDropProperties = new AdditionalDropProperties(builder);
@@ -164,14 +176,32 @@ public class Config
 
         public ToolProperties(ModConfigSpec.Builder builder)
         {
-            builder.comment("Configure properties related to tools here.").push("tool_properties");
+            builder
+                    .comment("Configure properties related to tools here.")
+                    .translation("config.advancednetherite.server.tool_properties")
+                    .push("tool_properties");
             {
-                builder.comment("Configure tool properties related to block breaking speed here.").push("breaking_speed_multipliers");
+                builder
+                        .comment("Configure tool properties related to block breaking speed here.")
+                        .translation("config.advancednetherite.server.tool_properties.breaking_speed_multipliers")
+                        .push("breaking_speed_multipliers");
                 {
-                    ironBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Iron tools").defineInRange("ironBreakingSpeedMultiplier", 12, 1, 64);
-                    goldBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Gold tools").defineInRange("goldBreakingSpeedMultiplier", 20, 1, 64);
-                    emeraldBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Emerald tools").defineInRange("emeraldBreakingSpeedMultiplier", 29, 1, 64);
-                    diamondBreakingSpeedMultiplier = builder.comment("Block breaking speed multiplier for Netherite-Diamond tools").defineInRange("diamondBreakingSpeedMultiplier", 39, 1, 64);
+                    ironBreakingSpeedMultiplier = builder
+                            .comment("Block breaking speed multiplier for Netherite-Iron tools")
+                            .translation("config.advancednetherite.server.tool_properties.breaking_speed_multipliers.netherite_iron")
+                            .defineInRange("ironBreakingSpeedMultiplier", 12, 1, 64);
+                    goldBreakingSpeedMultiplier = builder
+                            .comment("Block breaking speed multiplier for Netherite-Gold tools")
+                            .translation("config.advancednetherite.server.tool_properties.breaking_speed_multipliers.netherite_gold")
+                            .defineInRange("goldBreakingSpeedMultiplier", 20, 1, 64);
+                    emeraldBreakingSpeedMultiplier = builder
+                            .comment("Block breaking speed multiplier for Netherite-Emerald tools")
+                            .translation("config.advancednetherite.server.tool_properties.breaking_speed_multipliers.netherite_emerald")
+                            .defineInRange("emeraldBreakingSpeedMultiplier", 29, 1, 64);
+                    diamondBreakingSpeedMultiplier = builder
+                            .comment("Block breaking speed multiplier for Netherite-Diamond tools")
+                            .translation("config.advancednetherite.server.tool_properties.breaking_speed_multipliers.netherite_diamond")
+                            .defineInRange("diamondBreakingSpeedMultiplier", 39, 1, 64);
                 }
                 builder.pop();
             }
@@ -223,33 +253,84 @@ public class Config
 
         public AdditionalDropProperties(ModConfigSpec.Builder builder)
         {
-            builder.comment("Configure properties related to additional drops here.").push("additional_drop_properties");
+            builder
+                    .comment("Configure properties related to additional drops here.")
+                    .translation("config.advancednetherite.server.additional_drops")
+                    .push("additional_drop_properties");
             {
-                builder.comment("Configure properties related to crop drop chances here.").push("crop_drop_chances");
+                builder
+                        .comment("Configure properties related to crop drop chances here.")
+                        .translation("config.advancednetherite.server.additional_drops.crops")
+                        .push("crop_drop_chances");
                 {
-                    additionalWheatDropChance = builder.comment("Chance of dropping additional wheat. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalWheatDropChance", 0.3, 0, 1);
-                    additionalCarrotsDropChance = builder.comment("Chance of dropping additional carrots. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalCarrotsDropChance", 0.3, 0, 1);
-                    additionalPotatoesDropChance = builder.comment("Chance of dropping additional potatoes. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalPotatoesDropChance", 0.3, 0, 1);
-                    additionalBeetrootsDropChance = builder.comment("Chance of dropping additional beetroots. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalBeetrootsDropChance", 0.2, 0, 1);
+                    additionalWheatDropChance = builder
+                            .comment("Chance of dropping additional wheat. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.crops.wheat_drop_chance")
+                            .defineInRange("additionalWheatDropChance", 0.3, 0, 1);
+                    additionalCarrotsDropChance = builder
+                            .comment("Chance of dropping additional carrots. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.crops.carrots_drop_chance")
+                            .defineInRange("additionalCarrotsDropChance", 0.3, 0, 1);
+                    additionalPotatoesDropChance = builder
+                            .comment("Chance of dropping additional potatoes. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.crops.potatoes_drop_chance")
+                            .defineInRange("additionalPotatoesDropChance", 0.3, 0, 1);
+                    additionalBeetrootsDropChance = builder
+                            .comment("Chance of dropping additional beetroots. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.crops.beetroots_drop_chance")
+                            .defineInRange("additionalBeetrootsDropChance", 0.2, 0, 1);
                 }
                 builder.pop();
 
-                builder.comment("Configure properties related to mob drop chances here.").push("mob_drop_chances");
+                builder
+                        .comment("Configure properties related to mob drop chances here.")
+                        .translation("config.advancednetherite.server.additional_drops.mobs")
+                        .push("mob_drop_chances");
                 {
-                    additionalPhantomDropChance = builder.comment("Chance of dropping additional phantom membrane. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalPhantomDropChance", 0.5, 0, 1);
-                    additionalZombifiedPiglinDropChance = builder.comment("Chance of dropping additional golden nuggets. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalZombifiedPiglinDropChance", 0.5, 0, 1);
-                    additionalPiglinDropChance = builder.comment("Chance of dropping additional golden ingots. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalPiglinDropChance", 0.15, 0, 1);
-                    additionalEndermanDropChance = builder.comment("Chance of dropping additional ender pearls. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalEndermanDropChance", 0.3, 0, 1);
+                    additionalPhantomDropChance = builder
+                            .comment("Chance of dropping additional phantom membrane. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.mobs.phantom_drop_chance")
+                            .defineInRange("additionalPhantomDropChance", 0.5, 0, 1);
+                    additionalZombifiedPiglinDropChance = builder
+                            .comment("Chance of dropping additional golden nuggets. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.mobs.zombified_piglin_drop_chance")
+                            .defineInRange("additionalZombifiedPiglinDropChance", 0.5, 0, 1);
+                    additionalPiglinDropChance = builder
+                            .comment("Chance of dropping additional golden ingots. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.mobs.piglin_drop_chance")
+                            .defineInRange("additionalPiglinDropChance", 0.15, 0, 1);
+                    additionalEndermanDropChance = builder
+                            .comment("Chance of dropping additional ender pearls. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.mobs.enderman_drop_chance")
+                            .defineInRange("additionalEndermanDropChance", 0.3, 0, 1);
                 }
                 builder.pop();
 
-                builder.comment("Configure properties related to ore drop chances here.").push("ore_drop_chances");
+                builder
+                        .comment("Configure properties related to ore drop chances here.")
+                        .translation("config.advancednetherite.server.additional_drops.ores")
+                        .push("ore_drop_chances");
                 {
-                    additionalRawIronDropChance = builder.comment("Chance of dropping additional raw iron. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalRawIronDropChance", 0.2, 0, 1);
-                    additionalRawGoldDropChance = builder.comment("Chance of dropping additional raw gold. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalRawGoldChance", 0.3, 0, 1);
-                    additionalEmeraldDropChance = builder.comment("Chance of dropping additional emerald. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalEmeraldDropChance", 0.4, 0, 1);
-                    additionalDiamondDropChance = builder.comment("Chance of dropping additional diamond. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalDiamondDropChance", 0.25, 0, 1);
-                    additionalGoldNuggetDropChance = builder.comment("Chance of dropping additional golden nugget. 0.0 = 0% chance, 1.0 = 100% chance.").defineInRange("additionalGoldNuggetDropChance", 0.6, 0, 1);
+                    additionalRawIronDropChance = builder
+                            .comment("Chance of dropping additional raw iron. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.ores.raw_iron_drop_chance")
+                            .defineInRange("additionalRawIronDropChance", 0.2, 0, 1);
+                    additionalRawGoldDropChance = builder
+                            .comment("Chance of dropping additional raw gold. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.ores.raw_gold_drop_chance")
+                            .defineInRange("additionalRawGoldChance", 0.3, 0, 1);
+                    additionalEmeraldDropChance = builder
+                            .comment("Chance of dropping additional emerald. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.ores.emerald_drop_chance")
+                            .defineInRange("additionalEmeraldDropChance", 0.4, 0, 1);
+                    additionalDiamondDropChance = builder
+                            .comment("Chance of dropping additional diamond. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.ores.diamond_drop_chance")
+                            .defineInRange("additionalDiamondDropChance", 0.25, 0, 1);
+                    additionalGoldNuggetDropChance = builder
+                            .comment("Chance of dropping additional golden nugget. 0.0 = 0% chance, 1.0 = 100% chance.")
+                            .translation("config.advancednetherite.server.additional_drops.ores.gold_nugget_drop_chance")
+                            .defineInRange("additionalGoldNuggetDropChance", 0.6, 0, 1);
                 }
                 builder.pop();
             }
