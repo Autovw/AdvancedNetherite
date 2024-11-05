@@ -8,7 +8,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.*;
 import net.minecraft.util.FormattedCharSequence;
 
-//import javax.annotation.Nullable;
 import java.util.List;
 
 /**
@@ -63,10 +62,10 @@ public class ConfigScreen extends Screen
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float ticks)
     {
         this.renderBackground(graphics, mouseX, mouseY, ticks);
+        super.render(graphics, mouseX, mouseY, ticks);
         graphics.drawCenteredString(this.font, this.title, this.width / 2, 7, 0xFFFFFF);
         drawCenteredSplitString(graphics, this.font, this.font.split(getDescriptionTop(), this.width), this.width / 2, 55, 0xFFFFFF);
         drawCenteredSplitString(graphics, this.font, this.font.split(getDescriptionBottom(), this.width), this.width / 2, 90, 0xFFFFFF);
-        super.render(graphics, mouseX, mouseY, ticks);
     }
 
     /**
@@ -109,7 +108,6 @@ public class ConfigScreen extends Screen
      * The URL behind the instructions button. Return null to disable this button.
      * @return Instructions url
      */
-    //@Nullable
     public String getInstructionsUrl()
     {
         return "https://github.com/Autovw/AdvancedNetherite/wiki/Configuration";
