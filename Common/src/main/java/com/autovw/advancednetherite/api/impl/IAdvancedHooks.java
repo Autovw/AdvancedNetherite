@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.api.impl;
 
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -23,14 +24,12 @@ public interface IAdvancedHooks
     }
 
     /**
-     * Used to check if piglins should behave passive towards a player wearing the provided stack, unless provoked.
-     * @param stack the stack worn by the player
-     * @return If true, piglins will behave passive towards players wearing the stack
-     * @since 2.0.0
+     * Can no longer be used to change piglin aggression status. See <code>minecraft:piglin_safe_armor</code> item tag.
      */
+    @Deprecated(forRemoval = true, since = "2.2.0 MC-1.21.3")
     default boolean pacifyPiglins(ItemStack stack)
     {
-        return false;
+        return stack.is(ItemTags.PIGLIN_SAFE_ARMOR);
     }
 
     /**

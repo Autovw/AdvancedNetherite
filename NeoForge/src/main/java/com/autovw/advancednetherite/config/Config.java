@@ -2,7 +2,6 @@ package com.autovw.advancednetherite.config;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.config.common.IAdditionalDropsConfig;
-import com.autovw.advancednetherite.config.common.IArmorConfig;
 import com.autovw.advancednetherite.config.server.IAdditionalDropPropertiesConfig;
 import com.autovw.advancednetherite.config.server.IToolPropertiesConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
@@ -74,163 +73,21 @@ public class Config
     // COMMON config
     public static class Common implements ICommonConfig
     {
-        public final ArmorConfig armorConfig;
         public final AdditionalDropsConfig additionalDropsConfig;
 
         public Common(ModConfigSpec.Builder builder)
         {
             builder.push("common");
             {
-                this.armorConfig = new ArmorConfig(builder);
                 this.additionalDropsConfig = new AdditionalDropsConfig(builder);
             }
             builder.pop();
         }
 
         @Override
-        public IArmorConfig getArmor()
-        {
-            return this.armorConfig;
-        }
-
-        @Override
         public IAdditionalDropsConfig getAdditionalDrops()
         {
             return this.additionalDropsConfig;
-        }
-    }
-
-    public static class ArmorConfig implements IArmorConfig
-    {
-        public static ModConfigSpec.BooleanValue ironPhantomPassiveArmor;
-        public static ModConfigSpec.BooleanValue ironPiglinPassiveArmor;
-        public static ModConfigSpec.BooleanValue ironEndermanPassiveArmor;
-
-        public static ModConfigSpec.BooleanValue goldPhantomPassiveArmor;
-        public static ModConfigSpec.BooleanValue goldPiglinPassiveArmor;
-        public static ModConfigSpec.BooleanValue goldEndermanPassiveArmor;
-
-        public static ModConfigSpec.BooleanValue emeraldPhantomPassiveArmor;
-        public static ModConfigSpec.BooleanValue emeraldPiglinPassiveArmor;
-        public static ModConfigSpec.BooleanValue emeraldEndermanPassiveArmor;
-
-        public static ModConfigSpec.BooleanValue diamondPhantomPassiveArmor;
-        public static ModConfigSpec.BooleanValue diamondPiglinPassiveArmor;
-        public static ModConfigSpec.BooleanValue diamondEndermanPassiveArmor;
-
-        public ArmorConfig(ModConfigSpec.Builder builder)
-        {
-            builder.comment("Configure properties related to armor perks here").push("armor_perks");
-            {
-                // Netherite-Iron Armor
-                builder.comment("Configure properties related to Netherite-Iron armor here").push("netherite_iron_armor");
-                {
-                    ironPhantomPassiveArmor = builder.comment("If true, Phantoms behave neutral towards players wearing Netherite-Iron armor. True by default.").define("ironPhantomPassiveArmor", true);
-                    ironPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Iron armor. False by default.").define("ironPiglinPassiveArmor", false);
-                    ironEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Iron armor. False by default.").define("ironEndermanPassiveArmor", false);
-                }
-                builder.pop();
-
-                // Netherite-Gold Armor
-                builder.comment("Configure properties related to Netherite-Gold armor here").push("netherite_gold_armor");
-                {
-                    goldPhantomPassiveArmor = builder.comment("If true, Phantoms behave neutral towards players wearing Netherite-Gold armor. False by default.").define("goldPhantomPassiveArmor", false);
-                    goldPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Gold armor. True by default.").define("goldPiglinPassiveArmor", true);
-                    goldEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Gold armor. False by default.").define("goldEndermanPassiveArmor", false);
-                }
-                builder.pop();
-
-                // Netherite-Emerald Armor
-                builder.comment("Configure properties related to Netherite-Emerald armor here").push("netherite_emerald_armor");
-                {
-                    emeraldPhantomPassiveArmor = builder.comment("If true, Phantoms behave neutral towards players wearing Netherite-Emerald armor. False by default.").define("emeraldPhantomPassiveArmor", false);
-                    emeraldPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Emerald armor. False by default.").define("emeraldPiglinPassiveArmor", false);
-                    emeraldEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Emerald armor. True by default.").define("emeraldEndermanPassiveArmor", true);
-                }
-                builder.pop();
-
-                // Netherite-Diamond Armor
-                builder.comment("Configure properties related to Netherite-Diamond armor here").push("netherite_diamond_armor");
-                {
-                    diamondPhantomPassiveArmor = builder.comment("If true, Phantoms behave neutral towards players wearing Netherite-Diamond armor. True by default.").define("diamondPhantomPassiveArmor", true);
-                    diamondPiglinPassiveArmor = builder.comment("If true, Piglins behave neutral towards players wearing Netherite-Diamond armor. True by default.").define("diamondPiglinPassiveArmor", true);
-                    diamondEndermanPassiveArmor = builder.comment("If true, Endermen behave neutral towards players wearing Netherite-Diamond armor. True by default.").define("diamondEndermanPassiveArmor", true);
-                }
-                builder.pop();
-            }
-            builder.pop();
-        }
-
-        @Override
-        public boolean isIronPhantomPassiveArmor()
-        {
-            return ArmorConfig.ironPhantomPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isIronPiglinPassiveArmor()
-        {
-            return ArmorConfig.ironPiglinPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isIronEndermanPassiveArmor()
-        {
-            return ArmorConfig.ironEndermanPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isGoldPhantomPassiveArmor()
-        {
-            return ArmorConfig.goldPhantomPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isGoldPiglinPassiveArmor()
-        {
-            return ArmorConfig.goldPiglinPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isGoldEndermanPassiveArmor()
-        {
-            return ArmorConfig.goldEndermanPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isEmeraldPhantomPassiveArmor()
-        {
-            return ArmorConfig.emeraldPhantomPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isEmeraldPiglinPassiveArmor()
-        {
-            return ArmorConfig.emeraldPiglinPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isEmeraldEndermanPassiveArmor()
-        {
-            return ArmorConfig.emeraldEndermanPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isDiamondPhantomPassiveArmor()
-        {
-            return ArmorConfig.diamondPhantomPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isDiamondPiglinPassiveArmor()
-        {
-            return ArmorConfig.diamondPiglinPassiveArmor.get();
-        }
-
-        @Override
-        public boolean isDiamondEndermanPassiveArmor()
-        {
-            return ArmorConfig.diamondEndermanPassiveArmor.get();
         }
     }
 

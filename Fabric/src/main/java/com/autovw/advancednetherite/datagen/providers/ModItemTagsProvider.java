@@ -215,13 +215,14 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
         getOrCreateTagBuilder(ModTags.REPAIRS_NETHERITE_DIAMOND_TOOLS)
                 .add(ModItems.NETHERITE_DIAMOND_INGOT);
 
-        // config
-        getOrCreateTagBuilder(FabricModTags.CONFIG_PACIFY_PHANTOMS)
-                .addTag(ModTags.TIER_ARMOR_NETHERITE_IRON);
-        getOrCreateTagBuilder(FabricModTags.CONFIG_PACIFY_PIGLINS)
+        // Pacify armor tags
+        getOrCreateTagBuilder(ModTags.PACIFY_PHANTOMS_ARMOR)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_IRON)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
+        getOrCreateTagBuilder(ModTags.PACIFY_PIGLINS_ARMOR)
                 .addTag(ModTags.TIER_ARMOR_NETHERITE_GOLD)
                 .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
-        getOrCreateTagBuilder(FabricModTags.CONFIG_PACIFY_ENDERMEN)
+        getOrCreateTagBuilder(ModTags.PACIFY_ENDERMEN_ARMOR)
                 .addTag(ModTags.TIER_ARMOR_NETHERITE_EMERALD)
                 .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
 
@@ -241,6 +242,9 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_GOLD_PICKAXE)
                 .add(ModItems.NETHERITE_GOLD_SHOVEL)
                 .add(ModItems.NETHERITE_GOLD_SWORD);
+        getOrCreateTagBuilder(ItemTags.PIGLIN_SAFE_ARMOR)
+                .addTag(ModTags.PACIFY_PIGLINS_ARMOR);
+
         getOrCreateTagBuilder(ItemTags.CLUSTER_MAX_HARVESTABLES)
                 .add(ModItems.NETHERITE_IRON_PICKAXE)
                 .add(ModItems.NETHERITE_GOLD_PICKAXE)

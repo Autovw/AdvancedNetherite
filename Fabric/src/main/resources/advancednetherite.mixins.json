@@ -5,8 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "EnderManMixin",
-    "PhantomMixin",
-    "PiglinAiMixin"
+    "PhantomMixin"
   ],
   "client": [
   ],
