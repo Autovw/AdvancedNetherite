@@ -1,10 +1,9 @@
 package com.autovw.advancednetherite.client;
 
-import com.autovw.advancednetherite.client.screen.ConfigScreen;
-import net.minecraft.network.chat.Component;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 /**
@@ -19,7 +18,7 @@ public class ClientHandler
         if (!ModList.get().isLoaded("configured"))
         {
             ModContainer container = ModLoadingContext.get().getActiveContainer();
-            container.registerExtensionPoint(IConfigScreenFactory.class, (minecraft, parent) -> new ConfigScreen(Component.translatable("Advanced Netherite"), parent));
+            container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         }
     }
 }
