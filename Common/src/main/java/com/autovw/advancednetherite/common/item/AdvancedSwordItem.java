@@ -89,6 +89,7 @@ public class AdvancedSwordItem extends SwordItem
                     }
                     if (tier == ModToolTiers.NETHERITE_DIAMOND)
                     {
+                        tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
