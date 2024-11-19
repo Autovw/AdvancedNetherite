@@ -56,24 +56,25 @@
 
   "itemGroup.advancednetherite.tab": "Advanced Netherite",
 
-  "tooltip.advancednetherite.armor.enderman_passive": "+ Pacifies Endermen",
-  "tooltip.advancednetherite.armor.piglin_passive": "+ Pacifies Piglins",
-  "tooltip.advancednetherite.armor.phantom_passive": "+ Pacifies Phantoms",
+  "tooltip.advancednetherite.armor.enderman_passive": "%s Pacifies Endermen",
+  "tooltip.advancednetherite.armor.piglin_passive": "%s Pacifies Piglins",
+  "tooltip.advancednetherite.armor.phantom_passive": "%s Pacifies Phantoms",
 
-  "tooltip.advancednetherite.hoe.additional_crop_drops": "+ Chance of dropping additional crop drops while harvesting grown crops",
+  "tooltip.advancednetherite.hoe.additional_crop_drops": "%s Chance of dropping additional crop drops while harvesting grown crops",
 
-  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ Chance of dropping additional Diamond while mining Diamond ores",
-  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ Chance of dropping additional Emerald while mining Emerald ores",
-  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ Chance of dropping additional Raw Gold while mining Gold ores",
-  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ Chance of dropping additional Raw Iron while mining Iron ores",
+  "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "%s Chance of dropping additional Diamond while mining Diamond ores",
+  "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "%s Chance of dropping additional Emerald while mining Emerald ores",
+  "tooltip.advancednetherite.pickaxe.additional_gold_drop": "%s Chance of dropping additional Raw Gold while mining Gold ores",
+  "tooltip.advancednetherite.pickaxe.additional_iron_drop": "%s Chance of dropping additional Raw Iron while mining Iron ores",
 
-  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ Chance of dropping additional Ender Pearl on killing Enderman",
-  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ Chance of dropping additional Gold Ingot on killing Piglin",
-  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ Chance of dropping additional Gold Nugget(s) on killing Zombified Piglin",
-  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ Chance of dropping additional Phantom Membrane(s) on killing Phantom",
+  "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "%s Chance of dropping additional Ender Pearl on killing Enderman",
+  "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "%s Chance of dropping additional Gold Ingot on killing Piglin",
+  "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "%s Chance of dropping additional Gold Nugget(s) on killing Zombified Piglin",
+  "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "%s Chance of dropping additional Phantom Membrane(s) on killing Phantom",
 
   "tooltip.advancednetherite.misc.press_shift_key": "Press %s to view all perks",
   "tooltip.advancednetherite.misc.shift": "[SHIFT]",
+  "tooltip.advancednetherite.misc.plus": "+",
 
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "Why?",
   "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "Craft a Netherite-Diamond Hoe and visit a psychologist afterwards",
