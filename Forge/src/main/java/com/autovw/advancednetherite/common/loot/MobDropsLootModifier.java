@@ -51,7 +51,7 @@ public class MobDropsLootModifier extends LootModifier
             ItemStack useItem = player.getMainHandItem(); // used to check if the player uses the correct weapon
             RandomSource random = context.getRandom(); // random generator
 
-            if ((useItem.is(ModItems.NETHERITE_IRON_SWORD) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD) && victim.getType() == EntityType.PHANTOM && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance())
+            if ((useItem.is(ModItems.NETHERITE_IRON_SWORD) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD)) && victim.getType() == EntityType.PHANTOM && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.PHANTOM_MEMBRANE, random.nextIntBetweenInclusive(0, 2)));
             }

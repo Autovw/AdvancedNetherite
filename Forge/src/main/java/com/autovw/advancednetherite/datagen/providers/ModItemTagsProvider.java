@@ -243,6 +243,17 @@ public class ModItemTagsProvider extends ItemTagsProvider
         tag(ModTags.REPAIRS_NETHERITE_DIAMOND_TOOLS)
                 .add(ModItems.NETHERITE_DIAMOND_INGOT);
 
+        // Pacify armor tags
+        tag(ModTags.PACIFY_PHANTOMS_ARMOR)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_IRON)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
+        tag(ModTags.PACIFY_PIGLINS_ARMOR)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_GOLD)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
+        tag(ModTags.PACIFY_ENDERMEN_ARMOR)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_EMERALD)
+                .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
+
         /* Vanilla tags */
         tag(ItemTags.BEACON_PAYMENT_ITEMS).addTag(ModTags.NETHERITE_INGOTS);
 
@@ -258,6 +269,9 @@ public class ModItemTagsProvider extends ItemTagsProvider
                 .add(ModItems.NETHERITE_GOLD_PICKAXE)
                 .add(ModItems.NETHERITE_GOLD_SHOVEL)
                 .add(ModItems.NETHERITE_GOLD_SWORD);
+
+        tag(ItemTags.PIGLIN_SAFE_ARMOR)
+                .addTag(ModTags.PACIFY_PIGLINS_ARMOR);
 
         tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
                 .add(ModItems.NETHERITE_IRON_PICKAXE)
