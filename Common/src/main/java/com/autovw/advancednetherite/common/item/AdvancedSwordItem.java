@@ -86,6 +86,7 @@ public class AdvancedSwordItem extends SwordItem implements IToolMaterial
                     }
                     if (isMaterial(ModToolMaterials.NETHERITE_DIAMOND))
                     {
+                        tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);

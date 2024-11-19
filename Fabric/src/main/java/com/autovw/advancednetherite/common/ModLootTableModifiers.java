@@ -86,7 +86,7 @@ public final class ModLootTableModifiers
             // ADDITIONAL MOB DROPS START //
             if (source.isBuiltin() && id.equals(PHANTOM))
             {
-                LootPool.Builder pool = mobDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance(), Items.PHANTOM_MEMBRANE, 0, 2, ModItems.NETHERITE_IRON_SWORD);
+                LootPool.Builder pool = mobDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance(), Items.PHANTOM_MEMBRANE, 0, 2, ModItems.NETHERITE_IRON_SWORD, ModItems.NETHERITE_DIAMOND_SWORD);
                 tableBuilder.withPool(pool);
             }
 
