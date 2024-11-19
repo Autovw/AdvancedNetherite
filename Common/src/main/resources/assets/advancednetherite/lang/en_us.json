@@ -56,9 +56,9 @@
 
   "itemGroup.advancednetherite.tab": "Advanced Netherite",
   
-  "tooltip.advancednetherite.armor.enderman_passive": "%s Pacifies Endermen",
-  "tooltip.advancednetherite.armor.piglin_passive": "%s Pacifies Piglins",
-  "tooltip.advancednetherite.armor.phantom_passive": "%s Pacifies Phantoms",
+  "tooltip.advancednetherite.armor.enderman_passive": "%s Pacifies Endermen when worn",
+  "tooltip.advancednetherite.armor.piglin_passive": "%s Pacifies Piglins when worn",
+  "tooltip.advancednetherite.armor.phantom_passive": "%s Pacifies Phantoms when worn",
 
   "tooltip.advancednetherite.hoe.additional_crop_drops": "%s Chance of dropping additional crop drops while harvesting grown crops",
 
@@ -72,7 +72,7 @@
   "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "%s Chance of dropping additional Gold Nugget(s) on killing Zombified Piglin",
   "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "%s Chance of dropping additional Phantom Membrane(s) on killing Phantom",
 
-  "tooltip.advancednetherite.misc.press_shift_key": "Press %s to view all perks",
+  "tooltip.advancednetherite.misc.press_shift_key": "Hold %s to view all perks",
   "tooltip.advancednetherite.misc.shift": "[SHIFT]",
   "tooltip.advancednetherite.misc.plus": "+",
 
