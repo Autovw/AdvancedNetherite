@@ -1,81 +1,81 @@
-
 {
     "block.advancednetherite.netherite_iron_block": "ネザライト・鉄合金ブロック",
     "block.advancednetherite.netherite_gold_block": "ネザライト・金合金ブロック",
     "block.advancednetherite.netherite_emerald_block": "ネザライト・エメラルド合金ブロック",
     "block.advancednetherite.netherite_diamond_block": "ネザライト・ダイヤモンド合金ブロック",
-  
+
     "item.advancednetherite.netherite_iron_ingot": "ネザライト・鉄合金インゴット",
     "item.advancednetherite.netherite_gold_ingot": "ネザライト・金合金インゴット",
     "item.advancednetherite.netherite_emerald_ingot": "ネザライト・エメラルド合金インゴット",
     "item.advancednetherite.netherite_diamond_ingot": "ネザライト・ダイヤモンド合金インゴット",
-  
+
     "item.advancednetherite.netherite_iron_helmet": "ネザライト・鉄合金のヘルメット",
     "item.advancednetherite.netherite_gold_helmet": "ネザライト・金合金のヘルメット",
     "item.advancednetherite.netherite_emerald_helmet": "ネザライト・エメラルド合金のヘルメット",
     "item.advancednetherite.netherite_diamond_helmet": "ネザライト・ダイヤモンド合金のヘルメット",
-  
+
     "item.advancednetherite.netherite_iron_chestplate": "ネザライト・鉄合金のチェストプレート",
     "item.advancednetherite.netherite_gold_chestplate": "ネザライト・金合金のチェストプレート",
     "item.advancednetherite.netherite_emerald_chestplate": "ネザライト・エメラルド合金のチェストプレート",
     "item.advancednetherite.netherite_diamond_chestplate": "ネザライト・ダイヤモンド合金のチェストプレート",
-  
+
     "item.advancednetherite.netherite_iron_leggings": "ネザライト・鉄合金のレギンス",
     "item.advancednetherite.netherite_gold_leggings": "ネザライト・金合金のレギンス",
     "item.advancednetherite.netherite_emerald_leggings": "ネザライト・エメラルド合金のレギンス",
     "item.advancednetherite.netherite_diamond_leggings": "ネザライト・ダイヤモンド合金のレギンス",
-  
+
     "item.advancednetherite.netherite_iron_boots": "ネザライト・鉄合金のブーツ",
     "item.advancednetherite.netherite_gold_boots": "ネザライト・金合金のブーツ",
     "item.advancednetherite.netherite_emerald_boots": "ネザライト・エメラルド合金のブーツ",
     "item.advancednetherite.netherite_diamond_boots": "ネザライト・ダイヤモンド合金のブーツ",
-  
+
     "item.advancednetherite.netherite_iron_axe": "ネザライト・鉄合金の斧",
     "item.advancednetherite.netherite_gold_axe": "ネザライト・金合金の斧",
     "item.advancednetherite.netherite_emerald_axe": "ネザライト・エメラルド合金の斧",
     "item.advancednetherite.netherite_diamond_axe": "ネザライト・ダイヤモンド合金の斧",
-  
+
     "item.advancednetherite.netherite_iron_hoe": "ネザライト・鉄合金のクワ",
     "item.advancednetherite.netherite_gold_hoe": "ネザライト・金合金のクワ",
     "item.advancednetherite.netherite_emerald_hoe": "ネザライト・エメラルド合金のクワ",
     "item.advancednetherite.netherite_diamond_hoe": "ネザライト・ダイヤモンド合金のクワ",
-  
+
     "item.advancednetherite.netherite_iron_pickaxe": "ネザライト・鉄合金のツルハシ",
     "item.advancednetherite.netherite_gold_pickaxe": "ネザライト・金合金のツルハシ",
     "item.advancednetherite.netherite_emerald_pickaxe": "ネザライト・エメラルド合金のツルハシ",
     "item.advancednetherite.netherite_diamond_pickaxe": "ネザライト・ダイヤモンド合金のツルハシ",
-  
+
     "item.advancednetherite.netherite_iron_shovel": "ネザライト・鉄合金のシャベル",
     "item.advancednetherite.netherite_gold_shovel": "ネザライト・金合金のシャベル",
     "item.advancednetherite.netherite_emerald_shovel": "ネザライト・エメラルド合金のシャベル",
     "item.advancednetherite.netherite_diamond_shovel": "ネザライト・ダイヤモンド合金のシャベル",
-  
+
     "item.advancednetherite.netherite_iron_sword": "ネザライト・鉄合金の剣",
     "item.advancednetherite.netherite_gold_sword": "ネザライト・金合金の剣",
     "item.advancednetherite.netherite_emerald_sword": "ネザライト・エメラルド合金の剣",
     "item.advancednetherite.netherite_diamond_sword": "ネザライト・ダイヤモンド合金の剣",
-  
+
     "itemGroup.advancednetherite.tab": "Advanced Netherite",
-    
-    "tooltip.advancednetherite.armor.enderman_passive": "+ エンダーマンが友好的になる",
-    "tooltip.advancednetherite.armor.piglin_passive": "+ ピグリンが友好的になる",
-    "tooltip.advancednetherite.armor.phantom_passive": "+ ファントムが友好的になる",
-  
-    "tooltip.advancednetherite.hoe.additional_crop_drops": "+ 作物の収穫時、作物を追加でドロップすることがある",
-  
-    "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "+ ダイヤモンド鉱石の採掘時、ダイヤモンドを追加でドロップすることがある",
-    "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "+ エメラルド鉱石の採掘時、エメラルドを追加でドロップすることがある",
-    "tooltip.advancednetherite.pickaxe.additional_gold_drop": "+ 金鉱石の採掘時、金の原石を追加でドロップすることがある",
-    "tooltip.advancednetherite.pickaxe.additional_iron_drop": "+ 鉄鉱石の採掘時、鉄の原石を追加でドロップすることがある",
-  
-    "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "+ エンダーマンの殺害時、エンダーパールを追加でドロップすることがある",
-    "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "+ ピグリンの殺害時、金インゴットを追加でドロップすることがある",
-    "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "+ ゾンビピグリンの殺害時、金塊を追加でドロップすることがある",
-    "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "+ ファントムの殺害時、ファントムの皮膜を追加でドロップすることがある",
-  
+
+    "tooltip.advancednetherite.armor.enderman_passive": "%s エンダーマンが友好的になる",
+    "tooltip.advancednetherite.armor.piglin_passive": "%s ピグリンが友好的になる",
+    "tooltip.advancednetherite.armor.phantom_passive": "%s ファントムが友好的になる",
+
+    "tooltip.advancednetherite.hoe.additional_crop_drops": "%s 作物の収穫時、作物を追加でドロップすることがある",
+
+    "tooltip.advancednetherite.pickaxe.additional_diamond_drop": "%s ダイヤモンド鉱石の採掘時、ダイヤモンドを追加でドロップすることがある",
+    "tooltip.advancednetherite.pickaxe.additional_emerald_drop": "%s エメラルド鉱石の採掘時、エメラルドを追加でドロップすることがある",
+    "tooltip.advancednetherite.pickaxe.additional_gold_drop": "%s 金鉱石の採掘時、金の原石を追加でドロップすることがある",
+    "tooltip.advancednetherite.pickaxe.additional_iron_drop": "%s 鉄鉱石の採掘時、鉄の原石を追加でドロップすることがある",
+
+    "tooltip.advancednetherite.sword.additional_enderman_mob_drop": "%s エンダーマンの殺害時、エンダーパールを追加でドロップすることがある",
+    "tooltip.advancednetherite.sword.additional_piglin_mob_drop": "%s ピグリンの殺害時、金インゴットを追加でドロップすることがある",
+    "tooltip.advancednetherite.sword.additional_zombified_piglin_mob_drop": "%s ゾンビピグリンの殺害時、金塊を追加でドロップすることがある",
+    "tooltip.advancednetherite.sword.additional_phantom_mob_drop": "%s ファントムの殺害時、ファントムの皮膜を追加でドロップすることがある",
+
     "tooltip.advancednetherite.misc.press_shift_key": "%sを押してすべての特典を表示",
     "tooltip.advancednetherite.misc.shift": "［Shift］",
-  
+    "tooltip.advancednetherite.misc.plus": "+",
+
     "advancements.advancednetherite.husbandry.netherite_diamond_hoe.title": "どうして？",
     "advancements.advancednetherite.husbandry.netherite_diamond_hoe.description": "ネザライト・ダイヤモンド合金のクワをクラフトし、心理学者のカウンセリングを受ける",
     "advancements.advancednetherite.nether.netherite_iron_armor.title": "ファントムはもういない",
@@ -90,15 +90,46 @@
     "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description": "ネザライト・鉄合金インゴットを手に入れる",
     "advancements.advancednetherite.nether.obtain_netherite_diamond_block.title": "とっても高価なブロック",
     "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description": "ネザライト・ダイヤモンド合金を手に入れる",
-  
-    "config.advancednetherite.client.show_tooltips": "trueの場合、Advanced Netheriteで追加された特典をツールチップに表示します。（クライアント側）",
-    "config.advancednetherite.client.matching_durability_bars": "trueの場合、損傷したアイテムの下に色付きの耐久値バーを表示します。",
-    "config.advancednetherite.client.enable_search_bar": "trueの場合、Advanced Netheriteのクリエイティブタブに検索バーを追加します。",
-    "config.advancednetherite.client.force_disable_dab_support": "trueの場合、Detail Armor Bar Modのサポートを強制的に無効化します。ゲームを再起動する必要があります。",
-  
+
+    "config.advancednetherite.client": "Client config",
+    "config.advancednetherite.client.show_tooltips": "Show tooltips added by this mod",
+    "config.advancednetherite.client.matching_durability_bars": "Display a matching durability bar color underneath the item",
+    "config.advancednetherite.client.enable_search_bar": "Enable search bar in Advanced Netherite creative tab",
+    "config.advancednetherite.client.force_disable_dab_support": "Forcefully disable Detail Armor Bar (mod) support",
+
+    "config.advancednetherite.common": "Common config",
+    "config.advancednetherite.common.additional_drops": "Additional drops",
+    "config.advancednetherite.common.additional_drops.enable_additional_crop_drops": "Enable additional crop drops",
+    "config.advancednetherite.common.additional_drops.enable_additional_ore_drops": "Enable additional ore drops",
+    "config.advancednetherite.common.additional_drops.enable_additional_mob_drops": "Enable additional mob drops",
+
+    "config.advancednetherite.server": "Server config",
+    "config.advancednetherite.server.tool_properties": "Tool properties",
+    "config.advancednetherite.server.tool_properties.breaking_speed_multipliers": "Breaking speed multipliers",
+    "config.advancednetherite.server.tool_properties.breaking_speed_multipliers.netherite_iron": "Block breaking speed multiplier for Netherite-Iron tools",
+    "config.advancednetherite.server.tool_properties.breaking_speed_multipliers.netherite_gold": "Block breaking speed multiplier for Netherite-Gold tools",
+    "config.advancednetherite.server.tool_properties.breaking_speed_multipliers.netherite_emerald": "Block breaking speed multiplier for Netherite-Emerald tools",
+    "config.advancednetherite.server.tool_properties.breaking_speed_multipliers.netherite_diamond": "Block breaking speed multiplier for Netherite-Diamond tools",
+    "config.advancednetherite.server.additional_drops": "Additional drops",
+    "config.advancednetherite.server.additional_drops.crops": "Additional crop drops",
+    "config.advancednetherite.server.additional_drops.crops.wheat_drop_chance": "Additional wheat drop chance",
+    "config.advancednetherite.server.additional_drops.crops.carrots_drop_chance": "Additional carrots drop chance",
+    "config.advancednetherite.server.additional_drops.crops.potatoes_drop_chance": "Additional potatoes drop chance",
+    "config.advancednetherite.server.additional_drops.crops.beetroots_drop_chance": "Additional beetroots drop chance",
+    "config.advancednetherite.server.additional_drops.mobs": "Additional mob drops",
+    "config.advancednetherite.server.additional_drops.mobs.phantom_drop_chance": "Additional Phantom drops chance",
+    "config.advancednetherite.server.additional_drops.mobs.zombified_piglin_drop_chance": "Additional Zombified Piglin drops chance",
+    "config.advancednetherite.server.additional_drops.mobs.piglin_drop_chance": "Additional Piglin drops chance",
+    "config.advancednetherite.server.additional_drops.mobs.enderman_drop_chance": "Additional Enderman drops chance",
+    "config.advancednetherite.server.additional_drops.ores": "Additional ore drops",
+    "config.advancednetherite.server.additional_drops.ores.raw_iron_drop_chance": "Additional Raw Iron drop chance",
+    "config.advancednetherite.server.additional_drops.ores.raw_gold_drop_chance": "Additional Raw Gold drop chance",
+    "config.advancednetherite.server.additional_drops.ores.emerald_drop_chance": "Additional Emerald drop chance",
+    "config.advancednetherite.server.additional_drops.ores.diamond_drop_chance": "Additional Diamond drop chance",
+    "config.advancednetherite.server.additional_drops.ores.gold_nugget_drop_chance": "Additional Gold Nuggets drop chance",
+
     "config.advancednetherite.screen.description.top": "ゲーム内で%sで追加された設定を編集するには、%s Modをインストールしてください。",
     "config.advancednetherite.screen.description.bottom": "解説については、Wikiページを確認してください。",
     "config.advancednetherite.screen.button.install_configured": "%sをインストール",
     "config.advancednetherite.screen.button.instructions": "解説"
-  }
-  
+}
