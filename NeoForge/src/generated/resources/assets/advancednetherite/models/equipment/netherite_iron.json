@@ -2,12 +2,12 @@
   "layers": {
     "humanoid": [
       {
-        "texture": "advancednetherite:netherite_iron"
+        "texture": "minecraft:netherite_iron"
       }
     ],
     "humanoid_leggings": [
       {
-        "texture": "advancednetherite:netherite_iron"
+        "texture": "minecraft:netherite_iron"
       }
     ]
   }

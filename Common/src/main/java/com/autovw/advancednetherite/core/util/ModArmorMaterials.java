@@ -1,15 +1,15 @@
 package com.autovw.advancednetherite.core.util;
 
-import com.autovw.advancednetherite.AdvancedNetherite;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
 
 import java.util.EnumMap;
 
@@ -36,42 +36,39 @@ public final class ModArmorMaterials
             attribute.put(ArmorType.CHESTPLATE, 8);
             attribute.put(ArmorType.HELMET, 4);
             attribute.put(ArmorType.BODY, 11);
-        }), 15, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_IRON_ARMOR, "netherite_iron");
+        }), 15, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_IRON_ARMOR, ModEquipmentAssets.NETHERITE_IRON);
         NETHERITE_GOLD = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
             attribute.put(ArmorType.BOOTS, 4);
             attribute.put(ArmorType.LEGGINGS, 7);
             attribute.put(ArmorType.CHESTPLATE, 9);
             attribute.put(ArmorType.HELMET, 4);
             attribute.put(ArmorType.BODY, 11);
-        }), 25, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_GOLD_ARMOR, "netherite_gold");
+        }), 25, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_GOLD_ARMOR, ModEquipmentAssets.NETHERITE_GOLD);
         NETHERITE_EMERALD = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
             attribute.put(ArmorType.BOOTS, 4);
             attribute.put(ArmorType.LEGGINGS, 7);
             attribute.put(ArmorType.CHESTPLATE, 9);
             attribute.put(ArmorType.HELMET, 4);
             attribute.put(ArmorType.BODY, 11);
-        }), 20, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_EMERALD_ARMOR, "netherite_emerald");
+        }), 20, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_EMERALD_ARMOR, ModEquipmentAssets.NETHERITE_EMERALD);
         NETHERITE_DIAMOND = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
             attribute.put(ArmorType.BOOTS, 5);
             attribute.put(ArmorType.LEGGINGS, 7);
             attribute.put(ArmorType.CHESTPLATE, 9);
             attribute.put(ArmorType.HELMET, 5);
             attribute.put(ArmorType.BODY, 11);
-        }), 15, 4.0F, 0.1F, ModTags.REPAIRS_NETHERITE_DIAMOND_ARMOR, "netherite_diamond");
+        }), 15, 4.0F, 0.1F, ModTags.REPAIRS_NETHERITE_DIAMOND_ARMOR, ModEquipmentAssets.NETHERITE_DIAMOND);
     }
 
     /**
-     * @param name                  Name of the armor material
      * @param typeProtections       The amount of protection per slot
      * @param enchantability        The higher the number, the more likely better enchantments will be applied when using the enchanting table
      * @param toughness             Toughness for netherite armor
      * @param knockbackResistance   The knockback resistance for armor
-     * @param ingredientItem        Item used in anvil to repair the armor piece
      * @return Registered armor material
      */
-    private static ArmorMaterial register(int durability, EnumMap<ArmorType, Integer> typeProtections, int enchantability, float toughness, float knockbackResistance, TagKey<Item> repairIngredient, String modelId)
+    private static ArmorMaterial register(int durability, EnumMap<ArmorType, Integer> typeProtections, int enchantability, float toughness, float knockbackResistance, TagKey<Item> repairIngredient, ResourceKey<EquipmentAsset> equipmentAsset)
     {
-        ResourceLocation loc = ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, modelId);
         Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_NETHERITE;
         //List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(loc));
 
@@ -82,6 +79,6 @@ public final class ModArmorMaterials
         }
 
         //return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, loc, new ArmorMaterial(typeProtections, enchantability, equipSound, ingredient, layers, toughness, knockbackResistance));
-        return new ArmorMaterial(durability, typeProtections, enchantability, equipSound, toughness, knockbackResistance, repairIngredient, loc);
+        return new ArmorMaterial(durability, typeProtections, enchantability, equipSound, toughness, knockbackResistance, repairIngredient, equipmentAsset);
     }
 }

@@ -1,16 +1,13 @@
 package com.autovw.advancednetherite.datagen.providers;
 
-import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
-import com.autovw.advancednetherite.core.util.ModEquipmentModels;
+import com.autovw.advancednetherite.core.util.ModEquipmentAssets;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
 
 /**
  * @author Autovw
@@ -30,10 +27,10 @@ public class ModBlockStatesProvider extends FabricModelProvider
         generator.createTrivialCube(ModBlocks.NETHERITE_EMERALD_BLOCK);
         generator.createTrivialCube(ModBlocks.NETHERITE_DIAMOND_BLOCK);
 
-        generator.delegateItemModel(ModBlocks.NETHERITE_IRON_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_iron_block"));
-        generator.delegateItemModel(ModBlocks.NETHERITE_GOLD_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_gold_block"));
-        generator.delegateItemModel(ModBlocks.NETHERITE_EMERALD_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_emerald_block"));
-        generator.delegateItemModel(ModBlocks.NETHERITE_DIAMOND_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_diamond_block"));
+        //generator.delegateItemModel(ModBlocks.NETHERITE_IRON_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_iron_block"));
+        //generator.delegateItemModel(ModBlocks.NETHERITE_GOLD_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_gold_block"));
+        //generator.delegateItemModel(ModBlocks.NETHERITE_EMERALD_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_emerald_block"));
+        //generator.delegateItemModel(ModBlocks.NETHERITE_DIAMOND_BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "block/netherite_diamond_block"));
     }
 
     @Override
@@ -44,25 +41,25 @@ public class ModBlockStatesProvider extends FabricModelProvider
         generator.generateFlatItem(ModItems.NETHERITE_EMERALD_INGOT, ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(ModItems.NETHERITE_DIAMOND_INGOT, ModelTemplates.FLAT_ITEM);
 
-        generator.generateArmorTrims(ModItems.NETHERITE_IRON_HELMET, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_iron"), ModEquipmentModels.NETHERITE_IRON, EquipmentSlot.HEAD);
-        generator.generateArmorTrims(ModItems.NETHERITE_IRON_CHESTPLATE, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_iron"), ModEquipmentModels.NETHERITE_IRON, EquipmentSlot.CHEST);
-        generator.generateArmorTrims(ModItems.NETHERITE_IRON_LEGGINGS, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_iron"), ModEquipmentModels.NETHERITE_IRON, EquipmentSlot.LEGS);
-        generator.generateArmorTrims(ModItems.NETHERITE_IRON_BOOTS, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_iron"), ModEquipmentModels.NETHERITE_IRON, EquipmentSlot.FEET);
+        generator.generateTrimmableItem(ModItems.NETHERITE_IRON_HELMET, ModEquipmentAssets.NETHERITE_IRON, "netherite_iron", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_IRON_CHESTPLATE, ModEquipmentAssets.NETHERITE_IRON, "netherite_iron", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_IRON_LEGGINGS, ModEquipmentAssets.NETHERITE_IRON, "netherite_iron", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_IRON_BOOTS, ModEquipmentAssets.NETHERITE_IRON, "netherite_iron", false);
 
-        generator.generateArmorTrims(ModItems.NETHERITE_GOLD_HELMET, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_gold"), ModEquipmentModels.NETHERITE_GOLD, EquipmentSlot.HEAD);
-        generator.generateArmorTrims(ModItems.NETHERITE_GOLD_CHESTPLATE, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_gold"), ModEquipmentModels.NETHERITE_GOLD, EquipmentSlot.CHEST);
-        generator.generateArmorTrims(ModItems.NETHERITE_GOLD_LEGGINGS, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_gold"), ModEquipmentModels.NETHERITE_GOLD, EquipmentSlot.LEGS);
-        generator.generateArmorTrims(ModItems.NETHERITE_GOLD_BOOTS, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_gold"), ModEquipmentModels.NETHERITE_GOLD, EquipmentSlot.FEET);
+        generator.generateTrimmableItem(ModItems.NETHERITE_GOLD_HELMET, ModEquipmentAssets.NETHERITE_GOLD, "netherite_gold", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_GOLD_CHESTPLATE, ModEquipmentAssets.NETHERITE_GOLD, "netherite_gold", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_GOLD_LEGGINGS, ModEquipmentAssets.NETHERITE_GOLD, "netherite_gold", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_GOLD_BOOTS, ModEquipmentAssets.NETHERITE_GOLD, "netherite_gold", false);
 
-        generator.generateArmorTrims(ModItems.NETHERITE_EMERALD_HELMET, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_emerald"), ModEquipmentModels.NETHERITE_EMERALD, EquipmentSlot.HEAD);
-        generator.generateArmorTrims(ModItems.NETHERITE_EMERALD_CHESTPLATE, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_emerald"), ModEquipmentModels.NETHERITE_EMERALD, EquipmentSlot.CHEST);
-        generator.generateArmorTrims(ModItems.NETHERITE_EMERALD_LEGGINGS, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_emerald"), ModEquipmentModels.NETHERITE_EMERALD, EquipmentSlot.LEGS);
-        generator.generateArmorTrims(ModItems.NETHERITE_EMERALD_BOOTS, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_emerald"), ModEquipmentModels.NETHERITE_EMERALD, EquipmentSlot.FEET);
+        generator.generateTrimmableItem(ModItems.NETHERITE_EMERALD_HELMET, ModEquipmentAssets.NETHERITE_EMERALD, "netherite_emerald", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_EMERALD_CHESTPLATE, ModEquipmentAssets.NETHERITE_EMERALD, "netherite_emerald", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_EMERALD_LEGGINGS, ModEquipmentAssets.NETHERITE_EMERALD, "netherite_emerald", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_EMERALD_BOOTS, ModEquipmentAssets.NETHERITE_EMERALD, "netherite_emerald", false);
 
-        generator.generateArmorTrims(ModItems.NETHERITE_DIAMOND_HELMET, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_diamond"), ModEquipmentModels.NETHERITE_DIAMOND, EquipmentSlot.HEAD);
-        generator.generateArmorTrims(ModItems.NETHERITE_DIAMOND_CHESTPLATE, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_diamond"), ModEquipmentModels.NETHERITE_DIAMOND, EquipmentSlot.CHEST);
-        generator.generateArmorTrims(ModItems.NETHERITE_DIAMOND_LEGGINGS, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_diamond"), ModEquipmentModels.NETHERITE_DIAMOND, EquipmentSlot.LEGS);
-        generator.generateArmorTrims(ModItems.NETHERITE_DIAMOND_BOOTS, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "netherite_diamond"), ModEquipmentModels.NETHERITE_DIAMOND, EquipmentSlot.FEET);
+        generator.generateTrimmableItem(ModItems.NETHERITE_DIAMOND_HELMET, ModEquipmentAssets.NETHERITE_DIAMOND, "netherite_diamond", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_DIAMOND_CHESTPLATE, ModEquipmentAssets.NETHERITE_DIAMOND, "netherite_diamond", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_DIAMOND_LEGGINGS, ModEquipmentAssets.NETHERITE_DIAMOND, "netherite_diamond", false);
+        generator.generateTrimmableItem(ModItems.NETHERITE_DIAMOND_BOOTS, ModEquipmentAssets.NETHERITE_DIAMOND, "netherite_diamond", false);
 
         generator.generateFlatItem(ModItems.NETHERITE_IRON_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(ModItems.NETHERITE_IRON_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);

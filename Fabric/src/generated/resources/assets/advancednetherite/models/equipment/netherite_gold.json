@@ -2,12 +2,12 @@
   "layers": {
     "humanoid": [
       {
-        "texture": "advancednetherite:netherite_gold"
+        "texture": "minecraft:netherite_gold"
       }
     ],
     "humanoid_leggings": [
       {
-        "texture": "advancednetherite:netherite_gold"
+        "texture": "minecraft:netherite_gold"
       }
     ]
   }

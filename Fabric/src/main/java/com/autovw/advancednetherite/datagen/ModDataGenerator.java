@@ -24,6 +24,6 @@ public class ModDataGenerator implements DataGeneratorEntrypoint
         pack.addProvider(ModEnchantmentTagsProvider::new);
 
         DataGenerator.PackGenerator secondaryPack = generator.createPack();
-        secondaryPack.addProvider(ModEquipmentModelProvider::new);
+        secondaryPack.addProvider(ModEquipmentAssetProvider::new);
     }
 }
