@@ -50,7 +50,6 @@ public class ModDataGenerator
         event.addProvider(new ModLootModifierProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID));
 
         // client
-        //event.addProvider(new ModBlockStatesProvider(packOutput, AdvancedNetherite.MOD_ID, helper));
         event.addProvider(new ModEquipmentAssetProvider(packOutput));
         event.addProvider(new ModModelProvider(packOutput, AdvancedNetherite.MOD_ID));
     }

@@ -7,23 +7,37 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.level.block.Block;
 
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
+
 /**
  * @author Autovw
  */
 public class ModModelProvider extends ModelProvider
 {
+    private final PackOutput.PathProvider blockStatePathProvider;
+    private final PackOutput.PathProvider itemInfoPathProvider;
+    private final PackOutput.PathProvider modelPathProvider;
+    protected final String modId;
+
     public ModModelProvider(PackOutput packOutput, String modId)
     {
-        super(packOutput, modId);
+        super(packOutput);
+        this.blockStatePathProvider = packOutput.createPathProvider(PackOutput.Target.RESOURCE_PACK, "blockstates");
+        this.itemInfoPathProvider = packOutput.createPathProvider(PackOutput.Target.RESOURCE_PACK, "items");
+        this.modelPathProvider = packOutput.createPathProvider(PackOutput.Target.RESOURCE_PACK, "models");
+        this.modId = modId;
     }
 
-    @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels)
     {
         /* Blocks */
@@ -108,5 +122,39 @@ public class ModModelProvider extends ModelProvider
     public void armorModel(ItemModelGenerators itemModels, Item item, ResourceKey<EquipmentAsset> equipmentKey)
     {
         itemModels.generateTrimmableItem(item, equipmentKey, equipmentKey.location().getPath(), false);
+    }
+
+    @Override
+    public CompletableFuture<?> run(CachedOutput output)
+    {
+        ItemInfoCollector itemCollector = new ItemInfoCollector(this::getKnownItems);
+        BlockStateGeneratorCollector blockStateCollector = new BlockStateGeneratorCollector(this::getKnownBlocks);
+        SimpleModelCollector simpleModelCollector = new SimpleModelCollector();
+        this.registerModels(new BlockModelGenerators(blockStateCollector, itemCollector, simpleModelCollector), new ItemModelGenerators(itemCollector, simpleModelCollector));
+        blockStateCollector.validate();
+        itemCollector.finalizeAndValidate();
+        return CompletableFuture.allOf(
+                blockStateCollector.save(output, this.blockStatePathProvider),
+                simpleModelCollector.save(output, this.modelPathProvider),
+                itemCollector.save(output, this.itemInfoPathProvider)
+        );
+    }
+
+    @Override
+    protected Stream<Block> getKnownBlocks()
+    {
+        return BuiltInRegistries.BLOCK.stream()
+                .filter((block) -> Optional.of(BuiltInRegistries.BLOCK.getKey(block))
+                        .filter((key) -> key.getNamespace().equals(this.modId))
+                        .isPresent());
+    }
+
+    @Override
+    protected Stream<Item> getKnownItems()
+    {
+        return BuiltInRegistries.ITEM.stream()
+                .filter((item) -> Optional.of(BuiltInRegistries.ITEM.getKey(item))
+                        .filter((key) -> key.getNamespace().equals(this.modId))
+                        .isPresent());
     }
 }
