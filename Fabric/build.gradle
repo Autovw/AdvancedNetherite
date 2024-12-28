@@ -42,7 +42,7 @@ dependencies {
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
-    modImplementation "curse.maven:detailab-506898:${detailab_fabric_version}"
+    //modImplementation "curse.maven:detailab-506898:${detailab_fabric_version}"
     //modRuntimeOnly "curse.maven:catalogue-667377:${catalogue_fabric_version}"
     //modRuntimeOnly "curse.maven:configured-457570:${configured_fabric_version}"
     modRuntimeOnly "curse.maven:jei-238222:${jei_fabric_version}"

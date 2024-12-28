@@ -42,9 +42,6 @@
     "minecraft": "1.21.1",
     "java": ">=21"
   },
-  "suggests": {
-    "detailab": "=>2.6.3"
-  },
   "custom": {
     "catalogue": {
       "banner": "advancednetherite_banner.png"
