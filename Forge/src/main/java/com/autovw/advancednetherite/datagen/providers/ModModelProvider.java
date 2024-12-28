@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.datagen.providers;
 
+import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.util.ModEquipmentAssets;
@@ -11,6 +12,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.level.block.Block;
@@ -121,7 +123,17 @@ public class ModModelProvider extends ModelProvider
 
     public void armorModel(ItemModelGenerators itemModels, Item item, ResourceKey<EquipmentAsset> equipmentKey)
     {
-        itemModels.generateTrimmableItem(item, equipmentKey, equipmentKey.location().getPath(), false);
+        ResourceLocation id = AdvancedNetherite.getRegistryHelper().getItemById(item);
+        String armorType = "";
+        if (id.getPath().contains("helmet"))
+            armorType = "helmet";
+        else if (id.getPath().contains("chestplate"))
+            armorType = "chestplate";
+        else if (id.getPath().contains("leggings"))
+            armorType = "leggings";
+        else if (id.getPath().contains("boots"))
+            armorType = "boots";
+        itemModels.generateTrimmableItem(item, equipmentKey, armorType, false);
     }
 
     @Override

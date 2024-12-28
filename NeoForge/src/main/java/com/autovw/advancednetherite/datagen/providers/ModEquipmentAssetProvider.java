@@ -23,7 +23,7 @@ public class ModEquipmentAssetProvider extends EquipmentAssetProvider
     public ModEquipmentAssetProvider(PackOutput packOutput)
     {
         super(packOutput);
-        this.pathProvider = packOutput.createPathProvider(PackOutput.Target.RESOURCE_PACK, "models/equipment");
+        this.pathProvider = packOutput.createPathProvider(PackOutput.Target.RESOURCE_PACK, "equipment");
     }
 
     @Override
