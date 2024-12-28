@@ -1,13 +1,16 @@
 package com.autovw.advancednetherite.datagen.providers;
 
-import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.util.ModEquipmentAssets;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.Variant;
+import net.minecraft.client.data.models.blockstates.VariantProperties;
+import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.item.BlockModelWrapper;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.PackOutput;
@@ -17,6 +20,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.level.block.Block;
 
+import java.util.Collections;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
@@ -108,22 +112,35 @@ public class ModModelProvider extends ModelProvider
 
     public void blockModel(BlockModelGenerators blockModels, Block block)
     {
-        blockModels.createTrivialCube(block);
+        // create block state
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block, Variant.variant().with(VariantProperties.MODEL, TexturedModel.CUBE.create(block, blockModels.modelOutput))));
+        // create item definition
+        ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(block);
+        ResourceLocation textureLoc = ResourceLocation.fromNamespaceAndPath(blockId.getNamespace(), "block/" + blockId.getPath());
+        blockModels.itemModelOutput.accept(block.asItem(), new BlockModelWrapper.Unbaked(textureLoc, Collections.emptyList()));
     }
 
     public void itemModel(ItemModelGenerators itemModels, Item item)
     {
-        itemModels.createFlatItemModel(item, ModelTemplates.FLAT_ITEM);
+        this.itemModel(itemModels, item, ModelTemplates.FLAT_ITEM);
     }
 
     public void toolModel(ItemModelGenerators itemModels, Item item)
     {
-        itemModels.createFlatItemModel(item, ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.itemModel(itemModels, item, ModelTemplates.FLAT_HANDHELD_ITEM);
+    }
+
+    public void itemModel(ItemModelGenerators itemModels, Item item, ModelTemplate template)
+    {
+        ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
+        ResourceLocation textureLoc = ResourceLocation.fromNamespaceAndPath(itemId.getNamespace(), "item/" + itemId.getPath());
+        TextureMapping textureMapping = new TextureMapping().put(TextureSlot.LAYER0, textureLoc);
+        itemModels.itemModelOutput.accept(item, new BlockModelWrapper.Unbaked(template.create(item, textureMapping, itemModels.modelOutput), Collections.emptyList()));
     }
 
     public void armorModel(ItemModelGenerators itemModels, Item item, ResourceKey<EquipmentAsset> equipmentKey)
     {
-        ResourceLocation id = AdvancedNetherite.getRegistryHelper().getItemById(item);
+        ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
         String armorType = "";
         if (id.getPath().contains("helmet"))
             armorType = "helmet";

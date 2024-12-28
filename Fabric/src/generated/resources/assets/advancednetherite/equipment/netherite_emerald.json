@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "advancednetherite:netherite_emerald"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "advancednetherite:netherite_emerald"
+      }
+    ]
+  }
+}

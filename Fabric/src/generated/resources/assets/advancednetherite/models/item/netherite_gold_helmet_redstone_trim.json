@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "advancednetherite:item/netherite_gold_helmet",
-    "layer1": "minecraft:trims/items/netherite_gold_trim_redstone"
+    "layer1": "minecraft:trims/items/helmet_trim_redstone"
   }
 }

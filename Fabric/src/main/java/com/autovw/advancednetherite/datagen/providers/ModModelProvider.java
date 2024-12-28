@@ -1,6 +1,5 @@
 package com.autovw.advancednetherite.datagen.providers;
 
-import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.util.ModEquipmentAssets;
@@ -8,11 +7,18 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.renderer.item.BlockModelWrapper;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.EquipmentAsset;
+
+import java.util.Collections;
 
 /**
  * @author Autovw
@@ -31,6 +37,11 @@ public class ModModelProvider extends FabricModelProvider
         generator.createTrivialCube(ModBlocks.NETHERITE_GOLD_BLOCK);
         generator.createTrivialCube(ModBlocks.NETHERITE_EMERALD_BLOCK);
         generator.createTrivialCube(ModBlocks.NETHERITE_DIAMOND_BLOCK);
+
+        generator.createFlatItemModel(ModBlocks.NETHERITE_IRON_BLOCK.asItem());
+        generator.createFlatItemModel(ModBlocks.NETHERITE_GOLD_BLOCK.asItem());
+        generator.createFlatItemModel(ModBlocks.NETHERITE_EMERALD_BLOCK.asItem());
+        generator.createFlatItemModel(ModBlocks.NETHERITE_DIAMOND_BLOCK.asItem());
     }
 
     @Override
@@ -89,17 +100,25 @@ public class ModModelProvider extends FabricModelProvider
 
     public void itemModel(ItemModelGenerators itemModels, Item item)
     {
-        itemModels.createFlatItemModel(item, ModelTemplates.FLAT_ITEM);
+        this.itemModel(itemModels, item, ModelTemplates.FLAT_ITEM);
     }
 
     public void toolModel(ItemModelGenerators itemModels, Item item)
     {
-        itemModels.createFlatItemModel(item, ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.itemModel(itemModels, item, ModelTemplates.FLAT_HANDHELD_ITEM);
+    }
+
+    public void itemModel(ItemModelGenerators itemModels, Item item, ModelTemplate template)
+    {
+        ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
+        ResourceLocation textureLoc = ResourceLocation.fromNamespaceAndPath(itemId.getNamespace(), "item/" + itemId.getPath());
+        TextureMapping textureMapping = new TextureMapping().put(TextureSlot.LAYER0, textureLoc);
+        itemModels.itemModelOutput.accept(item, new BlockModelWrapper.Unbaked(template.create(item, textureMapping, itemModels.modelOutput), Collections.emptyList()));
     }
 
     public void armorModel(ItemModelGenerators itemModels, Item item, ResourceKey<EquipmentAsset> equipmentKey)
     {
-        ResourceLocation id = AdvancedNetherite.getRegistryHelper().getItemById(item);
+        ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
         String armorType = "";
         if (id.getPath().contains("helmet"))
             armorType = "helmet";
