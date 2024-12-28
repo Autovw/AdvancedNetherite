@@ -1,7 +1,6 @@
 package com.autovw.advancednetherite.client;
 
 import com.autovw.advancednetherite.client.screen.ConfigScreen;
-import com.autovw.advancednetherite.config.ConfigHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.ModList;
@@ -21,12 +20,6 @@ public class ClientHandler
         if (!ModList.get().isLoaded("configured"))
         {
             ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory(((minecraft, parent) -> new ConfigScreen(Component.translatable("Advanced Netherite"), parent))));
-        }
-
-        // register optional support for Detail Armor Bar if the mod is present
-        if (ModList.get().isLoaded("detailab") && !ConfigHelper.get().getClient().forceDisableDetailArmorBarSupport())
-        {
-            DetailArmorBarSupport.register();
         }
     }
 }

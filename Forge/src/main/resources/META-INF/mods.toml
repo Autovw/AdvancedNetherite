@@ -29,12 +29,6 @@ mandatory=true
 versionRange="[1.21.4]"
 ordering="NONE"
 side="BOTH"
-[[dependencies.advancednetherite]]
-modId="detailab"
-mandatory=false
-versionRange="[2.6.4,)"
-ordering="NONE"
-side="CLIENT"
 
 [modproperties.advancednetherite]
 #Catalogue also supports items. Use "catalogueItemIcon" instead.
