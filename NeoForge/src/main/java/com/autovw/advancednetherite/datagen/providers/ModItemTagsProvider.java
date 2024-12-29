@@ -9,8 +9,6 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -19,9 +17,9 @@ import java.util.concurrent.CompletableFuture;
  */
 public class ModItemTagsProvider extends ItemTagsProvider
 {
-    public ModItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagsProvider, String modId, @Nullable ExistingFileHelper existingFileHelper)
+    public ModItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagsProvider, String modId)
     {
-        super(packOutput, lookupProvider, blockTagsProvider, modId, existingFileHelper);
+        super(packOutput, lookupProvider, blockTagsProvider, modId);
     }
 
     @Override

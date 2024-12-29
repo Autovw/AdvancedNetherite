@@ -9,10 +9,10 @@ import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.advancements.AdvancementProvider;
+import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.common.data.AdvancementProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -23,15 +23,15 @@ import java.util.function.Consumer;
  */
 public class ModAdvancementProvider extends AdvancementProvider
 {
-    public ModAdvancementProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> registries, ExistingFileHelper existingFileHelper)
+    public ModAdvancementProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> registries)
     {
-        super(packOutput, registries, existingFileHelper, List.of(new ModNetherAdvancements()));
+        super(packOutput, registries, List.of(new ModNetherAdvancements()));
     }
 
-    public static class ModNetherAdvancements implements AdvancementGenerator
+    public static class ModNetherAdvancements implements AdvancementSubProvider
     {
         @Override
-        public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> consumer, ExistingFileHelper fileHelper)
+        public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> consumer)
         {
             Advancement.Builder.advancement()
                     .parent(ResourceLocation.withDefaultNamespace("husbandry/obtain_netherite_hoe"))
