@@ -3,7 +3,6 @@
   "addition": "#advancednetherite:upgrade_to_netherite_iron",
   "base": "#advancednetherite:chestplate/upgrade_to_netherite_iron",
   "result": {
-    "count": 1,
     "id": "advancednetherite:netherite_iron_chestplate"
   },
   "template": "minecraft:netherite_upgrade_smithing_template"

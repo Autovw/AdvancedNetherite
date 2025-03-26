@@ -3,7 +3,6 @@
   "addition": "#advancednetherite:upgrade_to_netherite_emerald",
   "base": "#advancednetherite:boots/upgrade_to_netherite_emerald",
   "result": {
-    "count": 1,
     "id": "advancednetherite:netherite_emerald_boots"
   },
   "template": "minecraft:netherite_upgrade_smithing_template"

@@ -10,25 +10,26 @@ import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * @author Autovw
  */
-public class AdvancedSwordItem extends SwordItem implements IToolMaterial
+public class AdvancedSwordItem extends Item implements IToolMaterial
 {
     private final ToolMaterial material;
 
     public AdvancedSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties)
     {
-        super(material, attackDamage, attackSpeed, properties.fireResistant());
+        super(properties.sword(material, attackDamage, attackSpeed).fireResistant());
         this.material = material;
     }
 
@@ -40,7 +41,7 @@ public class AdvancedSwordItem extends SwordItem implements IToolMaterial
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, TooltipContext context, List<Component> tooltips, TooltipFlag flag)
+    public void addTooltips(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltips, TooltipFlag flag)
     {
     }
 
@@ -59,11 +60,11 @@ public class AdvancedSwordItem extends SwordItem implements IToolMaterial
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
     /**
-     * Don't override this method, use {@link AdvancedSwordItem#addTooltips(ItemStack, TooltipContext, List, TooltipFlag)} if you want to add your own custom tooltips.
+     * Don't override this method, use {@link AdvancedSwordItem#addTooltips(ItemStack, TooltipContext, TooltipDisplay, Consumer, TooltipFlag)} if you want to add your own custom tooltips.
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag)
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip, TooltipFlag flag)
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
@@ -73,32 +74,32 @@ public class AdvancedSwordItem extends SwordItem implements IToolMaterial
                 {
                     if (isMaterial(ModToolMaterials.NETHERITE_IRON))
                     {
-                        tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
+                        tooltip.accept(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
                     }
                     if (isMaterial(ModToolMaterials.NETHERITE_GOLD))
                     {
-                        tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
+                        tooltip.accept(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
+                        tooltip.accept(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
                     }
                     if (isMaterial(ModToolMaterials.NETHERITE_EMERALD))
                     {
-                        tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
+                        tooltip.accept(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
                     }
                     if (isMaterial(ModToolMaterials.NETHERITE_DIAMOND))
                     {
-                        tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
+                        tooltip.accept(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
+                        tooltip.accept(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
+                        tooltip.accept(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
+                        tooltip.accept(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
                     }
                 }
                 else
                 {
-                    tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
+                    tooltip.accept(ModTooltips.SHIFT_KEY_TOOLTIP);
                 }
             }
 
-            addTooltips(stack, context, tooltip, flag); // Add tooltips from add-ons
+            addTooltips(stack, context, display, tooltip, flag); // Add tooltips from add-ons
         }
     }
 
@@ -130,5 +131,11 @@ public class AdvancedSwordItem extends SwordItem implements IToolMaterial
     public ToolMaterial getMaterial()
     {
         return this.material;
+    }
+
+    @Override
+    public Type getToolType()
+    {
+        return Type.SWORD;
     }
 }

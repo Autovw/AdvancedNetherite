@@ -124,15 +124,15 @@ public class ModModelProvider extends ModelProvider
     public void armorModel(ItemModelGenerators itemModels, Item item, ResourceKey<EquipmentAsset> equipmentKey)
     {
         ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
-        String armorType = "";
+        ResourceLocation armorType = null;
         if (id.getPath().contains("helmet"))
-            armorType = "helmet";
+            armorType = ItemModelGenerators.TRIM_PREFIX_HELMET;
         else if (id.getPath().contains("chestplate"))
-            armorType = "chestplate";
+            armorType = ItemModelGenerators.TRIM_PREFIX_CHESTPLATE;
         else if (id.getPath().contains("leggings"))
-            armorType = "leggings";
+            armorType = ItemModelGenerators.TRIM_PREFIX_LEGGINGS;
         else if (id.getPath().contains("boots"))
-            armorType = "boots";
+            armorType = ItemModelGenerators.TRIM_PREFIX_BOOTS;
         itemModels.generateTrimmableItem(item, equipmentKey, armorType, false);
     }
 }

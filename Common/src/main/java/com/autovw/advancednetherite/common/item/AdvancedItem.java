@@ -7,9 +7,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * @author Autovw
@@ -29,7 +31,7 @@ public class AdvancedItem extends Item
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, TooltipContext context, List<Component> tooltips, TooltipFlag flag)
+    public void addTooltips(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltips, TooltipFlag flag)
     {
     }
 
@@ -48,15 +50,15 @@ public class AdvancedItem extends Item
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
     /**
-     * Don't override this method, use: {@link AdvancedItem#addTooltips(ItemStack, TooltipContext, List, TooltipFlag)} if you want to add your own custom tooltips.
+     * Don't override this method, use: {@link AdvancedItem#addTooltips(ItemStack, TooltipContext, TooltipDisplay, Consumer, TooltipFlag)} if you want to add your own custom tooltips.
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag)
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip, TooltipFlag flag)
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
-            addTooltips(stack, context, tooltip, flag); // Add tooltips from add-ons
+            addTooltips(stack, context, display, tooltip, flag); // Add tooltips from add-ons
         }
     }
 

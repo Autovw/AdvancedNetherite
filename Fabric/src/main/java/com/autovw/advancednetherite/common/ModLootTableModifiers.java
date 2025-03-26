@@ -5,6 +5,8 @@ import com.autovw.advancednetherite.core.ModItems;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.predicates.DataComponentPredicates;
+import net.minecraft.core.component.predicates.EnchantmentsPredicate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -174,9 +176,10 @@ public final class ModLootTableModifiers
                 .when(InvertedLootItemCondition.invert(
                         MatchTool.toolMatches(
                                 ItemPredicate.Builder.item()
-                                        .withSubPredicate(ItemSubPredicates.ENCHANTMENTS, ItemEnchantmentsPredicate.enchantments(
-                                                List.of(new EnchantmentPredicate(enchantmentLookup.getOrThrow(Enchantments.SILK_TOUCH), MinMaxBounds.Ints.atLeast(1)))
-                                        ))
+                                        .withComponents(DataComponentMatchers.Builder.components()
+                                                .partial(DataComponentPredicates.ENCHANTMENTS, EnchantmentsPredicate.enchantments(
+                                                        List.of(new EnchantmentPredicate(enchantmentLookup.getOrThrow(Enchantments.SILK_TOUCH), MinMaxBounds.Ints.atLeast(1)))
+                                                )).build())
                 )))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))
                 .add(LootItem.lootTableItem(dropItem))

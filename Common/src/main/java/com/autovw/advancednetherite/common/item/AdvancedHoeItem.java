@@ -13,10 +13,11 @@ import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * @author Autovw
@@ -39,7 +40,7 @@ public class AdvancedHoeItem extends HoeItem implements IToolMaterial
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, TooltipContext context, List<Component> tooltips, TooltipFlag flag)
+    public void addTooltips(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltips, TooltipFlag flag)
     {
     }
 
@@ -58,11 +59,11 @@ public class AdvancedHoeItem extends HoeItem implements IToolMaterial
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
     /**
-     * Don't override this method, use {@link AdvancedHoeItem#addTooltips(ItemStack, TooltipContext, List, TooltipFlag)} if you want to add your own custom tooltips.
+     * Don't override this method, use {@link AdvancedHoeItem#addTooltips(ItemStack, TooltipContext, TooltipDisplay, Consumer, TooltipFlag)} if you want to add your own custom tooltips.
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag)
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip, TooltipFlag flag)
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
@@ -70,15 +71,15 @@ public class AdvancedHoeItem extends HoeItem implements IToolMaterial
             {
                 if (Screen.hasShiftDown())
                 {
-                    tooltip.add(ModTooltips.ADDITIONAL_CROP_DROPS_TOOLTIP);
+                    tooltip.accept(ModTooltips.ADDITIONAL_CROP_DROPS_TOOLTIP);
                 }
                 else
                 {
-                    tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
+                    tooltip.accept(ModTooltips.SHIFT_KEY_TOOLTIP);
                 }
             }
 
-            addTooltips(stack, context, tooltip, flag); // Add tooltips from add-ons
+            addTooltips(stack, context, display, tooltip, flag); // Add tooltips from add-ons
         }
     }
 
@@ -110,5 +111,11 @@ public class AdvancedHoeItem extends HoeItem implements IToolMaterial
     public ToolMaterial getMaterial()
     {
         return this.material;
+    }
+
+    @Override
+    public Type getToolType()
+    {
+        return Type.HOE;
     }
 }

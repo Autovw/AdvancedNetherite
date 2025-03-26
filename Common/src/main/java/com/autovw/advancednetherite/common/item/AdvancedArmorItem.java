@@ -8,26 +8,38 @@ import com.autovw.advancednetherite.core.util.ModTags;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.Equippable;
 
-import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * @author Autovw
  */
-public class AdvancedArmorItem extends ArmorItem implements IArmorMaterial
+public class AdvancedArmorItem extends Item implements IArmorMaterial
 {
+    private static Item.Properties armorProperties(ArmorMaterial material, ArmorType armorType, Properties properties)
+    {
+        return properties.durability(armorType.getDurability(AdvancedUtil.getArmorDurabilityMultiplier(material)))
+                .attributes(material.createAttributes(armorType))
+                .enchantable(material.enchantmentValue())
+                .component(DataComponents.EQUIPPABLE, Equippable.builder(armorType.getSlot()).setEquipSound(material.equipSound()).setAsset(material.assetId()).build())
+                .repairable(material.repairIngredient());
+    }
+
     private final ArmorMaterial material;
 
     public AdvancedArmorItem(ArmorMaterial material, ArmorType armorType, Properties properties)
     {
-        super(material, armorType, properties.durability(armorType.getDurability(AdvancedUtil.getArmorDurabilityMultiplier(material))).fireResistant());
+        super(armorProperties(material, armorType, properties).fireResistant());
         this.material = material;
     }
 
@@ -81,7 +93,7 @@ public class AdvancedArmorItem extends ArmorItem implements IArmorMaterial
      * @param tooltips  List of tooltips
      * @param flag      Used to determine if a tooltip is only visible when debug mode (F3 + H) is enabled
      */
-    public void addTooltips(ItemStack stack, TooltipContext context, List<Component> tooltips, TooltipFlag flag)
+    public void addTooltips(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltips, TooltipFlag flag)
     {
     }
 
@@ -99,32 +111,33 @@ public class AdvancedArmorItem extends ArmorItem implements IArmorMaterial
 
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
+    // TODO test if appendHoverText still works. might be broken???????
     /**
-     * Don't override this method, use: {@link AdvancedArmorItem#addTooltips(ItemStack, TooltipContext, List, TooltipFlag)} if you want to add your own custom tooltips.
+     * Don't override this method, use: {@link AdvancedArmorItem#addTooltips(ItemStack, TooltipContext, TooltipDisplay, Consumer, TooltipFlag)} if you want to add your own custom tooltips.
      */
     @Internal
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag)
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip, TooltipFlag flag)
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
             if (Screen.hasShiftDown())
             {
                 if (pacifiesEndermen(stack))
-                    tooltip.add(ModTooltips.ENDERMAN_PASSIVE_TOOLTIP);
+                    tooltip.accept(ModTooltips.ENDERMAN_PASSIVE_TOOLTIP);
                 if (pacifiesPiglins(stack))
-                    tooltip.add(ModTooltips.PIGLIN_PASSIVE_TOOLTIP);
+                    tooltip.accept(ModTooltips.PIGLIN_PASSIVE_TOOLTIP);
                 if (pacifiesPhantoms(stack))
-                    tooltip.add(ModTooltips.PHANTOM_PASSIVE_TOOLTIP);
+                    tooltip.accept(ModTooltips.PHANTOM_PASSIVE_TOOLTIP);
             }
             else
             {
                 if (pacifiesEndermen(stack) || pacifiesPiglins(stack) || pacifiesPhantoms(stack))
-                    tooltip.add(ModTooltips.SHIFT_KEY_TOOLTIP);
+                    tooltip.accept(ModTooltips.SHIFT_KEY_TOOLTIP);
             }
 
             // Adds all the tooltips from add-ons
-            addTooltips(stack, context, tooltip, flag); // Add tooltips from add-ons
+            addTooltips(stack, context, display, tooltip, flag); // Add tooltips from add-ons
         }
     }
 

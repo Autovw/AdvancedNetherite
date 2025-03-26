@@ -3,7 +3,6 @@
   "addition": "#advancednetherite:upgrade_to_netherite_diamond",
   "base": "#advancednetherite:shovel/upgrade_to_netherite_diamond",
   "result": {
-    "count": 1,
     "id": "advancednetherite:netherite_diamond_shovel"
   },
   "template": "minecraft:netherite_upgrade_smithing_template"

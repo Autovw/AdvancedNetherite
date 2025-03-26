@@ -3,7 +3,6 @@
   "addition": "#advancednetherite:upgrade_to_netherite_gold",
   "base": "#advancednetherite:pickaxe/upgrade_to_netherite_gold",
   "result": {
-    "count": 1,
     "id": "advancednetherite:netherite_gold_pickaxe"
   },
   "template": "minecraft:netherite_upgrade_smithing_template"

@@ -8,6 +8,8 @@ import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModArmorMaterials;
 import com.autovw.advancednetherite.core.util.ModToolMaterials;
 import net.minecraft.ChatFormatting;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorMaterial;
@@ -49,7 +51,7 @@ public class AdvancedUtil
         if (ConfigHelper.get().getClient().matchingDurabilityBars())
         {
             // Tools
-            if (stack.getItem() instanceof DiggerItem && stack.getItem() instanceof IToolMaterial material)
+            if (stack.getItem() instanceof IToolMaterial material)
             {
                 if (material.isMaterial(ModToolMaterials.NETHERITE_IRON))
                     newColor = ChatFormatting.GRAY.getColor();
@@ -62,7 +64,7 @@ public class AdvancedUtil
             }
 
             // Armor
-            if (stack.getItem() instanceof ArmorItem && stack.getItem() instanceof IArmorMaterial material)
+            if (stack.getItem() instanceof IArmorMaterial material)
             {
                 if (material.isMaterial(ModArmorMaterials.NETHERITE_IRON))
                     newColor = ChatFormatting.GRAY.getColor();
@@ -89,9 +91,9 @@ public class AdvancedUtil
     {
         float newSpeed = originalSpeed;
 
-        if (stack.getItem() instanceof DiggerItem diggerItem && stack.getItem() instanceof IToolMaterial material)
+        if (stack.getItem() instanceof IToolMaterial material && material.isDiggerItem())
         {
-            if (diggerItem.isCorrectToolForDrops(stack, state))
+            if (stack.getItem().isCorrectToolForDrops(stack, state))
             {
                 if (material.isMaterial(ModToolMaterials.NETHERITE_IRON))
                     newSpeed *= ConfigHelper.get().getServer().getToolProperties().getIronBreakingSpeedMultiplier();
@@ -114,8 +116,9 @@ public class AdvancedUtil
      */
     public static boolean isWearingEndermanPassiveArmor(Player player)
     {
-        for (ItemStack stack : player.getArmorSlots())
+        for (EquipmentSlot slot : EquipmentSlotGroup.ARMOR)
         {
+            ItemStack stack = player.getItemBySlot(slot);
             Item item = stack.getItem();
             if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesEndermen(stack)) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyEndermen(stack)))
             {
@@ -132,14 +135,16 @@ public class AdvancedUtil
      */
     public static boolean isWearingPhantomPassiveArmor(Player player)
     {
-        for (ItemStack stack : player.getArmorSlots())
+        for (EquipmentSlot slot : EquipmentSlotGroup.ARMOR)
         {
+            ItemStack stack = player.getItemBySlot(slot);
             Item item = stack.getItem();
             if ((item instanceof AdvancedArmorItem && ((AdvancedArmorItem) item).pacifiesPhantoms(stack)) || (item instanceof IAdvancedHooks && ((IAdvancedHooks) item).pacifyPhantoms(stack)))
             {
                 return true;
             }
         }
+
         return false;
     }
 }

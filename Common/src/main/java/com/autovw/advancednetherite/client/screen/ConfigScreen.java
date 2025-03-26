@@ -8,6 +8,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.*;
 import net.minecraft.util.FormattedCharSequence;
 
+import java.net.URI;
 import java.util.List;
 
 /**
@@ -36,14 +37,14 @@ public class ConfigScreen extends Screen
     {
         // Configured button
         addRenderableWidget(Button.builder(Component.translatable("config.advancednetherite.screen.button.install_configured", this.configured), onPress -> {
-            this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.curseforge.com/minecraft/mc-mods/configured")));
+            this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://www.curseforge.com/minecraft/mc-mods/configured"))));
         }).pos(width / 2 - 155, height / 2 + 12).size(150, 20).build());
 
         // Instructions button
         Button instructionsButton = Button.builder(Component.translatable("config.advancednetherite.screen.button.instructions"), onPress -> {
             if (getInstructionsUrl() != null)
             {
-                this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, getInstructionsUrl())));
+                this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(getInstructionsUrl())));
             }
         }).pos(width / 2 + 5, height / 2 + 12).size(150, 20).build();
 
@@ -108,8 +109,8 @@ public class ConfigScreen extends Screen
      * The URL behind the instructions button. Return null to disable this button.
      * @return Instructions url
      */
-    public String getInstructionsUrl()
+    public URI getInstructionsUrl()
     {
-        return "https://github.com/Autovw/AdvancedNetherite/wiki/Configuration";
+        return URI.create("https://github.com/Autovw/AdvancedNetherite/wiki/Configuration");
     }
 }
