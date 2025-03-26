@@ -43,41 +43,14 @@ public class AdvancedArmorItem extends Item implements IArmorMaterial
         this.material = material;
     }
 
-    /**
-     * Use {@link #pacifiesEndermen(ItemStack)}
-     */
-    @Deprecated(forRemoval = true, since = "2.2.0")
-    public boolean pacifiesEndermen()
-    {
-        return false;
-    }
-
     public boolean pacifiesEndermen(ItemStack stack)
     {
         return stack.is(ModTags.PACIFY_ENDERMEN_ARMOR);
     }
 
-    /**
-     * Use {@link #pacifiesPiglins(ItemStack)}
-     */
-    @Deprecated(forRemoval = true, since = "2.2.0")
-    public boolean pacifiesPiglins()
-    {
-        return false;
-    }
-
     public boolean pacifiesPiglins(ItemStack stack)
     {
         return stack.is(ModTags.PACIFY_PIGLINS_ARMOR);
-    }
-
-    /**
-     * Use {@link #pacifiesPhantoms(ItemStack)}
-     */
-    @Deprecated(forRemoval = true, since = "2.2.0")
-    public boolean pacifiesPhantoms()
-    {
-        return false;
     }
 
     public boolean pacifiesPhantoms(ItemStack stack)
@@ -111,7 +84,6 @@ public class AdvancedArmorItem extends Item implements IArmorMaterial
 
     /* ================ INTERNAL, use alternatives linked in javadoc ================ */
 
-    // TODO test if appendHoverText still works. might be broken???????
     /**
      * Don't override this method, use: {@link AdvancedArmorItem#addTooltips(ItemStack, TooltipContext, TooltipDisplay, Consumer, TooltipFlag)} if you want to add your own custom tooltips.
      */

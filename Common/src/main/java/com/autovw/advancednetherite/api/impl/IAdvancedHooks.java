@@ -1,6 +1,5 @@
 package com.autovw.advancednetherite.api.impl;
 
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -21,15 +20,6 @@ public interface IAdvancedHooks
     default boolean pacifyEndermen(ItemStack stack)
     {
         return false;
-    }
-
-    /**
-     * Can no longer be used to change piglin aggression status. See <code>minecraft:piglin_safe_armor</code> item tag.
-     */
-    @Deprecated(forRemoval = true, since = "2.2.0 MC-1.21.3")
-    default boolean pacifyPiglins(ItemStack stack)
-    {
-        return stack.is(ItemTags.PIGLIN_SAFE_ARMOR);
     }
 
     /**
