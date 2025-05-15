@@ -7,9 +7,8 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.blockstates.Variant;
-import net.minecraft.client.data.models.blockstates.VariantProperties;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.client.renderer.item.BlockModelWrapper;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.CachedOutput;
@@ -113,7 +112,7 @@ public class ModModelProvider extends ModelProvider
     public void blockModel(BlockModelGenerators blockModels, Block block)
     {
         // create block state
-        blockModels.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block, Variant.variant().with(VariantProperties.MODEL, TexturedModel.CUBE.create(block, blockModels.modelOutput))));
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, BlockModelGenerators.variant(new Variant(TexturedModel.CUBE.create(block, blockModels.modelOutput)))));
         // create item definition
         ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(block);
         ResourceLocation textureLoc = ResourceLocation.fromNamespaceAndPath(blockId.getNamespace(), "block/" + blockId.getPath());
@@ -141,15 +140,15 @@ public class ModModelProvider extends ModelProvider
     public void armorModel(ItemModelGenerators itemModels, Item item, ResourceKey<EquipmentAsset> equipmentKey)
     {
         ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
-        String armorType = "";
+        ResourceLocation armorType = null;
         if (id.getPath().contains("helmet"))
-            armorType = "helmet";
+            armorType = ItemModelGenerators.TRIM_PREFIX_HELMET;
         else if (id.getPath().contains("chestplate"))
-            armorType = "chestplate";
+            armorType = ItemModelGenerators.TRIM_PREFIX_CHESTPLATE;
         else if (id.getPath().contains("leggings"))
-            armorType = "leggings";
+            armorType = ItemModelGenerators.TRIM_PREFIX_LEGGINGS;
         else if (id.getPath().contains("boots"))
-            armorType = "boots";
+            armorType = ItemModelGenerators.TRIM_PREFIX_BOOTS;
         itemModels.generateTrimmableItem(item, equipmentKey, armorType, false);
     }
 
