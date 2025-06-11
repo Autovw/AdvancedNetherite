@@ -36,7 +36,6 @@ import java.util.Optional;
  */
 public final class ModLootTableModifiers
 {
-    private static final Item[] HOE_ITEMS = { ModItems.NETHERITE_IRON_HOE, ModItems.NETHERITE_GOLD_HOE, ModItems.NETHERITE_EMERALD_HOE, ModItems.NETHERITE_DIAMOND_HOE };
     private static final ResourceLocation WHEAT = ResourceLocation.withDefaultNamespace("blocks/wheat");
     private static final ResourceLocation CARROTS = ResourceLocation.withDefaultNamespace("blocks/carrots");
     private static final ResourceLocation POTATOES = ResourceLocation.withDefaultNamespace("blocks/potatoes");
@@ -152,7 +151,7 @@ public final class ModLootTableModifiers
         String maxAge = String.valueOf(((CropBlock) cropBlock).getMaxAge());
         return LootPool.lootPool()
             .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ageProperty, maxAge)))
-            .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(registryLookup, HOE_ITEMS)))
+            .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(registryLookup, ModTags.DROPS_ADDITIONAL_CROPS)))
             .when(LootItemRandomChanceCondition.randomChance(dropChance))
             .add(LootItem.lootTableItem(dropItem))
             .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());
