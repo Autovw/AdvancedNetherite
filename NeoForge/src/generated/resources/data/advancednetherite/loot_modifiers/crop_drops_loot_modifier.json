@@ -4,12 +4,7 @@
     {
       "condition": "minecraft:match_tool",
       "predicate": {
-        "items": [
-          "advancednetherite:netherite_iron_hoe",
-          "advancednetherite:netherite_gold_hoe",
-          "advancednetherite:netherite_emerald_hoe",
-          "advancednetherite:netherite_diamond_hoe"
-        ]
+        "items": "#advancednetherite:drops_additional_crops"
       }
     }
   ]

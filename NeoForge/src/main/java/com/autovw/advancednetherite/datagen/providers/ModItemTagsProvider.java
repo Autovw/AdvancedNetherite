@@ -235,6 +235,12 @@ public class ModItemTagsProvider extends ItemTagsProvider
                 .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
 
         // additional drop tags
+        tag(ModTags.DROPS_ADDITIONAL_CROPS)
+                .add(ModItems.NETHERITE_IRON_HOE)
+                .add(ModItems.NETHERITE_GOLD_HOE)
+                .add(ModItems.NETHERITE_EMERALD_HOE)
+                .add(ModItems.NETHERITE_DIAMOND_HOE);
+
         tag(ModTags.DROPS_ADDITIONAL_IRON)
                 .add(ModItems.NETHERITE_IRON_PICKAXE);
         tag(ModTags.DROPS_ADDITIONAL_GOLD)

@@ -151,6 +151,8 @@ public final class ModTags
     public static final TagKey<Item> PACIFY_ENDERMEN_ARMOR = modItemTag("pacify_endermen_armor");
 
     // additional drop tags
+    public static final TagKey<Item> DROPS_ADDITIONAL_CROPS = modItemTag("drops_additional_crops");
+
     public static final TagKey<Item> DROPS_ADDITIONAL_IRON = modItemTag("drops_additional_iron");
     public static final TagKey<Item> DROPS_ADDITIONAL_GOLD = modItemTag("drops_additional_gold");
     public static final TagKey<Item> DROPS_ADDITIONAL_EMERALD = modItemTag("drops_additional_emerald");
