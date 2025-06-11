@@ -207,6 +207,16 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .addTag(ModTags.TIER_ARMOR_NETHERITE_EMERALD)
                 .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND);
 
+        // additional drop tags
+        getOrCreateTagBuilder(ModTags.DROPS_ADDITIONAL_IRON)
+                .add(ModItems.NETHERITE_IRON_PICKAXE);
+        getOrCreateTagBuilder(ModTags.DROPS_ADDITIONAL_GOLD)
+                .add(ModItems.NETHERITE_GOLD_PICKAXE);
+        getOrCreateTagBuilder(ModTags.DROPS_ADDITIONAL_EMERALD)
+                .add(ModItems.NETHERITE_EMERALD_PICKAXE);
+        getOrCreateTagBuilder(ModTags.DROPS_ADDITIONAL_DIAMOND)
+                .add(ModItems.NETHERITE_DIAMOND_PICKAXE);
+
 
         // Vanilla item tags
         getOrCreateTagBuilder(ItemTags.BEACON_PAYMENT_ITEMS)

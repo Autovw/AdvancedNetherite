@@ -1,8 +1,8 @@
 {
   "entries": [
+    "advancednetherite:ore_drops_loot_modifier",
     "advancednetherite:mob_drops_loot_modifier",
-    "advancednetherite:crop_drops_loot_modifier",
-    "advancednetherite:ore_drops_loot_modifier"
+    "advancednetherite:crop_drops_loot_modifier"
   ],
   "replace": false
 }
