@@ -1,10 +1,10 @@
 package com.autovw.advancednetherite.common.item;
 
-import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.api.impl.IToolMaterial;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
+import com.autovw.advancednetherite.core.util.ModTags;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -66,7 +66,7 @@ public class AdvancedHoeItem extends HoeItem implements IToolMaterial
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
-            if (AdvancedNetherite.getRegistryHelper().getItemById(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops())
+            if (stack.is(ModTags.DROPS_ADDITIONAL_CROPS) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops())
             {
                 if (Screen.hasShiftDown())
                 {

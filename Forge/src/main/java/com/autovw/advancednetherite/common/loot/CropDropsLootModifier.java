@@ -1,5 +1,6 @@
 package com.autovw.advancednetherite.common.loot;
 
+import com.autovw.advancednetherite.common.item.AdvancedHoeItem;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -48,6 +49,11 @@ public class CropDropsLootModifier extends LootModifier
 
         if (tool != null && blockState != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops())
         {
+            if (!(tool.getItem() instanceof AdvancedHoeItem))
+            {
+                return generatedLoot;
+            }
+
             Block block = blockState.getBlock();
             if (block instanceof CropBlock cropBlock && cropBlock.isMaxAge(blockState))
             {
