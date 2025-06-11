@@ -1,13 +1,12 @@
 package com.autovw.advancednetherite.common.loot;
 
+import com.autovw.advancednetherite.common.item.AdvancedPickaxeItem;
 import com.autovw.advancednetherite.config.ConfigHelper;
-import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.util.ModTags;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -52,32 +51,31 @@ public class OreDropsLootModifier extends LootModifier
         if (tool != null && blockState != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalOreDrops())
         {
             Block block = blockState.getBlock();
-            Item toolItem = tool.getItem();
             RandomSource random = context.getRandom();
 
-            if (EnchantmentHelper.hasTag(tool, ModTags.PREVENTS_ADDITIONAL_ORE_DROPS))
+            if (EnchantmentHelper.hasTag(tool, ModTags.PREVENTS_ADDITIONAL_ORE_DROPS) && !(tool.getItem() instanceof AdvancedPickaxeItem))
             {
                 return generatedLoot; // return early if tool is enchanted with silk touch
             }
 
-            if ((block == Blocks.IRON_ORE || block == Blocks.DEEPSLATE_IRON_ORE) && toolItem == ModItems.NETHERITE_IRON_PICKAXE && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalRawIronDropChance())
+            if ((block == Blocks.IRON_ORE || block == Blocks.DEEPSLATE_IRON_ORE) && tool.is(ModTags.DROPS_ADDITIONAL_IRON) && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalRawIronDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.RAW_IRON, random.nextIntBetweenInclusive(1, 2)));
             }
-            if ((block == Blocks.GOLD_ORE || block == Blocks.DEEPSLATE_GOLD_ORE) && toolItem == ModItems.NETHERITE_GOLD_PICKAXE && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalRawGoldDropChance())
+            if ((block == Blocks.GOLD_ORE || block == Blocks.DEEPSLATE_GOLD_ORE) && tool.is(ModTags.DROPS_ADDITIONAL_GOLD) && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalRawGoldDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.RAW_GOLD, random.nextIntBetweenInclusive(1, 1)));
             }
-            if ((block == Blocks.EMERALD_ORE || block == Blocks.DEEPSLATE_EMERALD_ORE) && toolItem == ModItems.NETHERITE_EMERALD_PICKAXE && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEmeraldDropChance())
+            if ((block == Blocks.EMERALD_ORE || block == Blocks.DEEPSLATE_EMERALD_ORE) && tool.is(ModTags.DROPS_ADDITIONAL_EMERALD) && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEmeraldDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.EMERALD, random.nextIntBetweenInclusive(1, 1)));
             }
-            if ((block == Blocks.DIAMOND_ORE || block == Blocks.DEEPSLATE_DIAMOND_ORE) && toolItem == ModItems.NETHERITE_DIAMOND_PICKAXE && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalDiamondDropChance())
+            if ((block == Blocks.DIAMOND_ORE || block == Blocks.DEEPSLATE_DIAMOND_ORE) && tool.is(ModTags.DROPS_ADDITIONAL_DIAMOND) && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalDiamondDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.DIAMOND, random.nextIntBetweenInclusive(1, 1)));
             }
 
-            if (block == Blocks.NETHER_GOLD_ORE && toolItem == ModItems.NETHERITE_GOLD_PICKAXE && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalGoldNuggetDropChance())
+            if (block == Blocks.NETHER_GOLD_ORE && tool.is(ModTags.DROPS_ADDITIONAL_GOLD) && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalGoldNuggetDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.GOLD_NUGGET, random.nextIntBetweenInclusive(1, 3)));
             }
