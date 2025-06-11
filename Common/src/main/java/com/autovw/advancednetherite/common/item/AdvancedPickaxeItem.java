@@ -5,7 +5,7 @@ import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.api.impl.IToolMaterial;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
-import com.autovw.advancednetherite.core.util.ModToolMaterials;
+import com.autovw.advancednetherite.core.util.ModTags;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -72,10 +72,10 @@ public class AdvancedPickaxeItem extends Item implements IToolMaterial
             {
                 if (Screen.hasShiftDown())
                 {
-                    if (isMaterial(ModToolMaterials.NETHERITE_IRON)) tooltip.accept(ModTooltips.IRON_ORE_DROP_TOOLTIP);
-                    if (isMaterial(ModToolMaterials.NETHERITE_GOLD)) tooltip.accept(ModTooltips.GOLD_ORE_DROP_TOOLTIP);
-                    if (isMaterial(ModToolMaterials.NETHERITE_EMERALD)) tooltip.accept(ModTooltips.EMERALD_ORE_DROP_TOOLTIP);
-                    if (isMaterial(ModToolMaterials.NETHERITE_DIAMOND)) tooltip.accept(ModTooltips.DIAMOND_ORE_DROP_TOOLTIP);
+                    if (stack.is(ModTags.DROPS_ADDITIONAL_IRON)) tooltip.accept(ModTooltips.IRON_ORE_DROP_TOOLTIP);
+                    if (stack.is(ModTags.DROPS_ADDITIONAL_GOLD)) tooltip.accept(ModTooltips.GOLD_ORE_DROP_TOOLTIP);
+                    if (stack.is(ModTags.DROPS_ADDITIONAL_EMERALD)) tooltip.accept(ModTooltips.EMERALD_ORE_DROP_TOOLTIP);
+                    if (stack.is(ModTags.DROPS_ADDITIONAL_DIAMOND)) tooltip.accept(ModTooltips.DIAMOND_ORE_DROP_TOOLTIP);
                 }
                 else
                 {

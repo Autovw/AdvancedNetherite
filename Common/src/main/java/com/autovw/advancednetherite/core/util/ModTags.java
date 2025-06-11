@@ -161,6 +161,12 @@ public final class ModTags
     public static final TagKey<Item> PACIFY_PIGLINS_ARMOR = modItemTag("pacify_piglins_armor");
     public static final TagKey<Item> PACIFY_ENDERMEN_ARMOR = modItemTag("pacify_endermen_armor");
 
+    // additional drop tags
+    public static final TagKey<Item> DROPS_ADDITIONAL_IRON = modItemTag("drops_additional_iron");
+    public static final TagKey<Item> DROPS_ADDITIONAL_GOLD = modItemTag("drops_additional_gold");
+    public static final TagKey<Item> DROPS_ADDITIONAL_EMERALD = modItemTag("drops_additional_emerald");
+    public static final TagKey<Item> DROPS_ADDITIONAL_DIAMOND = modItemTag("drops_additional_diamond");
+
     // ENCHANTMENT TAGS
     public static final TagKey<Enchantment> PREVENTS_ADDITIONAL_ORE_DROPS = modEnchantmentTag("prevents_additional_ore_drops");
 
