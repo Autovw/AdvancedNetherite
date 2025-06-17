@@ -19,7 +19,6 @@ import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 @EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class EventHandler
 {
-    @SuppressWarnings("unused")
     @SubscribeEvent
     public static void onEnderManAngerEvent(final EnderManAngerEvent event)
     {
@@ -36,7 +35,6 @@ public class EventHandler
         }
     }
 
-    @SuppressWarnings("unused")
     @SubscribeEvent
     public static void onLivingChangeTargetEvent(final LivingChangeTargetEvent event)
     {

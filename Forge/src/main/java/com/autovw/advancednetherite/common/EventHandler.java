@@ -19,7 +19,6 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class EventHandler
 {
-    @SuppressWarnings("unused")
     @SubscribeEvent
     public static void onEnderManAngerEvent(final EnderManAngerEvent event)
     {
@@ -36,7 +35,6 @@ public class EventHandler
         }
     }
 
-    @SuppressWarnings("unused")
     @SubscribeEvent
     public static void onLivingChangeTargetEvent(final LivingChangeTargetEvent event)
     {
