@@ -91,7 +91,7 @@ public class AdvancedUtil
     {
         float newSpeed = originalSpeed;
 
-        if (stack.getItem() instanceof IToolMaterial material && material.isDiggerItem())
+        if (stack.getItem() instanceof IToolMaterial material)
         {
             if (stack.getItem().isCorrectToolForDrops(stack, state))
             {
