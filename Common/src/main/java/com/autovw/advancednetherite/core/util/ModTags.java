@@ -169,6 +169,11 @@ public final class ModTags
     public static final TagKey<Item> DROPS_ADDITIONAL_EMERALD = modItemTag("drops_additional_emerald");
     public static final TagKey<Item> DROPS_ADDITIONAL_DIAMOND = modItemTag("drops_additional_diamond");
 
+    public static final TagKey<Item> DROPS_ADDITIONAL_PHANTOM_LOOT = modItemTag("drops_additional_phantom_loot");
+    public static final TagKey<Item> DROPS_ADDITIONAL_ZOMBIFIED_PIGLIN_LOOT = modItemTag("drops_additional_zombified_piglin_loot");
+    public static final TagKey<Item> DROPS_ADDITIONAL_PIGLIN_LOOT = modItemTag("drops_additional_piglin_loot");
+    public static final TagKey<Item> DROPS_ADDITIONAL_ENDERMAN_LOOT = modItemTag("drops_additional_enderman_loot");
+
     // ENCHANTMENT TAGS
     public static final TagKey<Enchantment> PREVENTS_ADDITIONAL_ORE_DROPS = modEnchantmentTag("prevents_additional_ore_drops");
 
