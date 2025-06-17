@@ -18,47 +18,34 @@ import java.util.EnumMap;
  */
 public final class ModArmorMaterials
 {
-    // TODO cleanup
-    public static final ArmorMaterial NETHERITE_IRON;
-    public static final ArmorMaterial NETHERITE_GOLD;
-    public static final ArmorMaterial NETHERITE_EMERALD;
-    public static final ArmorMaterial NETHERITE_DIAMOND;
-
-    private ModArmorMaterials()
-    {
-    }
-
-    static
-    {
-        NETHERITE_IRON = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
-            attribute.put(ArmorType.BOOTS, 4);
-            attribute.put(ArmorType.LEGGINGS, 6);
-            attribute.put(ArmorType.CHESTPLATE, 8);
-            attribute.put(ArmorType.HELMET, 4);
-            attribute.put(ArmorType.BODY, 11);
-        }), 15, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_IRON_ARMOR, ModEquipmentAssets.NETHERITE_IRON);
-        NETHERITE_GOLD = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
-            attribute.put(ArmorType.BOOTS, 4);
-            attribute.put(ArmorType.LEGGINGS, 7);
-            attribute.put(ArmorType.CHESTPLATE, 9);
-            attribute.put(ArmorType.HELMET, 4);
-            attribute.put(ArmorType.BODY, 11);
-        }), 25, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_GOLD_ARMOR, ModEquipmentAssets.NETHERITE_GOLD);
-        NETHERITE_EMERALD = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
-            attribute.put(ArmorType.BOOTS, 4);
-            attribute.put(ArmorType.LEGGINGS, 7);
-            attribute.put(ArmorType.CHESTPLATE, 9);
-            attribute.put(ArmorType.HELMET, 4);
-            attribute.put(ArmorType.BODY, 11);
-        }), 20, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_EMERALD_ARMOR, ModEquipmentAssets.NETHERITE_EMERALD);
-        NETHERITE_DIAMOND = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
-            attribute.put(ArmorType.BOOTS, 5);
-            attribute.put(ArmorType.LEGGINGS, 7);
-            attribute.put(ArmorType.CHESTPLATE, 9);
-            attribute.put(ArmorType.HELMET, 5);
-            attribute.put(ArmorType.BODY, 11);
-        }), 15, 4.0F, 0.1F, ModTags.REPAIRS_NETHERITE_DIAMOND_ARMOR, ModEquipmentAssets.NETHERITE_DIAMOND);
-    }
+    public static final ArmorMaterial NETHERITE_IRON = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
+        attribute.put(ArmorType.BOOTS, 4);
+        attribute.put(ArmorType.LEGGINGS, 6);
+        attribute.put(ArmorType.CHESTPLATE, 8);
+        attribute.put(ArmorType.HELMET, 4);
+        attribute.put(ArmorType.BODY, 11);
+    }), 15, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_IRON_ARMOR, ModEquipmentAssets.NETHERITE_IRON);
+    public static final ArmorMaterial NETHERITE_GOLD = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
+        attribute.put(ArmorType.BOOTS, 4);
+        attribute.put(ArmorType.LEGGINGS, 7);
+        attribute.put(ArmorType.CHESTPLATE, 9);
+        attribute.put(ArmorType.HELMET, 4);
+        attribute.put(ArmorType.BODY, 11);
+    }), 25, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_GOLD_ARMOR, ModEquipmentAssets.NETHERITE_GOLD);
+    public static final ArmorMaterial NETHERITE_EMERALD = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
+        attribute.put(ArmorType.BOOTS, 4);
+        attribute.put(ArmorType.LEGGINGS, 7);
+        attribute.put(ArmorType.CHESTPLATE, 9);
+        attribute.put(ArmorType.HELMET, 4);
+        attribute.put(ArmorType.BODY, 11);
+    }), 20, 3.5F, 0.1F, ModTags.REPAIRS_NETHERITE_EMERALD_ARMOR, ModEquipmentAssets.NETHERITE_EMERALD);
+    public static final ArmorMaterial NETHERITE_DIAMOND = register(37, Util.make(new EnumMap<>(ArmorType.class), (attribute) -> {
+        attribute.put(ArmorType.BOOTS, 5);
+        attribute.put(ArmorType.LEGGINGS, 7);
+        attribute.put(ArmorType.CHESTPLATE, 9);
+        attribute.put(ArmorType.HELMET, 5);
+        attribute.put(ArmorType.BODY, 11);
+    }), 15, 4.0F, 0.1F, ModTags.REPAIRS_NETHERITE_DIAMOND_ARMOR, ModEquipmentAssets.NETHERITE_DIAMOND);
 
     /**
      * @param typeProtections       The amount of protection per slot
@@ -70,7 +57,6 @@ public final class ModArmorMaterials
     private static ArmorMaterial register(int durability, EnumMap<ArmorType, Integer> typeProtections, int enchantability, float toughness, float knockbackResistance, TagKey<Item> repairIngredient, ResourceKey<EquipmentAsset> equipmentAsset)
     {
         Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_NETHERITE;
-        //List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(loc));
 
         EnumMap<ArmorType, Integer> typeMap = new EnumMap<>(ArmorType.class);
         for (ArmorType type : ArmorType.values())
@@ -78,7 +64,10 @@ public final class ModArmorMaterials
             typeMap.put(type, typeProtections.get(type));
         }
 
-        //return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, loc, new ArmorMaterial(typeProtections, enchantability, equipSound, ingredient, layers, toughness, knockbackResistance));
         return new ArmorMaterial(durability, typeProtections, enchantability, equipSound, toughness, knockbackResistance, repairIngredient, equipmentAsset);
+    }
+
+    private ModArmorMaterials()
+    {
     }
 }
