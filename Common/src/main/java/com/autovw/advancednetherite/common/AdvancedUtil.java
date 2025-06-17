@@ -89,9 +89,9 @@ public class AdvancedUtil
     {
         float newSpeed = originalSpeed;
 
-        if (stack.getItem() instanceof DiggerItem diggerItem && stack.getItem() instanceof IToolMaterial material)
+        if (stack.getItem() instanceof IToolMaterial material)
         {
-            if (diggerItem.isCorrectToolForDrops(stack, state))
+            if (stack.isCorrectToolForDrops(state))
             {
                 if (material.isMaterial(ModToolMaterials.NETHERITE_IRON))
                     newSpeed *= ConfigHelper.get().getServer().getToolProperties().getIronBreakingSpeedMultiplier();
