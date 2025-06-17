@@ -1,7 +1,6 @@
 package com.autovw.advancednetherite.common;
 
 import com.autovw.advancednetherite.config.ConfigHelper;
-import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.util.ModTags;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.advancements.critereon.*;
@@ -86,25 +85,25 @@ public final class ModLootTableModifiers
             // ADDITIONAL MOB DROPS START //
             if (source.isBuiltin() && id.equals(PHANTOM))
             {
-                LootPool.Builder pool = mobDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance(), Items.PHANTOM_MEMBRANE, 0, 2, ModItems.NETHERITE_IRON_SWORD, ModItems.NETHERITE_DIAMOND_SWORD);
+                LootPool.Builder pool = mobDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance(), Items.PHANTOM_MEMBRANE, 0, 2, ModTags.DROPS_ADDITIONAL_PHANTOM_LOOT);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(ZOMBIFIED_PIGLIN))
             {
-                LootPool.Builder pool = mobDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalZombifiedPiglinDropChance(), Items.GOLD_NUGGET, 0, 3, ModItems.NETHERITE_GOLD_SWORD, ModItems.NETHERITE_DIAMOND_SWORD);
+                LootPool.Builder pool = mobDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalZombifiedPiglinDropChance(), Items.GOLD_NUGGET, 0, 3, ModTags.DROPS_ADDITIONAL_ZOMBIFIED_PIGLIN_LOOT);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(PIGLIN))
             {
-                LootPool.Builder pool = mobDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPiglinDropChance(), Items.GOLD_INGOT, 1, 1, ModItems.NETHERITE_GOLD_SWORD, ModItems.NETHERITE_DIAMOND_SWORD);
+                LootPool.Builder pool = mobDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPiglinDropChance(), Items.GOLD_INGOT, 1, 1, ModTags.DROPS_ADDITIONAL_PIGLIN_LOOT);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(ENDERMAN))
             {
-                LootPool.Builder pool = mobDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEndermanDropChance(), Items.ENDER_PEARL, 0, 1, ModItems.NETHERITE_EMERALD_SWORD, ModItems.NETHERITE_DIAMOND_SWORD);
+                LootPool.Builder pool = mobDropPool((float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEndermanDropChance(), Items.ENDER_PEARL, 0, 1, ModTags.DROPS_ADDITIONAL_ENDERMAN_LOOT);
                 tableBuilder.withPool(pool);
             }
             // ADDITIONAL MOB DROPS END //
@@ -154,9 +153,9 @@ public final class ModLootTableModifiers
             .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());
     }
 
-    private static LootPool.Builder mobDropPool(float dropChance, Item dropItem, int minDrop, int maxDrop, Item... tools)
+    private static LootPool.Builder mobDropPool(float dropChance, Item dropItem, int minDrop, int maxDrop, TagKey<Item> toolTag)
     {
-        ItemPredicate mainHandItemPredicate = ItemPredicate.Builder.item().of(tools).build();
+        ItemPredicate mainHandItemPredicate = ItemPredicate.Builder.item().of(toolTag).build();
         EntityEquipmentPredicate equipmentPredicate = new EntityEquipmentPredicate(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.of(mainHandItemPredicate), Optional.empty());
         return LootPool.lootPool()
                 .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.entity().equipment(equipmentPredicate)))

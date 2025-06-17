@@ -251,6 +251,19 @@ public class ModItemTagsProvider extends ItemTagsProvider
         tag(ModTags.DROPS_ADDITIONAL_DIAMOND)
                 .add(ModItems.NETHERITE_DIAMOND_PICKAXE);
 
+        tag(ModTags.DROPS_ADDITIONAL_PHANTOM_LOOT)
+                .add(ModItems.NETHERITE_IRON_SWORD)
+                .add(ModItems.NETHERITE_DIAMOND_SWORD);
+        tag(ModTags.DROPS_ADDITIONAL_ZOMBIFIED_PIGLIN_LOOT)
+                .add(ModItems.NETHERITE_GOLD_SWORD)
+                .add(ModItems.NETHERITE_DIAMOND_SWORD);
+        tag(ModTags.DROPS_ADDITIONAL_PIGLIN_LOOT)
+                .add(ModItems.NETHERITE_GOLD_SWORD)
+                .add(ModItems.NETHERITE_DIAMOND_SWORD);
+        tag(ModTags.DROPS_ADDITIONAL_ENDERMAN_LOOT)
+                .add(ModItems.NETHERITE_EMERALD_SWORD)
+                .add(ModItems.NETHERITE_DIAMOND_SWORD);
+
         /* Vanilla tags */
         tag(ItemTags.BEACON_PAYMENT_ITEMS).addTag(ModTags.NETHERITE_INGOTS);
 

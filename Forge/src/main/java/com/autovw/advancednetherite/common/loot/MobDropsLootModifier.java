@@ -1,7 +1,7 @@
 package com.autovw.advancednetherite.common.loot;
 
 import com.autovw.advancednetherite.config.ConfigHelper;
-import com.autovw.advancednetherite.core.ModItems;
+import com.autovw.advancednetherite.core.util.ModTags;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -50,19 +50,19 @@ public class MobDropsLootModifier extends LootModifier
             ItemStack useItem = player.getMainHandItem(); // used to check if the player uses the correct weapon
             RandomSource random = context.getRandom(); // random generator
 
-            if ((useItem.is(ModItems.NETHERITE_IRON_SWORD) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD)) && victim.getType() == EntityType.PHANTOM && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance())
+            if (useItem.is(ModTags.DROPS_ADDITIONAL_PHANTOM_LOOT) && victim.getType() == EntityType.PHANTOM && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.PHANTOM_MEMBRANE, random.nextIntBetweenInclusive(0, 2)));
             }
-            if ((useItem.is(ModItems.NETHERITE_GOLD_SWORD) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD)) && victim.getType() == EntityType.ZOMBIFIED_PIGLIN && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalZombifiedPiglinDropChance())
+            if (useItem.is(ModTags.DROPS_ADDITIONAL_ZOMBIFIED_PIGLIN_LOOT) && victim.getType() == EntityType.ZOMBIFIED_PIGLIN && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalZombifiedPiglinDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.GOLD_NUGGET, random.nextIntBetweenInclusive(0, 3)));
             }
-            if ((useItem.is(ModItems.NETHERITE_GOLD_SWORD) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD)) && victim.getType() == EntityType.PIGLIN && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPiglinDropChance())
+            if (useItem.is(ModTags.DROPS_ADDITIONAL_PIGLIN_LOOT) && victim.getType() == EntityType.PIGLIN && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPiglinDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.GOLD_INGOT, random.nextIntBetweenInclusive(1, 1)));
             }
-            if ((useItem.is(ModItems.NETHERITE_EMERALD_SWORD) || useItem.is(ModItems.NETHERITE_DIAMOND_SWORD)) && victim.getType() == EntityType.ENDERMAN && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEndermanDropChance())
+            if (useItem.is(ModTags.DROPS_ADDITIONAL_ENDERMAN_LOOT) && victim.getType() == EntityType.ENDERMAN && random.nextFloat() <= ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEndermanDropChance())
             {
                 generatedLoot.add(new ItemStack(Items.ENDER_PEARL, random.nextIntBetweenInclusive(0, 1)));
             }

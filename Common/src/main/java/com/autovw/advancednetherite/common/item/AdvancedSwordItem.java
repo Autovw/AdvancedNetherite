@@ -1,11 +1,10 @@
 package com.autovw.advancednetherite.common.item;
 
-import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
+import com.autovw.advancednetherite.core.util.ModTags;
 import com.autovw.advancednetherite.core.util.ModTooltips;
-import com.autovw.advancednetherite.core.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -70,28 +69,24 @@ public class AdvancedSwordItem extends SwordItem
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
-            if (AdvancedNetherite.getRegistryHelper().getItemById(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalMobDrops())
+            if (ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalMobDrops())
             {
                 if (Screen.hasShiftDown())
                 {
-                    if (tier == ModToolTiers.NETHERITE_IRON)
+                    if (stack.is(ModTags.DROPS_ADDITIONAL_PHANTOM_LOOT))
                     {
                         tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
                     }
-                    if (tier == ModToolTiers.NETHERITE_GOLD)
+                    if (stack.is(ModTags.DROPS_ADDITIONAL_PIGLIN_LOOT))
                     {
                         tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
+                    }
+                    if (stack.is(ModTags.DROPS_ADDITIONAL_ZOMBIFIED_PIGLIN_LOOT))
+                    {
                         tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
                     }
-                    if (tier == ModToolTiers.NETHERITE_EMERALD)
+                    if (stack.is(ModTags.DROPS_ADDITIONAL_ENDERMAN_LOOT))
                     {
-                        tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
-                    }
-                    if (tier == ModToolTiers.NETHERITE_DIAMOND)
-                    {
-                        tooltip.add(ModTooltips.PHANTOM_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.PIGLIN_MOB_DROP_TOOLTIP);
-                        tooltip.add(ModTooltips.ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP);
                         tooltip.add(ModTooltips.ENDERMAN_MOB_DROP_TOOLTIP);
                     }
                 }
