@@ -4,22 +4,23 @@ import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.util.ModTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
 
 import java.util.concurrent.CompletableFuture;
 
 /**
  * @author Autovw
  */
-public class ModItemTagsProvider extends ItemTagsProvider
+public class ModItemTagsProvider extends IntrinsicHolderTagsProvider<Item>
 {
-    public ModItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagsProvider, String modId)
+    public ModItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId)
     {
-        super(packOutput, lookupProvider, blockTagsProvider, modId);
+        super(packOutput, Registries.ITEM, lookupProvider, item -> item.builtInRegistryHolder().key(), modId);
     }
 
     @Override

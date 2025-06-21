@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
  * @author Autovw
  */
 @Internal
-@EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, value = Dist.CLIENT)
 public class ModDataGenerator
 {
     private ModDataGenerator()
@@ -36,11 +36,10 @@ public class ModDataGenerator
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-        ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID);
 
         // server
-        event.addProvider(blockTagsProvider);
-        event.addProvider(new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), AdvancedNetherite.MOD_ID));
+        event.addProvider(new ModBlockTagsProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID));
+        event.addProvider(new ModItemTagsProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID));
         event.addProvider(new ModEnchantmentTagsProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID));
         event.addProvider(new ModRecipeProvider.Runner(packOutput, lookupProvider));
         event.addProvider(new ModLootTableProvider(packOutput, lookupProvider));

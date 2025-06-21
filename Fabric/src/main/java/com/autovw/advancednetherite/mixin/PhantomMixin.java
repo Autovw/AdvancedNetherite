@@ -2,8 +2,8 @@ package com.autovw.advancednetherite.mixin;
 
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.FlyingMob;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.player.Player;
@@ -17,9 +17,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * @author Autovw
  */
 @Mixin(Phantom.class)
-public abstract class PhantomMixin extends FlyingMob implements Enemy
+public abstract class PhantomMixin extends Mob implements Enemy
 {
-    protected PhantomMixin(EntityType<? extends FlyingMob> entityType, Level level)
+    protected PhantomMixin(EntityType<? extends Mob> entityType, Level level)
     {
         super(entityType, level);
     }

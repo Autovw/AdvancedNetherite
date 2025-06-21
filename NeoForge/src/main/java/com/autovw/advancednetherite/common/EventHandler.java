@@ -15,7 +15,7 @@ import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
  * @author Autovw
  */
 @Internal
-@EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = AdvancedNetherite.MOD_ID)
 public class EventHandler
 {
     @SubscribeEvent

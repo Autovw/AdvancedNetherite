@@ -1,7 +1,6 @@
 package com.autovw.advancednetherite.common;
 
 import com.autovw.advancednetherite.config.ConfigHelper;
-import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.util.ModTags;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.advancements.critereon.*;

@@ -16,7 +16,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  * @author Autovw
  */
 @Internal
-@EventBusSubscriber(modid = AdvancedNetherite.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = AdvancedNetherite.MOD_ID)
 public final class AdvancedNetheriteTab
 {
     private AdvancedNetheriteTab()
