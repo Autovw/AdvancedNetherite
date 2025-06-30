@@ -23,13 +23,13 @@ Visit the GitHub Wiki for more information on everything this mod adds.
     # 'required' requires the mod to exist, 'optional' does not
     # 'incompatible' will prevent the game from loading when the mod exists, and 'discouraged' will show a warning
     type="required"
-    versionRange="[21.6.6-beta,)"
+    versionRange="[21.7.1-beta,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.advancednetherite]]
     modId="minecraft"
     type="required"
-    versionRange="[1.21.6]"
+    versionRange="[1.21.7]"
     ordering="NONE"
     side="BOTH"
 
