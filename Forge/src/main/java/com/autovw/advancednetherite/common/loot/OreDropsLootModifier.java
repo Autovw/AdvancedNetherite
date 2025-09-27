@@ -52,7 +52,7 @@ public class OreDropsLootModifier extends LootModifier
             Block block = blockState.getBlock();
             RandomSource random = context.getRandom();
 
-            if (EnchantmentHelper.hasTag(tool, ModTags.PREVENTS_ADDITIONAL_ORE_DROPS) && !(tool.getItem() instanceof AdvancedPickaxeItem))
+            if (!(tool.getItem() instanceof AdvancedPickaxeItem) || EnchantmentHelper.hasTag(tool, ModTags.PREVENTS_ADDITIONAL_ORE_DROPS))
             {
                 return generatedLoot; // return early if tool is enchanted with silk touch
             }
