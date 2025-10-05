@@ -7,7 +7,7 @@ import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModTags;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
@@ -93,7 +93,7 @@ public class AdvancedArmorItem extends Item implements IArmorMaterial
     {
         if (ConfigHelper.get().getClient().showTooltips())
         {
-            if (Screen.hasShiftDown())
+            if (Minecraft.getInstance().hasShiftDown())
             {
                 if (pacifiesEndermen(stack))
                     tooltip.accept(ModTooltips.ENDERMAN_PASSIVE_TOOLTIP);

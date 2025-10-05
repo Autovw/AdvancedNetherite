@@ -8,7 +8,7 @@ import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModTags;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -70,7 +70,7 @@ public class AdvancedPickaxeItem extends Item implements IToolMaterial
         {
             if (AdvancedNetherite.getRegistryHelper().getItemById(stack.getItem()).getNamespace().equals(AdvancedNetherite.MOD_ID) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalOreDrops())
             {
-                if (Screen.hasShiftDown())
+                if (Minecraft.getInstance().hasShiftDown())
                 {
                     if (stack.is(ModTags.DROPS_ADDITIONAL_IRON)) tooltip.accept(ModTooltips.IRON_ORE_DROP_TOOLTIP);
                     if (stack.is(ModTags.DROPS_ADDITIONAL_GOLD)) tooltip.accept(ModTooltips.GOLD_ORE_DROP_TOOLTIP);

@@ -7,7 +7,7 @@ import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModTags;
 import com.autovw.advancednetherite.core.util.ModTooltips;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.ItemStack;
@@ -69,7 +69,7 @@ public class AdvancedHoeItem extends HoeItem implements IToolMaterial
         {
             if (stack.is(ModTags.DROPS_ADDITIONAL_CROPS) && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops())
             {
-                if (Screen.hasShiftDown())
+                if (Minecraft.getInstance().hasShiftDown())
                 {
                     tooltip.accept(ModTooltips.ADDITIONAL_CROP_DROPS_TOOLTIP);
                 }
