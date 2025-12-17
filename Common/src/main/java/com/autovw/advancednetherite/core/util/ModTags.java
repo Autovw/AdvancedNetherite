@@ -2,7 +2,7 @@ package com.autovw.advancednetherite.core.util;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -181,7 +181,7 @@ public final class ModTags
      * @param tagLoc Resource location of the tag
      * @return Block tag
      */
-    public static TagKey<Block> blockTag(ResourceLocation tagLoc)
+    public static TagKey<Block> blockTag(Identifier tagLoc)
     {
         return TagKey.create(Registries.BLOCK, tagLoc);
     }
@@ -190,7 +190,7 @@ public final class ModTags
      * @param tagLoc Resource location of the tag
      * @return Item tag
      */
-    public static TagKey<Item> itemTag(ResourceLocation tagLoc)
+    public static TagKey<Item> itemTag(Identifier tagLoc)
     {
         return TagKey.create(Registries.ITEM, tagLoc);
     }
@@ -199,23 +199,23 @@ public final class ModTags
      * @param tagLoc Resource location of the tag
      * @return Enchantment tag
      */
-    public static TagKey<Enchantment> enchantmentTag(ResourceLocation tagLoc)
+    public static TagKey<Enchantment> enchantmentTag(Identifier tagLoc)
     {
         return TagKey.create(Registries.ENCHANTMENT, tagLoc);
     }
 
     private static TagKey<Block> modBlockTag(String tagName)
     {
-        return ModTags.blockTag(ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, tagName));
+        return ModTags.blockTag(Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, tagName));
     }
 
     private static TagKey<Item> modItemTag(String tagName)
     {
-        return ModTags.itemTag(ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, tagName));
+        return ModTags.itemTag(Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, tagName));
     }
 
     private static TagKey<Enchantment> modEnchantmentTag(String tagName)
     {
-        return ModTags.enchantmentTag(ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, tagName));
+        return ModTags.enchantmentTag(Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, tagName));
     }
 }

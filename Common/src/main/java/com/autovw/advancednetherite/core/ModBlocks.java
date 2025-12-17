@@ -3,7 +3,7 @@ package com.autovw.advancednetherite.core;
 import com.autovw.advancednetherite.AdvancedNetherite;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -20,6 +20,6 @@ public final class ModBlocks
 
     private static ResourceKey<Block> key(String name)
     {
-        return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, name));
+        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, name));
     }
 }

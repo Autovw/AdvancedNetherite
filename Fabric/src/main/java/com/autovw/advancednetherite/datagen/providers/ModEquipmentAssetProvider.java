@@ -33,7 +33,7 @@ public class ModEquipmentAssetProvider extends EquipmentAssetProvider
         ModEquipmentAssets.bootstrap((key, info) -> {
             if (map.putIfAbsent(key, info) != null)
             {
-                throw new IllegalStateException("Duplicate equipment asset for id: " + key.location().toString());
+                throw new IllegalStateException("Duplicate equipment asset for id: " + key.identifier().toString());
             }
         });
 

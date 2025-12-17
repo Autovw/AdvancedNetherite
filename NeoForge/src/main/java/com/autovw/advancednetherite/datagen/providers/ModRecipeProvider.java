@@ -8,7 +8,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -114,10 +114,10 @@ public class ModRecipeProvider extends RecipeProvider
      */
     public void baseSmithingRecipe(HolderLookup.RegistryLookup<Item> registryLookup, RecipeOutput output, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result)
     {
-        ResourceLocation resultId = AdvancedNetherite.getRegistryHelper().getItemById(result);
+        Identifier resultId = AdvancedNetherite.getRegistryHelper().getItemById(result);
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), tag(ingredient), tag(upgradeIngredient), RecipeCategory.MISC, result)
                 .unlocks("has_ingredients", has(upgradeIngredient))
-                .save(output, ResourceLocation.fromNamespaceAndPath(resultId.getNamespace(), resultId.getPath() + "_smithing").toString());
+                .save(output, Identifier.fromNamespaceAndPath(resultId.getNamespace(), resultId.getPath() + "_smithing").toString());
     }
 
     /**
@@ -160,13 +160,13 @@ public class ModRecipeProvider extends RecipeProvider
         ShapelessRecipeBuilder.shapeless(registryLookup, RecipeCategory.MISC, ingredient, 9)
                 .requires(result)
                 .unlockedBy("has_" + result.toString(), has(result))
-                .save(output, ResourceLocation.parse(ingredient.toString() + "_from_block").toString());
+                .save(output, Identifier.parse(ingredient.toString() + "_from_block").toString());
     }
 
     // Other ingots are automatically included if they are added to the NETHERITE_INGOTS tag.
     private void lodestoneRecipe(HolderLookup.RegistryLookup<Item> registryLookup, RecipeOutput output)
     {
-        ResourceLocation lodestoneId = AdvancedNetherite.getRegistryHelper().getItemById(Items.LODESTONE);
+        Identifier lodestoneId = AdvancedNetherite.getRegistryHelper().getItemById(Items.LODESTONE);
         ShapedRecipeBuilder.shaped(registryLookup, RecipeCategory.MISC, Items.LODESTONE)
                 .define('S', Items.CHISELED_STONE_BRICKS)
                 .define('#', ModTags.NETHERITE_INGOTS)
@@ -175,7 +175,7 @@ public class ModRecipeProvider extends RecipeProvider
                 .pattern("SSS")
                 .unlockedBy("has_chiseled_stone_bricks", has(Items.CHISELED_STONE_BRICKS))
                 .unlockedBy("has_netherite_ingots", has(ModTags.NETHERITE_INGOTS))
-                .save(output, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, lodestoneId.getPath()).toString());
+                .save(output, Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, lodestoneId.getPath()).toString());
     }
 
     public static final class Runner extends RecipeProvider.Runner

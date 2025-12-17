@@ -6,7 +6,7 @@ import com.autovw.advancednetherite.core.util.ModArmorMaterials;
 import com.autovw.advancednetherite.core.util.ModToolMaterials;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.ArmorType;
 
@@ -85,6 +85,6 @@ public final class ModItems
 
     private static ResourceKey<Item> key(String name)
     {
-        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, name));
+        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, name));
     }
 }

@@ -5,7 +5,7 @@ import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.core.ModItems;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 /**
  * @author Autovw
@@ -68,8 +68,8 @@ public final class ModItemRegistry
         Registry.register(BuiltInRegistries.ITEM, id("netherite_diamond_block"), ModItems.NETHERITE_DIAMOND_BLOCK);
     }
     
-    private static ResourceLocation id(String name)
+    private static Identifier id(String name)
     {
-        return ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, name);
+        return Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, name);
     }
 }

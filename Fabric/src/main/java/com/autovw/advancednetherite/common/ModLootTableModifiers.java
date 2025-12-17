@@ -3,12 +3,12 @@ package com.autovw.advancednetherite.common;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import com.autovw.advancednetherite.core.util.ModTags;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.advancements.critereon.*;
+import net.minecraft.advancements.criterion.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.predicates.DataComponentPredicates;
 import net.minecraft.core.component.predicates.EnchantmentsPredicate;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -35,29 +35,29 @@ import java.util.Optional;
  */
 public final class ModLootTableModifiers
 {
-    private static final ResourceLocation WHEAT = ResourceLocation.withDefaultNamespace("blocks/wheat");
-    private static final ResourceLocation CARROTS = ResourceLocation.withDefaultNamespace("blocks/carrots");
-    private static final ResourceLocation POTATOES = ResourceLocation.withDefaultNamespace("blocks/potatoes");
-    private static final ResourceLocation BEETROOTS = ResourceLocation.withDefaultNamespace("blocks/beetroots");
-    private static final ResourceLocation PHANTOM = ResourceLocation.withDefaultNamespace("entities/phantom");
-    private static final ResourceLocation ZOMBIFIED_PIGLIN = ResourceLocation.withDefaultNamespace("entities/zombified_piglin");
-    private static final ResourceLocation PIGLIN = ResourceLocation.withDefaultNamespace("entities/piglin");
-    private static final ResourceLocation ENDERMAN = ResourceLocation.withDefaultNamespace("entities/enderman");
-    private static final ResourceLocation IRON_ORE = ResourceLocation.withDefaultNamespace("blocks/iron_ore");
-    private static final ResourceLocation DEEPSLATE_IRON_ORE = ResourceLocation.withDefaultNamespace("blocks/deepslate_iron_ore");
-    private static final ResourceLocation GOLD_ORE = ResourceLocation.withDefaultNamespace("blocks/gold_ore");
-    private static final ResourceLocation DEEPSLATE_GOLD_ORE = ResourceLocation.withDefaultNamespace("blocks/deepslate_gold_ore");
-    private static final ResourceLocation EMERALD_ORE = ResourceLocation.withDefaultNamespace("blocks/emerald_ore");
-    private static final ResourceLocation DEEPSLATE_EMERALD_ORE = ResourceLocation.withDefaultNamespace("blocks/deepslate_emerald_ore");
-    private static final ResourceLocation DIAMOND_ORE = ResourceLocation.withDefaultNamespace("blocks/diamond_ore");
-    private static final ResourceLocation DEEPSLATE_DIAMOND_ORE = ResourceLocation.withDefaultNamespace("blocks/deepslate_diamond_ore");
-    private static final ResourceLocation NETHER_GOLD_ORE = ResourceLocation.withDefaultNamespace("blocks/netherite_gold_ore");
+    private static final Identifier WHEAT = Identifier.withDefaultNamespace("blocks/wheat");
+    private static final Identifier CARROTS = Identifier.withDefaultNamespace("blocks/carrots");
+    private static final Identifier POTATOES = Identifier.withDefaultNamespace("blocks/potatoes");
+    private static final Identifier BEETROOTS = Identifier.withDefaultNamespace("blocks/beetroots");
+    private static final Identifier PHANTOM = Identifier.withDefaultNamespace("entities/phantom");
+    private static final Identifier ZOMBIFIED_PIGLIN = Identifier.withDefaultNamespace("entities/zombified_piglin");
+    private static final Identifier PIGLIN = Identifier.withDefaultNamespace("entities/piglin");
+    private static final Identifier ENDERMAN = Identifier.withDefaultNamespace("entities/enderman");
+    private static final Identifier IRON_ORE = Identifier.withDefaultNamespace("blocks/iron_ore");
+    private static final Identifier DEEPSLATE_IRON_ORE = Identifier.withDefaultNamespace("blocks/deepslate_iron_ore");
+    private static final Identifier GOLD_ORE = Identifier.withDefaultNamespace("blocks/gold_ore");
+    private static final Identifier DEEPSLATE_GOLD_ORE = Identifier.withDefaultNamespace("blocks/deepslate_gold_ore");
+    private static final Identifier EMERALD_ORE = Identifier.withDefaultNamespace("blocks/emerald_ore");
+    private static final Identifier DEEPSLATE_EMERALD_ORE = Identifier.withDefaultNamespace("blocks/deepslate_emerald_ore");
+    private static final Identifier DIAMOND_ORE = Identifier.withDefaultNamespace("blocks/diamond_ore");
+    private static final Identifier DEEPSLATE_DIAMOND_ORE = Identifier.withDefaultNamespace("blocks/deepslate_diamond_ore");
+    private static final Identifier NETHER_GOLD_ORE = Identifier.withDefaultNamespace("blocks/netherite_gold_ore");
 
     public static void modifyTables()
     {
         LootTableEvents.MODIFY.register(((key, tableBuilder, source, provider) ->
         {
-            ResourceLocation id = key.location();
+            Identifier id = key.identifier();
             HolderLookup.RegistryLookup<Item> registryLookup = provider.lookupOrThrow(Registries.ITEM);
             // ADDITIONAL CROP DROPS START //
             if (source.isBuiltin() && id.equals(WHEAT))

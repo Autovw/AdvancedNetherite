@@ -5,7 +5,7 @@ import com.autovw.advancednetherite.api.annotation.Internal;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 
@@ -27,14 +27,14 @@ public class TooltipBuilder
     /**
      * Used to create a translatable tooltip.
      * Not setting the mod id will result in the tooltip being registered under the default <i>minecraft</i> namespace.
-     * If the tooltip name is empty, {@link #build(ResourceLocation, Object...)} will throw a {@link IllegalStateException}.
+     * If the tooltip name is empty, {@link #build(Identifier, Object...)} will throw a {@link IllegalStateException}.
      *
-     * Use {@link #create(ResourceLocation, Object...)} if the tooltip should contain other sub-elements.
+     * Use {@link #create(Identifier, Object...)} if the tooltip should contain other sub-elements.
      *
      * @param key name of the tooltip
      * @return a MutableComponent
      */
-    public static MutableComponent create(ResourceLocation key)
+    public static MutableComponent create(Identifier key)
     {
         return build(key, (Object) null);
     }
@@ -42,13 +42,13 @@ public class TooltipBuilder
     /**
      * Used to create a translatable tooltip.
      * Not setting the mod id will result in the tooltip being registered under the default <i>minecraft</i> namespace.
-     * If the tooltip name is empty, {@link #build(ResourceLocation, Object...)} will throw a {@link IllegalStateException}.
+     * If the tooltip name is empty, {@link #build(Identifier, Object...)} will throw a {@link IllegalStateException}.
      *
      * @param key name of the tooltip
      * @param args sub-elements
      * @return a MutableComponent
      */
-    public static MutableComponent create(ResourceLocation key, Object... args)
+    public static MutableComponent create(Identifier key, Object... args)
     {
         return build(key, args);
     }
@@ -57,7 +57,7 @@ public class TooltipBuilder
      * Builder used for internal purposes only.
      */
     @Internal
-    private static MutableComponent build(ResourceLocation key, @Nullable Object... args)
+    private static MutableComponent build(Identifier key, @Nullable Object... args)
     {
         String content = "tooltip." + key.getNamespace() + "." + key.getPath();
         if (!content.endsWith("."))

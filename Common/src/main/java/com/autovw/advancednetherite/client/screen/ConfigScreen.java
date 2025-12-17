@@ -37,14 +37,16 @@ public class ConfigScreen extends Screen
     {
         // Configured button
         addRenderableWidget(Button.builder(Component.translatable("config.advancednetherite.screen.button.install_configured", this.configured), onPress -> {
-            this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://www.curseforge.com/minecraft/mc-mods/configured"))));
+            // 1.21.11: Moved to ChatScreen, now private
+            //this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://www.curseforge.com/minecraft/mc-mods/configured"))));
         }).pos(width / 2 - 155, height / 2 + 12).size(150, 20).build());
 
         // Instructions button
         Button instructionsButton = Button.builder(Component.translatable("config.advancednetherite.screen.button.instructions"), onPress -> {
             if (getInstructionsUrl() != null)
             {
-                this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(getInstructionsUrl())));
+                // 1.21.11: Moved to ChatScreen, now private
+                //this.handleComponentClicked(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(getInstructionsUrl())));
             }
         }).pos(width / 2 + 5, height / 2 + 12).size(150, 20).build();
 

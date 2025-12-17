@@ -9,7 +9,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -110,10 +110,10 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
             public void baseSmithingRecipe(HolderLookup.RegistryLookup<Item> registryLookup, RecipeOutput output, TagKey<Item> ingredient, TagKey<Item> upgradeIngredient, Item result)
             {
-                ResourceLocation resultId = AdvancedNetherite.getRegistryHelper().getItemById(result);
+                Identifier resultId = AdvancedNetherite.getRegistryHelper().getItemById(result);
                 SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), tag(ingredient), tag(upgradeIngredient), RecipeCategory.MISC, result)
                         .unlocks("has_ingredients", has(upgradeIngredient))
-                        .save(output, ResourceLocation.fromNamespaceAndPath(resultId.getNamespace(), resultId.getPath() + "_smithing").toString());
+                        .save(output, Identifier.fromNamespaceAndPath(resultId.getNamespace(), resultId.getPath() + "_smithing").toString());
             }
 
             public void baseIngotRecipe(HolderLookup.RegistryLookup<Item> registryLookup, RecipeOutput output, TagKey<Item> ingotIngredient, Item upgradeIngredient, Item result)
@@ -127,8 +127,8 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
             public void baseBlockRecipe(HolderLookup.RegistryLookup<Item> registryLookup, RecipeOutput output, ItemLike ingredient, Block result)
             {
-                ResourceLocation resultId = AdvancedNetherite.getRegistryHelper().getBlockById(result);
-                ResourceLocation ingredientId = AdvancedNetherite.getRegistryHelper().getItemById((Item) ingredient);
+                Identifier resultId = AdvancedNetherite.getRegistryHelper().getBlockById(result);
+                Identifier ingredientId = AdvancedNetherite.getRegistryHelper().getItemById((Item) ingredient);
 
                 // Items to Block
                 ShapedRecipeBuilder.shaped(registryLookup, RecipeCategory.BUILDING_BLOCKS, result)
@@ -143,7 +143,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 ShapelessRecipeBuilder.shapeless(registryLookup, RecipeCategory.MISC, ingredient, 9)
                         .requires(result)
                         .unlockedBy("has_" + resultId.getPath(), has(result))
-                        .save(output, ResourceLocation.fromNamespaceAndPath(resultId.getNamespace(), ingredientId.getPath() + "_from_block").toString());
+                        .save(output, Identifier.fromNamespaceAndPath(resultId.getNamespace(), ingredientId.getPath() + "_from_block").toString());
             }
 
             private void lodestoneRecipe(HolderLookup.RegistryLookup<Item> registryLookup, RecipeOutput output)
@@ -156,7 +156,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
                         .pattern("SSS")
                         .unlockedBy("has_chiseled_stone_bricks", has(Items.CHISELED_STONE_BRICKS))
                         .unlockedBy("has_netherite_ingots", has(ModTags.NETHERITE_INGOTS))
-                        .save(output, ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, AdvancedNetherite.getRegistryHelper().getItemById(Items.LODESTONE).getPath()).toString());
+                        .save(output, Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, AdvancedNetherite.getRegistryHelper().getItemById(Items.LODESTONE).getPath()).toString());
             }
         };
     }

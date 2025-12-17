@@ -4,7 +4,7 @@ import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.TooltipBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 /**
  * A class that contains tooltips registered by Advanced Netherite.
@@ -38,8 +38,8 @@ public final class ModTooltips
     public static final MutableComponent ZOMBIFIED_PIGLIN_MOB_DROP_TOOLTIP = TooltipBuilder.create(id("sword.additional_zombified_piglin_mob_drop"), PLUS_TOOLTIP).withStyle(ChatFormatting.GOLD);
     public static final MutableComponent PHANTOM_MOB_DROP_TOOLTIP = TooltipBuilder.create(id("sword.additional_phantom_mob_drop"), PLUS_TOOLTIP).withStyle(ChatFormatting.GRAY);
 
-    private static ResourceLocation id(String key)
+    private static Identifier id(String key)
     {
-        return ResourceLocation.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, key);
+        return Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, key);
     }
 }
