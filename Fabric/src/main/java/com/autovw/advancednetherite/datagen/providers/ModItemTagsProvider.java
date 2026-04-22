@@ -100,6 +100,16 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
         valueLookupBuilder(ModTags.SWORD_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.SWORD_NETHERITE_GOLD);
         valueLookupBuilder(ModTags.SWORD_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.SWORD_NETHERITE_EMERALD);
 
+        valueLookupBuilder(ModTags.SPEAR_NETHERITE).add(Items.NETHERITE_SPEAR);
+        valueLookupBuilder(ModTags.SPEAR_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_SPEAR);
+        valueLookupBuilder(ModTags.SPEAR_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_SPEAR);
+        valueLookupBuilder(ModTags.SPEAR_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_SPEAR);
+        valueLookupBuilder(ModTags.SPEAR_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_SPEAR);
+        valueLookupBuilder(ModTags.SPEAR_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.SPEAR_NETHERITE);
+        valueLookupBuilder(ModTags.SPEAR_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.SPEAR_NETHERITE_IRON);
+        valueLookupBuilder(ModTags.SPEAR_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.SPEAR_NETHERITE_GOLD);
+        valueLookupBuilder(ModTags.SPEAR_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.SPEAR_NETHERITE_EMERALD);
+
         valueLookupBuilder(ModTags.HELMET_NETHERITE).add(Items.NETHERITE_HELMET);
         valueLookupBuilder(ModTags.HELMET_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_HELMET);
         valueLookupBuilder(ModTags.HELMET_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_HELMET);
@@ -270,7 +280,8 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_GOLD_HOE)
                 .add(ModItems.NETHERITE_GOLD_PICKAXE)
                 .add(ModItems.NETHERITE_GOLD_SHOVEL)
-                .add(ModItems.NETHERITE_GOLD_SWORD);
+                .add(ModItems.NETHERITE_GOLD_SWORD)
+                .add(ModItems.NETHERITE_GOLD_SPEAR);
         valueLookupBuilder(ItemTags.PIGLIN_SAFE_ARMOR)
                 .addTag(ModTags.PACIFY_PIGLINS_ARMOR);
 
@@ -343,6 +354,11 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.NETHERITE_GOLD_SWORD)
                 .add(ModItems.NETHERITE_EMERALD_SWORD)
                 .add(ModItems.NETHERITE_DIAMOND_SWORD);
+        valueLookupBuilder(ItemTags.SPEARS)
+                .add(ModItems.NETHERITE_IRON_SPEAR)
+                .add(ModItems.NETHERITE_GOLD_SPEAR)
+                .add(ModItems.NETHERITE_EMERALD_SPEAR)
+                .add(ModItems.NETHERITE_DIAMOND_SPEAR);
 
 
         // Tooltip Rareness item tags

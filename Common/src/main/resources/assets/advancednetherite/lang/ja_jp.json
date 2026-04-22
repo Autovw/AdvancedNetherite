@@ -54,6 +54,11 @@
     "item.advancednetherite.netherite_emerald_sword": "ネザライト・エメラルド合金の剣",
     "item.advancednetherite.netherite_diamond_sword": "ネザライト・ダイヤモンド合金の剣",
 
+    "item.advancednetherite.netherite_iron_spear": "Netherite-Iron Spear",
+    "item.advancednetherite.netherite_gold_spear": "Netherite-Gold Spear",
+    "item.advancednetherite.netherite_emerald_spear": "Netherite-Emerald Spear",
+    "item.advancednetherite.netherite_diamond_spear": "Netherite-Diamond Spear",
+
     "itemGroup.advancednetherite.tab": "Advanced Netherite",
 
     "tooltip.advancednetherite.armor.enderman_passive": "%s エンダーマンが友好的になる",

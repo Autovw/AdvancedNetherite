@@ -78,6 +78,12 @@ public final class ModItemRegistry
     public static final DeferredItem<Item> NETHERITE_EMERALD_SWORD = ITEMS.register("netherite_emerald_sword", () -> ModItems.NETHERITE_EMERALD_SWORD);
     public static final DeferredItem<Item> NETHERITE_DIAMOND_SWORD = ITEMS.register("netherite_diamond_sword", () -> ModItems.NETHERITE_DIAMOND_SWORD);
 
+    // Spears
+    public static final DeferredItem<Item> NETHERITE_IRON_SPEAR = ITEMS.register("netherite_iron_spear", () -> ModItems.NETHERITE_IRON_SPEAR);
+    public static final DeferredItem<Item> NETHERITE_GOLD_SPEAR = ITEMS.register("netherite_gold_spear", () -> ModItems.NETHERITE_GOLD_SPEAR);
+    public static final DeferredItem<Item> NETHERITE_EMERALD_SPEAR = ITEMS.register("netherite_emerald_spear", () -> ModItems.NETHERITE_EMERALD_SPEAR);
+    public static final DeferredItem<Item> NETHERITE_DIAMOND_SPEAR = ITEMS.register("netherite_diamond_spear", () -> ModItems.NETHERITE_DIAMOND_SPEAR);
+
     // Blocks
     public static final DeferredItem<BlockItem> NETHERITE_IRON_BLOCK = ITEMS.register("netherite_iron_block", () -> ModItems.NETHERITE_IRON_BLOCK);
     public static final DeferredItem<BlockItem> NETHERITE_GOLD_BLOCK = ITEMS.register("netherite_gold_block", () -> ModItems.NETHERITE_GOLD_BLOCK);

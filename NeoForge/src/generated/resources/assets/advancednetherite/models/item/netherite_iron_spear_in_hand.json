@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/spear_in_hand",
+  "textures": {
+    "layer0": "advancednetherite:item/netherite_iron_spear_in_hand"
+  }
+}

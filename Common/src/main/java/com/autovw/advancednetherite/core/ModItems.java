@@ -77,6 +77,14 @@ public final class ModItems
     public static final AdvancedSwordItem NETHERITE_EMERALD_SWORD = new AdvancedSwordItem(ModToolMaterials.NETHERITE_EMERALD, 4, -2.4F, new Item.Properties().setId(key("netherite_emerald_sword")));
     public static final AdvancedSwordItem NETHERITE_DIAMOND_SWORD = new AdvancedSwordItem(ModToolMaterials.NETHERITE_DIAMOND, 5, -2.4F, new Item.Properties().setId(key("netherite_diamond_sword")));
 
+    // Spears
+    // F1: Attack speed
+    // F2: Charge attack multiplier
+    public static final Item NETHERITE_IRON_SPEAR = new AdvancedItem(new Item.Properties().spear(ModToolMaterials.NETHERITE_IRON, 1.1F, 1.25F, 0.4F, 2.5F, 7.0F, 5.5F, 5.1F, 8.75F, 4.6F).setId(key("netherite_iron_spear")));
+    public static final Item NETHERITE_GOLD_SPEAR = new AdvancedItem(new Item.Properties().spear(ModToolMaterials.NETHERITE_GOLD, 1.05F, 1.05F, 0.4F, 2.5F, 7.0F, 5.5F, 5.1F, 8.75F, 4.6F).setId(key("netherite_gold_spear")));
+    public static final Item NETHERITE_EMERALD_SPEAR = new AdvancedItem(new Item.Properties().spear(ModToolMaterials.NETHERITE_EMERALD, 1.35F, 1.15F, 0.4F, 2.5F, 7.0F, 5.5F, 5.1F, 8.75F, 4.6F).setId(key("netherite_emerald_spear")));
+    public static final Item NETHERITE_DIAMOND_SPEAR = new AdvancedItem(new Item.Properties().spear(ModToolMaterials.NETHERITE_DIAMOND, 1.25F, 1.25F, 0.4F, 2.5F, 7.0F, 5.5F, 5.1F, 8.75F, 4.6F).setId(key("netherite_diamond_spear")));
+
     // Blocks
     public static final AdvancedBlockItem NETHERITE_IRON_BLOCK = new AdvancedBlockItem(ModBlocks.NETHERITE_IRON_BLOCK, new Item.Properties().useBlockDescriptionPrefix().setId(key("netherite_iron_block")));
     public static final AdvancedBlockItem NETHERITE_GOLD_BLOCK = new AdvancedBlockItem(ModBlocks.NETHERITE_GOLD_BLOCK, new Item.Properties().useBlockDescriptionPrefix().setId(key("netherite_gold_block")));

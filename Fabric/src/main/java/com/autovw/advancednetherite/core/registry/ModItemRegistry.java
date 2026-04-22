@@ -62,6 +62,11 @@ public final class ModItemRegistry
         Registry.register(BuiltInRegistries.ITEM, id("netherite_emerald_sword"), ModItems.NETHERITE_EMERALD_SWORD);
         Registry.register(BuiltInRegistries.ITEM, id("netherite_diamond_sword"), ModItems.NETHERITE_DIAMOND_SWORD);
 
+        Registry.register(BuiltInRegistries.ITEM, id("netherite_iron_spear"), ModItems.NETHERITE_IRON_SPEAR);
+        Registry.register(BuiltInRegistries.ITEM, id("netherite_gold_spear"), ModItems.NETHERITE_GOLD_SPEAR);
+        Registry.register(BuiltInRegistries.ITEM, id("netherite_emerald_spear"), ModItems.NETHERITE_EMERALD_SPEAR);
+        Registry.register(BuiltInRegistries.ITEM, id("netherite_diamond_spear"), ModItems.NETHERITE_DIAMOND_SPEAR);
+
         Registry.register(BuiltInRegistries.ITEM, id("netherite_iron_block"), ModItems.NETHERITE_IRON_BLOCK);
         Registry.register(BuiltInRegistries.ITEM, id("netherite_gold_block"), ModItems.NETHERITE_GOLD_BLOCK);
         Registry.register(BuiltInRegistries.ITEM, id("netherite_emerald_block"), ModItems.NETHERITE_EMERALD_BLOCK);

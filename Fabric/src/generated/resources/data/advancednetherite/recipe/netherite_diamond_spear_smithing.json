@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#advancednetherite:upgrade_to_netherite_diamond",
+  "base": "#advancednetherite:spear/upgrade_to_netherite_diamond",
+  "result": {
+    "id": "advancednetherite:netherite_diamond_spear"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

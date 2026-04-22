@@ -164,6 +164,18 @@ public class ModItemTagsProvider extends IntrinsicHolderTagsProvider<Item>
         tag(ModTags.SWORD_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.SWORD_NETHERITE_IRON);
         tag(ModTags.SWORD_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.SWORD_NETHERITE);
 
+        // Spears
+        tag(ModTags.SPEAR_NETHERITE_DIAMOND).add(ModItems.NETHERITE_DIAMOND_SPEAR);
+        tag(ModTags.SPEAR_NETHERITE_EMERALD).add(ModItems.NETHERITE_EMERALD_SPEAR);
+        tag(ModTags.SPEAR_NETHERITE_GOLD).add(ModItems.NETHERITE_GOLD_SPEAR);
+        tag(ModTags.SPEAR_NETHERITE_IRON).add(ModItems.NETHERITE_IRON_SPEAR);
+        tag(ModTags.SPEAR_NETHERITE).add(Items.NETHERITE_SPEAR);
+
+        tag(ModTags.SPEAR_UPGRADE_TO_NETHERITE_DIAMOND).addTag(ModTags.SPEAR_NETHERITE_EMERALD);
+        tag(ModTags.SPEAR_UPGRADE_TO_NETHERITE_EMERALD).addTag(ModTags.SPEAR_NETHERITE_GOLD);
+        tag(ModTags.SPEAR_UPGRADE_TO_NETHERITE_GOLD).addTag(ModTags.SPEAR_NETHERITE_IRON);
+        tag(ModTags.SPEAR_UPGRADE_TO_NETHERITE_IRON).addTag(ModTags.SPEAR_NETHERITE);
+
         // Tiers
         tag(ModTags.TIER_ARMOR)
                 .addTag(ModTags.TIER_ARMOR_NETHERITE_DIAMOND)
@@ -295,7 +307,8 @@ public class ModItemTagsProvider extends IntrinsicHolderTagsProvider<Item>
                 .add(ModItems.NETHERITE_GOLD_HOE)
                 .add(ModItems.NETHERITE_GOLD_PICKAXE)
                 .add(ModItems.NETHERITE_GOLD_SHOVEL)
-                .add(ModItems.NETHERITE_GOLD_SWORD);
+                .add(ModItems.NETHERITE_GOLD_SWORD)
+                .add(ModItems.NETHERITE_GOLD_SPEAR);
 
         tag(ItemTags.PIGLIN_SAFE_ARMOR)
                 .addTag(ModTags.PACIFY_PIGLINS_ARMOR);
@@ -370,5 +383,11 @@ public class ModItemTagsProvider extends IntrinsicHolderTagsProvider<Item>
                 .add(ModItems.NETHERITE_EMERALD_SWORD)
                 .add(ModItems.NETHERITE_GOLD_SWORD)
                 .add(ModItems.NETHERITE_IRON_SWORD);
+
+        tag(ItemTags.SPEARS)
+                .add(ModItems.NETHERITE_DIAMOND_SPEAR)
+                .add(ModItems.NETHERITE_EMERALD_SPEAR)
+                .add(ModItems.NETHERITE_GOLD_SPEAR)
+                .add(ModItems.NETHERITE_IRON_SPEAR);
     }
 }

@@ -100,6 +100,12 @@ public class ModRecipeProvider extends RecipeProvider
         baseSmithingRecipe(registryLookup, output, ModTags.SWORD_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_SWORD);
         baseSmithingRecipe(registryLookup, output, ModTags.SWORD_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_SWORD);
 
+        /* Spears */
+        baseSmithingRecipe(registryLookup, output, ModTags.SPEAR_UPGRADE_TO_NETHERITE_IRON, ModTags.UPGRADE_TO_NETHERITE_IRON, ModItems.NETHERITE_IRON_SPEAR);
+        baseSmithingRecipe(registryLookup, output, ModTags.SPEAR_UPGRADE_TO_NETHERITE_GOLD, ModTags.UPGRADE_TO_NETHERITE_GOLD, ModItems.NETHERITE_GOLD_SPEAR);
+        baseSmithingRecipe(registryLookup, output, ModTags.SPEAR_UPGRADE_TO_NETHERITE_EMERALD, ModTags.UPGRADE_TO_NETHERITE_EMERALD, ModItems.NETHERITE_EMERALD_SPEAR);
+        baseSmithingRecipe(registryLookup, output, ModTags.SPEAR_UPGRADE_TO_NETHERITE_DIAMOND, ModTags.UPGRADE_TO_NETHERITE_DIAMOND, ModItems.NETHERITE_DIAMOND_SPEAR);
+
         /* Misc */
         lodestoneRecipe(registryLookup, output);
     }

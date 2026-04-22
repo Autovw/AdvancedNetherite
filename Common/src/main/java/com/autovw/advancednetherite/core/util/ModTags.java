@@ -131,6 +131,16 @@ public final class ModTags
     public static final TagKey<Item> SWORD_UPGRADE_TO_NETHERITE_GOLD = modItemTag("sword/upgrade_to_netherite_gold");
     public static final TagKey<Item> SWORD_UPGRADE_TO_NETHERITE_IRON = modItemTag("sword/upgrade_to_netherite_iron");
 
+    public static final TagKey<Item> SPEAR_NETHERITE_DIAMOND = modItemTag("spear/netherite_diamond");
+    public static final TagKey<Item> SPEAR_NETHERITE_EMERALD = modItemTag("spear/netherite_emerald");
+    public static final TagKey<Item> SPEAR_NETHERITE_GOLD = modItemTag("spear/netherite_gold");
+    public static final TagKey<Item> SPEAR_NETHERITE_IRON = modItemTag("spear/netherite_iron");
+    public static final TagKey<Item> SPEAR_NETHERITE = modItemTag("spear/netherite");
+    public static final TagKey<Item> SPEAR_UPGRADE_TO_NETHERITE_DIAMOND = modItemTag("spear/upgrade_to_netherite_diamond");
+    public static final TagKey<Item> SPEAR_UPGRADE_TO_NETHERITE_EMERALD = modItemTag("spear/upgrade_to_netherite_emerald");
+    public static final TagKey<Item> SPEAR_UPGRADE_TO_NETHERITE_GOLD = modItemTag("spear/upgrade_to_netherite_gold");
+    public static final TagKey<Item> SPEAR_UPGRADE_TO_NETHERITE_IRON = modItemTag("spear/upgrade_to_netherite_iron");
+
     // "tiers" tags
     public static final TagKey<Item> TIER_ARMOR = modItemTag("tier/armor");
     public static final TagKey<Item> TIER_TOOLS = modItemTag("tier/tools");

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#advancednetherite:upgrade_to_netherite_gold",
+  "base": "#advancednetherite:spear/upgrade_to_netherite_gold",
+  "result": {
+    "id": "advancednetherite:netherite_gold_spear"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

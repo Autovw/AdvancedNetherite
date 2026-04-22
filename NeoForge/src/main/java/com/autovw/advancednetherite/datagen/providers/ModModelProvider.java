@@ -6,11 +6,9 @@ import com.autovw.advancednetherite.core.util.ModEquipmentAssets;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.model.ModelTemplate;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.item.BlockModelWrapper;
+import net.minecraft.client.renderer.item.ClientItem;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -96,6 +94,12 @@ public class ModModelProvider extends ModelProvider
         toolModel(itemModels, ModItems.NETHERITE_GOLD_SWORD);
         toolModel(itemModels, ModItems.NETHERITE_EMERALD_SWORD);
         toolModel(itemModels, ModItems.NETHERITE_DIAMOND_SWORD);
+
+        /* Spears */
+        spearModel(itemModels, ModItems.NETHERITE_IRON_SPEAR);
+        spearModel(itemModels, ModItems.NETHERITE_GOLD_SPEAR);
+        spearModel(itemModels, ModItems.NETHERITE_EMERALD_SPEAR);
+        spearModel(itemModels, ModItems.NETHERITE_DIAMOND_SPEAR);
     }
 
     public void blockModel(BlockModelGenerators blockModels, Block block)
@@ -134,5 +138,18 @@ public class ModModelProvider extends ModelProvider
         else if (id.getPath().contains("boots"))
             armorType = ItemModelGenerators.TRIM_PREFIX_BOOTS;
         itemModels.generateTrimmableItem(item, equipmentKey, armorType, false);
+    }
+
+    public void spearModel(ItemModelGenerators itemModels, Item item)
+    {
+        Identifier itemId = BuiltInRegistries.ITEM.getKey(item);
+        Identifier textureLoc = Identifier.fromNamespaceAndPath(itemId.getNamespace(), "item/" + itemId.getPath());
+        TextureMapping textureMapping = new TextureMapping().put(TextureSlot.LAYER0, textureLoc);
+        BlockModelWrapper.Unbaked model = new BlockModelWrapper.Unbaked(ModelTemplates.FLAT_ITEM.create(item, textureMapping, itemModels.modelOutput), Collections.emptyList());
+
+        TextureMapping textureMappingInHand = new TextureMapping().put(TextureSlot.LAYER0, Identifier.fromNamespaceAndPath(itemId.getNamespace(), "item/" + itemId.getPath() + "_in_hand"));
+        BlockModelWrapper.Unbaked modelInHand = new BlockModelWrapper.Unbaked(ModelTemplates.SPEAR_IN_HAND.create(item, textureMappingInHand, itemModels.modelOutput), Collections.emptyList());
+
+        itemModels.itemModelOutput.accept(item, ItemModelGenerators.createFlatModelDispatch(model, modelInHand), new ClientItem.Properties(true, false, 1.95F));
     }
 }

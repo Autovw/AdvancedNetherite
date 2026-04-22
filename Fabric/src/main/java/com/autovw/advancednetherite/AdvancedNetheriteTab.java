@@ -85,6 +85,12 @@ public final class AdvancedNetheriteTab
                     entries.accept(ModItems.NETHERITE_EMERALD_SWORD);
                     entries.accept(ModItems.NETHERITE_DIAMOND_SWORD);
 
+                    // Spears
+                    entries.accept(ModItems.NETHERITE_IRON_SPEAR);
+                    entries.accept(ModItems.NETHERITE_GOLD_SPEAR);
+                    entries.accept(ModItems.NETHERITE_EMERALD_SPEAR);
+                    entries.accept(ModItems.NETHERITE_DIAMOND_SPEAR);
+
                     // Blocks
                     entries.accept(ModItems.NETHERITE_IRON_BLOCK);
                     entries.accept(ModItems.NETHERITE_GOLD_BLOCK);
