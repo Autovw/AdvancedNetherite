@@ -1,8 +1,8 @@
 package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.core.util.ModTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -13,9 +13,9 @@ import java.util.concurrent.CompletableFuture;
 /**
  * @author Autovw
  */
-public class ModEnchantmentTagsProvider extends FabricTagProvider<Enchantment>
+public class ModEnchantmentTagsProvider extends FabricTagsProvider<Enchantment>
 {
-    public ModEnchantmentTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture)
+    public ModEnchantmentTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> completableFuture)
     {
         super(output, Registries.ENCHANTMENT, completableFuture);
     }

@@ -33,9 +33,9 @@ public class MobDropsLootModifier extends LootModifier
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
      */
-    public MobDropsLootModifier(LootItemCondition[] conditionsIn)
+    public MobDropsLootModifier(LootItemCondition[] conditionsIn, int priority)
     {
-        super(conditionsIn);
+        super(conditionsIn,  priority);
     }
 
     @NotNull

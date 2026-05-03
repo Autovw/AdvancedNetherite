@@ -2,7 +2,7 @@ package com.autovw.advancednetherite.client.screen;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.*;
@@ -62,11 +62,11 @@ public class ConfigScreen extends Screen
     }
 
     @Override
-    public void render(GuiGraphics graphics, int mouseX, int mouseY, float ticks)
+    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float ticks)
     {
-        this.renderBackground(graphics, mouseX, mouseY, ticks);
-        super.render(graphics, mouseX, mouseY, ticks);
-        graphics.drawCenteredString(this.font, this.title, this.width / 2, 7, 0xFFFFFF);
+        this.extractBackground(graphics, mouseX, mouseY, ticks);
+        super.extractRenderState(graphics, mouseX, mouseY, ticks);
+        graphics.text(this.font, this.title, this.width / 2, 7, 0xFFFFFF);
         drawCenteredSplitString(graphics, this.font, this.font.split(getDescriptionTop(), this.width), this.width / 2, 55, 0xFFFFFF);
         drawCenteredSplitString(graphics, this.font, this.font.split(getDescriptionBottom(), this.width), this.width / 2, 90, 0xFFFFFF);
     }
@@ -80,11 +80,11 @@ public class ConfigScreen extends Screen
      * @param y Y-axis the text will appear on
      * @param color Color of the text
      */
-    public static void drawCenteredSplitString(GuiGraphics graphics, Font font, List<FormattedCharSequence> charSequenceList, int x, int y, int color)
+    public static void drawCenteredSplitString(GuiGraphicsExtractor graphics, Font font, List<FormattedCharSequence> charSequenceList, int x, int y, int color)
     {
         for (FormattedCharSequence sequence : charSequenceList)
         {
-            graphics.drawCenteredString(font, sequence, x, y, color);
+            graphics.text(font, sequence, x, y, color);
             y += font.lineHeight;
         }
     }

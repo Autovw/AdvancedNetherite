@@ -34,16 +34,16 @@ public class CropDropsLootModifier extends LootModifier
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
      */
-    public CropDropsLootModifier(LootItemCondition[] conditionsIn)
+    public CropDropsLootModifier(LootItemCondition[] conditionsIn, int priority)
     {
-        super(conditionsIn);
+        super(conditionsIn, priority);
     }
 
     @NotNull
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {
-        ItemStack tool = context.getOptionalParameter(LootContextParams.TOOL);
+        ItemStack tool = context.getOptionalParameter(LootContextParams.TOOL) instanceof ItemStack stack ? stack : null;
         BlockState blockState = context.getOptionalParameter(LootContextParams.BLOCK_STATE);
 
         if (tool != null && blockState != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops())

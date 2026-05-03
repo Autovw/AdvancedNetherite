@@ -1,12 +1,15 @@
-// This exists to get NeoGradle working...
 plugins {
-    id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.7"
+    // Fabric Loom
+    id 'fabric-loom' version '1.15-SNAPSHOT' apply false
+    // ModDevGradle
+    // see https://projects.neoforged.net/neoforged/moddevgradle for new versions
+    id 'net.neoforged.moddev' version '2.0.+' apply false
 }
 
 subprojects {
     apply plugin: 'java'
 
-    java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+    java.toolchain.languageVersion = JavaLanguageVersion.of(25)
     //java.withSourcesJar()
     //java.withJavadocJar()
 
@@ -40,7 +43,7 @@ subprojects {
 
     tasks.withType(JavaCompile).configureEach {
         it.options.encoding = 'UTF-8'
-        it.options.release = 21
+        it.options.release = 25
     }
 
     // Disables Gradle's custom module metadata from being published to maven. The

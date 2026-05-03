@@ -5,6 +5,11 @@
         "texture": "advancednetherite:netherite_gold"
       }
     ],
+    "humanoid_baby": [
+      {
+        "texture": "advancednetherite:netherite_gold"
+      }
+    ],
     "humanoid_leggings": [
       {
         "texture": "advancednetherite:netherite_gold"

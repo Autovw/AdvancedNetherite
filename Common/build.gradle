@@ -1,18 +1,33 @@
 plugins {
     id 'idea'
     id 'java'
-    id 'org.spongepowered.gradle.vanilla' version '0.2.1-SNAPSHOT'
+    id 'net.neoforged.moddev'
 }
 
 group = 'com.autovw.advancednetherite'
 version = "${mod_version}-${minecraft_version}"
-archivesBaseName = 'advancednetherite-common'
+base.archivesName = 'advancednetherite-common'
 
-minecraft {
-    version(minecraft_version)
+neoForge {
+    neoFormVersion = neo_form_version
 }
 
 dependencies {
 }
 
+configurations {
+    commonJava {
+        canBeResolved = false
+        canBeConsumed = true
+    }
+    commonResources {
+        canBeResolved = false
+        canBeConsumed = true
+    }
+}
+
+artifacts {
+    commonJava sourceSets.main.java.sourceDirectories.singleFile
+    commonResources sourceSets.main.resources.sourceDirectories.singleFile
+}
 

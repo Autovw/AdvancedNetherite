@@ -2,7 +2,7 @@ package com.autovw.advancednetherite;
 
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.core.ModItems;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -23,7 +23,7 @@ public final class AdvancedNetheriteTab
     public static void registerTab()
     {
         ResourceKey<CreativeModeTab> tab = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(AdvancedNetherite.MOD_ID, "tab"));
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, tab, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, tab, FabricCreativeModeTab.builder()
                 .icon(ModItems.NETHERITE_GOLD_INGOT::getDefaultInstance)
                 .title(Component.translatable("itemGroup." + AdvancedNetherite.MOD_ID + ".tab"))
                 .displayItems((context, entries) ->

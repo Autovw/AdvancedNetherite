@@ -2,7 +2,7 @@ package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.core.ModItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
@@ -21,7 +21,7 @@ import java.util.function.Consumer;
  */
 public class ModAdvancementProvider extends FabricAdvancementProvider
 {
-    public ModAdvancementProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup)
+    public ModAdvancementProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookup)
     {
         super(output, registryLookup);
     }

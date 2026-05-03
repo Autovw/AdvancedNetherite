@@ -5,6 +5,11 @@
         "texture": "advancednetherite:netherite_diamond"
       }
     ],
+    "humanoid_baby": [
+      {
+        "texture": "advancednetherite:netherite_diamond"
+      }
+    ],
     "humanoid_leggings": [
       {
         "texture": "advancednetherite:netherite_diamond"

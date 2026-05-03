@@ -17,7 +17,6 @@
       "translate": "advancements.advancednetherite.nether.obtain_netherite_diamond_block.description"
     },
     "icon": {
-      "count": 1,
       "id": "advancednetherite:netherite_diamond_block"
     },
     "title": {

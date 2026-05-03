@@ -17,7 +17,6 @@
       "translate": "advancements.advancednetherite.nether.obtain_netherite_iron_ingot.description"
     },
     "icon": {
-      "count": 1,
       "id": "advancednetherite:netherite_iron_ingot"
     },
     "title": {

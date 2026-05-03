@@ -3,8 +3,8 @@ package com.autovw.advancednetherite.datagen.providers;
 import com.autovw.advancednetherite.core.ModBlocks;
 import com.autovw.advancednetherite.core.util.FabricModTags;
 import com.autovw.advancednetherite.core.util.ModTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
 
@@ -13,9 +13,9 @@ import java.util.concurrent.CompletableFuture;
 /**
  * @author Autovw
  */
-public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider
+public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider
 {
-    public ModBlockTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture)
+    public ModBlockTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture)
     {
         super(output, registriesFuture);
     }

@@ -13,6 +13,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -33,16 +34,16 @@ public class ModLootModifierProvider extends GlobalLootModifierProvider
         HolderLookup.RegistryLookup<Item> registryLookup = this.registries.lookupOrThrow(Registries.ITEM);
 
         // ores
-        add("ore_drops_loot_modifier", new OreDropsLootModifier(new LootItemCondition[] {}));
+        add("ore_drops_loot_modifier", new OreDropsLootModifier(new LootItemCondition[] {}, IGlobalLootModifier.DEFAULT_PRIORITY));
 
         // entities
         add("mob_drops_loot_modifier", new MobDropsLootModifier(new LootItemCondition[] {
                 LootItemKilledByPlayerCondition.killedByPlayer().build()
-        }));
+        }, IGlobalLootModifier.DEFAULT_PRIORITY));
 
         // crops
         add("crop_drops_loot_modifier", new CropDropsLootModifier(new LootItemCondition[] {
                 MatchTool.toolMatches(ItemPredicate.Builder.item().of(registryLookup, ModTags.DROPS_ADDITIONAL_CROPS)).build()
-        }));
+        }, IGlobalLootModifier.DEFAULT_PRIORITY));
     }
 }

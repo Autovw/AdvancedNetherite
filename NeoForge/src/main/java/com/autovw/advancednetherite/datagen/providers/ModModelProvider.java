@@ -7,8 +7,9 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.*;
-import net.minecraft.client.renderer.item.BlockModelWrapper;
 import net.minecraft.client.renderer.item.ClientItem;
+import net.minecraft.client.renderer.item.CuboidItemModelWrapper;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -17,7 +18,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.level.block.Block;
 
-import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Autovw
@@ -121,8 +123,8 @@ public class ModModelProvider extends ModelProvider
     {
         Identifier itemId = BuiltInRegistries.ITEM.getKey(item);
         Identifier textureLoc = Identifier.fromNamespaceAndPath(itemId.getNamespace(), "item/" + itemId.getPath());
-        TextureMapping textureMapping = new TextureMapping().put(TextureSlot.LAYER0, textureLoc);
-        itemModels.itemModelOutput.accept(item, new BlockModelWrapper.Unbaked(template.create(item, textureMapping, itemModels.modelOutput), Collections.emptyList()));
+        TextureMapping textureMapping = new TextureMapping().put(TextureSlot.LAYER0, new Material(textureLoc));
+        itemModels.itemModelOutput.accept(item, new CuboidItemModelWrapper.Unbaked(template.create(item, textureMapping, itemModels.modelOutput), Optional.empty(), List.of()));
     }
 
     public void armorModel(ItemModelGenerators itemModels, Item item, ResourceKey<EquipmentAsset> equipmentKey)
@@ -144,11 +146,11 @@ public class ModModelProvider extends ModelProvider
     {
         Identifier itemId = BuiltInRegistries.ITEM.getKey(item);
         Identifier textureLoc = Identifier.fromNamespaceAndPath(itemId.getNamespace(), "item/" + itemId.getPath());
-        TextureMapping textureMapping = new TextureMapping().put(TextureSlot.LAYER0, textureLoc);
-        BlockModelWrapper.Unbaked model = new BlockModelWrapper.Unbaked(ModelTemplates.FLAT_ITEM.create(item, textureMapping, itemModels.modelOutput), Collections.emptyList());
+        TextureMapping textureMapping = new TextureMapping().put(TextureSlot.LAYER0, new Material(textureLoc));
+        CuboidItemModelWrapper.Unbaked model = new CuboidItemModelWrapper.Unbaked(ModelTemplates.FLAT_ITEM.create(item, textureMapping, itemModels.modelOutput), Optional.empty(), List.of());
 
-        TextureMapping textureMappingInHand = new TextureMapping().put(TextureSlot.LAYER0, Identifier.fromNamespaceAndPath(itemId.getNamespace(), "item/" + itemId.getPath() + "_in_hand"));
-        BlockModelWrapper.Unbaked modelInHand = new BlockModelWrapper.Unbaked(ModelTemplates.SPEAR_IN_HAND.create(item, textureMappingInHand, itemModels.modelOutput), Collections.emptyList());
+        TextureMapping textureMappingInHand = new TextureMapping().put(TextureSlot.LAYER0, new Material(Identifier.fromNamespaceAndPath(itemId.getNamespace(), "item/" + itemId.getPath() + "_in_hand")));
+        CuboidItemModelWrapper.Unbaked modelInHand = new CuboidItemModelWrapper.Unbaked(ModelTemplates.SPEAR_IN_HAND.create(item, textureMappingInHand, itemModels.modelOutput), Optional.empty(), List.of());
 
         itemModels.itemModelOutput.accept(item, ItemModelGenerators.createFlatModelDispatch(model, modelInHand), new ClientItem.Properties(true, false, 1.95F));
     }

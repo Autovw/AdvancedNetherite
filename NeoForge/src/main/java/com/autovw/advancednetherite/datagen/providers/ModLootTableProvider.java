@@ -11,7 +11,7 @@ import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.ValidationContext;
+import net.minecraft.world.level.storage.loot.ValidationContextSource;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -39,7 +39,7 @@ public class ModLootTableProvider extends LootTableProvider
     }
 
     @Override
-    protected void validate(WritableRegistry<LootTable> writableRegistry, ValidationContext context, ProblemReporter.Collector problemCollector)
+    protected void validate(WritableRegistry<LootTable> tables, ValidationContextSource context, ProblemReporter.Collector problemCollector)
     {
     }
 
