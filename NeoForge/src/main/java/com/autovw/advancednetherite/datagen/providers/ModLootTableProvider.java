@@ -1,23 +1,18 @@
 package com.autovw.advancednetherite.datagen.providers;
 
 import com.autovw.advancednetherite.core.registry.ModBlockRegistry;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.WritableRegistry;
-import net.minecraft.data.PackOutput;
+import net.minecraft.core.registries.SingleRegistryBootstrap;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.data.loot.packs.VanillaLootTableProvider;
-import net.minecraft.util.ProblemReporter;
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.ValidationContextSource;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
@@ -25,29 +20,21 @@ import java.util.stream.Collectors;
  */
 public class ModLootTableProvider extends LootTableProvider
 {
-    private final List<SubProviderEntry> tables = List.of(new SubProviderEntry(ModBlockLootSubProvider::new, LootContextParamSets.BLOCK));
-
-    public ModLootTableProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture)
+    public ModLootTableProvider()
     {
-        super(packOutput, Set.of(), VanillaLootTableProvider.create(packOutput, completableFuture).getTables(), completableFuture);
+        super(Set.of(), List.of(new SubProviderEntry(ModLootTableProvider.BlockSubProvider::new, LootContextParamSets.BLOCK)));
     }
 
-    @Override
-    public List<SubProviderEntry> getTables()
+    public static SingleRegistryBootstrap<LootTable> create()
     {
-        return this.tables;
+        return new ModLootTableProvider();
     }
 
-    @Override
-    protected void validate(WritableRegistry<LootTable> tables, ValidationContextSource context, ProblemReporter.Collector problemCollector)
+    private static class BlockSubProvider extends BlockLootSubProvider
     {
-    }
-
-    private static class ModBlockLootSubProvider extends BlockLootSubProvider
-    {
-        protected ModBlockLootSubProvider(HolderLookup.Provider provider)
+        protected BlockSubProvider(LootTableSubProvider.Context context)
         {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), provider);
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), context);
         }
 
         @Override

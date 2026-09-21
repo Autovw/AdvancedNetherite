@@ -6,14 +6,17 @@ import com.autovw.advancednetherite.core.ModItems;
 import com.autovw.advancednetherite.core.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 
@@ -30,9 +33,9 @@ public class ModRecipeProvider extends FabricRecipeProvider
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput)
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, BootstrapContext<Recipe<?>> recipeContext, BootstrapContext<Advancement> advancementContext)
     {
-        return new RecipeProvider(provider, recipeOutput)
+        return new RecipeProvider(recipeContext, advancementContext)
         {
             @Override
             public void buildRecipes()

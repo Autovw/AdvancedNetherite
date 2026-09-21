@@ -16,9 +16,11 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.trim.TrimMaterials;
 import net.minecraft.world.level.block.Block;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -47,25 +49,25 @@ public class ModModelProvider extends ModelProvider
         itemModel(itemModels, ModItems.NETHERITE_DIAMOND_INGOT);
 
         /* Armor sets */
-        armorModel(itemModels, ModItems.NETHERITE_IRON_HELMET, ModEquipmentAssets.NETHERITE_IRON);
-        armorModel(itemModels, ModItems.NETHERITE_IRON_CHESTPLATE, ModEquipmentAssets.NETHERITE_IRON);
-        armorModel(itemModels, ModItems.NETHERITE_IRON_LEGGINGS, ModEquipmentAssets.NETHERITE_IRON);
-        armorModel(itemModels, ModItems.NETHERITE_IRON_BOOTS, ModEquipmentAssets.NETHERITE_IRON);
+        armorModel(itemModels, ModItems.NETHERITE_IRON_HELMET, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_IRON_CHESTPLATE, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_IRON_LEGGINGS, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_IRON_BOOTS, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
 
-        armorModel(itemModels, ModItems.NETHERITE_GOLD_HELMET, ModEquipmentAssets.NETHERITE_GOLD);
-        armorModel(itemModels, ModItems.NETHERITE_GOLD_CHESTPLATE, ModEquipmentAssets.NETHERITE_GOLD);
-        armorModel(itemModels, ModItems.NETHERITE_GOLD_LEGGINGS, ModEquipmentAssets.NETHERITE_GOLD);
-        armorModel(itemModels, ModItems.NETHERITE_GOLD_BOOTS, ModEquipmentAssets.NETHERITE_GOLD);
+        armorModel(itemModels, ModItems.NETHERITE_GOLD_HELMET, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_GOLD_CHESTPLATE, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_GOLD_LEGGINGS, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_GOLD_BOOTS, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
 
-        armorModel(itemModels, ModItems.NETHERITE_EMERALD_HELMET, ModEquipmentAssets.NETHERITE_EMERALD);
-        armorModel(itemModels, ModItems.NETHERITE_EMERALD_CHESTPLATE, ModEquipmentAssets.NETHERITE_EMERALD);
-        armorModel(itemModels, ModItems.NETHERITE_EMERALD_LEGGINGS, ModEquipmentAssets.NETHERITE_EMERALD);
-        armorModel(itemModels, ModItems.NETHERITE_EMERALD_BOOTS, ModEquipmentAssets.NETHERITE_EMERALD);
+        armorModel(itemModels, ModItems.NETHERITE_EMERALD_HELMET, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_EMERALD_CHESTPLATE, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_EMERALD_LEGGINGS, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_EMERALD_BOOTS, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
 
-        armorModel(itemModels, ModItems.NETHERITE_DIAMOND_HELMET, ModEquipmentAssets.NETHERITE_DIAMOND);
-        armorModel(itemModels, ModItems.NETHERITE_DIAMOND_CHESTPLATE, ModEquipmentAssets.NETHERITE_DIAMOND);
-        armorModel(itemModels, ModItems.NETHERITE_DIAMOND_LEGGINGS, ModEquipmentAssets.NETHERITE_DIAMOND);
-        armorModel(itemModels, ModItems.NETHERITE_DIAMOND_BOOTS, ModEquipmentAssets.NETHERITE_DIAMOND);
+        armorModel(itemModels, ModItems.NETHERITE_DIAMOND_HELMET, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_DIAMOND_CHESTPLATE, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_DIAMOND_LEGGINGS, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
+        armorModel(itemModels, ModItems.NETHERITE_DIAMOND_BOOTS, Map.of(TrimMaterials.Palette.NETHERITE, TrimMaterials.Palette.NETHERITE));
 
         /* Axes */
         toolModel(itemModels, ModItems.NETHERITE_IRON_AXE);
@@ -127,7 +129,7 @@ public class ModModelProvider extends ModelProvider
         itemModels.itemModelOutput.accept(item, new CuboidItemModelWrapper.Unbaked(template.create(item, textureMapping, itemModels.modelOutput), Optional.empty(), List.of()));
     }
 
-    public void armorModel(ItemModelGenerators itemModels, Item item, ResourceKey<EquipmentAsset> equipmentKey)
+    public void armorModel(ItemModelGenerators itemModels, Item item, Map<TrimMaterials.Palette, TrimMaterials.Palette> trimPaletteReplacements)
     {
         Identifier id = BuiltInRegistries.ITEM.getKey(item);
         Identifier armorType = null;
@@ -139,7 +141,7 @@ public class ModModelProvider extends ModelProvider
             armorType = ItemModelGenerators.TRIM_PREFIX_LEGGINGS;
         else if (id.getPath().contains("boots"))
             armorType = ItemModelGenerators.TRIM_PREFIX_BOOTS;
-        itemModels.generateTrimmableItem(item, equipmentKey, armorType, false);
+        itemModels.generateTrimmableItem(item, armorType, false, trimPaletteReplacements);
     }
 
     public void spearModel(ItemModelGenerators itemModels, Item item)

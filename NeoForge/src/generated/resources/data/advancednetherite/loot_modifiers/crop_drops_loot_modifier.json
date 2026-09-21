@@ -1,11 +1,12 @@
 {
   "type": "advancednetherite:crop_drops_loot_modifier",
-  "conditions": [
-    {
-      "condition": "minecraft:match_tool",
+  "condition": {
+    "type": "minecraft:all_of",
+    "terms": {
+      "type": "minecraft:match_tool",
       "predicate": {
         "items": "#advancednetherite:drops_additional_crops"
       }
     }
-  ]
+  }
 }

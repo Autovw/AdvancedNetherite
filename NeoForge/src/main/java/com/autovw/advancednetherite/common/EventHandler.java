@@ -3,12 +3,12 @@ package com.autovw.advancednetherite.common;
 import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.monster.Enderman;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.entity.living.EnderManAngerEvent;
+import net.neoforged.neoforge.event.entity.living.EndermanAngerEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 
 /**
@@ -19,10 +19,10 @@ import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 public class EventHandler
 {
     @SubscribeEvent
-    public static void onEnderManAngerEvent(final EnderManAngerEvent event)
+    public static void onEnderManAngerEvent(final EndermanAngerEvent event)
     {
         Player player = event.getPlayer(); // Gets the player (target)
-        EnderMan enderMan = event.getEntity(); // Gets the enderman
+        Enderman enderMan = event.getEntity(); // Gets the enderman
 
         // return early if player is in creative mode
         if (player.isCreative())

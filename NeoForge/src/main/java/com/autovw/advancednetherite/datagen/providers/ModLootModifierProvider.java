@@ -5,16 +5,18 @@ import com.autovw.advancednetherite.common.loot.MobDropsLootModifier;
 import com.autovw.advancednetherite.common.loot.OreDropsLootModifier;
 import com.autovw.advancednetherite.core.util.ModTags;
 import net.minecraft.advancements.predicates.ItemPredicate;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.AllOfCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 // TODO rework loot modifiers
@@ -34,16 +36,16 @@ public class ModLootModifierProvider extends GlobalLootModifierProvider
         HolderLookup.RegistryLookup<Item> registryLookup = this.registries.lookupOrThrow(Registries.ITEM);
 
         // ores
-        add("ore_drops_loot_modifier", new OreDropsLootModifier(new LootItemCondition[] {}, IGlobalLootModifier.DEFAULT_PRIORITY));
+        add("ore_drops_loot_modifier", new OreDropsLootModifier(Optional.empty(), IGlobalLootModifier.DEFAULT_PRIORITY));
 
         // entities
-        add("mob_drops_loot_modifier", new MobDropsLootModifier(new LootItemCondition[] {
-                LootItemKilledByPlayerCondition.killedByPlayer().build()
-        }, IGlobalLootModifier.DEFAULT_PRIORITY));
+        add("mob_drops_loot_modifier", new MobDropsLootModifier(Optional.of(Holder.direct(AllOfCondition.allOf(
+                LootItemKilledByPlayerCondition.killedByPlayer()
+        ).build())), IGlobalLootModifier.DEFAULT_PRIORITY));
 
         // crops
-        add("crop_drops_loot_modifier", new CropDropsLootModifier(new LootItemCondition[] {
-                MatchTool.toolMatches(ItemPredicate.Builder.item().of(registryLookup, ModTags.DROPS_ADDITIONAL_CROPS)).build()
-        }, IGlobalLootModifier.DEFAULT_PRIORITY));
+        add("crop_drops_loot_modifier", new CropDropsLootModifier(Optional.of(Holder.direct(AllOfCondition.allOf(
+                MatchTool.toolMatches(ItemPredicate.Builder.item().of(registryLookup, ModTags.DROPS_ADDITIONAL_CROPS))
+        ).build())), IGlobalLootModifier.DEFAULT_PRIORITY));
     }
 }

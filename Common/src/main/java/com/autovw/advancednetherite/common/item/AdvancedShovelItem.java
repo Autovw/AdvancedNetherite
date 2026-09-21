@@ -6,24 +6,22 @@ import com.autovw.advancednetherite.api.impl.IToolMaterial;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
  * @author Autovw
  */
-public class AdvancedShovelItem extends ShovelItem implements IToolMaterial, IDurabilityBarColorModifier
+public class AdvancedShovelItem extends Item implements IToolMaterial, IDurabilityBarColorModifier
 {
     private final ToolMaterial material;
 
     public AdvancedShovelItem(ToolMaterial material, float attackDamage, float attackSpeed, Item.Properties properties)
     {
-        super(material, attackDamage, attackSpeed, properties.fireResistant());
+        super(properties.shovel(material, attackDamage, attackSpeed).fireResistant());
         this.material = material;
     }
 

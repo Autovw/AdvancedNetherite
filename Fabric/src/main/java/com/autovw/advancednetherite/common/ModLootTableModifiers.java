@@ -27,7 +27,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.List;
 import java.util.Optional;
@@ -60,29 +60,30 @@ public final class ModLootTableModifiers
         LootTableEvents.MODIFY.register(((key, tableBuilder, source, provider) ->
         {
             Identifier id = key.identifier();
-            HolderLookup.RegistryLookup<Item> registryLookup = provider.lookupOrThrow(Registries.ITEM);
+            HolderLookup.RegistryLookup<Item> itemRegistries = provider.lookupOrThrow(Registries.ITEM);
+            HolderLookup.RegistryLookup<Block> blockRegistries = provider.lookupOrThrow(Registries.BLOCK);
             // ADDITIONAL CROP DROPS START //
             if (source.isBuiltin() && id.equals(WHEAT))
             {
-                LootPool.Builder pool = cropDropPool(registryLookup, Blocks.WHEAT, BlockStateProperties.AGE_7, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalWheatDropChance(), Items.WHEAT, 0, 2);
+                LootPool.Builder pool = cropDropPool(itemRegistries, blockRegistries, Blocks.WHEAT, BlockStateProperties.AGE_7, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalWheatDropChance(), Items.WHEAT, 0, 2);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(CARROTS))
             {
-                LootPool.Builder pool = cropDropPool(registryLookup, Blocks.CARROTS, BlockStateProperties.AGE_7, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalCarrotsDropChance(), Items.CARROT, 0, 2);
+                LootPool.Builder pool = cropDropPool(itemRegistries, blockRegistries, Blocks.CARROTS, BlockStateProperties.AGE_7, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalCarrotsDropChance(), Items.CARROT, 0, 2);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(POTATOES))
             {
-                LootPool.Builder pool = cropDropPool(registryLookup, Blocks.POTATOES, BlockStateProperties.AGE_7, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPotatoesDropChance(), Items.POTATO, 0, 1);
+                LootPool.Builder pool = cropDropPool(itemRegistries, blockRegistries, Blocks.POTATOES, BlockStateProperties.AGE_7, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPotatoesDropChance(), Items.POTATO, 0, 1);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(BEETROOTS))
             {
-                LootPool.Builder pool = cropDropPool(registryLookup, Blocks.BEETROOTS, BlockStateProperties.AGE_3, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalBeetrootsDropChance(), Items.BEETROOT, 1, 2);
+                LootPool.Builder pool = cropDropPool(itemRegistries, blockRegistries, Blocks.BEETROOTS, BlockStateProperties.AGE_3, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalBeetrootsDropChance(), Items.BEETROOT, 1, 2);
                 tableBuilder.withPool(pool);
             }
             // ADDITIONAL CROP DROPS END //
@@ -90,25 +91,25 @@ public final class ModLootTableModifiers
             // ADDITIONAL MOB DROPS START //
             if (source.isBuiltin() && id.equals(PHANTOM))
             {
-                LootPool.Builder pool = mobDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance(), Items.PHANTOM_MEMBRANE, 0, 2, ModTags.DROPS_ADDITIONAL_PHANTOM_LOOT);
+                LootPool.Builder pool = mobDropPool(itemRegistries, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPhantomDropChance(), Items.PHANTOM_MEMBRANE, 0, 2, ModTags.DROPS_ADDITIONAL_PHANTOM_LOOT);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(ZOMBIFIED_PIGLIN))
             {
-                LootPool.Builder pool = mobDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalZombifiedPiglinDropChance(), Items.GOLD_NUGGET, 0, 3, ModTags.DROPS_ADDITIONAL_ZOMBIFIED_PIGLIN_LOOT);
+                LootPool.Builder pool = mobDropPool(itemRegistries, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalZombifiedPiglinDropChance(), Items.GOLD_NUGGET, 0, 3, ModTags.DROPS_ADDITIONAL_ZOMBIFIED_PIGLIN_LOOT);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(PIGLIN))
             {
-                LootPool.Builder pool = mobDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPiglinDropChance(), Items.GOLD_INGOT, 1, 1, ModTags.DROPS_ADDITIONAL_PIGLIN_LOOT);
+                LootPool.Builder pool = mobDropPool(itemRegistries, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalPiglinDropChance(), Items.GOLD_INGOT, 1, 1, ModTags.DROPS_ADDITIONAL_PIGLIN_LOOT);
                 tableBuilder.withPool(pool);
             }
 
             if (source.isBuiltin() && id.equals(ENDERMAN))
             {
-                LootPool.Builder pool = mobDropPool(registryLookup, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEndermanDropChance(), Items.ENDER_PEARL, 0, 1, ModTags.DROPS_ADDITIONAL_ENDERMAN_LOOT);
+                LootPool.Builder pool = mobDropPool(itemRegistries, (float) ConfigHelper.get().getServer().getAdditionalDropProperties().getAdditionalEndermanDropChance(), Items.ENDER_PEARL, 0, 1, ModTags.DROPS_ADDITIONAL_ENDERMAN_LOOT);
                 tableBuilder.withPool(pool);
             }
             // ADDITIONAL MOB DROPS END //
@@ -147,15 +148,15 @@ public final class ModLootTableModifiers
         }));
     }
 
-    private static LootPool.Builder cropDropPool(HolderLookup.RegistryLookup<Item> registryLookup, Block cropBlock, Property<?> ageProperty, float dropChance, ItemLike dropItem, int minDrop, int maxDrop)
+    private static LootPool.Builder cropDropPool(HolderLookup.RegistryLookup<Item> itemRegistries, HolderLookup.RegistryLookup<Block> blockRegistries, Block cropBlock, Property<?> ageProperty, float dropChance, ItemLike dropItem, int minDrop, int maxDrop)
     {
         String maxAge = String.valueOf(((CropBlock) cropBlock).getMaxAge());
         return LootPool.lootPool()
-            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ageProperty, maxAge)))
-            .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(registryLookup, ModTags.DROPS_ADDITIONAL_CROPS)))
+            .when(MatchBlock.blockMatches(BlockPredicate.Builder.block().of(blockRegistries, cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ageProperty, maxAge))))
+            .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemRegistries, ModTags.DROPS_ADDITIONAL_CROPS)))
             .when(LootItemRandomChanceCondition.randomChance(dropChance))
             .add(LootItem.lootTableItem(dropItem))
-            .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());
+            .apply(SetItemCountFunction.setCount(ContextIntProviders.between(minDrop, maxDrop)).build());
     }
 
     private static LootPool.Builder mobDropPool(HolderLookup.RegistryLookup<Item> registryLookup, float dropChance, Item dropItem, int minDrop, int maxDrop, TagKey<Item> toolTag)
@@ -166,7 +167,7 @@ public final class ModLootTableModifiers
                 .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.entity().equipment(equipmentPredicate)))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))
                 .add(LootItem.lootTableItem(dropItem))
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());
+                .apply(SetItemCountFunction.setCount(ContextIntProviders.between(minDrop, maxDrop)).build());
     }
 
     private static LootPool.Builder oreDropPool(HolderLookup.Provider registryProvider, float dropChance, Item dropItem, int minDrop, int maxDrop, TagKey<Item> toolTag)
@@ -185,6 +186,6 @@ public final class ModLootTableModifiers
                 )))
                 .when(LootItemRandomChanceCondition.randomChance(dropChance))
                 .add(LootItem.lootTableItem(dropItem))
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop)).build());
+                .apply(SetItemCountFunction.setCount(ContextIntProviders.between(minDrop, maxDrop)).build());
     }
 }

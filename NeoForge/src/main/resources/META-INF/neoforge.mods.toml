@@ -9,7 +9,8 @@ version="${mod_version}"
 displayName="Advanced Netherite"
 updateJSONURL="https://raw.githubusercontent.com/Autovw/ModUpdates/master/advancednetherite/update.json"
 displayURL="https://github.com/Autovw/AdvancedNetherite/wiki"
-logoFile="advancednetherite_banner.png"
+bannerFile="advancednetherite_banner.png"
+iconFile="advancednetherite_logo.png"
 #credits=""
 authors="Autovw"
 description='''
@@ -23,13 +24,13 @@ Visit the GitHub Wiki for more information on everything this mod adds.
     # 'required' requires the mod to exist, 'optional' does not
     # 'incompatible' will prevent the game from loading when the mod exists, and 'discouraged' will show a warning
     type="required"
-    versionRange="[26.2.0.0-beta,)"
+    versionRange="[26.3.0.0-beta,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.advancednetherite]]
     modId="minecraft"
     type="required"
-    versionRange="[26.2]"
+    versionRange="[26.3]"
     ordering="NONE"
     side="BOTH"
 

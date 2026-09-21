@@ -5,6 +5,7 @@ import com.autovw.advancednetherite.core.util.ModTags;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityTypeIds;
@@ -17,6 +18,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Optional;
+
 // TODO rework loot modifiers
 /**
  * A loot modifier for adding additional crops to entities.
@@ -28,22 +31,17 @@ public class MobDropsLootModifier extends LootModifier
 {
     public static final MapCodec<MobDropsLootModifier> CODEC = RecordCodecBuilder.mapCodec(instance -> codecStart(instance).apply(instance, MobDropsLootModifier::new));
 
-    /**
-     * Constructs a LootModifier.
-     *
-     * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
-     */
-    public MobDropsLootModifier(LootItemCondition[] conditionsIn, int priority)
+    public MobDropsLootModifier(Optional<Holder<LootItemCondition>> condition, int priority)
     {
-        super(conditionsIn,  priority);
+        super(condition,  priority);
     }
 
     @NotNull
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {
-        Entity attacker = context.getOptionalParameter(LootContextParams.ATTACKING_ENTITY); // the entity killer
-        Entity victim = context.getOptionalParameter(LootContextParams.THIS_ENTITY); // killed entity
+        Entity attacker = context.getOptional(LootContextParams.ATTACKING_ENTITY); // the entity killer
+        Entity victim = context.getOptional(LootContextParams.THIS_ENTITY); // killed entity
 
         if (attacker instanceof Player player && victim != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalMobDrops())
         {

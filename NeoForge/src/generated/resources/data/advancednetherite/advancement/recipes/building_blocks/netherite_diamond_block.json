@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "advancednetherite:netherite_diamond_block"
+        "recipes": "advancednetherite:netherite_diamond_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

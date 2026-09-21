@@ -5,6 +5,7 @@ import com.autovw.advancednetherite.config.ConfigHelper;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -18,6 +19,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Optional;
+
 // TODO rework loot modifiers
 /**
  * A loot modifier for adding additional drops to crop blocks.
@@ -29,22 +32,17 @@ public class CropDropsLootModifier extends LootModifier
 {
     public static final MapCodec<CropDropsLootModifier> CODEC = RecordCodecBuilder.mapCodec(instance -> codecStart(instance).apply(instance, CropDropsLootModifier::new));
 
-    /**
-     * Constructs a LootModifier.
-     *
-     * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
-     */
-    public CropDropsLootModifier(LootItemCondition[] conditionsIn, int priority)
+    public CropDropsLootModifier(Optional<Holder<LootItemCondition>> condition, int priority)
     {
-        super(conditionsIn, priority);
+        super(condition, priority);
     }
 
     @NotNull
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {
-        ItemStack tool = context.getOptionalParameter(LootContextParams.TOOL) instanceof ItemStack stack ? stack : null;
-        BlockState blockState = context.getOptionalParameter(LootContextParams.BLOCK_STATE);
+        ItemStack tool = context.getOptional(LootContextParams.TOOL) instanceof ItemStack stack ? stack : null;
+        BlockState blockState = context.getOptional(LootContextParams.BLOCK_STATE);
 
         if (tool != null && blockState != null && ConfigHelper.get().getCommon().getAdditionalDrops().enableAdditionalCropDrops())
         {

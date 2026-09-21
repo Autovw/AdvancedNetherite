@@ -6,27 +6,25 @@ import com.autovw.advancednetherite.api.impl.IToolMaterial;
 import com.autovw.advancednetherite.common.AdvancedUtil;
 import com.autovw.advancednetherite.config.ConfigHelper;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
-import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
  * @author Autovw
  */
-public class AdvancedAxeItem extends AxeItem implements IToolMaterial, IDurabilityBarColorModifier
+public class AdvancedAxeItem extends Item implements IToolMaterial, IDurabilityBarColorModifier
 {
     private final ToolMaterial material;
 
     public AdvancedAxeItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties)
     {
-        super(material, attackDamage, attackSpeed, properties.fireResistant());
+        super(properties.axe(material, attackDamage, attackSpeed).fireResistant());
         this.material = material;
     }
 

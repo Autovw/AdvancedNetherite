@@ -4,6 +4,8 @@ import com.autovw.advancednetherite.AdvancedNetherite;
 import com.autovw.advancednetherite.api.annotation.Internal;
 import com.autovw.advancednetherite.datagen.providers.*;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.neoforged.api.distmarker.Dist;
@@ -35,16 +37,23 @@ public class ModDataGenerator
     {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getReloadableLookupProvider();
 
         // server
         event.addProvider(new ModBlockTagsProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID));
         event.addProvider(new ModItemTagsProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID));
         event.addProvider(new ModEnchantmentTagsProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID));
-        event.addProvider(new ModRecipeProvider.Runner(packOutput, lookupProvider));
-        event.addProvider(new ModLootTableProvider(packOutput, lookupProvider));
-        event.addProvider(new ModAdvancementProvider(packOutput, lookupProvider));
+        //event.addProvider(new ModRecipeProvider(packOutput, lookupProvider));
+        //event.addProvider(new ModLootTableProvider(packOutput, lookupProvider));
+        //event.addProvider(new ModAdvancementProvider(List.of(ModAdvancementProvider.ModNetherAdvancements::new)));
         event.addProvider(new ModLootModifierProvider(packOutput, lookupProvider, AdvancedNetherite.MOD_ID));
+
+        event.createReloadableRegistryObjects(
+                new RegistrySetBuilder()
+                        .add(Registries.LOOT_TABLE, ModLootTableProvider.create())
+                        .add(ModRecipeProvider.create())
+                        .add(Registries.ADVANCEMENT, ModAdvancementProvider.create())
+        );
 
         // client
         event.addProvider(new ModEquipmentAssetProvider(packOutput));

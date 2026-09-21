@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "advancednetherite:netherite_emerald_block"
+        "recipes": "advancednetherite:netherite_emerald_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "advancednetherite:netherite_iron_helmet_smithing"
+        "recipes": "advancednetherite:netherite_iron_helmet_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

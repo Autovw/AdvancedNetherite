@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "advancednetherite:netherite_iron_spear_smithing"
+        "recipes": "advancednetherite:netherite_iron_spear_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

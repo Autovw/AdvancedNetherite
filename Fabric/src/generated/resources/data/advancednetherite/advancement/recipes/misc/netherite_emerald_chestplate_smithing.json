@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "advancednetherite:netherite_emerald_chestplate_smithing"
+        "recipes": "advancednetherite:netherite_emerald_chestplate_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
