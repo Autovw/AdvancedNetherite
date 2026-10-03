@@ -30,8 +30,8 @@ public class AdvancedNetheriteNeoForge
         AdvancedNetherite.setRegistryHelper(new NeoForgeRegistryHelper());
 
         container.registerConfig(ModConfig.Type.CLIENT, Config.CLIENT_SPEC);
-        container.registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
-        container.registerConfig(ModConfig.Type.SERVER, Config.SERVER_SPEC);
+        container.registerConfig(ModConfig.Type.LOCAL, Config.LOCAL_SPEC);
+        container.registerConfig(ModConfig.Type.SYNCED, Config.SYNCED_SPEC);
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
@@ -46,8 +46,8 @@ public class AdvancedNetheriteNeoForge
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         ConfigHelper.registerClientConfig(() -> Config.CLIENT);
-        ConfigHelper.registerCommonConfig(() -> Config.COMMON);
-        ConfigHelper.registerServerConfig(() -> Config.SERVER);
+        ConfigHelper.registerCommonConfig(() -> Config.LOCAL);
+        ConfigHelper.registerServerConfig(() -> Config.SYNCED);
     }
 
     private void clientSetup(final FMLClientSetupEvent event)

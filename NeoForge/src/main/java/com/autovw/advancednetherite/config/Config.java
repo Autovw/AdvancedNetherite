@@ -16,13 +16,13 @@ public class Config
     public static final Client CLIENT = new Client(CLIENT_BUILDER);
     public static final ModConfigSpec CLIENT_SPEC = CLIENT_BUILDER.build();
 
-    private static final ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
-    public static final Common COMMON = new Common(COMMON_BUILDER);
-    public static final ModConfigSpec COMMON_SPEC = COMMON_BUILDER.build();
+    private static final ModConfigSpec.Builder LOCAL_BUILDER = new ModConfigSpec.Builder();
+    public static final Common LOCAL = new Common(LOCAL_BUILDER);
+    public static final ModConfigSpec LOCAL_SPEC = LOCAL_BUILDER.build();
 
-    private static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
-    public static final Server SERVER = new Server(SERVER_BUILDER);
-    public static final ModConfigSpec SERVER_SPEC = SERVER_BUILDER.build();
+    private static final ModConfigSpec.Builder SYNCED_BUILDER = new ModConfigSpec.Builder();
+    public static final Server SYNCED = new Server(SYNCED_BUILDER);
+    public static final ModConfigSpec SYNCED_SPEC = SYNCED_BUILDER.build();
 
     // CLIENT config
     public static class Client implements IClientConfig
@@ -70,14 +70,14 @@ public class Config
         }
     }
 
-    // COMMON config
+    // LOCAL config
     public static class Common implements ICommonConfig
     {
         public final AdditionalDropsConfig additionalDropsConfig;
 
         public Common(ModConfigSpec.Builder builder)
         {
-            builder.translation("config.advancednetherite.common").push("common");
+            builder.translation("config.advancednetherite.common").push("local");
             {
                 this.additionalDropsConfig = new AdditionalDropsConfig(builder);
             }
@@ -138,7 +138,7 @@ public class Config
         }
     }
 
-    // SERVER config
+    // SYNCED config
     public static class Server implements IServerConfig
     {
         public final ToolProperties toolProperties;
@@ -146,7 +146,7 @@ public class Config
 
         public Server(ModConfigSpec.Builder builder)
         {
-            builder.translation("config.advancednetherite.server").push("server");
+            builder.translation("config.advancednetherite.server").push("synced");
             {
                 this.toolProperties = new ToolProperties(builder);
                 this.additionalDropProperties = new AdditionalDropProperties(builder);
